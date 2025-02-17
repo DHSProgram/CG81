@@ -1,0 +1,598 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: French
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: SAMPINF_DICT.LI10
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">Cluster: <span style="font-weight:normal;color:#ff0000;">~~LICLUSTER~~</span> Enumerator: <span style="font-weight:normal;color:#ff0000;">~~LIINTNUM~~</span> Region: <span style="font-weight:normal;color:#ff0000;">~~YREGIONN~~</span> &#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">State.: <span style="font-weight:normal;color:#ff0000;">~~YSTATEN~~</span> District: <span style="font-weight:normal;color:#ff0000;">~~YDISTRICTN~~</span> City: <span style="font-weight:normal;color:#ff0000;">~~YCITYN~~&#160;</span></span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:16px;color:#0000ff;">Q10. NAME OF QUARTER/VILLAGE HEAD&#160;</span></p>
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">Grappe: <span style="font-weight:normal;color:#ff0000;">~~LICLUSTER~~</span> Enumérator: <span style="font-weight:normal;color:#ff0000;">~~LIINTNUM~~</span> Région: <span style="font-weight:normal;color:#ff0000;">~~YREGIONN~~</span> &#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">Départ.: <span style="font-weight:normal;color:#ff0000;">~~YSTATEN~~</span> District: <span style="font-weight:normal;color:#ff0000;">~~YDISTRICTN~~</span> Ville/Municipalité: <span style="font-weight:normal;color:#ff0000;">~~YCITYN~~&#160;</span></span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+            <p><span style="font-size:16px;color:#0000ff;">Q10 NOM DU CHEF DE VILLAGE/QUARTIER&#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: L11_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q11 PHONE NUMBER OF QUARTER/VILLAGE HEAD&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:16px;color:#0000ff;">ENTER 00 IF NUMBER NOT AVAILABLE&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q11 NUMERO DE TELEPHONE DU CHEF DE VILLAGE/QUARTIER&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:16px;color:#0000ff;">ENTRER 00 SI NUMÉRO NON DISPONIBLE&#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L12
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q12 NAME OF MAPPING AGENT&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q12 NOM DE L'ENUMERATEUR-CARTOGRAPHE</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L14
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q14 SUPERVISOR&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q14 SUPERVISEUR &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L15
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">STARTING DATE OF SURVEY &#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">DATE DE DEBUT DE L&apos;ENQUETE &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L16
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">END DATE OF SURVEY&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">DATE DE FIN DE L&apos;ENQUETE &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L17
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q17 DID THEY DO NUMBERING IN THIS EA? &#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q17 LES OPERATIONS DE DENOMBREMENT ONT-ELLES ETE MENEES DANS CETTE GRAPPE ? &nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L1819
+    conditions:
+      - logic: L17=2
+        questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q18 PLEASE GIVE THE REASONS WHY DATA WERE PARTIALLY COLLECTED  FOR THIS EA  (DESCRIBE CLEARLY WHAT HAPPENED)&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q18 VEUILLEZ DONNER LA RAISON POUR LAQUELLE LES DONNÉES ONT ETE COLLECTÉES PARTIELLEMENT POUR CETTE GRAPPE (DECRIVEZ CLAIREMENT CE QUI S’EST PASSE)&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+      - logic: L17=3
+        questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q19 PLEASE GIVE THE REASONS WHY DATA WERE NOT COLLECTED FOR THIS EA  (DESCRIBE CLEARLY WHAT HAPPENED)&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q19 VEUILLEZ DONNER LA RAISON POUR LAQUELLE LES DONNÉES N’ONT PAS ETE COLLECTÉES POUR CETTE GRAPPE (DECRIVEZ CLAIREMENT CE QUI S’EST PASSE)&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L20
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;"><span style="font-size:16px;color:#000000;">Q20 Describe the itinerary (distances, directions [left/ right], signs, villages, transportation means, transportation cost, etc..), main obstacles for the trip (e.g. hilly roads, valleys, cliffs, streams, trees, impassable roads, etc.)&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p style="text-align:justify;"><span style="font-size:16px;color:#000000;">Q20 Décrire l&rsquo;itinéraire le long du chemin (distances, directions [gauche/ droite], signes, villages, mode de transport, coût du transport, etc..), les principaux obstacles au voyage (e.g. les routes montagneuses, vallées, canyons, ravins, rivières, arbres, routes impraticables, etc.).&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L21
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;"><span style="font-size:16px;color:#000000;">Q21 What is the means of transport used to go to the survey area during dry season? &#160;</span></p>
+            <p style="text-align:justify;"><span style="font-size:16px;color:#0000ff;font-family:'Arial';">RECORD ALL WHAT IS GIVEN AS ANSWER&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p style="text-align:justify;"><span style="font-size:16px;color:#000000;">Q21 Quel est le moyen de transport utilisé pour relier la zone d&rsquo;enquête en saison sèche&#160;?&#160;</span></p>
+            <p style="text-align:justify;"><span style="font-size:16px;color:#0000ff;font-family:'Arial';">ENREGISTREZ TOUT CE QUI EST MENTIONNÉ&#160;</span></p>
+            <p style="text-align:justify;">&#160;</p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L22
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;"><span style="font-size:16px;color:#000000;">Q22 What is the means of transport used to go to the survey area during rainy season?&#160;</span></p>
+            <p style="text-align:justify;"><span style="font-size:16px;color:#0000ff;font-family:'Arial';">RECORD ALL WHAT IS GIVEN AS ANSWER&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p style="text-align:justify;"><span style="font-size:16px;color:#000000;">Q22 Quel est le moyen de transport utilisé pour relier la zone d&rsquo;enquête en saison de pluie&#160;?&#160;</span></p>
+            <p style="text-align:justify;"><span style="font-size:16px;color:#0000ff;font-family:'Arial';">ENREGISTREZ TOUT CE QUI EST MENTIONNÉ&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: L23
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">What are the mobile networks found in the EA?&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q23.-</span><span style="font-size:16px;color:#000000;">Quels sont les réseaux mobiles captés dans cette grappe ?&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L23A
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">Orange&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q23A.-&nbsp;</span><span style="font-size: 18px;"><b style=""><font color="#ff9c00">Orange&nbsp;</font></b></span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L23B
+    conditions:
+      - questionText:
+          EN: |
+            <p>Vodacom&nbsp;<span style="font-size:16px;color:#000000;">&nbsp;</span></p>
+            <p>&nbsp;</p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q23B.-</span><span style="font-size: 18px;"><b><font color="#0000ff">Vodacom&nbsp;</font></b></span><br></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L23C
+    conditions:
+      - questionText:
+          EN: |
+            <p style="margin-bottom:6pt;">Airtel<br></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q23C.-</span><b><span style="font-size: 18px;">Airtel</span></b><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L23D
+    conditions:
+      - questionText:
+          EN: |
+            <p>Africell<br></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q23D.-&nbsp;</span><b><font color="#0000ff"><span style="font-size: 18px;">﻿</span>Africell</font></b><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L23E
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">Network from a neighbouring country&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q23E.-&nbsp;</span><span style="font-size: 18px;"><i style=""><b style=""><font color="#085294">Réseau d’un pays voisin&nbsp;</font></b></i></span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: L24
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">What are the mobile networks found in the EA?&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24.-&nbsp;</span><span style="font-size:16px;color:#000000;">Quelles sont les connexions internet que l'on capte le mieux dans cette grappe ?&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L24A
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24A.-&nbsp;</span><span style="font-size:16px;color:#000000;">Orange&nbsp;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24A.-&nbsp;</span><span style="font-size: 18px;"><font color="#ff9c00"><b>Orange&nbsp;</b></font></span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L24B
+    conditions:
+      - questionText:
+          EN: |
+            <p>Vodacom&nbsp;<br></p>
+            <p>&nbsp;</p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24B.-&nbsp;</span><font color="#0000ff"><b><span style="font-size: 18px;">Vodacom</span><span style="font-size: 18px;">&nbsp;</span></b></font></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L24C
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">Airtel</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24C.-&nbsp;</span><span style="font-size: 18px;"><b>Airtel</b></span><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L24D
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">Africell</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24D.-&nbsp;</span><b><span style="font-size: 18px;"><font color="#424242">Africell</font></span></b><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L24E
+    conditions:
+      - questionText:
+          EN: |
+            
+          FR: |
+            <span style="font-family: Arial, sans-serif; font-size: 21px;">Q24E.-&nbsp;</span><span style="font-size: 18px;"><font color="#424242"><b>Autres connexions sans fil ou fibre optique</b></font></span><p></p>
+  - name: SAMPINF_DICT.L24F
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#000000;">Network from a neighbouring country&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px;">Q24F.-&nbsp;</span><span style="font-size: 18px; color: rgb(0, 0, 0);"><b>Réseau d’un pays voisin&nbsp;</b></span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L25
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;"><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q25. Is the village/quarter where the EA is found connected to the SNEL electric network?&nbsp;</span></p>
+            <p>&nbsp;</p>
+          FR: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q25 Le village/quartier où se trouve la grappe est-il branché au réseau d’énergie électrique SNEL&nbsp;?&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L26
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;">&#160;</p>
+            <p style="text-align:justify;"><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q26. If No, how did you charge your tablets?&#160;</span></p>
+            <p style="text-align:justify;"><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">(DESCRIBE CLEARLY)&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p style="text-align:justify;"><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q26 Si Non, comment avez-vous fait pour charger les tablettes&#160;?<span style="color:#0000ff;"> (DECRIVEZ CLAIREMENT)&#160;</span></span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;"> &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L27
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;">&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q27. Is there in the village/quarter a hotel/inn&#160;</span></p>
+          FR: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q27 Y a-t-il dans le village/quartier un hôtel/auberge&#160;? &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L28A
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:justify;"><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q28. How were you lodged during work in the village/quarter?&#160;</span></p>
+            <p style="text-align:justify;">&#160;</p>
+            <p style="text-align:justify;"><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">If you were lodged away from your usual lodging, say clearly who lodged you, if it is a structure meant for lodging or a private residence, if that structure/residence is in the village/EA or outside the EA. If possible, give the contact number of the person who lodged you and the cost if you where renting. Specify if there are other possibilities of lodging in addition to the one that you used. &#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p style="text-align:justify;margin-top:6pt;margin-bottom:6pt;"><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Q28 Comment avez-vous été logé durant votre séjour dans le village/Quartier&#160;?&#160;</span></p>
+            <p style="text-align:justify;margin-top:6pt;margin-bottom:6pt;"><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">Si vous avez été logé en dehors de votre logement habituel, dites clairement qui vous a logé, s&rsquo;il agit d&rsquo;une structure d&rsquo;hébergement ou d&rsquo;une résidence privée, si cette structure/résidence est dans le village/ZD ou en dehors. Donnez si possible le contact de la personne qui vous a logé et le coût du logement s&rsquo;il a été loué. Précisez s&rsquo;il y a d&rsquo;autres possibilités d&rsquo;hébergement en dehors de ce que vous avez utilisé. &#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L29A
+    conditions:
+      - logic: curocc() = 1
+        questionText:
+          EN: |
+            <p>&nbsp;</p>
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q29.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is there agression in the quarter/village ?&nbsp;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q29.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Existe-t-il agression dans le quartier/village&nbsp;?&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+      - logic: curocc() = 2
+        questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is there armed rebellion in the quarter/village ?&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q29.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Existe-t-il rébellion armée dans le quartier/village&nbsp;?&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+      - logic: curocc() = 3
+        questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Are there inter-ethnic conflicts in the quarter/village ?&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q29.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Existe-t-il conflits inter ethniques dans le quartier/village&nbsp;?&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+      - logic: curocc() = 4
+        questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Are there kidnapping/abductions in the quarter/village ?&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q29.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Existe-t-il enlèvements dans le quartier/village&nbsp;?&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L29B
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Observations on insecurity ?&#160;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q29.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Observations sur l’insécurité&nbsp;?&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: L30
+    conditions:
+      - questionText:
+          FR: |
+            L30.- Langues parlees au niveau de la grappe<p></p>
+  - name: SAMPINF_DICT.L30A
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is French spoken in the quarter/village? &#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q30A.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Parle-t-on Français dans le quartier/village&nbsp;?&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L30B
+    conditions:
+      - questionText:
+          EN: |
+            <p><font face="Arial, sans-serif"><span style="font-size: 21px;">Is KIKONGO&nbsp;spoken in the quarter/village? &nbsp;</span></font></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q30B.&nbsp;</span><font face="Arial, sans-serif"><span style="font-size: 21px;">Parle-t-on KIKONGO&nbsp;dans le quartier/village&nbsp;?&nbsp;</span></font></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L30C
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is&nbsp;</span><font face="Arial, sans-serif"><span style="font-size: 21px;">LINGALA</span></font><span style="font-family: Arial, sans-serif; font-size: 21px;">&nbsp;spoken in the quarter/village?&nbsp;&nbsp;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q30C.&nbsp;</span><font face="Arial, sans-serif"><span style="font-size: 21px;">Parle-t-on LINGALA&nbsp;dans le quartier/village&nbsp;?&nbsp;</span></font></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L30D
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is&nbsp;</span><font face="Arial, sans-serif"><span style="font-size: 21px;">SWAHILI</span></font><span style="font-family: Arial, sans-serif; font-size: 21px;">&nbsp;spoken in the quarter/village?&nbsp;&nbsp;</span></p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q30D.&nbsp;</span><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Parle-t-on&nbsp;</span><font face="Arial, sans-serif"><span style="font-size: 21px;">SWAHILI</span></font><span style="font-family: Arial, sans-serif; font-size: 21px;">&nbsp;dans le quartier/village&nbsp;?&nbsp;</span></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L30E
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size: 21px; font-family: Arial, sans-serif;">Is&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 21px;">TSHILUBA&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 21px;">&nbsp;spoken in the quarter/village?&nbsp;&nbsp;</span><br></p>
+            <p>&nbsp;</p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q30E.&nbsp;</span><span style="font-size: 21px; font-family: Arial, sans-serif;">Parle-t-on&nbsp;</span><span style="font-size: 21px; font-family: Arial, sans-serif;">TSHILUBA&nbsp;dans le quartier/village&nbsp;?&nbsp;</span></p><p><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L30F
+    conditions:
+      - questionText:
+          EN: |
+            <span style="font-size: 21px; font-family: Arial, sans-serif;">Is&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 21px;">another language is</span><span style="font-family: Arial, sans-serif; font-size: 21px;">&nbsp;spoken in the quarter/village?&nbsp;&nbsp;</span><p></p>
+          FR: |
+            <span style="font-family: Arial, sans-serif; font-size: 21px; text-align: justify;">Q30F.&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 21px;">Parle-t-on un autre langue principale langue (à préciser) dans le quartier/village&nbsp;?&nbsp;</span><p></p>
+  - name: L15_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q15 STARTING DATE OF SURVEY  &#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q15 DATE DE DEBUT DE L&apos;ENQUETE &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: L16_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q16 END DATE OF SURVEY       &#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q16 DATE DE FIN DE L&apos;ENQUETE &#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: SAMPINF_DICT.L11
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;">Q11 PHONE NUMBER OF QUARTER/VILLAGE HEAD&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:16px;color:#0000ff;">ENTER 0 IF NO NUMBER GIVEN&#160;</span></p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;">Q11 NUMERO DE TELEPHONE DU CHEF DE VILLAGE/QUARTIER&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:16px;color:#0000ff;">ENTRER 0 SI AUCUN NUMÉRO DONNÉ&#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+...

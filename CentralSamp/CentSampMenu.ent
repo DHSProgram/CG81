@@ -1,0 +1,35 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=Central Samp
+Name=CentSampMenu
+AppType=DataEntry
+ShowEndCaseDialog=No
+CAPI=Yes
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\Interv.dcf
+File=..\Dicts\Control.dcf
+File=..\Dicts\HHListing.dcf
+[AppCode]
+File=.\CentSampMenu.apc
+Include=..\Library\HTMLFunctions.apc
+Include=..\Library\MappingFunctionsGaylord.apc
+Include=..\Library\SyncCSWeb.apc
+Include=..\Library\src\logicApc\globalMapVariables.apc
+Include=..\Library\src\logicApc\SelectItems.apc
+Include=..\Library\src\logicApc\GeometryPointsMap.apc
+Include=..\Library\src\logicApc\globalMap.apc
+[Message]
+File=.\CentSampMenu.mgf
+[Help]
+File=.\CentSampMenu.qsf
+[Forms]
+File=.\Menu.fmf
+[Resources]
+Folder=..\Library\src\RessourcesFolder
+[Dictionary Types]
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\Interv.dcf,External
+Dict-Type=..\Dicts\Control.dcf,External
+Dict-Type=..\Dicts\Menu.dcf,Input,.\Menu.fmf
+Dict-Type=..\Dicts\HHListing.dcf,External

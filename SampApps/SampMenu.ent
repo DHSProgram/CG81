@@ -1,0 +1,27 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=SAMPMENU
+Name=SAMPMENU
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+CAPI=Yes
+CaseTree=Never
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\Interv.dcf
+File=..\Dicts\HHListing.dcf
+[AppCode]
+File=.\SampMenu.apc
+Include=..\Library\SyncCSWeb.apc
+[Message]
+File=.\SampMenu.mgf
+[Help]
+File=.\SampMenu.qsf
+[Forms]
+File=.\Menu.fmf
+[Dictionary Types]
+Dict-Type=..\Dicts\Menu.dcf,Input,.\Menu.fmf
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\Interv.dcf,External
+Dict-Type=..\Dicts\HHListing.dcf,External

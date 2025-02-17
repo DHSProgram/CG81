@@ -1,0 +1,103 @@
+﻿[Dictionary]
+Version=CSPro 6.3
+Label=SpotCheckReport
+Name=SPOTCHECKREPORT_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+
+[Level]
+Label=SpotCheckReport questionnaire
+Name=SPOTCHECKREPORT_QUEST
+
+[IdItems]
+
+[Item]
+Label=Cluster
+Name=SPCLUST
+Start=1
+Len=4
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=SPHHNUM
+Start=5
+Len=4
+ZeroFill=Yes
+
+[Item]
+Label=Execution time
+Name=SPTIME
+Start=9
+Len=14
+DataType=Alpha
+
+[Record]
+Label=SpotCheckReport record
+Name=SPOTCHECKREPORT_REC
+RecordTypeValue=''
+Required=No
+RecordLen=40
+
+[Item]
+Label=Number of hh member in the main survey
+Name=SPTOTHHM
+Start=23
+Len=2
+
+[Item]
+Label=Number of hh member in the spotcheck survey
+Name=SPTOTHHR
+Start=25
+Len=2
+
+[Item]
+Label=Number of women member in the main survey
+Name=SPTOTWM
+Start=27
+Len=2
+
+[Item]
+Label=Number of women member in the spotcheck survey
+Name=SPTOTWR
+Start=29
+Len=2
+
+[Item]
+Label=Number of men member in the main survey
+Name=SPTOTMM
+Start=31
+Len=2
+
+[Item]
+Label=Number of men member in the spotcheck survey
+Name=SPTOTMR
+Start=33
+Len=2
+
+[Item]
+Label=Number of children in the main survey
+Name=SPTOTCM
+Start=35
+Len=2
+
+[Item]
+Label=Number of children in the spotcheck survey
+Name=SPTOTCR
+Start=37
+Len=2
+
+[Item]
+Label=Electricity in the main survey
+Name=SPEM
+Start=39
+Len=1
+
+[Item]
+Label=Electricity in the spotcheck survey
+Name=SPER
+Start=40
+Len=1

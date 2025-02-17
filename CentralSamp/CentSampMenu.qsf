@@ -1,0 +1,68 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: Francais
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: MENU_DICT.WCLUSTER
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:16px;color:#ff0000;">Enter the number of the Cluster where you are going to work&nbsp;</span></p>
+          FR: |
+            <p><font color="#ff0000"><b>Entrez le numéro du cluster où vous allez travailler</b></font><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: MENU_DICT.WFINAL
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:16px;color:#ff0000;">Press the Enter key and select an option from the menu to be displayed&#160;</span></p>
+          FR: |
+            <p><font color="#ff0000"><b>Appuyez sur la touche "Entrée" et sélectionnez une option dans le menu qui sera affichee</b></font><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: MENU_DICT.WSUPER
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:16px;color:#ff0080;">Select the line of the supervisor responsible for the cluster to work with&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><font color="#ff0080"><b>Sélectionnez la ligne du superviseur responsable de la grappe avec lequel vous allez travailler</b></font><br></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+...

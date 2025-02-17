@@ -1,0 +1,47 @@
+﻿
+Language = FR
+{ common strings used by application }
+
+901 Le fichier de la grappe n'existe pas!
+902 La valeur de retour est %v.
+903 le numero de la grappe est: %v.
+904 Pas encore de de grappes!
+905 Le fichier %s est lance: %v.
+906 Le fichier %v a ete efface avec succes
+
+Language = EN
+
+EN ( "Veuillez choisir une grappe") Select a cluster
+EN ("Veuillez choisir la grappe!") Please, select one cluster!
+EN ( "No") No
+EN ( "Grappe") Cluster
+EN ( "SVP, veuillez choisir les grappes") Select several clusters
+EN ( "Effacer polygon d'une grappe") Delete the polygon for a cluster
+EN ( "SVP, veuillez choisir une option") Please select an option
+EN ( "SVP, veuillez choisir une action") Please select an action
+EN ( "Delimiter le polygone d'une grappe") Trace the limits of a cluster
+EN ( "Modifier le polygone d'une grappe") Modify polygon for a cluster
+EN ( "Retour au menu Carto") Back to Map Menu
+EN ( "SVP, veuillez choisir une option") Select an option
+EN ( "Veuillez choisir le numero de la grappe") Select cluster number
+EN ( "Affichage des limites de toutes les grappes sauvegardees" ) Show saved clusters polygons
+EN ( "Affichage des grappes selectionnees" ) Show only selected cluster
+EN ( "Afficher les donnees pour une seule grappe" ) Show geodata for one cluster
+EN ( "Afficher les donnees de toutes les grappes" ) Show all saved geodata
+EN ( "Carte hors ligne" ) Offline map
+EN ( "Normale" ) Normal
+EN ( "Choisir le type de carte" ) Select map type
+EN ( "Visualisation des donnees des grappes" ) Visualize geodata for clusters
+EN ( "Tracer ou modifier les limites d'une grappe" ) Trace or modify cluster's delimitation
+EN ( "Effacer les donnees d'une grappe" )Delete data for one cluster
+EN ( "Retour au menu principal" ) Back to main menu
+EN ( "Fermer la carte" ) Close the map
+EN ( "SVP, veuillez choisir un menu" ) Please select a menu
+EN ( "Selectionner plusieurs grappes" ) Please select several clusters
+
+901 File for this cluster doesn't exist!
+902 Back value for this function is %v.
+903 The cluster number is: %v.
+904 No clusters yet!
+905 The file %s has been launched: %v.
+906 The file %v has been successfuly deleted.

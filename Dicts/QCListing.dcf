@@ -1,0 +1,253 @@
+﻿[Dictionary]
+Version=CSPro 7.5
+Label=Dictionary for listing QC|Diccionario para listar hogares en el segmento
+Name=QCLISTING
+RecordTypeStart=5
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=5F8BA71927B4215AB275B1FD442F0F5CF829BD496378AAD0124903F0253C854B
+
+[Languages]
+EN=English
+ES=Español
+FR=French
+
+[Level]
+Label=Household listing|Listado de hogares
+Name=QCLISTING_QUEST
+
+[IdItems]
+
+[Item]
+Label=Cluster number|Numero de segmento
+Name=LQCLUST
+Start=1
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=General information record|Registro de informacion general
+Name=LQRECORD1
+RecordTypeValue='1'
+RecordLen=156
+
+[Item]
+Label=Region|Region
+Name=LQREGION
+Start=6
+Len=25
+DataType=Alpha
+
+[Item]
+Label=State|Departamento
+Name=LQSTATE
+Start=31
+Len=25
+DataType=Alpha
+
+[Item]
+Label=District|Distrito
+Name=LQDISTRICT
+Start=56
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Municipality/City|Municipio
+Name=LQCITY
+Start=81
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Enumeration area|Area de enumeracion
+Name=LQENUMER
+Start=106
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Selected segment numbers|Numero de segmentos usados
+Name=LQSEGNUM
+Start=131
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Selected segment numbersNumero de segmentos usados
+Name=LQSEGNUM_VS1
+Value=0;No segmentation used|No se ha usado segmentacion
+Value=1:50
+
+[Item]
+Label=Households in cluster or in selected segment|Hogares en el conglomerado o en el segmento seleccionado
+Name=LQSEGHH
+Start=133
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Total households in the cluster based on segmentation|Total de hogares basados en la segmentacion
+Name=LQTOTHH
+Start=137
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date when cluster listing took place|Fecha cuando se hizo el listado de hogares
+Name=LQDATE
+Start=141
+Len=8
+DataType=Numeric
+
+[Item]
+Label=Date when listing for cluster was closed|Fecha cuando se finalizo el listado en el segmento
+Name=LQDATEFIN
+Start=149
+Len=8
+DataType=Numeric
+
+[Record]
+Label=Household listing record|Registro de hogares listados
+Name=LQRECORD2
+RecordTypeValue='2'
+Required=No
+MaxRecords=300
+RecordLen=153
+
+[Item]
+Label=Is this a true household|Es un hogar verdadero|Type of structure
+Name=LQTRUEHH
+Start=6
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Is this a true household|Es un hogar verdadero|Type of structure
+Name=LQTRUEHH_VS1
+Value=1;Household|Hogar|Ménage
+Value=2;Other|Otro|Autre
+
+[Item]
+Label=Sequential household number|Numero de hogar secuencial
+Name=LQNUMBER
+Start=7
+Len=5
+DataType=Numeric
+
+[Item]
+Label=Structure number|Numero de estructura
+Name=LQSTRUCT
+Start=12
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Household within structure|Hogar dentro la estructura
+Name=LQHOUSEH
+Start=15
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Name of household head|Nombre del jefe del hogar
+Name=LQNAME
+Start=18
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Household address|Direccion del hogar
+Name=LQADDRESS
+Start=48
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Observations/Occupancy status|Observaciones/estado de ocupacion
+Name=LQNOTES
+Start=88
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Introduction to capture GPS coordinates|Introduccion a captura de coordenadas|Introduction pour GPS coordinateurs
+Name=LQINTGPS
+Start=128
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Introduction to capture GPS coordinates|Introduccion a captura de coordenadas|Introduction pour GPS coordinateurs
+Name=LQINTGPS_VS1
+Value=1;Copy coordinates from previous HH|Copiar coordenadas de hogar anterior|Copier les coordonnes du menage precedent
+Value=2;Take coordinates for the HH now|Tomar coordenadas para el hogar ahora|Prendre les coordonnes maintant
+Value=3;Do not take the HH coordinates now|No tomar coordenadas ahora|Ne pas prendre les coordonnes maintant
+Value=9;Replace existing HH coordinates|Reemplazar coordenadas existentes|Reprendre les  coordonnes pour le menage
+
+[Item]
+Label=Latitude in degrees|Latitude en grados
+Name=LQLATITUDE
+Start=129
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+
+[Item]
+Label=Longitude in degrees|Longitude en grados
+Name=LQLONGITUDE
+Start=139
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+
+[Item]
+Label=Type of structure||Usage of the structure
+Name=LQSTRUCTT
+Start=149
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Type of structure||Usage of the structure
+Name=LQSTRUCTT_VS1
+Value=1;Mainly residential                             ||Usage résidentiel principalement
+Value=2;School/university                              ||Etablissement scolaire/universitaire
+Value=3;Health facility                                ||Formation sanitaire
+Value=4;Shop/Commerce                                  ||Boutique/Commerce
+Value=5;Market                                         ||Marché
+Value=6;Church/Temple                                  ||Eglise/Temple
+Value=7;Mosq                                           ||Mosquée
+Value=8;Community home                                 ||Foyer/Maison communautaire
+Value=9;Structure for lodging (Inn/Hotel)              ||Etablissement d’hébergement (Auberge/Hôtel)
+Value=10;Other administrative building (to be specified)||Autre bâtiment administratif (à préciser)
+Value=11;Empty                                          ||Vide
+Value=12;Under construction                             ||En construction
+Value=96;Other (to be specified)                        ||Autre (à préciser)
+
+[Item]
+Label=Type of structure||Type of structure
+Name=LQSTYPE
+Start=151
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Type of structure||Usage of the structure
+Name=LQSTYPE_VS1
+Value=1;Isolated house (lodging)                 ||Maison (logement) isolé(e)
+Value=2;House with several lodgings              ||Maison à plusieurs logements
+Value=3;Building (with storeys) with apartments  ||Immeuble (à étages) d’appartements
+Value=4;Compound/Sare                            ||Concession/Saré
+
+[Item]
+Label=Household size
+Name=LQSIZE
+Start=152
+Len=2
+DataType=Numeric

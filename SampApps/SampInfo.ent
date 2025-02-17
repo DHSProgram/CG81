@@ -1,0 +1,32 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=SAMPINFO
+Name=SAMPINFO
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+PartialSave=Yes
+CAPI=Yes
+CenterForms=Yes
+CreateListing=No
+CreateLog=No
+DisplayCodesAlongsideLabels=Yes
+ShowFieldLabels=No
+ComboBoxShowOnlyDiscreteValues=Yes
+ParadataCollection=AllEvents
+ParadataDeviceStateMinutes=5
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\Interv.dcf
+[AppCode]
+File=.\SampInfo.apc
+[Message]
+File=.\SampInfo.mgf
+[Help]
+File=.\SampInfo.qsf
+[Forms]
+File=.\SampInfo.fmf
+[Dictionary Types]
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\SAMPINF.dcf,Input,.\SampInfo.fmf
+Dict-Type=..\Dicts\Interv.dcf,External

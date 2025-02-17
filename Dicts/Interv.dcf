@@ -1,0 +1,80 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Interviewer
+Name=INTERV
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=103F9E991B4B5D0E63662BB8AF0A61F5
+
+[Languages]
+EN=English
+FR=Francais
+
+[Level]
+Label=Interviewer level
+Name=INTERV_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Interviewer code
+Name=ICODE
+Start=1
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Interviewer record
+Name=INTERV_REC
+RecordTypeValue=''
+RecordLen=38
+
+[Item]
+Label=Interviewer's name
+Name=INAME
+Start=5
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Interviewer's team
+Name=ITEAM
+Start=35
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Fieldworker role
+Name=IROLE
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Fieldworker role
+Name=IROLE_VS1
+Value=1;Interviewer|Enqueteur/Enumerateur
+Value=2;Supervisor|Superviseur
+Value=3;Biomarker|Biomarqueur
+Value=4;QC team|Equipe Controle Qualite
+Value=5;Reserve
+
+[Item]
+Label=Interviewer's sex
+Name=ISEX
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Interviewer's sex
+Name=ISEX_VS1
+Value=1;Male|Homme
+Value=2;Female|Femme

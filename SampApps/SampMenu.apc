@@ -1,0 +1,671 @@
+﻿{ application SampMenu }
+PROC GLOBAL
+  numeric debug = 1;
+
+  FILE   piffile;                      { data entry PFF file for the application }
+//+  FILE   logFile;                      { used to read the log from IFSS }
+  FILE   TrackUpg;                     { file hnadler for upgrades }                         
+  FILE   SyncLog;                      { file to log connections and to keep upgrades applied to server }
+  
+  string  TheCommand, NewUpgrades;
+  string  CSPro;                        { CSPro executables directory }
+  string  AppName, dic;                 { AppNamelication name and dictionary name }
+  string  utility, wrkprj, wrkpii, fname, entry, wrkref, SampData, Upgrades, btupgr, sampQC; { directories }
+  string  backup;                       { SD card for backup }
+  string  heading, IntName, IntTeam;
+//+  string  logCode;                      { used by IFSS to retrieve the result of data transferred }
+//+  string  IFSSlogFile = ".\log.txt";    { name of log file for IFSS }
+  string  IFSSlogFile;    { name of log file for IFSS }
+  string  synclogfile;                  { used to store sync data for upload to server }
+  config  SyncCloudID_CD81, SyncCloudPIN_CD81;   { to handle access to SyncCloud }
+  
+  string sysver;     // number of last upgrade
+  list string listupgrades;
+  string upgrname = "upgdhs";                          { upgrade name for interviewers DHS }
+
+  alpha(4)   xintnum;                   { Interviewer }
+  alpha(2)   xteam;                     { team }
+  alpha(8)   xfilenum;                  { Number corresponding to data file names }
+  alpha(4)   xcluster;                  { Cluster number }
+  string     xstate, xlang;             { variables to read/write to state file to remember cluster, enumerator and last language used }
+
+  numeric i, action, x, SameSession;
+  numeric j, k, l, totintvw, steam, n, android;
+  numeric PrevUpgrade, CurrDate, TransDate;
+  numeric MoreThanOne;                  { to control no concurrent sessions are running }
+  numeric qcmax = 20; // number of structures randomly selected for qc !!!
+
+  numeric IFSS = 0;                       { If IFSS is being used }
+  numeric SyncCloud = 1;                  { If SyncCloud is being used }
+
+  array intvwcode(300);                 { to store interviewers - code }
+  array intvwrole(300);                 {                       - role }
+  array intvwteam(300);                 {                       - team }
+  array intvwsex(300);                  {                       - sex  }
+  array string intvwname(300);          {                       - name }
+  valueset fieldworkers;
+
+  function ReadIfssLog( string logFileName )
+    FILE logfile;
+    string logCode;                         { used by IFSS to retrieve the result of data transferred }
+    x = 0;
+    if FileExist(logFileName) then
+      setfile( logFile, logFileName );
+      open( logFile );
+      FileRead( logFile, logCode );
+      close( logFile) ;
+      if IFSS then
+        x = ToNumber(logCode);
+      elseif SyncCloud then
+        if pos("Execution successful", logCode) then
+          x = 1001
+        else
+          x = 0
+        endif;
+      endif;
+    endif;
+    ReadIfssLog = x;
+  end;
+
+  { setup basic user bar }
+  function userbase();
+    userbar( clear );
+    userbar( add button, "<",    do("PreviousField") );
+    userbar( add button, ">",    do("NextField") );
+    userbar( add button, ">>|",  do("AdvanceToEnd") );
+    userbar( add button, "Lang", do("ChangeLanguage") );
+  end;
+
+  { set value sets based on language }
+  function OnChangeLanguage()
+    SetLanguage( getlanguage() );
+    savesetting("Language", getlanguage());
+  end;
+
+  { since all applications are of data entry type the first lines are the same for all of them }
+  function InitPFF()
+    setfile( piffile, entry + "\" + AppName + ".pff", create );
+    FileWrite( piffile, "[Run Information]" );
+    FileWrite( piffile, "Version=CSPro 7.3" );
+    FileWrite( piffile, "AppNameType=Entry" );
+    FileWrite( piffile, "[DataEntryInit]" );
+    FileWrite( piffile, "OperatorID=" + xintnum );
+  end;
+
+  function runpffS();
+    ExecPff( AppName + ".pff", maximized, stop );
+  end;
+
+  { check version number available for next back-up.  It is a Round-robin system made of up to 10 versions  }
+  function backupn()
+    do n = 0 while n <= 9 & FileExist(backup + "\C" + xcluster + "_" + edit("9",n) + ".zip" )
+    enddo;
+    { open space for next back-up }
+    x = n + 1;
+    if n = 9 then x = 0 endif;
+    fname = backup + "\C" + xcluster + "_" + edit("9",x) + ".zip";
+    if FileExist( fname ) then
+      FileDelete( fname );
+    endif;
+    backupn = n;
+  end;
+
+  { finds the drive letter where the flash memory is located }
+  function searchdrive()
+    numeric found = 0;
+    do i = 1 while i <= 5 & !found
+      backup = "DEFGH"[i:1] + ":\SAMPDATA";
+      if DirExist( backup ) then
+        found = 1;
+      endif;
+    enddo;
+    searchdrive = found;
+  end;
+
+  { makes a backup as soon after leaving the data collection application }
+  { back-up HH listing, segmentation and GPS data }
+  function backupf()
+    numeric nextbkp;
+    { eliminates files not rquired }
+    FileDelete( SampData + "\?" + xfilenum + ".dat.lst" );
+    FileDelete( SampData + "\?" + xfilenum + ".dat.log" );
+
+    if !android & ( !searchdrive() | !DirExist(backup) ) then
+      // errmsg( 070, backup );
+      searchdrive();
+    endif;
+    if DirExist( backup ) then
+      { round robin next back-up number }
+      nextbkp = backupn();
+          if android then
+            compress( backup + "\C" + xcluster + "_" + edit("9",nextbkp) + ".zip", SampData +  "\*" + xfilenum + ".dat" );
+          else
+        TheCommand = Utility + "\UpgradePc\7za.exe a -w" + SampData + " -i!" + SampData +  "\*" + xfilenum + ".dat -pDHS" + xintnum + " " +
+                    backup + "\C" + xcluster + "_" + edit("9",nextbkp) + ".zip";
+        ExecSystem( TheCommand, maximized, wait );
+      endif;      
+      // errmsg( 072, backup );
+    endif;
+  end;
+
+  { prepares PIF file tp list households in a cluster }
+  function Segmentation()
+    InitPff();
+
+    FileWrite( piffile, "StartMode=ADD;" + xfilenum );
+    FileWrite( piffile, "Lock=Modify, Verify" );
+    FileWrite( piffile, "ShowInApplicationListing=Never" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + entry + "\" + AppName + ".ent" );
+    FileWrite( piffile, "Listing="     + SampData + "\S" + xfilenum + ".lst" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+    FileWrite( piffile, "SEGMENT_DCT=" + sampData + "\S" + xfilenum + ".dat" );
+    FileWrite( piffile, "HHLISTING="   + sampData + "\L" + xfilenum + ".dat" );
+
+    FileWrite( piffile, "[Parameters]" );
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + xfilenum );
+    FileWrite( piffile, "OnExit=.\SampMenu.pff" );
+    close( piffile );
+  end;
+
+  { prepares PIF file tp list households in a cluster }
+  function SampList(qcmode)
+    InitPff();
+
+    FileWrite( piffile, "StartMode=ADD;" + xfilenum );
+    FileWrite( piffile, "Lock=Modify, Verify" );
+    FileWrite( piffile, "ShowInApplicationListing=Never" );
+	FileWrite( piffile, "AutoAdd=Yes" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + entry + "\" + AppName + ".ent" );
+    if qcmode then
+      FileWrite( piffile, "InputData="   + SampData + "\Q" + xfilenum + ".dat" );
+    else
+      FileWrite( piffile, "InputData="   + SampData + "\L" + xfilenum + ".dat" );
+    endif;
+    FileWrite( piffile, "CommonStore=.\SampList.db" );
+
+    FileWrite( piffile, "Listing="     + SampData + "\L" + xfilenum + ".lst" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+    FileWrite( piffile, "Clusters="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "GPS_DCT="     + sampData + "\H" + xfilenum + ".dat" );
+    FileWrite( piffile, "SEGMENT_DCT=" + sampData + "\S" + xfilenum + ".dat" );
+//+    FileWrite( piffile, "QCListing=" + sampData + "\C" + xfilenum + ".dat" );
+
+    FileWrite( piffile, "[Parameters]" );
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + xfilenum + edit("9", qcmode) );
+    FileWrite( piffile, "OnExit=.\SampMenu.pff" );
+    close( piffile );
+  end;
+  { prepares PIF file for sample information data}
+  function SampInfo()
+    InitPff();
+
+    FileWrite( piffile, "StartMode=ADD;" + xfilenum );
+    FileWrite( piffile, "Lock=Modify, Verify" );
+	FileWrite( piffile, "AutoAdd=Yes" );
+	FileWrite( piffile, "ShowInApplicationListing=Never" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + AppName + ".ent" );
+    FileWrite( piffile, "InputData="   + SampData + "\LI" + xfilenum + ".dat" );
+    FileWrite( piffile, "CommonStore=.\SampList.db" );
+
+    FileWrite( piffile, "Listing="     + SampData + "\LI" + xfilenum + ".lst" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+    FileWrite( piffile, "Clusters="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "Interv=" + wrkref + "\Interv.dat" );
+
+    FileWrite( piffile, "[Parameters]" );
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + xfilenum + IntTeam);
+    FileWrite( piffile, "OnExit=.\SampMenu.pff" );
+    close( piffile );
+  end;
+
+
+  { prepares PIF file to capture GPS coordinates for the cluster }
+  function CaptureGPS()
+    InitPff();
+
+    FileWrite( piffile, "StartMode=ADD;" );
+    FileWrite( piffile, "Lock=Modify, Verify" );
+    FileWrite( piffile, "ShowInApplicationListing=Never" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + entry + "\" + AppName + ".ent" );
+    FileWrite( piffile, "Listing="    + SampData + "\G" + xfilenum + ".lst" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+    FileWrite( piffile, "GPS_DCT="     + SampData + "\G" + xfilenum + ".dat" );
+
+    FileWrite( piffile, "[Parameters]" );
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + xfilenum );
+    FileWrite( piffile, "OnExit=.\SampMenu.pff" );
+    close( piffile );
+  end;
+
+  { constructs PIF file to assign households to interviewers in the cluster }
+  function ListHH()
+    InitPFF();
+    FileWrite( piffile, "StartMode=ADD" );
+    FileWrite( piffile, "ShowInApplicationListing=Never" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + Entry + "\" + AppName + ".ent" );
+    FileWrite( piffile, "Listing="    + Entry + "\" + AppName + ".lst" );
+    FileWrite( piffile, "WriteData="  + Entry + "\" + AppName + ".wrt" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+    FileWrite( piffile, "Clusters="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "HHLISTING="   + SampData + "\L" + xfilenum + ".dat" );
+    FileWrite( piffile, "INTERV"     + sampData + "\G" + xfilenum + ".dat" );
+    FileWrite( piffile, "SEGMENT_DCT=" + sampData + "\S" + xfilenum + ".dat" );
+
+    FileWrite( piffile, "[Parameters]" );
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + xcluster );
+    FileWrite( piffile, "OnExit=.\SampMenu.pff" );
+    close( piffile );
+  end;
+
+
+
+
+
+
+  { function to force sending data to central office using IFSS }
+  function SendDataW()
+    if debug then
+      exit;
+    endif;
+    set trace;
+    x = 0;
+    if !connection() then
+      errmsg( 200 );
+    else
+      SystemApp Sync_App;
+      Sync_App.clear();
+      if android then
+        Sync_App.SetArgument("projectid", SyncCloudID_CD81);
+        Sync_App.SetArgument("username", "S"+xintnum );
+        Sync_App.SetArgument("password", SyncCloudPIN_CD81);
+//+        Sync_App.SetArgument("textlog", "testlog/log.txt");
+        Sync_App.SetArgument("textlog", "CD81L/log.txt");
+        Sync_App.SetArgument("csentry", "true");
+        x = Sync_App.exec("com.dec.syncclient");
+      else
+        Sync_App.SetArgument("ProjectId=", SyncCloudID_CD81);
+        Sync_App.SetArgument("Username=", "S"+xintnum );
+        Sync_App.SetArgument("Password=", SyncCloudPIN_CD81);
+        Sync_App.SetArgument("log=", IFSSlogFile);
+        x = Sync_App.exec(utility + "\SyncCloud\ScClient.exe");
+        trace("x=%d, %s", x, utility + "\SyncCloud\ScClient.exe");
+      endif;
+      
+      IFSSLogfile = PathName(CSEntry) + "/CD81L/log.txt";
+      if ReadIfssLog( IFSSLogfile ) = 1001 then
+        errmsg( 201 );
+        x = 1;
+      else
+        errmsg( 202 );
+        x = 0;
+      endif;
+    endif;
+    SendDataW = x;
+  end;
+
+  { check if there are upgrades available coming from CSWeb }
+  function CheckForUpgrades()
+    numeric NewUpgrade = 0;
+    PrevUpgrade = 0;    
+    string OneLine = "";
+    { get latest version of upgrades in the server }
+    setfile( TrackUpg, upgrades + "/FTPVersionCtrl.txt" );
+    FileRead( TrackUpg, OneLine );
+    do j = 1 while !Oneline[j:1] in "0":"9" & j <= length(Oneline) enddo;
+    do k = j while !Oneline[k:1] <> " " & j <= length(Oneline)     enddo;
+    NewUpgrade = tonumber( OneLine[j:k-1] );
+    close( TrackUpg );
+    { get latest version of upgrades in enumerators machine }
+    OneLine = "";
+    setfile( TrackUpg, Upgrades + "/SampVersionCtrl.txt" );  // if file doesn't exist it gets created
+        if !FileEmpty(TrackUpg) then
+      FileRead( TrackUpg, OneLine );
+      do j = 1 while !Oneline[j:1] in "0":"9" & j <= length(Oneline) enddo;
+      do k = j while !Oneline[k:1] <> " " & k <= length(Oneline)  enddo;
+      PrevUpgrade = tonumber( OneLine[j:k-1] );
+    endif;
+        if PrevUpgrade = default then PrevUpgrade = 0 endif;
+    close( TrackUpg );
+    if NewUpgrade > PrevUpgrade then
+      CheckForUpgrades = NewUpgrade;
+          TrackUpg.close();
+      FileDelete( TrackUpg ); 
+      SetFile( TrackUpg, Upgrades + "/SampVersionCtrl.txt", create );
+      FileWrite( TrackUpg, maketext("Version %02d", NewUpgrade) );
+      close( TrackUpg );
+    else          
+      CheckForUpgrades = 0
+    endif;
+  end;
+
+
+  { generates sync log file to be uploaded to server }
+  { writes : publishdate, date, time, previous upgrade number, current upgrade number }
+  function GenSyncLog( wprev, wupgrnum );
+    numeric zstamp, zdate, ztime;
+    setfile(SyncLog, SyncLogFile, append);
+    if android then
+      zstamp = publishdate();
+      zdate  = int(zstamp/1000000);
+      ztime  = int( (zstamp%1000000)/100 );
+    else
+      zstamp = filetime( pathname(application) + "SampMenu.apc" );
+      zdate  = sysdate("YYYYMMDD", zstamp);
+      ztime  = systime("HHMM", zstamp);
+    endif;  
+    FileWrite( SyncLog, maketext("Date=%08d Time=%04d Prev_Upgr=%02d N_Upgr=%02d Menu Date=%08d Time=%04d", 
+                   sysdate("YYYYMMDD"), systime("HHMM"), wprev, wupgrnum, zdate, ztime) );
+  end;
+
+  {****** upgrade functions ******} 
+  function string extract_UpgrNum (string str_path)
+    string str_fname = path.GetFileName(str_path);
+    numeric w_start, w_len;
+    // get upgrade number from the file name
+    // note this assumes the file name minus extension ends in n digits and there are no other numbers in the name
+    // 123456789
+    // upgdhs1.zip
+    w_start = length(upgrname) + 1;
+    w_len   = pos(".zip", str_fname) - w_start;
+    extract_UpgrNum = str_fname[w_start:w_len];
+  end;
+  { applying updates coming from cloud into supervisor's machine in directory upgrades }
+  {ANDROID}
+    function ApplyUpgr()
+      numeric cur_version = tonumber(sysver);
+      numeric new_version, ifok;
+      string fmask = upgrname + "*.zip";
+      string fpath, fname2;
+      if android  then
+        fpath = PathName(CSEntry) + "CD81L";
+      else
+        fpath = wrkprj;
+      endif;
+      // do dir list
+      ListUpgrades.clear();
+      DirList( ListUpgrades, upgrades, fmask);
+      ListUpgrades.sort();
+      // loop through files checking if they are new/changed
+      if length(ListUpgrades) > 0 then
+        do i = 1 while i <= length(ListUpgrades)  
+          fname  = ListUpgrades(i);
+          fname2 = btupgr + "/" + path.GetFileName(fname);
+          new_version = tonumber(extract_UpgrNum(fname));
+          if  new_version > cur_version then
+            ifok = decompress(fname, fpath); 
+            if ifok then
+              errmsg( 090, path.GetFileName(fname));
+              cur_version = new_version;
+              FileCopy(fname, fname2); // !!! copy any new upgrade files to upgrades folder for bt transfer
+            else
+              errmsg( 092, path.GetFileName(fname));
+              FileDelete(fname); // !!! delete the file that can't be extracted in case we need to download another copy
+            endif;
+          endif;
+        enddo;
+      endif;
+      if cur_version > tonumber(sysver) then
+        sysver = edit("999", cur_version);
+        SaveSetting( "Version", sysver );
+        errmsg(91);
+        stop(-1);
+      endif;
+    end;
+    
+
+  { check if a directory is present in project, if not, create it }
+  function ChkDir( string thisfile )
+    if !DirExist( thisfile ) then
+      DirCreate(thisfile);
+    endif;
+  end;
+  
+PROC FL_MENU
+PreProc
+  if debug then
+    // errmsg(  "warning: debug mode enabled!" );
+    trace(on, ".\debug.app", clear);
+//  trace(on);
+    set trace;
+  endif;
+  android = ( getos() = 20 ); 
+  CSPro   = PathName( CSPro );
+
+  wrkprj = "..";                               { work project }
+  wrkpii = wrkprj + "\Pii";                      { subdirecory to store data with PII }
+  { set up backup folder }
+  if !android  then
+    backup = "H:\DATA";                              { drive and directory to backup data }
+  else
+    // backup = PathName(CSEntry) + "BACKUP/DATA"; { !! use the external storage folder if available }
+    backup = "/storage/emulated/0/Documents/CSPRO_BACKUP"; { !! }
+    if !DirExist(backup) then
+      x = dircreate(backup);
+    endif;
+  endif;
+
+  setfont( ValueSets, "Arial", 18, bold );
+
+  { set up minimal user bar }
+  userbase();
+  userbar( show );
+  { set the language at the start of the program, defaulting to French }
+  setlanguage(loadsetting("Language", "FR"));
+  SameSession = tonumber(loadsetting("SampSession", "99"));
+//+  sysver      = loadsetting("Version", "5");
+  sysver      = loadsetting("Version", "1");
+  MoreThanOne = tonumber(loadsetting("Justone","0"));
+
+  entry    = wrkprj + "\SampApps";     { data entry programs }
+  wrkref   = wrkpii + "\Ref";          { reference directory for clusters, sample and teams files  }
+  SampData = wrkpii + "\SampData";     { store household listing files }
+  SampQC   = wrkpii + "\SampQC";     { store for QC review}
+
+  ChkDir(SampData);
+  ChkDir(SampQC);
+
+  if android then
+    utility   = wrkprj + "\Utility";    { all utilities used by the system }
+    upgrades  = wrkprj + "\Upgrades";  { place where upgrades for interviewers are stored by IFSS }
+    btupgr    = wrkprj + "\Upgrades";  { place where upgrades for interviewers are stored by IFSS }
+  else
+    utility   = "c:\CD81L\Utility";    { all utilities used by the system }
+    upgrades  = wrkprj + "\Upgrades";   { place where upgrades for interviewers are stored by IFSS }
+  endif;
+  { Check that there are not two concurrent sessions of CSPro loaded at the same time }
+  if !SameSession then
+    if MoreThanOne then
+      errmsg( 150 );
+      x = accept( tr("Reset"), tr("Yes"), tr("No") );
+      if x = 2 then stop(1) endif;
+    endif;
+  endif;        
+  SaveSetting( "Justone", "1" );
+
+PostProc
+  {PostProc of level 0 }
+  stop(1);
+
+PROC MENU_LEVEL
+PreProc
+
+  set behavior() exit on;
+
+  open( INTERV );
+  do j = 1 while loadcase( INTERV )    { load list of interviewers into memory }
+    intvwcode(j) = ICODE;
+    intvwname(j) = INAME;
+    intvwteam(j) = ITEAM;
+    intvwsex (j) = ISEX;
+    intvwrole(j) = IROLE;
+  enddo;
+  totintvw = j-1;
+  close( INTERV );
+  if samesession <> 99 then
+    advance to WFINAL;
+  endif;        
+
+  { check for any upgrades }
+  ApplyUpgr();
+PROC WINTRO
+
+PROC WINTNUM
+onfocus
+  fieldworkers.clear();
+  do j = 1 while j <= totintvw
+    fieldworkers.add( intvwname(j), intvwcode(j) );
+  enddo;
+  SetValueSet( $, fieldworkers );
+
+  $ = tonumber( loadsetting("Interviewer") );
+
+postproc
+  SaveSetting( "Interviewer", edit("9999",$) );
+  do j = 1 while j <= totintvw & intvwcode(j) <> $ enddo;
+  if j > totintvw then
+    reenter
+  else
+    IntName = intvwname(j);
+    IntTeam = edit ("99", intvwteam(j) );
+  endif;
+
+PROC WCLUSTER
+onfocus
+  $ = tonumber( loadsetting("Cluster") );
+
+postproc
+  if !loadcase( CLUSTERS, $ ) then
+    errmsg( 001, WCLUSTER );
+    reenter;
+  endif;
+  SaveSetting( "Cluster", edit("9999",$) );
+
+  WURBRUR    = GetValueLabel( YURBRUR );
+  WREGIONN   = YREGIONN;
+  WSTATEN    = YSTATEN;
+  WDISTRICTN = YDISTRICTN;
+  WCITYN     = YCITYN;
+
+  xcluster = edit( "9999", $ );                   { cluster number }
+  xintnum  = edit( "9999", WINTNUM );             { Interviewer }
+  xteam = xintnum[1:2];                           {+ team +}
+  xfilenum = xcluster + xintnum;                  { Number corresponding to data file names }
+  SyncLogFile = Upgrades + "/SyncLog" + xintnum + ".txt";
+  
+  { the system first checks for upgrades available to enumerators }
+  { check if connected to CSWeb }
+  numeric LastUpLoad = tonumber(loadsetting("LastUpLoad",0));
+  if LastUpload < sysdate("YYYYMMDD") then
+    if SendDataW() then
+      savesetting("LastUpLoad", edit("99999999",( sysdate("YYYYMMDD") )));
+      // restart Supervisor Menu to check for updates !!!
+      AppName = "../SUPMENU";
+      runpffS();
+    endif;
+  endif;
+  
+     
+  if SameSession = 2 then
+    Backupf();
+  endif;
+
+PROC WFINAL
+onfocus
+  WNUMBER  = notappl;
+  SaveSetting( "SampSession", "0" );
+  // lines below added so menu comes up automatically
+  $ = " ";
+  noinput;
+postproc
+  { set up string to display version numbers at top of menu } 
+  heading = tr("Cluster") + ": " + xcluster + " " + tr("Enumerator") + ": " + edit("9999",WINTNUM) + "-" + IntName + maketext(" Ver:%s ", sysver);
+  if getlanguage() = "EN" then
+    action = accept( heading,
+                     "1 Register household listing in cluster ",
+                     "2 Implement cluster segmentation        ",
+                     "3 Report of households listed in cluster",
+                     "--#--******--#--******---#--******--#--",
+                     "5 Change cluster number",
+                     "6 Transfer data to central office",
+                     "E Exit system (Esc)" );
+  elseif getlanguage() = "FR" then
+    action = accept( heading,
+                     "1 Enregister la liste de ménage dans la grappe",
+                     "2 Faire une segmentation de la grappe  ",
+                     "3 Afficher les ménages dénombrés dans la grappe",
+                     "-----******-----******------******--------",
+                     "5 Changer le numéro de grappe",
+                     "6 Transfer les données au bureau central",
+                     "S Sortir du système (Esc)" );
+  endif;
+
+  if !action | action = 7 then
+    SaveSetting( "Justone", "0" );
+    SaveSetting( "SampSession", "0" );
+    stop(1);       { quit the process }
+  endif;
+
+  SaveSetting( "SampSession", "1" );
+  if action = 1 then              { enter household listing to be included in sampling selection }
+    AppName = "SampList";
+    SampList(0);
+    SaveSetting( "SampSession", "2" );
+    runpffS();
+    	
+  elseif action = 2 then          { perform cluster segmentation }
+    AppName = "Segmentation";
+    Segmentation();
+    runpffS();
+  elseif action in 3 then         { list households collected by enumerators }
+    fname = SampData + "\L" + xfilenum + ".dat";
+    if FileExist(fname) & !FileEmpty(fname) then
+      AppName = "ListHH";
+      ListHH();        
+      runpffS();
+    else
+      errmsg( 085, xcluster );
+      reenter;
+    endif;
+
+  { change cluster number }
+  elseif action = 5 then
+    reenter WCLUSTER
+  elseif action = 6 then          { transfer data to central office }
+      // SendData_CSW();
+	  SendDataW();
+    { check for any upgrades }
+      ApplyUpgr();
+      reenter;
+		else
+    reenter
+  endif;

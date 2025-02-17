@@ -1,0 +1,82 @@
+﻿
+
+Function setColor()
+
+end;
+
+function savePointsGeojson(clusterNumber)
+string result;
+	forcase HHLISTING where LCLUSTER =clusterNumber do 
+  	PointVector = maketext ("%v",LCLUSTER)+ ".geojson" ;	
+	 //using X,Y stored in rosters.
+	 string MapShop=maketext ("%s",invoke ("MapStore"));
+	gjsonPointVector.open(MapShop+PointVector,create);
+	numeric long, lat;
+	gjsonPointVector.write('{ "type": "FeatureCollection",');
+	gjsonPointVector.write('"features": [');
+	 //each point in the roster
+	for  numeric i in HHLISTING.RECORD2 do
+		long = visualvalue(LLONGITUDE);
+		lat  = visualvalue(LLATITUDE);
+				if long <> notappl & lat <> notappl then
+						string text2Display =  maketext("(%v),%v/%v/%v",i, LCLUSTER, strip (LNAME), strip (LADDRESS));
+						string resultTemp= maketext ('{ "type": "Feature","geometry": {"type": "Point", "coordinates": [%v,%v,%v]},"properties": {"title": "%v","Nom": "%s","description": "%s", "popupContent": "%v","style": {"weight": 2,"color": "#999","opacity": 1,"fillColor": "#B0DE5C","fillOpacity": 0.8}}},', long, lat, 0,LCLUSTER,strip (LNAME),strip (LADDRESS), text2Display{, setColor()}); //setColor() for choosing dynamic display of colors
+			    result = result+resultTemp;       
+			endif;
+			enddo;
+if length(result) then
+		result = result[1:length(result) - 1];
+	endif;
+	gjsonPointVector.write("%s",result);
+	gjsonPointVector.write(']');
+	gjsonPointVector.write('}');
+	close(gjsonPointVector);
+		endfor;
+		end;
+
+
+function string toPointGeojson() 
+	
+	numeric long, lat;
+	string results;
+		 //using X,Y stored in rosters.
+	for numeric i in HHLISTING.RECORD2 do
+		long = visualvalue(LLONGITUDE);
+		lat  = visualvalue(LLATITUDE);
+		string text2Display =  maketext("%V/%V/%V", LCLUSTER, visualvalue(LSTRUCT), visualvalue(LHOUSEH));
+		if long <> notappl & lat <> notappl then
+		string resultTemp= maketext ('{ "type": "Feature","geometry": {"type": "Point", "coordinates": [%v,%v,%v]},"properties": {"title": "%v","Nom": "%s","description": "%s", "marker-symbol": "%v", "marker-size": "medium", "marker-color": "#0000ff", "stroke": "","stroke-opacity": 1.0,"stroke-width": 1.0, "fill": "","fill-opacity": 1.0 }},', long, lat, 0,LCLUSTER,LNAME,LADDRESS, setColor());
+		results = results+resultTemp;       
+			endif;
+					enddo;
+if length(results) then
+		results = results[1:length(results) - 1];
+	endif;
+string gjsonvector='{ "type": "FeatureCollection","features":[' + results + ']}';
+//errmsg("%s",gjsonvector);
+	exit gjsonvector; 
+		end;		
+		
+Function loadPointsVector()
+listingMap.clearGeometry();
+	geometry points;
+	points.load ("PointVector.geojson");
+				listingMap.addgeometry(points);
+				listingMap.zoomTo(points.minLatitude(), points.minLongitude(), 14);
+				listingMap.showCurrentLocation(true);
+				listingMap.show();
+end;
+
+function DisplayVectorLayersOnMap()
+string display_options = maketext('{ "width": "%d",' 
+                                  '  "height": %d,' 
+								   '  "showCloseButton": %d,' 
+								   '  "borderColor": "#FF0000" }', 
+                                  tonumber(getproperty("MaxDisplayWidth")) * 0.8, 
+                                  tonumber(getproperty("MaxDisplayHeight")) * 0.8, true); 
+								  htmldialog(".\assets\leaflet\index.html",
+inputData := maketext ("%s",invoke ("geojsonDataString")), // geojsonDataString()
+displayOptions := display_options);
+end;
+
+

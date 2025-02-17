@@ -1,0 +1,19 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=REPORTMISS
+Name=REPORTMISS
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Control.dcf
+File=..\Dicts\GPS.dcf
+[AppCode]
+File=.\ReportMiss.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\ReportMiss.mgf
+[Order]
+File=.\ReportMiss.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\HHListing.dcf,Input,.\ReportMiss.ord
+Dict-Type=..\Dicts\Control.dcf,External
+Dict-Type=..\Dicts\GPS.dcf,External

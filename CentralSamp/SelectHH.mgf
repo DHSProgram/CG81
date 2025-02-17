@@ -1,0 +1,32 @@
+﻿Language = ES
+{ Common strings used by the Application }
+  ES ( "Outstanding Issues for Household Selection - Date: %s" ) Mensajes Pendientes Como Resultado de la Seleccion de Hogares - Fecha: %s
+  ES ( "Cluster %04d not defined in sample file. Talk to survey manager to resolve the problem" ) Segmento %04d no esta definido en el archivo de la muestra. Hable con el director de la encuesta
+  ES ( "Households for cluster %04d were listed by two different enumerators" ) Hogares para el segmento %04d fueron listados por dos enumeradores
+  ES ( "A decision has to be made as to which one is correct" ) Se debe tomar la decision de cual es el correcto
+  ES ( "There are no valid GPS coordinates for cluster %04d" ) No hay coordenadas GPS validas para el segmento %04d
+  ES ( "GPS for cluster %04d were listed by two different enumerators" ) Las coordenadas GPS para el segmento %04d fueron listads por dos enumeradores diferentes
+  ES ( "households listed" ) hogares listados
+  ES ( "households listed and GPS coordinates" ) hogares listados y coordenadas GPS
+  ES ( "GPS coordinates" ) coordenadas GPS
+  ES ( "There were no %s available for cluster %04d" ) No existen %s disponibles para el segmento %04d
+  ES ( "Cluster %04d, Households available for selection %d less than required (urban=%d rural=%d)" ) Segmento %04d, Hogares disponibles para la seleccion %d menor que los requeridos (urbano=%d rural=%d)
+  ES ( "Cluster %04d, Number of households listed %d not within 30% of households in the sample file %d" ) Segmento %04d, Numero de hogares listados %d por fuera de un rango del 30% de los hogares en el archivo de la muestra 
+  ES ( "Households were already selected for cluster %04d" ) Hogares fueron ya seleccionados para el segmento %04d
+
+Language = FR
+  FR ( "Outstanding Issues for Household Selection - Date: %s" ) Problèmes non résolus pour la sélection des ménages - Date: %s
+  FR ( "Cluster %04d not defined in sample file. Talk to survey manager to resolve the problem" ) Grappe %04d non définie dans le fichier de l'échantillon. Adressez vous au coordonateur de l'enquête pour résoudre le problème
+  FR ( "Households for cluster %04d were listed by two different enumerators" ) Les ménages de la grappe %04d ont été listés par deux énumérateurs différents
+  FR ( "A decision has to be made as to which one is correct" ) Une décision doit être prise quant à savoir lequel est correct
+  FR ( "There are no valid GPS coordinates for cluster %04d" ) Il n'y a pas de coordonnées GPS valides pour grappe %04d
+  FR ( "GPS for cluster %04d were listed by two different enumerators" ) GPS pour la grappe %04d a été listé par deux enumerateurs différents
+  FR ( "households listed" ) ménages dénombrés
+  FR ( "households listed and GPS coordinates" )ménages denombrés et coordonnées GPS
+  FR ( "GPS coordinates" ) coordonnées GPS
+  FR ( "There were no %s available for cluster %04d" ) Il n'y avait pas de %s disponible pour grappe %04d
+  FR ( "Cluster %04d, Households available for selection %d less than required (urban=%d rural=%d)" ) Grappe %04d, Ménages disponibles pour sélection %d moins que requis (urbain=%d rural=%d)
+  FR ( "Cluster %04d, Number of households listed %d not within 30% of households in the sample file %d" ) Grappe %04d, Nombre de ménages listés %d pas dans les 30% des ménages du fichier échantillon %d
+  FR ( "Households were already selected for cluster %04d" ) Les ménages ont déjà été sélectionnés pour la grappe %04d  
+  
+  

@@ -1,0 +1,50 @@
+﻿Language = EN
+001 Cluster=%03d, not defined in sample file
+007 Cluster %d not defined in control file
+008 Cluster %d already closed
+009 Cluster %d hasn't arrvied therefore can't be closed
+010 Coordinates for cluster %d hasn't been captured, therefore cluster can't be closed
+011 Cluster %d hasn't arrived, therefore no operations can be done on it
+012 Cluster %d hasn't been reviewed, therefore can't be closed
+070 Make sure that flash memory is in computer to make a data BACKUP to directory %s
+071 Memory flash is not connected to the computer or directory %s doesn't exist.  Data will not be backed-up to flash memory
+072 Completed data backup from %s directory to %s directory
+080 Cluster %d sucessfully closed
+102 There are no data for cluster %d in directory %s for Cluster
+110 File: %s was deleted
+115 Press OK to display content of duplicated file(%d): %s for cluster %04d
+200 Please connect to the internet
+201 Connection to server successful
+202 Connection to server failed, please check your connection and try again
+300 Central office connected to: %s
+301 Central office can't connect to: %s
+
+Language = FR
+{ common strings used by application }
+  FR ( "LIST OF FILES DELETED BECAUSE THEY CAME EMPTY" ) LISTE DES FICHIERS SUPPRIMÉS PARCEQU'ILS ÉTAIENT VIDES
+  FR ( "LIST OF NEW CLUSTERS THAT ARRIVED FROM THE FIELD AS OF TODAY" ) LISTE DE NOUVELLES GRAPPES ARRIVÉES DU TERRAIN AUJOURD'HUI 
+  FR ( "Cluster:" ) Grappe:
+  FR ( "Arrived on:" ) Arrivée le :
+  FR ( "LIST OF CLUSTERS THAT ARRIVED PREVIOUSLY BUT WERE MODIFIED OR ENUMERATOR CHANGED" ) LISTE DES GRAPPES PRÉCÉDEMMENT ARRIVÉES MAIS MODIFIÉES OU CHANGEMENT D'ÉNUMÉRATEUR 
+  FR ( "Duplicated files are displayed and only one of them must be left" ) Les fichiers en boublons sont affichés et seul l'un d'eux doit être gardé
+  FR ( "and arrived previously on:" ) et arrivées précédement le :
+  FR ( "Previous Enumerator:" ) Ancien énumérateur :
+  FR ( "New Enumerator:" ) Nouveau énumérateur :
+  FR ( "Delete incorrect file" ) Supprimer le fichier incorrect
+  FR ( "LIST OF CLUSTERS CLOSED THAT CAME BACK AGAIN FROM THE FIELD" ) LISTE DES GRAPPES FERMÉES QUI SONT ENCORE EN?VOYÉES DU TERRAIN  
+  FR ( "but already closed on:" ) mais déjà fermées le :
+  FR ( "Select the correct file/enumerator for cluster:" ) Sélectionner le bon fichier/énumérateur pour la grappe :
+  FR ( "Will Decide Later" ) Décidera plus tard
+  FR ( "Clusters arrived from the field since last time the central office system was executed" ) Grappes arrivées du terrain depuis la dernière fois que le système du bureau central était exécuté
+  FR ( "Central Office Menu, Cluster:" ) Menu du Bureau Central :
+
+072 Sauvegarde de données effectuée du dossier %s au dossier %s 
+080 Grappe %d fermée avec succès
+102 Il n'y a pas de données pour la grappe %d dans le dossier %s pour grappe
+110 Fichier: %s est supprimé
+115 Cliquer OK pour afficher le contenu du fichier en doublon (%d): %s pour la grappe %04d
+200 Veuillez vous connecter à l'internet
+201 Connecté au serveur avec succès
+202 La connexion au serveur a échoué, veuillez vérifier votre connexion et essayer encore
+300 Bureau central connecté au : %s
+301 Le bureau central ne peut connecter au : %s

@@ -1,0 +1,25 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=UpdateMenu
+Name=UpdateMenu
+AppType=DataEntry
+ShowEndCaseDialog=No
+CAPI=Yes
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\Interv.dcf
+File=..\Dicts\Control.dcf
+[AppCode]
+File=.\UpdateMenu.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\CentSampMenu.mgf
+[Help]
+File=.\CentSampMenu.qsf
+[Forms]
+File=..\SampApps\Menu.fmf
+[Dictionary Types]
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\Interv.dcf,External
+Dict-Type=..\Dicts\Control.dcf,External
+Dict-Type=..\Dicts\Menu.dcf,Input,..\SampApps\Menu.fmf

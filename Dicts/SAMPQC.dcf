@@ -1,0 +1,286 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=SAMPQC
+Name=SAMPQC_DICT
+RecordTypeStart=5
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=F8E1D67C37512A313FC222D014E3E32366749A676B6C6096CCAD20B2989601E4
+
+[Languages]
+EN=English
+SP=Espanol
+FR=Français
+
+[Level]
+Label=SAMPQC Level
+Name=SAMPQC_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Cluster number
+Name=LQCLUST
+Start=1
+Len=4
+DataType=Numeric
+
+[Record]
+Label=SAMPQC Record
+Name=QCREC1
+RecordTypeValue='1'
+RecordLen=18
+
+[Item]
+Label=Auxiliary to display options|Auxiliar pour afficher les options
+Name=LQUXILIAR
+Start=6
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Auxiliary to display options|Auxiliar pour afficher les options
+Name=LQUXILIAR_VS1
+Value=1;Add a structure or a household|Ajouter une structure ou un ménage
+Value=2;Insert/delete structures or households|Insérer/supprimer des structures ou des ménages
+Value=9;Exit (cancel)|Sortir (annuler)
+
+[Item]
+Label=Total structures selected
+Name=LQTOTHH
+Start=7
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of QC review
+Name=LQDATE
+Start=11
+Len=8
+DataType=Numeric
+
+[Record]
+Label=SAMPQC Record
+Name=QCREC2
+RecordTypeValue='2'
+MaxRecords=30
+RecordLen=124
+
+[Item]
+Label=Introduction|Introduction
+Name=LQINTRO
+Start=6
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Introduction|Introduction
+Name=LQINTRO_VS1
+Value=1;Add new structure|Ajouter une nouvelle structure
+Value=2;Add a household to previous structure|Ajouter un ménage à une structure précédante
+Value=3;Delete current entry|Supprimer l'entrée courante
+Value=4;Insert a structure|Insérer une structure
+Value=5;Insert a household to previous structure|Insérer un ménage à une structure précédante
+Value=8;No more changes/temporary stop HH listing|Pas plus de changements/Arrêter temporairement de lister des ménages
+Value=9;Finalize listing for cluster|Fermer la grappe
+
+[Item]
+Label=Structure number
+Name=LQSTRUCT
+Start=7
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Sequential household number|Numero de hogar secuencial
+Name=LNUMBER
+Start=10
+Len=5
+DataType=Numeric
+
+[Item]
+Label=Household within structure|Hogar dentro la estructura
+Name=LHOUSEH
+Start=15
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Structures not listed around current structure
+Name=LQV2
+Start=18
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Structures not listed around current structure
+Name=LQV2_VS1
+Link=21927176
+Value=1;Yes||Oui
+Value=2;No||Non
+
+[Item]
+Label=Number of structures not listed`
+Name=LQV3
+Start=19
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Number of households in unlisted structure(s)
+Name=LQV4
+Start=21
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Unlisted households in selected structure
+Name=LQV5
+Start=24
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Unlisted households in selected structure
+Name=LQV5_VS1
+Link=21927176
+
+[Item]
+Label=Number of unlisted households in current structure
+Name=LQV6
+Start=25
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Household address
+Name=LQADDRESS
+Start=27
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Type of structure||Usage of the structure
+Name=LSTRUCTT
+Start=67
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Type of structure||Usage of the structure
+Name=LSTRUCTT_VS1
+Value=1;Mainly residential                             ||Usage résidentiel principalement
+Value=2;School/university                              ||Etablissement scolaire/universitaire
+Value=3;Health facility                                ||Formation sanitaire
+Value=4;Shop/Commerce                                  ||Boutique/Commerce
+Value=5;Market                                         ||Marché
+Value=6;Church/Temple                                  ||Eglise/Temple
+Value=7;Mosq                                           ||Mosquée
+Value=8;Community home                                 ||Foyer/Maison communautaire
+Value=9;Structure for lodging (Inn/Hotel)              ||Etablissement d’hébergement (Auberge/Hôtel)
+Value=10;Other administrative building (to be specified)||Autre bâtiment administratif (à préciser)
+Value=11;Empty                                          ||Vide
+Value=12;Under construction                             ||En construction
+Value=96;Other (to be specified)                        ||Autre (à préciser)
+
+[Item]
+Label=Structure type matches that from original listing
+Name=LQV10
+Start=69
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Structure type matches that from original listing
+Name=LQV10_VS1
+Link=21927176
+
+[Item]
+Label=Name of household head
+Name=LQNAME
+Start=70
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Household head matches that from original listing
+Name=LQV12
+Start=100
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Household head matches that from original listing
+Name=LQV12_VS1
+Link=21927176
+
+[Item]
+Label=Introduction to capture GPS coordinates|Introduction pour GPS coordinateurs
+Name=LQINTGPS
+Start=101
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Introduction to capture GPS coordinates|Introduction pour GPS coordinateurs
+Name=LQINTGPS_VS1
+Value=1;Copy coordinates from previous HH|Copier les coordonnes du menage precedent
+Value=2;Take coordinates for the HH now|Prendre les coordonnes maintant
+Value=3;Do not take the HH coordinates now|Ne pas prendre les coordonnes maintant
+Value=9;Replace existing HH coordinates|Reprendre les  coordonnes pour le menage
+
+[Item]
+Label=Latitude in degrees
+Name=LQLATIT
+Start=102
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+
+[Item]
+Label=Longitude in degrees
+Name=LQLONGIT
+Start=112
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+
+[Item]
+Label=GPS within 50 m of original measurement
+Name=LQV14
+Start=122
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=GPS within 50 m of original measurement
+Name=LQV14_VS1
+Link=21927176
+
+[Item]
+Label=EIPC/XXX/YYY/ZZ number written on household
+Name=LQV15
+Start=123
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=EIPC/XXX/YYY/ZZ number written on household
+Name=LQV15_VS1
+Link=21927176
+
+[Item]
+Label=EIPC/XXX/YYY/ZZ number matches QC 
+Name=LQV16
+Start=124
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=EIPC/XXX/YYY/ZZ number matches QC 
+Name=LQV16_VS1
+Link=21927176

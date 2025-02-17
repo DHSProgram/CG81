@@ -1,0 +1,45 @@
+﻿config CSWebURL, CSWebUser, CSWebPIN;
+string wrkPIIL = "C:\CD81L\PII"; 
+
+ { function to send data to central office using CSWeb FTP Modified by Gaylord }
+  function getData_CSW()
+  numeric DataOK = 0;
+    //errmsg( 500 );
+    string Arrived = wrkPIIL + "\Arrived";                
+  	if connection()=1 then
+		if SyncConnect( CSWeb, CSWebURL, CSWebUser, CSWebPIN ) then
+	SyncFile( GET, "SampData" +"*.*", wrkPIIL+"SampData");
+    SyncFile( GET, "SampData" + "\L????????.dat" + "*.*", Arrived);
+		   endif;
+      syncdisconnect();
+    endif;	
+	   if DataOK then 
+      errmsg( 501 );
+    else
+      errmsg( 502 );
+    endif;  
+  end;
+  {Global CSWeb sync function to be used by the enumerator listing applications}
+ function SyncData_CSW() {GV: I modified previous functions from Gaylord to include the sync of all files}
+ string Arrived = wrkPIIL + "\Arrived";
+   string SampData = wrkPIIL + "\SampData";
+   string RefData = wrkPIIL + "\Ref";
+   string SampQC = wrkPIIL + "\SampQC";
+    numeric DataOK = 0;
+    //errmsg( 500 );
+	
+    if SyncConnect( CSWeb, CSWebURL, CSWebUser, CSWebPIN ) then
+      if SyncFile( PUT, RefData + "\?" + "*.*", "RefData" ) then
+	     SyncFile( PUT, SampData + "\?" + "*.*", "SampData");
+	     SyncFile( PUT, Arrived + "\?" + "*.*", "Arrived");
+	     SyncFile( PUT, SampQC + "\?" + "*.*", "SampQC");
+              endif;
+      syncdisconnect();
+    endif;
+    if DataOK then 
+      errmsg( 501 );
+    else
+      errmsg( 502 );
+    endif;
+  end; 
+  

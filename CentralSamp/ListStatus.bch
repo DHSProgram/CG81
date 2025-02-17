@@ -1,0 +1,19 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=ListStatus
+Name=ListStatus
+AppType=Batch
+OperatorID=No
+ShowEndCaseDialog=No
+[External Dictionaries]
+File=..\Dicts\interv.dcf
+[AppCode]
+File=.\ListStatus.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\ListStatus.mgf
+[Order]
+File=.\ListStatus.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\CONTROL.dcf,Input,.\ListStatus.ord
+Dict-Type=..\Dicts\interv.dcf,External

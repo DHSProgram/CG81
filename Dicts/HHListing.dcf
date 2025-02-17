@@ -1,0 +1,394 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Dictionary to list households in a cluster
+Name=HHLISTING
+RecordTypeStart=9
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=E632B6415E06405DA5E8168884BB390B5A419E18C6882185B5FAFE57BEA8A918
+
+[Languages]
+EN=English
+FR=French
+
+[Level]
+Label=Household listing
+Name=HHLISTING_QUEST
+
+[IdItems]
+
+[Item]
+Label=Cluster number
+Name=LCLUSTER
+Start=1
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer code
+Name=LINTNUM
+Start=5
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=General information record|Information General
+Name=RECORD1
+RecordTypeValue='1'
+RecordLen=161
+
+[Item]
+Label=Auxiliary to display options|Auxiliar pour afficher les options
+Name=LAUXILIAR
+Start=10
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Auxiliary to display options|Auxiliar pour afficher les options
+Name=LAUXILIAR_VS1
+Value=1;Add a structure or a household|Ajouter une structure ou un ménage
+Value=2;Insert/delete structures or households|Insérer/supprimer des structures ou des ménages
+Value=9;Exit (cancel)|Sortir (annuler)
+
+[Item]
+Label=Province
+Name=LREGION
+Start=11
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Ville/Territoire|Base localite
+Name=LSTATE
+Start=36
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Commune/Secteur
+Name=LDISTRICT
+Start=61
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Quartier/Village|Municipalite/Ville
+Name=LCITY
+Start=86
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Enumeration area|Section Enumeration
+Name=LENUMER
+Start=111
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Selected segment numbers|Numero du segment selectionne
+Name=LSEGNUM
+Start=136
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Selected segment numbersNumero de segmentos usados|Numero du segment selectionne
+Name=LSEGNUM_VS1
+Value=0;No segmentation used
+Value=1:50
+
+[Item]
+Label=Households in cluster or in selected segment|Menage dans la grappe ou dans le segment  selectionne
+Name=LSEGHH
+Start=138
+Len=4
+DataType=Numeric
+
+[ValueSet]
+Label=Households in cluster or in selected segment
+Name=LSEGHH_VS1
+Value=0:500
+Value='    ';Not applicable
+Name=NOTAPPL,Special
+
+[Item]
+Label=Total households in the cluster based on segmentation|Total menage dans la grappe base sur la segmentation
+Name=LTOTHH
+Start=142
+Len=4
+DataType=Numeric
+
+[ValueSet]
+Label=Total households in the cluster based on segmentation
+Name=LTOTHH_VS1
+Value=0:9000
+Value='    ';Not applicable
+Name=NOTAPPL,Special
+
+[Item]
+Label=Date when cluster listing took place|Date de denombrement au niveau de la grappe
+Name=LDATE
+Start=146
+Len=8
+DataType=Numeric
+
+[Item]
+Label=Date when listing for cluster was closed|Date de fermeture de la grappe
+Name=LDATEFIN
+Start=154
+Len=8
+DataType=Numeric
+
+[Record]
+Label=Household listing record|Denombrement menage
+Name=RECORD2
+RecordTypeValue='2'
+Required=No
+MaxRecords=500
+RecordLen=201
+
+[Item]
+Label=Introduction|Introduction
+Name=LINTRO
+Start=10
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Introduction|Introduction
+Name=LINTRO_VS1
+Value=1;Add new structure|Ajouter une nouvelle structure
+Value=2;Add a household to previous structure|Ajouter un ménage dans la structure actuelle
+Value=3;Delete current entry|Supprimer l'entrée courante
+Value=4;Insert a structure|Insérer une structure
+Value=5;Insert a household to previous structure|Insérer un ménage à une structure précédante
+Value=8;No more changes/temporary stop HH listing|Plus de changements/ Arrêt temporaire de listing
+Value=9;Finalize listing for cluster|Finaliser le dénombrement de la grappe
+
+[Item]
+Label=Is this a true household|Type de structure
+Name=LTRUEHH
+Start=11
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Is this a true household|Type de structure
+Name=LTRUEHH_VS1
+Value=1;Household|Ménage
+Value=2;Other|Autre
+
+[Item]
+Label=Sequential household number|Numero Sequentiel du menage
+Name=LNUMBER
+Start=12
+Len=5
+DataType=Numeric
+
+[Item]
+Label=Structure number|Numero Structure
+Name=LSTRUCT
+Start=17
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Household within structure|Menage a l'interieure structure
+Name=LHOUSEH
+Start=20
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Name of household head|Prenom et Nom du chef de menage
+Name=LNAME
+Start=23
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Household address|Adresse du menage
+Name=LADDRESS
+Start=53
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Observations/Occupancy status|Observations/Occupation
+Name=LNOTES
+Start=103
+Len=50
+DataType=Alpha
+
+[Item]
+Label=More households|Menage supplementaire
+Name=LMORE
+Start=153
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=More households|Menage supplementaire
+Name=LMORE_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+
+[Item]
+Label=Household selected for the final sample|Menage selectionne pour l'echantillon final
+Name=LSELECT
+Start=154
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Household selected for the final sample|Menage selectionne pour l'echantillon final
+Name=LSELECT_VS1
+Value=0;No|Non
+Value=1;Yes|Oui
+
+[Item]
+Label=Introduction to capture GPS coordinates|Introduction pour GPS coordinateurs
+Name=LINTGPS
+Start=155
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Introduction to capture GPS coordinates|Introduction pour GPS coordinateurs
+Name=LINTGPS_VS1
+Value=1;Copy coordinates from previous HH|Copier les coordonnées du menage précédent
+Value=2;Take coordinates for the HH now|Prendre les coordonnées maintenant
+Value=3;Do not take the HH coordinates now|Ne pas prendre les coordonnées pour le moment
+Value=9;Replace existing HH coordinates|Remplacer les coordonnées existantes
+
+[Item]
+Label=Latitude in degrees|Latitude en degrees
+Name=LLATITUDE
+Start=156
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+
+[Item]
+Label=Pole north-south for latitude
+Name=LLATPOLE
+Start=166
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Pole north-south for latitude
+Name=LLATPOLE_VS1
+Value='N';North
+Value='S';South
+
+[Item]
+Label=Longitude in degrees|Longitude en degrees
+Name=LLONGITUDE
+Start=167
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+
+[Item]
+Label=East-west longitude
+Name=LLNGPOLE
+Start=177
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=East-west longitude
+Name=LLNGPOLE_VS1
+Value='E';East
+Value='W';West
+
+[Item]
+Label=Altitude in meters
+Name=LALTITUDE
+Start=178
+Len=5
+DataType=Numeric
+
+[Item]
+Label=Type of structure|Utilisation structure
+Name=LSTRUCTT
+Start=183
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Type of structure|Utilisation structure
+Name=LSTRUCTT_VS1
+Value=1;Mainly residential                             |Usage résidentiel principalement
+Value=2;School/university                              |Etablissement scolaire/universitaire
+Value=3;Health facility                                |Formation sanitaire
+Value=4;Shop/Commerce                                  |Boutique/Commerce
+Value=5;Market                                         |Marché
+Value=6;Church/Temple                                  |Eglise/Temple
+Value=7;Mosq                                           |Mosquée
+Value=8;Community home                                 |Foyer/Maison communautaire
+Value=9;Structure for lodging (Inn/Hotel)              |Etablissement d’hébergement (Auberge/Hôtel)
+Value=10;Other administrative building (to be specified)|Autre bâtiment administratif (à préciser)
+Value=11;Empty                                          |Vide
+Value=12;Under construction                             |En construction
+Value=96;Other (to be specified)                        |Autre (à préciser)
+
+
+
+[Item]
+Label=Type of structure|Type de structure
+Name=LSTYPE
+Start=185
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Type of structure|Type de structure
+Name=LSTYPE_VS1
+Value=1;Isolated house (lodging)                 |Maison (logement) isolé(e)
+Value=2;House with several lodgings              |Maison à plusieurs logements
+Value=3;Building (with storeys) with apartments  |Immeuble (à étages) d’appartements
+Value=4;Compound/Sare                            |Concession/Saré
+
+[Item]
+Label=Household size|Taille menage
+Name=LSIZE
+Start=186
+Len=2
+DataType=Numeric
+
+[Item]
+Label=LCONTACT|Numero de telephone 1
+Name=LPHONE1
+Start=188
+Len=10
+DataType=Alpha
+
+[Item]
+Label=Occupation status|Occupation
+Name=LOCCUP
+Start=198
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Occupation status|Occupation
+Name=LOCCUP_VS1
+Value=1;Occupied|Occupé
+Value=2;Not occupied|Pas occupé
+
+[Item]
+Label=Satellites/quality of GPS
+Name=LACCURACY
+Start=199
+Len=3
+DataType=Numeric

@@ -1,0 +1,788 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: French
+  - name: ES
+    label: Español
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: HHLISTING.LAUXILIAR
+    conditions:
+      - questionText:
+          EN: |
+            <div class="OutlineElement Ltr SCXW62661812 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; clear: both; cursor: text; overflow: visible; position: relative; direction: ltr; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px; background-color: rgb(255, 255, 255);"><p class="Paragraph SCXW62661812 BCX8" paraid="1197611630" paraeid="{290b9806-bc08-4858-8647-775940fa5155}{170}" style="text-align: left; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; overflow-wrap: break-word; white-space-collapse: preserve; vertical-align: baseline; font-kerning: none; background-color: transparent;"><font color="#0000ff"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW62661812 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-weight: bold; font-variant-ligatures: none !important;">Troisième Enquête Démographique et de Santé au Congo</span><span class="EOP SCXW62661812 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW62661812 BCX8" style="background-color: transparent; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-weight: bold; font-variant-ligatures: none !important;">(EDS-III-Congo 2025)</span><span class="EOP SCXW62661812 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="background-color: transparent; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span></font></p></div><p><span style="font-weight:bold;font-size:21px;color:#000000;">Cluster: <span style="font-weight:normal;color:#ff0000;">~~LCLUSTER~~</span> Enumerator: <span style="font-weight:normal;color:#ff0000;">~~LINTNUM~~</span> Region: <span style="font-weight:normal;color:#ff0000;">~~LREGION~~</span> &nbsp;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">District: <span style="font-weight:normal;color:#ff0000;">~~LDISTRICT~~</span> Base locality: <span style="font-weight:normal;color:#ff0000;">~~LSTATE~~</span> City: <span style="font-weight:normal;color:#ff0000;">~~LCITY~~&nbsp;</span></span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">Num. Segment: <span style="font-weight:normal;color:#ff0000;">~~LSEGNUM~~</span> Households: <span style="font-weight:normal;color:#ff0000;">~~LSEGHH~~</span> Closed:<span style="font-weight:normal;color:#ff0000;">~~LDATEFIN~~</span> &nbsp;</span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">Select an option depending on the operation you want to perform.&nbsp;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">1-To include additional households  2-To delete or insert structures or households or just to browse  9-Do nothing&nbsp;</span></p>
+            <p>&nbsp;</p>
+          ES: |
+            <p><span style="font-size:21px;color:#000000;">Seleccione una opcion dependiendo de la accion a tomar&#160;</span></p>
+            <p><span style="font-size:21px;color:#ff0000;">1-Incluir hogares adicionales  2-Eliminar insertar hogares o viviendas  9-Salir sin hacer nada&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-weight: bold; text-decoration: underline; font-size: 18px; color: rgb(0, 0, 0);"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW62661812 BCX8" style="color: rgb(0, 0, 255); white-space-collapse: preserve; background-color: rgb(255, 255, 255); -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !important;">Troisième Enquête Démographique et de Santé au Congo</span><span class="EOP SCXW62661812 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="color: rgb(0, 0, 255); font-weight: 400; white-space-collapse: preserve; background-color: rgb(255, 255, 255); -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW62661812 BCX8" style="color: rgb(0, 0, 255); white-space-collapse: preserve; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !important;">(EDS-III-Congo 2025)</span><span class="EOP SCXW62661812 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="color: rgb(0, 0, 255); font-weight: 400; white-space-collapse: preserve; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span></span></p><p><span style="font-size: 18px; font-weight: bold; text-decoration-line: underline;">Ménages dénombrés dans la Grappe&nbsp;</span></p><span style="font-size: 18px;">
+            </span><p><span style="font-size: 18px; font-weight: bold;">Grappe: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LCLUSTER~~</span><span style="font-size: 18px; font-weight: bold;"> Enumérator: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LINTNUM~~</span><span style="font-size: 18px; font-weight: bold;"> Province: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LREGION~~</span><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;</span></p><span style="font-size: 18px;">
+            </span><p><span style="font-weight:bold;font-size:21px;color:#000000;"><span style="font-size: 18px;">Ville/Territoire: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSTATE~~</span><span style="font-size: 18px;"> Commune/Secteur: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LDISTRICT~~</span><span style="font-size: 18px;"> Quartier/Village: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LCITY~~&nbsp;</span></span></p><span style="font-size: 18px;">
+            </span><p><span style="font-weight:bold;font-size:21px;color:#000000;"><span style="font-size: 18px;">Num. Segment: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSEGNUM~~</span><span style="font-size: 18px;"> Ménages: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSEGHH~~</span><span style="font-size: 18px;"> Fermée:</span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LDATEFIN~~</span><span style="font-size: 18px;"> &nbsp;</span></span></p><span style="font-size: 18px;">
+            </span><p><b><span style="font-size: 18px;">&nbsp;</span><span style="font-size: 18px;"><font color="#0000ff">Sélectionnez une option selon l'opération que vous voulez effectuer.&nbsp;</font></span></b></p><span style="font-size: 18px;">
+            </span><p><span style="font-size: 18px; color: rgb(255, 0, 0);">1-Ajouter des ménages supplémetaires 2-Supprimer, insérer des structures ou des ménages ou parcourir seulement 9-Ne rien faire&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LINTRO
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Select an option depending on the operation you want to perform.&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            <p><span style="font-size:21px;color:#000000;">Seleccione una opcion dependiendo de la accion a tomar&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-weight: bold; font-size: 18px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 18px;">
+            </span><p><span style="font-size: 18px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 18px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 18px;">
+            </span><p><span style="font-size: 18px; color: rgb(0, 0, 0);">Sélectionnez une option selon l'opération que vous voulez effectuer.&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LTRUEHH
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:16px;color:#000000;">Is this a residential unit? <span style="color:#ff0000;">(include units with shops where the family or individuals live in the same dwelling)&#160;</span></span></p>
+          ES: |
+            <p><span style="font-size:21px;color:#000000;">Es esta una unidad residencial? <span style="color:#ff0000;">(Incluya unidades donde hay almacenes/talleres, etc pero la familia o el individuo habita en la misma unidad)&#160;</span></span></p>
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><p><span style="font-size: 21px;">Est-ce une unité résidentielle ? (inclure les unités avec commerces où la famille ou les individus vivent dans le même logement)</span><span style="font-size: 21px;">&nbsp;</span>&nbsp;<br></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LADDRESS
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Enter the address&#160;</span></p>
+          ES: |
+            <p><span style="font-size:21px;color:#000000;">Ingrese la direccion donde esta localizada la vivienda ~~wstruct~~ y la unidad ~~whouseh~~&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-weight: bold; font-size: 18px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 18px;">
+            </span><p><span style="font-weight: bold; font-size: 18px; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 18px;">
+            </span><p><span style="font-size: 18px; color: rgb(0, 0, 0);">Entrez l’adresse du ménage&nbsp;&nbsp;&nbsp;</span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LNAME
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Enter the name of the head of the household&#160;</span></p>
+          ES: |
+            <p><span style="font-size:21px;color:#000000;">Ingrese el nombre del jefe del hogar que habita en la direccion: ~~LADDRESS~~&#160;</span></p>
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Entrez le nom du chef de ménage&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LINTGPS
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#000000;">Select an option depending on the action to be taken: 1-To copy the coordinates from the previous household.  2-Capture the household GPS coordinates now.  3-Do not take the coordinates now.  9-Option used to replace the coordinates of a household that already have them&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 18px; color: rgb(0, 0, 0);">Sélectionnez une option en fonction de l'action à faire : 1-Pour copier les coordonnées du ménage précédent. 2-Pour prendre les coordonnées GPS du  maintenant. 3-Pour ne prendre pas les coordonnées maintenant. 9-Option utilisée pour remplacer les coordonnées d'un ménage qui les possède déjà&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LNOTES
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Register any observation pretaining the occupancy <span style="color:#ff0000;">(press enter if no comments)&#160;</span></span></p>
+          ES: |
+            <p><span style="font-size:21px;color:#000000;">Registre cualquier observacion relacionada con la ocupacion del hogar <span style="color:#ff0000;">(oprima enter si no desea anotar nada)&#160;</span></span></p>
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size:21px;color:#000000;"><span style="font-size: 16px;">Entregistrez n' importe quelle observation relative à l' occupation du ménage&nbsp;&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px;">(Appuyez sur " Enter"  s'il n' y a pas de commentaires)&nbsp;</span></span></p>
+            <p>&nbsp;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LPHONE1
+    conditions:
+      - questionText:
+          EN: |
+            <p>Il y a t-il un numero de telephone par lequel on peut joindre le menage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b><br></p><p></p>
+          FR: |
+            <p>Il y a t-il un numero de téléphone par lequel on peut joindre le ménage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b><br></p><p></p>
+  - name: HHLISTING.LPHONE2
+    conditions:
+      - questionText:
+          EN: |
+            <p>Il y a t-il un autre numero de telephone par lequel on peut joindre le menage?</p><p></p><p><font color="#0000ff"><b>(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b></font></p><p></p>
+          FR: |
+            <p>Il y a t-il un autre numéro de téléphone par lequel on peut joindre le ménage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b><br></p><p></p>
+  - name: GPS_DCT.GINTRO
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;">Enter 1 to capture the coordinates for reading No. ~~GCOLUMN~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#ff0000;">If device couldn&apos;t acquire any signals enter 3 to return to household listing&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;">Entrez 1 pour capturer les coordonnées pour le lecture No. ~~GCOLUMN~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#ff0000;">Si l&apos;appareil n&apos;a pu acquérir aucun signal, saisissez 3 pour revenir au denombrement de menages&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: BLOCK_PHONE
+    conditions:
+      - questionText:
+          FR: |
+            <p>Il y a t-il un numero de telephone par lequel on peut joindre le menage?</p><p><p><font color="#0000ff"><b>(ENTRER 0 SI LE NUMERO N'EST PAS DISPONIBLE)</b></font></p><p><br></p></p>
+  - name: HHLISTING.LCONTACT
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;">Is there any number through which one can contact the household ? &#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Y a-t-il un numéro par lequel on peut joindre le ménage ?&#160;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LCONTACT1
+    conditions:
+      - questionText:
+          FR: |
+            <b>1ere partie du numero de telephone (En general le code pays)</b><p></p>
+  - name: HHLISTING.LCONTACT2
+    conditions:
+      - questionText:
+          FR: |
+            <b>2nde partie du numero de telephone (En general code de )</b><p></p>
+  - name: HHLISTING.LCONTACT3
+    conditions:
+      - questionText:
+          FR: |
+            <b>3eme partie du numero de telephone&nbsp;</b><p></p>
+  - name: HHLISTING.LEIPC
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ &#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Write the following text on a visible place in the unit/household:&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">~~weipc~~&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ &#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Écrivez le texte suivant à un endroit visible de l&apos;unité/du ménage&#160;:&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">~~weipc~~&#160;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LOCCUP
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Observation/State of occupancy of the household&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Observation/ état d’occupation du ménage&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV12
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V12. Is the name recorded the same as the one recorded by the enumeration agents?&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Name recorded by agents:<span style="color:#ff0000;">&quot;~~txtcompare~~&quot;&#160;</span></span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Name recorded during QC review:&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">&quot;~~LNAME~~&quot;&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">V12. Le nom enregistré est-il le même que celui enregistré par les agents&nbsp;?&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">Nom enregistré par les agents:&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(255, 0, 0); font-family: Arial, sans-serif;">"~~txtcompare~~"&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">Nom enregistré pendant QC: &nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">"~~LNAME~~"&nbsp;</span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;font-family:'Arial';"> &nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV14
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V14. Les coordonnées enregistrées sont-elles proches de celles enregistrées par les agents&#160;?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V14. Les coordonnées enregistrées sont-elles proches de celles enregistrées par les agents&#160;?&#160;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV15
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V15. For ~~LHOUSEH~~ household in the selected structure, is the EIPC/XXX/YYY/ZZ number written clearly and written in a location that is visible?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V15. Pour ménage ~~LHOUSEH~~ dans la structure sélectionnée, le numéro EIPC/XXX/YYY/ZZ est-il lisible et inscrit à un endroit visible&#160;?&#160;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV16
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V16. For household ~~LHOUSEH~~ in the selected structure, is the number EIPC/XXX/YYY/ZZ recorded by the agent in the listing form the same as that found during the check (~~weipc~~)?&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V16. Pour ménage ~~LHOUSEH~~ dans la structure sélectionnée, le numéro EIPC/XXX/YYY/ZZ enregistrée par l&rsquo;agent dans la fiche de dénombrement est-il le même que celui trouvé pendant le contrôle&#160;(~~weipc~~)?&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Structure selectionnée: ~~wstruct~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V2. Identify the selected structure and follow one by one all the roads that start from this structure (left, right, front, back, etc.) Are there unlisted structures around this structure ?&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Structure selectionnée: ~~wstruct~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0); font-family: Arial;">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;"><span style="font-size: 16px;">V2. Identifier la structure sélectionnée et suivez une à une toutes les routes qui partent de cette structure (à gauche, à droite, devant, derrière, etc) Y’a-t-il des structures non dénombrées autour de cette structure</span> &nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Structure selectionnée: ~~wstruct~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;font-family:'Arial';">~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V3. If yes, how many unlisted structures are there ?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Structure selectionnée: ~~wstruct~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">V3. Si oui, quel est le nombre de ces structures non dénombrées&nbsp;?&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV4
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Structure selectionnée: ~~wstruct~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V4. If yes, how many households are within these structures ?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Structure selectionnée: ~~wstruct~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0); font-family: Arial;">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">V4. Si oui, combien y a-t-il de ménages&nbsp;dans ces structures ?&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV5
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Structure selectionnée: ~~wstruct~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;font-family:'Arial';">~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V5. Are there any households in the selected structure that have not been listed?&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Structure selectionnée: ~~wstruct~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">V5. Y’a-t-il s des ménages dans la structure sélectionnée qui n’ont pas été dénombrés&nbsp;?&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV6
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Structure selectionnée: ~~wstruct~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;font-family:'Arial';">~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">V6. If yes, how many households were not listed ?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Structure selectionnée: ~~wstruct~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0); font-family: Arial;">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">V6. Si oui, quel est le nombre de ces ménages non dénombrés &nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LQV8
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is the description close to that made by the enumeration agents?&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Description made by the agents:<span style="color:#ff0000;">&quot;~~txtcompare~~&quot;&#160;</span></span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">QC Description:&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">&quot;~~LADDRESS~~&quot;&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">La description faite est-elle proche de celle faite par les agents&nbsp;?&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">Description faite par les agents:&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(255, 0, 0); font-family: Arial, sans-serif;">"~~txtcompare~~"&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 16px;">Description QC:&nbsp;&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial, sans-serif;">"~~LADDRESS~~"&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LSIZE
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-size:21px;color:#000000;">Household size&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Taille du ménage&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LSTRUCTT
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Usage of the structure&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Utilisation de la structure&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: HHLISTING.LSTYPE
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
+            <p><span style="font-size:21px;color:#000000;">Type of structure&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
+            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Type de structure&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: LCONTACT_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Is there any number through which one can contact the household ?&#160;</span></p>
+            <p><span style="font-size:16px;color:#0000ff;font-family:'Arial';">ENTER 00 IF NUMBER NOT AVAILABLE&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;font-family:'Arial', sans-serif;">Y a-t-il un numéro par lequel on peut joindre le ménage ?&#160;</span></p>
+            <p><span style="font-size:16px;color:#0000ff;font-family:'Arial';">ENTRER 00 SI NUMÉRO NON DISPONIBLE&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: SEGMENT_DCT.SAUXILIAR
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;">Do you want to select the segment to be used for cluster ~~SCLUSTER~~?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;">Voulez-vous tirer un segment pour procéder le dénombrement pour la grappe ~~SCLUSTER~~?&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: SEGMENT_DCT.SFINAL
+    conditions:
+      - logic: SAUXILIAR <> 1
+        questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Press any key to go back to the main menu&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selected&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Households in selected segment&#160;&#160;&#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Total households in cluster&#160;&#160;&#160;&#160;&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Appuer une touche pour continuer&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selectioné&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Nombre de ménages ce segment&#160;&#160;&#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Nombre des ménages dans la grappe&#160;&#160;&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+      - logic: SAUXILIAR = 1
+        questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Please take note of the selected segment by the system and make sure that households will be listed for the selected segment&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Press any key to go back to the main menu&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selected&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Households in selected segment&#160;&#160;&#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Total households in cluster&#160;&#160;&#160;&#160;&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Veuillez noter le segment tiré par le programme et assurer que le dénombrment soit fait dans le segment tiré&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Appuyer sur une touche pour revenir au menu principale&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selectioné&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Nombre de ménages ce segment&#160;&#160;&#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Nombre des ménages dans la grappe&#160;&#160;&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: SEGMENT_DCT.SHHNUMB
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;">Enter the number of households in the segment&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;">Entrer le nombre de ménages ce segment.&#160;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: SEGMENT_DCT.SMORE
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;">Are there any other segments in the cluster?&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;">Y a-t-il d&apos; autres segments dans la grappe?&#160;</span></p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: SEGMENT_DCT.SOPTION
+    conditions:
+      - logic: segmendone <> 1
+        questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;">Please select an option.&#160;</span></p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;">Veuillez prendre une option.&#160;</span></p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+      - logic: segmendone = 1
+        questionText:
+          EN: |
+            <p><span style="font-size:21px;color:#000000;">Segment selection for this cluster was already done.  Changing the number of households may change the selection of the segment for the cluster.  Please select an option.&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selected&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Households in selected segment&#160;&#160;&#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Total households in cluster&#160;&#160;&#160;&#160;&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            <p><span style="font-size:21px;color:#000000;">Tirage de segment est déjà fait dans cette grappe .  Changer le nombre de ménages dans un segment peut changer le segment tiré. Veuillez prendre une option.&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selectioné&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Nombre de ménages ce segment&#160;&#160;&#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Nombre des ménages dans la grappe&#160;&#160;&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+            <p>&#160;</p>
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+  - name: SEGMENT_DCT.SSEGHH
+    conditions:
+      - logic: SAUXILIAR = 1
+        questionText:
+          EN: |
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Please take note of the selected segment by the system and make sure that households will be listed for the selected segment&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Press any key to go back to the main menu&#160;</span></p>
+            <p>&#160;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Segment selected&#160;&#160;&#160;&#160;&#160;&#160;: ~~SSEGNUM~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Households in segment   &#160;&#160;: ~~SHHNUMB(SSEGNUM)~~&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#0000ff;">Total households in cluster&#160;&#160;: ~~STOTHH~~&#160;</span></p>
+            <p>&#160;</p>
+          ES: |
+            
+          FR: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+...

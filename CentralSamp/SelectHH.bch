@@ -1,0 +1,23 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=SELECTHH
+Name=SELECTHH
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\SampSel.dcf
+File=..\Dicts\GPS.dcf
+File=..\Dicts\Segment.dcf
+[AppCode]
+File=.\SelectHH.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\SelectHH.mgf
+[Order]
+File=.\SelectHH.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\HHListing.dcf,Input,.\SelectHH.ord
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\SampSel.dcf,External
+Dict-Type=..\Dicts\GPS.dcf,External
+Dict-Type=..\Dicts\Segment.dcf,External

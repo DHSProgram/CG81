@@ -1,0 +1,182 @@
+﻿PROC GLOBAL
+
+  numeric debug = 1;
+  numeric xcluster, xintnum, xteam, n, i, j, nentry, pct30, entries, selseg, hhsegment, totintvw;
+  valueset fieldworkers;  // modify valuesets fo LINTRO
+  numeric android;
+
+  array intvwcode(300);                    { to store interviewers - code }
+  array intvwrole(300);                    {                       - role }
+  array string intvwname(300);             {                       - name }
+
+  { setup basic user bar }
+  function userbase();
+    userbar( clear );
+    userbar( add button, "<",    do("PreviousField") );
+    userbar( add button, ">",    do("NextField") );
+    userbar( add button, ">>|",  do("AdvanceToEnd") );
+    userbar( add button, "Note", do("EditNote") );
+    userbar( add button, "Lang", do("ChangeLanguage") );
+end;
+
+  { set value sets based on language }
+  function OnChangeLanguage()
+    SetLanguage( getlanguage() );
+    savesetting("Language", getlanguage());
+ end;
+ function endmess( );
+   numeric zz = 2;
+   { Returns true if response is REVIEW }
+   if demode() = add then
+     zz = accept( tr("End of questionnaire, do you want to:"),
+                 tr("Review Interview"),
+                 tr("Finalize Interview") );
+   endif;
+   endmess = ( zz = 1 );
+ end;
+  { function to sort alpha fields necessary when entering }
+  { values out of order using the keyboard                }
+  function string SortAlpha(string alphavar)
+    string alphatmp = " ";
+	alpha(1) onechar, tmpchar;
+	numeric k, z = 0;
+	{ remove blanks that may be present in the string }
+	do k = 1 while k <= length(strip(alphavar))
+	  if alphavar[k:1] <> " " then
+	    z = z + 1;
+		alphatmp[z:1] = alphavar[k:1];
+	  endif;
+    enddo;	
+	{ now sort the string }
+	alphavar = alphatmp;
+	do k = 1 while k <= length(strip(alphavar))
+	  onechar = alphavar[k:1];
+      do z = k+1 while z <= length(strip(alphavar))
+        if onechar > alphavar[z:1] then
+          tmpchar = onechar;
+          onechar = alphavar[z:1];
+          alphavar[z:1] = tmpchar;
+        endif;
+      enddo;
+      alphavar[k:1] = onechar;
+    enddo; 	  
+	SortAlpha = alphavar;
+	if !length(strip(alphavar)) then
+	  errmsg( 9981 );
+	  reenter
+	endif;  
+  end;
+PROC SAMPINF_FF
+preproc
+  if debug then
+    // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
+    trace(on, ".\debug.app", clear);
+//  trace(on);
+    set trace;
+  endif;
+  
+  { get language from commonstore or from calling menu }
+  // setlanguage( loadsetting("Language", GetLanguage()) );
+  android  = ( getos() = 20 ); 
+  xcluster = tonumber( sysparm()[1:4] );
+  xintnum  = tonumber( sysparm()[5:4] );
+  xteam    = tonumber( sysparm()[9:2] );
+  setfont( ValueSets, "Arial", 18, bold );
+
+  { load sample design }
+  YCLUSTER = xcluster;
+  if !loadcase( CLUSTERS, YCLUSTER ) then
+    errmsg( 60000, YCLUSTER );
+    stop(1)
+  endif;
+
+  { set up minimal user bar }
+  userbase();
+  userbar( show );
+
+  {load team members }
+  open( INTERV );
+  j = 1;
+  totintvw = 0;
+  forcase INTERV do    { load list of interviewers into memory }
+    if ITEAM = xteam then
+      inc(totintvw);
+      intvwcode(j) = ICODE;
+      intvwname(j) = INAME;
+      intvwrole(j) = IROLE;
+    endif;
+    inc(j);
+  enddo;
+  close( INTERV );
+
+postproc
+  stop(1);
+  
+PROC SAMPINF_LEVEL
+
+stop(1);
+PROC LICLUSTER
+preproc
+  $ = xcluster;
+  if demode() = add then
+    LIINTNUM = xintnum;
+  endif;
+PROC L11_BLOCK
+Preproc
+L11A=243;
+Postproc
+  if L11A = 0 then
+    L11B = 0;
+	L11C = 0;
+	advance to L12;
+  endif;
+PROC L11A
+
+// fill remaining fields with zeroes if zero entered
+PROC L11B
+  
+PROC L12
+onfocus
+  fieldworkers.clear();
+  do j = 1 while j <= totintvw
+    fieldworkers.add( intvwname(j), intvwcode(j) );
+  enddo;
+  SetValueSet( $, fieldworkers );
+PROC L14
+onfocus
+  fieldworkers.clear();
+  do j = 1 while j <= totintvw
+    fieldworkers.add( intvwname(j), intvwcode(j) );
+  enddo;
+  SetValueSet( $, fieldworkers );
+PROC L15
+  if $ > sysdate("YYYYMMDD") then
+    errmsg(002, $, sysdate("YYYYMMDD"));
+    reenter;
+  endif;
+PROC L16 
+
+  if $ < L15 then
+    errmsg(001, L15, $) select(tr("Beginning"), L15, tr("End"), L16);
+  elseif $ > sysdate("YYYYMMDD") then
+    errmsg(002, $, sysdate("YYYYMMDD")) select(tr("Beginning"), L15, tr("End"), L16);
+  endif;
+PROC L17
+if $ = 1 then
+  skip to L20
+endif;
+PROC L21
+  $ = SortAlpha( $ );
+PROC L22
+  $ = SortAlpha( $ );
+PROC L25
+Postproc
+If $=1 then skip to L27
+endif;
+PROC L29A
+if $ <> 1 then
+  skip to L30A;
+endif;
+PROC L29B
+Preproc
+ask if L29A=1;

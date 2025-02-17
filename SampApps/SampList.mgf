@@ -1,0 +1,182 @@
+﻿language = EN
+60000 E Cluster %d not defined in sample file
+60001 E Invalid selected option
+60002 E Option invalid for "Add a structure or a household"
+60003 E Option invalid for "Insert/delete structures or households"
+60005 E This option not possible for first entry (first structure)
+60007 E Invalid option because cursor is already at the end
+60010 E When adding structures or households it is not permitted to change the original codes for this field
+60015 E With the option selected at the beginning it is only possible to insert or delete households or structures
+60020 E This option is not allowed because it will delete the remaining recorded information
+60024 E A household can't be attached to a previous structure in the first entry
+60025 E A structure can only be inserted between two different structures
+60026 E A structure/household can't be inserted in the last entry of the list, they can be added
+60027 E It is not possible to delete this entry
+60028 E Household %d structure %d-%d successfully deleted from roster
+60030 E Household address is mandatory
+60031 W Name of household head was not given and will be left blank
+60035 W Number of households in sample file/segment %d different from households listed %d
+60040 E GPS coordinates can't be copied for the first household
+60041 E GPS coordinates from previous household don't exist. Option not valid
+60042 E GPS coordinates can't be copied for a different structure
+60043 E GPS coordinates for the HH can't be replaced because they weren't captured yet
+60044 E GPS coordinates were not captured, try again or do it later
+60046 E GPS coordinates were not captured, try again or do it later
+60045 E GPS dongle/port not found, please remove and insert GPS dongle and try again...
+60047 E GPS device not connected,  please check location services are enabled on your device and try again...
+60050 E GPS signal could not be acquired, please insert GPS dongle and go to an appropriate location and try again
+60052 E GPS signal could not be acquired, please check location services are enabled on your device, go to an appropriate location and try again
+60055 E Can't advance to the next reading because this reading hasn't been captured yes
+60058 E GPS Reading successful: %3.6f %1s %3.6f %1s 
+60060 E Segmentation for Cluster %04d was already done, but has to be done again
+60061 E Cluster segmentation can only be done if there are at least two segments
+60062 W Information entered will be discarded
+60064 W The segment to be selected may change, if new segments are added or number of households in a segment change
+60065 E Household listing data was already collected for cluster %04d, therefore segmentation is not allowed
+60070 W Household listing for cluster sucessfully closed
+61000 E There are no valid GPS coordinates for cluster %04d
+61005 W Structure type in listing %s:%d different from that recorded in QC check: %s (%1d)
+
+Language = ES
+{ common strings used by the application }
+  ES ( "Segment for cluster was already selected.  Do you want to select it again?" ) Segmentacion para el segmento ya fue seleccionado.  Desea seleccionaro de nuevo?
+  ES ( "Yes" ) Si
+  ES ( "No" ) No
+  ES ( "By choosing this option new coordinates will replace the current readings, Do you want to replace them?" ) Al seleccionar esta opcion nuevas coordenadas reemplazaran las existentes, Desea reemplazarlas?
+  ES ( "GPS device acquiring GPS satellites..., Please wait for 10 seconds to complete the capture" ) El dispositivo GPS esta localizando los satelites..., por favor espere por 10 segundos para completar la localizacion
+  ES ( "Household listing for cluster was already closed. Do you want to continue?" ) Listado de hogares para el segmento ya fue cerrado. Desea continuar?
+  ES ( "Are you sure you want to delete?" ) Esta seguro que quiere borrarlo?
+  ES ( "Households Eligible for Selection for Cluster: %04d" ) Hogares Elegibles para Seleccion en Segmento: %04d
+  ES ( "Date: %s" ) Fecha: %s
+  ES ( "HH" ) Hogar
+  ES ( "Structure" ) Estructura
+  ES ( "Household address" ) Direccion del hogar
+  ES ( "Head of household" ) Jefe del hogar
+  ES ( "Observations" ) Observaciones
+  ES ( "Households expected in cluster %d, total entries in roster %d households listed %d" ) Hogares esperados en el segmento %d, entradas en la tabla %d hogares listados %d
+  ES ( "Cluster Segmentation" ) Segmentacion del Conglomerado
+  ES ( "Segment" ) Segmento
+  ES ( "Households" ) Hogares
+  ES ( "Cummulative" ) Acumulado
+  ES ( "Percent" ) Porcentaje
+  ES ( "Segment selected %d, Number of households in selected segment %d" ) Segmento seleccionado %d, Numero de hogares en el segmento seleccionado %d 
+  ES ( "Cluster Coordinates" ) Coordenadas del Segmento
+  ES ( "Reading" ) Lectura
+  ES ( "Latitude" ) Latitud
+  ES ( "Longitude" ) Longitud
+  ES ( "Altitude" ) Altitud
+  ES ( "Satellites" ) Satelites
+  ES ( "Accuraccy" ) Precision
+  ES ( "Cluster coordinates based on average from households" ) Coordenadas del segmento con base en el promedio de hogares
+
+60000 E Segmento %d no esta definido en el archivo de la muestra
+60001 E Invalid selected option
+60002 E Option invalid for "Add a structure or a household"
+60003 E Option invalid for "Insert/delete structures or households"
+60005 E Esta opcion no es permitida para la primera vivienda
+60007 E Option invalida por cuanto el cursor ya esta en la ultima linea
+60010 E Cuando se estan agregando viviendas y/o hogares no se pueden cambiar los codigos originales de este campo
+60015 E COn la opcion seleccionada al comienzo solo se permite insertar o borrar hogares o viviendas
+60020 E Esta opcion no es permitida por cuanto se borraria la informacion registrada de aqui en adelante
+60025 E Una vivienda solo se puede insertar entre dos estrucuturas diferentes
+60026 E No se pueden insertar hogares/estructuras en la ultima linea del listado, se pueden agregar
+60027 E No se permite borrar esta entrada
+60028 E Household %d structure %d-%d successfully deleted from roster
+60030 E La direccion del hogar es obligatoria
+60031 W El nombre del jefe del hogar no fue ingresado y se dejo en blanco
+60035 W Numero de hogares en el archivo de la muestra %d diferente del numero de hogares listados %d
+60040 E Las coordnedas GPS nos pueden copiar para el primer hogar
+60041 E Las coordenadas GPS del hogar anterior no existen. Opcion invalida
+60042 E Coordenadas GPS no se capturaron, intentelo de nuevo o trate de capturarlas mas tarde
+60045 E El dispositivo de o el puerto para GPS no se pudo encontrar, favor desconecte y vuelva a conectar el GPS e intentelo de nuevo...
+60050 E La seà±al del GPS no se pudo obtener, favor inserte el GPS dongle, vaya a una sitio apropiado e intentelo de nuevo
+60055 E No se puede avanzar a la proxima lectura por cuanto esta lectura aun no se ha realizado
+60058 E Lectura GPS realizada: %3.6f %1s %3.6f %1s 
+60060 E Segmentation for Cluster %04d was already done, but has to be done again
+60062 E La informatcion entrada sera rechazada
+60061 W Cluster segmentation can only be done if there are at least two segments
+60064 W The segment to be selected may change, if new segments added or households in a segment change
+60065 E Household listing data was already collected for cluster %04d, therefore segmentation is not allowed
+60070 W Household listing for cluster sucessfully closed
+61000 E No hay coordenadas GPS validas para el segmento %04d
+
+Language = FR
+  FR ( "Segment for cluster was already selected.  Do you want to select it again?" ) Segment pour cette grappe est déjà tiré.  Voulez-vous refaire le tirage?
+  FR ( "Yes" ) Oui
+  FR ( "No" ) Non
+  FR ( "By choosing this option new coordinates will replace the current readings, Do you want to replace them?" ) En choisissant cette option les nouveaux coordonnées vont replacer les coordonnées déjà enregistrés, Voulez-vous les remplacer?
+  FR ( "GPS device acquiring GPS satellites..., Please wait for 10 seconds to complete the capture" ) L'Unite de GPS est en train de recevoir le signal des satellites GPS..., Veuillez attendre pour 10 secondes pour faire la capture
+  FR ( "Household listing for cluster was already closed. Do you want to continue?" ) Dénombrement de ménages est déjà effectué. Voulez-vous continuer?
+  FR ( "Are you sure you want to delete?" ) Etes-vous sûr que vous voulez supprimer?    
+  FR ( "Households Eligible for Selection for Cluster: %04d" ) Ménages de la grappe %04d éligibles à la sélection
+  FR ( "Date: %s" ) Date: %s
+  FR ( "HH" ) MG
+  FR ( "Structure" ) Structure
+  FR ( "Household address" ) Adresse du ménage
+  FR ( "Head of household" ) Chef de ménage
+  FR ( "Observations" ) Observations
+  FR ( "Households expected in cluster %d, total entries in roster %d households listed %d" ) Ménages prévus dans la grappe %d, total des entrées dans la liste %d ménages listés %d
+  FR ( "Cluster Segmentation" ) Segmentation de Grappe
+  FR ( "Segment" ) Segment
+  FR ( "Households" ) Ménages
+  FR ( "Cummulative" ) Cummulative
+  FR ( "Percent" ) Pourcentage
+  FR ( "Segment selected %d, Number of households in selected segment %d" ) Segment tiré %d, nombre de ménages dans le segment tiré %d  
+  FR ( "Cluster Coordinates" ) Coordonnées de la Grappe
+  FR ( "Reading" ) Lecture
+  FR ( "Latitude" ) Latitude
+  FR ( "Longitude" ) Longitude
+  FR ( "Altitude" ) Altitude
+  FR ( "Satellites" ) Satellites
+  FR ( "Accuracy" ) Précision
+  FR ( "Cluster coordinates based on average from households" ) Coordonnées de la Grappe basées sur la moyenne des ménages
+  FR ("True") Vrai
+  FR ("Map") Carte
+  FR ("Num. Seq.") Num.Séq..
+  FR ("Struct.") Struct.
+  FR ("Unit") Unité
+  FR ("Name") Nom
+  FR ( "Address" ) Adresse
+  FR ( "GPS" ) GPS
+  FR ( "Map" ) Carte 
+  FR ( "List of selected structures") Liste des structures sélectionnées 
+  FR ("Entries in roster %d, GPS taken %d, GPS not taken %d, % with GPS %03d") Entrées dans le tableau %d, GPS pris %d, GPS non pris %d, Pourcentage avec GPS %03d
+  FR ("Move to a specific household") Aller à un ménage spécifique
+  FR ("Move to next household") Aller au ménage suivant
+  FR ("Move to previous household") Aller au ménage précédent
+
+60000 E Grappe %d non définie dans le fichier de l'échantillion
+60001 E Option choisie est invalide
+60002 E Option invalide pour "Ajouter une structure ou un ménage"
+60003 E Option invalide pour "Insérer/supprimer structures ou ménages"
+60005 E Cette option n'est pas valide pour la première structure
+60007 E Option non valide puisque le curseur est déjà  à  la fin
+60010 E En ajoutant des structures ou des ménages, il n'est pas permis de changer les codes originaux de ce champ
+60015 E Avec l'option sélectionnée au début, il n'est possible que d'insérer ou de supprimer des ménages ou des structures
+60020 E Cette option n'est pas permise puisqu'elle supprimera le reste des informations enregistrées
+60024 E Un ménage ne peut pas être rattaché à une structure précédente dans la première entrée
+60025 E Une structure ne peut qu'àªtre insérée entre deux différentes structures
+60026 E Une structure/ménage ne peut pas inséré après de la dernière entrée, ils peuvent àªtre ajoutés
+60027 E Il n'est pas possible de supprimer cette entrée
+60028 E Ménage %d structure %d-%d supprimés de la liste avec succès
+60030 E L'adresse du ménage est obligatoire
+60031 W Le nom du chef du ménage a été laissé vide
+60035 W Le nombre de ménage dans le fichier de l'échantillion %d est très different du nombre de ménages dénombrés %d
+60040 E Les coordonées de GPS ne peuvent pas être copiées pour le premier ménage
+60041 E Les coordonées de GPS du ménage précédent n'existe pas. Option non valide
+60042 E Les coordonées de GPS ne sont pas prises, veuillez essayer encore une fois ou plus tard
+60045 E Le dongle de GPS n'est pas reconnu, vuillez le débrancher et re-inserer et essayer encore une fois
+60047 E Appareil GPS non connecté, veuillez vérifier que les services de localisation sont activés sur votre appareil et réessayer...
+60050 E Signal de GPS non trouvé, veuillez insérer le GPS dongle et éssayer encore une fois dans un endroit approprié
+60052 E Le signal GPS non trouvé, veuillez vérifier que les services de localisation sont activés sur votre appareil, et essayer encore une fois dans un endroit approprié
+60055 E Il ne peut pas avancer à  la prochaine lecture car la lecture courrente n'est pas encore prise
+60058 E Lecture GPS effectuée avec succès: %3.6f %1s %3.6f %1s 
+60060 E Segmentation pour la Grappe %04d est déjà  faite, donc il faut de la refaire
+60061 E Une segmentation ne peut être faite que pour au moins deux segments
+60062 W Les informations saisies seront rejetées
+60064 W Le segment tiré peut être changé s'il y des modificationas à  faire
+60065 E Le dénombrement de ménages pour la grappe %04d est déjà  commencé, une segmentation n'est plus autorisée
+60070 W Le dénombrement de ménages pour la grappe est fermé avec succès
+60080 E Le format du numéro de téléphone est incorrect. veuillez le corriger svp
+61000 E Il n'y a pas de coordonnées GPS valides pour grappe %04d
+61005 W Le type de structure enregistré par les agents dans le dénombrement %s:%d est différent de celui enregistré dans la vérification QC : %s (%1d)

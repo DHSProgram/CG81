@@ -1,0 +1,62 @@
+﻿[Dictionary]
+Version=CSPro 6.3
+Label=CorrectIDs
+Name=CORRECTIDS_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+
+[Level]
+Label=CorrectIDs questionnaire
+Name=CORRECTIDS_QUEST
+
+[IdItems]
+
+[Item]
+Label=CorrectIDs identification
+Name=CORRECTIDS_ID
+Start=2
+Len=1
+
+[Record]
+Label=CorrectIDs record
+Name=CORRECTIDS_REC
+RecordTypeValue='1'
+RecordLen=14
+
+[Item]
+Label=Old cluster number
+Name=CID_OCLUST
+Start=3
+Len=4
+ZeroFill=Yes
+
+[Item]
+Label=New cluster number
+Name=CID_NCLUST
+Start=7
+Len=4
+ZeroFill=Yes
+
+[ValueSet]
+Label=New cluster number
+Name=CID_NCLUST_VS1
+Value=1:470;Valid clusters
+Value=5000:5011;Pre-test clusters
+Value=9999;Practice cluster
+
+[ValueSet]
+Label=Cluster number
+Name=CID_NCLUST_VS2
+Value=1:470;Numéro de grappe valide
+Value=5000:5011;Grappes pour le prétest
+Value=9999;Grappe pour test
+
+[Item]
+Label=Interviewer code
+Name=CID_ICODE
+Start=11
+Len=4
+ZeroFill=Yes

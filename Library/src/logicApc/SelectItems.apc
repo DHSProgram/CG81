@@ -1,0 +1,224 @@
+﻿{ The setupNecessaryFiles() function should automatically copy necessary files to CSPro HTML repository
+however, it's not possible to copy or changes files in Windows OS ProgramFiles... HtmlDialogs=.\MyDialogsDirectory
+seems only support UI dialogs files, not others... }
+
+function setupNecessaryFiles() 
+
+string OriginalLogic_mapSignature, ModifiedLogic_mapSignature;
+string mapLogicFile = pathname(Html) + "mapping/logic-map.html";
+	string RessourceMapPath = path.concat(Application, "..\Library\src\RessourcesFolder");
+	string ModifiedMapLogicFile=RessourceMapPath+"\html\mapping\logic-map.html";
+	string LeafletDrawPath=RessourceMapPath+"\html\external\leaflet";
+	string CSProLeafletPath=pathname(Html) +"external\leaflet";
+
+	errmsg ("Le chemin du fichier est %v ",RessourceMapPath);
+OriginalLogic_mapSignature=diagnostics("md5", strip(mapLogicFile));
+ModifiedLogic_mapSignature=diagnostics("md5", strip(ModifiedMapLogicFile));
+list string CsLeafletRepositoryFiles,LeafletRepositoryFiles ;
+	dirlist(CsLeafletRepositoryFiles,CSProLeafletPath,filter := "*.js;*.css;*.map",recursive := false);
+	dirlist (LeafletRepositoryFiles,LeafletDrawPath,filter := "*.js;*.css;*.map",recursive := false);
+	do numeric i = 1 while i <= CsLeafletRepositoryFiles.length()
+		do numeric ctr=1 while ctr <= LeafletRepositoryFiles.length()
+			string filenameCS = path.getFileName(CsLeafletRepositoryFiles(i));
+			string filenameLib=path.getFileName(LeafletRepositoryFiles(ctr));
+			if filenameCS<>filenameLib then
+				filecopy(LeafletRepositoryFiles(ctr), CSProLeafletPath);
+			endif;
+		enddo;
+	enddo;
+	if OriginalLogic_mapSignature<>ModifiedLogic_mapSignature then
+		string CsMapFolder=pathname(Html) + "mapping";
+		
+		//------- First way to rename files
+		list string CsMapFolderFileListing;
+		dirlist(CsMapFolderFileListing, CsMapFolder,"*.html");
+		do numeric i = 1 while i <= CsMapFolderFileListing.length()
+			string Fname = CsMapFolderFileListing(i);
+					string LogicMapFname=path.getFileName(CsMapFolderFileListing(i));
+			if LogicMapFname="logic-map.html" then
+				filerename(fname, "logic-map-original.html");
+			endif;
+		enddo;
+		//End First way to rename files
+		
+		if fileexist (mapLogicFile)
+			then
+			filerename (mapLogicFile, "logic-map_original.html");
+			filecopy(ModifiedMapLogicFile,CsMapFolder);
+		endif;
+	endif;
+end;
+
+function string mapDataPath()
+string dataPath = path.concat(dataDirectory, "dataForMap"); 
+if ! direxist(dataPath) then 
+    numeric directoryCreated=dircreate(dataPath);
+	endif;
+exit dataPath;
+end;
+
+function string DataByCluster()
+string dataPath = path.concat(dataDirectory, "Arrived"); 
+exit dataPath;
+end;
+
+function string CollapseTempFilesForMap()
+dataFileTemp=mapDataPath() + "\Temp\AllHouseholdsForMap.dat";
+numeric isConcatenated= FileConcat(HHLISTING, dataFileTemp, DataByCluster() + "\L????????.dat" );	
+end;
+
+
+Function String DataFilesForMap()
+	string TempDataFileSignature, DataFileSignature;
+	string dataFile = mapDataPath() + "\AllHouseholdsForMap.dat";
+	TempDataFileSignature=diagnostics("md5", strip(dataFileTemp));
+	DataFileSignature=diagnostics("md5", strip(dataFile));
+		if TempDataFileSignature<>DataFileSignature then
+		filecopy(dataFileTemp, mapDataPath());
+	endif;
+	string tempFolder=mapDataPath() + "\Temp";
+	list string tempFiles;
+	dirlist(tempFiles, tempFolder);
+do numeric i = 1 while i <= tempFiles.length()
+	numeric isDeleted= filedelete(tempFiles(i));
+	//errmsg ("Le fichier %s a ete efface %v ",tempFiles(i),isDeleted);
+enddo;
+		dirdelete(tempFolder);
+exit dataFile;
+end;
+
+function setDataFile()
+setfile (HHLISTING,DataFilesForMap(),append);
+end;
+
+function clusterArray()
+	numeric i;
+	setDataFile();
+	
+forcase HHLISTING do
+
+		inc(ClustersEntered(LCLUSTER));
+	enddo;
+
+	ClustersEntered.getKeys(ClustersList);
+	ClustersList.removeDuplicates();
+do i = 1 while i <= ClustersList.length()	
+   clustArray(i,1) = maketext( "%v",(i));
+  	clustArray(i,2) =maketext( "%v",ClustersList(i));
+			    enddo;
+ 	clusterArray=i-1;
+end;
+
+
+function displArray()
+	numeric nLines = clusterArray();
+	showarray(tr ("Veuillez choisir une grappe"),clustArray, nLines,
+		title( tr("No"), tr("Grappe")));
+end;
+
+
+function displayOneCluster()
+clusterArray();
+	numeric result=ClustersList.show(tr("Veuillez choisir la grappe!"));
+	numeric noCluster=ClustersList(result);
+	exit noCluster;
+end;
+
+
+function string showCsproValueInSelect(string value)
+string result=htmlDialog("..\Library\src\RessourcesFolder\html\dialog\select.html",value);
+	//errmsg ("La valeur de retour du dialog est %v ",result);
+exit result;
+//ClustersList.show("Resultat")
+end;
+ 
+  
+  Function string extractNumericFromString (string alphaNumeric) {Can be used only to extract numeric from an alphanumeric string without any separator}
+numeric i;
+string isNumeric,allNumeric,result;
+do i = 1 while i <= length (strip(alphanumeric)) 
+
+    if alphanumeric[i:1] in "0":"9" then
+  
+        isNumeric=alphanumeric [i:1];
+	
+		allNumeric = maketext("%s,%s", allNumeric, isNumeric);
+    endif;
+		
+enddo;
+result = allNumeric[2:length(allNumeric)];
+
+exit result;
+end;
+
+ Function string extractNumeric (string alphaNumeric) {Specifically to the output of dynamic checkboxes AKA CSPro select dialog}
+string result,allNumeric;
+if pos('{"rowIndices":[',alphaNumeric) then
+			result=strip(alphanumeric[length('{"rowIndices":[')]);
+			allNumeric=result[2:length(result) - 3];
+		endif;
+		//errmsg ("Le(s) numero(2) de grappe(s) sont (est) %s",allNumeric);
+exit allNumeric;
+end;
+
+
+function string selectJsonArray(string titleName, list string headerCaption, array string data(,),NLines) 
+string caption1,caption2,result,resultTemp,resultF;
+numeric ptr;
+do  numeric i=1 while i <= headerCaption.length();
+if i>0 then 
+	caption1=headerCaption(1);
+	caption2=headerCaption(2);
+	endif;
+	enddo;
+	
+		string JsonPart1=maketext('{"title": "%s:","multiple": true,"header": [{"caption": "%s"}, {"caption": "%s"}],"rows": [', titleName, caption1, caption2);
+			
+
+do numeric ctr  = 1 while ctr <= NLines by 1
+		
+		 resultTemp = maketext('{"index": %v, "columns": [{"text":"%s"},{"text": "%v"}]},',ctr,data(ctr,1),data(ctr,2));
+
+		result = result+resultTemp;
+	enddo;
+	if length(result) then
+		resultF = result[1:length(result) - 1];
+	endif;
+string SelectJsonResult=JsonPart1 + resultF + ']}';
+	exit SelectJsonResult; 
+		end;
+
+
+function string selectMultipleClusters()
+	string selectTitleName=tr("SVP, veuillez choisir les grappes");
+	list String headerSelect=tr("No"),tr("Grappe");
+	numeric qLines= clusterArray();
+		string resultSelect=selectJsonArray(selectTitleName,headerSelect,clustArray,qLines);
+					exit resultSelect;
+end;
+
+function string resultSelectNumber()
+string resultsSelect=extractNumeric(showCsproValueInSelect(selectMultipleClusters()));
+exit resultsSelect;
+end;
+
+
+function string clusterNumberString(string inputString)
+	string resultTemp;
+	listClusterNumbers.clear();
+      numeric separator=poschar(",", inputString);   
+	  if separator>0 then
+	  do numeric i = 1 while i <= length(inputString) by separator
+		 
+	resultTemp=inputString[i:(separator)];
+	listClusterNumbers.add(ClustersList (tonumber (resultTemp)));
+		 		enddo;
+				else 
+		listClusterNumbers.add(ClustersList (tonumber (inputString)));
+				endif
+end
+
+function string resultsClusterNumberList()
+clusterNumberString(resultSelectNumber());
+end;
+

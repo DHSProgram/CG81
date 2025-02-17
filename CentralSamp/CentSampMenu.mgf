@@ -1,0 +1,104 @@
+﻿
+Language = FR
+{ common strings used by application }
+  FR ( "LIST OF FILES DELETED BECAUSE THEY CAME EMPTY" ) LISTE DES FICHIERS SUPPRIMÉS PARCEQU'ILS ÉTAIENT VIDES
+  FR ( "LIST OF NEW CLUSTERS THAT ARRIVED FROM THE FIELD AS OF TODAY" ) LISTE DE NOUVELLES GRAPPES ARRIVÉES DU TERRAIN AUJOURD'HUI 
+  FR ( "Cluster:" ) Grappe:
+  FR ( "Arrived on:" ) Arrivée le :
+  FR ( "LIST OF CLUSTERS THAT ARRIVED PREVIOUSLY BUT WERE MODIFIED OR ENUMERATOR CHANGED" ) LISTE DES GRAPPES PRÉCÉDEMMENT ARRIVÉES MAIS MODIFIÉES OU CHANGEMENT D'ÉNUMÉRATEUR 
+  FR ( "Duplicated files are displayed and only one of them must be left" ) Les fichiers en boublons sont affichés et seul l'un d'eux doit être gardé
+  FR ( "and arrived previously on:" ) et arrivées précédement le :
+  FR ( "Previous Enumerator:" ) Ancien énumérateur :
+  FR ( "New Enumerator:" ) Nouveau énumérateur :
+  FR ( "Delete incorrect file" ) Supprimer le fichier incorrect
+  FR ( "LIST OF CLUSTERS CLOSED THAT CAME BACK AGAIN FROM THE FIELD" ) LISTE DES GRAPPES FERMÉES QUI SONT ENCORE EN?VOYÉES DU TERRAIN  
+  FR ( "but already closed on:" ) mais déjà fermées le :
+  FR ( "Select the correct file/enumerator for cluster:" ) Sélectionner le bon fichier/énumérateur pour la grappe :
+  FR ( "Will Decide Later" ) Décidera plus tard
+  FR ( "Clusters arrived from the field since last time the central office system was executed" ) Grappes arrivées du terrain depuis la dernière fois que le système du bureau central était exécuté
+  FR ( "Central Office Menu, Cluster:" ) Menu du Bureau Central :
+
+001 Grappe=%03d, non definie dans le fichier échantillon
+007 Grappe %d non definie dans le fichier de controle
+008 Grappe %d déjà fermée
+009 Grappe %d n'est pas encore arrivée donc ne peut être fermée
+010 Les coordonnées GPS de la grappe %d n'ont pas encore été capturées, donc ne peut être fermée
+011 Grappe %d n'est pas encore arrivée, donc aucune opération ne peut être effectuée
+012 Grappe %d n'a pas encore été évaluée/Verifiée, donc ne peut être fermée
+070 Rassurez-vous que la carte SD est bien insérée dans l'ordinateur pour sauvegarder proprement des données dans le dossier %s 
+071 La carte SD n'est pas connectée à l'ordinateur ou le dossier %s n'existe pas. Aucune données ne sera sauvegardées dans la carte mémoire
+080 Grappe %d fermée avec succès
+102 Il n'y a pas de données pour la grappe %d dans le dossier %s contenant cette grappe
+110 Assurez-vous d'utiliser l'option 7 du menu principal pour supprimer les fichiers incorrects
+072 Sauvegarde de données effectuée du dossier %s au dossier %s 
+080 Grappe %d fermée avec succès
+102 Il n'y a pas de données pour la grappe %d dans le dossier %s pour grappe
+110 Fichier: %s est supprimé
+115 Cliquer OK pour afficher le contenu du fichier en doublon (%d): %s pour la grappe %04d
+200 Veuillez vous connecter à l'internet
+201 Connecté au serveur avec succès
+202 La connexion au serveur a échoué, veuillez vérifier votre connexion et essayer encore
+300 Bureau central connecté au : %s
+301 Le bureau central ne peut connecter au : %s
+500 SVP, verifiez  votre connection internet 
+501 Les donnees ont ete envoyees au Central Office
+502 Une partie des donnees n'a pas ete envoyee au Central Office, veuillez renvoyer
+
+901 Le fichier de la grappe n'existe pas!
+902 La valeur de retour est %v.
+903 le numero de la grappe est: %v.
+904 Pas encore de de grappes!
+905 Le fichier %s est lance: %v.
+906 Le fichier %v a ete efface avec succes
+
+
+
+Language = EN
+EN ( "Veuillez choisir une grappe") Select a cluster
+EN ("Veuillez choisir la grappe!") Please, select one cluster!
+EN ( "No") No
+EN ( "Grappe") Cluster
+EN ( "SVP, veuillez choisir les grappes") Select several clusters
+EN ( "Effacer polygon d'une grappe") Delete the polygon for a cluster
+EN ( "SVP, veuillez choisir une option") Please select an option
+EN ( "SVP, veuillez choisir une action") Please select an action
+EN ( "Delimiter le polygone d'une grappe") Trace the limits of a cluster
+EN ( "Modifier le polygone d'une grappe") Modify polygon for a cluster
+EN ( "Retour au menu Carto") Back to Map Menu
+EN ( "SVP, veuillez choisir une option") Select an option
+EN ( "Veuillez choisir le numero de la grappe") Select cluster number
+EN ( "Affichage des limites de toutes les grappes sauvegardees" ) Show saved clusters polygons
+EN ( "Affichage des grappes selectionnees" ) Show only selected cluster
+EN ( "Afficher les donnees pour une seule grappe" ) Show geodata for one cluster
+EN ( "Afficher les donnees de toutes les grappes" ) Show all saved geodata
+EN ( "Carte hors ligne" ) Offline map
+EN ( "Normale" ) Normal
+EN ( "Choisir le type de carte" ) Select map type
+EN ( "Visualisation des donnees des grappes" ) Visualize geodata for clusters
+EN ( "Tracer ou modifier les limites d'une grappe" ) Trace or modify cluster's delimitation
+EN ( "Effacer les donnees d'une grappe" )Delete data for one cluster
+EN ( "Retour au menu principal" ) Back to main menu
+EN ( "Fermer la carte" ) Close the map
+EN ( "SVP, veuillez choisir un menu" ) Please select a menu
+EN ( "Selectionner plusieurs grappes" ) Please select several clusters
+
+
+901 File for this cluster doesn't exist!
+902 Back value for this function is %v.
+903 The cluster number is: %v.
+904 No clusters yet!
+905 The file %s has been launched: %v.
+906 The file %v has been successfuly deleted.
+{US}001 Cluster=%03d, not defined in sample file
+{US}007 Cluster %d not defined in control file
+{US}008 Cluster %d already closed
+{US}009 Cluster %d hasn't arrvied therefore can't be closed
+{US}010 Coordinates for cluster %d hasn't been captured, therefore cluster can't be closed
+{US}011 Cluster %d hasn't arrived, therefore no operations can be done on it
+{US}012 Cluster %d hasn't been reviewed, therefore can't be closed
+{US}070 Make sure that flash memory is in computer to make a data BACKUP to directory %s
+{US}071 Memory flash is not connected to the computer or directory %s doesn't exist.  Data will not be backed-up to flash memory
+{US}080 Cluster %d sucessfully closed
+{US}102 There are no data for cluster %d in directory %s for Cluster
+{US}110 Make sure to use option 7 from the main menu to delete the incorrect files
+

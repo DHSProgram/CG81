@@ -1,0 +1,389 @@
+﻿Function string MapStore()
+	string mapFolder=path.concat (dataDirectory,"MapVector/");
+	exit mapFolder;
+end;
+
+function hideMap()
+	listingMap.hide();
+end;
+
+function backMainMenu()
+	maketext ("%s",invoke ("pickMenu"));
+end;
+
+function closeMapView()
+	stop();
+end;
+{function OnStop()
+	backMainMenu();
+end;}
+Function string geometryType(string geoJsonFiles){Only valid for FeatureCollection type GeoJson files}
+	string geometry_Type,Text;
+	file inputFile;
+	list string stringList;
+		setfile(inputFile,geoJsonFiles);
+	while fileread(inputFile,stringList) do
+		do numeric i=1  while i<=stringList.length()
+			string textTemp=stringList(i);
+			Text=Text+textTemp;
+		enddo;
+			numeric TypePolygon= pos('"type":"Polygon"',Text);
+			numeric TypePoint= pos('"geometry": {"type": "Point"',Text);
+		if TypePolygon>0 then
+			geometryType= "Polygon";
+		elseif TypePoint>0 then
+			geometryType= "Point";
+		endif;
+	enddo;
+		close(inputFile);
+end;
+
+function closeButton()
+	list string closeChoice=tr("Effacer polygon d'une grappe"), tr("Fermer la carte");
+		numeric closeChoiceIndex = closeChoice.show(tr("SVP, veuillez choisir une option"));
+		when closeChoiceIndex;
+			1 -> maketext ("%s",invoke ("deleteGeometry")) ;
+			2 -> hideMap();
+				endwhen;
+end;
+
+
+function PolygonMenu()
+	list string PolygonChoice=tr("Delimiter le polygone d'une grappe"), tr("Modifier le polygone d'une grappe"),tr("Retour au menu Carto");
+		numeric PolygonChoiceIndex = PolygonChoice.show(tr ("SVP, veuillez choisir une option"));
+		when PolygonChoiceIndex;
+			1 -> maketext ("%s",invoke ("traceAndSavePolygonLeaflet"));
+			2 -> maketext ("%s",invoke ("modifyPolygon"));
+			3 -> maketext ("%s",invoke ("pickMenu"));
+				endwhen;
+end;
+
+
+function string pickClusterGeometryFile(string geometry_type)
+	list string ClusterFile,filenames,geometryPolygonFile,geometryPointFile,geometryAnyFile;
+	dirlist(ClusterFile, MapStore(), "*.geojson");
+	do numeric i = 1 while i <= ClusterFile.length()
+
+		string geoJsonFilesPath=ClusterFile(i);
+			string geomType=geometryType(ClusterFile(i));
+		if geometry_type="Polygon" then
+			if geomType=geometry_type then
+				filenames.add(path.getFileNameWithoutExtension(ClusterFile(i)));
+				geometryPolygonFile.add(ClusterFile(i));
+			endif;
+		endif;
+		if geometry_type="Point" then
+			if geomType=geometry_type then
+				filenames.add(path.getFileNameWithoutExtension(ClusterFile(i)));
+				geometryPointFile.add(ClusterFile(i));
+			endif;
+		endif;
+		if geometry_type="All" then
+			filenames.add(path.getFileNameWithoutExtension(ClusterFile(i)));
+			  geometryAnyFile.add(ClusterFile(i));
+		endif;
+
+	enddo;
+
+	if filenames.length() = 0  then
+		errmsg(901);
+		reenter;
+	endif;
+
+	numeric pick = filenames.show(tr("Veuillez choisir le numero de la grappe"));
+	string noCluster=filenames(pick);
+	savesetting(clusterSettingKey, noCluster);
+		if pick > 0 then
+		if geometry_type="Polygon" then
+			pickClusterGeometryFile = geometryPolygonFile(pick);
+			savesetting(filePathKey, geometryPolygonFile(pick));
+			elseif geometry_type="Point" then
+			pickClusterGeometryFile = geometryPointFile(pick);
+		elseif geometry_type="All" then
+			pickClusterGeometryFile = geometryAnyFile(pick);
+		else
+			pickClusterGeometryFile = "";
+		endif;
+	endif;
+end;
+
+
+Function traceAndSavePolygonCSMapAndroid()
+	listingMap.clearButtons();
+	listingMap.clearGeometry();
+		geometry myCluster;
+		myCluster.clear();
+		myCluster.tracePolygon(listingMap);
+		maketext ("%s",invoke ("habillageMap")) ;
+		myCluster.setProperty("GRAPPE",LCLUSTER);
+		myCluster.setProperty("REGION", LREGION);
+		myCluster.setProperty("VILLE", LCITY);
+		string polygonFilename=maketext("Grappe-%d.geojson",LCLUSTER);
+		myCluster.save(path.concat(mapStore(),polygonFilename));
+end;
+
+
+function traceAndSavePolygonLeaflet()
+	string display_options = maketext('{ "width": "%d",'
+									  '  "height": %d,'
+									   '  "showCloseButton": %d,'
+									   '  "borderColor": "#FF0000" }',
+									  tonumber(getproperty("MaxDisplayWidth")) * 0.9,
+									  tonumber(getproperty("MaxDisplayHeight")) * 0.9, true);
+
+	string returnValue= htmldialog("..\Library\src\RessourcesFolder\html\mapping\GeoJsonPointDisplay.html",
+	inputData := maketext ("%s",invoke ("geojsonDataString","Point")),
+	displayOptions := display_options);
+	errmsg (902,returnValue);
+end;
+
+
+Function modifyPolygon()
+	string display_options = maketext('{ "width": "%d",'
+								  '  "height": %d,'
+								   '  "showCloseButton": %d,'
+								   '  "borderColor": "#FF0000" }',
+								  tonumber(getproperty("MaxDisplayWidth")) * 0.8,
+								  tonumber(getproperty("MaxDisplayHeight")) * 0.8, true);
+	string returnValue=htmldialog("..\Library\src\RessourcesFolder\html\mapping\ModifyGeoJsonPolygons.html",
+	inputData := maketext ("%s",invoke ("GeojsonDataString","Polygon")),
+	displayOptions := display_options);
+	errmsg (902,returnValue);
+end
+
+
+function string GeoJson(string valueGeoJson)
+	file geojsonFile;
+	geometry polygon;
+	 string geoJsonString=valueGeoJson;
+	 GeoJsonValue=geoJsonString;
+		string ClustNumber=loadsetting(clusterSettingKey);
+	 string vectorMapFilename= MapStore()+ maketext ("Limite_%v.geojson",ClustNumber);
+		   geojsonFile.open(vectorMapFilename,create);
+	  geojsonFile.write ("%s",GeoJsonValue);
+			close(geojsonFile);
+			polygon.load(vectorMapFilename);
+		polygon.setProperty("Grappe", ClustNumber);
+		polygon.save(vectorMapFilename);
+	end;
+
+
+function string GeoJsonM(string valueGeoJson)
+	file inputFile,geojsonFile,geojsonStringReader; 
+	string clusterNo;
+	list string geojsonListString;
+	geometry polygon;
+	 string geoJsonString=valueGeoJson;
+	 	 GeoJsonValue=geoJsonString;
+		 string ClustfilePath=loadsetting(filePathKey);
+numeric isloaded=polygon.load(ClustfilePath);
+clusterNo=polygon.getProperty("Grappe");
+	 string vectorMapFilename= MapStore()+ maketext ("Limite_%v.geojson",clusterNo);
+	  geojsonFile.open(vectorMapFilename);
+	  geojsonFile.write ("%s",GeoJsonValue);
+		close(geojsonFile);
+end;
+
+
+function string geojsonDataString(string geomType)
+	string geojsonData="";
+		list string geojsonDataList;
+	file geojsonFile;
+	string geojsonPick = pickClusterGeometryFile(geomType);
+			geojsonFile.open(geojsonPick);
+	geojsonFile.read(geojsonDataList);
+	do numeric i = 1 while i <= geojsonDataList.length() by 1
+		geojsonData = maketext('%s%s', geojsonData, geojsonDataList(i));
+	enddo;
+	close(geojsonFile);
+		 exit maketext("%v", geojsonData);
+end;
+
+
+Function loadAllSavedGeometries()
+	listingMap.setTitle(tr("Affichage des limites de toutes les grappes sauvegardees"));
+	listingMap.clearGeometry();
+	geometry polygon;
+	list string ClusterPolygon;
+		dirlist(ClusterPolygon, MapStore(), "*.geojson");
+		string polygonFile;
+	do numeric i = 1 while i <= ClusterPolygon.length()
+		polygonFile= ClusterPolygon(i);
+		numeric isLoaded = polygon.load(polygonFile);
+		if isLoaded then
+			listingMap.addgeometry(polygon);
+			listingMap.zoomTo(polygon.minLatitude(), polygon.minLongitude(), polygon.maxLatitude(), polygon.maxLongitude(), 15);
+		endif;
+	enddo;
+		listingMap.show();
+		listingMap.clearButtons();
+		maketext ("%s",invoke ("removeHabillageMap"));
+		maketext ("%s",invoke ("habillageMap"));
+	listingMap.showCurrentLocation(true);
+end;
+
+
+Function SaveAndLoadOneGeoJsonGeometry()
+	listingMap.setTitle(tr("Affichage des grappes selectionnees"));
+		listingMap.clearGeometry();
+		geometry polygon;
+	ClustersEntered.clear();
+	clustArray.clear();
+	ClustersList.clear();
+	clusterArray();
+	if ClustersList.length()>0 then
+		numeric clusterNumber=displayOneCluster();
+		errmsg(903,clusterNumber);
+		savePointsGeojson(clusterNumber);
+		list string ClusterPolygon;
+		dirlist(ClusterPolygon, MapStore(), "*.geojson");
+		string polygonFile;
+		do numeric ptr = 1 while ptr <= ClusterPolygon.length()
+			string clusterGeoJsonFileName=path.getFileNameWithoutExtension(ClusterPolygon(ptr));
+			if tonumber (clusterGeoJsonFileName)= clusterNumber then
+				polygonFile= ClusterPolygon(ptr);
+				numeric isLoaded = polygon.load(polygonFile);
+				if isLoaded then
+					polygon.setProperty("GRAPPE",clusterNumber);
+					numeric fileAdd=listingMap.addgeometry(polygon);
+									listingMap.zoomTo(polygon.minLatitude(), polygon.minLongitude(), polygon.maxLatitude(), polygon.maxLongitude(), 10);
+				endif;
+			endif;
+		enddo;
+	else
+		errmsg(904);
+	endif;
+		listingMap.show();
+		listingMap.clearButtons();
+		maketext ("%s",invoke ("removeHabillageMap"));
+		maketext ("%s",invoke ("habillageMap"));
+	//listingMap.showCurrentLocation(true);
+end;
+
+
+Function SaveAndLoadGeoJsonGeometries()
+	listingMap.setTitle(tr("Affichage des grappes selectionnees"));
+		listingMap.clearGeometry();
+		geometry polygon;
+	ClustersEntered.clear();
+	clustArray.clear();
+	ClustersList.clear();
+	listClusterNumbers.clear();
+	resultsClusterNumberList();
+	if listClusterNumbers.length()>0 then
+		do numeric i=1 while i<= listClusterNumbers.length()
+			numeric clusterNumber= listClusterNumbers(i);
+					savePointsGeojson(clusterNumber);
+			list string ClusterPolygon;
+			dirlist(ClusterPolygon, MapStore(), "*.geojson");
+			string polygonFile;
+			do numeric ptr = 1 while ptr <= ClusterPolygon.length()
+				string clusterGeoJsonFileName=path.getFileNameWithoutExtension(ClusterPolygon(ptr));
+				if tonumber (clusterGeoJsonFileName)= listClusterNumbers(i) then
+					polygonFile= ClusterPolygon(ptr);
+					numeric isLoaded = polygon.load(polygonFile);
+					//errmsg(905,polygonFile,isLoaded);
+					if isLoaded then
+						polygon.setProperty("GRAPPE",listClusterNumbers(i));
+						numeric fileAdd=listingMap.addgeometry(polygon);
+										listingMap.zoomTo(polygon.minLatitude(), polygon.minLongitude(), polygon.maxLatitude(), polygon.maxLongitude(), 10);
+					endif;
+				endif;
+			enddo;
+		enddo;
+	endif;
+		listingMap.show();
+		listingMap.clearButtons();
+		maketext ("%s",invoke ("removeHabillageMap"));
+		maketext ("%s",invoke ("habillageMap"));
+
+end;
+
+
+Function deleteGeometry()
+	string pick = pickClusterGeometryFile("All");
+	if pick <> "" then
+		numeric erase = filedelete(pick);
+		if erase=1 then
+			errmsg (906,pick);
+		endif;
+	endif;
+end
+
+
+function showMapLayers()
+	list string layerChoice=tr("Afficher les donnees pour une seule grappe"),tr("Selectionner plusieurs grappes"), tr("Afficher les donnees de toutes les grappes");
+	numeric layerChoiceIndex = layerChoice.show(tr("SVP, veuillez choisir une action"));
+	when layerChoiceIndex;
+		1 -> SaveAndLoadOneGeoJsonGeometry();
+		2 -> SaveAndLoadGeoJsonGeometries();
+		3 -> loadAllSavedGeometries();
+			endwhen;
+end
+
+function setBasemap(string basemap)
+	if basemap = "Normal" then
+		listingMap.setBasemap(Normal);
+	elseif basemap = "Hybrid" then
+		listingMap.setBasemap(Hybrid);
+	elseif basemap = "Satellite" then
+		listingMap.setBasemap(Satellite);
+	elseif basemap = "Terrain" then
+		listingMap.setBasemap(Terrain);
+	elseif basemap = "Carte hors ligne" then
+		errmsg ("Pas de cartes hors ligne");
+			//listingMap.setBasemap("../RessourcesFolder/map/Canaan.mbtiles");
+	endif;
+end;
+
+function changeBasemap()
+	list string options = tr("Normale"), "Hybride", "Satellite", "Terrain",tr("Carte hors ligne") ;
+	numeric selection = options.show(tr("Choisir le type de carte"));
+	if selection > 0 then
+		string basemap = options(selection);
+		setBasemap(basemap);
+		// persist the basemap in settings
+		savesetting(basemapSettingKey, basemap);
+	endif;
+end;
+
+function habillageMap()
+		buttonIdAdd=listingMap.addImageButton("..\Library\src\RessourcesFolder\Buttons\Resize\R_add.png", showMapLayers());
+		buttonIdBasemap=listingMap.addImageButton("..\Library\src\RessourcesFolder\Buttons\Resize\R_layers.png", changeBasemap());
+		buttonIdEdit=listingMap.addImageButton("..\Library\src\RessourcesFolder\Buttons\Resize\R_edit.png", traceAndSavePolygonLeaflet());
+		buttonIdClose=listingMap.addImageButton("..\Library\src\RessourcesFolder\Buttons\Resize\R_close.png", closeButton());
+end;
+
+
+Function mapSettingsRecord()
+		if loadsetting(basemapSettingKey) <> "" then
+		setBasemap(loadsetting(basemapSettingKey));
+	endif;
+end;
+
+
+function removeHabillageMap()
+	listingMap.removeButton(buttonIdAdd);
+	listingMap.removeButton(buttonIdBasemap);
+	listingMap.removeButton(buttonIdClose);
+	listingMap.removeButton(buttonIdEdit);
+end;
+
+
+Function pickMenu()
+trace(on,"mapLog.txt",clear); 
+list string choixMenu= tr("Visualisation des donnees des grappes"),tr("Tracer ou modifier les limites d'une grappe"),tr("Effacer les donnees d'une grappe"),tr("Retour au menu principal"), tr("Fermer la carte");
+	numeric menu = choixMenu.show(tr("SVP, veuillez choisir un menu"));
+	//setupNecessaryFiles();
+	CollapseTempFilesForMap();
+	when menu;
+		1 ->showMapLayers();
+		2 ->PolygonMenu();
+		3 -> deleteGeometry();
+	    4 -> reenter WFINAL;
+	    5 -> stop();
+			endwhen;
+trace(off);
+End;
+
+

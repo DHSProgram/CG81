@@ -1,0 +1,533 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=SAMPINF
+Name=SAMPINF_DICT
+RecordTypeStart=9
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=F4A5B0F61872283060AE8D1EF83A92EE9EB34FFBE88E945844FD1B7379B15C00
+
+[Languages]
+EN=English
+FR=French
+
+[Level]
+Label=SAMPINF Level
+Name=SAMPINF_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Cluster number
+Name=LICLUSTER
+Start=1
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer code
+Name=LIINTNUM
+Start=5
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=SAMPINF Record
+Name=SAMPINF_REC
+RecordTypeValue='1'
+RecordLen=2019
+
+[Item]
+Label=Name of chief
+Name=LI10
+Start=10
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Telephone number of chief
+Name=L11
+Start=50
+Len=12
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Telephone number of chief part 1|Telephone du chef de menage (Code Pays)
+Name=L11A
+Start=50
+Len=3
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Telephone number of chief part 1|Telephone du chef de menage (Code Pays)
+Name=L11A_VS1
+Value=0;No number given|Pas de numéro donné
+Value=0:999
+
+[Item]
+Label=Telephone number of chief part 2|Telephone du chef de village (Codes Compagnies)
+Name=L11B
+Start=52
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Telephone number of chief part 2|Telephone du chef de village (Codes Compagnies)
+Name=L11B_VS1
+Value=0;No number given|Pas de numéro donné
+Value=0:99
+
+[Item]
+Label=Telephone number of chief part 3|Telephone du chef de village(Numero personnel)
+Name=L11C
+Start=55
+Len=7
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Telephone number of chief part 3|Telephone du chef de village(Numero personnel)
+Name=L11C_VS1
+Value=0;No number given|Pas de numéro donné
+Value=0:9999999
+
+[Item]
+Label=Mapping agent|Agent Cartographe
+Name=L12
+Start=62
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Supervisor|Superviseur
+Name=L14
+Start=66
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of start of listing
+Name=L15
+Start=70
+Len=8
+DataType=Numeric
+
+[Item]
+Label=Day of start
+Name=L15D
+Start=70
+Len=2
+ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Month of start
+Name=L15M
+Start=72
+Len=2
+ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Year of start
+Name=L15Y
+Start=74
+Len=4
+ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Date of end of listing
+Name=L16
+Start=78
+Len=8
+DataType=Numeric
+
+[Item]
+Label=Day of end
+Name=L16D
+Start=78
+Len=2
+ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Month of end
+Name=L16M
+Start=80
+Len=2
+ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Year of end
+Name=L16Y
+Start=82
+Len=4
+ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Listing completion status|Niveau d'avance pour la grappe
+Name=L17
+Start=86
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Listing completion status|Niveau d'avance pour la grappe
+Name=L17_VS1
+Value=1;Yes, completely|Oui, complètement
+Value=2;Yes, partially |Oui, partiellement
+Value=3;No             |Non
+
+[Item]
+Label=Reasons why listing not completed|Raisons grappe n'est pas finalisee
+Name=L1819
+Start=87
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Description of itinerary|Description Itineraire
+Name=L20
+Start=287
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Means of transport used in dry season|Moyen de transport utilise en saison seche
+Name=L21
+Start=487
+Len=5
+DataType=Alpha
+
+[ValueSet]
+Label=Means of transport used in dry season|Moyen de transport utilise en saison seche
+Name=L21_VS1
+Value='A    ';Motorbicycle    |Moto
+Value='B    ';Car/vehicle     |Voiture
+Value='C    ';On foot         |A pieds
+Value='D    ';Canoe/Pirogue   |Canoé/Pirogue
+Value='E    ';Other (specify))|Autre (à préciser)
+
+[Item]
+Label=Means of transport used in rainy season|Moyen de transport utilise en saison pluvieuse
+Name=L22
+Start=492
+Len=5
+DataType=Alpha
+
+[ValueSet]
+Label=Means of transport used in rainy season|Moyen de transport utilise en saison pluvieuse
+Name=L22_VS1
+Value='A    ';Motorbicycle    |Moto
+Value='B    ';Car/vehicle     |Voiture
+Value='C    ';On foot         |A pieds
+Value='D    ';Canoe/Pirogue   |Canoé/Pirogue
+Value='E    ';Other (specify))|Autre (à préciser)
+
+[Item]
+Label=Mobile networks in EA: Orange|Reseau Mobile couvrant la grappe: Orange
+Name=L23A
+Start=497
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Mobile networks in EA: Orange|Reseau Mobile couvrant la grappe: Orange
+Name=L23A_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Mobile networks in EA: Vodacom|Reseau Mobile couvrant la grappe: Vodacom
+Name=L23B
+Start=498
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Mobile networks in EA: Vodacom|Reseau Mobile couvrant la grappe: Vodacom
+Name=L23B_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Mobile networks in EA: Airtel|Reseau Mobile couvrant la grappe: Airtel
+Name=L23C
+Start=499
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Mobile networks in EA: Airtel|Reseau Mobile couvrant la grappe: Airtel
+Name=L23C_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Mobile networks in EA: Africell|Reseau Mobile couvrant la grappe:  Africell
+Name=L23D
+Start=500
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Mobile networks in EA: Africell|Reseau Mobile couvrant la grappe:  Africell
+Name=L23D_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Mobile networks in EA: Network from a neighbouring country|Reseau Mobile couvrant la grappe: Reseaux de pays voisins
+Name=L23E
+Start=501
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Mobile networks in EA: Network from a neighbouring country|Reseau Mobile couvrant la grappe: Reseaux de pays voisins
+Name=L23E_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Internet connections in EA: Orange|Connections Internet au niveau de la grappe: Orange
+Name=L24A
+Start=502
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Internet connections in EA: Orange|Connections Internet au niveau de la grappe: Orange
+Name=L24A_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Internet connections in EA: Vodacom|Connections Internet au niveau de la grappe: Vodacom
+Name=L24B
+Start=503
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Internet connections in EA: Vodacom|Connections Internet au niveau de la grappe: Vodacom
+Name=L24B_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Internet connections in EA: Airtel|Connections Internet au niveau de la grappe: Airtel
+Name=L24C
+Start=504
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Internet connections in EA: Airtel|Connections Internet au niveau de la grappe: Airtel
+Name=L24C_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Internet connections in EA: Africell|Connections Internet au niveau de la grappe: Africell
+Name=L24D
+Start=505
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Internet connections in EA: Africell|Connections Internet au niveau de la grappe: Africell
+Name=L24D_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Internet connections in EA: Network from a neighbouring country|Connections Internet au niveau de la grappe: Autres connexions sans fils ou fibre optique
+Name=L24E
+Start=506
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Connections Internet au niveau de la grappe: Autres connexions sans fils ou fibre optique
+Name=L24E_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=Internet connections in EA: Network from a neighbouring country|Connections Internet au niveau de la grappe: Reseaux de pays voisins
+Name=L24F
+Start=507
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Internet connections in EA: Network from a neighbouring country|Connections Internet au niveau de la grappe: Reseaux de pays voisins
+Name=L24F_VS1
+Value=1;Total coverage|Oui, couverture totale
+Value=2;Partial coverage|Oui, couverture partielle
+Value=3;No coverage|Non
+
+[Item]
+Label=EA connected to SNEL electric network|Grappes connectees au reseau electrique SNEL
+Name=L25
+Start=508
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=EA connected to SNEL electric network|Grappes connectees au reseau electrique SNEL
+Name=L25_VS1
+Link=120767840
+Value=1;Yes|Oui
+Value=2;No|Non
+
+[Item]
+Label=Description of how charged tablets|Description  sur la facon de recharger la tablette
+Name=L26
+Start=509
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Village/quarter has hotel|Village/quartier possede Hotel
+Name=L27
+Start=709
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Village/quarter has hotel|Village/quartier possede Hotel
+Name=L27_VS1
+Link=120767840
+
+[Item]
+Label=Description of lodging|Description of lodging
+Name=L28A
+Start=710
+Len=500
+DataType=Alpha
+
+[Item]
+Label=Insecurity |Insecurite
+Name=L29
+Start=1210
+Len=201
+DataType=Alpha
+Occurrences=4
+
+[Item]
+Label=Is insecurity of this type in the village|Existence de l'insecurite dans la grappe
+Name=L29A
+Start=1210
+Len=1
+ItemType=SubItem
+DataType=Numeric
+
+[ValueSet]
+Label=Is insecurity of this type in the village|Existence de l'insecurite dans la grappe
+Name=L29A_VS1
+Link=120767840
+
+[Item]
+Label=Observation on type of insecurity|Observation  sur le type d'insecurite
+Name=L29B
+Start=1211
+Len=200
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Language spoken in village: French|Langues parlees dans la grappe: Francais
+Name=L30A
+Start=2014
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Language spoken in village: French|Langues parlees dans la grappe: Francais
+Name=L30A_VS1
+Link=120767840
+
+[Item]
+Label=Language spoken in village: KIKONGO|Langues parlees dans la grappe: KIKONGO
+Name=L30B
+Start=2015
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Language spoken in village: KIKONGO|Langues parlees dans la grappe: KIKONGO
+Name=L30B_VS1
+Link=120767840
+
+[Item]
+Label=Language spoken in village: LINGALA|Langues parlees dans la grappe: LINGALA
+Name=L30C
+Start=2016
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Language spoken in village: LINGALA|Langues parlees dans la grappe: LINGALA
+Name=L30C_VS1
+Link=120767840
+
+[Item]
+Label=Language spoken in village: SWAHILI|Langues parlees dans la grappe: SWAHILI
+Name=L30D
+Start=2017
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Language spoken in village: SWAHILI|Langues parlees dans la grappe: SWAHILI
+Name=L30D_VS1
+Link=120767840
+
+[Item]
+Label=Language spoken in village: TSHILUBA|Langues parlees dans la grappe: TSHILUBA
+Name=L30E
+Start=2018
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Language spoken in village: TSHILUBA|Langues parlees dans la grappe: TSHILUBA
+Name=L30E_VS1
+Link=120767840
+
+[Item]
+Label=Language spoken in village: Other|Langues parlees dans la grappe: Autres
+Name=L30F
+Start=2019
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Language spoken in village: Other|Langues parlees dans la grappe: Autres
+Name=L30F_VS1
+Link=120767840

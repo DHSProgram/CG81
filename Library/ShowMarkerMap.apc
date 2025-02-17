@@ -1,0 +1,62 @@
+﻿  numeric i;
+  Function DisplayHousehold()
+  list string MarkerChoice="Afficher toutes les menages d'une grappe","Afficher les menages de tous les grappes", "Afficher un seul menage";
+	numeric menu = MarkerChoice.show("SVP, veuillez choisir une action");
+	when menu;
+		1 -> maketext ("%s",invoke ("showClusterMap"));
+		2 -> maketext ("%s",invoke ("showAllClustersMap"));
+		3 -> maketext ("%s",invoke ("deleteGeometry"));
+		endwhen;
+End; 
+  
+  function showClusterMap()
+    // Declare a map
+    map hhmap;
+    numeric markerId;
+
+    do i = 1 until i > maxocc(RECORD2)
+      if LLATITUDE(i) & LLONGITUDE(i) then
+        markerId = hhmap.addMarker(LLATITUDE(i), LLONGITUDE(i));
+        hhmap.setMarkerText(markerId, maketext("%03d-%02d", LSTRUCT(i), LHOUSEH(i)));
+        hhmap.setMarkerDescription(markerId, maketext("%03v-%02v", LADDRESS(i), LNAME(i)));
+      endif;
+	  hhmap.zoomTo(LLATITUDE(i), LLONGITUDE(i), 10); 
+    enddo;
+    hhmap.show();
+	
+  end;
+
+
+  function showAllClustersMap()
+    // Declare a map
+    map hhmap;
+    numeric markerId;
+
+    do i = 1 until i > maxocc(RECORD2)
+      if LLATITUDE(i) & LLONGITUDE(i) then
+        markerId = hhmap.addMarker(LLATITUDE(i), LLONGITUDE(i));
+        hhmap.setMarkerText(markerId, maketext("%03d-%02d", LSTRUCT(i), LHOUSEH(i)));
+        hhmap.setMarkerDescription(markerId, maketext("%03v-%02v", LADDRESS(i), LNAME(i)));
+      endif;
+	  hhmap.zoomTo(LLATITUDE(i), LLONGITUDE(i), 10); 
+    enddo;
+    hhmap.show();
+	
+  end;
+  
+    function showOneHouseholdMap()
+    // Declare a map
+    map hhmap;
+    numeric markerId;
+
+    do i = 1 until i > maxocc(RECORD2)
+      if LLATITUDE(i) & LLONGITUDE(i) then
+        markerId = hhmap.addMarker(LLATITUDE(i), LLONGITUDE(i));
+        hhmap.setMarkerText(markerId, maketext("%03d-%02d", LSTRUCT(i), LHOUSEH(i)));
+        hhmap.setMarkerDescription(markerId, maketext("%03v-%02v", LADDRESS(i), LNAME(i)));
+      endif;
+	  hhmap.zoomTo(LLATITUDE(i), LLONGITUDE(i), 10); 
+    enddo;
+    hhmap.show();
+	
+  end;

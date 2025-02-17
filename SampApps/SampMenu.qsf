@@ -1,0 +1,93 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: French
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: MENU_DICT.WINTRO
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:center;"><span style="font-size:21px;color:#ff00ff;font-family:'Arial', sans-serif;">Welcome to the&nbsp;</span></p>
+            <p style="text-align: center;"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW228253480 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; white-space-collapse: preserve; background-color: rgb(255, 255, 255); font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-weight: bold; font-variant-ligatures: none !important;"><span class="NormalTextRun SCXW228253480 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text;">Troisième Enquête Démographique et de Santé au Congo</span></span><span class="EOP SCXW228253480 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; white-space-collapse: preserve; background-color: rgb(255, 255, 255); font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span></p><p style="text-align: center;"><span class="EOP SCXW228253480 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; white-space-collapse: preserve; background-color: rgb(255, 255, 255); font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW183190501 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-weight: bold; font-variant-ligatures: none !important;"><span class="NormalTextRun SCXW183190501 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text;">(EDS-III-Congo 2025)</span></span><span class="EOP SCXW183190501 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px;">&nbsp;</span></span></p><p style="text-align: center;"><span style="font-size: 21px; color: rgb(255, 0, 255); font-family: Arial, sans-serif;">Menu du Compteur de la Liste de&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:18px;color:#ff00ff;font-family:'Arial', sans-serif;">Enumerator Household Listing Menu&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#000000;font-family:'Arial', sans-serif;">Press the Enter key to continue&nbsp;</span></p>
+            <p>&nbsp;</p>
+          FR: |
+            <p style="text-align:center;"><span style="font-size:21px;color:#ff00ff;font-family:'Arial', sans-serif;">Bienvenue à&nbsp;</span></p>
+            <p style="text-align:center;"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW228253480 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; white-space-collapse: preserve; background-color: rgb(255, 255, 255); font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-weight: bold; font-variant-ligatures: none !important;"><span class="NormalTextRun SCXW228253480 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text;">Troisième Enquête Démographique et de Santé au Congo</span></span><span class="EOP SCXW228253480 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; white-space-collapse: preserve; background-color: rgb(255, 255, 255); font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span></p><p style="text-align:center;"><span class="EOP SCXW228253480 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; white-space-collapse: preserve; background-color: rgb(255, 255, 255); font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW183190501 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-weight: bold; font-variant-ligatures: none !important;"><span class="NormalTextRun SCXW183190501 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text;">(EDS-III-Congo 2025)</span></span><span class="EOP SCXW183190501 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px;">&nbsp;</span></span></p>
+            <p style="text-align:center;"><span style="font-size:21px;color:#ff00ff;font-family:'Arial', sans-serif;">Menu du Compteur de la Liste de Ménages&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#400040;font-family:'Arial', sans-serif;">Appuyer sur une touche pour continuer&nbsp;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: MENU_DICT.WINTNUM
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Select your name from the list of enumerators displayed.&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Selectionner votre nom à partir de la liste ci-dessous.&#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: MENU_DICT.WCLUSTER
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Enter the CLUSTER number on which you will be working&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p><font color="#0000ff" face="Arial, sans-serif">Entrez le numéro de la GRAPPE sur lequel vous allez travailler</font></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+  - name: MENU_DICT.WFINAL
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU FOR HH LISTING SYSTEM&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~, Enumerator ~~WINTNUM~~-~~IntName~~&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press the Enter key and Select an option from the list to be displayed&#160;</span></p>
+            <p>&#160;</p>
+          FR: |
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU FOR HH LISITING SYSTEM&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~, Enumerator ~~WINTNUM~~-~~INAME~~&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Appuyez sur une touche pour afficher le menu et en sélectionnez une option&#160;</span></p>
+        helpText:
+          EN: |
+            
+          FR: |
+            
+...

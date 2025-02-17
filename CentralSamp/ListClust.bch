@@ -1,0 +1,21 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=LISTCLUST
+Name=LISTCLUST
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\GPS.dcf
+File=..\Dicts\Segment.dcf
+File=..\Dicts\Control.dcf
+[AppCode]
+File=.\ListClust.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\ListClust.mgf
+[Order]
+File=.\ListClust.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\GPS.dcf,External
+Dict-Type=..\Dicts\Segment.dcf,External
+Dict-Type=..\Dicts\HHListing.dcf,Input,.\ListClust.ord
+Dict-Type=..\Dicts\Control.dcf,External

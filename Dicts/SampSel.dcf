@@ -1,0 +1,149 @@
+﻿[Dictionary]
+Version=CSPro 7.5
+Label=Sample selection|Seleccion de muestra
+Name=SAMPSEL
+RecordTypeStart=5
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=No
+SecurityOptions=664B1469BAA30E2DA95CD2EB4F70506F54A26C8ED92400A45E1785E991BE14C4
+
+[Languages]
+EN=English
+ES=Español
+FR=Français
+
+[Level]
+Label=Households selected for sample|Hogares seleccionados para la muestra
+Name=SAMPSEL_QUES
+
+[IdItems]
+
+[Item]
+Label=Cluster number|Numero de segmento|Numéro de la grappe
+Name=XCLUSTER
+Start=1
+Len=4
+ZeroFill=Yes
+
+[Record]
+Label=Cluster general information|Informacion general del segmento |Informations générales sur la grappe
+Name=SAMREC1
+RecordTypeValue='1'
+RecordLen=17
+
+[Item]
+Label=Total household in cluster|No. de hogares totales en el segmento|Total des ménages dans la grappe
+Name=XTOTAL
+Start=6
+Len=3
+
+[Item]
+Label=Date cluster household data was entered|Fecha de ingreso de hogares en el segmento|Date à laquelle les données sur les ménages du cluster ont été saisies
+Name=XCLDATE
+Start=9
+Len=8
+
+[Item]
+Label=Changes to households originally selected|Cambios a hogares seleccionados originalmente| Modifications des ménages sélectionnés
+Name=XCHANGE
+Start=17
+Len=1
+
+[ValueSet]
+Label=Changes to households originally selected|Cambios a hogares seleccionados originalmente
+Name=XCHANGE_VS1
+Value=1;See table of assignments|Ver tabla de asignacion                |Voir le tableau des affectations
+Value=2;Assign interviewers|Asignar entrevistadoras(es)                 |Affecter aux enquêteurs
+Value=9;Return to main menu|Regresar al menu principal                  |Revenir au menu principal
+
+[Record]
+Label=Record for households selected|Registro de hogares seleccionados
+Name=SAMREC2
+RecordTypeValue='2'
+Required=No
+MaxRecords=60
+RecordLen=98
+
+[Item]
+Label=Household number|Numero de hogar|Numéro ménage
+Name=XNUMBER
+Start=6
+Len=4
+
+[Item]
+Label=Structure number|Numero de estructura|Numéro de structure
+Name=XSTRUCT
+Start=10
+Len=4
+
+[Item]
+Label=Household address|Direccion del hogar|Adresse du ménage
+Name=XADDRESS
+Start=14
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Name of household head|Nombre del jefe del hogar|Nom du chef de ménage
+Name=XNAME
+Start=54
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Household selected for male survey|Hogar seleccionado para encuesta de hombres|Ménage sélectionné pour l'enquête homme
+Name=XMALE
+Start=84
+Len=1
+
+[ValueSet]
+Label=Household selected for male survey|Hogar seleccionado para encuesta de hombres|Ménage sélectionné pour l'enquête homme
+Name=XMALE_VS1
+Value=1;Yes|Si|Oui
+Value=2;No|No|Non
+
+[Item]
+Label=Household selected for anemia testing|Hogar seleccionado para prueba de anemia|Ménage sélectionné pour le test d'anémie
+Name=XANEMIA
+Start=85
+Len=1
+
+[ValueSet]
+Label=Household selected for anemia testing|Hogar seleccionado para prueba de anemia|Ménage sélectionné pour le test d'anémie
+Name=XANEMIA_VS1
+Value=1;Yes|Si|Oui
+Value=2;No|No|Non
+
+[Item]
+Label=Interviewer assigned to household|Entrevistador(a) asignado al hogar|Enquêteur affecté au ménage
+Name=XINTCODE
+Start=86
+Len=4
+
+[Item]
+Label=Date household assigned to interviewer|Fecha se asigno el hogar al entrevistador(a)|Date d'attribution du ménage à l'agent
+Name=XINTDATE
+Start=90
+Len=8
+
+[Item]
+Label=Household result and whether collected or not|Resultado del hogar y si se ha recolectado|Résultat du ménage et qu'il soit collecté ou non
+Name=XRESULT
+Start=98
+Len=1
+
+[ValueSet]
+Label=Household result and whether collected or not|Resultado del hogar y si se ha recolectado|Résultat du ménage et qu'il soit collecté ou non
+Name=XRESULT_VS1
+Value=0;Not visited yet|Aun no visitado                    |Pas encore visité
+Value=1;Completed|Completo                                 |Rempli
+Value=2;No HH member at home|No hay miembros en el hogar   |Pas de membre du ménage à la maison ou pas d'enqêté compétent au moment de la visite
+Value=3;Absent|Ausente                                     |Ménage totalement absent pour une longue période
+Value=4;Postponed|Postpuesto                               |Différé
+Value=5;Refused|Rechazo                                    |Refusé
+Value=6;Dwelling vacant|Vivienda desocupada                |Logement vacant
+Value=7;Dwelling destroyed|Vivienda destruida              |Logement destruit
+Value=8;Dwelling not found|Vivienda no encontrada          |Logement non trouvé
+Value=9;Other|Otro                                         |Autre

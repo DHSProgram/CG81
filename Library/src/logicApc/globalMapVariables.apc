@@ -1,0 +1,14 @@
+﻿hashmap ClustersEntered(numeric) default(0);
+array string clustArray(800,2);
+List ClustersList, listClusterNumbers; 
+file gjsonPointVector; 
+string PointVector,forMap,dataFileTemp,GeoJsonValue ;
+map listingMap;
+numeric buttonIdAdd,buttonIdFilter,buttonIdClose,buttonIdBasemap,buttonIdEdit;
+string basemapSettingKey = "Dynamic Cluster Map";
+string clusterSettingKey="NoGrappe";
+string filePathKey="filePath";
+string dataDirectory = "C:\CD81L\PII"; //For windows only
+
+
+
