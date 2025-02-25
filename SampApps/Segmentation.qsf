@@ -1,156 +1,73 @@
-﻿[CAPI QUESTIONS]
-Version=CSPro 7.5
-
-[LANGUAGES]
-EN=English
-FR=French
-ES=Español
-
-
-
-[QUESTION]
-Field=SEGMENT_DCT.SAUXILIAR
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue0;}
-EN={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs32 Do you want to select the segment to be used for cluster %SCLUSTER%?\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red0\green0\blue0;}
-FR={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs32 Voulez-vous tirer un segment pour proc\'e9der le d\'e9nombrement pour la grappe %SCLUSTER%?\par
-FR=\pard\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SFINAL
-Condition=SAUXILIAR <> 1
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
-EN={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-EN=\pard\cf1\b\fs32 Press any key to go back to the main menu\par
-EN=\par
-EN=\cf2 Segment selected\tab\tab\tab\tab\tab : %SSEGNUM%\par
-EN=Households in selected segment\tab\tab : %SHHNUMB(SSEGNUM)%\par
-EN=Total households in cluster\tab\tab\tab : %STOTHH%\cf1\par
-EN=\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
-FR={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-FR=\pard\cf1\b\fs32 Appuer une touche pour continuer\par
-FR=\cf2 Segment selection\'e9\tab\tab\tab\tab : %SSEGNUM%\par
-FR=Nombre de m\'e9nages ce segment\tab\tab : %SHHNUMB(SSEGNUM)%\par
-FR=Nombre des m\'e9nages dans la grappe\tab\tab : %STOTHH%\cf1\par
-FR=\par
-FR=\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SFINAL
-Condition=SAUXILIAR = 1
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
-EN={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-EN=\pard\cf1\b\fs32 Please take note of the selected segment by the system and make sure that households will be listed for the selected segment\par
-EN=\par
-EN=Press any key to go back to the main menu\par
-EN=\par
-EN=\cf2 Segment selected\tab\tab\tab\tab\tab : %SSEGNUM%\par
-EN=Households in selected segment\tab\tab : %SHHNUMB(SSEGNUM)%\par
-EN=Total households in cluster\tab\tab\tab : %STOTHH%\cf1\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
-FR={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-FR=\pard\cf1\b\fs32 Veuillez noter le segment tir\'e9 par le programme et assurer que le d\'e9nombrment soit fait dans le segment tir\'e9\par
-FR=\par
-FR=Appuyer sur une touche pour revenir au menu principale\par
-FR=\par
-FR=\cf2 Segment selection\'e9\tab\tab\tab\tab : %SSEGNUM%\par
-FR=Nombre de m\'e9nages ce segment\tab\tab : %SHHNUMB(SSEGNUM)%\par
-FR=Nombre des m\'e9nages dans la grappe\tab\tab : %STOTHH%\cf1\par
-FR=\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SHHNUMB
-Occurrences=1:20
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue0;}
-EN={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs32 Enter the number of households in the segment\par
-EN=\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red0\green0\blue0;}
-FR={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs32 Entrer le nombre de m\'e9nages ce segment.\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SMORE
-Occurrences=1:20
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue0;}
-EN={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs32 Are there any other segments in the cluster?\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red0\green0\blue0;}
-FR={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs32 Y a-t-il d' autres segments dans la grappe?\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SOPTION
-Condition=segmendone <> 1
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue0;}
-EN={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs32 Please select an option.\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red0\green0\blue0;}
-FR={\*\generator Riched20 10.0.17134}\viewkind4\uc1
-FR=\pard\cf1\fs32 Veuillez prendre une option.\par
-FR=\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SOPTION
-Condition=segmendone = 1
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;\red0\green0\blue255;}
-EN={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-EN=\pard\cf1\fs32 Segment selection for this cluster was already done.  Changing the number of households may change the selection of the segment for the cluster.  Please select an option.\par
-EN=\par
-EN=\cf2\b\par
-EN=\cf3 Segment selected\tab\tab\tab\tab\tab : %SSEGNUM%\par
-EN=Households in selected segment\tab\tab : %SHHNUMB(SSEGNUM)%\par
-EN=Total households in cluster\tab\tab\tab : %STOTHH%\cf2\par
-EN=\cf1\b0\fs32\par
-EN=\par
-EN=}
-FR={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-FR={\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red255\green0\blue0;}
-FR={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-FR=\pard\cf1\fs32 Tirage de segment est d\'e9j\'e0 fait dans cette grappe .  Changer le nombre de m\'e9nages dans un segment peut changer le segment tir\'e9. Veuillez prendre une option.\par
-FR=\par
-FR=\cf2\b Segment selection\'e9\tab\tab\tab\tab : %SSEGNUM%\par
-FR=Nombre de m\'e9nages ce segment\tab\tab : %SHHNUMB(SSEGNUM)%\par
-FR=Nombre des m\'e9nages dans la grappe\tab\tab : %STOTHH%\cf3\par
-FR=\par
-FR=\cf1\b0\fs32\par
-FR=\par
-FR=}
-
-[QUESTION]
-Field=SEGMENT_DCT.SSEGHH
-Condition=SAUXILIAR = 1
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
-EN={\*\generator Riched20 10.0.19041}\viewkind4\uc1
-EN=\pard\cf1\b\fs32 Please take note of the selected segment by the system and make sure that households will be listed for the selected segment\par
-EN=\par
-EN=Press any key to go back to the main menu\par
-EN=\par
-EN=\cf2 Segment selected\tab\tab\tab : %SSEGNUM%\par
-EN=Households in segment   \tab : %SHHNUMB(SSEGNUM)%\par
-EN=Total households in cluster\tab : %STOTHH%\par
-EN=\cf1\par
-EN=}
-
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: Français
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: SEGMENT_DCT.SOPTION
+    conditions:
+      - logic: segmendone <> 1
+        questionText:
+          EN: |
+            Please select an option.&nbsp;<p></p>
+          FR: |
+            Veuillez prendre une option.&nbsp;<p></p>
+      - logic: segmendone = 1
+        questionText:
+          EN: |
+            <p>Segment selection for this cluster was already done. Changing the number of households may change the selection of the segment for the cluster. Please select an option.&nbsp;</p><p>&nbsp;</p><p></p>
+          FR: |
+            <p>Tirage de segment est déjà fait dans cette grappe . Changer le nombre de ménages dans un segment peut changer le segment tiré. Veuillez prendre une option.&nbsp;</p><p>&nbsp;</p><p></p>
+  - name: SEGMENT_DCT.SSEGTOT
+    conditions:
+      - questionText:
+          EN: |
+            Enter the number of segments for cluster ~~SCLUSTER~~<p></p>
+          FR: |
+            Entrez le nombre de segments pour la grappe ~~SCLUSTER~~<p></p>
+  - name: SEGMENT_DCT.SHHNUMB
+    conditions:
+      - questionText:
+          EN: |
+            Enter the number of households in segment<font color="#ff0000"> ~~SEGNUM~</font>~<p></p>
+          FR: |
+            Entrer le nombre de ménages dans segment <font color="#ff0000">~~SEGNUM~~</font><p></p>
+  - name: SEGMENT_DCT.SAUXILIAR
+    conditions:
+      - questionText:
+          EN: |
+            <p><br></p><p><br></p><p>Do you want to select the segment to be used for cluster ~~SCLUSTER~~?&nbsp;</p><p><br></p><p></p><p></p>
+          FR: |
+            <p>Voulez-vous tirer un segment pour procéder le dénombrement pour la grappe ~~SCLUSTER~~?&nbsp;</p><p><br></p><p></p><p></p>
+  - name: SEGMENT_DCT.SFINAL
+    conditions:
+      - questionText:
+          EN: |
+            <p><font color="#0000ff"><b>Segment tiré :</b><b>~~SSEGNUM~~</b></font></p><p><b><font color="#0000ff">Ménages dans segment tiré: ~~SHHNUMB(SSEGNUM)~~</font></b></p><p><b><font color="#0000ff">Ménage total estimé: ~~SCUMMUL(SSEGTOT)~~</font></b></p><p><span style="color: rgb(255, 0, 0); font-weight: 700;">Appuer une touche pour continuer&nbsp;</span></p><p><p></p></p>
+          FR: |
+            <p><font color="#0000ff"><b style="">Segment tiré :</b><b style="">~~SSEGNUM~~</b></font></p><p><b style=""><font color="#0000ff">Ménages dans segment tiré: ~~SHHNUMB(SSEGNUM)~~</font></b></p><p><b style=""><font color="#0000ff">Ménage total estimé: ~~SCUMMUL(SSEGTOT)~~</font></b></p><p><span style="color: rgb(255, 0, 0); font-weight: 700;">Appuer une touche pour continuer&nbsp;</span></p><p><p></p></p>
+...

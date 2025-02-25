@@ -1,0 +1,676 @@
+﻿//Dictionary (C:\CG81\Dicts\CGHH80.dcf)
+CCHH80      -> CCHH80      //DHS-8 Core 06-19-2020
+
+//Level (HOUSEHOLD) - Household
+HOUSEHOLD   -> HOUSEHOLD   //Household
+AHCLUST     -> QHCLUST     //Cluster number
+AHNUMBER    -> QHNUMBER    //Household number
+
+//Record (AHSECOVER) - Household identification
+AHSECOVER   -> QHSECOVER   //Household identification
+AHREGION    -> QHREGION    //Region|Région
+AHTYPE      -> QHTYPE      //Type of place of residence|Type de résidence
+AHADDRESS   -> QHADDRESS   //Address
+AHELIGM     -> QHELIGM     //Eligibility for men’s interview|Eligibilité pour l'enquête homme
+AHCONTVISIT -> QHCONTVISIT //Group to control visits
+AHVLINE     -> QHVLINE     //Visit line number
+AHVDAY      -> QHVDAY      //Day of visit
+AHVMONTH    -> QHVMONTH    //Month of visit
+AHVYEAR     -> QHVYEAR     //Year of visit
+AHVHOUR     -> QHVHOUR     //Hour of visit
+AHVMINUTE   -> QHVMINUTE   //Minute of visit
+AHVRESULT   -> QHVRESULT   //Result of visit|Résultat de la visite
+AHINTD      -> QHINTD      //Interview day|Jour de l'enquête
+AHINTM      -> QHINTM      //Interview month|Mois de l'enquête
+AHINTY      -> QHINTY      //Interview year|Année de l'enquête
+AHINTNUM    -> QHINTNUM    //Interviewer number
+AHRESULT    -> QHRESULT    //Result of household interview|Résultat de l'enquête ménage
+AHVISITS    -> QHVISITS    //Number of household visits|Nombre de visites dans le ménage
+AHCONSENT   -> QHCONSENT   //Consent agreement|Accord de consentement
+AHMEMBER    -> QHMEMBER    //Total members in household|Total de personnes dans le ménage
+AHWOMEN     -> QHWOMEN     //Eligible women in household|Total de femmes éligibles
+AHMEN       -> QHMEN       //Eligible men in household|Total d’hommes éligibles
+AHRESP      -> QHRESP      //Line of household respondent|Numéro de ligne de l'enquêté(e) du ménage
+AHTEAM      -> QHTEAM      //Team number
+AHSUPERV    -> QHSUPERV    //Supervisor number
+AHLANGQ     -> QHLANGQ     //Language of questionnaire|Langue du questionnaire
+AHLANGI     -> QHLANGI     //Language of interview|Langue de l’interview
+AHLANGR     -> QHLANGR     //Language of respondent|Langue du répondant
+AHTRANS     -> QHTRANS     //Translator used|Interprète utilisé
+AH100       -> QH100       //Time household interview begins
+AH100H      -> QH100H      //Hour interview begins
+AH100M      -> QH100M      //Minutes interview begins|Début enquêtes en minutes
+AH156       -> QH156       //End of household interview
+AH156H      -> QH156H      //End of household interview (hour)|Fin de l’interview ménager (heure)
+AH156M      -> QH156M      //End of household interview (minutes)|Fin de l’interview ménager (minutes)
+AH07A       -> QH07A       //Babies in the household|Petits enfants ou des nourrissons dans le ménage
+AH07B       -> QH07B       //Other non-family members in household|Autres membres n’appartenant pas au ménage
+AH07C       -> QH07C       //Other temporary visitors in household|Autres visiteurs temporaires dans le ménage
+AHNUMDV     -> QHNUMDV     //Line number of woman eligible for domestic violence
+AHINTC      -> QHINTC      //Date of household interview (CMC)
+AHINTCD     -> QHINTCD     //Date of household interview Century Day Code (CDC)
+AHWEIGHT    -> QHWEIGHT    //Household weight (6 decimals)
+AMWEIGHT    -> QMWEIGHT    //Household weight - men's subsample (6 decimals)
+AHSTRATA    -> QHSTRATA    //Sampling errors stratum
+AHWLTHF     -> QHWLTHF     //Wealth index factor (5 decimals)
+AHWLTHI     -> QHWLTHI     //Wealth index quintile|Quintile de bien-être économique
+AHWLTFUR    -> QHWLTFUR    //Wealth index factor for urban/rural (5 decimals)
+AHWLTIUR    -> QHWLTIUR    //Wealth index quintile for urban/rural|Quintile de bien-être économique urbain/Rural
+AHALTIT     -> QHALTIT     //Cluster altitude in meters
+AHELIHEM    -> QHELIHEM    //Eligibility for hemoglobin|Eligibilité pour l'hémoglobine
+ACHL22      -> QCHL22      //Total de jure children 5-14 in household for child labor|Total de jure enfant de 5 à 14 ans du ménage pour le travail des enfants
+AHAI1       -> QHAI1       //Any household member involved in traffic accidents in last 12 months
+AHAI17      -> QHAI17      //Any household member involved in accidents other than traffic in last 12 months
+AH202       -> QH202       //Introduction to inpatient health expenditure module|Auxiliaire pour les coordonnées du Ménage|Auxiliar para coordenadas de hogar
+AHFINISH    -> QHFINISH    //Interview notes
+GHAUX       -> GHAUX       //Auxiliary for HH coordinates|Auxiliaire pour les coordonnées du Ménage|Auxiliar para coordenadas de hogar
+GHINTRO     -> GHINTRO     //Introduction to GPS capture|Introduction|Introduccion
+GHLATITUDE  -> GHLATITUDE  //Latitude in degrees
+GHLATPOLE   -> GHLATPOLE   //Pole north-south for latitude|Pôle nord-sud pour la latitude|Polo de latitud norte-sur
+GHLONGITUDE -> GHLONGITUDE //Longitude in degrees
+GHLNGPOLE   -> GHLNGPOLE   //East-west longitude|Longitude est-ouest|Longitude este-oeste
+GHALTITUDE  -> GHALTITUDE  //Altitude in meters
+GHSATELLIT  -> GHSATELLIT  //Number of satellites
+GHACCURACY  -> GHACCURACY  //Accuracy (between 1-50) 1-the best 50-the weakest
+
+//Record (AHSEC01X) - Household members list
+AHSEC01X    -> QHSEC01X    //Household members list
+AHLINE      -> QHLINE      //Person line number|Numéro de ligne de la personne
+AHFIRSTN    -> QHFIRSTN    //Person first name
+AHLASTN     -> QHLASTN     //Person last name
+AHRELAT     -> QHRELAT     //Relationship|Relation
+AHLIVES     -> QHLIVES     //Usually lives here|Résident habituel
+AHSTAYED    -> QHSTAYED    //Stayed here last night|A dormi ici la nuit dernière
+AHSEX       -> QHSEX       //Sex|Sexe du membre du ménage
+AHAGE       -> QHAGE       //Age|Age du membre du ménage
+AHMORE      -> QHMORE      //Any other person living in household|Autre personne vivant dans le ménage
+
+//Record (AHSEC01) - Household Schedule
+AHSEC01     -> QHSEC01     //Household Schedule
+AH01        -> QH01        //Line number of member|Numéro de ligne du membre
+AH02        -> QH02        //Household member name
+AH03        -> QH03        //Relationship to head|Relation avec le chef de ménage
+AH04        -> QH04        //Sex of household member|Sexe du membre du ménage
+AH05        -> QH05        //Usual resident|Résident habituel
+AH06        -> QH06        //Stayed here last night|A dormi ici la nuit dernière
+AH07        -> QH07        //Age of household members|Age du membre du ménage
+AH08        -> QH08        //Marital status|Etat matrimonial
+AH09        -> QH09        //Eligibility for interview|Eligibilité pour l'enquête
+AH10        -> QH10        //Eligibility for men’s interview|Eligibilité pour l'enquête homme
+AH11        -> QH11        //Eligibility for children for biomarkers|Eligibilité de l'enfant pour les biomarqueurs
+AH12        -> QH12        //Mother alive|Mère en vie
+AH13        -> QH13        //Mother's line number|Numéro de ligne de la mère
+AH14        -> QH14        //Father alive|Père en vie
+AH15        -> QH15        //Father's line number|Numéro de ligne du père
+AH16        -> QH16        //Ever attended school|A déjà fréquenté l'école
+AH17        -> QH17        //Education attainment
+AH17A       -> QH17A       //Level of education attended|Niveau d'éducation fréquenté
+AH17B       -> QH17B       //Highest grade completed|Plus haut niveau d’étude atteint
+AH18        -> QH18        //Attend school current year|Fréquente l'école cette année
+AH19        -> QH19        //Education attending
+AH19A       -> QH19A       //Level of education attending|Le niveau d’étude atteint
+AH19B       -> QH19B       //Grade attending|Niveau/Classe
+AH20        -> QH20        //Birth certificate/registered|A un certificat de naissance/Naissance déclarée
+AH21        -> QH21        //Last six months admitted overnight to a health facility
+AH22        -> QH22        //Eligibility for inpatient module|Eligibilité pour l'enquête
+AH23        -> QH23        //Last four weeks received care from health provider, pharmacy, traditional healer
+AH24        -> QH24        //Last time received care was money paid
+AH25        -> QH25        //Eligibility for outpatient module|Eligibilité pour l'enquête
+AH26        -> QH26        //Wear glasses or contact lenses|Portez des lunettes ou des lentilles de contact
+AH27        -> QH27        //Have difficulty seeing even when wearing glasses or contact lenses|Avoir de la difficulté à voir même en portant des lunettes ou des lentilles de contact
+AH28        -> QH28        //Have difficulty seeing (don't wear glasses)|Avoir de la difficulté à voir (ne pas porter de lunettes)
+AH29        -> QH29        //Wear a hearing aid|Portez un appareil auditif
+AH30        -> QH30        //Have difficulty hearing even when using a hearing aid|Avoir de la difficulté à entendre même en utilisant un appareil auditif
+AH31        -> QH31        //Have difficulty hearing (don't wear hearing aid)|Avoir de la difficulté à entendre (ne pas porter d'appareil auditif)
+AH32        -> QH32        //Have difficulty communicating using usual language|Avoir de la difficulté à communiquer en utilisant la langue habituelle
+AH33        -> QH33        //Have difficulty remembering or concentrating|Avoir de la difficulté à se souvenir ou à se concentrer
+AH34        -> QH34        //Have difficulty walking or climbing steps|Avoir de la difficulté à marcher ou à monter des marches
+AH35        -> QH35        //Have difficulty washing all over or dressing|Avoir de la difficulté à se laver ou à s'habiller
+AH12A       -> QH12A       //Year mother died (Child wellbeing module)
+AH14A       -> QH14A       //Year father died (Child wellbeing module)
+AH15C       -> QH15C       //Line number of primary caregiver (Child wellbeing module)
+AH15D       -> QH15D       //Relationship to primary caregiver (Child wellbeing module)
+ML07I       -> ML07I       //Age corrected from individual questionnaire|Âge corrigé du questionnaire individuel
+ML07F       -> ML07F       //Flag for age correction
+MLPREG      -> MLPREG      //Pregnancy status from individual questionnaire|Statut de la grossesse à partir du questionnaire individuel
+
+//Record (AHSECA1) - Accident and injury module - road traffic accidents
+AHSECA1     -> QHSECA1     //Accident and injury module - road traffic accidents
+AHAI1L      -> QHAI1L      //Line number of person involved in traffic accident
+AHAI2       -> QHAI2       //Name of household member involved in traffic accident
+AHAI4       -> QHAI4       //Vehicle involved in traffic accident
+AHAI5       -> QHAI5       //Household member still alive as a result of traffic accident
+AHAI6       -> QHAI6       //Sex of household member involved in traffic accident - dead|Sexe du membre du ménage
+AHAI7       -> QHAI7       //Age of household member involved in traffic accident - dead|Age du membre du ménage
+AHAI8       -> QHAI8       //Household member death related to traffic accident - dead
+AHAI9       -> QHAI9       //Injures resulting from traffic accident - dead
+AHAI10      -> QHAI10      //Household line number of member involved in traffic accident - alive|Numéro de ligne de la mère
+AHAI11      -> QHAI11      //Sex of household member involved in traffic accident - alive|Sexe du membre du ménage
+AHAI12      -> QHAI12      //Age of household member involved in traffic accident - alive|Age du membre du ménage
+AHAI13      -> QHAI13      //Injures resulting from traffic accident - alive
+AHAI14      -> QHAI14      //Household member continues to have health problems as a result of traffic accident - alive
+AHAI15      -> QHAI15      //Type of problems household member still has from traffic accident - alive
+AHAI16      -> QHAI16      //Any other household member had a traffic accident last 12 months
+
+//Record (AHSECA2) - Accident and injury module - other accidents
+AHSECA2     -> QHSECA2     //Accident and injury module - other accidents
+AHAI17L     -> QHAI17L     //Line number of person involved in other accident
+AHAI19      -> QHAI19      //Name of household member involved in other accident
+AHAI20      -> QHAI20      //Type of accident household member was involved
+AHAI21      -> QHAI21      //How the accident happened
+AHAI22      -> QHAI22      //Household member still alive as a result of other accident
+AHAI23      -> QHAI23      //Sex of household member involved in other accident - dead|Sexe du membre du ménage
+AHAI24      -> QHAI24      //Age of household member involved in other accident - dead|Age du membre du ménage
+AHAI25      -> QHAI25      //Household member death related to other accident - dead
+AHAI26      -> QHAI26      //Injures resulting from other accident - dead
+AHAI27      -> QHAI27      //Household line number of member involved in other accident - alive|Numéro de ligne de la mère
+AHAI28      -> QHAI28      //Sex of household member involved in other accident - alive|Sexe du membre du ménage
+AHAI29      -> QHAI29      //Age of household member involved in other accident - alive|Age du membre du ménage
+AHAI30      -> QHAI30      //Injures resulting from other accident - alive
+AHAI31      -> QHAI31      //Household member continues to have health problems as a result of other accident - alive
+AHAI32      -> QHAI32      //Type of problems household member still has from other accident - alive
+AHAI33      -> QHAI33      //Any other household member had other accident last 12 months
+
+//Record (AHSEC02) - Household Characteristics
+AHSEC02     -> QHSEC02     //Household Characteristics
+AH101       -> QH101       //Source of drinking water|Source d'eau potable
+AH102       -> QH102       //Source of water for cooking/handwashing|Source d'eau pour cuisiner/se laver les mains
+AH103       -> QH103       //Location of source for water|Emplacement de la source d'eau
+AH104       -> QH104       //Time to water and back (mins)|Temps d'aller et retour à la source (minutes)
+AH105       -> QH105       //Line number of person who collects water|Numéro de ligne de la personne qui prend l'eau
+AH106       -> QH106       //Household did not have sufficient amount of water|Le ménage n'avait pas suffisamment d'eau
+AH107       -> QH107       //Do anything to water to make safe to drink|Faire quelque chose pour rendre l'eau plus saine
+AH108       -> QH108       //What do you usually do to make water safe to drink|Que faites-vous habituellement pour rendre l'eau saine
+AH109       -> QH109       //Type of toilet facility|Type de toilettes
+AH110       -> QH110       //Share facilities with other households|Partager les toilettes avec d'autres ménages
+AH111       -> QH111       //Number of households sharing toilet|Nombre de ménages partageant les toilettes
+AH112       -> QH112       //Location of toilet facility|Emplacement des toilettes
+AH114       -> QH114       //Septic tank has been emptied|La fosse septique a été vidée
+AH115       -> QH115       //Septic tank emptied by a service provider|Fosse septique vidée par un prestataire de services/professionnel
+AH116       -> QH116       //Where septic tanked emptied to|Où le contenu de la fosse septique été vidé
+AH117       -> QH117       //Type of cookstove|Type de cuisinière
+AH118       -> QH118       //Stove has a chimney|La cuisinière a une cheminée
+AH120       -> QH120       //Type of cooking fuel|Type de combustible
+AH121       -> QH121       //Food cooked in the house / in separate building / outdoors|Cuisine  faite dans la maison/dans un bâtiment séparé/à l'extérieur
+AH122       -> QH122       //Household has separate room used as kitchen|Le ménage a une pièce séparée utilisée comme cuisine
+AH123       -> QH123       //Heat source for home|Source de chauffage pour la maison
+AH124       -> QH124       //Heat in home has a chimney|Le chauffage dans la maison a une cheminée
+AH125       -> QH125       //Type of fuel for home heat|Type de combustible pour le chauffage
+AH126       -> QH126       //Type of light at home|Type d’éclairage à la maison
+AH127       -> QH127       //Number of rooms used for sleeping|Nombre de chambres utilisées pour dormir
+AH128       -> QH128       //Livestock, herds or farm animals|Bétail, troupeaux ou animaux de ferme ou de la volaille
+AH129A      -> QH129A      //Cows/bulls|Vaches laitières ou taureaux
+AH129B      -> QH129B      //Other cattle|Autre bétail
+AH129C      -> QH129C      //Horses/donkeys/mules|Chevaux, ânes ou mulets
+AH129D      -> QH129D      //Goats|Chèvres
+AH129E      -> QH129E      //Sheep|Moutons
+AH129F      -> QH129F      //Chickens or other poultry|Poulets ou autre volaille
+AH130       -> QH130       //Own land usable for agriculture|Possède des terres cultivables
+AH131       -> QH131       //Hectares for agricultural land|Hectares de terres cultivables
+AH132A      -> QH132A      //Electricity|L'électricité
+AH132B      -> QH132B      //Radio|Radio
+AH132C      -> QH132C      //Television|Télévision
+AH132D      -> QH132D      //Telephone (non-mobile)|Téléphone fixe
+AH132E      -> QH132E      //Computer|Ordinateur
+AH132F      -> QH132F      //Refrigerator|Réfrigérateur
+AH133A      -> QH133A      //Watch|Montre
+AH133B      -> QH133B      //Mobile telephone|Ttéléphone portable
+AH133C      -> QH133C      //Bicycle|Bicyclette
+AH133D      -> QH133D      //Motorcycle or scooter|Motocyclette ou un scooter
+AH133E      -> QH133E      //Animal-drawn cart|Charrette tirée par un animal
+AH133F      -> QH133F      //Car or Truck|Voiture ou camionnette
+AH133G      -> QH133G      //Boat with a motor|Bateau à moteur
+AH134       -> QH134       //Bank account|Compte bancaire
+AH135       -> QH135       //Mobile phone used financial transactions|Téléphone mobile utilisé pour des transactions financières
+AH136       -> QH136       //Frequency of smoking inside house|Fréquence de fumer à l'intérieur de la maison
+AH137       -> QH137       //Owns mosquito nets for sleeping|Possède des moustiquaires pour dormir
+AH138       -> QH138       //Number of mosquito nets|Nombre de moustiquaires
+
+//Record (AHSEC03) - Mosquito Nets
+AHSEC03     -> QHSEC03     //Mosquito Nets
+AH139       -> QH139       //Net number|Numéro de la moustiquaire
+AH140       -> QH140       //Shown Net|Observé la moustiquaire
+AH141       -> QH141       //How long ago household obtain net|Depuis combien de temps le ménage a obtenu la moustiquaire
+AH142       -> QH142       //Net brand name|Marque de la moustiquaire
+AH143       -> QH143       //Obtained net from campaign, antenatal or immunization visit|Moustiquaire obtenue pendant campagne, visite prénatale ou visite pour une vaccination
+AH144       -> QH144       //Place where net was obtained|Lieu d’obtention de la moustiquaire
+AH145       -> QH145       //Anyone sleep under this net last night|Quelqu’un a dormi sous cette moustiquaire la nuit dernière
+AH146A      -> QH146A      //Line No. of 1st person who slept under net|Numéro de ligne de la 1ère personne qui a dormi sous cette moustiquaire
+AH146B      -> QH146B      //Line No. of 2nd person who slept under net|Numéro de ligne de la 2ème personne qui a dormi sous cette moustiquaire
+AH146C      -> QH146C      //Line No. of 3rd person who slept under net|Numéro de ligne de la 3ème personne qui a dormi sous cette moustiquaire
+AH146D      -> QH146D      //Line No. of 4th person who slept under net|Numéro de ligne de la 4ème personne qui a dormi sous cette moustiquaire
+AH147       -> QH147       //Reason net was not used|Reason de la non utilisation de la moustiquaire
+
+//Record (AHSEC04) - Additional household characteristics
+AHSEC04     -> QHSEC04     //Additional household characteristics
+AH149       -> QH149       //Observed place for handwashing|Endroit observé pour le lavage des mains
+AH150       -> QH150       //Observed presence of water|Observé la présence d'eau
+AH151       -> QH151       //Observed presence of soap, detergent or other cleansing agent|Observée la présence de savon, détergent ou autre produits nettoyants
+AH152       -> QH152       //Main floor material|Matériau principal du sol
+AH153       -> QH153       //Main roof material|Matériau principal du toit
+AH154       -> QH154       //Main wall material|Matériau principal des murs extérieurs
+AH155       -> QH155       //Test salt for iodine|Test sel pour l'iode
+
+//Record (AHSECCL) - Child Labor MICS version 01/2015
+AHSECCL     -> QHSECCL     //Child Labor MICS version 01/2015
+ACHLINE     -> QCHLINE     //Child line number in household|Numéro de ligne enfant dans le ménage
+ACHL2A      -> QCHL2A      //Past week worked on: plot/farm/looked after animals|Semaine passée a travaillé sur : terrain/ferme/potager ou s’est occupé des animaux
+ACHL2B      -> QCHL2B      //Past week worked on: helped family/relatives with business|Semaine passée a travaillé sur: aidé la famille / les proches avec des affaires
+ACHL2C      -> QCHL2C      //Past week worked on: produce/sell articles/handicrafts/food/agricultural products|Semaine passée a travaillé sur: produire/vendre des articles/artisanat/alimentation/produits agricoles
+ACHL2D      -> QCHL2D      //Past week worked on: other activities|Semaine passée a travaillée sur: autres activités
+ACHL4       -> QCHL4       //Hours worked in past week activities|Heures travaillées dans les activités de la semaine dernière
+ACHL5       -> QCHL5       //Past week work require carrying heavy loads|Le travail de la semaine passée requière de porter de charges lourdes
+ACHL6       -> QCHL6       //Past week work require working with dangerous tools, knives, heavy machines|Le travail de la semaine dernière requière de travailler avec des outils dangereux, des couteaux et des machines lourdes
+ACHL7A      -> QCHL7A      //Work environment in past week work: exposed to dust, fumes, gas|Environnement de travail au cours de la semaine précédente: exposé  à la poussière/fumées ou gaz
+ACHL7B      -> QCHL7B      //Work environment in past week work: exposed to extreme cold, heat, humidity|Environnement de travail au cours de la semaine passée: exposé  au froid, à la chaleur ou à de l’humidité extrême
+ACHL7C      -> QCHL7C      //Work environment in past week work: exposed to lous noise, vibration|Environnement de travail au cours de la semaine de travail précédente: exposé à un mauvais bruit, à des vibrations
+ACHL7D      -> QCHL7D      //Work environment in past week work: require work at heights|Environnement de travail dans la semaine de travail précédente: exige un travail en hauteur
+ACHL7E      -> QCHL7E      //Work environment in past week work: exposed to chemicals, pesticides, glues, explosives|Environnement de travail au cours de la semaine passée: exposé produits chimiques, pesticides, colles, similaires, explosifs
+ACHL7F      -> QCHL7F      //Work environment in past week work: other processes bad for health/safety|Environnement de travail au cours de la semaine passée: d'autres processus mauvais pour la santé/sécurité
+ACHL8       -> QCHL8       //Past week: fetch water for household use|La semaine dernière: aller chercher de l'eau pour l'usage domestique
+ACHL9       -> QCHL9       //Past week: hours fetching water for household use|Semaine dernière: heures pour aller chercher de l'eau pour l'usage domestique
+ACHL10      -> QCHL10      //Past week: collect firewood for household use|La semaine dernière: ramassez du bois de chauffage pour un usage domestique
+ACHL11      -> QCHL11      //Past week: hours collecting firewood for household use|Semaine dernière: heures pour chercher du bois de chauffage pour l'usage domestique
+ACHL12A     -> QCHL12A     //Past week did do: shopping for household|La semaine dernière a fait: des courses pour le ménage
+ACHL12B     -> QCHL12B     //Past week did do: repair household equipment|La semaine dernière a fait: réparer équipement ménager
+ACHL12C     -> QCHL12C     //Past week did do: cooking/cleaning utensils or the house|La semaine dernière a fait: Cuisiner/laver la vaisselle ou nettoyer la maison
+ACHL12D     -> QCHL12D     //Past week did do: washing clothes|La semaine dernière a fait: laver des vêtements
+ACHL12E     -> QCHL12E     //Past week did do: caring for children|La semaine dernière a fait: prendre soin des enfants
+ACHL12F     -> QCHL12F     //Past week did do: caring for the old/sick|La semaine dernière a fait: prendre soin des personnes âgées/malades
+ACHL12G     -> QCHL12G     //Past week did do: other household tasks|La semaine dernière a fait: autres tâches de ménage
+ACHL14      -> QCHL14      //Past week hours engaged in household activities|Heures de la semaine passées consacrées aux activités ménagères
+ACHLWGT     -> QCHLWGT     //Child labor sample weight (6 decimals)
+ACHLNAME    -> QCHLNAME    //Child name
+
+//Record (AHSECCD) - Child discipline
+AHSECCD     -> QHSECCD     //Child discipline
+ACDI2       -> QCDI2       //Child line number in household|Numéro de ligne enfant dans le ménage
+ACDI3A      -> QCDI3A      //Past month: took away privileges|Le mois dernier: privilèges retirés
+ACDI3B      -> QCDI3B      //Past month: explained wrong behavior|Le mois dernier: un mauvais comportement expliqué
+ACDI3C      -> QCDI3C      //Past month: shook him/her|Le mois dernier: secoué
+ACDI3D      -> QCDI3D      //Past month: shouted, yelled, screamed|Le mois dernier: hurlé, crié
+ACDI3E      -> QCDI3E      //Past month: gave something else to do|Le mois dernier: donné autre chose à faire
+ACDI3F      -> QCDI3F      //Past month: hit on bottom with bare hand|Le mois dernier: frappé(e) sur les fesses à main nue.
+ACDI3G      -> QCDI3G      //Past month: hit with hard object (belt, stick, hairbrush)|Le mois dernier: frappé avec un objet dur (ceinture, bâton, brosse à cheveux)
+ACDI3H      -> QCDI3H      //Past month: called dumb, lazy or other names|Le mois dernier: appelé idiot, paresseux ou autres noms
+ACDI3I      -> QCDI3I      //Past month: hit on face, head, ears|Le mois dernier: touché au visage, à la tête, aux oreilles
+ACDI3J      -> QCDI3J      //Past month: hit on hand, arm, leg|Le mois dernier: frappé à la main, au bras, à la jambe
+ACDI3K      -> QCDI3K      //Past month: beat him/her up|Le mois dernier: le/la battre encore et encore aussi fort que possible.
+ACDI4       -> QCDI4       //Child should be punished to bring him/her up, raise or educate|L'enfant doit être puni pour l'élever ou l'éduquer
+ACDWGT      -> QCDWGT      //Child disciplone sample weight (6 decimals)
+ACDINAME    -> QCDINAME    //Child name
+ACDI3       -> QCDI3       //Intro for child discipline
+
+//Record (AHSECCW) - Child well-being and household structure
+AHSECCW     -> QHSECCW     //Child well-being and household structure
+AHCWLINE    -> QHCWLINE    //Child rank within roster
+AHCW05      -> QHCW05      //Child line number in household
+AHCW05N     -> QHCW05N     //Name of child
+AHCW06      -> QHCW06      //Introduction
+AHCW08      -> QHCW08      //Time since child and mother lived together
+AHCW08U     -> QHCW08U     //Time since child and mother lived together (unit)
+AHCW08N     -> QHCW08N     //Time since child and mother lived together (number)
+AHCW09      -> QHCW09      //Last 6 months: amount that child and mother communicate
+AHCW11      -> QHCW11      //Same mother as a previous child
+AHCW12      -> QHCW12      //Child with same mother
+AHCW13      -> QHCW13      //Mother is married or living with a man
+AHCW14      -> QHCW14      //Man that mother is living with is child's father
+AHCW15      -> QHCW15      //Mother provides money or goods to this household
+AHCW16      -> QHCW16      //Mother receives money or goods from this household
+AHCW17      -> QHCW17      //Place where mother lives
+AHCW19      -> QHCW19      //Time since child and father lived together
+AHCW19U     -> QHCW19U     //Time since child and father lived together (unit)
+AHCW19N     -> QHCW19N     //Time since child and father lived together (number)
+AHCW20      -> QHCW20      //Last 6 months: amount that child and father communicate
+AHCW22      -> QHCW22      //Same father as previous child
+AHCW23      -> QHCW23      //Child with same father
+AHCW25      -> QHCW25      //Father is married or living with a woman
+AHCW26      -> QHCW26      //Father provides money or goods to this household
+AHCW27      -> QHCW27      //Father receives money or goods from this household
+AHCW28      -> QHCW28      //Place where father lives
+
+//Record (AHSECHE1) - Inpatient health expenditure
+AHSECHE1    -> QHSECHE1    //Inpatient health expenditure
+AH203L      -> QH203L      //Entry in roster for inpatient member
+AH203N      -> QH203N      //Inpatient household member name
+AH203       -> QH203       //Household line number for inpatient member
+AH204       -> QH204       //Place for most recent stay overnight for health care|Lieu d’administration de la plus part des vaccins
+AH205       -> QH205       //Main reason to seek care most recent time
+AH206       -> QH206       //Had surgery during most recent overnight stay
+AH207       -> QH207       //Cost of treatment in most recent overnight stay
+AH208       -> QH208       //Last six months stayed another time in a health facility
+AH209       -> QH209       //Place next-to-last time stayed overnight for health care|Lieu d’administration de la plus part des vaccins
+AH210       -> QH210       //Main reason to seek care next-to-last time
+AH211       -> QH211       //Had surgery during next-to-last overnight stay
+AH212       -> QH212       //Cost of treatment in next-to-last overnight stay
+AH213       -> QH213       //Besides two stays, last six months stayed another time in a health facility
+AH214       -> QH214       //Place second-to-last time stayed overnight for health care|Lieu d’administration de la plus part des vaccins
+AH215       -> QH215       //Main reason to seek care second-to-last time
+AH216       -> QH216       //Had surgery during second-to-last overnight stay
+AH217       -> QH217       //Cost of treatment in second-to-last overnight stay
+AH218       -> QH218       //Besides three stays, last six months stayed another time in a health facility
+AH219       -> QH219       //How many times stayed overnight in a health facility last six months
+AH220       -> QH220       //Is inpatient member covered by a health insurance
+AH221       -> QH221       //Main type of inpatient's health insurance
+
+//Record (AHSECHE2) - Outpatient health expenditure
+AHSECHE2    -> QHSECHE2    //Outpatient health expenditure
+AH302       -> QH302       //Line number of selected outpatient HH member
+AH302N      -> QH302N      //Inpatient household member name
+AH303       -> QH303       //Place where patient got health care most recently|Lieu d’administration de la plus part des vaccins
+AH304       -> QH304       //Cost of treatment for services received from provider
+AH305       -> QH305       //Main reason to seek outpatient care most recent time
+AH306       -> QH306       //Last four weeks did get care another time from health provider
+AH307       -> QH307       //How many other times did get care last four weeks
+AH308       -> QH308       //How many times was money spent
+AH309       -> QH309       //Is outpatient member covered by a health insurance
+AH310       -> QH310       //Main type of outpatient's health insurance
+AH311       -> QH311       //Cost of vitamins, medicines, herbal remedies not prescribed by health provider
+AHOUTWGT    -> QHOUTWGT    //Health expenditure weight for outpatient (6 decimals)
+
+//Record (AHSECFS) - Food insecurity
+AHSECFS     -> QHSECFS     //Food insecurity
+AHFS1       -> QHFS1       //Household worried about food for lack of money or resources
+AHFS2       -> QHFS2       //Household members unable to eat healthy food for lack of money or resources
+AHFS3       -> QHFS3       //Household members ate only a few foods because of lack of money or resources
+AHFS4       -> QHFS4       //Household members skipped a meal because of lack of money or resources
+AHFS5       -> QHFS5       //Household members ate less than expected because of lack of money or resources
+AHFS6       -> QHFS6       //Household ran out of food because of lack of money or resources
+AHFS7       -> QHFS7       //Household members were hungry and did not eat because of lack of money or resources
+AHFS8       -> QHFS8       //Household members did not eat for a whole day because of lack of money or resources
+AHFS_MOD    -> QHFS_MOD    //Severity probability for moderate+severe food insecurity
+AHFS_SEV    -> QHFS_SEV    //Severity probability for severe food insecurity
+
+//Record (ABSECOVER) - Biomarker Identification
+ABSECOVER   -> QBSECOVER   //Biomarker Identification
+ABINT       -> QBINT       //Date of household interview
+ABINTD      -> QBINTD      //Day of household interview|Jour de l'interview ménage
+ABINTM      -> QBINTM      //Month of household interview|Mois de l'interview ménage
+ABINTY      -> QBINTY      //Year of household interview|Année de l'interview ménage
+ABVISITS    -> QBVISITS    //Number of visits for biomarker questionnaire|Nombre de visites pour le questionnaire biomarqueurs
+ABCHILD     -> QBCHILD     //Eligible children in the household|Enfants éligibles dans le ménage
+ABFINISH    -> QBFINISH    //Record biomarker notes
+ABINTC      -> QBINTC      //Date of household interview (CMC)
+ABINTCD     -> QBINTCD     //Date of biomarker questionnaire Century Day Code (CDC)
+
+//Record (ABSEC01) - Height, Weight, Hemoglobin (children)
+ABSEC01     -> QBSEC01     //Height, Weight, Hemoglobin (children)
+ABCOL1      -> QBCOL1      //Column number|Numéro de colonne
+AB102       -> QB102       //Line number in household schedule|Numéro de ligne dans le tableau de ménage
+AB103       -> QB103       //Date of birth
+AB103D      -> QB103D      //Day of birth|Jour de naissance
+AB103M      -> QB103M      //Month of birth|Mois de naissance
+AB103Y      -> QB103Y      //Year of birth|Année de naissance
+AB104       -> QB104       //Age of child|Age de l'enfant
+AB106       -> QB106       //Weight in kilograms|Poids en Kilogramme
+AB106W      -> QB106W      //Weight in kilograms - working field for re-entering|Poids en kilogrammes - variable de travail pour re-saisir
+AB107       -> QB107       //Child minimally dressed|Enfant habillé légèrement
+AB108       -> QB108       //Height in centimeters|Taille en centimètres
+AB108W      -> QB108W      //Height in centimeters - working field for re-entering|Taille en centimètres - Variable de travail pour re-saisir
+AB109       -> QB109       //Date of measurement
+AB109D      -> QB109D      //Day of measurement|Jour de la mesure
+AB109M      -> QB109M      //Month of measurement|Mois de la mesure
+AB109Y      -> QB109Y      //Year of measurement|Année de la mesure
+AB110       -> QB110       //Height: lying or standing|Taille: allongé ou debout
+AB112       -> QB112       //Reason correct measurement wasn't used (anchor field)
+AB113       -> QB113       //Child's hair had braids or ornaments|L’enfant avait cheveux tressés ou coiffés
+AB114       -> QB114       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
+AB115       -> QB115       //Fieldworker number for H/W
+AB116       -> QB116       //Fieldworker number for assistant to H/W|Fieldworker number for assistant for H/W
+AB118       -> QB118       //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
+AB120       -> QB120       //Read consent statement|Lire la déclaration de consentement
+AB121       -> QB121       //Fieldworker number for hemoglobin
+AB123       -> QB123       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
+AB123W      -> QB123W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
+AB124       -> QB124       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
+AB125       -> QB125       //Severe anemia referral provided
+ABRTYPE     -> QBRTYPE     //Remeasure - Reason|Remesure - Raison
+ABWEIGHT    -> QBWEIGHT    //Remeasure - Weight in kilograms|Remesure - Poids en kilogrammes
+ABHEIGHT    -> QBHEIGHT    //Remeasure - Height in centimeters|Remesure - Taille en centimètres
+ABLYNSTN    -> QBLYNSTN    //Remeasure - Height: lying or standing|Remesure - Taille: allongé ou debout
+ABRDAY      -> QBRDAY      //Day of remeasure|Jour de la mesure
+ABRMONTH    -> QBRMONTH    //Month of remeasure|Mois de la mesure
+ABRYEAR     -> QBRYEAR     //Year of remeasure|Année de la mesure
+ABRMEAS     -> QBRMEAS     //Fieldworker for H/W remeasure
+ABM112      -> QBM112      //Malaria lab sample ID (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
+ABM114      -> QBM114      //Malaria rapid test result (RDT)
+ABM115A     -> QBM115A     //Suffer from illness/symptom: extreme weakness
+ABM115B     -> QBM115B     //Suffer from illness/symptom: heart problems
+ABM115C     -> QBM115C     //Suffer from illness/symptom: loss of consciousness
+ABM115D     -> QBM115D     //Suffer from illness/symptom: rapid or difficult breathing
+ABM115E     -> QBM115E     //Suffer from illness/symptom: seizures
+ABM115F     -> QBM115F     //Suffer from illness/symptom: abnormal bleeding
+ABM115G     -> QBM115G     //Suffer from illness/symptom: jaundice or yellow skin
+ABM115H     -> QBM115H     //Suffer from illness/symptom: dark urine
+ABM117      -> QBM117      //Hemoglobin result for referral for malaria|Résultat d'hémoglobine pour la référence
+ABM119      -> QBM119      //Past 2 weeks child takes medication given by doctor/health center for malaria
+ABM122      -> QBM122      //Aceptance of malaria medicine
+ABM123      -> QBM123      //Fieldworker number for malaria medicine
+ABM128      -> QBM128      //Date of tested for malaria
+ABM128D     -> QBM128D     //Day tested for malaria|Jour de la mesure
+ABM128M     -> QBM128M     //Month tested for malaria|Mois de la mesure
+ABM128Y     -> QBM128Y     //Year tested for malaria|Année de la mesure
+ACCMC       -> QCCMC       //Child's CMC of birth
+ACCDC       -> QCCDC       //Child's Century Day Code (CDC) of birth
+ACCDCM      -> QCCDCM      //Child's Century Day Code (CDC) of measurement
+ACFLG       -> QCFLG       //Date flag for child's date of birth
+ACDBR       -> QCDBR       //Imputed day of birth from birth history
+ACMBR       -> QCMBR       //Imputed month of birth
+ACYBR       -> QCYBR       //Child's year of birth
+ACMLN       -> QCMLN       //Mother's line number from individual questionnaire
+ACBO        -> QCBO        //Birth order of child
+ACBI        -> QCBI        //Birth interval
+ACED1       -> QCED1       //Mother's highest educational level
+ACED2       -> QCED2       //Mother's highest grade at that level
+ACED3       -> QCED3       //Mother's highest educational level (CS for preliminary & final report)
+ACZSHA      -> QCZSHA      //Ht/A Standard deviations (according to WHO)
+ACZSWA      -> QCZSWA      //Wt/A Standard deviations  (according to WHO)
+ACZSWH      -> QCZSWH      //Wt/Ht Standard deviations  (according to WHO)
+ACZSBM      -> QCZSBM      //BMI Standard deviations  (according to WHO)
+ACAGEM      -> QCAGEM      //Age in months used during data entry
+ACNAME      -> QCNAME      //Child name
+ACAUXIL     -> QCAUXIL     //Auxiliary to decide if Biomarkers for children are recorded at this time|Auxiliary to decide if Biomarkers for children are recorded at this time
+
+//Record (ABSEC02) - Height, Weight, Hemoglobin (women)
+ABSEC02     -> QBSEC02     //Height, Weight, Hemoglobin (women)
+ABCOL2      -> QBCOL2      //Column number|Numéro de colonne
+AB202       -> QB202       //Line number in household schedule|Numéro de ligne dans le tableau de ménage
+AB203       -> QB203       //Under age 18|Moins de 18 ans
+AB204       -> QB204       //Marital status|Etat matrimonial
+AB205       -> QB205       //Weight in kilograms|Poids en Kilogramme
+AB205W      -> QB205W      //Weight in kilograms - working field for re-entering|Poids en kilogrammes - variable de travail pour re-saisir
+AB206       -> QB206       //Was woman wearing only lightweight clothing|La femme ne portait-elle que des vêtements légers
+AB207       -> QB207       //Height in centimeters|Taille en centimètres
+AB207W      -> QB207W      //Height in centimeters - working field for re-entering|Taille en centimètres - variable de travail pour re-saisir
+AB208       -> QB208       //Date of measurement
+AB208D      -> QB208D      //Day of measurement|Jour de la mesure
+AB208M      -> QB208M      //Month of measurement|Mois de la mesure
+AB208Y      -> QB208Y      //Year of measurement|Année de la mesure
+AB209       -> QB209       //Measurement interfered with braided or ornament|Mesure interférée par des cheveux tressés ou coiffés
+AB210       -> QB210       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
+AB211       -> QB211       //Fieldworker number for H/W
+AB212       -> QB212       //Fieldworker number for assistant to H/W
+AB212A      -> QB212A      //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
+AB214A      -> QB214A      //Read consent statement to parent/caretaker (Blood pressure)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB214B      -> QB214B      //Fieldworker number for blood pressure
+AB215C      -> QB215C      //Read consent statement to respondent (Blood pressure)|Lire la déclaration de consentement au répondant (Anémie)
+AB215D      -> QB215D      //Fieldworker number for blood pressure
+AB217A      -> QB217A      //Read consent statement to parent/caretaker (Anemia)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB217B      -> QB217B      //Fieldworker number for hemoglobin
+AB218C      -> QB218C      //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB218D      -> QB218D      //Fieldworker number for hemoglobin
+AB220A      -> QB220A      //Read consent statement to parent/caretaker [Other test]|Lire la déclaration de consentement au parent/adulte responsable (VIH)
+AB220B      -> QB220B      //Fieldworker number for [Other test]
+AB221C      -> QB221C      //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
+AB221D      -> QB221D      //Fieldworker number for [Other test]
+AB214       -> QB214       //Consent for first blood pressure reading
+AB215       -> QB215       //Fieldworker number for blood pressure
+AB217       -> QB217       //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB218       -> QB218       //Fieldworker number for hemoglobin
+AB220       -> QB220       //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
+AB221       -> QB221       //Fieldworker number for [Other test]
+AB222       -> QB222       //Tests for which consent was granted
+AB224A      -> QB224A      //Last 30 minutes have you: eaten anything
+AB224B      -> QB224B      //Last 30 minutes have you: had coffee, tea, cola other drinks with caffeine
+AB224C      -> QB224C      //Last 30 minutes have you: smoked any tobacco products
+AB224D      -> QB224D      //Last 30 minutes have you: exercised with intensity
+AB225       -> QB225       //Arm circumference in centimeters
+AB226       -> QB226       //Blood pressure monitor to be used
+AB227A      -> QB227A      //First blood pressure reading: Systolic
+AB227AW     -> QB227AW     //Re-enter first blood pressure reading: Systolic
+AB227B      -> QB227B      //First blood pressure reading: Diastolic
+AB227BW     -> QB227BW     //Re-enter first blood pressure reading: Diastolic
+AB228       -> QB228       //Start of interview/first blood pressure reading
+AB228H      -> QB228H      //Start of interview (hour)|Début de l'interview (heure)
+AB228M      -> QB228M      //Start of interview (minutes)|Début de l'interview (minutes)
+AB230       -> QB230       //Ever had blood pressure measured by a doctor/health worker
+AB231       -> QB231       //Ever been diagnosed by doctor/health worker with hypertension
+AB232       -> QB232       //Last 12 months have been diagnosed by doctor/health worker with hypertension
+AB233       -> QB233       //Has a doctor/health worker prescribed medication to control blood pressure
+AB234       -> QB234       //Is respondent taken medication to control blood pressure
+AB235       -> QB235       //Consent for second blood pressure reading
+AB236A      -> QB236A      //Second blood pressure reading: Systolic
+AB236AW     -> QB236AW     //Re-enter second blood pressure reading: Systolic
+AB236B      -> QB236B      //Second blood pressure reading: Diastolic
+AB236BW     -> QB236BW     //Re-enter second blood pressure reading: Diastolic
+AB237       -> QB237       //Second blood pressure reading
+AB237H      -> QB237H      //Second blood pressure reading (hour)|Début de l'interview (heure)
+AB237M      -> QB237M      //Second blood pressure reading (minutes)|Début de l'interview (minutes)
+AB238       -> QB238       //Consent for third blood pressure reading
+AB239A      -> QB239A      //Third blood pressure reading: Systolic
+AB239AW     -> QB239AW     //Re-enter third blood pressure reading: Systolic
+AB239B      -> QB239B      //Third blood pressure reading: Diastolic
+AB239BW     -> QB239BW     //Re-enter third blood pressure reading: Diastolic
+AB240       -> QB240       //Third blood pressure reading
+AB240H      -> QB240H      //Third blood pressure reading (hour)|Début de l'interview (heure)
+AB240M      -> QB240M      //Third blood pressure reading (minutes)|Début de l'interview (minutes)
+AB250A      -> QB250A      //Final blood pressure: Systolic
+AB250B      -> QB250B      //Final blood pressure: Diastolic
+AB252       -> QB252       //Blood pressure category
+AB253       -> QB253       //Respondent receive the blood pressure result form
+AB255       -> QB255       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
+AB255W      -> QB255W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
+AB256       -> QB256       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
+AB257       -> QB257       //Severe anemia referral provided
+AB259       -> QB259       //Result of test
+AB260       -> QB260       //Test referral provided
+ABWDBS      -> QBWDBS      //Blood sample ID number (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
+AWCMC       -> QWCMC       //CMC of birth of woman
+AWFLG       -> QWFLG       //Date flag for woman's date of birth
+AWMBR       -> QWMBR       //Imputed month of birth
+AWYBR       -> QWYBR       //Woman's year of birth
+AWSMK       -> QWSMK       //Respondent smoke practices|Respondent smoke practices
+AWPRG       -> QWPRG       //Respondent pregnancy status|Statut de grossesse du répondant
+AWMOS       -> QWMOS       //Months of pregnancy|Mois de grossesse
+AWBM        -> QWBM        //Body mass index for respondent
+AWRESI      -> QWRESI      //Result of individual interview
+AWED1       -> QWED1       //Woman's highest educational level
+AWED2       -> QWED2       //Woman's highest year of education
+AWED3       -> QWED3       //Highest educational level (CS for preliminary & final report)
+AWZSHA      -> QWZSHA      //Ht/A Standard deviations (according to WHO) (women 15-19)
+AWZSBM      -> QWZSBM      //BMI Standard deviations  (according to WHO) (women 15-19)
+AWAGEM      -> QWAGEM      //Age in months used to calculate z-scores (women 15-19)
+AWHIVWGT    -> QWHIVWGT    //HIV weight (6 decimals)
+AWNAME      -> QWNAME      //Woman name
+AWAUXIL     -> QWAUXIL     //Auxiliary to decide if Biomarkers for women are recorded at this time|Auxiliaire pour décider si les biomarqueurs pour les femmes sont saisis à ce moment
+
+//Record (ABSEC03) - Height, Weight, Hemoglobin (men)
+ABSEC03     -> QBSEC03     //Height, Weight, Hemoglobin (men)
+ABCOL3      -> QBCOL3      //Line number|Numéro de colonne
+AB302       -> QB302       //Line number in household schedule|Numéro de ligne dans le tableau de ménage
+AB303       -> QB303       //Under age 18|Moins de 18 ans
+AB304       -> QB304       //Marital status|Etat matrimonial
+AB305       -> QB305       //Weight in kilograms|Poids en Kilogramme
+AB305W      -> QB305W      //Weight in kilograms - working field for re-entering|Poids en kilogrammes - variable de travail pour re-saisir
+AB306       -> QB306       //Was man wearing only lightweight clothing|L'homme portait-il uniquement des vêtements légers
+AB307       -> QB307       //Height in centimeters|Taille en centimètres
+AB307W      -> QB307W      //Height in centimeters - working field for re-entering|Taille en centimètres - variable de travail pour re-saisir
+AB308       -> QB308       //Date of measurement
+AB308D      -> QB308D      //Day of measurement|Jour de la mesure
+AB308M      -> QB308M      //Month of measurement|Mois de la mesure
+AB308Y      -> QB308Y      //Year of measurement|Année de la mesure
+AB309       -> QB309       //Measurement interfered with braided or ornament|Mesure interférée par des cheveux tressés ou coiffés
+AB310       -> QB310       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
+AB311       -> QB311       //Fieldworker number for H/W
+AB312       -> QB312       //Fieldworker number for assistant to H/W
+AB312A      -> QB312A      //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
+AB314A      -> QB314A      //Read consent statement to parent/caretaker (Blood pressure)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB314B      -> QB314B      //Fieldworker number for blood pressure
+AB315C      -> QB315C      //Read consent statement to respondent (Blood pressure)|Lire la déclaration de consentement au répondant (Anémie)
+AB315D      -> QB315D      //Fieldworker number for blood pressure
+AB317A      -> QB317A      //Read consent statement to adult/caretaker (Anemia)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB317B      -> QB317B      //Fieldworker number for hemoglobin
+AB318C      -> QB318C      //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB318D      -> QB318D      //Fieldworker number for hemoglobin
+AB320A      -> QB320A      //Read consent statement to adult/caretaker [Other test]|Lire la déclaration de consentement au parent/adulte responsable (VIH)
+AB320B      -> QB320B      //Fieldworker number for [Other test]
+AB321C      -> QB321C      //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
+AB321D      -> QB321D      //Fieldworker number for [Other test]
+AB314       -> QB314       //Consent for first blood pressure reading
+AB315       -> QB315       //Fieldworker number for blood pressure
+AB317       -> QB317       //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB318       -> QB318       //Fieldworker number for hemoglobin
+AB320       -> QB320       //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
+AB321       -> QB321       //Fieldworker number for [Other test]
+AB322       -> QB322       //Tests for which consent was granted
+AB324A      -> QB324A      //Last 30 minutes have you: eaten anything
+AB324B      -> QB324B      //Last 30 minutes have you: had coffee, tea, cola other drinks with caffeine
+AB324C      -> QB324C      //Last 30 minutes have you: smoked any tobacco products
+AB324D      -> QB324D      //Last 30 minutes have you: exercised with intensity
+AB325       -> QB325       //Arm circumference in centimeters
+AB326       -> QB326       //Blood pressure monitor to be used
+AB327A      -> QB327A      //First blood pressure reading: Systolic
+AB327AW     -> QB327AW     //Re-enter first blood pressure reading: Systolic
+AB327B      -> QB327B      //First blood pressure reading: Diastolic
+AB327BW     -> QB327BW     //Re-enter first blood pressure reading: Diastolic
+AB328       -> QB328       //Start of interview
+AB328H      -> QB328H      //Start of interview (hour)|Début de l'interview (heure)
+AB328M      -> QB328M      //Start of interview (minutes)|Début de l'interview (minutes)
+AB330       -> QB330       //Ever had blood pressure measured by a doctor/health worker
+AB331       -> QB331       //Ever been diagnosed by doctor/health worker with hypertension
+AB332       -> QB332       //Last 12 months have been diagnosed by doctor/health worker with hypertension
+AB333       -> QB333       //Has a doctor/health worker prescribed medication to control blood pressure
+AB334       -> QB334       //Is respondent taken medication to control blood pressure
+AB335       -> QB335       //Consent for second blood pressure reading
+AB336A      -> QB336A      //Second blood pressure reading: Systolic
+AB336AW     -> QB336AW     //Re-enter second blood pressure reading: Systolic
+AB336B      -> QB336B      //Second blood pressure reading: Diastolic
+AB336BW     -> QB336BW     //Re-enter second blood pressure reading: Diastolic
+AB337       -> QB337       //Second blood pressure reading
+AB337H      -> QB337H      //Second blood pressure reading (hour)|Début de l'interview (heure)
+AB337M      -> QB337M      //Second blood pressure reading (minutes)|Début de l'interview (minutes)
+AB338       -> QB338       //Consent for third blood pressure reading
+AB339A      -> QB339A      //Third blood pressure reading: Systolic
+AB339AW     -> QB339AW     //Re-enter third blood pressure reading: Systolic
+AB339B      -> QB339B      //Third blood pressure reading: Diastolic
+AB339BW     -> QB339BW     //Re-enter third blood pressure reading: Diastolic
+AB340       -> QB340       //Third blood pressure reading
+AB340H      -> QB340H      //Third blood pressure reading (hour)|Début de l'interview (heure)
+AB340M      -> QB340M      //Third blood pressure reading (minutes)|Début de l'interview (minutes)
+AB350A      -> QB350A      //Final blood pressure: Systolic
+AB350B      -> QB350B      //Final blood pressure: Diastolic
+AB352       -> QB352       //Blood pressure category
+AB353       -> QB353       //Did respondent receive the blood pressure result form
+AB355       -> QB355       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
+AB355W      -> QB355W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
+AB356       -> QB356       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
+AB357       -> QB357       //Severe anemia referral provided
+AB359       -> QB359       //Result of test
+AB360       -> QB360       //Test referral provided
+ABMDBS      -> QBMDBS      //Blood sample ID number (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
+AMCMC       -> QMCMC       //CMC of birth of man
+AMFLG       -> QMFLG       //Date flag for man's date of birth
+AMMBR       -> QMMBR       //Imputed month of birth
+AMYBR       -> QMYBR       //Man's year of birth
+AMSMK       -> QMSMK       //Respondent smoke practices|Respondent smoke practices
+AMBM        -> QMBM        //Body mass index for respondent
+AMRESI      -> QMRESI      //Result of individual interview
+AMED1       -> QMED1       //Man's highest educational level
+AMED2       -> QMED2       //Man's highest year of education
+AMED3       -> QMED3       //Highest educational level (CS for preliminary & final report)
+AMZSHA      -> QMZSHA      //Ht/A Standard deviations (according to WHO) (men 15-19)
+AMZSBM      -> QMZSBM      //BMI Standard deviations  (according to WHO) (men 15-19)
+AMAGEM      -> QMAGEM      //Age in months used to calculate z-scores (men 15-19)
+AMHIVWGT    -> QMHIVWGT    //HIV weight (6 decimals)
+AMNAME      -> QMNAME      //Man name
+AMAUXIL     -> QMAUXIL     //Auxiliary to decide if Biomarkers for men are recorded at this time|Auxiliaire pour décider si les biomarqueurs pour les hommes sont saisis à ce moment

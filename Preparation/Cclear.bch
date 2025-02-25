@@ -1,0 +1,16 @@
+﻿[CSPro Application]
+Version=CSPro 7.5
+Label=CCLEAR
+Name=CCLEAR
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Control.dcf
+[AppCode]
+File=.\Cclear.apc
+[Message]
+File=.\Preparation.mgf
+[Order]
+File=.\Clusters.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\Clusters.dcf,Input,.\Clusters.ord
+Dict-Type=..\Dicts\Control.dcf,External

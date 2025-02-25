@@ -162,10 +162,9 @@ end
         origval(i+1) = "1";
       endif;
       LINTRO(i)     = LINTRO(i+1);
-//+      LSTRUCTT(i)   = visualvalue( LSTRUCTT(i+1) );
-//+      LSTRUCTTN(i)  = LSTRUCTTN(i+1);
+      LSTRUCTT(i)   = visualvalue( LSTRUCTT(i+1) );
       LTRUEHH(i)    = visualvalue( LTRUEHH(i+1) );
-//-      LSTYPE(i)    = visualvalue( LSTYPE(i+1) );
+      LSTYPE(i)    = visualvalue( LSTYPE(i+1) );
       LNUMBER(i)    = visualvalue( LNUMBER(i+1) );
       LSTRUCT(i)    = visualvalue( LSTRUCT(i+1) );
       LHOUSEH(i)    = visualvalue( LHOUSEH(i+1) );
@@ -185,10 +184,9 @@ end
       origval(i)    = origval(i+1);
     enddo;
     LINTRO(i)     = " ";
-//+    LSTRUCTT(i)   = notappl;
-//+    LSTRUCTTN(i)  = " ";
+    LSTRUCTT(i)   = notappl;
     LTRUEHH(i)    = notappl;
-//+    LSTYPE(i)     = notappl;
+    LSTYPE(i)     = notappl;
     LNUMBER(i)    = notappl;
     LSTRUCT(i)    = notappl;
     LHOUSEH(i)    = notappl;
@@ -212,10 +210,9 @@ end
   function insertentry( xrow, alpha(1) xtype )
     do i = nentry while i >= xrow by -1
       LINTRO(i+1)     = LINTRO(i);
-//+      LSTRUCTT(i+1)   = visualvalue( LSTRUCTT(i) );
-//+      LSTRUCTTN(i+1)  = LSTRUCTTN(i);
+      LSTRUCTT(i+1)   = visualvalue( LSTRUCTT(i) );
       LTRUEHH(i+1)    = visualvalue( LTRUEHH(i) );
-//+      LSTYPE(i+1)     = visualvalue( LSTYPE(i) );
+      LSTYPE(i+1)     = visualvalue( LSTYPE(i) );
       LNUMBER(i+1)    = visualvalue( LNUMBER(i) );
       LSTRUCT(i+1)    = visualvalue( LSTRUCT(i) );
       LHOUSEH(i+1)    = visualvalue( LHOUSEH(i) );
@@ -419,7 +416,7 @@ preproc
 
 onfocus
   // get values of structure/hh/sequential number for qsf display
-  weipc =  maketext("RDC-EDS: %04d / %03d/ %02d", LCLUSTER, visualvalue(LSTRUCT), visualvalue(LHOUSEH));
+  weipc =  maketext("EDSIII: %04d / %03d/ %02d", LCLUSTER, visualvalue(LSTRUCT), visualvalue(LHOUSEH));
   wocc = curocc();
 
   if rowto = curocc() then  // reset rowto variable 
@@ -578,9 +575,22 @@ postproc
     reenter;
   endif;
 
+PROC LSTRUCTT
+preproc
+  n = curocc(); // autofill if multiple
+  if n > 1 & LINTRO = "2" then
+    $ = $(n-1);
+    noinput;
+  endif;
+
 PROC LSTYPE
 preproc 
-ask if LSTRUCTT = 1;
+  ask if LSTRUCTT = 1;
+  n = curocc(); // autofill if multiple
+  if n > 1 & LINTRO = "2" then
+    $ = $(n-1);
+    noinput;
+  endif;
 PROC LINTGPS
 onfocus
   modGPSvs = LINTGPS_VS1;
@@ -602,9 +612,6 @@ postproc
     reenter
   elseif $ = 1 & LLATITUDE(n-1) in 0,notappl then  // can't copy coordinates if they don't exist for the previous HH
     errmsg( 60041 );
-    reenter
-  elseif $ = 1 & LSTRUCT <> LSTRUCT(n-1) then   // can't copy coordinates for a HH that is part of a different structure
-    errmsg( 60042 );
     reenter
   elseif $ = 9 & visualvalue( LLATITUDE(n) ) = notappl then   // can't replace HH corordinates if they don't exist
     errmsg( 60043 );
@@ -682,7 +689,7 @@ preproc
     $ = $(n-1) + 1;
   endif;
 onfocus
-weipc =  maketext("EDS-RDC: %04d / %03d/ %02d", LCLUSTER, LSTRUCT, visualvalue($));
+weipc =  maketext("EDSIII: %04d / %03d/ %02d", LCLUSTER, LSTRUCT, visualvalue($));
 
 PROC LNAME
 preproc
@@ -693,6 +700,7 @@ preproc
 postproc
   if !length( strip($) ) then
     errmsg( 60031 );
+	reenter;
   endif;
 
 
@@ -704,7 +712,7 @@ preproc
   endif;
 
 postproc
-  if length(strip(LPHONE1)) & length(strip(LPHONE1)) < 10 then
+  if length(strip(LPHONE1)) & length(strip(LPHONE1)) <> 9 then
     errmsg( 60080 );
     reenter;
   endif;

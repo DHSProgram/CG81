@@ -1,45 +1,37 @@
-﻿config CSWebURL, CSWebUser, CSWebPIN;
-string wrkPIIL = "C:\CD81L\PII"; 
+﻿config CSWebURL, CG81User, CG81PIN;
+string wrkPIIL = "..\PII"; 
+string CSWebSurvey = "/CG81/";
 
- { function to send data to central office using CSWeb FTP Modified by Gaylord }
-  function getData_CSW()
-  numeric DataOK = 0;
-    //errmsg( 500 );
-    string Arrived = wrkPIIL + "\Arrived";                
-  	if connection()=1 then
-		if SyncConnect( CSWeb, CSWebURL, CSWebUser, CSWebPIN ) then
-	SyncFile( GET, "SampData" +"*.*", wrkPIIL+"SampData");
-    SyncFile( GET, "SampData" + "\L????????.dat" + "*.*", Arrived);
-		   endif;
-      syncdisconnect();
-    endif;	
-	   if DataOK then 
-      errmsg( 501 );
-    else
-      errmsg( 502 );
-    endif;  
-  end;
   {Global CSWeb sync function to be used by the enumerator listing applications}
  function SyncData_CSW() {GV: I modified previous functions from Gaylord to include the sync of all files}
+   exit;
  string Arrived = wrkPIIL + "\Arrived";
-   string SampData = wrkPIIL + "\SampData";
-   string RefData = wrkPIIL + "\Ref";
-   string SampQC = wrkPIIL + "\SampQC";
-    numeric DataOK = 0;
+  numeric DataOK = 0;
     //errmsg( 500 );
 	
-    if SyncConnect( CSWeb, CSWebURL, CSWebUser, CSWebPIN ) then
-      if SyncFile( PUT, RefData + "\?" + "*.*", "RefData" ) then
-	     SyncFile( PUT, SampData + "\?" + "*.*", "SampData");
-	     SyncFile( PUT, Arrived + "\?" + "*.*", "Arrived");
-	     SyncFile( PUT, SampQC + "\?" + "*.*", "SampQC");
-              endif;
+    if SyncConnect( CSWeb, CSWebURL, CG81User, CG81PIN ) then
+      DataOK =  SyncFile( PUT, wrkPIIL + "\SampData" + "\?" + "*.*", CSWebSurvey + "SampData" );
       syncdisconnect();
     endif;
     if DataOK then 
-      errmsg( 501 );
+      // errmsg( 501 );
     else
       errmsg( 502 );
     endif;
+    SyncData_CSW = DataOK;
   end; 
-  
+  function GetData_CSW ();
+   exit;
+    numeric DataOK = 0;
+    if SyncConnect ( CSWeb, CSWebURL, CG81User, CG81PIN ) then   {commented out post data collection }
+      if SyncFile( GET, CSWebSurvey + "SampData/*.*",      wrkPIIL + "/Arrived" ) then
+        DataOK = 1;
+        // SyncFile( GET, CSWebSurvey + "Logs/SyncLog*.txt", wrkPIIL + "/Work" ); 
+        SyncDisconnect();
+        errmsg( 300, CSWebURL );
+      else
+        errmsg( 301, CSWebURL );
+      endif;
+    endif;
+    GetData_CSW = DataOK;
+  end;

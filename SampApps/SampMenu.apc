@@ -17,7 +17,6 @@ PROC GLOBAL
 //+  string  IFSSlogFile = ".\log.txt";    { name of log file for IFSS }
   string  IFSSlogFile;    { name of log file for IFSS }
   string  synclogfile;                  { used to store sync data for upload to server }
-  config  SyncCloudID_CD81, SyncCloudPIN_CD81;   { to handle access to SyncCloud }
   
   string sysver;     // number of last upgrade
   list string listupgrades;
@@ -292,47 +291,6 @@ PROC GLOBAL
 
 
 
-  { function to force sending data to central office using IFSS }
-  function SendDataW()
-    if debug then
-      exit;
-    endif;
-    set trace;
-    x = 0;
-    if !connection() then
-      errmsg( 200 );
-    else
-      SystemApp Sync_App;
-      Sync_App.clear();
-      if android then
-        Sync_App.SetArgument("projectid", SyncCloudID_CD81);
-        Sync_App.SetArgument("username", "S"+xintnum );
-        Sync_App.SetArgument("password", SyncCloudPIN_CD81);
-//+        Sync_App.SetArgument("textlog", "testlog/log.txt");
-        Sync_App.SetArgument("textlog", "CD81L/log.txt");
-        Sync_App.SetArgument("csentry", "true");
-        x = Sync_App.exec("com.dec.syncclient");
-      else
-        Sync_App.SetArgument("ProjectId=", SyncCloudID_CD81);
-        Sync_App.SetArgument("Username=", "S"+xintnum );
-        Sync_App.SetArgument("Password=", SyncCloudPIN_CD81);
-        Sync_App.SetArgument("log=", IFSSlogFile);
-        x = Sync_App.exec(utility + "\SyncCloud\ScClient.exe");
-        trace("x=%d, %s", x, utility + "\SyncCloud\ScClient.exe");
-      endif;
-      
-      IFSSLogfile = PathName(CSEntry) + "/CD81L/log.txt";
-      if ReadIfssLog( IFSSLogfile ) = 1001 then
-        errmsg( 201 );
-        x = 1;
-      else
-        errmsg( 202 );
-        x = 0;
-      endif;
-    endif;
-    SendDataW = x;
-  end;
-
   { check if there are upgrades available coming from CSWeb }
   function CheckForUpgrades()
     numeric NewUpgrade = 0;
@@ -586,7 +544,7 @@ postproc
   { check if connected to CSWeb }
   numeric LastUpLoad = tonumber(loadsetting("LastUpLoad",0));
   if LastUpload < sysdate("YYYYMMDD") then
-    if SendDataW() then
+    if SyncData_CSW() then
       savesetting("LastUpLoad", edit("99999999",( sysdate("YYYYMMDD") )));
       // restart Supervisor Menu to check for updates !!!
       AppName = "../SUPMENU";
@@ -661,8 +619,7 @@ postproc
   elseif action = 5 then
     reenter WCLUSTER
   elseif action = 6 then          { transfer data to central office }
-      // SendData_CSW();
-	  SendDataW();
+      SyncData_CSW();
     { check for any upgrades }
       ApplyUpgr();
       reenter;

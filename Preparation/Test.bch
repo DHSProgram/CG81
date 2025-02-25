@@ -1,0 +1,13 @@
+﻿[CSPro Application]
+Version=CSPro 7.5
+Label=TEST
+Name=TEST
+AppType=Batch
+[AppCode]
+File=.\Test.apc
+[Message]
+File=.\Test.mgf
+[Order]
+File=.\Test.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\FieldWKQuest.dcf,Input,.\Test.ord

@@ -144,6 +144,24 @@ Language = FR
   FR ("Move to a specific household") Aller à un ménage spécifique
   FR ("Move to next household") Aller au ménage suivant
   FR ("Move to previous household") Aller au ménage précédent
+  FR ("Sequential stucture number") Numéro de structure séquentielle
+  FR ("Description")
+  FR ("GDHS code") Code EDS
+  FR ("GPS co-ordinates") Coordonnées GPS
+  FR ("GPS Accuracy") Précision du GPS
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 60000 E Grappe %d non définie dans le fichier de l'échantillion
 60001 E Option choisie est invalide
@@ -177,6 +195,6 @@ Language = FR
 60064 W Le segment tiré peut être changé s'il y des modificationas à  faire
 60065 E Le dénombrement de ménages pour la grappe %04d est déjà  commencé, une segmentation n'est plus autorisée
 60070 W Le dénombrement de ménages pour la grappe est fermé avec succès
-60080 E Le format du numéro de téléphone est incorrect. veuillez le corriger svp
+60080 E Le format du numéro de téléphone est incorrect.Le format attendu est yyzzxxxxxx sans espaces ni caractères non numériques. N'incluez pas le code du pays
 61000 E Il n'y a pas de coordonnées GPS valides pour grappe %04d
 61005 W Le type de structure enregistré par les agents dans le dénombrement %s:%d est différent de celui enregistré dans la vérification QC : %s (%1d)

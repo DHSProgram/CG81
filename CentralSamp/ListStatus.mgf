@@ -1,6 +1,6 @@
 ﻿Language = FR
 { common strings used by application }
-  FR ( "Household Listing Status Report, DHS Country: XXXX" ) Rapport sur la situation du dénombrement des ménages, EDS RD Congo : 2022
+  FR ( "Household Listing Status Report, DHS Country: XXXX" ) Rapport sur la situation du dénombrement des ménages, EDS-III-Congo : 2025
   FR ( "Report Date: %s (dd/mm/yyyy)" ) Date du rapport : %s (dd/mm/yyyy)
   FR ( "Cluster" ) Gtrappe
   FR ( "Date Arrived" ) Date d'arrivée

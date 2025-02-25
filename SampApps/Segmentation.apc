@@ -69,7 +69,7 @@ postproc
   do i = 1 while visualvalue(SEGNUM(i)) <> notappl
   enddo;
   if $ = 1 & visualvalue(SHHNUMB(1)) = notappl then
-    advance SEGNUM(1)
+    advance SSEGTOT
   elseif $ = 1 & visualvalue(SEGNUM(i)) = notappl then
     { do nothing }
   elseif visualvalue(SHHNUMB(1)) <> notappl then
@@ -80,7 +80,11 @@ postproc
 
 PROC SEGNUM
 preproc
-  $ = curocc();
+  if curocc() > SSEGTOT then
+    endgroup;
+  else
+    $ = curocc();
+  endif;
 
 PROC SCUMMUL
 preproc
@@ -96,10 +100,6 @@ preproc
     $ = 0;
   endif;
 
-postproc
-  if SMORE <> 1 then
-    endsect
-  endif;
 
 PROC SAUXILIAR
   if $ = 1 & totocc( SEGMENT000 ) <= 1 then

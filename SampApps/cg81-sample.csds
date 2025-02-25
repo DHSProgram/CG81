@@ -1,0 +1,69 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "CG81-Listing",
+  "description": "",
+  "files": [
+    {
+      "path": "..\\PII\\Ref\\Clusters.dat"
+    },
+    {
+      "path": "..\\PII\\Ref\\Interv.dat"
+    },
+    {
+      "path": ".\\ListHH.ent"
+    },
+    {
+      "path": ".\\SampInfo.ent"
+    },
+    {
+      "path": ".\\SampList.ent"
+    },
+    {
+      "path": ".\\SampMenu.ent"
+    },
+    {
+      "path": ".\\SampMenu.pff"
+    },
+    {
+      "path": ".\\Segmentation.ent"
+    },
+    {
+      "path": ".\\TablesStyle.css"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": "..\\Dicts\\Clusters.dcf"
+    },
+    {
+      "path": "..\\dicts\\Cnull.dcf"
+    },
+    {
+      "path": "..\\Dicts\\GPS.dcf"
+    },
+    {
+      "path": "..\\Dicts\\HHListing.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Interv.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Menu.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\SAMPINF.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\Segment.dcf"
+    }
+  ],
+  "deployment": {
+    "type": "CSWeb",
+    "cswebUrl": "https:\/\/csweb.dhsprogram.com\/api",
+    "ftpUrl": "ftp:\/\/",
+    "localFolderPath": "..\\Deploy"
+  }
+}

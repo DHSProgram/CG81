@@ -5,6 +5,7 @@ Name=SEGMENTATION
 AppType=DataEntry
 ShowEndCaseDialog=No
 CAPI=Yes
+ShowFieldLabels=No
 [External Dictionaries]
 File=..\Dicts\HHListing.dcf
 [AppCode]

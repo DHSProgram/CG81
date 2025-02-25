@@ -12,6 +12,7 @@ File=..\Dicts\Segment.dcf
 [Form]
 Name=FORM001
 Label=Segmentation
+QuestionTextHeight=440
 Level=1
 Size=703,750
   
@@ -23,6 +24,7 @@ Item=STOTHH
 Item=SAUXILIAR
 Item=SOPTION
 Item=SFINAL
+Item=SSEGTOT
   
 Box=422,110,678,324,Etched
   
@@ -79,6 +81,19 @@ Position=308,74,356,90
 Text=Options
  
   
+[Field]
+Name=SSEGTOT
+Position=567,71,596,91
+Item=SSEGTOT,SEGMENT_DCT
+UseEnterKey=Yes
+DataCaptureType=TextBox
+Form=1
+  
+[Text]
+Position=428,73,553,89
+Text=Segments in cluster
+ 
+  
 [Grid]
 Name=SEGMENT000
 Label=Segmentation
@@ -87,7 +102,7 @@ Required=Yes
 Type=Record
 TypeName=SEGREC2
 Max=20
-DisplaySize=15,108,413,725
+DisplaySize=15,108,368,708
 Orientation=Horizontal
 FieldRowHeight=0
 HeadingRowHeight=0
@@ -240,31 +255,11 @@ HorizontalAlignment=Center
 [EndColumn]
   
 [Column]
-Width=53
-  
-[HeaderText]
-Position=0,0,53,40
-Text=Seg. suivant
-HorizontalAlignment=Center
- 
-[Field]
-Name=SMORE
-Position=11,0,26,20
-Item=SMORE,SEGMENT_DCT
-DataCaptureType=RadioButton
-  
-[Text]
-Text=Seg. suivant
-HorizontalAlignment=Center
- 
-[EndColumn]
-  
-[Column]
 Width=92
   
 [HeaderText]
-Position=0,16,92,40
-Text=Cummulative
+Position=6,16,86,40
+Text=Cumulative
 HorizontalAlignment=Center
  
 [Field]
@@ -275,8 +270,8 @@ Protected=Yes
 DataCaptureType=TextBox
   
 [Text]
-Position=0,0,70,16
-Text=Cummulative
+Text=Cumulative
+HorizontalAlignment=Center
  
 [EndColumn]
   

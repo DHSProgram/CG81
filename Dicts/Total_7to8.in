@@ -1,0 +1,1659 @@
+﻿//Dictionary (C:\Users\39284\ICF\Standard - DHS Data Processing\CC71NEW\Dicts\ccHH70.dcf)
+CCHH70      -> CCHH80      //DHS-VII Core  07-13-2015
+
+//Level (HOUSEHOLD) - Household
+HOUSEHOLD   -> HOUSEHOLD   //Household
+AHCLUST     -> AHCLUST     //Cluster number
+AHNUMBER    -> AHNUMBER    //Household number
+
+//Record (AHSECOVER) - Household identification
+AHSECOVER   -> AHSECOVER   //Household identification
+AHREGION    -> AHREGION    //Region
+AHLOCAL     -> AHLOCAL     //Locality
+AHADDRESS   -> AHADDRESS   //Address
+AHELIGM     -> AHELIGM     //Eligibility for male interview
+AHCONTVISIT -> AHCONTVISIT //Group to control visits
+AHVLINE     -> AHVLINE     //Visit line number
+AHVDAY      -> AHVDAY      //Day of visit
+AHVMONTH    -> AHVMONTH    //Month of visit
+AHVYEAR     -> AHVYEAR     //Year of visit
+AHVHOUR     -> AHVHOUR     //Hour of visit
+AHVMINUTE   -> AHVMINUTE   //Minute of visit
+AHVRESULT   -> AHVRESULT   //Result of visit
+AHINTD      -> AHINTD      //Interview day
+AHINTM      -> AHINTM      //Interview month
+AHINTY      -> AHINTY      //Interview year
+AHINTNUM    -> AHINTNUM    //Interviewer number
+AHRESULT    -> AHRESULT    //Result of household interview
+AHVISITS    -> AHVISITS    //Number of household visits
+AHCONSENT   -> AHCONSENT   //Consent agreement
+AHMEMBER    -> AHMEMBER    //Total members in household
+AHWOMEN     -> AHWOMEN     //Eligible women in household
+AHMEN       -> AHMEN       //Eligible men in household
+AHRESP      -> AHRESP      //Line of household respondent
+AHSUPERV    -> AHSUPERV    //Supervisor number
+AHLANGQ     -> AHLANGQ     //Language of questionnaire
+AHLANGI     -> AHLANGI     //Language of interview
+AHLANGR     -> AHLANGR     //Language of respondent
+AHTRANS     -> AHTRANS     //Translator used
+AH100       -> AH100       //Time household interview begins
+AH100H      -> AH100H      //Hour interview begins
+AH100M      -> AH100M      //Minutes interview begins
+AHBABIES    -> AHBABIES    //Babies in the household
+AHNOFAM     -> AHNOFAM     //Other non-family members in household
+AHTEMP      -> AHTEMP      //Other temporal visitors in household
+AHNUMDV     -> AHNUMDV     //Line number of woman eligible for domestic violence
+AHINTC      -> AHINTC      //Date of household interview (CMC)
+AHINTCD     -> AHINTCD     //Date of household interview Century Day Code (CDC)
+AHWEIGHT    -> AHWEIGHT    //Household weight (6 decimals)
+AMWEIGHT    -> AMWEIGHT    //Household weight - men's subsample (6 decimals)
+AHSTRATA    -> AHSTRATA    //Sampling errors stratum
+AHWLTHF     -> AHWLTHF     //Wealth index factor (5 decimals)
+AHWLTHI     -> AHWLTHI     //Wealth index quintile
+AHTYPE      -> AHTYPE      //Type of place of residence
+AHWLTFUR    -> AHWLTFUR    //Wealth index factor for urban/rural (5 decimals)
+AHWLTIUR    -> AHWLTIUR    //Wealth index quintile for urban/rural
+AHALTIT     -> AHALTIT     //Cluster altitude in meters
+AHELIHEM    -> AHELIHEM    //Eligibility for hemoglobin
+ACHL22      -> ACHL22      //Total de jure children 5-14 in household for child labor
+AHFINISH    -> AHFINISH    //Handler to end interview
+
+//Record (AHSEC01X) - Household members list
+AHSEC01X    -> AHSEC01X    //Household members list
+AHLINE      -> AHLINE      //Person line number
+AHFIRSTN    -> AHFIRSTN    //Person first name
+AHLASTN     -> AHLASTN     //Person last name
+AHAGE       -> AHAGE       //Age
+AHLIVES     -> AHLIVES     //Usually lives here
+AHSLEPT     -> AHSLEPT     //Slept here last night
+AHSEX       -> AHSEX       //Sex
+AHRELAT     -> AHRELAT     //Relationship
+AHMORE      -> AHMORE      //Any other person living in household
+
+//Record (AHSEC01) - Household Schedule
+AHSEC01     -> AHSEC01     //Household Schedule
+AH01        -> AH01        //Line number of member
+AH02        -> AH02        //Household member name
+AH03        -> AH03        //Relationship to head
+AH04        -> AH04        //Sex of household member
+AH05        -> AH05        //Usual resident
+AH06        -> AH06        //Slept last night
+AH07        -> AH07        //Age of household members
+AH08        -> AH08        //Marital status
+AH09        -> AH09        //Eligibility for interview
+AH10        -> AH10        //Eligibility for male interview
+AH11        -> AH11        //Child's eligibility for interview
+AH12        -> AH12        //Mother alive
+AH13        -> AH13        //Mother's line number
+AH14        -> AH14        //Father alive
+AH15        -> AH15        //Father's line number
+AH16        -> AH16        //Ever attended school
+AH17        -> AH17        //Education attainment
+AH17A       -> AH17A       //Level of education attended
+AH17B       -> AH17B       //Highest grade completed
+AH18        -> AH18        //Attend school current year
+AH19        -> AH19        //Education attending
+AH19A       -> AH19A       //Level of education attending
+AH19B       -> AH19B       //Grade attending
+AH20        -> AH20        //Birth certificate/registered
+AH26        -> AH26        //Wear glasses or contact lenses
+AH27        -> AH27        //Have difficulty seeing even when wearing glasses or contact lenses
+AH28        -> AH28        //Have difficulty seeing (don't wear glasses)
+AH29        -> AH29        //Wear a hearing aid
+AH30        -> AH30        //Have difficulty hearing even when using a hearing aid
+AH31        -> AH31        //Have difficulty hearing (don't wear hearing aid)
+AH32        -> AH32        //Have difficulty communicating using usual language
+AH33        -> AH33        //Have difficulty remembering or concentrating
+AH34        -> AH34        //Have difficulty walking or climbing steps
+AH35        -> AH35        //Have difficulty washing all over or dressing
+ML07I       -> ML07I       //Age corrected from individual questionnaire
+ML07F       -> ML07F       //Flag for age correction
+MLPREG      -> MLPREG      //Pregnancy status from individual questionnaire
+
+//Record (AHSEC02) - Household Characteristics
+AHSEC02     -> AHSEC02     //Household Characteristics
+AH101       -> AH101       //Source of drinking water
+AH102       -> AH102       //Source of water for cooking/handwashing
+AH103       -> AH103       //Location of source for water
+AH104       -> AH104       //Time to water and back (mins)
+AH106       -> zzAH106       //Water not available for at least a day
+AH107       -> AH107       //Do anything to water to make safe to drink
+AH108       -> AH108       //What do you usually do to make water safe to drink
+AH109       -> AH109       //Type of toilet facility
+AH110       -> AH110       //Share facilities with other households
+AH111       -> AH111       //Number of households sharing toilet
+AH112       -> AH112       //Location of toilet facility
+AH113       -> AH120       //Type of cooking fuel
+AH114       -> AH121       //Food cooked in the house / in separate building / outdoors
+AH115       -> AH122       //Household has separate room used as kitchen
+AH116       -> AH127       //Number of rooms used for sleeping
+AH117       -> AH128       //Livestock, herds or farm animals
+AH118A      -> AH129A      //Cows/bulls
+AH118B      -> AH129B      //Other cattle
+AH118C      -> AH129C      //Horses/donkeys/mules
+AH118D      -> AH129D      //Goats
+AH118E      -> AH129E      //Sheep
+AH118F      -> AH129F      //Chickens or other poultry
+AH119       -> AH130       //Own land usable for agriculture
+AH120       -> AH131       //Hectares for agricultural land
+AH121A      -> AH132A      //Electricity
+AH121B      -> AH132B      //Radio
+AH121C      -> AH132C      //Television
+AH121D      -> AH132D      //Telephone (non-mobile)
+AH121E      -> AH132E      //Computer
+AH121F      -> AH132F      //Refrigerator
+AH122A      -> AH133A      //Watch
+AH122B      -> AH133B      //Mobile telephone
+AH122C      -> AH133C      //Bicycle
+AH122D      -> AH133D      //Motorcycle or scooter
+AH122E      -> AH133E      //Animal-drawn cart
+AH122F      -> AH133F      //Car or Truck
+AH122G      -> AH133G      //Boat with a motor
+AH123       -> AH134       //Bank account
+AH124       -> AH136       //Frequency of smoking inside house
+AH125       -> zzAH125       //Interior walls sprayed against insecticide in past 12 months
+AH126       -> zzAH126       //Dwelling sprayed by government, private company or NGO
+AH127       -> AH137       //Mosquito nets used while sleeping
+AH128       -> AH138       //Number of mosquito nets
+
+//Record (AHSEC03) - Mosquito Nets
+AHSEC03     -> AHSEC03     //Mosquito Nets
+AHCOL3      -> AH139       //Net number
+AH129       -> AH140       //Shown Net
+AH130       -> AH141       //How long ago household obtain net
+AH131       -> AH142       //Net brand name
+AH132       -> zzAH132       //Net ever soaked or dipped in chemical since obtained
+AH133       -> zzAH133       //How long ago was net last soaked
+AH134       -> AH143       //Obtained net from campaign, antenatal or immunization visit
+AH135       -> AH144       //Place where net was obtained
+AH136       -> AH145       //Anyone sleep under this net last night
+AH137A      -> AH146A      //Line No. of 1st person who slept under net
+AH137B      -> AH146B      //Line No. of 2nd person who slept under net
+AH137C      -> AH146C      //Line No. of 3rd person who slept under net
+AH137D      -> AH146D      //Line No. of 4th person who slept under net
+
+//Record (AHSEC04) - Additional household characteristics
+AHSEC04     -> AHSEC04     //Additional household characteristics
+AH139       -> AH149       //Observed place for handwashing
+AH140       -> AH150       //Observed presence of water
+AH141       -> AH151       //Observed presence of soap, detergent or other cleansing agent
+AH142       -> AH152       //Main floor material
+AH143       -> AH153       //Main roof material
+AH144       -> AH154       //Main wall material
+AH145       -> AH155       //Test salt for iodine
+AH146       -> AH156       //End of household interview
+AH146H      -> AH156H      //End of household interview (hour)
+AH146M      -> AH156M      //End of household interview (minutes)
+
+//Record (AHSECCL2) - Child Labor MICS version 01/2015
+AHSECCL2    -> AHSECCL     //Child Labor MICS version 01/2015
+ACHLINE     -> ACHLINE     //Child line number in household
+ACHL2A      -> ACHL2A      //Past week worked on: plot/farm/looked after animals
+ACHL2B      -> ACHL2B      //Past week worked on: helped family/relatives with business
+ACHL2C      -> ACHL2C      //Past week worked on: produce/sell articles/handicrafts/food/agricultural products
+ACHL2D      -> ACHL2D      //Past week worked on: other activities
+ACHL4       -> ACHL4       //Hours worked in past week activities
+ACHL5       -> ACHL5       //Past week work require carrying heavy loads
+ACHL6       -> ACHL6       //Past week work require working with dangerous tools, knives, heavy machines
+ACHL7A      -> ACHL7A      //Work enviorment in past week work: exposed to dust, fumes, gas
+ACHL7B      -> ACHL7B      //Work enviorment in past week work: exposed to extreme cold, heat, humidity
+ACHL7C      -> ACHL7C      //Work enviorment in past week work: exposed to lous noise, vibration
+ACHL7D      -> ACHL7D      //Work enviorment in past week work: require work at heights
+ACHL7E      -> ACHL7E      //Work enviorment in past week work: exposed to chemicals, pesticides, glues, explosives
+ACHL7F      -> ACHL7F      //Work enviorment in past week work: other processes bad for health/safety
+ACHL8       -> ACHL8       //Past week: fetch water for household use
+ACHL9       -> ACHL9       //Past week: hours fetching water for household use
+ACHL10      -> ACHL10      //Past week: collect firewood for household use
+ACHL11      -> ACHL11      //Past week: hours collecting firewood for household use
+ACHL12A     -> ACHL12A     //Past week did do: shopping for household
+ACHL12B     -> ACHL12B     //Past week did do: repair household equipment
+ACHL12C     -> ACHL12C     //Past week did do: cooking/cleaning utensils or the house
+ACHL12D     -> ACHL12D     //Past week did do: washing clothes
+ACHL12E     -> ACHL12E     //Past week did do: caring for children
+ACHL12F     -> ACHL12F     //Past week did do: caring for the old/sick
+ACHL12G     -> ACHL12G     //Past week did do: other hosuehold tasks
+ACHL14      -> ACHL14      //Past week hours engaged in household activities
+ACHLNAME    -> ACHLNAME    //Child name
+
+//Record (AHSECDIS) - Child discipline
+AHSECDIS    -> AHSECCD    //Child discipline
+ACDI2       -> ACDI2       //Child line number in household
+ACDI3A      -> ACDI3A      //Past month: took away privileges
+ACDI3B      -> ACDI3B      //Past month: explained wrong behaviour
+ACDI3C      -> ACDI3C      //Past month: shook him/her
+ACDI3D      -> ACDI3D      //Past month: shouted, yelled, screamed
+ACDI3E      -> ACDI3E      //Past month: gave something else to do
+ACDI3F      -> ACDI3F      //Past month: hit on bottom with bare hand
+ACDI3G      -> ACDI3G      //Past month: hit with hard object (belt, stick, hairbrush)
+ACDI3H      -> ACDI3H      //Past month: called dumb, lazy or other names
+ACDI3I      -> ACDI3I      //Past month: hit on face, head, ears
+ACDI3J      -> ACDI3J      //Past month: hit on hand, arm, leg
+ACDI3K      -> ACDI3K      //Past month: beat him/her up
+ACDI4       -> ACDI4       //Child should be punished to bring him/her up, raise or educate
+ACDINAME    -> ACDINAME    //Child name
+
+//Record (ABSECOVER) - Biomarker Identification
+ABSECOVER   -> ABSECOVER   //Biomarker Identification
+ABINT       -> ABINT       //Date of household interview
+ABINTD      -> ABINTD      //Day of household interview
+ABINTM      -> ABINTM      //Month of household interview
+ABINTY      -> ABINTY      //Year of household interview
+ABVISITS    -> ABVISITS    //Number of visits for biomarker questionnaire
+ABCHILD     -> ABCHILD     //Eligible children in the household
+ABINTC      -> ABINTC      //Date of household interview (CMC)
+ABINTCD     -> ABINTCD     //Date of biomarker questionnaire Century Day Code (CDC)
+
+//Record (ABSEC01) - Height, Weight, Hemoglobin (children)
+ABSEC01     -> ABSEC01     //Height, Weight, Hemoglobin (children)
+ABCOL1      -> ABCOL1      //Column number
+AB102       -> AB102       //Line number in household schedule
+AB103       -> AB103       //Date of birth
+AB103D      -> AB103D      //Day of birth
+AB103M      -> AB103M      //Month of birth
+AB103Y      -> AB103Y      //Year of birth
+AB104       -> zzAB104       //Child born in 2010 or later
+AB105       -> AB106       //Weight in kilograms
+AB105W      -> AB106W      //Weight in kilograms - working field for re-entering
+AB106       -> AB108       //Height in centimeters
+AB106W      -> AB108W      //Height in centimeters - working field for re-entering
+AB107       -> AB109       //Height: lying or standing
+AB108       -> AB113       //Fieldworker number for H/W
+AB109       -> zzAB109       //Born in month of interview or previous 5 months
+AB110       -> AB118       //Line no. of parent/caretaker
+AB112       -> AB120       //Read consent statement
+AB113       -> AB122       //Hemoglobin level (g/dl)
+AB113W      -> AB122W      //Hemoglobin level (g/dl) - working field for re-entering
+ABRTYPE     -> ABRTYPE     //Remeasure - Reason
+ABWEIGHT    -> ABWEIGHT    //Remeasuare - Weight in kilograms
+ABHEIGHT    -> ABHEIGHT    //Remeasure - Height in centimeters
+ABLYNSTN    -> ABLYNSTN    //Remeasure - Height: lying or standing
+ACCMC       -> ACCMC       //Child's CMC of birth
+ACCDC       -> ACCDC       //Child's Century Day Code (CDC) of birth
+ACFLG       -> ACFLG       //Date flag for child's date of birth
+ACDBR       -> ACDBR       //Imputed day of birth from birth history
+ACMBR       -> ACMBR       //Imputed month of birth
+ACYBR       -> ACYBR       //Child's year of birth
+ACPC1       -> zzACPC1       //Ht/A Percentile
+ACSD1       -> zzACSD1       //Ht/A Standard deviations
+ACRM1       -> zzACRM1       //Ht/A Percent of ref. median
+ACPC2       -> zzACPC2       //Wt/A Percentile
+ACSD2       -> zzACSD2       //Wt/A Standard deviations
+ACRM2       -> zzACRM2       //Wt/A Percent of ref. median
+ACPC3       -> zzACPC3       //Wt/Ht Percentile
+ACSD3       -> zzACSD3       //Wt/Ht Standard deviations
+ACRM3       -> zzACRM3       //Wt/Ht Percent of ref. median
+ACMLN       -> ACMLN       //Mother's line number from individual questionnaire
+ACBO        -> ACBO        //Birth order of child
+ACBI        -> ACBI        //Birth interval
+ACED1       -> ACED1       //Mother's highest educational level
+ACED2       -> ACED2       //Mother's highest grade at that level
+ACED3       -> ACED3       //Mother's highest educational level (CS for preliminary & final report)
+ACSD4       -> ACZSHA       //Ht/A Standard deviations (according to WHO)
+ACSD5       -> ACZSWA       //Wt/A Standard deviations  (according to WHO)
+ACSD6       -> ACZSWH       //Wt/Ht Standard deviations  (according to WHO)
+ACSD7       -> ACZSBM       //BMI Standard deviations  (according to WHO)
+ACNAME      -> ACNAME      //Child name
+ACAUXIL     -> ACAUXIL     //Auxiliar to decide if Biomarkers for children are recorded at this time
+
+//Record (ABSEC02) - Height, Weight, Hemoglobin (women)
+ABSEC02     -> ABSEC02     //Height, Weight, Hemoglobin (women)
+ABCOL2      -> ABCOL2      //Column number
+AB202       -> AB202       //Line number in household schedule
+AB203       -> AB203       //Under age 18
+AB204       -> AB204       //Marital status
+AB205       -> AB205       //Weight in kilograms
+AB205W      -> AB205W      //Weight in kilograms - working field for re-entering
+AB206       -> AB207       //Height in centimeters
+AB206W      -> AB207W      //Height in centimeters - working field for re-entering
+AB207       -> AB209       //Fieldworker number for H/w
+AB208       -> zzAB208       //Under age 18
+AB209       -> zzAB209       //Marital status
+AB211       -> AB215       //Read consent statement to respondent (Anemia)
+AB211A      -> zzAB211A      //Currently pregnant
+AB213       -> ABWHIV1       //Read consent statement to respondent (HIV)
+AB213A      -> ABWHIV2      //Fieldworker number for HIV
+AB215       -> ABWHIV3       //Read consent statement to respondent (Additional tests)
+AB216       -> AB217       //Line no. of parent/caretaker
+AB218       -> AB219       //Read consent statement to parent/caretaker (Anemia)
+AB220       -> AB223       //Read consent statement to respondent (Anemia)
+AB220A      -> zzAB220A      //Currently pregnant
+AB222       -> ABWHIV4       //Read consent statement to parent/caretaker (HIV)
+AB222A      -> ABWHIV5      //Fieldworker number for HIV
+AB224       -> ABWHIV6       //Read consent statement to respondent (HIV)
+AB226       -> ABWHIV7       //Read consent statement to parent/caretaker (Additional tests)
+AB228       -> ABWHIV8       //Read consent statement to respondent (Additional tests)
+AB231       -> AB225       //Hemoglobin level (g/dl)
+AB231W      -> AB225W      //Hemoglobin level (g/dl) - working field for re-entering
+AB232       -> ABWHIV9       //Blood sample ID number
+AWCMC       -> AWCMC       //CMC of birth of woman
+AWFLG       -> AWFLG       //Date flag for woman's date of birth
+AWMBR       -> AWMBR       //Imputed month of birth
+AWYBR       -> AWYBR       //Woman's year of birth
+AWSMK       -> AWSMK       //Respondent smoke practices
+AWPRG       -> AWPRG       //Respondent pregnancy status
+AWMOS       -> AWMOS       //Months of pregnancy
+AWPC1       -> zzAWPC1       //Ht/A Percentile (resp.)
+AWSD1       -> zzAWSD1       //Ht/A Standard deviations (resp
+AWRM1       -> zzAWRM1       //Ht/A Percent ref. median (resp
+AWRM3       -> zzAWRM3       //Wt/Ht Percent ref. median (DHS
+AWRM4       -> zzAWRM4       //Wt/Ht Percent ref. median (Fog
+AWRM5       -> zzAWRM5       //Wt/Ht Percent ref. median (WHO
+AWSD3       -> zzAWSD3       //Wt/Ht Std deviations(resp) DHS
+AWBM        -> AWBM        //Body mass index for respondent
+AWRI        -> zzAWRI        //Rohrer's index for respondent
+AWRESI      -> AWRESI      //Result of individual interview
+AWED1       -> AWED1       //Woman's highest educational level
+AWED2       -> AWED2       //Woman's highest year of education
+AWED3       -> AWED3       //Highest educational level (CS for preliminary & final report)
+AWHIVWGT    -> AWHIVWGT    //HIV weight (6 decimals)
+AWNAME      -> AWNAME      //Woman name
+AWAUXIL     -> AWAUXIL     //Auxiliar to decide if Biomarkers for women are recorded at this time
+
+//Record (ABSEC03) - Height, Weight, Hemoglobin (men)
+ABSEC03     -> ABSEC03     //Height, Weight, Hemoglobin (men)
+ABCOL3      -> ABCOL3      //Line number
+AB302       -> AB302       //Line number in household schedule
+AB303       -> AB303       //Under age 18
+AB304       -> AB304       //Marital status
+AB305       -> AB305       //Weight in kilograms
+AB305W      -> AB305W      //Weight in kilograms - working field for re-entering
+AB306       -> AB307       //Height in centimeters
+AB306W      -> AB307W      //Height in centimeters - working field for re-entering
+AB307       -> AB309       //Fieldworker number for H/W
+AB308       -> zzAB308       //Under age 18
+AB309       -> zzAB309       //Marital status
+AB311       -> AB315       //Read consent statement to respondent (Anemia)
+AB313       -> ABMHIV1     //Read consent statement to respondent (HIV)
+AB313A      -> ABMHIV2     //Fieldworker number for HIV
+AB315       -> ABMHIV3     //Read consent statement to respondent (Additional tests)
+AB316       -> AB317       //Line no. of parent/caretaker
+AB318       -> AB319       //Read consent statement to adult/caretaker (Anemia)
+AB320       -> AB323       //Read consent statement to respondent (Anemia)
+AB322       -> ABMHIV4     //Read consent statement to adult/caretaker (HIV)
+AB322A      -> ABMHIV5     //Fieldworker number for HIV
+AB324       -> ABMHIV6     //Read consent statement to respondent (HIV)
+AB326       -> ABMHIV7     //Read consent statement to adult/caretaker (Additional tests)
+AB328       -> ABMHIV8     //Read consent statement to respondent (Additional tests)
+AB331       -> AB325       //Hemoglobin level (g/dl)
+AB331W      -> AB325W      //Hemoglobin level (g/dl) - working field for re-entering
+AB332       -> ABMHIV9     //Blood sample ID number
+AMCMC       -> AMCMC       //CMC of birth of man
+AMFLG       -> AMFLG       //Date flag for man's date of birth
+AMMBR       -> AMMBR       //Imputed month of birth
+AMYBR       -> AMYBR       //Man's year of birth
+AMSMK       -> AMSMK       //Respondent smoke practices
+AMPC1       -> zzAMPC1       //Ht/A Percentile (resp.)
+AMSD1       -> zzAMSD1       //Ht/A Standard deviations (resp)
+AMRM1       -> zzAMRM1       //Ht/A Percent ref. median (resp)
+AMRM3       -> zzAMRM3       //Wt/Ht Percent ref. median (DHS)
+AMRM4       -> zzAMRM4       //Wt/Ht Percent ref. median (Fog)
+AMRM5       -> zzAMRM5       //Wt/Ht Percent ref. median (WHO)
+AMSD3       -> zzAMSD3       //Wt/Ht Std deviations(resp) DHS
+AMBM        -> AMBM        //Body mass index for respondent
+AMRI        -> zzAMRI        //Rohrer's index for respondent
+AMRESI      -> AMRESI      //Result of individual interview
+AMED1       -> AMED1       //Man's highest educational level
+AMED2       -> AMED2       //Man's highest year of education
+AMED3       -> AMED3       //Highest educational level (CS for preliminary & final report)
+AMHIVWGT    -> AMHIVWGT    //HIV weight (6 decimals)
+AMNAME      -> AMNAME      //Man name
+AMAUXIL     -> AMAUXIL     //Auxiliar to decide if Biomarkers for men are recorded at this time
+
+//Form (C:\CC71NEW\Entry\ccHH70.fmf)
+FL_ccHH70             -> FL_ccHH80             //Household CAPI
+"..\Dicts\ccHH70.dcf" -> "..\Dicts\ccHH80.dcf" 
+AHFORM00              -> AHFORM00              //Household identification
+AHFORM01X             -> AHFORM01X             //Names of household members
+AHFORM01              -> AHFORM01              //Household schedule
+FORM000               -> AHFORMCL              //Child labor
+FORM001               -> AHFORMCD              //Child Discipline
+AHFORM02              -> AHFORM02              //Household characteristics
+AHFORM03              -> AHFORM03              //Malaria module - mosquito nets
+AHFORM04              -> AHFORM04              //Additional household characteristics
+ABFORM00              -> ABFORM00              //Biomarker questionnaire cover page
+ABFORM01              -> ABFORM01              //Weight, Height and Hemoglobin Measurement for Children age 0-5
+ABFORM02              -> ABFORM02              //Weight, Height and Hemoglobin Measurement for Women
+ABFORM03              -> ABFORM03              //Weight, Height and Hemoglobin Measurement for Men 15-49
+AHVISITS_ROSTER       -> AHVISITS_ROSTER       //Group to control visits
+AHSEC1X_ROSTER        -> AHSEC1X_ROSTER        //Names of household members
+AHSEC01_ROSTER        -> AHSEC01_ROSTER        //Household Schedule
+ACHL12_BLOCK          -> ACHL12_BLOCK          //Househol chores by children
+AH118_BLOCK           -> AH129_BLOCK           //Ownership of animals
+AH121_BLOCK           -> AH132_BLOCK           //Household posessions
+AH122_BLOCK           -> AH133_BLOCK           //Posession of household members
+AHSEC03_ROSTER        -> AHSEC03_ROSTER        //Mosquito Nets
+ABSEC01_ROSTER        -> ABSEC01_ROSTER        //Height, Weight, Hemoglobin (children)
+AB103_BLOCK           -> AB103_BLOCK           //Child's date of birth
+ABSEC02_ROSTER        -> ABSEC02_ROSTER        //Height, Weight, Hemoglobin (women)
+ABSEC03_ROSTER        -> ABSEC03_ROSTER        //Height, Weight, Hemoglobin (men)
+
+//Dictionary (C:\Users\39284\ICF\Standard - DHS Data Processing\CC71NEW\Dicts\ccIN70.dcf)
+CCIN70       -> CCIN80       //DHS-VII Core  07-13-2015
+
+//Level (INDIVIDUAL) - Individual
+INDIVIDUAL   -> INDIVIDUAL   //Individual
+ACLUSTER     -> ACLUSTER     //Cluster number
+ANUMBER      -> ANUMBER      //Household number
+ALINE        -> ALINE        //Individual line number
+
+//Record (ASECOVER) - Individual identification
+ASECOVER     -> ASECOVER     //Individual identification
+AVIOLEN      -> AVIOLEN      //Individual selected for domestic violence
+ASEX         -> ASEX         //Sex
+AREGION      -> AREGION      //Region
+ALOCAL       -> ALOCAL       //City\Town\Countryside
+ACONTVIST    -> ACONTVIST    //Group to control visits
+AVLINE       -> AVLINE       //Visit line number
+AVDAY        -> AVDAY        //Day of visit
+AVMONTH      -> AVMONTH      //Month of visit
+AVYEAR       -> AVYEAR       //Year of visit
+AVHOUR       -> AVHOUR       //Hour of visit
+AVMINUTE     -> AVMINUTE     //Minute of visit
+AVRESULT     -> AVRESULT     //Result of visit
+AINTD        -> AINTD        //Day of interview
+AINTM        -> AINTM        //Month of interview
+AINTY        -> AINTY        //Year of interview
+AINTNUM      -> AINTNUM      //Interviewer number
+ARESULT      -> ARESULT      //Result of individual interview
+AVISITS      -> AVISITS      //Total number of visits
+ASUPERV      -> ASUPERV      //Supervisor number
+ALANGQ       -> ALANGQ       //Language of questionnaire
+ALANGI       -> ALANGI       //Language of interview
+ALANGR       -> ALANGR       //Language of respondent
+ATRANS       -> ATRANS       //Translator used
+AINTC        -> AINTC        //Date of interview (CMC)
+AINTCD       -> AINTCD       //Date of interview Century Day Code (CDC)
+AWEIGHT      -> AWEIGHT      //Sample weight (6 decimals)
+ATYPE        -> ATYPE        //Type of place of residence
+AQTYPE       -> AQTYPE       //Type of questionnaire
+ADWEIGHT     -> ADWEIGHT     //Domestic violence weight (6 decimals)
+ANAME        -> ANAME        //Name
+ACORRECT     -> ACORRECT     //Is the correct individual
+ACONSENT     -> ACONSENT     //Consent agreement
+ABAUX1       -> ABAUX1       //Auxiliary to display all listed children
+ABAUX2       -> ABAUX2       //Auxiliary to confirm that all children are listed
+AINTROUSE    -> AINTROUSE    //Auxiliary to display introduction to contraceptive history
+AFINAL       -> AFINAL       //Auxiliary to end woman's interview
+AMFINAL      -> AMFINAL      //Auxiliary to end man's interview
+
+//Record (AWSEC01) - Respondent's Background
+AWSEC01      -> AWSEC01      //Respondent's Background
+A101         -> A101         //Start of interview
+A101H        -> A101H        //Start of interview (hour)
+A101M        -> A101M        //Start of interview (minutes)
+A102         -> A104         //Time living in place of interview
+A103         -> A108         //Lived in a city/town or rural area
+A104         -> A107         //Province/state lived before moved to place of interview
+A105         -> A110         //Date of birth
+A105M        -> A110M        //Month of birth
+A105Y        -> A110Y        //Year of birth
+A106         -> A111         //Current age of respondent
+A107         -> A113         //Ever attended school
+A108         -> A114         //Highest educational level
+A109         -> A115         //Highest grade/form/year at that level
+A111         -> A117         //Sentence read
+A113         -> A119         //Reads newspaper
+A114         -> A120         //Listens to radio
+A115         -> A121         //Watches television
+A116         -> A122         //Own a mobile telephone
+A117         -> A124         //Use mobile telephone for financial transactions
+A118         -> A125         //Have a bank or other financial account
+A119         -> A127         //Have ever used the internet
+A120         -> A128         //Have used the internet last 12 months
+A121         -> A129         //How often used internet the last month
+A122         -> A130         //Religion
+A123         -> A131         //Ethnicity
+A124         -> zzA124         //Number of trips in last 12 months
+A125         -> zzA125         //Away for more than one month in last 12 months
+A105C        -> A110C        //Date of birth (CMC)
+A105F        -> A110F        //Date flag for A110C
+A106C        -> A111C        //Age of respondent calculated
+A108A        -> A114A        //Highest educational level
+AWFTOTAL     -> AWFTOTAL     //All woman factor - total
+AWFTYPE      -> AWFTYPE      //All woman factor - urban/rural
+AWFREG       -> AWFREG       //All woman factor - regional
+AWFEDUC      -> AWFEDUC      //All woman factor - educational
+AWFWLTH      -> AWFWLTH      //All woman factor - wealth index
+
+//Record (AWSEC2A) - Reproduction
+AWSEC2A      -> AWSEC2A      //Reproduction
+A201         -> A201         //Ever given birth
+A202         -> A202         //Sons or daughters living with
+A203A        -> A203A        //Sons at home
+A203B        -> A203B        //Daughters at home
+A204         -> A204         //Sons or daughters living away
+A205A        -> A205A        //Sons living elsewhere
+A205B        -> A205B        //Daughters living elsewhere
+A206         -> A206         //Sons or daughters who died
+A207A        -> A207A        //Boys who died
+A207B        -> A207B        //Girls who died
+A208         -> A208         //Total children ever born
+A209         -> A209         //Probe to children ever born
+
+//Record (AWSEC2X) - Birth names
+AWSEC2X      -> AWSEC2X      //Birth names
+ABLINE       -> ABLINE       //Line number of birth
+ABNAME       -> ABNAME       //Child name
+ABSEX        -> ABSEX        //Sex of child
+ABMULTIP     -> ABMULTIP     //Type birth (multiple/single)
+
+//Record (AWSEC2B) - Birth History
+AWSEC2B      -> AWSEC2B      //Birth History
+A212         -> A215L        //Line number of child
+A212N        -> A218         //Child name
+A213         -> A219         //Sex of child
+A214         -> A215         //Single or Multiple Birth
+A215         -> A220         //Time of birth
+A215D        -> A220D        //Day of birth
+A215M        -> A220M        //Month of birth
+A215Y        -> A220Y        //Year of birth
+A216         -> A224         //Child is still alive
+A217         -> A225         //Current age of child
+A218         -> A226         //Child living with respondent
+A219         -> A227         //Line number in the household
+A220         -> A228         //Age at death
+A220U        -> A228U        //Age at death (units)
+A220N        -> A228N        //Age at death (number)
+A220A        -> zzA220A        //Pregnancy duration
+A221         -> A222         //Live birth between births
+ALAST5       -> ALAST5       //Child born in the last 5 years
+A215C        -> A220C        //Date of birth of child (CMC)
+A215CD       -> A220CD       //Date of birth of child Century Day Code (CDC)
+A215DI       -> A220DI       //Imputed day of birth
+A215F        -> A220F        //Date flag for A215C
+A220C        -> A228C        //Age at death months (imputed)
+A220F        -> A228F        //Date flag for A220C
+
+//Record (AWSEC2Y) - Working calendar
+AWSEC2Y      -> AWSEC2Y      //Working calendar
+ACAL1        -> ACAL1        //Column 1
+ACAL2        -> ACAL2        //Column 2
+
+//Record (AWSEC2C) - Calendar
+AWSEC2C      -> AWSEC2C      //Calendar
+ACAL         -> ACAL         //Calendar
+
+//Record (AWSEC2D) - Reproduction (continued)
+AWSEC2D      -> AWSEC2D      //Reproduction (continued)
+A222         -> A229         //Birth between last & interview
+A224         -> zzA224         //Births since January 201? for prenatal postnatal care/health
+A226         -> A232         //Currently pregnant
+A227         -> A233N         //Duration of current pregnancy
+A228         -> A234         //Wanted pregnancy at that time
+A229         -> A235         //Wanted pregnancy
+A230         -> zzA230         //Miscarriage, abortion, or stillbirth
+A231         -> zzA231         //Time pregnancy ended
+A231M        -> zzA231M        //Month pregnancy ended
+A231Y        -> zzA231Y        //Year pregnancy ended
+ATERMINAT    -> zzATERMINAT    //Terminations history
+A233N        -> zzA233N        //Line number
+A233M        -> zzA233M        //Month termination
+A233Y        -> zzA233Y        //Year termination
+A234         -> zzA234         //Months pregnant with termination
+A235         -> zzA235         //More terminations
+A237         -> zzA237         //Terminated pregnancy before 201?
+A238         -> zzA238         //Time of last non-live birth pregnancy before 201?
+A238M        -> zzA238M        //Month of last non-live birth pregnancy before 201?
+A238Y        -> zzA238Y        //Year of last non-live birth pregnancy before 201?
+A239         -> A236         //Time since last period
+A239U        -> A236U        //Time since last period (unit)
+A239N        -> A236N        //Time since last period (number)
+A240         -> A241         //Knowledge of fertile period
+A241         -> A242         //When is the fertile period
+A242         -> A243         //After birth, can a woman get pregnant before period returns
+A227C        -> A233C        //Date of conception (CMC)
+A227F        -> A233F        //Date flag for A227C
+A239F        -> A236F        //Flag for A239
+A224A        -> zzA224A        //Births since January 201? (for immunizations)
+A224B        -> zzA224B        //Births since January 201? living with respondent (for food consumption)
+
+//Record (AWSEC3A) - Contraceptive Knowledge & Use
+AWSEC3A      -> AWSEC3A      //Contraceptive Knowledge & Use
+AWSEC31_GRP  -> AWSEC31_GRP  //Contraception listing
+A301N        -> A301N        //Contraceptive method
+A301         -> A301         //Heard of method
+A301OT       -> A301OT       //Auxiliary to capture other methods
+AALLMETH     -> AALLMETH     //Auxiliary to capture spontaneous knowledge of methods
+
+//Record (AWSEC3B) - Contraceptive Practice
+AWSEC3B      -> AWSEC3B      //Contraceptive Practice
+A303         -> A303         //Currently using any method
+A304         -> A307         //Current contraceptive method
+A305         -> A310         //Brand name of pills reported
+A306         -> A311         //Brand name of condoms reported
+A307         -> A312         //Where sterilization took place
+A308         -> A313         //Date sterilization was performed
+A308M        -> A313M        //Month sterilization was performed
+A308Y        -> A313Y        //Year sterilization was performed
+A309         -> A314         //Time started using current method
+A309M        -> A314M        //Month started using current method
+A309Y        -> A314Y        //Year started using current method
+ASOURCEM     -> ZZASOURCEM     //Source for current method when started (auxiliary)
+A314         -> A320         //Ever used a contraceptive method
+A315         -> A321         //Current contraceptive method (filter)
+A316         -> A322         //Source for current method when started
+A317         -> zzA317         //Current contraceptive method (filter)
+A318         -> A323         //Told about side effects
+A319         -> A324         //Told about side effects when sterilized
+A320         -> zzA320         //Told about side effects by health or FP worker
+A321         -> A325         //Told how to deal with side effects
+A322         -> A326         //Told about other FP methods
+A323         -> zzA323         //Told about other FP methods by health or FP worker
+A324         -> A329         //Current contraceptive method (filter)
+A325         -> A330         //Last source of FP
+A326         -> A331         //Know source for FP
+A327         -> A332         //Visited by FP worker in last 12 months
+A328         -> A333         //Fieldworker talked about FP
+A329         -> A334         //Visited health facility in last 12 months
+A330         -> A335         //At health facility, told of FP
+A304N        -> A307N        //Current contraceptive method (major method)
+A309C        -> A314C        //Date started using current method (CMC)
+A309F        -> A314F        //Date flag for A309C
+
+//Record (AWSEC3E) - Contraceptive use history
+AWSEC3E      -> AWSEC3C      //Contraceptive use history
+A312N        -> A317N        //Line number
+A312AM       -> A317AM       //Month episode began
+A312AY       -> A317AY       //Year episode began
+A312B        -> A317B        //If used a method
+A312C        -> A317C        //Method used in interval
+A312D        -> A317D        //Months after episode and before began using
+A312EM       -> A317EM       //Month began using
+A312EY       -> A317EY       //Year began using
+A312F        -> A317F        //Months of continuous use
+A312GM       -> A317GM       //Month ended use
+A312GY       -> A317GY       //Year ended use
+A312H        -> A317H        //Discontinuation reason
+ACAUXM1      -> ACAUXM1      //Auxiliary month began using
+ACAUXY1      -> ACAUXY1      //Auxiliary year began using
+ACAUXM2      -> ACAUXM2      //Auxiliary month ended use
+ACAUXY2      -> ACAUXY2      //Auxiliary year ended use
+ACROWNEXT    -> ACROWNEXT    //Row where next episode start
+ACDIRNEXT    -> ACDIRNEXT    //Direction for next episode
+ACFEVENT     -> ACFEVENT     //End of interval between pregnancy-births-terminations
+ACBEVENT     -> ACBEVENT     //Begin of interval between pregnancy-births-terminations
+ACDURIN      -> ACDURIN      //Interval estimated before beginning of use
+
+//Record (AWSEC04) - Pregnancy and Postnatal Care
+AWSEC04      -> AWSEC04      //Pregnancy and Postnatal Care
+ACOL41       -> ACOL41       //Column number
+A403         -> A404         //Line number
+A404         -> A407         //Child name
+A405         -> A408         //Wanted to get pregnant
+A406         -> A409         //Time wanted pregnancy
+A407         -> A410         //Time would have waited
+A407U        -> A410U        //Time would have waited (unit)
+A407N        -> A410N        //Time would have waited (number)
+A408         -> A412         //Received antenatal care for pregnancy
+A409         -> A414         //Provider of antenatal care for pregnancy
+A410         -> A415         //Where antenatal care took place
+A411         -> zzA411         //Months pregnant at first antenatal care
+A412         -> A417         //Antenatal visits during pregnancy
+A413A        -> A418A        //Antenatal care: Blood pressure
+A413B        -> A418B        //Antenatal care: Urine sample
+A413C        -> A418C        //Antenatal care: Blood sample
+A414         -> A420         //Tetanus injection during pregnancy
+A415         -> A421         //Number of tetanus injections
+A417         -> A423         //Tetanus injections before pregnancy
+A418         -> A424         //Number of tetanus injections before pregnancy
+A419         -> A425         //Years ago received last tetanus injection before pregnancy
+A420         -> A426         //Iron tablets during pregnancy
+A421         -> A428         //Number of days took iron tablets
+A422         -> A429         //Drugs for intestinal parasites
+A423         -> A431         //During pregnancy took SP/Fansidar for malaria
+A424         -> A432         //How many times took SP/Fansidar (Malaria)
+A425         -> A433         //Took SP/Fansidar during antenatal visit (Malaria)
+A426         -> A441         //Size of child at birth
+A427         -> A442         //Weighed at birth
+A428         -> A443         //Weight at birth
+A428U        -> A443U        //Weight at birth (units)
+A428N        -> A443N        //Weight in Kilograms
+A429         -> A434         //Assistance at delivery
+A430         -> A435         //Place of delivery
+A431         -> A447         //Time spent in health facility after delivery
+A431U        -> A447U        //Time spent in health facility after delivery (Units)
+A431N        -> A447N        //Time spent in health facility after delivery (Number)
+A432         -> A436         //Delivery by caesarean section
+A433         -> zzA433         //Timing of decision on caesarean section
+A434         -> A438         //Child was put on the chest immediately after birth
+A434A        -> A439         //Child bare skin touched respondent bare skin
+A435         -> A448         //Postnatal check on respondent before discharge
+A436         -> A449         //First postnatal check on respondent
+A436U        -> A449U        //First postnatal check on respondent (Units)
+A436N        -> A449N        //First postnatal check on respondent (Number)
+A437         -> A450         //Person giving postnatal care to respondent
+A438         -> A452         //First postnatal check on child in facility
+A439         -> A453         //Time first postnatal check on child  in facility
+A439U        -> A453U        //Time first postnatal check on child in facility (unit)
+A439N        -> A453N        //Time first postnatal check on child in facility (number)
+A440         -> A454         //Person giving postnatal care to child  in facility
+A441         -> A455         //Checkup on respondent after discharge from place of delivery
+A442         -> A456         //Time checkup on respondent after discharge
+A442U        -> A456U        //Time checkup on respondent after discharge (unit)
+A442N        -> A456N        //Time checkup on respondent after discharge (number)
+A443         -> A457         //Person giving checkup on respondent after discharge
+A444         -> A458         //Place of checkup on respondent after discharge
+A445         -> A460         //Health child checked in first 2 months after birth
+A446         -> A461         //First postnatal check on child
+A446U        -> A461U        //First postnatal check on child (unit)
+A446N        -> A461N        //First postnatal check on child (number)
+A447         -> A462         //Person giving postnatal check on child
+A448         -> A463         //Place of first postnatal check
+A449         -> A464         //Respondent received postnatal check after home delivery
+A450         -> A465         //Time respondent received postnatal check after home delivery
+A450U        -> A465U        //Time respondent received postnatal check after home delivery (units)
+A450N        -> A465N        //Time respondent received postnatal check after home delivery (number)
+A451         -> A466         //Person giving postnatal check on respondent after home delivery
+A452         -> A467         //Place postnatal check on respondent after home delivery
+A453         -> A469         //Child received postnatal check after home delivery
+A454         -> A470         //Time child received postnatal check after home delivery
+A454U        -> A470U        //Time child received postnatal check after home delivery (units)
+A454N        -> A470N        //Time child received postnatal check after home delivery (number)
+A455         -> A471         //Person giving postnatal check on child after home delivery
+A456         -> A472         //Place postnatal check on child after home delivery
+A457A        -> A473A        //During first two days, health care provider: examine the cord
+A457B        -> A473B        //During first two days, health care provider: measure temperature
+A457C        -> A473C        //During first two days, health care provider: counsel on danger signs for newborns
+A457D        -> A473D        //During first two days, health care provider: counsel on breastfeeding
+A457E        -> A473E        //During first two days, health care provider: observe breastfeeding
+A458         -> A476         //Period returned
+A459         -> zzA459         //Period returned between births
+A460         -> zzA460         //Months without a period
+A462         -> A478         //Begun to have sexual intercourse
+A463         -> zzA463         //Months without sexual intercourse
+A464         -> A480         //Ever breastfed
+A466         -> A482         //When child put to breast
+A466U        -> A482U        //When child put to breast (Unit)
+A466N        -> A482N        //When child put to breast (Number)
+A467         -> A483         //Any fluid given besides breast milk in first 3 days
+A469         -> A485         //Still breastfeeding
+A470         -> A486         //Drink in a bottle with nipple
+A460F        -> zzA460F        //Flag for amenorrhea
+A463F        -> zzA463F        //Flag for abstinence
+
+//Record (AWSEC05) - Immunization and Health
+AWSEC05      -> AWSEC05      //Immunization and Health
+ACOL51       -> ACOL51       //Column number
+A502         -> A503         //Line number in birth history
+A502N        -> A503N        //Child name
+A504         -> A504         //Has vaccination card
+A505         -> A505         //Ever had vaccination card
+A507         -> A507         //Observation of vaccination card
+A508B        -> A509B        //BCG
+D508B        -> D509B        //BCG day
+M508B        -> M509B        //BCG month
+Y508B        -> Y509B        //BCG year
+A508H        -> A509H        //Hepatitis B at birth
+D508H        -> D509H        //Hepatitis B at birth day
+M508H        -> M509H        //Hepatitis B at birth month
+Y508H        -> Y509H        //Hepatitis B at birth year
+A508P0       -> A509P0       //Polio at birth
+D508P0       -> D509P0       //Polio at birth day
+M508P0       -> M509P0       //Polio at birth month
+Y508P0       -> Y509P0       //Polio at birth year
+A508P1       -> A509P1       //Polio 1
+D508P1       -> D509P1       //Polio 1 day
+M508P1       -> M509P1       //Polio 1 month
+Y508P1       -> Y509P1       //Polio 1 year
+A508P2       -> A509P2       //Polio 2
+D508P2       -> D509P2       //Polio 2 day
+M508P2       -> M509P2       //Polio 2 month
+Y508P2       -> Y509P2       //Polio 2 year
+A508P3       -> A509P3       //Polio 3
+D508P3       -> D509P3       //Polio 3 day
+M508P3       -> M509P3       //Polio 3 month
+Y508P3       -> Y509P3       //Polio 3 year
+A508D1       -> A509D1       //DPT 1
+D508D1       -> D509D1       //DPT 1 day
+M508D1       -> M509D1       //DPT 1 month
+Y508D1       -> Y509D1       //DPT 1 year
+A508D2       -> A509D2       //DPT 2
+D508D2       -> D509D2       //DPT 2 day
+M508D2       -> M509D2       //DPT 2 month
+Y508D2       -> Y509D2       //DPT 2 year
+A508D3       -> A509D3       //DPT 3
+D508D3       -> D509D3       //DPT 3 day
+M508D3       -> M509D3       //DPT 3 month
+Y508D3       -> Y509D3       //DPT 3 year
+A508N1       -> A509N1       //Pneumococcal 1
+D508N1       -> D509N1       //Pneumococcal 1 day
+M508N1       -> M509N1       //Pneumococcal 1 month
+Y508N1       -> Y509N1       //Pneumococcal 1 year
+A508N2       -> A509N2       //Pneumococcal 2
+D508N2       -> D509N2       //Pneumococcal 2 day
+M508N2       -> M509N2       //Pneumococcal 2 month
+Y508N2       -> Y509N2       //Pneumococcal 2 year
+A508N3       -> A509N3       //Pneumococcal 3
+D508N3       -> D509N3       //Pneumococcal 3 day
+M508N3       -> M509N3       //Pneumococcal 3 month
+Y508N3       -> Y509N3       //Pneumococcal 3 year
+A508R1       -> A509R1       //Rotavirus 1
+D508R1       -> D509R1       //Rotavirus 1 day
+M508R1       -> M509R1       //Rotavirus 1 month
+Y508R1       -> Y509R1       //Rotavirus 1 year
+A508R2       -> A509R2       //Rotavirus 2
+D508R2       -> D509R2       //Rotavirus 2 day
+M508R2       -> M509R2       //Rotavirus 2 month
+Y508R2       -> Y509R2       //Rotavirus 2 year
+A508R3       -> A509R3       //Rotavirus 3
+D508R3       -> D509R3       //Rotavirus 3 day
+M508R3       -> M509R3       //Rotavirus 3 month
+Y508R3       -> Y509R3       //Rotavirus 3 year
+A508M1       -> A509M1       //Measles 1
+D508M1       -> D509M1       //Measles 1 day
+M508M1       -> M509M1       //Measles 1 month
+Y508M1       -> Y509M1       //Measles 1 year
+A508M2       -> A509M2       //Measles 2
+D508M2       -> D509M2       //Measles 2 day
+M508M2       -> M509M2       //Measles 2 month
+Y508M2       -> Y509M2       //Measles 2 year
+A508V        -> A509V        //Last Vitamin A
+D508V        -> D509V        //Last Vitamin A day
+M508V        -> M509V        //Last Vitamin A month
+Y508V        -> Y509V        //Last Vitamin A year
+A510         -> A512         //Other vaccination not recorded
+A510W        -> A512W        //Used to capture other vaccinations that may be given
+A511         -> A513         //Ever receive vaccinations
+A512         -> A514         //BCG vaccination
+A513         -> A515         //Hepatitis B vaccination
+A514         -> A517         //Polio vaccine
+A515         -> A518         //When first polio was given
+A516         -> A519         //Number of Polio vaccines
+A517         -> A521         //DPT vaccination
+A518         -> A522         //Number of DPT vaccines
+A519         -> A523         //Pneumococcal vaccination
+A520         -> A524         //Number of pneumococcal vaccines
+A521         -> A525         //Rotavirus vaccination
+A522         -> A526         //Number of rotavirus vaccines
+A523         -> A527         //Measles vaccine
+A524         -> A528         //Number of measles vaccines
+A525A        -> zzA525A        //Last 7 days given: micronutrient powder
+A525B        -> zzA525B        //Last 7 days given: plumpy'nut
+A525C        -> zzA525C        //Last 7 days given: plumpy'doz
+
+//Record (AWSEC6A) - Health for children
+AWSEC6A      -> AWSEC6A      //Health for children
+ACOL61       -> ACOL61       //Column number
+A603         -> A603         //Line number in birth history
+A604         -> A603A        //Child name
+A605         -> A604         //Vitamin-A dose within last 6 months
+A606         -> zzA606         //Taking iron pills, sprinkles or syrup in last 7 days
+A607         -> A606         //Drugs for intestinal parasites in last 6 months
+A608         -> A608         //Diarrhea in last 2 weeks
+A609         -> A609         //Drinking pattern with diarrhea (including breast milk)
+A610         -> A610         //Eating pattern with diarrhea
+A611         -> A611         //Sought treatment for diarrhea
+A612         -> A612         //Where sought treatment
+A614         -> A614         //First advice or treatment for diarrhea
+A615A        -> A615A        //Fluid from ORS Packet
+A615B        -> A615B        //Pre-packaged ORS liquid
+A615C        -> A615D        //Home-made fluid
+A615D        -> A615C        //Zinc
+A616         -> A616         //Anything else to treat diarrhea
+A617         -> A617         //Given to treat diarrhea
+A618         -> A618         //Fever in last 2 weeks
+A619         -> A619         //Blood taken from finger or heel for testing
+A620         -> A621         //Cough in last 2 weeks
+A621         -> A622         //Breathe faster with short, fast breaths
+A622         -> A623         //Problem in the chest or blocked or running nose
+A624         -> A625         //Sought advice/treatment for fever/cough
+A625         -> A626         //Where sought advice/treatment
+A627         -> A628         //First advice or treatment for fever/cough
+A628         -> A629         //Days started treatment after illness began
+A629         -> A630         //Any drugs for fever/cough
+A630         -> A631         //Drugs for fever/cough
+A633         -> A633         //How long after fever started did first take Artemisinin
+A635         -> zzA635         //How long after fever started did first take Fansidar
+A637         -> zzA637         //How long after fever started did first take Chloroquine
+A639         -> zzA639         //How long after fever started did first take Amodiaquine
+A641         -> zzA641         //How long after fever started did first take Quinine
+A643         -> zzA643         //How long after fever started did first take Artesunate
+A645         -> zzA645         //How long after fever started did first take Other Antimalarial
+
+//Record (AWSEC6B) - Oral Rehydration
+AWSEC6B      -> AWSEC6B      //Oral Rehydration
+A648         -> zzA648         //Ever heard of ORS product
+A650A        -> A636A        //Child drank: plain water
+A650B        -> A636F        //Child drank: juice or juice drinks
+A650C        -> A636I        //Child drank: clear broth
+A650D        -> A636C        //Child drank: milk such as tinned, powdered or fresh animal milk
+A650DN       -> A636CN       //Times child drank milk
+A650E        -> A636B        //Child drank commercially produced infant formula
+A650EN       -> A636BN       //Times child drank infant formula
+A650F        -> A636J        //Child drank: any other liquids
+A650G        -> A637A        //Child ate: yogurt
+A650GN       -> A637AN       //Times child ate yogurt
+A650H        -> zzA636H        //Child ate commercially fortified cereal (baby food)
+A650I        -> A637B        //Child ate: bread, rice, noodles, or other foods made from grains
+A650J        -> A637C        //Child ate: pumpkin, carrots, squash or sweet potatoes that or yellow or orange inside
+A650K        -> A637D        //Child ate: white potatoes, white yams, manioc, cassava, or any other foods made from roots
+A650L        -> A637E        //Child ate: any dark green, leafy vegetables
+A650M        -> A637G        //Child ate: ripe mangoes, papayas or [ANY OTHER VITAMIN A-RICH FRUITS]
+A650N        -> A637H        //Child ate: any other fruits and vegetables
+A650O        -> A637I        //Child ate: liver, kidney, heart or other organ meats
+A650P        -> A637K        //Child ate: Any meat such as beef, pork, lamb, goat, chicken or duck
+A650Q        -> A637L        //Child ate: eggs
+A650R        -> A637M        //Child ate: fresh or dried fish or shellfish
+A650S        -> A637N        //Child ate: any foods made from beans, peas, lentils or nuts
+A650T        -> A637O        //Child ate: cheese, yogurt or other milk products
+A650U        -> A637R        //Child ate: any other solid or semi-solid food
+A652         -> A639         //Child ate any solid, semi-solid or soft foods yesterday
+A653         -> A640         //Times ate solid, semisolid, or soft foods yesterday
+A654         -> A642         //Disposal of stools
+
+//Record (AWSEC07) - Marriage and Sexual Activity
+AWSEC07      -> AWSEC07      //Marriage and Sexual Activity
+A701         -> A701         //Currently in union
+A702         -> A702         //Have ever been married or lived with a man
+A703         -> A703         //Current marital status
+A704         -> A709         //Partner living with respondent
+A705         -> A710         //Line number of husband
+A706         -> A711         //Husband has other wives
+A707         -> A712         //Number of wives including respondent
+A708         -> A713         //Wife's rank number
+A709         -> A714         //In union more than once
+A710         -> A715         //Time of first union
+A710M        -> A715M        //Time of first union (month)
+A710Y        -> A715Y        //Time of first union (year)
+A711         -> A716         //Age at first union
+A713         -> A722         //Age at first intercourse
+A714         -> A723         //Time since last intercourse
+A714U        -> A723U        //Time since last intercourse (unit)
+A714N        -> A723N        //Time since last intercourse (number)
+AWSEC71_GRP  -> zzAWSEC71_GRP  //Sexual activity
+A715U        -> zzA715U        //Time since last intercourse other person (unit)
+A715N        -> zzA715N        //Time since last intercourse other person (number)
+A716         -> A727         //Used condom during last intercourse
+A717         -> zzA717         //Used condom every time in last 12 months
+A718         -> A730         //Relationship with last partner
+A719U        -> zzA719U        //Duration of relationship (unit)
+A719N        -> zzA719N        //Duration of relationship (Number)
+A720         -> zzA720         //Times sexual intercourse during last 12 months
+A721         -> zzA721         //Age of partner
+A722         -> A731         //Intercourse with anyone else in last 12 months
+A723         -> zzA723         //Total number of partners last 12 months
+A726         -> zzA726         //Last 12 months had sex because of gifts, cash or others
+A727         -> A737         //Total lifetime number of sexual partners
+A729         -> A728         //Brand name of condoms used in last sex
+A730         -> A729         //Source for condoms
+A731A        -> A738A        //Children present during interview section 6
+A731B        -> A738B        //Male adults present during interview section 6
+A731C        -> A738C        //Female adults present during interview section 6
+A710C        -> A715C        //Date of first union (CMC)
+A710F        -> A715F        //Date flag for A710C
+A711C        -> A716C        //Age at first union (calculated)
+A713F        -> A722F        //Flag for A713
+A714F        -> A723F        //Flag for A714
+
+//Record (AWSEC08) - Fertility Preferences
+AWSEC08      -> AWSEC08      //Fertility Preferences
+A803         -> A803         //Desire future child
+A804         -> A804         //Desire future child
+A805         -> A805         //Time for future birth
+A805U        -> A805U        //Time for future birth (unit)
+A805N        -> A805N        //Time for future birth (number)
+A810         -> A810         //Main reason not using to limit or to space
+A812         -> A812         //Intend to use method any time
+A813         -> A813         //Ideal number of children
+A814A        -> A814A        //Ideal number of boys
+A814B        -> A814B        //Ideal number of girls
+A814C        -> A814C        //Ideal number of either
+A815A        -> A815A        //Heard FP on radio last months
+A815B        -> A815B        //Heard FP on TV last months
+A815C        -> A815C        //Heard FP newspaper or magazine last month
+A815D        -> A815D        //Received voice/text messages about FP on mobile phone last few months
+A819         -> A818         //Decision maker for using contraception
+A820         -> A819         //Decision maker on not using contraception
+A822         -> A822         //Partner's preferred number of children same as respondent
+
+//Record (AWSEC09) - Husband's and Woman's Background
+AWSEC09      -> AWSEC09      //Husband's and Woman's Background
+A902         -> A902         //Partner's age
+A903         -> A903         //Partner ever attended school
+A904         -> A904         //Partner's level of education
+A905         -> A905         //Partner's highest grade
+A906         -> A906         //Husband worked in last 7 days
+A907         -> A907         //Husband worked in last 12 months
+A908         -> A908         //Partner's occupation
+A909         -> A909         //Respondent worked in last 7 days (apart from own housework)
+A910         -> A910         //Worked in last 7 days: probed
+A911         -> A911         //Have a job from which she was absent
+A912         -> A912         //Worked in last 12 months
+A913         -> A913         //Respondent's occupation
+A914         -> A914         //Work for a family member
+A915         -> A915         //Work through year/seasonally
+A916         -> A916         //Paid in cash or kind
+A919         -> A919         //Who usually decides how earnings are used
+A920         -> A920         //Earns more than partner
+A921         -> A921         //Who usually decides on spending husband's/partner's earnings
+A922         -> A922         //Final say on: Own health care
+A923         -> A923         //Final say on: Making large household purchases
+A924         -> A924         //Final say on: Visits to family
+A925         -> A925         //Owns own house alone or jointly
+A926         -> A926         //Respondent has a title deed for any house owned
+A927         -> A927         //Is respondent name on house title deed
+A928         -> A928         //Owns land alone or jointly
+A929         -> A929         //Respondent has a title deed for any land owned
+A930         -> A930         //Is respondent name on land title deed
+A931A        -> A931A        //Presence of: Children <10
+A931B        -> A931B        //Presence of: Husband
+A931C        -> A931C        //Presence of: Other males
+A931D        -> A931D        //Presence of: Other females
+A932A        -> A932A        //Justifies domestic violence: Wife goes out
+A932B        -> A932B        //Justifies domestic violence: Wife neglects children
+A932C        -> A932C        //Justifies domestic violence: Wife argues
+A932D        -> A932D        //Justifies domestic violence: Wife refuses sex
+A932E        -> A932E        //Justifies domestic violence: Wife burns food
+A904A        -> A904A        //Partners level of education
+
+//Record (AWSEC10) - HIV/AIDS
+AWSEC10      -> AWSEC10      //HIV/AIDS
+A1001        -> A1001        //Ever heard of AIDS
+A1002        -> A1003        //Reduce chances of AIDS by having just one uninfected sex partner
+A1003        -> A1004        //Can get AIDS from mosquito bites
+A1004        -> A1005        //Reduce chances of AIDS by using condom
+A1005        -> A1006        //Can get AIDS by sharing food
+A1006        -> zzA1006        //Can get AIDS by witchcraft or supernatural means
+A1007        -> A1007        //Can a healthy-looking person have AIDS
+A1008A       -> zzA1008A       //AIDS virus transmitted mother to child: during pregnancy
+A1008B       -> zzA1008B       //AIDS virus transmitted mother to child: during delivery
+A1008C       -> zzA1008C       //AIDS virus transmitted mother to child: by breastfeeding
+A1010        -> A1009        //Drugs to avoid indicator transmission to baby during pregnancy
+A1014A       -> zzA1014A       //Talk during antenatal visit: AIDS transmitted mother to child
+A1014B       -> zzA1014B       //Talk during antenatal visit: things to do to prevent AIDS
+A1014C       -> zzA1014C       //Talk during antenatal visit: getting tested for AIDS virus
+A1015        -> zzA1015        //Offered AIDS test as part of antenatal visit
+A1016        -> A1015        //Tested for AIDS virus as part of antenatal visit
+A1017        -> A1016        //Place were AIDS test was taken as part of antenatal visit
+A1018        -> A1017        //Got results of AIDS test as part of antenatal visit
+A1019        -> zzA1019        //Received counseling after being tested
+A1021        -> zzA1021        //Offered AIDS test during delivery in health center
+A1022        -> A1019        //Tested for AIDS virus during delivery in health center
+A1023        -> A1020        //Got results of AIDS test during delivery in health center
+A1025        -> A1022        //Tested for AIDS virus since test as part of antenatal visit or during delivery
+A1026        -> zzA1026        //Months ago tested for AIDS virus since test as part of antenatal visit or during delivery
+A1027        -> A1024        //Ever been tested for AIDS virus
+A1028        -> zzA1028        //Months ago tested for AIDS virus
+A1029        -> A1027        //Did get the test results of AIDS test
+A1030        -> A1026        //Place of AIDS test
+A1031        -> zzA1031        //Know a place to be tested for AIDS virus
+A1032        -> zzA1032        //Place known for AIDS test
+A1033        -> A1032        //Have heard of test kits for HIV self-testing
+A1034        -> A1033        //Have ever tested using self-test kits
+A1035        -> A1034        //Would buy vegetables from vendor with AIDS
+A1036        -> A1035        //Children with HIV should be allowed to go to school with children with no HIV
+A1037        -> zzA1037        //People don't test for HIV because they are afraid of reaction if result is positive
+A1038        -> zzA1038        //People talk badly about people living with (or suspected to have) HIV
+A1039        -> zzA1039        //Do people living with HIV lose respect of others
+A1040        -> zzA1040        //I would be ashamed if family member has HIV
+A1041        -> zzA1041        //Fear getting infected if in contact with saliva of HIV infected person
+A1042        -> A1040        //Heard about other STDs
+A1045        -> A1043        //Had an STD in last 12 months
+A1046        -> A1044        //Had abnormal genital discharge in last 12 months
+A1047        -> A1045        //Had a genital sore or ulcer in last 12 months
+A1049        -> zzA1049        //Sought advice or treatment for STD
+A1050        -> zzA1050        //Place for advice or treatment of STD
+A1051        -> A1046        //Wife is justified to ask use of condom when husband has STD
+A1052        -> A1047        //Wife is justified to refuse sex when knows husband has sex with other women
+A1054        -> A1049        //Can respondent refuse sex
+A1055        -> A1050        //Can ask partner to use condom
+
+//Record (AWSEC11) - Other Health Issues
+AWSEC11      -> AWSEC11      //Other Health Issues
+A1101        -> zzA1101        //Number of injections in last 12 months
+A1102        -> zzA1102        //Injections administered by a health worker
+A1103        -> zzA1103        //Syringe and needle from new, unopened package
+A1104        -> A1106        //Currently smokes cigarettes
+A1105        -> A1107        //Number of cigarettes smoked in last 24 hours, on average
+A1106        -> A1108        //Currently smokes or uses tobacco besides cigarettes
+A1107        -> A1109        //Type of tobacco used besides cigarettes
+A1108A       -> A1113A       //Care factors: Getting permission
+A1108B       -> A1113B       //Care factors: Getting money needed for treatment
+A1108C       -> A1113C       //Care factors: Distance, no nearby health facility
+A1108D       -> A1113D       //Care factors: Not wanting to go alone
+A1109        -> A1114        //Covered by health insurance
+A1110        -> A1115        //Type of health insurance
+A1111        -> A1116        //End of interview
+A1111H       -> A1116H       //End of interview (hour)
+A1111M       -> A1116M       //End of interview (minutes)
+
+//Record (AWSECM1) - Names of siblings for maternal mortality
+AWSECM1      -> AWSECM1      //Names of siblings for maternal mortality
+AMM01N       -> AMM01N       //Sibling name
+AMM01        -> AMM01        //Siblings order number
+AMMMORE      -> AMMMORE      //Any more siblings
+
+//Record (AWSECM2) - Maternal mortality summary and filters
+AWSECM2      -> AWSECM2      //Maternal mortality summary and filters
+AMM00        -> AMM00        //Start Adult and Maternal Mortality Module
+AMM03        -> AMM03        //Other brothers and sisters
+AMM04        -> AMM04        //Other brothers and sisters living elsewhere
+AMM05        -> AMM05        //Other brothers and sisters who died
+AMM06        -> AMM06        //Other brothers and sisters  of same mother but different father
+AMM07        -> AMM07        //Number of brothers and sisters recorded in MM01 (excluding respondent)
+AMM08        -> AMM08        //Check for total brothers and sisters
+AMM10        -> AMM10        //Ordering of brothers and sisters
+AMM11        -> AMM11        //Brothers and sisters born before respondent (excluding respondent)
+
+//Record (AWSECM3) - Maternal Mortality
+AWSECM3      -> AWSECM3      //Maternal Mortality
+AMM13        -> AMM13        //Column number
+AMM13N       -> AMM13N       //Sibling name
+AMM14        -> AMM14        //Sex of sibling
+AMM15        -> AMM15        //Sibling alive
+AMM16        -> AMM16        //Age of sibling
+AMM17        -> AMM17        //Years since siblings death
+AMM18        -> AMM18        //Age of sibling at death
+AMM19        -> AMM19        //Died while pregnant
+AMM20        -> AMM20        //Died during childbirth
+AMM21        -> AMM21        //Died within 2 months of delivery
+AMM22        -> AMM22        //Days after end of pregnancy sister died
+AMM23        -> AMM23        //Death due to violence
+AMM24        -> AMM24        //Death due to accident
+AMM16C       -> AMM16C       //CMC date of birth of sibling
+AMM17C       -> AMM17C       //CMC date of death of sibling
+
+//Record (AWSECDV) - Domestic Violence
+AWSECDV      -> AWSECDV      //Domestic Violence
+DV01         -> DV01         //Privacy obtained
+DV03A        -> DV06A        //He is/was jealous or angry if talk/talked to other men
+DV03B        -> DV06B        //He accuses/accused you of being unfaithful
+DV03C        -> DV06C        //He does/did not permit you to to meet your female friends
+DV03D        -> DV06D        //He tries/tried to limit your contact with your family
+DV03E        -> DV06E        //He insists/insisted on knowing where you are/were at all times
+DV04A1       -> DV07A1       //Say or do something to humiliate you in front of others
+DV04A2       -> DV07A2       //How often during the last 12 months
+DV04B1       -> DV07B1       //Threaten to hurt or harm you or someone you care about
+DV04B2       -> DV07B2       //How often during the last 12 months
+DV04C1       -> DV07C1       //Insulted you or make you feel bad about yourself
+DV04C2       -> DV07C2       //How often during the last 12 months
+DV05A1       -> DV08A1       //Push you, shake you or throw something at you
+DV05A2       -> DV08A2       //How often during the last 12 months
+DV05B1       -> DV08B1       //Slap you
+DV05B2       -> DV08B2       //How often during the last 12 months
+DV05C1       -> DV08C1       //Twist your arm or pull your hair
+DV05C2       -> DV08C2       //How often during the last 12 months
+DV05D1       -> DV08D1       //Punch you with his fist or with something that could hurt you
+DV05D2       -> DV08D2       //How often during the last 12 months
+DV05E1       -> DV08E1       //Kick you, drag you or beat you up
+DV05E2       -> DV08E2       //How often during the last 12 months
+DV05F1       -> DV08F1       //Try to choke you or burn you on purpose
+DV05F2       -> DV08F2       //How often during the last 12 months
+DV05G1       -> DV08G1       //Threaten or attack you with a knife, gun or any other weapon
+DV05G2       -> DV08G2       //How often during the last 12 months
+DV05H1       -> DV08H1       //Physically force you to have sexual intercourse
+DV05H2       -> DV08H2       //How often during the last 12 months
+DV05I1       -> DV08I1       //Physically force you to perform other sexual acts
+DV05I2       -> DV08I2       //How often during the last 12 months
+DV05J1       -> DV08J1       //Force with threats or in any other way to perform sexual acts
+DV05J2       -> DV08J2       //How often during the last 12 months
+DV07         -> DV18         //First time it happened
+DV08A        -> DV10A        //Ever had cuts, bruises or aches because of husband's act
+DV08B        -> DV10B        //Ever had eye injuries, sprains, dislocations or burns
+DV08C        -> DV10C        //Ever had deep wounds, broken bones, broken teeth or other serious injury
+DV09         -> DV11         //Ever physically hurt husband when he was not hurting you
+DV10         -> DV12         //How often physically hurt your husband: times last 12 months
+DV11         -> DV13         //Partner drinks alcohol
+DV12         -> DV14         //Times partner gets drunk
+DV13         -> DV15         //Afraid of husband/partner most of the time, sometimes or never
+DV15A1       -> DV16A1       //Any previous husband/partner ever hit, slapped, kicked or hurt her physically
+DV15A2       -> DV16A2       //How long ago did hit, slap, kick happened
+DV15B1       -> DV16B1       //Any previous husband/partner ever physically forced her to have intercourse or perform any other sexual act
+DV15B2       -> DV16B2       //How long ago did physically forced to have intercourse happened
+DV15C1       -> DV16C1       //Any previous husband/partner humiliate, threaten to hurt, insult or make feel bad
+DV15C2       -> DV16C2       //How long ago did  humiliate, threaten to hurt, insult or make feel bad
+DV16         -> DV22         //Ever physically hurt by someone
+DV17         -> DV23         //Person besides husband/partner who hurt respondent after age 14
+DV18         -> DV24         //Times hit by other than partner during last 12 months
+DV20         -> DV20         //Ever physically hurt during pregnancy
+DV21         -> DV21         //Person who hurt her during pregnancy
+DV22A        -> DV26         //Anyone (besides partner) ever forced respondent to have intercourse (ever married)
+DV22B        -> DV27         //Anyone ever forced respondent to have intercourse (never married)
+DV23         -> DV29         //Person who forced respondent to first sexual activity
+DV24         -> DV30         //Anyone (besides partner) forced respondent to have intercourse in last 12 m
+DV25         -> DV28         //Age at first forced sexual activity
+DV27         -> DV32         //Sought help from someone
+DV28         -> DV33         //From whom have you sought help
+DV29         -> DV34         //Ever told anyone about violence
+DV30         -> DV35         //Did her father ever beat her mother
+DV31A        -> DV36A        //Interrupted interview because of husband's presence
+DV31B        -> DV36B        //Interrupted interview because of other adult male's presence
+DV31C        -> DV36C        //Interrupted interview because of adult female's presence
+
+//Record (AWSECG1) - Female Genital Cutting
+AWSECG1      -> AWSECG1      //Female Genital Cutting
+GC01         -> GC01         //Ever heard of female circumcision
+GC02         -> GC02         //Ever heard of genital cutting (probed)
+GC03         -> GC03         //Respondent circumcised
+GC04         -> GC04         //Flesh removed from genital area
+GC05         -> GC05         //Genital area just nicked without removing any flesh
+GC06         -> GC06         //Genital area sewn closed
+GC07         -> GC07         //Age at circumcision
+GC08         -> GC08         //Who performed circumcision
+GC16         -> GC16         //Do you believe that female circumcision is required by religion
+GC17         -> GC17         //Circumcision should continue or be stopped
+GCDAUGHT     -> GCDAUGHT     //Number of daughters that apply to the daughters roster
+
+//Record (AWSECG2) - Female genital cutting for daughters
+AWSECG2      -> AWSECG2      //Female genital cutting for daughters
+LINEGC       -> LINEGC       //Line number
+GC10         -> GC10         //Daughter's line number in birth history
+GC10N        -> GC10N        //Child name
+GC11         -> GC11         //Is daughter circumcised
+GC12         -> GC12         //Daughter's age at circumcision
+GC13         -> GC13         //Was daughter genital area sewn closed
+GC14         -> GC14         //Who performed daughter's circumcision
+GC15         -> GC15         //Age of daughter at circumcision
+
+//Record (AWSECECD) - Early childhood development
+AWSECECD     -> AWSECECD     //Early childhood development
+AECD2        -> AECD2        //Child line number
+AECD4        -> AECD4        //Number of books for child
+AECD5A       -> AECD5A       //Toys that child play with: homemade
+AECD5B       -> AECD5B       //Toys that child play with: from a shop
+AECD5C       -> AECD5C       //Toys that child play with: households objects
+AECD6A       -> AECD6A       //Days in past week child was: left alone for more than an hour
+AECD6B       -> AECD6B       //Days in past week child was: left to another child for more than an hour
+AECD8        -> AECD8        //Line number of youngest child 3 or 4 years old
+AECD9        -> AECD9        //Child attend an early childhood education program
+AECD10A      -> AECD10A      //In past 3 days household members: read/look at books
+AECD10B      -> AECD10B      //In past 3 days household members: told stories
+AECD10C      -> AECD10C      //In past 3 days household members: sang songs
+AECD10D      -> AECD10D      //In past 3 days household members: took outside home
+AECD10E      -> AECD10E      //In past 3 days household members: played with child
+AECD10F      -> AECD10F      //In past 3 days household members: named, counted, draw
+AECD11       -> AECD11       //Can child identify at least 10 letters of the alphabet
+AECD12       -> AECD12       //Can child read at least four popular words
+AECD13       -> AECD13       //Can child recognize numbers from 1 to 10
+AECD14       -> AECD14       //Can child pick up small object with two fingers
+AECD15       -> AECD15       //Is child sometimes sick to play
+AECD16       -> AECD16       //Can child follow directions to do things correctly
+AECD17       -> AECD17       //Can child do things independently
+AECD18       -> AECD18       //Does child get along well with other children
+AECD19       -> AECD19       //Does child kick, bite, or hit other children
+AECD20       -> AECD20       //Does the child get distracted easly
+AECD2N       -> AECD2N       //Child name under 5
+AECD8N       -> AECD8N       //Child name 3 or 4
+
+//Record (AMSEC01) - [Men] Respondent's Background
+AMSEC01      -> AMSEC01      //[Men] Respondent's Background
+AM101        -> AM101        //Start of interview
+AM101H       -> AM101H       //Start of interview (hour)
+AM101M       -> AM101M       //Start of interview (minutes)
+AM102        -> AM104        //Time living in place of interview
+AM103        -> AM108        //Lived in a city/town or rural area
+AM104        -> AM107        //Province/state lived before moved to place of interview
+AM105        -> AM110        //Date of birth
+AM105M       -> AM110M       //Month of birth
+AM105Y       -> AM110Y       //Year of birth
+AM106        -> AM111        //Current age of respondent
+AM107        -> AM113        //Ever attended school
+AM108        -> AM114        //Highest educational level
+AM109        -> AM115        //Highest grade/form/year at that level
+AM111        -> AM117        //Sentence read
+AM113        -> AM119        //Reads newspaper or magazine
+AM114        -> AM120        //Listens to radio
+AM115        -> AM121        //Watches TV
+AM116        -> AM122        //Own a mobile telephone
+AM117        -> AM124        //Use mobile telephone for financial transactions
+AM118        -> AM125        //Have a bank or other financial account
+AM119        -> AM127        //Have ever used the internet
+AM120        -> AM128        //Have used the internet last 12 months
+AM121        -> AM129        //How often used internet the last month
+AM122        -> AM130        //Religion
+AM123        -> AM131        //Ethnicity
+AM124        -> zzAM124        //Numbers of trips away during last 12 months
+AM125        -> zzAM125        //Away for more than one month
+AM105C       -> AM110C       //Date of birth (CMC)
+AM105F       -> AM110F       //Date flag for AM105C
+AM106C       -> AM111C       //Age of respondent calculated
+AM108A       -> AM114A       //Highest educational level
+
+//Record (AMSEC02) - [Men] Reproduction
+AMSEC02      -> AMSEC02      //[Men] Reproduction
+AM201        -> AM201        //Ever fathered any children
+AM202        -> AM202        //Sons or daughters living with
+AM203A       -> AM203A       //Sons at home
+AM203B       -> AM203B       //Daughters at home
+AM204        -> AM204        //Sons or daughters living away
+AM205A       -> AM205A       //Sons living elsewhere
+AM205B       -> AM205B       //Daughters living elsewhere
+AM206        -> AM206        //Sons or daughters who died
+AM207A       -> AM207A       //Boys who died
+AM207B       -> AM207B       //Girls who died
+AM208        -> AM208        //Total children ever fathered
+AM209        -> AM209        //Probe to children ever born
+AM210        -> AM210        //All children have fathered by the same mother
+AM211        -> AM211        //Respondent age at birth of first child
+AM213        -> AM213        //Age of youngest child
+AM215        -> AM215        //Name of youngest child
+AM216        -> AM216        //Antenatal check-ups for the mother
+AM217        -> AM217        //Present during check-ups
+AM218        -> AM218        //Place of birth of youngest
+AM219        -> zzAM219        //Drinking pattern during diarrhea
+
+//Record (AMSEC3A) - [Men] Contraceptive Knowledge & Use
+AMSEC3A      -> AMSEC3A      //[Men] Contraceptive Knowledge & Use
+AMSEC31_GRP  -> AMSEC31_GRP  //Contraception listing
+AM3N         -> AM3N         //Contraceptive method
+AM301        -> AM301        //Heard of method
+AM301OT      -> AM301OT      //Auxiliary to capture other methods
+AMALLMETH    -> AMALLMETH    //Auxiliary to capture spontaneous knowledge of methods
+
+//Record (AMSEC3B) - [Men] Contraceptive Practice
+AMSEC3B      -> AMSEC3B      //[Men] Contraceptive Practice
+AM302A       -> AM302A       //Heard about family planning: on the radio
+AM302B       -> AM302B       //Heard about family planning: on the television
+AM302C       -> AM302C       //Heard about family planning: in a newspaper or magazine
+AM302D       -> AM302D       //Received voice/text messages about FP on mobile phone last few months
+AM303        -> AM303        //Discussed family planning with a health worker or health professional
+AM304        -> AM304        //Increased chance of woman getting pregnant on certain days
+AM305        -> AM305        //Days when increased chance of getting pregnant
+AM306        -> AM306        //Can woman get pregnant after birth and before period returns
+AM307A       -> AM307A       //Contraception is woman's business, man should not worry
+AM307B       -> AM307B       //Women use contraception may become promiscuous
+
+//Record (AMSEC04) - [Men] Marriage and Sexual Activity
+AMSEC04      -> AMSEC04      //[Men] Marriage and Sexual Activity
+AM401        -> AM401        //Currently in union
+AM402        -> AM402        //Have ever been married or lived with a woman
+AM403        -> AM403        //Current marital status
+AM404        -> AM404        //Partner living with respondent
+AM405        -> AM405        //Other partners
+AM406        -> AM406        //Number of women
+AMSEC41A_GRP -> AMSEC04_GRP //Wife/partner listing
+AM407        -> AM407        //Line number of wife, partner
+AM408        -> AM408        //Age of wife/partner
+AM410        -> AM410        //Times married
+AM411        -> AM411        //Date of first union
+AM411M       -> AM411M       //Date of first union (month)
+AM411Y       -> AM411Y       //Date of first union (year)
+AM412        -> AM412        //Age at first union
+AM414        -> AM414        //Age at first intercourse
+AM415        -> AM415        //Time since last intercourse
+AM415U       -> AM415U       //Time since last intercourse (unit)
+AM415N       -> AM415N       //Time since last intercourse (number)
+AMSEC41B_GRP -> zzAMSEC41B_GRP //Sexual activity
+AM416U       -> zzAM416U       //Last time intercourse with other person (unit)
+AM416N       -> zzAM416N       //Last time intercourse with other person (number)
+AM417        -> AM419        //Used condom during last intercourse
+AM418        -> zzAM418        //Used condom every time with this person
+AM419        -> AM422        //Relationship with last partner
+AM420U       -> zzAM420U       //Duration of relationship with other person (unit)
+AM420N       -> zzAM420N       //Duration of relationship with other person (number)
+AM421        -> zzAM421        //Times sexual intercourse during last 12 months
+AM422        -> zzAM422        //Age of partner
+AM423        -> AM423        //Sexual intercourse with any other person in last 12 months
+AM424        -> zzAM424        //Total number of partners in the last 12 months
+AM427        -> zzAM427        //In the last 12 months, paid for sex
+AM428        -> zzAM428        //Ever paid for sexual intercourse
+AM429        -> zzAM429        //Used condom last paid for sex
+AM430        -> zzAM430        //Condom used every time paid for sex
+AM431        -> zzAM431        //In last 12 months have given gifts or other goods to have sex
+AM432        -> zzAM432        //Have ever given gifts or other goods to have sex
+AM433        -> AM429        //Number of lifetime sexual partners
+AM435        -> AM420        //Brand of condom used during last sex
+AM436        -> AM421        //Place obtained condom last time
+AM437        -> zzAM437        //Last time had sex, contraception other than condom used
+AM438        -> AM416        //Used FP during last intercourse
+AM439        -> AM418        //Contraceptive method
+AM440        -> AM417        //Know a place to obtain family planning methods
+AM411C       -> AM411C       //Date of first union (CMC)
+AM411F       -> AM411F       //Date flag for AM411C
+AM412C       -> AM412C       //Age at first union (calculated)
+AM414F       -> AM414F       //Flag for AM414
+AM415F       -> AM415F       //Flag for AM421
+
+//Record (AMSEC05) - [Men] Fertility Preferences
+AMSEC05      -> AMSEC05      //[Men] Fertility Preferences
+AM504        -> AM504        //Wife/partner currently pregnant
+AM505        -> AM505        //Desire for future child wife pregnant
+AM506        -> AM506        //Time for future birth wife pregnant
+AM506U       -> AM506U       //Time for future birth (unit)
+AM506N       -> AM506N       //Time for future birth (number)
+AM507        -> AM507        //Desire for future child wife not pregnant
+AM508        -> AM508        //Time to next birth wife not pregnant
+AM508U       -> AM508U       //Time to next birth (units)
+AM508N       -> AM508N       //Time to next birth (number)
+AM509        -> AM509        //Any wives/partners currently pregnant
+AM510        -> AM510        //Desire for future child at least one wife pregnant
+AM511        -> AM511        //Time for future birth at least one wife pregnant
+AM511U       -> AM511U       //Time for future birth (unit)
+AM511N       -> AM511N       //Time for future birth (number)
+AM512        -> AM512        //Desire for future child none of the wives pregnant
+AM513        -> AM513        //Time to next child none of the wives pregnant
+AM513U       -> AM513U       //Time to next birth (units)
+AM513N       -> AM513N       //Time to next birth (number)
+AM514        -> AM514        //Ideal number of children
+AM515A       -> AM515A       //Ideal number of boys
+AM515B       -> AM515B       //Ideal number of girls
+AM515C       -> AM515C       //Ideal number of either
+
+//Record (AMSEC06) - [Men] Employment and Gender Roles
+AMSEC06      -> AMSEC06      //[Men] Employment and Gender Roles
+AM601        -> AM601        //Currently working
+AM602        -> AM602        //Has job from which was absent
+AM603        -> AM603        //Worked last 12 months
+AM604        -> AM604        //Occupation
+AM605        -> AM605        //Works seasonally
+AM606        -> AM606        //Paid in cash or kind
+AM609        -> AM609        //Decision maker on using the money earned
+AM610        -> AM610        //Decision on health care for respondent
+AM611        -> AM611        //Decision on large HH purchases
+AM612        -> AM612        //Owns own house alone or jointly
+AM613        -> AM613        //Respondent has a title deed for any house owned
+AM614        -> AM614        //Respondent's name on house title deed
+AM615        -> AM615        //Owns land alone or jointly
+AM616        -> AM616        //Respondent has a title deed for any land owned
+AM617        -> AM617        //Respondent's name on land title deed
+AM618A       -> AM618A       //Beating justification: going out without telling him
+AM618B       -> AM618B       //Beating justification: neglects children
+AM618C       -> AM618C       //Beating justification: arguing
+AM618D       -> AM618D       //Beating justification: refusing sex
+AM618E       -> AM618E       //Beating justification: burning food
+
+//Record (AMSEC07) - [Men] HIV/AIDS
+AMSEC07      -> AMSEC07      //[Men] HIV/AIDS
+AM701        -> AM701        //Ever heard of AIDS
+AM702        -> AM703        //Reduce chance getting AIDS by having just one uninfected sex partner who has no other sex partners
+AM703        -> AM704        //Can get AIDS from mosquito bites
+AM704        -> AM705        //Reduce chance of AIDS by using condom every time they have sex
+AM705        -> AM706        //Can get AIDS by sharing food with someone infected with AIDS virus
+AM706        -> zzAM706        //Can get AIDS by witchcraft or supernatural means
+AM707        -> AM707        //Possible for healthy-looking person to have AIDS virus
+AM708A       -> zzAM708A       //AIDS virus from mother to baby: pregnancy
+AM708B       -> zzAM708B       //AIDS virus from mother to baby: delivery
+AM708C       -> zzAM708C       //AIDS virus from mother to baby: breastfeeding
+AM710        -> AM709        //Special drugs to avoid AIDS transmission to baby
+AM712        -> AM713        //Ever been tested for AIDS virus
+AM713        -> zzAM713        //When was last time you were tested
+AM714        -> AM716        //Received results of test
+AM715        -> AM715        //Place for HIV test
+AM716        -> zzAM716        //Know a place to get tested for AIDS virus
+AM717        -> zzAM717        //Place to get tested for AIDS virus
+AM718        -> AM721        //Have heard of test kits for HIV self-testing
+AM719        -> AM722        //Have ever tested using self-test kits
+AM720        -> AM723        //Would buy vegetables from vendor with AIDS
+AM721        -> AM724        //Children with HIV should be allowed to go to school with children with no HIV
+AM722        -> zzAM722        //People don't test for HIV because they are afraid of reaction if result is positive
+AM723        -> zzAM723        //Do people talk bad about people living with (or suspected to have) HIV
+AM724        -> zzAM724        //Do people living with HIV lose respect of others
+AM725        -> zzAM725        //Agree with statement: I would be ashamed if family member has HIV
+AM726        -> zzAM726        //Fear getting infected if in contact with saliva of HIV infected person
+AM727        -> AM729        //Heard about other STDs
+AM730        -> AM732        //Had an STD in last 12 months
+AM731        -> AM733        //Genital discharge in last 12 months
+AM732        -> AM734        //Genital sore or ulcer in last 12 months
+AM734        -> zzAM734        //Seek advice or treatment
+AM735        -> zzAM735        //Place where sought advice or treatment for STD
+AM736        -> AM735        //Justified to ask for use of condom when husband has STD
+AM737        -> AM736        //Right to refuse sex: husband has other partners
+
+//Record (AMSEC08) - [Men] Other Health Issues
+AMSEC08      -> AMSEC08      //[Men] Other Health Issues
+AM801        -> AM801        //Respondent circumcised
+AM802        -> zzAM802        //Age at circumcision
+AM803        -> zzAM803        //Who performed circumcision
+AM804        -> zzAM804        //Place of circumcision
+AM805        -> zzAM805        //Number of injections in last 12 months
+AM806        -> zzAM806        //Number of injections by health professional
+AM807        -> zzAM807        //Syringe or needle from new package
+AM808        -> AM806        //Frequency smoking tobacco currently
+AM809        -> AM807        //In the past, smoked every day
+AM810        -> AM808        //Frequency smoked tobacco in the past
+AM811A       -> AM809A       //Daily frequency of smoking: manufactured cigarettes
+AM811B       -> AM809B       //Daily frequency of smoking: hand-rolled cigarettes
+AM811C       -> AM809C       //Daily frequency of smoking: kreteks
+AM811D       -> AM809D       //Daily frequency of smoking: pipes full of tobacco
+AM811E       -> AM809E       //Daily frequency of smoking: cigars, cheroots, cigarillos
+AM811F       -> AM809F       //Daily frequency of smoking: water pipe sessions
+AM811G       -> AM809G       //Daily frequency of smoking: other
+AM812A       -> AM810A       //Weekly frequency of smoking: manufactured cigarettes
+AM812B       -> AM810B       //Weekly frequency of smoking: hand-rolled cigarettes
+AM812C       -> AM810C       //Weekly frequency of smoking: kreteks
+AM812D       -> AM810D       //Weekly frequency of smoking: pipes full of tobacco
+AM812E       -> AM810E       //Weekly frequency of smoking: cigars, cheroots, cigarillos
+AM812F       -> AM810F       //Weekly frequency of smoking: water pipe sessions
+AM812G       -> AM810G       //Weekly frequency of smoking: other
+AM813        -> AM811        //Frequency use smokeless tobacco
+AM814A       -> AM812A       //Daily frequency using smokeless: snuff by mouth
+AM814B       -> AM812B       //Daily frequency using smokeless: snuff by nose
+AM814C       -> AM812C       //Daily frequency using smokeless: chewing tobacco
+AM814D       -> AM812D       //Daily frequency using smokeless: betel quid with tobacco
+AM814E       -> AM812E       //Daily frequency using smokeless: other
+AM815A       -> AM813A       //Weekly frequency using smokeless: snuff by mouth
+AM815B       -> AM813B       //Weekly frequency using smokeless: snuff by nose
+AM815C       -> AM813C       //Weekly frequency using smokeless: chewing tobacco
+AM815D       -> AM813D       //Weekly frequency using smokeless: betel quid with tobacco
+AM815E       -> AM813E       //Weekly frequency using smokeless: other
+AM816        -> AM817        //Health insurance
+AM817        -> AM818        //Type of health insurance
+AM818        -> AM819        //End of interview
+AM818H       -> AM819H       //End of interview (hour)
+AM818M       -> AM819M       //End of interview (minutes)
+
+//Record (AMSECGC) - [Men] Female Genital Cutting (male questionnaire)
+AMSECGC      -> AMSECGC      //[Men] Female Genital Cutting (male questionnaire)
+GCM01        -> GCM01        //Ever heard of female circumcision
+GCM02        -> GCM02        //Ever heard of genital cutting (probed)
+GCM03        -> GCM03        //Circumcision is required by religion
+GCM04        -> GCM04        //Circumcision should continue or be stopped
+
+//Form (C:\CC71NEW\Entry\ccIN70.fmf)
+CCIN70_FF             -> CCIN80_FF             //ccIN70
+"..\Dicts\CCIN70.dcf" -> "..\Dicts\CCIN70.dcf" 
+AFORMCOVER            -> AFORMCOVER            //Individual identification
+AWFORM01              -> AWFORM01              //Respondent's background
+AWFORM2A              -> AWFORM2A              //Reproduction
+AWFORM2X              -> zWFORM2X              //Birth names
+AWFORM2B              -> AWFORM2B              //Birth history
+AWFORM2D              -> AWFORM2D              //Reproduction (Continued)
+AWFORM3A              -> AWFORM3A              //Contraceptive table
+AWFORM3B              -> AWFORM3B              //Contraceptive Practice
+AWFORM3E              -> AWFORM3E              //Contraceptive use history
+AWFORM3D              -> AWFORM3D              //Contraception use - Continuation
+AWFORM04              -> AWFORM04              //Prenatal and postnatal care
+AWFORM05              -> AWFORM05              //Immunization and health
+AWFORM6A              -> AWFORM6A              //Health
+AWFORM6B              -> AWFORM6B              //Oral rehydration
+AWFORM07              -> AWFORM07              //Sexual activity
+AWFORM08              -> AWFORM08              //Fertility Preferences
+AWFORM09              -> AWFORM09              //Husband's Background and Woman's Work
+AWFORM10              -> AWFORM10              //HIV /AIDS
+AWFORM11              -> AWFORM11              //Other Health Issues
+AWFORMM1              -> AWFORMM1              //Sibling names for maternal mortality
+AWFORMM2              -> AWFORMM2              //Maternal Mortality module
+AWFORMDV              -> AWFORMDV              //Domestic Violence module
+AWFORMG1              -> AWFORMG1              //Female genital cutting
+AWFORMG2              -> AWFORMG2              //Female genital cutting Roster
+FORM000               -> AWFORMCD              //Early child development
+AWFORM2C              -> AWFORM2C              //Calendar
+AMFORM01              -> AMFORM01              //Respondent's Background (Men)
+AMFORM02              -> AMFORM02              //Reproduction (Men)
+AMFORM3A              -> AMFORM3A              //Contraceptive Knowledge & Use (Men)
+AMFORM3B              -> AMFORM3B              //Contraceptive Practice (continuation for Men)
+AMFORM04              -> AMFORM04              //Marriage and sexual activity (Men)
+AMFORM05              -> AMFORM05              //Fertility Preferences (Men)
+AMFORM06              -> AMFORM06              //Employment and Gender Roles (Men)
+AMFORM07              -> AMFORM07              //HIV/AIDS (Men)
+AMFORM08              -> AMFORM08              //Other Health Issues (Men)
+AMFORMGC              -> AMFORMGC              //Female Genital Cutting (Men)
+AVISITS_ROSTER        -> AVISITS_ROSTER        //Individual visits
+A105_BLOCK            -> A110_BLOCK            //Woman date of birth
+AWSEC2X_ROSTER        -> zWSEC2X_ROSTER        //Names of births
+AWSEC2B_ROSTER        -> AWSEC2B_ROSTER        //Birth History
+A215_BLOCK            -> A220_BLOCK            //Child date of birth
+A220_BLOCK            -> A228_BLOCK            //Child age at death
+ATERMIN_GRP           -> zTERMIN_GRP           //Line number
+A233_BLOCK            -> z233_BLOCK            //Date in termination history
+A231_BLOCK            -> z231_BLOCK            //Date last termination
+A239_BLOCK            -> A236_BLOCK            //Last menstrual period
+AWSEC3A_GRP           -> AWSEC3A_GRP           //Contraceptive method
+A308_BLOCK            -> A313_BLOCK            //Date satrt using sterilization
+A309_BLOCK            -> A314_BLOCK            //Date start using current method
+AWSEC3Y_ROSTER        -> AWSEC3Y_ROSTER        //History of use of methods
+A312E_BLOCK           -> A317E_BLOCK           //Date start using method
+A312G_BLOCK           -> A317G_BLOCK           //Month stopped using method
+AWSEC04_ROSTER        -> AWSEC04_ROSTER        //Pregnancy and Postnatal Care
+A407_BLOCK            -> A410_BLOCK            //Time for pregnancy
+A413_BLOCK            -> A418_BLOCK            //Tests during antenatal visit
+A428_BLOCK            -> A443_BLOCK            //Child weight at birth
+A431_BLOCK            -> A447_BLOCK            //Time at delivery facility
+A436_BLOCK            -> A449_BLOCK            //Time for first check-up after delivery
+A439_BLOCK            -> A453_BLOCK            //Baby's first check-up
+A442_BLOCK            -> A456_BLOCK            //Check-up after leaving the facility
+A446_BLOCK            -> A461_BLOCK            //Baby's chck-up after leaving facility
+A450_BLOCK            -> A465_BLOCK            //Time for first check-up after delivery
+A454_BLOCK            -> A470_BLOCK            //Baby's first check-up
+A457_BLOCK            -> A473_BLOCK            //Examinations performed
+A466_BLOCK            -> A483_BLOCK            //Time child was put to breast
+AWSEC05_ROSTER        -> AWSEC05_ROSTER        //Immunization and Health
+A525_BLOCK            -> A605_BLOCK            //Micronutrients given to child last 7 days
+AWSEC6A_ROSTER        -> AWSEC6A_ROSTER        //Vitamin-A dose within last 6 months
+A615_BLOCK            -> A615_BLOCK            //Diarrhea treatment
+A650_BLOCK            -> A636_BLOCK            //Liquids/foods since yesterday
+AWSEXPART_GRP         -> AWSEXPART_GRP         //Time since last intercourse other person (unit)
+A715_BLOCK            -> z715_BLOCK            //Last sex with partner
+A719_BLOCK            -> z719_BLOCK            //First sexual intercourse with partner
+A710_BLOCK            -> A715_BLOCK            //Date of first marriage
+A714_BLOCK            -> A723_BLOCK            //Last sexual intercourse
+A731_BLOCK            -> A738_BLOCK            //Presence of persons
+A805_BLOCK            -> A805_BLOCK            //Time for next child
+A814_BLOCK            -> A814_BLOCK            //Ideal number of children by gender
+A815_BLOCK            -> A815_BLOCK            //Family planning advertisement
+A931_BLOCK            -> A931_BLOCK            //Presence of persons
+A932_BLOCK            -> A932_BLOCK            //Justification for women mistreatment
+A1008_BLOCK           -> z1008_BLOCK           //HIV transmission from mother to babu
+A1014_BLOCK           -> z1014_BLOCK           //HIV information during ANC
+A1108_BLOCK           -> A1113_BLOCK           //Problems getting medical advise
+AWSIBL_ROSTER         -> AWSIBL_ROSTER         //Siblings order number
+AWSECMM_ROSTER        -> AWSECMM_ROSTER        //Maternal Mortality
+DV03_BLOCK            -> DV03_BLOCK            //Situations with husband/partner
+DV08_BLOCK            -> DV08_BLOCK            //Outcome of mistreatment by husband/partner
+DV31_BLOCK            -> DV31_BLOCK            //Interruption becasue of other persons
+AWSECG2_ROSTER        -> AWSECG2_ROSTER        //Female genital cutting for daughters
+AECD5_BLOCK           -> AECD5_BLOCK           //Toys child p0lay with
+AECD6_BLOCK           -> AECD6_BLOCK           //Child left alone
+AECD10_BLOCK          -> AECD10_BLOCK          //Adult activities with child
+AWSEC2C_ROSTER        -> AWSEC2C_ROSTER        //Calendar
+AM105_BLOCK           -> AM106_BLOCK           //Man date of birht
+AMSEC3A_GRP           -> AMSEC3A_GRP           //Contraception listing
+AM302_BLOCK           -> AM302_BLOCK           //Family planning adverstisement
+AM307_BLOCK           -> AM307_BLOCK           //Statements on contraception
+AMWIVES_GRP           -> AMWIVES_GRP           //Line number of wife, partner
+AMSEXPART_GRP         -> zMSEXPART_GRP         //Sexual activity
+AM416_BLOCK           -> zM416_BLOCK           //Last sexual intercourse with partner
+AM420_BLOCK           -> zM420_BLOCK           //First sexual intercourse with partner
+AM411_BLOCK           -> AM411_BLOCK           //Date of marriage
+AM415_BLOCK           -> AM415_BLOCK           //Recent sexual intercourse
+AM506_BLOCK           -> AM506_BLOCK           //Time for next birth - wife pregnant
+AM508_BLOCK           -> AM508_BLOCK           //Time for next birth - wife non pregnant
+AM511_BLOCK           -> AM511_BLOCK           //time to next child - 1+ wives (pregnant)
+AM513_BLOCK           -> AM513_BLOCK           //Time to next birth - 1+ wives(none pregnant)
+AM515_BLOCK           -> AM515_BLOCK           //Number of children by gender
+AM618_BLOCK           -> AM618_BLOCK           //Husband justified to beat wife
+AM708_BLOCK           -> zM708_BLOCK           //Can HIV be transmitted from mother to baby
+AM811_BLOCK           -> AM809_BLOCK           //Smoking on a daily basis
+AM812_BLOCK           -> AM810_BLOCK           //Smoking on a weekly basis
+AM814_BLOCK           -> AM812_BLOCK           //Use of other products on a daily basis
+AM815_BLOCK           -> AM813_BLOCK           //Use of other products on a weekly basis

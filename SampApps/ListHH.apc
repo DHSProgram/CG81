@@ -13,6 +13,7 @@ PROC FL_CNULL
 preproc
   { get language from calling menu }
   SetLanguage( GetLanguage() );
+  SetLanguage( "FR" );
 
   wcluster = tonumber( sysparm()[1:4] );
   counthh   = 0;        { total household counter }
@@ -34,35 +35,37 @@ preproc
   { initialize the report headings }
   zstring1 = MakeText( tr("Households Eligible for Selection for Cluster: %04d"), wcluster );
   zstring2 = MakeText( tr("Date: %s"), edit("9999/99/99", SysDate("YYYYMMDD")));
-  CellValues(1) = tr("Sequential line number");
-  CellValues(2) = tr("HH");
-  CellValues(3) = tr("Household address");
-  CellValues(4) = tr("Description");
-  CellValues(5) = tr("Head of household");
-  CellValues(6) = tr("GDHS code");
-  CellValues(7) = tr("GPS co-ordinates");
-  CellValues(8) = tr("GPS Accuracy");
+  CellValues(1) = tr("Num. Seq.");
+  CellValues(2) = tr("Structure");
+  CellValues(3) = tr("Unit");
+  CellValues(4) = tr("Household address");
+  CellValues(5) = tr("Observations");
+  CellValues(6) = tr("Head of household");
+  CellValues(7) = tr("GDHS code");
+  CellValues(8) = tr("GPS co-ordinates");
+  CellValues(9) = tr("GPS Accuracy");
   { specify cklumns that are left aligned, strings are left aligned }
-  CellAlign(1) = 3;  // column 3 is description
-  CellAlign(2) = 4;  // column 4 address
-  CellAlign(3) = 5;  // column 5 head of household
+  CellAlign(1) = 4;  // column 3 is description
+  CellAlign(2) = 5;  // column 4 address
+  CellAlign(3) = 6;  // column 5 head of household
   HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
-  HTML_BeginTable( CellValues, zstring2, 8 );  // generates the HTML table script with the column headers
+  HTML_BeginTable( CellValues, zstring2, 9 );  // generates the HTML table script with the column headers
 
   while loadcase( HHLISTING ) do
     for i in RECORD2 do
 //+      if !LINTRO in "8","9" then
         { populates the elements of a row based on household information }
         CellValues(1) = edit("999", i);
-		if LTRUEHH = 1 then
-          CellValues(2) = edit("9999", LNUMBER);
-		else
-          CellValues(2) = "BLANK";
-		endif;
-        CellValues(3) = strip(LADDRESS);
-        CellValues(4) = strip(LNOTES);
-        CellValues(5) = strip(LNAME);
-        CellValues(6) = "CDHS: " + edit("9999",LCLUSTER) + "/" + edit("9999", LSTRUCT) + "/" + edit("999",LHOUSEH);
+        CellValues(2) = edit("999", LSTRUCT);
+          if LTRUEHH = 1 then
+            CellValues(3) = edit("9999", LNUMBER);
+          else
+            CellValues(3) = "BLANK";
+          endif;
+        CellValues(4) = strip(LADDRESS);
+        CellValues(5) = strip(LNOTES);
+        CellValues(6) = strip(LNAME);
+        CellValues(7) = "CDHS: " + edit("9999",LCLUSTER) + "/" + edit("9999", LSTRUCT) + "/" + edit("999",LHOUSEH);
 
         countent = countent + 1;
         if LNUMBER(i) <> notappl then
@@ -78,8 +81,8 @@ preproc
 	        latpole = LLATPOLE(i);
 		    lngpole = LLNGPOLE(i);
 	      endif;
-          CellValues(7) = maketext("%4.6f-%4.6f", LLATITUDE, LLONGITUDE);
-          CellValues(8) = edit("99", LACCURACY);
+          CellValues(8) = maketext("%4.6f-%4.6f", LLATITUDE, LLONGITUDE);
+          CellValues(9) = edit("99", LACCURACY);
         else
           CellValues(7) = tr("Not read");
           CellValues(8) = "BLANK";

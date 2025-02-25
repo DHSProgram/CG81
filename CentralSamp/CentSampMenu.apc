@@ -11,7 +11,6 @@ PROC GLOBAL
   string   xfilenum, executable;
   string   opid;                           { operator ID }
   string   fname;                          { filenames for various files }
-//+  config   CSWebURL, CSWebUser, CSWebPIN, CSWebSurvey;   { to handle access to CSWeb }
 
   alpha(4) xcluster, xenumerat;            { Cluster/enumerator numbers }
   string   strtail;                        { to customize the report on clusters arrived to central office }
@@ -20,7 +19,6 @@ PROC GLOBAL
   string  IFSSlogFile = "./log.txt";    { name of log file for IFSS }
   string  synclogfile;                  { used to store sync data for upload to server }
   config  SyncCloudID_CD81;   { to handle access to SyncCloud }
-  //config   CSWebURL, CSWebUser, CSWebPIN;
   numeric IFSS = 0;                       { If IFSS is being used }
   numeric SyncCloud = 1;                  { If SyncCloud is being used }
 
@@ -52,33 +50,6 @@ PROC GLOBAL
       endif;
     endif;
     ReadIfssLog = x;
-  end;
-
-
-  { function to force sending data to central office using IFSS }
-  function SendDataW()
-    set trace;
-    numeric x = 0;
-    if !connection() then
-      errmsg( 200 );
-    else
-      SystemApp Sync_App;
-      Sync_App.clear();
-      Sync_App.SetArgument("ProjectId=", "3844ae33ba3f4c8bbf2d2c9bf77e93b4");
-      Sync_App.SetArgument("Username=", "centraloffice");
-      Sync_App.SetArgument("Password=", "eHE5BFs9qhl");
-      Sync_App.SetArgument("log=", IFSSlogFile);
-      x = Sync_App.exec(utility + "\SyncCloudclientWin\ScClient.exe");
-      trace("x=%d, %s", x, utility + "\SyncCloudclientWin\ScClient.exe");
-      if ReadIfssLog( IFSSLogfile ) = 1001 then
-        errmsg( 201 );
-        x = 1;
-      else
-        errmsg( 202 );
-        x = 0;
-      endif;
-    endif;
-    SendDataW = x;
   end;
 
 
@@ -183,7 +154,7 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="   + central  + "\"  + AppName  + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "CONTROL="     + wrkref  + "\LControl.dat" );
+    FileWrite( piffile, "CONTROL="     + wrkref  + "\LCONTROL.csdb" );
 {{GPS}	
     FileWrite( piffile, "GPS_DCT="     + SampData + "\G" + xfilenum + ".dat" );
 {GPS}}	
@@ -202,7 +173,7 @@ PROC GLOBAL
     InitPFF(1);
     FileWrite( piffile, "[Files]" );
     FileWrite( piffile, "Application=" + central + "\" + AppName + ".bch" );
-    FileWrite( piffile, "InputData="   + wrkref  + "\LControl.dat" );
+    FileWrite( piffile, "InputData="   + wrkref  + "\LCONTROL.csdb" );
     FileWrite( piffile, "Listing="     + central + "\" + AppName + ".lst" );
     FileWrite( piffile, "WriteData="   + central + "\" + AppName + ".wrt" );
 
@@ -254,7 +225,7 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="   + central + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "CONTROL=" + wrkref + "\LControl.dat" );
+    FileWrite( piffile, "CONTROL=" + wrkref + "\LCONTROL.csdb" );
     FileWrite( piffile, "GPS_DCT=" + work   + "\AllGPS.dat" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
@@ -516,7 +487,6 @@ PreProc
   utility  = wrkprj + "\Utility";       { directory where auxiliary utilities are stored }
   wrkref   = wrkpii + "\Ref";           { reference directory for clusters, sample and teams files  }
   SampData = wrkpii + "\Arrived";      { store household listing files }
-  //SampData = SampData; 
   work     = wrkpii + "\Work";          { working directory }
   backup = "E:\SAMPDATA";                                 { drive and directory to backup data }
 
@@ -541,25 +511,12 @@ PreProc
   zstring1 = tr("Clusters arrived from the field since last time the central office system was executed");
   HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
 
-{+  
-  { Synchronize to CSWeb when data is coming from Android tablets }
-  numeric android = 1;  //!!! 0-data coming through IFSS for windows tablets 1-data coming through CSWeb from android tablets
-  if android then
-    if SyncConnect ( CSWeb, CSWebURL, CSWebUser, CSWebPIN ) then   {commented out post data collection }
-	  errmsg( 300, CSWebURL );
-      SyncFile( GET, CSWebSurvey + "SampData\*.*",      SampData ); 
-      SyncFile( GET, CSWebSurvey + "Logs\SyncLog*.txt", work ); 
-      SyncDisconnect();
-	else
-	  errmsg( 301, CSWebURL );
-    endif;
-  endif;	
-+}
+   
 
  // connect to server
   numeric LastUpLoad = tonumber(loadsetting("LastUpLoad",0));
   if LastUpload < sysdate("YYYYMMDD") then
-    if SendDataW() then
+    if GetData_CSW() then
       savesetting("LastUpLoad", edit("99999999",( sysdate("YYYYMMDD") )));
     endif;
   endif;
@@ -735,9 +692,9 @@ PROC WFINAL
     backupf();
     reenter WFINAL;
 
-  elseif action = 9 then                  { make a data back-up }
-    getData_CSW();
-	    reenter WFINAL;
+  elseif action = 9 then                  { connect to server }
+    GetData_CSW();
+    reenter WFINAL;
   elseif action = 10 then                 { sample selection of households for the survey }
     CollapseFiles();
     AppName = "SelectHH";

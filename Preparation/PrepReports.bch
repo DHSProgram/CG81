@@ -1,0 +1,22 @@
+﻿[CSPro Application]
+Version=CSPro 7.5
+Label=PREPREPORTS
+Name=PREPREPORTS
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\Interv.dcf
+File=..\Dicts\SampSel.dcf
+File=..\dicts\FieldWKQuest.dcf
+[AppCode]
+File=.\PrepReports.apc
+[Message]
+File=.\Preparation.mgf
+[Order]
+File=.\PrepReports.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\Cnull.dcf,Input,.\PrepReports.ord
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\Interv.dcf,External
+Dict-Type=..\Dicts\SampSel.dcf,External
+Dict-Type=..\dicts\FieldWKQuest.dcf,External

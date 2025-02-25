@@ -1,0 +1,14 @@
+﻿[CSPro Application]
+Version=CSPro 7.3
+Label=TEST
+Name=TEST
+AppType=Batch
+[AppCode]
+File=.\Test.bch.apc
+Include=..\Library\DPCollect.apc
+[Message]
+File=.\Test.bch.mgf
+[Order]
+File=.\Test.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\Cnull.dcf,Input,.\Test.ord
