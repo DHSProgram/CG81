@@ -12,17 +12,60 @@
 
   string   xresult;
   string   fnameHH, fnameIN;              { to extract file name from household and individual dictionaries }
-  alpha(4) xcluster;                     { parameter from main menu }
+  alpha(4) xcluster, xintnum;                     { parameter from main menu }
+  string hwstatus;
 
   array arrayhh(100);                      { to check that all individuals are linked to households }
   array arraywm(100);
 
   numeric x, i, j, found, chhw, wmhw, mnhw;
+  numeric prevhh;
+  function fillhdr ();
+    CellValues(1) = tr("HH");
+    CellValues(2) = tr("Name");
+    CellValues(3) = tr("Result");
+    CellValues(4) = tr("Visits");
+    CellValues(5) = tr("Biomarkers");
+  end;
+  function fillhh ();
+    string name;
+    CellValues(1) = edit("9999", QHNUMBER);
+    if noccurs(QHSEC01X) then
+      name = QHFIRSTN(1) + " " + QHLASTN(1);
+    endif;
+    if length(name) then
+      CellValues(2) = name;
+    else
+      CellValues(2) = QHADDRESS[1:30];
+    endif;
+    CellValues(3) = xresult;
+    CellValues(4) = edit("9", QHVISITS);
+    if QHRESULT = 1 then
+      CellValues(5) = edit("99", wmhw+mnhw+chhw) + "-" + edit("99", x);
+      if x = wmhw+mnhw+chhw then
+        hwstatus = "✔";
+      else
+        hwstatus = "!";
+      endif;
+      CellValues(5) = CellValues(5) + hwstatus;
+    else
+      CellValues(5) = "BLANK";
+    endif;
+  end;
+
+  function fillind (string wvisits);
+    CellValues(1) = edit("  99", QLINE);
+    CellValues(2) = zstring1;
+    CellValues(3) = xresult;
+    CellValues(4) = wvisits;
+    CellValues(5) = "BLANK";
+  end;
 
 PROC FL_CNULL
 preproc
 
   xcluster = sysparm()[1:4];        { cluster number from DCMenu}
+  xintnum  = sysparm("Interviewer");
   SetLanguage( GetLanguage() );
 
   { initialize arrays to check that all women are linked to a household }
@@ -30,8 +73,8 @@ preproc
     arrayhh(i) = 0;
     arraywm(i) = 0;
   enddo;
-  fnameHH = filename( ccHH80 );     { get the file name from the household dictionary }
-  fnameIN = filename( ccIN80 );     { get the file name from the individual dictionary }
+  fnameHH = filename( KEHH80 );     { get the file name from the household dictionary }
+  fnameIN = filename( KEIN80 );     { get the file name from the individual dictionary }
 
   { set the name for the HTML file }
   HTML_InitAlign();
@@ -42,134 +85,158 @@ preproc
   setfile( HTMLFile, HTMLname, create );
 
   { initialize the report headings }
-  zstring1 = MakeText( tr("Status for cluster: %s"), xcluster );
-  zstring2 = tr("Interviews collected in cluster");
-  CellValues(1) = tr("HH");
-  CellValues(2) = tr("Address/Name");
-  CellValues(3) = tr("Result");
-  CellValues(4) = tr("Visits");
-  CellValues(5) = tr("Biomarkers");
+  zstring1 = MakeText( tr("Status for cluster: %s Interviewer %s"), xcluster, xintnum );
+  zstring2 = tr("Household and Individual Interviews collected from assigned households");
+  fillhdr();
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 2;  // column 2 is household address/name 
   CellAlign(2) = 3;  // column 3 is result of the interview
   HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
 
   { go over each household }
-  open( CCHH80 );
+  open( KEHH80 );
   if !FileEmpty( fnameHH ) then    { it is important because some interviewers may not have household questionnaires }
     HTML_BeginTable( CellValues, zstring2, 5 );  // generates the HTML table script with the column headers
-    while loadcase( CCHH80 ) do
-      if AHRESULT = 1 & partialcs( 1, AHCLUST, AHNUMBER, 0, fnameHH  ) then
-        xresult = edit("9",AHRESULT) + tr("-Partial")
-      elseif AHRESULT <> 1 then
-        xresult = edit("9",AHRESULT) + tr("-Incomplete")
+    while loadcase( KEHH80 ) do
+      if QHRESULT = 1 & partialcs( 1, QHCLUST, QHNUMBER, 0, fnameHH  ) then
+        xresult = edit("9",QHRESULT) + tr("-Partial")
+      elseif QHRESULT <> 1 then
+        xresult = edit("9",QHRESULT) + " " + getlabel(QHRESULT, QHRESULT)[1:25];
       else
-        xresult = edit("9",AHRESULT) + tr("-Complete")
+        xresult = edit("9",QHRESULT) + tr("-Complete")
       endif;
 
       mnhw    = 0;
       wmhw    = 0;
       chhw    = 0;
       x       = 0;
-      if AHRESULT = 1 then
+      if QHRESULT = 1 then
 
         { height/weight and hemoglobin for women }
-        wmhw = count( CCHH80.AHSEC01 where AH09 );
+        // short version just biomarkers for children !!!
+        if QHSHORT then
+          wmhw = 0;
+        else
+          wmhw = count( KEHH80.QHSEC01 where QH09 );
+        endif;
 
         { height/weight and hemoglobin for men }
-        mnhw = count( CCHH80.AHSEC01 where AH10 );
+        if QHSHORT then
+          mnhw = 0;
+        else
+          mnhw = count( KEHH80.QHSEC01 where QH10 );
+        endif;
 
         { height/weight and hemoglobin for children }
-        chhw = count( CCHH80.AHSEC01 where AH11 );
+        chhw = count( KEHH80.QHSEC01 where QH11 );
 
         { children/women/men measured }
-        x = count(CCHH80.ABSEC01 where AB106 <> notappl) + 
-		    count(CCHH80.ABSEC02 where AB205 <> notappl) + 
-			count(CCHH80.ABSEC03 where AB305 <> notappl); 
-      endif;			
-	  { populates the elements of a row based on household information }
-      CellValues(1) = edit("9999", AHNUMBER);
-      CellValues(2) = AHADDRESS[1:30];
-      CellValues(3) = xresult;
-      CellValues(4) = edit("9", AHVISITS);
-      CellValues(5) = edit("99", wmhw+mnhw+chhw) + "-" + edit("99", x);
+        x = count(KEHH80.QBSEC01 where QB104 <> notappl) + 
+        count(KEHH80.QBSEC02 where QB205 <> notappl) + 
+        count(KEHH80.QBSEC03 where QB305 <> notappl); 
+      endif;                    
+          { populates the elements of a row based on household information }
+      fillhh();
       HTML_OneRow( CellValues, 5 );   // generates the HTML script for a row with relevant household data
 
-      if AHRESULT = 1 then  { check individuals only if they are part of completed households }
+      if QHRESULT = 1 then  { check individuals only if they are part of completed households }
 
         { check individual questionnaires in the household in the loop }
-        for i in record AHSEC01 do
-          if AH09 | AH10 then
-            if AH09 then
-              ALINE   = AH09;
-              zstring1 = tr("W-") + strip(AH02);
+        for i in record QHSEC01 do
+          if QH09 | QH10 then
+            if QH09 then
+              QLINE   = QH09;
+              zstring1 = tr("W-") + strip(QH02);
             else
-              ALINE = AH10;
-              zstring1 = tr("M-") + strip(AH02);
+              QLINE = QH10;
+              zstring1 = tr("M-") + strip(QH02);
             endif;
-            if loadcase( ccIN80, AHCLUST, AHNUMBER, ALINE ) then
+            if loadcase( KEIN80, QHCLUST, QHNUMBER, QLINE ) then
               { populate array of individuals to check at the end if all of them are linked to a household }
               do j = 1 while j <= 100 & arrayhh(j)
-                if arrayhh(j) = AHNUMBER & arraywm(j) = ALINE then
-				  errmsg( 010, ALINE, AHNUMBER );
+                if arrayhh(j) = QHNUMBER & arraywm(j) = QLINE then
+                                  errmsg( 010, QLINE, QHNUMBER );
                 endif;
               enddo;
               if j <= 100 then
-                arrayhh(j) = AHNUMBER;
-                arraywm(j) = ALINE;
+                arrayhh(j) = QHNUMBER;
+                arraywm(j) = QLINE;
               endif;
 
-              if ARESULT = 1 & partialcs( 2, ACLUSTER, ANUMBER, ALINE, fnameIN ) then
-                xresult = edit("9",ARESULT) + tr("-Partial")
-              elseif ARESULT <> 1 then
-                xresult = edit("9",ARESULT) + tr("-Incomplete")
+              if QRESULT = 1 & partialcs( 2, QCLUSTER, QNUMBER, QLINE, fnameIN ) then
+                xresult = edit("9",QRESULT) + tr("-Partial")
+              elseif QRESULT <> 1 then
+                xresult = edit("9",QRESULT) + " " + getlabel(QRESULT, QRESULT)[1:25];
               else
-                xresult = edit("9",ARESULT) + tr("-Complete")
+                xresult = edit("9",QRESULT) + tr("-Complete")
               endif;
-        	  { populates the elements of a row based on individual information }
-              CellValues(1) = edit("  99", ALINE);
-              CellValues(2) = zstring1;
-              CellValues(3) = xresult;
-              CellValues(4) = edit("9", AVISITS);
-              CellValues(5) = "BLANK";
+                  { populates the elements of a row based on individual information }
+              FillInd(edit("9", QVISITS));
               HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
 
             else
-        	  { populates the elements of a row for an individual that hasn't been visited }
+                  { populates the elements of a row for an individual that hasn't been visited }
               xresult = tr("Not visited");
-              CellValues(1) = edit("  99", ALINE);
-              CellValues(2) = zstring1;
-              CellValues(3) = xresult;
-              CellValues(4) = "BLANK";
-              CellValues(5) = "BLANK";
+              FillInd("BLANK");
               HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
             endif;
           endif;
         enddo;
       endif;
     enddo;
-	HTML_EndTable();
+    HTML_EndTable();
   else
-    HTML_Paragraph( tr("There are no households for the cluster in this machine") );
+    HTML_Paragraph( tr("No data for assigned households") );
   endif;
 
   { go sequentially over file with individuals to check if they were marked }
   { at the time of loading eligibles in the household roster loop           }
-  close( ccIN80 );
-  open( ccIN80 );
-  if !FileEmpty( fnameIN ) then  { it is important because some interviewers may not have individual questionnaires }
-    while loadcase( ccIN80 ) do
-      found = 0;
-      do j = 1 while j <= 100 & !found
-        if arrayhh(j) = ANUMBER & arraywm(j) = ALINE then
-          found = 1;
+  { set up header and title for 2nd table for shared household interviews }
+  if !FileEmpty( fnameIN ) then    { it is important because some interviewers may not have individual questionnaires }
+    close( KEIN80 );
+    open( KEIN80 );
+    if countcases ( KEIN80 where !loadcase(KEHH80, QCLUSTER, QNUMBER) ) then // check first to see if any interviewers from shared hh's before generating table titles/headers
+      HTML_Paragraph("");
+      zstring2 = tr("Individual Interviews collected from shared households");
+      fillhdr();
+      close( KEIN80 );
+      open( KEIN80 );
+      HTML_BeginTable( CellValues, zstring2, 4 );  // generates the HTML table script with the column headers
+      prevhh = 0;
+      while loadcase( KEIN80 ) do
+        found = 0;
+        do j = 1 while j <= 100 & !found
+          if arrayhh(j) = QNUMBER & arraywm(j) = QLINE then
+            found = 1;
+          endif;
+        enddo;
+        if !found then
+          if QNUMBER <> prevhh then // print hh line to identify hh
+            // HTML_Paragraph( MakeText(tr("Individual %02d in household %04d is part of a household that belongs to another interviewer"), QLINE, QNUMBER) );
+            xresult = "BLANK";
+            CellValues(1) = edit("9999", QNUMBER);
+            CellValues(2) = "BLANK";
+            CellValues(3) = xresult;
+            CellValues(4) = "BLANK";
+            HTML_OneRow( CellValues, 4 );   // generates the HTML script for a row with relevant household data
+            prevhh = QNUMBER;
+          endif;
+          if QRESULT = 1 & partialcs( 2, QCLUSTER, QNUMBER, QLINE, fnameIN ) then
+            xresult = edit("9",QRESULT) + tr("-Partial")
+          elseif QRESULT <> 1 then
+            xresult = edit("9",QRESULT) + tr("-Incomplete")
+          else
+            xresult = edit("9",QRESULT) + tr("-Complete")
+          endif;
+              { populates the elements of a row based on individual information }
+           zstring1 = tr("MF"[QQTYPE:1] + "-") + strip(QNAME);
+          FillInd(edit("9", QVISITS));
+          HTML_OneRow( CellValues, 4 );  // generates the HTML script for a row with relevant individual data
         endif;
       enddo;
-      if !found then
-        HTML_Paragraph( MakeText(tr("Individual %02d in household %04d is part of a household that belongs to another interviewer"), ALINE, ANUMBER) );
-      endif;
-    enddo;
-  endif;
+    endif; // countcases
+  endif; // !FileEmpty
+  HTML_EndTable();
   HTML_End();
   view( "file://" + pathname(application) +  HTMLName );
   stop(1);

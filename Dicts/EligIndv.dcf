@@ -1,5 +1,5 @@
 ﻿[Dictionary]
-Version=CSPro 7.5
+Version=CSPro 7.7
 Label=Households and individuals|Hogares e individuales
 Name=ELIGINDV
 RecordTypeStart=0
@@ -24,6 +24,7 @@ Label=Cluster|Segmento
 Name=ZCLUSTER
 Start=1
 Len=4
+DataType=Numeric
 ZeroFill=Yes
 
 [Item]
@@ -31,6 +32,7 @@ Label=Household|Hogar
 Name=ZNUMBER
 Start=5
 Len=4
+DataType=Numeric
 ZeroFill=Yes
 
 [Item]
@@ -38,19 +40,21 @@ Label=Individual line number|Numero de linea del individual
 Name=ZLINE
 Start=9
 Len=2
+DataType=Numeric
 ZeroFill=Yes
 
 [Record]
 Label=Households and individuals record|Registro de hogares e individuales
 Name=CASES_REC
 RecordTypeValue=''
-RecordLen=120
+RecordLen=117
 
 [Item]
 Label=Questionnaire type|Tipo de cuestionario
 Name=ZQUEST
 Start=11
 Len=1
+DataType=Numeric
 
 [ValueSet]
 Label=Questionnaire type|Tipo de cuestionario
@@ -63,6 +67,7 @@ Label=Interview result|resultado de la entrevista
 Name=ZRESULT
 Start=12
 Len=1
+DataType=Numeric
 
 [Item]
 Label=Address|Direccion
@@ -97,6 +102,7 @@ Label=Status code|Codigo de estado
 Name=ZSTATUSC
 Start=111
 Len=1
+DataType=Numeric
 
 [ValueSet]
 Label=Status code|Codigo de estado
@@ -111,6 +117,7 @@ Label=Household owner|Entrevistador a cargo del hogar
 Name=ZOWNER
 Start=112
 Len=4
+DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
@@ -124,6 +131,7 @@ Label=Person for biomarker|Persona para biomarcador
 Name=ZBPERSON
 Start=116
 Len=1
+DataType=Numeric
 
 [ValueSet]
 Label=Person for biomarker|Persona para biomarcador
@@ -131,3 +139,10 @@ Name=ZBPERSON_EN
 Value=1;Children|Niños
 Value=2;Women|Mujeres
 Value=3;Men|Hombres
+
+[Item]
+Label=Selected for male sub-sample
+Name=ZMALE
+Start=117
+Len=1
+DataType=Numeric

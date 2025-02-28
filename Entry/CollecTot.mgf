@@ -106,7 +106,7 @@
  0496 E Invalid check field (last character) for barcode (%5s)
  0501 E Consent for malaria not given (%01d) inconsistent with barcode=%s
  0502 E Consent for malaria not given (AB120=%01d) inconsistent with result of malaria RDT
- 0505 W Consent summary (%s) doesn't agree with individual consents
+ 0505 W Consents given according to Q214-Q237 (%s) do not agree with consents entered for this question (%s)
  0510 W The blood pressure monitor model registered doesn't agree with arm circumference (%02d)
  0511 W First reading (%02d:%02d) after second reading (%02d:%02d) 
  0512 W Difference between time for first reading (%02d:%02d) and second reading (%02d:%02d) is less than 2 minutes
@@ -1227,11 +1227,13 @@ language = FR
  0190 E L'âge au quel %s a débuté l'école (%d ans) ne peut être superieur à son âge actuel (%d ans)
  0201 E Numéro de ligne du membre qui a dormi sous une moustiquaire est hors limites (total des membres %02d)
  0202 E Membre déjà listé sous cette moustiquaire
+ 0203 E 
  0205 E Nombre de personnes malades incorrect, prévu %02d
- 0207 E La personne malade / enfant vulnérable à saisir est incorrect, attendu %02d
+ 
  0208 W Âge incohérent avec l'âge dans le ménage, attendu %02d
  0210 E Femme sélectionnée pour la violence domestique %02d incohérente avec le nombre potentiel de femmes éligibles %02d
  0211 E Femme sélectionnée pour la violence domestique incorrecte (sexe %d état matrimonial %d critères d'éligibilité %02d)
+ 0215 E Date: %02d-%02d-%04d Combinaison de jour/mois/année est incorrecte ou le date est impossible 
  0410 E Numéro de ligne dans la colonne %1d incorrect: attendu %02d
  0415 W Sexe ( %1d) différent du sexe dans le tableau du ménage (QH04 = %1d)
  0420 W Âge ( %02d) différent de l'âge dans le tableau du ménage (QH07=%02d)
@@ -1271,6 +1273,7 @@ language = FR
  0499 E Consentement test du niveau d'hémoglobine refusé par l'adulte responsable (QB120=%01d), donc le code à  barres QB123=%s doit être "99995"
  0501 E Consentement pour le paludisme non donné (%01d) incompatible avec le code-barres=%s
  0502 E Consentement pour le paludisme non donné (QB120=%01d) incompatible avec le résultat du TDR du paludisme
+ 0505 W Les consentements saisis pour cette question (%s) ne sont pas d'accord avec les consentements donnés selon Q214-Q237 (%s)  
  1000 E Numéro de ligne du répondant incorrect: Veuillez entrer le numéro de femme %02d
  1002 W Questionnaire individuel incomplet. Vérifier le code de résultat
  1030 E Le temps vécu par le répondant sur le lieu de résidence actuel (Q104=%02d) dépasse son âge actuel

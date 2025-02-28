@@ -1,6 +1,6 @@
 ﻿//Dictionary (C:\CG81\Dicts\CGHH80.dcf)
 CCHH80      -> CGHH80      //DHS-8 Core 06-19-2020
-
+CCIN80      -> CGIN80      //DHS-8 Core 06-19-2020
 //Level (HOUSEHOLD) - Household
 HOUSEHOLD   -> HOUSEHOLD   //Household
 AHCLUST     -> QHCLUST     //Cluster number
@@ -415,7 +415,7 @@ ABSEC01     -> QBSEC01     //Height, Weight, Hemoglobin (children)
 ABCOL1      -> QBCOL1      //Column number|Numéro de colonne
 AB102       -> QB102       //Line number in household schedule|Numéro de ligne dans le tableau de ménage
 AB103       -> QB103       //Date of birth
-AB103D      -> QB103D      //Day of birth|Jour de naissance
+AB103D      -> QB103D      //Day of birth|Jour de naissancInternal shared storage\Android\data\gov.census.cspro.csentry\filese
 AB103M      -> QB103M      //Month of birth|Mois de naissance
 AB103Y      -> QB103Y      //Year of birth|Année de naissance
 AB104       -> QB104       //Age of child|Age de l'enfant
@@ -450,23 +450,23 @@ ABRMONTH    -> QBRMONTH    //Month of remeasure|Mois de la mesure
 ABRYEAR     -> QBRYEAR     //Year of remeasure|Année de la mesure
 ABRMEAS     -> QBRMEAS     //Fieldworker for H/W remeasure
 ABM112      -> QBM112      //Malaria lab sample ID (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
-ABM114      -> QBM114      //Malaria rapid test result (RDT)
-ABM115A     -> QBM115A     //Suffer from illness/symptom: extreme weakness
-ABM115B     -> QBM115B     //Suffer from illness/symptom: heart problems
-ABM115C     -> QBM115C     //Suffer from illness/symptom: loss of consciousness
-ABM115D     -> QBM115D     //Suffer from illness/symptom: rapid or difficult breathing
-ABM115E     -> QBM115E     //Suffer from illness/symptom: seizures
-ABM115F     -> QBM115F     //Suffer from illness/symptom: abnormal bleeding
-ABM115G     -> QBM115G     //Suffer from illness/symptom: jaundice or yellow skin
-ABM115H     -> QBM115H     //Suffer from illness/symptom: dark urine
-ABM117      -> QBM117      //Hemoglobin result for referral for malaria|Résultat d'hémoglobine pour la référence
-ABM119      -> QBM119      //Past 2 weeks child takes medication given by doctor/health center for malaria
-ABM122      -> QBM122      //Aceptance of malaria medicine
-ABM123      -> QBM123      //Fieldworker number for malaria medicine
-ABM128      -> QBM128      //Date of tested for malaria
-ABM128D     -> QBM128D     //Day tested for malaria|Jour de la mesure
-ABM128M     -> QBM128M     //Month tested for malaria|Mois de la mesure
-ABM128Y     -> QBM128Y     //Year tested for malaria|Année de la mesure
+ABM114      -> QBM124      //Malaria rapid test result (RDT)
+ABM115A     -> QBM125A     //Suffer from illness/symptom: extreme weakness
+ABM115B     -> QBM125B     //Suffer from illness/symptom: heart problems
+ABM115C     -> QBM125C     //Suffer from illness/symptom: loss of consciousness
+ABM115D     -> QBM125D     //Suffer from illness/symptom: rapid or difficult breathing
+ABM115E     -> QBM125E     //Suffer from illness/symptom: seizures
+ABM115F     -> QBM125F     //Suffer from illness/symptom: abnormal bleeding
+ABM115G     -> QBM125G     //Suffer from illness/symptom: jaundice or yellow skin
+ABM115H     -> QBM125H     //Suffer from illness/symptom: dark urine
+ABM117      -> QBM127      //Hemoglobin result for referral for malaria|Résultat d'hémoglobine pour la référence
+ABM119      -> QBM128      //Past 2 weeks child takes medication given by doctor/health center for malaria
+ABM122      -> QBM131      //Aceptance of malaria medicine
+ABM123      -> QBM132      //Fieldworker number for malaria medicine
+ABM135      -> QBM135      //Date of tested for malaria
+ABM135D     -> QBM135D     //Day tested for malaria|Jour de la mesure
+ABM135M     -> QBM135M     //Month tested for malaria|Mois de la mesure
+ABM135Y     -> QBM135Y     //Year tested for malaria|Année de la mesure
 ACCMC       -> QCCMC       //Child's CMC of birth
 ACCDC       -> QCCDC       //Child's Century Day Code (CDC) of birth
 ACCDCM      -> QCCDCM      //Child's Century Day Code (CDC) of measurement
@@ -499,79 +499,80 @@ AB205W      -> QB205W      //Weight in kilograms - working field for re-entering
 AB206       -> QB206       //Was woman wearing only lightweight clothing|La femme ne portait-elle que des vêtements légers
 AB207       -> QB207       //Height in centimeters|Taille en centimètres
 AB207W      -> QB207W      //Height in centimeters - working field for re-entering|Taille en centimètres - variable de travail pour re-saisir
-AB208       -> QB208       //Date of measurement
-AB208D      -> QB208D      //Day of measurement|Jour de la mesure
-AB208M      -> QB208M      //Month of measurement|Mois de la mesure
-AB208Y      -> QB208Y      //Year of measurement|Année de la mesure
-AB209       -> QB209       //Measurement interfered with braided or ornament|Mesure interférée par des cheveux tressés ou coiffés
-AB210       -> QB210       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
-AB211       -> QB211       //Fieldworker number for H/W
-AB212       -> QB212       //Fieldworker number for assistant to H/W
-AB212A      -> QB212A      //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
-AB214A      -> QB214A      //Read consent statement to parent/caretaker (Blood pressure)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
-AB214B      -> QB214B      //Fieldworker number for blood pressure
-AB215C      -> QB215C      //Read consent statement to respondent (Blood pressure)|Lire la déclaration de consentement au répondant (Anémie)
-AB215D      -> QB215D      //Fieldworker number for blood pressure
-AB217A      -> QB217A      //Read consent statement to parent/caretaker (Anemia)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
-AB217B      -> QB217B      //Fieldworker number for hemoglobin
-AB218C      -> QB218C      //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
-AB218D      -> QB218D      //Fieldworker number for hemoglobin
-AB220A      -> QB220A      //Read consent statement to parent/caretaker [Other test]|Lire la déclaration de consentement au parent/adulte responsable (VIH)
-AB220B      -> QB220B      //Fieldworker number for [Other test]
-AB221C      -> QB221C      //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
-AB221D      -> QB221D      //Fieldworker number for [Other test]
-AB214       -> QB214       //Consent for first blood pressure reading
-AB215       -> QB215       //Fieldworker number for blood pressure
-AB217       -> QB217       //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
-AB218       -> QB218       //Fieldworker number for hemoglobin
-AB220       -> QB220       //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
-AB221       -> QB221       //Fieldworker number for [Other test]
-AB222       -> QB222       //Tests for which consent was granted
-AB224A      -> QB224A      //Last 30 minutes have you: eaten anything
-AB224B      -> QB224B      //Last 30 minutes have you: had coffee, tea, cola other drinks with caffeine
-AB224C      -> QB224C      //Last 30 minutes have you: smoked any tobacco products
-AB224D      -> QB224D      //Last 30 minutes have you: exercised with intensity
-AB225       -> QB225       //Arm circumference in centimeters
-AB226       -> QB226       //Blood pressure monitor to be used
-AB227A      -> QB227A      //First blood pressure reading: Systolic
-AB227AW     -> QB227AW     //Re-enter first blood pressure reading: Systolic
-AB227B      -> QB227B      //First blood pressure reading: Diastolic
-AB227BW     -> QB227BW     //Re-enter first blood pressure reading: Diastolic
-AB228       -> QB228       //Start of interview/first blood pressure reading
+AB208       -> QB211       //Date of measurement
+AB208D      -> QB211D      //Day of measurement|Jour de la mesure
+AB208M      -> QB211M      //Month of measurement|Mois de la mesure
+AB208Y      -> QB211Y      //Year of measurement|Année de la mesure
+AB209       -> QB208       //Measurement interfered with braided or ornament|Mesure interférée par des cheveux tressés ou coiffés
+AB210       ->Z_B210       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
+AB211       -> QB209       //Fieldworker number for H/W
+AB212       -> QB210       //Fieldworker number for assistant to H/W
+AB212A      -> Z_B212A      //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
+AB214A      -> Z_B214A      //Read consent statement to parent/caretaker (Blood pressure)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB214B      -> Z_B214B      //Fieldworker number for blood pressure
+AB215C      -> Z_B215C      //Read consent statement to respondent (Blood pressure)|Lire la déclaration de consentement au répondant (Anémie)
+AB215D      -> Z_B215D      //Fieldworker number for blood pressure
+AB217A      -> Z_B217A      //Read consent statement to parent/caretaker (Anemia)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB217B      -> Z_B217B      //Fieldworker number for hemoglobin
+AB218C      -> Z_B218C      //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB218D      -> Z_B218D      //Fieldworker number for hemoglobin
+AB220A      -> QB222       //Read consent statement to parent/caretaker for HIV|Lire la déclaration de consentement au parent/adulte responsable (VIH)
+AB220B      -> QB223       //Fieldworker number for HIV
+AB221C      -> QB226       //Read consent statement to minor respondent for HIV|Lire la déclaration de consentement au répondant (VIH)
+AB221D      -> QB227       //Fieldworker number for HIV
+AB214       -> Z_B214       //Consent for first blood pressure reading
+AB215       -> Z_B215       //Fieldworker number for blood pressure
+AB217       -> Z_B217       //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB218       -> Z_B218       //Fieldworker number for hemoglobin
+AB220       -> QB214       //Lire la déclaration de consentement au répondant (VIH)
+AB221       -> QB215       //Fieldworker number for HIV
+// add consents for HIV Rapid and Other tests
+AB222       -> QB239       //Tests for which consent was granted !! update VS
+AB224A      -> Z_B224A      //Last 30 minutes have you: eaten anything
+AB224B      -> Z_B224B      //Last 30 minutes have you: had coffee, tea, cola other drinks with caffeine
+AB224C      -> Z_B224C      //Last 30 minutes have you: smoked any tobacco products
+AB224D      -> Z_B224D      //Last 30 minutes have you: exercised with intensity
+AB225       -> Z_B225       //Arm circumference in centimeters
+AB226       -> Z_B226       //Blood pressure monitor to be used
+AB227A      -> Z_B227A      //First blood pressure reading: Systolic
+AB227AW     -> Z_B227AW     //Re-enter first blood pressure reading: Systolic
+AB227B      -> Z_B227B      //First blood pressure reading: Diastolic
+AB227BW     -> Z_B227BW     //Re-enter first blood pressure reading: Diastolic
+AB228       -> Z_B228       //Start of interview/first blood pressure reading
 AB228H      -> QB228H      //Start of interview (hour)|Début de l'interview (heure)
 AB228M      -> QB228M      //Start of interview (minutes)|Début de l'interview (minutes)
-AB230       -> QB230       //Ever had blood pressure measured by a doctor/health worker
-AB231       -> QB231       //Ever been diagnosed by doctor/health worker with hypertension
-AB232       -> QB232       //Last 12 months have been diagnosed by doctor/health worker with hypertension
-AB233       -> QB233       //Has a doctor/health worker prescribed medication to control blood pressure
-AB234       -> QB234       //Is respondent taken medication to control blood pressure
-AB235       -> QB235       //Consent for second blood pressure reading
-AB236A      -> QB236A      //Second blood pressure reading: Systolic
-AB236AW     -> QB236AW     //Re-enter second blood pressure reading: Systolic
-AB236B      -> QB236B      //Second blood pressure reading: Diastolic
-AB236BW     -> QB236BW     //Re-enter second blood pressure reading: Diastolic
-AB237       -> QB237       //Second blood pressure reading
-AB237H      -> QB237H      //Second blood pressure reading (hour)|Début de l'interview (heure)
-AB237M      -> QB237M      //Second blood pressure reading (minutes)|Début de l'interview (minutes)
-AB238       -> QB238       //Consent for third blood pressure reading
-AB239A      -> QB239A      //Third blood pressure reading: Systolic
-AB239AW     -> QB239AW     //Re-enter third blood pressure reading: Systolic
-AB239B      -> QB239B      //Third blood pressure reading: Diastolic
-AB239BW     -> QB239BW     //Re-enter third blood pressure reading: Diastolic
-AB240       -> QB240       //Third blood pressure reading
-AB240H      -> QB240H      //Third blood pressure reading (hour)|Début de l'interview (heure)
-AB240M      -> QB240M      //Third blood pressure reading (minutes)|Début de l'interview (minutes)
-AB250A      -> QB250A      //Final blood pressure: Systolic
-AB250B      -> QB250B      //Final blood pressure: Diastolic
-AB252       -> QB252       //Blood pressure category
-AB253       -> QB253       //Respondent receive the blood pressure result form
-AB255       -> QB255       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
-AB255W      -> QB255W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
-AB256       -> QB256       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
-AB257       -> QB257       //Severe anemia referral provided
-AB259       -> QB259       //Result of test
-AB260       -> QB260       //Test referral provided
-ABWDBS      -> QBWDBS      //Blood sample ID number (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
+AB230       -> Z_B230       //Ever had blood pressure measured by a doctor/health worker
+AB231       -> Z_B231       //Ever been diagnosed by doctor/health worker with hypertension
+AB232       -> Z_B232       //Last 12 months have been diagnosed by doctor/health worker with hypertension
+AB233       -> Z_B233       //Has a doctor/health worker prescribed medication to control blood pressure
+AB234       -> Z_B234       //Is respondent taken medication to control blood pressure
+AB235       -> Z_B235       //Consent for second blood pressure reading
+AB236A      -> Z_B236A      //Second blood pressure reading: Systolic
+AB236AW     -> Z_B236AW     //Re-enter second blood pressure reading: Systolic
+AB236B      -> Z_B236B      //Second blood pressure reading: Diastolic
+AB236BW     -> Z_B236BW     //Re-enter second blood pressure reading: Diastolic
+AB237       -> Z_B237       //Second blood pressure reading
+AB237H      -> Z_B237H      //Second blood pressure reading (hour)|Début de l'interview (heure)
+AB237M      -> Z_B237M      //Second blood pressure reading (minutes)|Début de l'interview (minutes)
+AB238       -> Z_B238       //Consent for third blood pressure reading
+AB239A      -> Z_B239A      //Third blood pressure reading: Systolic
+AB239AW     -> Z_B239AW     //Re-enter third blood pressure reading: Systolic
+AB239B      -> Z_B239B      //Third blood pressure reading: Diastolic
+AB239BW     -> Z_B239BW     //Re-enter third blood pressure reading: Diastolic
+AB240       -> Z_B240       //Third blood pressure reading
+AB240H      -> Z_B240H      //Third blood pressure reading (hour)|Début de l'interview (heure)
+AB240M      -> Z_B240M      //Third blood pressure reading (minutes)|Début de l'interview (minutes)
+AB250A      -> Z_B250A      //Final blood pressure: Systolic
+AB250B      -> Z_B250B      //Final blood pressure: Diastolic
+AB252       -> Z_B252       //Blood pressure category
+AB253       -> Z_B253       //Respondent receive the blood pressure result form
+AB255       -> Z_B255       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
+AB255W      -> Z_B255W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
+AB256       -> Z_B256       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
+AB257       -> Z_B257       //Severe anemia referral provided
+AB259       -> Z_B259       //Result of test
+AB260       -> Z_B260       //Test referral provided
+ABWDBS      -> QB240       //Blood sample ID number (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
 AWCMC       -> QWCMC       //CMC of birth of woman
 AWFLG       -> QWFLG       //Date flag for woman's date of birth
 AWMBR       -> QWMBR       //Imputed month of birth
@@ -599,82 +600,83 @@ AB303       -> QB303       //Under age 18|Moins de 18 ans
 AB304       -> QB304       //Marital status|Etat matrimonial
 AB305       -> QB305       //Weight in kilograms|Poids en Kilogramme
 AB305W      -> QB305W      //Weight in kilograms - working field for re-entering|Poids en kilogrammes - variable de travail pour re-saisir
-AB306       -> QB306       //Was man wearing only lightweight clothing|L'homme portait-il uniquement des vêtements légers
+AB306       -> QB306       //Was woman wearing only lightweight clothing|La femme ne portait-elle que des vêtements légers
 AB307       -> QB307       //Height in centimeters|Taille en centimètres
 AB307W      -> QB307W      //Height in centimeters - working field for re-entering|Taille en centimètres - variable de travail pour re-saisir
-AB308       -> QB308       //Date of measurement
-AB308D      -> QB308D      //Day of measurement|Jour de la mesure
-AB308M      -> QB308M      //Month of measurement|Mois de la mesure
-AB308Y      -> QB308Y      //Year of measurement|Année de la mesure
-AB309       -> QB309       //Measurement interfered with braided or ornament|Mesure interférée par des cheveux tressés ou coiffés
-AB310       -> QB310       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
-AB311       -> QB311       //Fieldworker number for H/W
-AB312       -> QB312       //Fieldworker number for assistant to H/W
-AB312A      -> QB312A      //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
-AB314A      -> QB314A      //Read consent statement to parent/caretaker (Blood pressure)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
-AB314B      -> QB314B      //Fieldworker number for blood pressure
-AB315C      -> QB315C      //Read consent statement to respondent (Blood pressure)|Lire la déclaration de consentement au répondant (Anémie)
-AB315D      -> QB315D      //Fieldworker number for blood pressure
-AB317A      -> QB317A      //Read consent statement to adult/caretaker (Anemia)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
-AB317B      -> QB317B      //Fieldworker number for hemoglobin
-AB318C      -> QB318C      //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
-AB318D      -> QB318D      //Fieldworker number for hemoglobin
-AB320A      -> QB320A      //Read consent statement to adult/caretaker [Other test]|Lire la déclaration de consentement au parent/adulte responsable (VIH)
-AB320B      -> QB320B      //Fieldworker number for [Other test]
-AB321C      -> QB321C      //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
-AB321D      -> QB321D      //Fieldworker number for [Other test]
-AB314       -> QB314       //Consent for first blood pressure reading
-AB315       -> QB315       //Fieldworker number for blood pressure
-AB317       -> QB317       //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
-AB318       -> QB318       //Fieldworker number for hemoglobin
-AB320       -> QB320       //Read consent statement to respondent [Other test]|Lire la déclaration de consentement au répondant (VIH)
-AB321       -> QB321       //Fieldworker number for [Other test]
-AB322       -> QB322       //Tests for which consent was granted
-AB324A      -> QB324A      //Last 30 minutes have you: eaten anything
-AB324B      -> QB324B      //Last 30 minutes have you: had coffee, tea, cola other drinks with caffeine
-AB324C      -> QB324C      //Last 30 minutes have you: smoked any tobacco products
-AB324D      -> QB324D      //Last 30 minutes have you: exercised with intensity
-AB325       -> QB325       //Arm circumference in centimeters
-AB326       -> QB326       //Blood pressure monitor to be used
-AB327A      -> QB327A      //First blood pressure reading: Systolic
-AB327AW     -> QB327AW     //Re-enter first blood pressure reading: Systolic
-AB327B      -> QB327B      //First blood pressure reading: Diastolic
-AB327BW     -> QB327BW     //Re-enter first blood pressure reading: Diastolic
-AB328       -> QB328       //Start of interview
+AB308       -> QB311       //Date of measurement
+AB308D      -> QB311D      //Day of measurement|Jour de la mesure
+AB308M      -> QB311M      //Month of measurement|Mois de la mesure
+AB308Y      -> QB311Y      //Year of measurement|Année de la mesure
+AB309       -> QB308       //Measurement interfered with braided or ornament|Mesure interférée par des cheveux tressés ou coiffés
+AB310       ->Z_B310       //Height and weight recorded in anemia pamphlet|Enfant habillé légèrement
+AB311       -> QB309       //Fieldworker number for H/W
+AB312       -> QB310       //Fieldworker number for assistant to H/W
+AB312A      -> Z_B312A      //Line no. of parent/caretaker|Numéro de ligne parent/adulte responsable
+AB314A      -> Z_B314A      //Read consent statement to parent/caretaker (Blood pressure)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB314B      -> Z_B314B      //Fieldworker number for blood pressure
+AB315C      -> Z_B315C      //Read consent statement to respondent (Blood pressure)|Lire la déclaration de consentement au répondant (Anémie)
+AB315D      -> Z_B315D      //Fieldworker number for blood pressure
+AB317A      -> Z_B317A      //Read consent statement to parent/caretaker (Anemia)|Lire la déclaration de consentement au parent/adulte responsable (Anémie)
+AB317B      -> Z_B317B      //Fieldworker number for hemoglobin
+AB318C      -> Z_B318C      //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB318D      -> Z_B318D      //Fieldworker number for hemoglobin
+AB320A      -> QB322       //Read consent statement to parent/caretaker for HIV|Lire la déclaration de consentement au parent/adulte responsable (VIH)
+AB320B      -> QB323       //Fieldworker number for HIV
+AB321C      -> QB326       //Read consent statement to minor respondent for HIV|Lire la déclaration de consentement au répondant (VIH)
+AB321D      -> QB327       //Fieldworker number for HIV
+AB314       -> Z_B314       //Consent for first blood pressure reading
+AB315       -> Z_B315       //Fieldworker number for blood pressure
+AB317       -> Z_B317       //Read consent statement to respondent (Anemia)|Lire la déclaration de consentement au répondant (Anémie)
+AB318       -> Z_B318       //Fieldworker number for hemoglobin
+AB320       -> QB314       //Lire la déclaration de consentement au répondant (VIH)
+AB321       -> QB315       //Fieldworker number for HIV
+// add consents for HIV Rapid and Other tests
+AB322       -> QB339       //Tests for which consent was granted !! update VS
+AB324A      -> Z_B324A      //Last 30 minutes have you: eaten anything
+AB324B      -> Z_B324B      //Last 30 minutes have you: had coffee, tea, cola other drinks with caffeine
+AB324C      -> Z_B324C      //Last 30 minutes have you: smoked any tobacco products
+AB324D      -> Z_B324D      //Last 30 minutes have you: exercised with intensity
+AB325       -> Z_B325       //Arm circumference in centimeters
+AB326       -> Z_B326       //Blood pressure monitor to be used
+AB327A      -> Z_B327A      //First blood pressure reading: Systolic
+AB327AW     -> Z_B327AW     //Re-enter first blood pressure reading: Systolic
+AB327B      -> Z_B327B      //First blood pressure reading: Diastolic
+AB327BW     -> Z_B327BW     //Re-enter first blood pressure reading: Diastolic
+AB328       -> Z_B328       //Start of interview/first blood pressure reading
 AB328H      -> QB328H      //Start of interview (hour)|Début de l'interview (heure)
 AB328M      -> QB328M      //Start of interview (minutes)|Début de l'interview (minutes)
-AB330       -> QB330       //Ever had blood pressure measured by a doctor/health worker
-AB331       -> QB331       //Ever been diagnosed by doctor/health worker with hypertension
-AB332       -> QB332       //Last 12 months have been diagnosed by doctor/health worker with hypertension
-AB333       -> QB333       //Has a doctor/health worker prescribed medication to control blood pressure
-AB334       -> QB334       //Is respondent taken medication to control blood pressure
-AB335       -> QB335       //Consent for second blood pressure reading
-AB336A      -> QB336A      //Second blood pressure reading: Systolic
-AB336AW     -> QB336AW     //Re-enter second blood pressure reading: Systolic
-AB336B      -> QB336B      //Second blood pressure reading: Diastolic
-AB336BW     -> QB336BW     //Re-enter second blood pressure reading: Diastolic
-AB337       -> QB337       //Second blood pressure reading
-AB337H      -> QB337H      //Second blood pressure reading (hour)|Début de l'interview (heure)
-AB337M      -> QB337M      //Second blood pressure reading (minutes)|Début de l'interview (minutes)
-AB338       -> QB338       //Consent for third blood pressure reading
-AB339A      -> QB339A      //Third blood pressure reading: Systolic
-AB339AW     -> QB339AW     //Re-enter third blood pressure reading: Systolic
-AB339B      -> QB339B      //Third blood pressure reading: Diastolic
-AB339BW     -> QB339BW     //Re-enter third blood pressure reading: Diastolic
-AB340       -> QB340       //Third blood pressure reading
-AB340H      -> QB340H      //Third blood pressure reading (hour)|Début de l'interview (heure)
-AB340M      -> QB340M      //Third blood pressure reading (minutes)|Début de l'interview (minutes)
-AB350A      -> QB350A      //Final blood pressure: Systolic
-AB350B      -> QB350B      //Final blood pressure: Diastolic
-AB352       -> QB352       //Blood pressure category
-AB353       -> QB353       //Did respondent receive the blood pressure result form
-AB355       -> QB355       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
-AB355W      -> QB355W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
-AB356       -> QB356       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
-AB357       -> QB357       //Severe anemia referral provided
-AB359       -> QB359       //Result of test
-AB360       -> QB360       //Test referral provided
-ABMDBS      -> QBMDBS      //Blood sample ID number (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
+AB330       -> Z_B330       //Ever had blood pressure measured by a doctor/health worker
+AB331       -> Z_B331       //Ever been diagnosed by doctor/health worker with hypertension
+AB332       -> Z_B332       //Last 12 months have been diagnosed by doctor/health worker with hypertension
+AB333       -> Z_B333       //Has a doctor/health worker prescribed medication to control blood pressure
+AB334       -> Z_B334       //Is respondent taken medication to control blood pressure
+AB335       -> Z_B335       //Consent for second blood pressure reading
+AB336A      -> Z_B336A      //Second blood pressure reading: Systolic
+AB336AW     -> Z_B336AW     //Re-enter second blood pressure reading: Systolic
+AB336B      -> Z_B336B      //Second blood pressure reading: Diastolic
+AB336BW     -> Z_B336BW     //Re-enter second blood pressure reading: Diastolic
+AB337       -> Z_B337       //Second blood pressure reading
+AB337H      -> Z_B337H      //Second blood pressure reading (hour)|Début de l'interview (heure)
+AB337M      -> Z_B337M      //Second blood pressure reading (minutes)|Début de l'interview (minutes)
+AB338       -> Z_B338       //Consent for third blood pressure reading
+AB339A      -> Z_B339A      //Third blood pressure reading: Systolic
+AB339AW     -> Z_B339AW     //Re-enter third blood pressure reading: Systolic
+AB339B      -> Z_B339B      //Third blood pressure reading: Diastolic
+AB339BW     -> Z_B339BW     //Re-enter third blood pressure reading: Diastolic
+AB340       -> Z_B340       //Third blood pressure reading
+AB340H      -> Z_B340H      //Third blood pressure reading (hour)|Début de l'interview (heure)
+AB340M      -> Z_B340M      //Third blood pressure reading (minutes)|Début de l'interview (minutes)
+AB350A      -> Z_B350A      //Final blood pressure: Systolic
+AB350B      -> Z_B350B      //Final blood pressure: Diastolic
+AB352       -> Z_B352       //Blood pressure category
+AB353       -> Z_B353       //Did respondent receive the blood pressure result form
+AB355       -> Z_B355       //Hemoglobin level (g/dl)|Niveau d'hémoglobine (g/dl)
+AB355W      -> Z_B355W      //Hemoglobin level (g/dl) - working field for re-entering|Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
+AB356       -> Z_B356       //Hemoglobin result for referral|Résultat d'hémoglobine pour la référence
+AB357       -> Z_B357       //Severe anemia referral provided
+AB359       -> Z_B359       //Result of test
+AB360       -> Z_B360       //Test referral provided
+ABMDBS      -> QB340      //Blood sample ID number (Barcode)|Numéro d'identification de l'échantillon de sang (Code-barres)
 AMCMC       -> QMCMC       //CMC of birth of man
 AMFLG       -> QMFLG       //Date flag for man's date of birth
 AMMBR       -> QMMBR       //Imputed month of birth

@@ -1,5 +1,5 @@
 ﻿[Dictionary]
-Version=CSPro 7.4
+Version=CSPro 7.7
 Label=Supervisor Control File
 Name=CONTSUP
 RecordTypeStart=0
@@ -8,6 +8,10 @@ Positions=Relative
 ZeroFill=No
 DecimalChar=No
 SecurityOptions=67D02C2631ECCB057BF095B9969069DB6490B5551E1DF3F10D1F0D9F9FD73A57
+
+[Languages]
+EN=English
+RU=Russian
 
 [Level]
 Label=LEVEL1
@@ -20,126 +24,134 @@ Label=Cluster number
 Name=SSAMPLE
 Start=1
 Len=4
+DataType=Numeric
 ZeroFill=Yes
 
 [Record]
 Label=Control sheet
 Name=SUPDATA
 RecordTypeValue=''
-RecordLen=834
+RecordLen=1158
 
 [Item]
 Label=Change identification
 Name=SCHANGE
 Start=5
 Len=1
+DataType=Numeric
 
 [ValueSet]
 Label=Change identification
 Name=SCHANGE_EN
-Value=1;Modify total number of households
-Value=2;Delete household
-Value=3;View households received
-Value=4;Return to main menu
+Value=1;Remove household from supervisor control file|Удалить домохозяйство из файла контроля супервайзера
+Value=2;View households in supervisor control file   |Просмотр домохозяйств в файле контроля супервайзера
+Value=3;Return to main menu                          |Вернуться в главное меню
 
-[ValueSet]
-Label=Cambiar indentificacion
-Name=SCHANGE_ES
-Value=1;Modificar numero de hogares total
-Value=2;Borrar un hogar
-Value=3;Ver hogares recibidos
-Value=4;Regresar al menu principal
+
+
 
 [Item]
 Label=Total households
 Name=SHTOTAL
 Start=6
 Len=2
+DataType=Numeric
 
 [Item]
 Label=Households complete
 Name=SHCOMP
 Start=8
 Len=2
+DataType=Numeric
 
 [Item]
 Label=households incomplete
 Name=SHINCOMP
 Start=10
 Len=2
+DataType=Numeric
 
 [Item]
 Label=Total individuals
 Name=SITOTAL
 Start=12
 Len=3
+DataType=Numeric
 
 [Item]
 Label=Individuals complete
 Name=SICOMP
 Start=15
 Len=3
+DataType=Numeric
 
 [Item]
 Label=Individuals incomplete
 Name=SIINCOMP
 Start=18
 Len=3
+DataType=Numeric
 
 [Item]
 Label=Date cluster was created
 Name=SCRDATE
 Start=21
-Len=6
+Len=8
+DataType=Numeric
 
 [Item]
 Label=Date cluster was completed
 Name=SFINDATE
-Start=27
-Len=6
+Start=29
+Len=8
+DataType=Numeric
 
 [Item]
 Label=Auxiliary to exit
 Name=SEND
-Start=33
+Start=37
 Len=1
 DataType=Alpha
 
 [Item]
 Label=Array to follow-up each household
 Name=SALLHH
-Start=34
-Len=17
+Start=38
+Len=20
 DataType=Alpha
-Occurrences=40
+Occurrences=50
 
 [Item]
 Label=Household number
 Name=SNUMBER
-Start=34
+Start=38
 Len=4
 ItemType=SubItem
+DataType=Numeric
 
 [Item]
 Label=Interviewer number
 Name=SINTNUM
-Start=38
+Start=42
 Len=4
 ItemType=SubItem
+DataType=Numeric
 
 [Item]
 Label=Household accepted
 Name=SACCEPTH
-Start=42
+Start=46
 Len=1
 ItemType=SubItem
+DataType=Numeric
 
 [Item]
 Label=Number of individuals accepted in hh
 Name=SACCEPTI
-Start=43
+Start=47
 Len=1
 ItemType=SubItem
+DataType=Numeric
 
 [ValueSet]
 Label=Number of individuals accepted in hh
@@ -156,9 +168,10 @@ Value=1;Se accepto
 [Item]
 Label=Height and weight accepted
 Name=SACCEPTHW
-Start=44
+Start=48
 Len=1
 ItemType=SubItem
+DataType=Numeric
 
 [ValueSet]
 Label=Height and weight accepted
@@ -175,15 +188,25 @@ Value=1;Se hizo edicion secundaria
 [Item]
 Label=Date full case accepted
 Name=SACCEPTF
-Start=45
-Len=6
+Start=49
+Len=8
 ItemType=SubItem
+DataType=Numeric
+
+[Item]
+Label=Household selected for re-interview
+Name=SREINTERV
+Start=57
+Len=1
+ItemType=SubItem
+DataType=Numeric
 
 [Item]
 Label=Mark if cluster already selected for remeasurement
 Name=SFLGMEAS
-Start=714
+Start=1038
 Len=1
+DataType=Numeric
 
 [ValueSet]
 Label=Mark if cluster already selected for remeasurement
@@ -200,7 +223,7 @@ Value=1;Ya se selecciono
 [Item]
 Label=Array to store children selected for remeasurement
 Name=SREMEAS
-Start=715
+Start=1039
 Len=6
 DataType=Alpha
 Occurrences=20
@@ -208,13 +231,15 @@ Occurrences=20
 [Item]
 Label=Household for child selected
 Name=SREMHH
-Start=715
+Start=1039
 Len=4
 ItemType=SubItem
+DataType=Numeric
 
 [Item]
 Label=Line number of child to be remeasured
 Name=SREMLINE
-Start=719
+Start=1043
 Len=2
 ItemType=SubItem
+DataType=Numeric

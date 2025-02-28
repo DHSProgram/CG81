@@ -6,14 +6,21 @@ AppType=DataEntry
 OperatorID=No
 ShowEndCaseDialog=No
 CAPI=Yes
+CenterForms=Yes
+DisplayCodesAlongsideLabels=Yes
 [External Dictionaries]
 File=..\Dicts\Clusters.dcf
 File=..\Dicts\Interv.dcf
 File=..\Dicts\HHForInt.dcf
 File=..\Dicts\EligIndv.dcf
+File=..\Dicts\md5.dcf
+File=..\Dicts\CGHH80.dcf
+File=..\Dicts\CGIN80.dcf
 [AppCode]
 File=.\DCMenu.apc
+Include=..\Library\HTMLFunctions.apc
 Include=..\Library\DPCollect.apc
+Include=..\Library\MenuFunctions.apc
 [Message]
 File=.\DCMenu.mgf
 [Help]
@@ -26,3 +33,6 @@ Dict-Type=..\Dicts\Clusters.dcf,External
 Dict-Type=..\Dicts\Interv.dcf,External
 Dict-Type=..\Dicts\HHForInt.dcf,External
 Dict-Type=..\Dicts\EligIndv.dcf,External
+Dict-Type=..\Dicts\md5.dcf,External
+Dict-Type=..\Dicts\CGHH80.dcf,External
+Dict-Type=..\Dicts\CGIN80.dcf,External

@@ -1,6 +1,6 @@
 ﻿[FormFile]
-Version=CSPro 7.5
-Name=FL_ccHH80
+Version=CSPro 7.7
+Name=FL_CGHH80
 Label=Household CAPI
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
@@ -8,40 +8,40 @@ FieldColor=Current,65535
 Type=SystemControlled
   
 [Dictionaries]
-File=..\Dicts\ccHH80.dcf
+File=..\Dicts\CGHH80.dcf
   
 [Form]
 Name=AHFORM00
-Label=Household identification
+Label=Visites
 QuestionTextHeight=178
 Level=1
 Size=1179,877
   
-Item=AHCLUST
-Item=AHNUMBER
-Item=AHREGION
-Item=AHADDRESS
-Item=AHINTD
-Item=AHINTM
-Item=AHINTY
-Item=AHINTNUM
-Item=AHRESULT
-Item=AHVISITS
-Item=AHSUPERV
-Item=AH100H
-Item=AH100M
-Item=AHELIGM
-Item=AHVISITS_ROSTER
-Item=AHTYPE
-Item=AHTEAM
+Item=QHCLUST
+Item=QHNUMBER
+Item=QHREGION
+Item=QHADDRESS
+Item=QHINTD
+Item=QHINTM
+Item=QHINTY
+Item=QHINTNUM
+Item=QHRESULT
+Item=QHVISITS
+Item=QHSUPERV
+Item=QH100H
+Item=QH100M
+Item=QHELIGM
+Item=QHVISITS_ROSTER
+Item=QHTYPE
+Item=QHTEAM
   
-Box=26,160,683,205,Raised
+Box=30,161,816,206,Raised
 Box=441,248,685,448,Raised
   
 [Text]
 Name=FT000000
-Position=167,35,504,59
-Text=Demographic and Health Surveys
+Position=167,35,838,59
+Text=TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO
 Form=1
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
 Color=16711935
@@ -49,16 +49,16 @@ Color=16711935
   
 [Text]
 Name=FT000002
-Position=490,116,534,132
-Text=Cluster
+Position=413,112,548,128
+Text=NUMÉRO DE GRAPPE
 Form=1
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
   
 [Text]
 Name=FT000003
-Position=558,116,678,132
-Text=Household number
+Position=570,114,707,130
+Text=NUMÉRO DU MÉNAGE
 Form=1
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
@@ -73,8 +73,8 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
   
 [Text]
 Name=TEXT001
-Position=219,64,474,88
-Text=Household Questionnaire
+Position=219,64,484,88
+Text=QUESTIONNAIRE MÉNAGE
 Form=1
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
 Color=16711808
@@ -86,9 +86,9 @@ Name=FORM001
 Label=Consent form
 QuestionTextHeight=380
 Level=1
-Size=256,64
+Size=404,65
   
-Item=AHCONSENT
+Item=QHCONSENT
   
 [EndForm]
   
@@ -97,20 +97,20 @@ Name=AHFORM01X
 Label=Names of household members
 QuestionTextHeight=139
 Level=1
-Size=714,747
+Size=974,747
   
-Item=AHSEC1X_ROSTER
-Item=AHMEMBER
-Item=AHRESP
-Item=AH07A
-Item=AH07B
-Item=AH07C
+Item=QHSEC1X_ROSTER
+Item=QHMEMBER
+Item=QHRESP
+Item=QH07A
+Item=QH07B
+Item=QH07C
   
   
 [Text]
 Name=TEXT10
-Position=205,8,480,32
-Text=Household members listing
+Position=205,8,400,32
+Text=TABLEAU MÉNAGE
 Form=3
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
@@ -121,106 +121,19 @@ Name=AHFORM01
 Label=Household schedule
 QuestionTextHeight=135
 Level=1
-Size=1238,713
+Size=1569,703
   
-Item=AHSEC01_ROSTER
-Item=AHWOMEN
-Item=AHMEN
+Item=QHSEC01_ROSTER
+Item=QHWOMEN
+Item=QHMEN
   
   
 [Text]
 Name=TEXT11
-Position=310,15,518,39
-Text=Household Schedule
+Position=310,15,505,39
+Text=TABLEAU MÉNAGE
 Form=4
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
- 
-[EndForm]
-  
-[Form]
-Name=FORM000
-Label=Accidents and injuries - traffic accidents
-QuestionTextHeight=174
-Level=1
-Size=3003,615
-  
-Item=AHSECA1_ROSTER
-Item=AHAI1
-  
-  
-[Text]
-Name=TEXT1
-Position=602,36,1019,62
-Text=Accidents and Injuries - Traffic Accidents
-Form=5
-Font=-022 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
- 
-[EndForm]
-  
-[Form]
-Name=FORM002
-Label=Accidents and Injuries - Other Accidents
-QuestionTextHeight=178
-Level=1
-Size=3004,640
-  
-Item=AHSECA2_ROSTER
-Item=AHAI17
-  
-  
-[Text]
-Name=TEXT2
-Position=462,7,870,33
-Text=Accidents and Injuries - Other Accidents
-Form=6
-Font=-022 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
- 
-[EndForm]
-  
-[Form]
-Name=AHFORMCL
-Label=Child labor
-QuestionTextHeight=171
-Level=1
-Size=442,539
-  
-Item=ACHLINE
-Item=ACHL2A
-Item=ACHL2B
-Item=ACHL2C
-Item=ACHL2D
-Item=ACHL4
-Item=ACHL5
-Item=ACHL6
-Item=ACHL7A
-Item=ACHL7B
-Item=ACHL7C
-Item=ACHL7D
-Item=ACHL7E
-Item=ACHL7F
-Item=ACHL8
-Item=ACHL9
-Item=ACHL10
-Item=ACHL11
-Item=ACHL12A
-Item=ACHL12B
-Item=ACHL12C
-Item=ACHL12D
-Item=ACHL12E
-Item=ACHL12F
-Item=ACHL12G
-Item=ACHL14
-Item=ACHLNAME
-  
-Box=34,99,204,514,Etched
-Box=232,100,417,509,Etched
-  
-[Text]
-Name=TEXT3
-Position=169,24,285,48
-Text=Child Labor
-Form=7
-Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
 [EndForm]
   
@@ -231,28 +144,29 @@ QuestionTextHeight=172
 Level=1
 Size=407,487
   
-Item=ACDI2
-Item=ACDI3A
-Item=ACDI3B
-Item=ACDI3C
-Item=ACDI3D
-Item=ACDI3E
-Item=ACDI3F
-Item=ACDI3G
-Item=ACDI3H
-Item=ACDI3I
-Item=ACDI3J
-Item=ACDI3K
-Item=ACDI4
-Item=ACDINAME
+Item=QCDI2
+Item=QCDI3A
+Item=QCDI3B
+Item=QCDI3C
+Item=QCDI3D
+Item=QCDI3E
+Item=QCDI3F
+Item=QCDI3G
+Item=QCDI3H
+Item=QCDI3I
+Item=QCDI3J
+Item=QCDI3K
+Item=QCDI4
+Item=QCDINAME
+Item=QCDI3
   
 Box=34,91,380,462,Etched
   
 [Text]
 Name=TEXT7
-Position=138,14,292,38
-Text=Child Discipline
-Form=8
+Position=138,14,404,38
+Text=DISCIPLINE DES ENFANTS
+Form=5
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -262,72 +176,88 @@ Name=AHFORM02
 Label=Household characteristics
 QuestionTextHeight=141
 Level=1
-Size=939,579
+Size=1041,588
   
-Item=AH101
-Item=AH103
-Item=AH104
-Item=AH107
-Item=AH108
-Item=AH109
-Item=AH110
-Item=AH111
-Item=AH132B
-Item=AH132C
-Item=AH133B
-Item=AH132D
-Item=AH132F
-Item=AH120
-Item=AH121
-Item=AH122
-Item=AH127
-Item=AH133A
-Item=AH133C
-Item=AH133D
-Item=AH133E
-Item=AH133F
-Item=AH133G
-Item=AH130
-Item=AH131
-Item=AH128
-Item=AH129B
-Item=AH129A
-Item=AH129C
-Item=AH129D
-Item=AH129E
-Item=AH129F
-Item=AH134
-Item=AH136
-Item=AH137
-Item=AH138
-Item=AH102
-Item=AH112
-Item=AH132A
-Item=AH132E
-Item=AH105
-Item=AH106
-Item=AH114
-Item=AH115
-Item=AH116
-Item=AH117
-Item=AH118
-Item=AH123
-Item=AH124
-Item=AH125
-Item=AH126
-Item=AH135
+Item=QH101
+Item=QH103
+Item=QH104
+Item=QH107
+Item=QH108
+Item=QH109
+Item=QH110
+Item=QH111
+Item=QH120
+Item=QH121
+Item=QH122
+Item=QH127
+Item=QH130
+Item=QH131
+Item=QH128
+Item=QH129B
+Item=QH129A
+Item=QH129C
+Item=QH129D
+Item=QH129E
+Item=QH129F
+Item=QH102
+Item=QH112
+Item=QH105
+Item=QH106
+Item=QH114
+Item=QH115
+Item=QH116
+Item=QH117
+Item=QH118
+Item=QH123
+Item=QH124
+Item=QH125
+Item=QH126
+Item=QH129G
+Item=QH129H
+Item=QH132A
+Item=QH132B
+Item=QH132C
+Item=QH132D
+Item=QH132E
+Item=QH132F
+Item=QH132G
+Item=QH132H
+Item=QH132I
+Item=QH132J
+Item=QH132K
+Item=QH132L
+Item=QH132M
+Item=QH132N
+Item=QH132O
+Item=QH132P
+Item=QH132Q
+Item=QH133A
+Item=QH133B
+Item=QH133C
+Item=QH133D
+Item=QH133E
+Item=QH133F
+Item=QH133G
+Item=QH133H
+Item=QH133I
+Item=QH134
+Item=QH135
+Item=QH136
+Item=QH137
+Item=QH138
   
 Box=29,59,145,547,Etched
 Box=159,60,351,552,Etched
 Box=365,59,526,554,Etched
-Box=746,62,914,547,Etched
-Box=543,59,728,550,Etched
+Box=543,59,728,557,Etched
+Box=736,52,903,579,Etched
+Box=912,48,1075,579,Etched
   
 [Text]
 Name=FT000025
-Position=293,11,559,35
-Text=Household Characteristics
-Form=9
+Position=293,11,636,35
+Text=CARACTÉRISTIQUES DU MÉNAGE
+Form=6
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -339,15 +269,40 @@ QuestionTextHeight=127
 Level=1
 Size=444,455
   
-Item=AHSEC03_ROSTER
+Item=QHSEC03_ROSTER
   
   
 [Text]
 Name=TEXT027
-Position=119,27,475,51
-Text=Malaria in Household Questionnaire
-Form=10
+Position=119,27,291,51
+Text=MOUSTIQUAIRES
+Form=7
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
+ 
+[EndForm]
+  
+[Form]
+Name=FORM000
+Label=Social Transfers
+QuestionTextHeight=105
+Level=1
+Size=521,339
+  
+Item=QH148B
+Item=QH148C
+Item=QH148DM
+Item=QH148DY
+Item=QH148E
+Item=QH148FM
+Item=QH148FY
+  
+  
+[Text]
+Name=TEXT1
+Position=276,15,496,37
+Text=TRANSFERTS SOCIAUX
+Form=8
+Font=-019 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
 [EndForm]
   
@@ -356,85 +311,100 @@ Name=AHFORM04
 Label=Additional household characteristics
 QuestionTextHeight=122
 Level=1
-Size=883,461
+Size=409,471
   
-Item=AH149
-Item=AH150
-Item=AH151
-Item=AH152
-Item=AH153
-Item=AH154
-Item=AH155
-Item=AH156H
-Item=AH156M
-Item=AHNUMDV
-Item=AHFINISH
+Item=QH149
+Item=QH150
+Item=QH151
+Item=QH152
+Item=QH153
+Item=QH154
+Item=QH155
+Item=QH156H
+Item=QH156M
+  
+Box=88,74,296,269,Etched
+Box=88,279,298,446,Etched
+  
+[Text]
+Name=TEXT13
+Position=11,24,472,48
+Text=AUTRES CARACTÉRISTIQUES DU LOGEMENT
+Form=9
+Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
+ 
+[EndForm]
+  
+[Form]
+Name=FORM005
+Label=End of household questionnaire
+QuestionTextHeight=105
+Level=1
+Size=581,381
+  
+Item=QHLANGQ
+Item=QHLANGI
+Item=QHLANGR
+Item=QHTRANS
 Item=GHAUX
 Item=GHINTRO
 Item=GHLATITUDE
 Item=GHLONGITUDE
 Item=GHALTITUDE
 Item=GHACCURACY
-Item=AHLANGQ
-Item=AHLANGR
-Item=AHLANGI
-Item=AHTRANS
-Item=AHFS1
-Item=AHFS2
-Item=AHFS3
-Item=AHFS4
-Item=AHFS5
-Item=AHFS6
-Item=AHFS7
-Item=AHFS8
+Item=QHFINISH
   
-Box=22,83,230,278,Etched
-Box=22,288,227,435,Etched
-Box=456,179,858,373,Etched
-Box=458,85,858,166,Etched
-Box=248,83,440,436,Etched
+Box=138,50,555,140,Etched
+Box=139,149,554,320,Etched
   
 [Text]
-Name=TEXT13
-Position=11,24,748,48
-Text=Additional Household Characteristics - Food Insecurity - End HH Interview
-Form=11
-Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
+Name=TEXT6
+Position=243,11,556,33
+Text=FIN DE QUESTIONNAIRE MENAGE
+Form=10
+Font=-019 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
   
 [Text]
-Name=TEXT12
-Position=585,191,717,210
+Name=TEXT8
+Position=239,55,349,71
+Text=Langues utilisées
+Form=10
+ 
+  
+[Text]
+Name=TEXT9
+Position=276,160,408,179
 Text=GPS Coordinates
-Form=11
+Form=10
 Font=-016 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
-Color=8388863
+Color=16711935
  
 [EndForm]
   
 [Form]
-Name=ABFORM00
+Name=ABSEC00_FORM
 Label=Biomarker questionnaire cover page
 Level=1
 Size=537,527
   
-Item=AHCLUST000
-Item=AHNUMBER000
-Item=AHELIGM000
-Item=ABINTD
-Item=ABINTM
-Item=ABINTY
-Item=ABVISITS
-Item=AHWOMEN000
-Item=AHMEN000
-Item=ABCHILD
-Item=AHLANGQ000
-Item=AHLANGI000
-Item=AHLANGR000
-Item=AHTRANS000
-Item=AHSUPERV000
-Item=AHINTNUM000
-Item=AHTEAM000
+Item=QHCLUST000
+Item=QHNUMBER000
+Item=QHELIGM000
+Item=QBINTD
+Item=QBINTM
+Item=QBINTY
+Item=QBVISITS
+Item=QHWOMEN000
+Item=QHMEN000
+Item=QBCHILD
+Item=QHLANGQ000
+Item=QHLANGI000
+Item=QHLANGR000
+Item=QHTRANS000
+Item=QHSUPERV000
+Item=QHINTNUM000
+Item=QHTEAM000
   
 Box=72,377,512,468,Etched
   
@@ -442,7 +412,7 @@ Box=72,377,512,468,Etched
 Name=TEXT15
 Position=133,20,470,44
 Text=Demographic and Health Surveys
-Form=12
+Form=11
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 Color=16711935
  
@@ -451,7 +421,7 @@ Color=16711935
 Name=TEXT17
 Position=175,48,426,72
 Text=Biomarker Questionnaire
-Form=12
+Form=11
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 Color=16711808
  
@@ -460,64 +430,64 @@ Color=16711808
 Name=TEXT18
 Position=73,182,147,198
 Text=Date of visit
-Form=12
+Form=11
  
 [EndForm]
   
 [Form]
-Name=ABFORM01
+Name=FORM007
 Label=Weight, Height and Hemoglobin Measurement for Children age 0-5
 QuestionTextHeight=158
 Level=1
-Size=893,1314
+Size=894,1357
   
-Item=ABSEC01_ROSTER
+Item=QBSEC01_ROSTER
   
   
 [Text]
 Name=TEXT059
 Position=143,7,810,31
 Text=Weight, Height and Hemoglobin Measurement for Children Age 0-4
-Form=13
+Form=12
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
   
 [Form]
-Name=ABFORM02
+Name=FORM008
 Label=Weight, Height and Hemoglobin Measurement for Women
 QuestionTextHeight=118
 Level=1
-Size=1041,1075
+Size=1047,1126
   
-Item=ABSEC02_ROSTER
+Item=QBSEC02_ROSTER
   
   
 [Text]
 Name=TEXT060
 Position=274,7,913,31
 Text=Weight, Height and Hemoglobin Measurement for Women 15-49
-Form=14
+Form=13
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
   
 [Form]
-Name=ABFORM03
+Name=FORM009
 Label=Weight, Height and Hemoglobin Measurement for Men 15-49
 QuestionTextHeight=105
 Level=1
-Size=1253,1099
+Size=1253,2165
   
-Item=ABSEC03_ROSTER
-Item=ABFINISH
+Item=QBSEC03_ROSTER
+Item=QBFINISH
   
   
 [Text]
 Name=TEXT000
 Position=301,10,904,34
 Text=Weight, Height and Hemoglobin Measurement for Men 15-49
-Form=15
+Form=14
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -528,38 +498,39 @@ Label=HOUSEHOLD
   
 [Group]
 Required=Yes
-Name=AHSECOVER_FORM
-Label=Household identification
+Name=QHSECOVER_FORM
+Label=Visites
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
-Name=AHCLUST
-Position=484,135,541,155
-Item=AHCLUST,CCHH80
+Name=QHCLUST
+Position=453,133,510,153
+Item=QHCLUST,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
 [Field]
-Name=AHNUMBER
+Name=QHNUMBER
 Position=602,138,659,158
-Item=AHNUMBER,CCHH80
+Item=QHNUMBER,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
 [Field]
-Name=AHREGION
+Name=QHREGION
 Position=103,172,118,192
-Item=AHREGION,CCHH80
+Item=QHREGION,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -573,23 +544,23 @@ Text=Region
  
   
 [Field]
-Name=AHTYPE
+Name=QHTYPE
 Position=276,173,291,193
-Item=AHTYPE,CCHH80
+Item=QHTYPE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=169,176,245,192
-Text=Urban/Rural
+Position=169,176,235,192
+Text=Résidence
  
   
 [Field]
-Name=AHELIGM
-Position=644,173,659,193
-Item=AHELIGM,CCHH80
+Name=QHELIGM
+Position=793,177,808,197
+Item=QHELIGM,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -598,76 +569,80 @@ DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=518,178,617,194
-Text=Men's interview
+Position=300,177,731,193
+Text=MÉNAGE SÉLECTIONNÉ POUR L'ENQUÊTE HOMME ? (1=OUI, 2=NON)
  
   
 [Field]
-Name=AHADDRESS
+Name=QHADDRESS
 Position=27,216,588,236
-Item=AHADDRESS,CCHH80
+Item=QHADDRESS,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
 [Field]
-Name=AHINTNUM
+Name=QHINTNUM
 Position=602,300,659,320
-Item=AHINTNUM,CCHH80
+Item=QHINTNUM,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=452,302,577,318
-Text=Interviewer number
+Position=452,302,480,318
+Text=Enq.
  
   
 [Field]
-Name=AHTEAM
+Name=QHTEAM
 Position=630,373,659,393
-Item=AHTEAM,CCHH80
+Item=QHTEAM,CGHH80
 UseEnterKey=Yes
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=452,375,488,391
-Text=Team
+Position=452,375,496,391
+Text=Equipe
  
   
 [Field]
-Name=AHSUPERV
+Name=QHSUPERV
 Position=602,397,659,417
-Item=AHSUPERV,CCHH80
+Item=QHSUPERV,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=452,399,520,415
-Text=Supervisor
+Position=452,399,528,415
+Text=Superviseur
  
   
 [Grid]
-Name=AHVISITS_ROSTER
+Name=QHVISITS_ROSTER
 Label=Group to control visits
 Form=1
 Required=Yes
 Type=SubItem
-TypeName=AHCONTVISIT
+TypeName=QHCONTVISIT
 Max=5
 DisplaySize=27,255,434,425
 Orientation=Vertical
 ColumnWidth=71
-StubColumnWidth=40
+StubColumnWidth=46
 HeadingRowHeight=6
 FreeMovement=Yes
 DefaultMovement=Horizontal
@@ -709,18 +684,19 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=4,0,40,28
+Position=10,0,46,28
 Text=Col.
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHVLINE
+Name=QHVLINE
 Position=0,0,15,20
-Item=AHVLINE,CCHH80
+Item=QHVLINE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,57,16
@@ -733,51 +709,54 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=54
   
 [HeaderText]
-Position=1,0,38,54
+Position=4,0,41,54
 Text=Date
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AHVDAY
+Name=QHVDAY
 Position=2,0,31,20
-Item=AHVDAY,CCHH80
+Item=QHVDAY,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,54,16
-Text=AHVDAY
+Text=QHVDAY
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHVMONTH
+Name=QHVMONTH
 Position=34,0,63,20
-Item=AHVMONTH,CCHH80
+Item=QHVMONTH,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,76,16
-Text=AHVMONTH
+Text=QHVMONTH
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHVYEAR
+Name=QHVYEAR
 Position=3,26,60,46
-Item=AHVYEAR,CCHH80
+Item=QHVYEAR,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,63,16
-Text=AHVYEAR
+Text=QHVYEAR
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -786,37 +765,39 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=0,0,40,28
-Text=Time
+Position=0,4,46,28
+Text=Heure
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AHVHOUR
+Name=QHVHOUR
 Position=0,0,29,20
-Item=AHVHOUR,CCHH80
+Item=QHVHOUR,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,66,16
-Text=AHVHOUR
+Text=QHVHOUR
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHVMINUTE
+Name=QHVMINUTE
 Position=33,0,62,20
-Item=AHVMINUTE,CCHH80
+Item=QHVMINUTE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,79,16
-Text=AHVMINUTE
+Text=QHVMINUTE
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -825,14 +806,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=32
   
 [HeaderText]
-Position=5,0,40,32
+Position=11,0,46,32
 Text=Res.
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHVRESULT
+Name=QHVRESULT
 Position=0,0,15,20
-Item=AHVRESULT,CCHH80
+Item=QHVRESULT,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -849,54 +830,57 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AHINTD
+Name=QHINTD
 Position=528,274,557,294
-Item=AHINTD,CCHH80
+Item=QHINTD,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=530,255,554,271
-Text=Day
+Position=530,255,558,271
+Text=Jour
  
   
 [Field]
-Name=AHINTM
+Name=QHINTM
 Position=564,274,593,294
-Item=AHINTM,CCHH80
+Item=QHINTM,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=562,255,601,271
-Text=Month
+Position=562,255,591,271
+Text=Mois
  
   
 [Field]
-Name=AHINTY
+Name=QHINTY
 Position=602,275,659,295
-Item=AHINTY,CCHH80
+Item=QHINTY,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=614,255,643,271
-Text=Year
+Position=614,255,655,271
+Text=Année
  
   
 [Field]
-Name=AHRESULT
+Name=QHRESULT
 Position=644,323,659,343
-Item=AHRESULT,CCHH80
+Item=QHRESULT,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -910,59 +894,61 @@ Text=Result
  
   
 [Field]
-Name=AHVISITS
+Name=QHVISITS
 Position=644,347,659,367
-Item=AHVISITS,CCHH80
+Item=QHVISITS,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=452,347,588,363
-Text=Total number of visits
+Position=452,347,493,363
+Text=Visites
  
   
 [Field]
-Name=AH100H
+Name=QH100H
 Position=595,420,624,440
-Item=AH100H,CCHH80
+Item=QH100H,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
-Position=452,423,484,439
-Text=Time
+Position=452,423,490,439
+Text=Heure
  
   
 [Field]
-Name=AH100M
+Name=QH100M
 Position=630,420,659,440
-Item=AH100M,CCHH80
+Item=QH100M,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [EndGroup]
   
 [Group]
 Required=Yes
-Name=AHCONSENT_FORM
+Name=QHCONSENT_FORM
 Label=Consent form
 Form=2
-LogicControl=No
 Max=1
   
 [Field]
-Name=AHCONSENT
-Position=216,19,231,39
-Item=AHCONSENT,CCHH80
+Name=QHCONSENT
+Position=364,20,379,40
+Item=QHCONSENT,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -970,84 +956,83 @@ DataCaptureType=RadioButton
 Form=2
   
 [Text]
-Position=30,22,154,38
-Text=Consent agreement
+Position=30,22,352,38
+Text=PRÉSENTATION ET DEMANDE  DE CONSENTEMENT
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndGroup]
   
 [Group]
 Required=Yes
-Name=AHSEC01X_FORM
+Name=QHSEC01X_FORM
 Label=Names of household members
 Form=3
-LogicControl=No
 Max=1
   
 [Grid]
-Name=AHSEC1X_ROSTER
+Name=QHSEC1X_ROSTER
 Label=Names of household members
 Form=3
 Required=No
 Type=Record
-TypeName=AHSEC01X
+TypeName=QHSEC01X
 Max=50
-DisplaySize=6,33,680,659
+DisplaySize=6,33,949,659
 Orientation=Horizontal
 FieldRowHeight=29
 HeadingRowHeight=0
 FreeMovement=No
  
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=1
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=2
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=3
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=4
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=5
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=6
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=7
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=8
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=7,0,22,29
+Position=0,0,22,29
 Text=9
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
@@ -1059,7 +1044,7 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=1,0,22,29
+Position=0,0,22,29
 Text=11
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
@@ -1303,25 +1288,25 @@ Width=10
 [EndColumn]
   
 [Column]
-Width=37
+Width=44
   
 [HeaderText]
-Position=1,16,37,40
-Text=Line
+Position=0,0,44,24
+Text=Ligne
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHLINE
+Name=QHLINE
 Position=0,0,29,20
-Item=AHLINE,CCHH80
+Item=QHLINE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
-Position=0,0,69,16
-Text=Line
+Text=Ligne
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -1330,18 +1315,19 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=351
   
 [HeaderText]
-Position=153,16,198,40
-Text=Name
+Position=128,0,223,24
+Text=Prenom, Nom
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AHFIRSTN
+Name=QHFIRSTN
 Position=0,0,169,20
-Item=AHFIRSTN,CCHH80
+Item=QHFIRSTN,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,59,16
@@ -1349,12 +1335,13 @@ Text=QHNAME
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHLASTN
+Name=QHLASTN
 Position=174,1,343,21
-Item=AHLASTN,CCHH80
+Item=QHLASTN,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Text=QHLAST1
@@ -1363,49 +1350,27 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 [EndColumn]
   
 [Column]
-Width=37
+Width=109
   
 [HeaderText]
-Position=4,16,33,40
-Text=Rel
+Position=0,0,109,24
+Text=Lien de parenté
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AHRELAT
+Name=QHRELAT
 Position=0,0,29,20
-Item=AHRELAT,CCHH80
+Item=QHRELAT,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=Rel
+Text=Lien de parenté
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[EndColumn]
-  
-[Column]
-Width=33
-  
-[HeaderText]
-Position=0,16,33,40
-Text=Sex
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=AHSEX
-Position=6,0,21,20
-Item=AHSEX,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=Sex
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+HorizontalAlignment=Center
  
 [EndColumn]
   
@@ -1413,45 +1378,68 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=41
   
 [HeaderText]
-Position=0,0,41,40
-Text=Live here
+Position=0,0,41,24
+Text=Sexe
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHLIVES
-Position=9,0,24,20
-Item=AHLIVES,CCHH80
+Name=QHSEX
+Position=6,0,21,20
+Item=QHSEX,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=Live here
+Text=Sexe
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
 [Column]
-Width=52
+Width=63
   
 [HeaderText]
-Position=0,16,52,40
-Text=Stayed
+Position=0,0,63,24
+Text=Résident
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
-HorizontalAlignment=Center
  
 [Field]
-Name=AHSTAYED
-Position=10,0,25,20
-Item=AHSTAYED,CCHH80
+Name=QHLIVES
+Position=9,0,24,20
+Item=QHLIVES,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=Stayed
+Text=Résident
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[EndColumn]
+  
+[Column]
+Width=102
+  
+[HeaderText]
+Position=0,0,102,24
+Text=A dormi le nuit
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+HorizontalAlignment=Center
+ 
+[Field]
+Name=QHSTAYED
+Position=10,0,25,20
+Item=QHSTAYED,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+  
+[Text]
+Text=A dormi le nuit
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
@@ -1461,14 +1449,14 @@ HorizontalAlignment=Center
 Width=37
   
 [HeaderText]
-Position=4,16,37,40
+Position=4,0,37,24
 Text=Age
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHAGE
+Name=QHAGE
 Position=0,0,29,20
-Item=AHAGE,CCHH80
+Item=QHAGE,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -1482,24 +1470,24 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 [EndColumn]
   
 [Column]
-Width=40
+Width=118
   
 [HeaderText]
-Position=0,16,40,40
-Text=More
+Position=0,0,118,24
+Text=Plus de membres
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AHMORE
+Name=QHMORE
 Position=5,0,20,20
-Item=AHMORE,CCHH80
+Item=QHMORE,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=More
+Text=Plus de membres
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -1508,13 +1496,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AHMEMBER
+Name=QHMEMBER
 Position=184,670,213,690
-Item=AHMEMBER,CCHH80
+Item=QHMEMBER,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=3
   
 [Text]
@@ -1524,9 +1513,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AHRESP
+Name=QHRESP
 Position=660,670,689,690
-Item=AHRESP,CCHH80
+Item=QHRESP,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -1540,9 +1529,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH07A
-Position=195,702,210,722
-Item=AH07A,CCHH80
+Name=QH07A
+Position=225,699,240,719
+Item=QH07A,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -1550,15 +1539,15 @@ DataCaptureType=RadioButton
 Form=3
   
 [Text]
-Position=4,700,133,716
-Text=Babies in household
+Position=4,700,211,716
+Text=Petits enfants ou des nourrissons
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH07B
+Name=QH07B
 Position=425,702,440,722
-Item=AH07B,CCHH80
+Item=QH07B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -1566,15 +1555,15 @@ DataCaptureType=RadioButton
 Form=3
   
 [Text]
-Position=227,700,419,716
-Text=Other non family in household
+Position=283,702,392,718
+Text=Autres personnes
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH07C
+Name=QH07C
 Position=674,702,689,722
-Item=AH07C,CCHH80
+Item=QH07C,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -1582,29 +1571,28 @@ DataCaptureType=RadioButton
 Form=3
   
 [Text]
-Position=471,700,588,716
-Text=Temporary visitors
+Position=471,700,605,716
+Text=Visiteurs temporaires
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndGroup]
   
 [Group]
 Required=Yes
-Name=AHSEC01_FORM
+Name=QHSEC01_FORM
 Label=Household schedule
 Form=4
-LogicControl=No
 Max=1
   
 [Grid]
-Name=AHSEC01_ROSTER
+Name=QHSEC01_ROSTER
 Label=Household Schedule
 Form=4
 Required=No
 Type=Record
-TypeName=AHSEC01
+TypeName=QHSEC01
 Max=50
-DisplaySize=12,49,1213,638
+DisplaySize=4,51,1544,640
 Orientation=Horizontal
 FieldRowHeight=28
 HeadingRowHeight=24
@@ -1915,25 +1903,25 @@ Width=10
 [EndColumn]
   
 [Column]
-Width=40
+Width=44
   
 [HeaderText]
-Position=4,0,40,24
-Text=Line
+Position=0,0,44,24
+Text=Ligne
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH01
+Name=QH01
 Position=3,0,32,20
-Item=AH01,CCHH80
+Item=QH01,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
-Position=0,0,34,16
-Text=Line
+Text=Ligne
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -1942,24 +1930,25 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=289
   
 [HeaderText]
-Position=122,0,167,24
-Text=Name
+Position=97,0,192,24
+Text=Nom, Prenom
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH02
+Name=QH02
 Position=0,0,281,20
-Item=AH02,CCHH80
+Item=QH02,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
-Position=0,0,34,16
-Text=Name
+Text=Nom, Prenom
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+HorizontalAlignment=Center
  
 [EndColumn]
   
@@ -1973,9 +1962,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH03
+Name=QH03
 Position=3,0,32,20
-Item=AH03,CCHH80
+Item=QH03,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -1999,9 +1988,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH04
+Name=QH04
 Position=0,0,15,20
-Item=AH04,CCHH80
+Item=QH04,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -2024,9 +2013,9 @@ Text=5
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH05
+Name=QH05
 Position=0,0,15,20
-Item=AH05,CCHH80
+Item=QH05,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -2050,9 +2039,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH06
+Name=QH06
 Position=0,0,15,20
-Item=AH06,CCHH80
+Item=QH06,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -2076,13 +2065,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH07
+Name=QH07
 Position=0,0,29,20
-Item=AH07,CCHH80
+Item=QH07,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,34,16
@@ -2100,9 +2090,9 @@ Text=8
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH08
+Name=QH08
 Position=0,0,15,20
-Item=AH08,CCHH80
+Item=QH08,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2124,9 +2114,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH09
+Name=QH09
 Position=0,0,29,20
-Item=AH09,CCHH80
+Item=QH09,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -2150,9 +2140,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH10
+Name=QH10
 Position=0,0,29,20
-Item=AH10,CCHH80
+Item=QH10,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -2176,9 +2166,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH11
+Name=QH11
 Position=0,0,29,20
-Item=AH11,CCHH80
+Item=QH11,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
@@ -2201,9 +2191,9 @@ Text=12
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH12
+Name=QH12
 Position=0,0,15,20
-Item=AH12,CCHH80
+Item=QH12,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2225,9 +2215,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH13
+Name=QH13
 Position=0,0,29,20
-Item=AH13,CCHH80
+Item=QH13,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2249,9 +2239,9 @@ Text=14
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH14
+Name=QH14
 Position=0,0,15,20
-Item=AH14,CCHH80
+Item=QH14,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2273,9 +2263,9 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH15
+Name=QH15
 Position=0,0,29,20
-Item=AH15,CCHH80
+Item=QH15,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2297,9 +2287,9 @@ Text=16
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH16
+Name=QH16
 Position=0,0,15,20
-Item=AH16,CCHH80
+Item=QH16,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2321,22 +2311,22 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH17A
+Name=QH17A
 Position=0,0,15,20
-Item=AH17A,CCHH80
+Item=QH17A,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AH17A
+Text=QH17A
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH17B
+Name=QH17B
 Position=19,0,48,20
-Item=AH17B,CCHH80
+Item=QH17B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2344,7 +2334,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,44,16
-Text=AH17B
+Text=QH17B
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -2358,9 +2348,9 @@ Text=18
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH18
+Name=QH18
 Position=0,0,15,20
-Item=AH18,CCHH80
+Item=QH18,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2382,29 +2372,29 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [Field]
-Name=AH19A
+Name=QH19A
 Position=0,0,15,20
-Item=AH19A,CCHH80
+Item=QH19A,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AH19A
+Text=QH19A
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH19B
+Name=QH19B
 Position=18,0,47,20
-Item=AH19B,CCHH80
+Item=QH19B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
   
 [Text]
-Text=AH19B
+Text=QH19B
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -2418,9 +2408,9 @@ Text=20
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH20
+Name=QH20
 Position=0,0,15,20
-Item=AH20,CCHH80
+Item=QH20,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -2429,216 +2419,6 @@ DataCaptureType=RadioButton
 [Text]
 Text=20
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=26
- 
-[Field]
-Name=AH26
-Position=0,0,15,20
-Item=AH26,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=26
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=27
- 
-[Field]
-Name=AH27
-Position=0,0,15,20
-Item=AH27,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=27
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=28
- 
-[Field]
-Name=AH28
-Position=0,0,15,20
-Item=AH28,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=28
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=29
- 
-[Field]
-Name=AH29
-Position=0,0,15,20
-Item=AH29,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=29
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=30
- 
-[Field]
-Name=AH30
-Position=0,0,15,20
-Item=AH30,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=30
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=31
- 
-[Field]
-Name=AH31
-Position=0,0,15,20
-Item=AH31,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=31
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=32
- 
-[Field]
-Name=AH32
-Position=0,0,15,20
-Item=AH32,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=32
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=33
- 
-[Field]
-Name=AH33
-Position=0,0,15,20
-Item=AH33,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=33
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=34
- 
-[Field]
-Name=AH34
-Position=0,0,15,20
-Item=AH34,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=34
- 
-[EndColumn]
-  
-[Column]
-Width=23
-  
-[HeaderText]
-Position=1,0,23,24
-Text=35
- 
-[Field]
-Name=AH35
-Position=0,0,15,20
-Item=AH35,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=35
  
 [EndColumn]
   
@@ -2646,1288 +2426,107 @@ Text=35
  
   
 [Field]
-Name=AHWOMEN
+Name=QHWOMEN
 Position=289,657,318,677
-Item=AHWOMEN,CCHH80
+Item=QHWOMEN,CGHH80
 UseEnterKey=Yes
 Protected=Yes
+DataCaptureType=TextBox
 Form=4
   
 [Text]
-Position=118,660,217,676
-Text=Eligible women
+Position=118,660,230,676
+Text=Femmes eligibles
  
   
 [Field]
-Name=AHMEN
+Name=QHMEN
 Position=560,658,589,678
-Item=AHMEN,CCHH80
+Item=QHMEN,CGHH80
 UseEnterKey=Yes
 Protected=Yes
+DataCaptureType=TextBox
 Form=4
   
 [Text]
-Position=388,661,468,677
-Text=Eligible men
+Position=388,661,501,677
+Text=Hommes éligibles
  
 [EndGroup]
   
 [Group]
 Required=Yes
-Name=AHSECAC1_FORM
-Label=Accidents and injuries - traffic accidents
-Form=5
-LogicControl=No
-Max=1
-  
-[Field]
-Name=AHAI1
-Position=225,85,240,105
-Item=AHAI1,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=5
-  
-[Text]
-Position=43,91,119,107
-Text=Introduction
- 
-  
-[Grid]
-Name=AHSECA1_ROSTER
-Label=Accident and injury module - road traffic accidents
-Form=5
-Required=No
-Type=Record
-TypeName=AHSECA1
-Max=10
-DisplaySize=9,121,2978,590
-Orientation=Vertical
-ColumnWidth=0
-StubColumnWidth=54
-HeadingRowHeight=0
-FreeMovement=No
- 
-[Text]
-Position=274,0,289,24
-Text=1
- 
-  
-[Text]
-Position=274,0,289,24
-Text=2
- 
-  
-[Text]
-Position=274,0,289,24
-Text=3
- 
-  
-[Text]
-Position=274,0,289,24
-Text=4
- 
-  
-[Text]
-Position=274,0,289,24
-Text=5
- 
-  
-[Text]
-Position=274,0,289,24
-Text=6
- 
-  
-[Text]
-Position=274,0,289,24
-Text=7
- 
-  
-[Text]
-Position=274,0,289,24
-Text=8
- 
-  
-[Text]
-Position=274,0,289,24
-Text=9
- 
-  
-[Text]
-Position=267,0,289,24
-Text=10
- 
-  
-[Column]
-Width=10
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=0,4,54,28
-Text=AHAI1L
- 
-[Field]
-Name=AHAI1L
-Position=252,0,281,20
-Item=AHAI1L,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Position=0,0,60,20
-Text=AHAI1L
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI2
- 
-[Field]
-Name=AHAI2
-Position=0,0,281,20
-Item=AHAI2,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Position=0,0,50,20
-Text=AHAI2
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI4
- 
-[Field]
-Name=AHAI4
-Position=252,0,281,20
-Item=AHAI4,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI4
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI5
- 
-[Field]
-Name=AHAI5
-Position=266,0,281,20
-Item=AHAI5,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI5
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI6
- 
-[Field]
-Name=AHAI6
-Position=266,0,281,20
-Item=AHAI6,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI6
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI7
- 
-[Field]
-Name=AHAI7
-Position=252,0,281,20
-Item=AHAI7,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AHAI7
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI8
- 
-[Field]
-Name=AHAI8
-Position=266,0,281,20
-Item=AHAI8,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI8
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,54,28
-Text=AHAI9
- 
-[Field]
-Name=AHAI9
-Position=182,0,281,20
-Item=AHAI9,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=AHAI9
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,54,28
-Text=AHAI10
- 
-[Field]
-Name=AHAI10
-Position=252,0,281,20
-Item=AHAI10,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Position=0,0,59,20
-Text=AHAI10
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=2,4,54,28
-Text=AHAI11
- 
-[Field]
-Name=AHAI11
-Position=266,0,281,20
-Item=AHAI11,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI11
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,54,28
-Text=AHAI12
- 
-[Field]
-Name=AHAI12
-Position=252,0,281,20
-Item=AHAI12,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-  
-[Text]
-Position=0,0,59,20
-Text=AHAI12
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,54,28
-Text=AHAI13
- 
-[Field]
-Name=AHAI13
-Position=182,0,281,20
-Item=AHAI13,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=AHAI13
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,54,28
-Text=AHAI14
- 
-[Field]
-Name=AHAI14
-Position=266,0,281,20
-Item=AHAI14,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI14
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,54,28
-Text=AHAI15
- 
-[Field]
-Name=AHAI15
-Position=140,0,281,20
-Item=AHAI15,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=AHAI15
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,54,28
-Text=AHAI16
- 
-[Field]
-Name=AHAI16
-Position=266,0,281,20
-Item=AHAI16,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI16
- 
-[EndColumn]
-  
-[EndGrid]
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=AHSECCA2_FORM
-Label=Accidents and Injuries - Other Accidents
-Form=6
-LogicControl=No
-Max=1
-  
-[Field]
-Name=AHAI17
-Position=196,63,211,83
-Item=AHAI17,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=6
-  
-[Text]
-Position=13,68,89,84
-Text=Introduction
- 
-  
-[Grid]
-Name=AHSECA2_ROSTER
-Label=Accident and injury module - other accidents
-Form=6
-Required=No
-Type=Record
-TypeName=AHSECA2
-Max=10
-DisplaySize=10,115,2979,615
-Orientation=Vertical
-ColumnWidth=0
-StubColumnWidth=61
-HeadingRowHeight=0
-FreeMovement=No
- 
-[Text]
-Position=274,0,289,24
-Text=1
- 
-  
-[Text]
-Position=274,0,289,24
-Text=2
- 
-  
-[Text]
-Position=274,0,289,24
-Text=3
- 
-  
-[Text]
-Position=274,0,289,24
-Text=4
- 
-  
-[Text]
-Position=274,0,289,24
-Text=5
- 
-  
-[Text]
-Position=274,0,289,24
-Text=6
- 
-  
-[Text]
-Position=274,0,289,24
-Text=7
- 
-  
-[Text]
-Position=274,0,289,24
-Text=8
- 
-  
-[Text]
-Position=274,0,289,24
-Text=9
- 
-  
-[Text]
-Position=267,0,289,24
-Text=10
- 
-  
-[Column]
-Width=10
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=0,4,61,28
-Text=AHAI17L
- 
-[Field]
-Name=AHAI17L
-Position=252,0,281,20
-Item=AHAI17L,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Position=0,0,69,20
-Text=AHAI17L
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI19
- 
-[Field]
-Name=AHAI19
-Position=0,0,281,20
-Item=AHAI19,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Position=0,0,59,20
-Text=AHAI19
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI20
- 
-[Field]
-Name=AHAI20
-Position=252,0,281,20
-Item=AHAI20,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI20
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI21
- 
-[Field]
-Name=AHAI21
-Position=266,0,281,20
-Item=AHAI21,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI21
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI22
- 
-[Field]
-Name=AHAI22
-Position=266,0,281,20
-Item=AHAI22,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI22
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI23
- 
-[Field]
-Name=AHAI23
-Position=266,0,281,20
-Item=AHAI23,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI23
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI24
- 
-[Field]
-Name=AHAI24
-Position=252,0,281,20
-Item=AHAI24,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AHAI24
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI25
- 
-[Field]
-Name=AHAI25
-Position=266,0,281,20
-Item=AHAI25,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI25
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI26
- 
-[Field]
-Name=AHAI26
-Position=168,0,281,20
-Item=AHAI26,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=AHAI26
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI27
- 
-[Field]
-Name=AHAI27
-Position=252,0,281,20
-Item=AHAI27,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Position=0,0,59,20
-Text=AHAI27
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI28
- 
-[Field]
-Name=AHAI28
-Position=266,0,281,20
-Item=AHAI28,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI28
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI29
- 
-[Field]
-Name=AHAI29
-Position=252,0,281,20
-Item=AHAI29,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-  
-[Text]
-Position=0,0,59,20
-Text=AHAI29
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI30
- 
-[Field]
-Name=AHAI30
-Position=168,0,281,20
-Item=AHAI30,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=AHAI30
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI31
- 
-[Field]
-Name=AHAI31
-Position=266,0,281,20
-Item=AHAI31,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI31
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI32
- 
-[Field]
-Name=AHAI32
-Position=140,0,281,20
-Item=AHAI32,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=AHAI32
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=8,4,61,28
-Text=AHAI33
- 
-[Field]
-Name=AHAI33
-Position=266,0,281,20
-Item=AHAI33,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AHAI33
- 
-[EndColumn]
-  
-[EndGrid]
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=AHSECCHL_FORM
-Label=Child labor
-Form=7
-LogicControl=No
-Max=1
-  
-[Field]
-Name=ACHLINE
-Position=104,60,133,80
-Item=ACHLINE,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-DataCaptureType=ComboBox
-Form=7
-  
-[Text]
-Position=41,65,94,81
-Text=Line No.
- 
-  
-[Field]
-Name=ACHLNAME
-Position=225,61,415,81
-Item=ACHLNAME,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-Form=7
-  
-[Text]
-Position=175,66,212,82
-Text=Name
- 
-  
-[Field]
-Name=ACHL2A
-Position=156,113,171,133
-Item=ACHL2A,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=51,116,109,132
-Text=ACHL2  a
- 
-  
-[Field]
-Name=ACHL2B
-Position=156,143,171,163
-Item=ACHL2B,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=101,146,109,162
-Text=b
- 
-  
-[Field]
-Name=ACHL2C
-Position=156,173,171,193
-Item=ACHL2C,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=102,176,109,192
-Text=c
- 
-  
-[Field]
-Name=ACHL2D
-Position=156,202,171,222
-Item=ACHL2D,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=101,205,109,221
-Text=d
- 
-  
-[Field]
-Name=ACHL4
-Position=142,233,171,253
-Item=ACHL4,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Form=7
-  
-[Text]
-Position=51,236,93,252
-Text=ACHL4
- 
-  
-[Field]
-Name=ACHL5
-Position=156,264,171,284
-Item=ACHL5,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=51,267,93,283
-Text=ACHL5
- 
-  
-[Field]
-Name=ACHL6
-Position=156,293,171,313
-Item=ACHL6,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=51,296,93,312
-Text=ACHL6
- 
-  
-[Field]
-Name=ACHL7A
-Position=156,323,171,343
-Item=ACHL7A,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=51,326,109,342
-Text=ACHL7  a
- 
-  
-[Field]
-Name=ACHL7B
-Position=156,353,171,373
-Item=ACHL7B,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=101,356,109,372
-Text=b
- 
-  
-[Field]
-Name=ACHL7C
-Position=156,383,171,403
-Item=ACHL7C,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=102,386,109,402
-Text=c
- 
-  
-[Field]
-Name=ACHL7D
-Position=156,413,171,433
-Item=ACHL7D,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=101,416,109,432
-Text=d
- 
-  
-[Field]
-Name=ACHL7E
-Position=156,443,171,463
-Item=ACHL7E,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=101,446,109,462
-Text=e
- 
-  
-[Field]
-Name=ACHL7F
-Position=156,473,171,493
-Item=ACHL7F,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=105,476,109,492
-Text=f
- 
-  
-[Field]
-Name=ACHL8
-Position=376,109,391,129
-Item=ACHL8,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=268,112,310,128
-Text=ACHL8
- 
-  
-[Field]
-Name=ACHL9
-Position=362,139,391,159
-Item=ACHL9,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Form=7
-  
-[Text]
-Position=268,142,310,158
-Text=ACHL9
- 
-  
-[Field]
-Name=ACHL10
-Position=376,169,391,189
-Item=ACHL10,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=268,172,317,188
-Text=ACHL10
- 
-  
-[Field]
-Name=ACHL11
-Position=362,199,391,219
-Item=ACHL11,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Form=7
-  
-[Text]
-Position=268,202,317,218
-Text=ACHL11
- 
-  
-  
-[Field]
-Name=ACHL12A
-Position=376,229,391,249
-Item=ACHL12A,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=268,232,333,248
-Text=ACHL12  a
- 
-  
-[Field]
-Name=ACHL12B
-Position=376,259,391,279
-Item=ACHL12B,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=325,262,333,278
-Text=b
- 
-  
-[Field]
-Name=ACHL12C
-Position=376,289,391,309
-Item=ACHL12C,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=326,292,333,308
-Text=c
- 
-  
-[Field]
-Name=ACHL12D
-Position=376,319,391,339
-Item=ACHL12D,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=325,322,333,338
-Text=d
- 
-  
-[Field]
-Name=ACHL12E
-Position=376,349,391,369
-Item=ACHL12E,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=325,352,333,368
-Text=e
- 
-  
-[Field]
-Name=ACHL12F
-Position=376,379,391,399
-Item=ACHL12F,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=329,382,333,398
-Text=f
- 
-  
-[Field]
-Name=ACHL12G
-Position=376,409,391,429
-Item=ACHL12G,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=7
-  
-[Text]
-Position=325,412,333,428
-Text=g
- 
-  
-[Field]
-Name=ACHL14
-Position=362,439,391,459
-Item=ACHL14,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Form=7
-  
-[Text]
-Position=268,442,317,458
-Text=ACHL14
- 
-[Block]
-Name=ACHL12_BLOCK
-Label=Househol chores by children
-DisplayTogether=Yes
-Position=19
-Length=7
-  
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=AHSECCDI_FORM
+Name=QHSECCDI_FORM
 Label=Child Discipline
-Form=8
-LogicControl=No
+Form=5
 Max=1
   
 [Field]
-Name=ACDI2
+Name=QCDI2
 Position=90,58,119,78
-Item=ACDI2,CCHH80
+Item=QCDI2,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=ComboBox
-Form=8
+Form=5
   
 [Text]
-Position=31,59,84,75
-Text=Line No.
+Position=31,59,67,75
+Text=Ligne
  
   
 [Field]
-Name=ACDINAME
+Name=QCDINAME
 Position=192,58,382,78
-Item=ACDINAME,CCHH80
+Item=QCDINAME,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
-Form=8
+DataCaptureType=TextBox
+Form=5
   
 [Text]
-Position=145,59,182,75
-Text=Name
+Position=145,59,174,75
+Text=Nom
  
   
 [Field]
-Name=ACDI3A
+Name=QCDI3
+Position=92,98,110,118
+Item=QCDI3,CGHH80
+UseEnterKey=Yes
+UpperCase=Yes
+FieldLabelType=DictionaryName
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+Form=5
+  
+[Text]
+Position=47,101,86,117
+Text=QCDI3
+ 
+  
+[Field]
+Name=QCDI3A
 Position=224,97,239,117
-Item=ACDI3A,CCHH80
+Item=QCDI3A,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
-Position=124,100,178,116
-Text=ACDI3  a
+Position=170,100,178,116
+Text=a
  
   
 [Field]
-Name=ACDI3B
+Name=QCDI3B
 Position=224,127,239,147
-Item=ACDI3B,CCHH80
+Item=QCDI3B,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=170,130,178,146
@@ -3935,12 +2534,12 @@ Text=b
  
   
 [Field]
-Name=ACDI3C
+Name=QCDI3C
 Position=224,157,239,177
-Item=ACDI3C,CCHH80
+Item=QCDI3C,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=171,160,178,176
@@ -3948,12 +2547,12 @@ Text=c
  
   
 [Field]
-Name=ACDI3D
+Name=QCDI3D
 Position=224,187,239,207
-Item=ACDI3D,CCHH80
+Item=QCDI3D,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=170,190,178,206
@@ -3961,12 +2560,12 @@ Text=d
  
   
 [Field]
-Name=ACDI3E
+Name=QCDI3E
 Position=224,217,239,237
-Item=ACDI3E,CCHH80
+Item=QCDI3E,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=170,220,178,236
@@ -3974,12 +2573,12 @@ Text=e
  
   
 [Field]
-Name=ACDI3F
+Name=QCDI3F
 Position=224,247,239,267
-Item=ACDI3F,CCHH80
+Item=QCDI3F,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=174,249,178,265
@@ -3987,12 +2586,12 @@ Text=f
  
   
 [Field]
-Name=ACDI3G
+Name=QCDI3G
 Position=224,277,239,297
-Item=ACDI3G,CCHH80
+Item=QCDI3G,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=170,280,178,296
@@ -4000,12 +2599,12 @@ Text=g
  
   
 [Field]
-Name=ACDI3H
+Name=QCDI3H
 Position=224,307,239,327
-Item=ACDI3H,CCHH80
+Item=QCDI3H,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=170,310,178,326
@@ -4013,12 +2612,12 @@ Text=h
  
   
 [Field]
-Name=ACDI3I
+Name=QCDI3I
 Position=224,337,239,357
-Item=ACDI3I,CCHH80
+Item=QCDI3I,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=174,340,178,356
@@ -4026,12 +2625,12 @@ Text=i
  
   
 [Field]
-Name=ACDI3J
+Name=QCDI3J
 Position=224,367,239,387
-Item=ACDI3J,CCHH80
+Item=QCDI3J,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=174,370,178,386
@@ -4039,12 +2638,12 @@ Text=j
  
   
 [Field]
-Name=ACDI3K
+Name=QCDI3K
 Position=224,397,239,417
-Item=ACDI3K,CCHH80
+Item=QCDI3K,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
 Position=171,400,178,416
@@ -4052,446 +2651,445 @@ Text=k
  
   
 [Field]
-Name=ACDI4
+Name=QCDI4
 Position=224,429,239,449
-Item=ACDI4,CCHH80
+Item=QCDI4,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=8
+Form=5
   
 [Text]
-Position=124,432,162,448
-Text=ACDI4
+Position=124,432,163,448
+Text=QCDI4
  
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC02_FORM
+Name=QHSEC02_FORM
 Label=Household Characteristics
-Form=9
-LogicControl=No
+Form=6
 Max=1
   
 [Field]
-Name=AH101
+Name=QH101
 Position=100,126,129,146
-Item=AH101,CCHH80
+Item=QH101,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=35,129,74,145
-Text=AH101
+Position=35,129,75,145
+Text=QH101
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH102
+Name=QH102
 Position=100,163,129,183
-Item=AH102,CCHH80
+Item=QH102,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=35,166,74,182
-Text=AH102
+Position=35,166,75,182
+Text=QH102
  
   
 [Field]
-Name=AH103
+Name=QH103
 Position=114,200,129,220
-Item=AH103,CCHH80
+Item=QH103,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=35,198,74,214
-Text=AH103
+Position=35,198,75,214
+Text=QH103
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH104
+Name=QH104
 Position=86,230,129,250
-Item=AH104,CCHH80
+Item=QH104,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
-Position=35,233,74,249
-Text=AH104
+Position=35,233,75,249
+Text=QH104
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH105
+Name=QH105
 Position=100,283,129,303
-Item=AH105,CCHH80
+Item=QH105,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=35,291,74,307
-Text=AH105
+Position=35,291,75,307
+Text=QH105
  
   
 [Field]
-Name=AH106
+Name=QH106
 Position=325,78,340,98
-Item=AH106,CCHH80
+Item=QH106,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,81,212,97
-Text=AH106
+Position=173,81,213,97
+Text=QH106
  
   
 [Field]
-Name=AH107
+Name=QH107
 Position=325,107,340,127
-Item=AH107,CCHH80
+Item=QH107,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,107,212,123
-Text=AH107
+Position=173,107,213,123
+Text=QH107
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH108
+Name=QH108
 Position=227,136,340,156
-Item=AH108,CCHH80
+Item=QH108,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=CheckBox
-Form=9
+Form=6
   
 [Text]
-Position=173,137,212,153
-Text=AH108
+Position=173,137,213,153
+Text=QH108
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH109
+Name=QH109
 Position=311,164,340,184
-Item=AH109,CCHH80
+Item=QH109,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,167,212,183
-Text=AH109
+Position=173,167,213,183
+Text=QH109
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH110
+Name=QH110
 Position=325,189,340,209
-Item=AH110,CCHH80
+Item=QH110,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,197,212,213
-Text=AH110
+Position=173,197,213,213
+Text=QH110
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH111
+Name=QH111
 Position=311,217,340,237
-Item=AH111,CCHH80
+Item=QH111,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
-Position=173,227,212,243
-Text=AH111
+Position=173,227,213,243
+Text=QH111
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH112
+Name=QH112
 Position=325,252,340,272
-Item=AH112,CCHH80
+Item=QH112,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,255,212,271
-Text=AH112
+Position=173,255,213,271
+Text=QH112
  
   
 [Field]
-Name=AH114
+Name=QH114
 Position=325,284,340,304
-Item=AH114,CCHH80
+Item=QH114,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,287,212,303
-Text=AH114
+Position=173,287,213,303
+Text=QH114
  
   
 [Field]
-Name=AH115
+Name=QH115
 Position=325,314,340,334
-Item=AH115,CCHH80
+Item=QH115,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=173,317,212,333
-Text=AH115
+Position=173,317,213,333
+Text=QH115
  
   
 [Field]
-Name=AH116
+Name=QH116
 Position=485,80,500,100
-Item=AH116,CCHH80
+Item=QH116,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=374,78,413,94
-Text=AH116
+Position=374,78,414,94
+Text=QH116
  
   
 [Field]
-Name=AH117
+Name=QH117
 Position=471,109,500,129
-Item=AH117,CCHH80
+Item=QH117,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=374,107,413,123
-Text=AH117
+Position=374,107,414,123
+Text=QH117
  
   
 [Field]
-Name=AH118
+Name=QH118
 Position=485,137,500,157
-Item=AH118,CCHH80
+Item=QH118,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=374,140,413,156
-Text=AH118
+Position=374,140,414,156
+Text=QH118
  
   
 [Field]
-Name=AH120
+Name=QH120
 Position=471,205,500,225
-Item=AH120,CCHH80
+Item=QH120,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=374,202,413,218
-Text=AH120
+Position=374,202,414,218
+Text=QH120
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH121
+Name=QH121
 Position=485,234,500,254
-Item=AH121,CCHH80
+Item=QH121,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=374,229,413,245
-Text=AH121
+Position=374,229,414,245
+Text=QH121
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH122
+Name=QH122
 Position=485,265,500,285
-Item=AH122,CCHH80
+Item=QH122,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=374,259,413,275
-Text=AH122
+Position=374,259,414,275
+Text=QH122
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH123
+Name=QH123
 Position=655,75,684,95
-Item=AH123,CCHH80
+Item=QH123,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=557,78,596,94
-Text=AH123
+Position=557,78,597,94
+Text=QH123
  
   
 [Field]
-Name=AH124
+Name=QH124
 Position=669,104,684,124
-Item=AH124,CCHH80
+Item=QH124,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=557,107,596,123
-Text=AH124
+Position=557,107,597,123
+Text=QH124
  
   
 [Field]
-Name=AH125
+Name=QH125
 Position=655,132,684,152
-Item=AH125,CCHH80
+Item=QH125,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=557,135,596,151
-Text=AH125
+Position=557,135,597,151
+Text=QH125
  
   
 [Field]
-Name=AH126
+Name=QH126
 Position=655,161,684,181
-Item=AH126,CCHH80
+Item=QH126,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=557,164,596,180
-Text=AH126
+Position=557,164,597,180
+Text=QH126
  
   
 [Field]
-Name=AH127
+Name=QH127
 Position=655,195,684,215
-Item=AH127,CCHH80
+Item=QH127,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
-Position=557,194,596,210
-Text=AH127
+Position=557,194,597,210
+Text=QH127
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH128
+Name=QH128
 Position=669,230,684,250
-Item=AH128,CCHH80
+Item=QH128,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=557,231,596,247
-Text=AH128
+Position=557,231,597,247
+Text=QH128
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
   
 [Field]
-Name=AH129A
+Name=QH129A
 Position=659,273,688,293
-Item=AH129A,CCHH80
+Item=QH129A,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
-Position=558,275,621,291
-Text=AH129    a
+Position=558,275,622,291
+Text=QH129    a
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH129B
+Name=QH129B
 Position=659,300,688,320
-Item=AH129B,CCHH80
+Item=QH129B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
 Position=614,306,622,322
@@ -4500,14 +3098,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH129C
+Name=QH129C
 Position=659,325,688,345
-Item=AH129C,CCHH80
+Item=QH129C,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
 Position=615,329,622,345
@@ -4516,14 +3114,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH129D
+Name=QH129D
 Position=659,355,688,375
-Item=AH129D,CCHH80
+Item=QH129D,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
 Position=614,359,622,375
@@ -4532,14 +3130,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH129E
+Name=QH129E
 Position=659,385,688,405
-Item=AH129E,CCHH80
+Item=QH129E,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
 Position=614,389,622,405
@@ -4548,14 +3146,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH129F
+Name=QH129F
 Position=659,415,688,435
-Item=AH129F,CCHH80
+Item=QH129F,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
 Position=618,419,622,435
@@ -4564,362 +3162,540 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH130
-Position=673,455,688,475
-Item=AH130,CCHH80
+Name=QH129G
+Position=659,444,688,464
+Item=QH129G,CGHH80
+UseEnterKey=Yes
+DataCaptureType=ComboBox
+Form=6
+  
+[Text]
+Position=614,442,622,458
+Text=g
+ 
+  
+[Field]
+Name=QH129H
+Position=659,468,688,488
+Item=QH129H,CGHH80
+UseEnterKey=Yes
+DataCaptureType=ComboBox
+Form=6
+  
+[Text]
+Position=614,463,622,479
+Text=h
+ 
+  
+[Field]
+Name=QH130
+Position=677,501,692,521
+Item=QH130,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=557,458,596,474
-Text=AH130
+Position=561,504,601,520
+Text=QH130
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Field]
-Name=AH131
-Position=631,487,688,507
-Item=AH131,CCHH80
+Name=QH131
+Position=635,533,692,553
+Item=QH131,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
-Position=557,486,596,502
-Text=AH131
+Position=561,532,601,548
+Text=QH131
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
   
-[Field]
-Name=AH132A
-Position=866,66,881,86
-Item=AH132A,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=758,70,817,86
-Text=AH132   a
- 
   
 [Field]
-Name=AH132B
-Position=866,91,881,111
-Item=AH132B,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,97,817,113
-Text=b
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH132C
-Position=866,115,881,135
-Item=AH132C,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,119,816,135
-Text=c
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH132D
-Position=866,141,881,161
-Item=AH132D,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,145,817,161
-Text=d
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH132E
-Position=866,167,881,187
-Item=AH132E,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,170,817,186
-Text=e
- 
-  
-[Field]
-Name=AH132F
-Position=866,192,881,212
-Item=AH132F,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,194,813,210
-Text=f
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-  
-[Field]
-Name=AH133A
-Position=866,224,881,244
-Item=AH133A,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=757,226,816,242
-Text=AH133   a
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH133B
-Position=866,248,881,268
-Item=AH133B,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,252,817,268
-Text=b
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH133C
-Position=866,273,881,293
-Item=AH133C,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,275,816,291
-Text=c
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH133D
-Position=866,297,881,317
-Item=AH133D,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,302,817,318
-Text=d
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH133E
-Position=866,321,881,341
-Item=AH133E,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,324,817,340
-Text=e
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH133F
-Position=866,345,881,365
-Item=AH133F,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,348,813,364
-Text=f
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH133G
-Position=866,369,881,389
-Item=AH133G,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=809,370,817,386
-Text=g
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH134
-Position=866,398,881,418
-Item=AH134,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=758,399,797,415
-Text=AH134
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-  
-[Field]
-Name=AH135
-Position=866,425,881,445
-Item=AH135,CCHH80
+Name=QH132A
+Position=834,63,849,83
+Item=QH132A,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=758,428,797,444
-Text=AH135
+Position=761,66,810,82
+Text=QH132A
  
   
 [Field]
-Name=AH136
-Position=866,452,881,472
-Item=AH136,CCHH80
+Name=QH132B
+Position=834,93,849,113
+Item=QH132B,CGHH80
 UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
+FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=758,452,797,468
-Text=AH136
+Position=761,96,810,112
+Text=QH132B
  
   
 [Field]
-Name=AH137
-Position=866,494,881,514
-Item=AH137,CCHH80
+Name=QH132C
+Position=834,123,849,143
+Item=QH132C,CGHH80
 UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
+FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=9
+Form=6
   
 [Text]
-Position=758,500,797,516
-Text=AH137
+Position=761,126,810,142
+Text=QH132C
  
   
 [Field]
-Name=AH138
-Position=866,519,881,539
-Item=AH138,CCHH80
+Name=QH132D
+Position=834,153,849,173
+Item=QH132D,CGHH80
 UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,156,810,172
+Text=QH132D
+ 
+  
+[Field]
+Name=QH132E
+Position=834,183,849,203
+Item=QH132E,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,186,809,202
+Text=QH132E
+ 
+  
+[Field]
+Name=QH132F
+Position=834,213,849,233
+Item=QH132F,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,216,809,232
+Text=QH132F
+ 
+  
+[Field]
+Name=QH132G
+Position=834,243,849,263
+Item=QH132G,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,246,811,262
+Text=QH132G
+ 
+  
+[Field]
+Name=QH132H
+Position=834,273,849,293
+Item=QH132H,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,276,810,292
+Text=QH132H
+ 
+  
+[Field]
+Name=QH132I
+Position=834,303,849,323
+Item=QH132I,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,306,805,322
+Text=QH132I
+ 
+  
+[Field]
+Name=QH132J
+Position=834,333,849,353
+Item=QH132J,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,336,808,352
+Text=QH132J
+ 
+  
+[Field]
+Name=QH132K
+Position=834,363,849,383
+Item=QH132K,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,366,810,382
+Text=QH132K
+ 
+  
+[Field]
+Name=QH132L
+Position=834,393,849,413
+Item=QH132L,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,396,809,412
+Text=QH132L
+ 
+  
+[Field]
+Name=QH132M
+Position=834,423,849,443
+Item=QH132M,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,426,812,442
+Text=QH132M
+ 
+  
+[Field]
+Name=QH132N
+Position=834,453,849,473
+Item=QH132N,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,456,810,472
+Text=QH132N
+ 
+  
+[Field]
+Name=QH132O
+Position=834,483,849,503
+Item=QH132O,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,486,811,502
+Text=QH132O
+ 
+  
+[Field]
+Name=QH132P
+Position=834,513,849,533
+Item=QH132P,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,516,810,532
+Text=QH132P
+ 
+  
+[Field]
+Name=QH132Q
+Position=834,543,849,563
+Item=QH132Q,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=761,546,811,562
+Text=QH132Q
+ 
+  
+[Field]
+Name=QH133A
+Position=1001,66,1016,86
+Item=QH133A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,69,977,85
+Text=QH133A
+ 
+  
+[Field]
+Name=QH133B
+Position=1001,96,1016,116
+Item=QH133B,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,99,977,115
+Text=QH133B
+ 
+  
+[Field]
+Name=QH133C
+Position=1001,126,1016,146
+Item=QH133C,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,129,977,145
+Text=QH133C
+ 
+  
+[Field]
+Name=QH133D
+Position=1001,156,1016,176
+Item=QH133D,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,159,977,175
+Text=QH133D
+ 
+  
+[Field]
+Name=QH133E
+Position=1001,186,1016,206
+Item=QH133E,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,189,976,205
+Text=QH133E
+ 
+  
+[Field]
+Name=QH133F
+Position=1001,216,1016,236
+Item=QH133F,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,219,976,235
+Text=QH133F
+ 
+  
+[Field]
+Name=QH133G
+Position=1001,246,1016,266
+Item=QH133G,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,249,978,265
+Text=QH133G
+ 
+  
+[Field]
+Name=QH133H
+Position=1001,276,1016,296
+Item=QH133H,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,279,977,295
+Text=QH133H
+ 
+  
+[Field]
+Name=QH133I
+Position=1001,306,1016,326
+Item=QH133I,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=928,309,972,325
+Text=QH133I
+ 
+  
+[Field]
+Name=QH134
+Position=1000,360,1015,380
+Item=QH134,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=927,363,967,379
+Text=QH134
+ 
+  
+[Field]
+Name=QH135
+Position=1000,390,1015,410
+Item=QH135,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=927,393,967,409
+Text=QH135
+ 
+  
+[Field]
+Name=QH136
+Position=1000,420,1015,440
+Item=QH136,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=927,423,967,439
+Text=QH136
+ 
+  
+[Field]
+Name=QH137
+Position=1000,450,1015,470
+Item=QH137,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=6
+  
+[Text]
+Position=927,453,967,469
+Text=QH137
+ 
+  
+[Field]
+Name=QH138
+Position=1000,480,1015,500
+Item=QH138,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
-Form=9
+Form=6
   
 [Text]
-Position=758,521,797,537
-Text=AH138
+Position=927,483,967,499
+Text=QH138
  
 [Block]
-Name=AH129_BLOCK
+Name=QH129_BLOCK
 Label=Ownership of animals
 DisplayTogether=Yes
 Position=26
-Length=6
+Length=8
   
 [Block]
-Name=AH132_BLOCK
+Name=QH132_BLOCK
 Label=Household possessions
 DisplayTogether=Yes
-Position=35
-Length=6
+Position=37
+Length=0
   
 [Block]
-Name=AH133_BLOCK
+Name=QH133_BLOCK
 Label=Possessions of household members
 DisplayTogether=Yes
-Position=42
-Length=7
+Position=38
+Length=0
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC03_FORM
+Name=QHSEC03_FORM
 Label=Malaria module - mosquito nets
-Form=10
-LogicControl=No
+Form=7
 Max=1
   
 [Grid]
-Name=AHSEC03_ROSTER
+Name=QHSEC03_ROSTER
 Label=Mosquito Nets
-Form=10
+Form=7
 Required=No
 Type=Record
-TypeName=AHSEC03
+TypeName=QHSEC03
 Max=7
 DisplaySize=93,68,419,430
 Orientation=Vertical
 ColumnWidth=36
-StubColumnWidth=47
+StubColumnWidth=48
 HeadingRowHeight=24
 FreeMovement=No
  
@@ -4978,13 +3754,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Left
  
 [Field]
-Name=AH139
+Name=QH139
 Position=15,0,30,20
-Item=AH139,CCHH80
+Item=QH139,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,75,16
@@ -4997,14 +3774,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH140
+Position=0,4,48,28
+Text=QH140
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH140
+Name=QH140
 Position=12,0,27,20
-Item=AH140,CCHH80
+Item=QH140,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5012,7 +3789,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,87,20
-Text=AH140
+Text=QH140
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -5021,14 +3798,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH141
+Position=0,4,48,28
+Text=QH141
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH141
+Name=QH141
 Position=0,0,29,20
-Item=AH141,CCHH80
+Item=QH141,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5036,7 +3813,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,279,20
-Text=AH141
+Text=QH141
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -5045,14 +3822,14 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH142
+Position=0,4,48,28
+Text=QH142
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH142
+Name=QH142
 Position=0,0,29,20
-Item=AH142,CCHH80
+Item=QH142,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5060,7 +3837,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,127,20
-Text=AH142
+Text=QH142
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -5069,20 +3846,20 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH143
+Position=0,4,48,28
+Text=QH143
  
 [Field]
-Name=AH143
+Name=QH143
 Position=15,0,30,20
-Item=AH143,CCHH80
+Item=QH143,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AH143
+Text=QH143
  
 [EndColumn]
   
@@ -5090,20 +3867,20 @@ Text=AH143
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH144
+Position=0,4,48,28
+Text=QH144
  
 [Field]
-Name=AH144
+Name=QH144
 Position=1,0,30,20
-Item=AH144,CCHH80
+Item=QH144,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AH144
+Text=QH144
  
 [EndColumn]
   
@@ -5111,14 +3888,14 @@ Text=AH144
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH145
+Position=0,4,48,28
+Text=QH145
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH145
+Name=QH145
 Position=12,0,27,20
-Item=AH145,CCHH80
+Item=QH145,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5126,7 +3903,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,299,20
-Text=AH145
+Text=QH145
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -5135,15 +3912,15 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=97
   
 [HeaderText]
-Position=0,36,47,60
-Text=AH146
+Position=0,36,48,60
+Text=QH146
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 VerticalAlignment=Middle
  
 [Field]
-Name=AH146A
+Name=QH146A
 Position=0,0,29,20
-Item=AH146A,CCHH80
+Item=QH146A,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5155,9 +3932,9 @@ Text=Who slept under the net (1)
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH146B
+Name=QH146B
 Position=0,23,29,43
-Item=AH146B,CCHH80
+Item=QH146B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5169,9 +3946,9 @@ Text=Who slept under the net (2)
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH146C
+Name=QH146C
 Position=0,46,29,66
-Item=AH146C,CCHH80
+Item=QH146C,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5183,9 +3960,9 @@ Text=Who slept under the net (3)
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AH146D
+Name=QH146D
 Position=0,69,29,89
-Item=AH146D,CCHH80
+Item=QH146D,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -5202,19 +3979,19 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=0,4,47,28
-Text=AH147
+Position=0,4,48,28
+Text=QH147
  
 [Field]
-Name=AH147
+Name=QH147
 Position=1,0,30,20
-Item=AH147,CCHH80
+Item=QH147,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AH147
+Text=QH147
  
 [EndColumn]
   
@@ -5224,442 +4001,423 @@ Text=AH147
   
 [Group]
 Required=Yes
-Name=AHSEC04_FORM
-Label=Additional household characteristics
-Form=11
-LogicControl=No
+Name=QHSEC3B_FORM
+Label=Social Transfers
+Form=8
 Max=1
   
 [Field]
-Name=AH149
-Position=188,100,203,120
-Item=AH149,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=48,103,87,119
-Text=AH149
- 
-  
-[Field]
-Name=AH150
-Position=188,126,203,146
-Item=AH150,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=48,129,87,145
-Text=AH150
- 
-  
-[Field]
-Name=AH151
-Position=160,152,203,172
-Item=AH151,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=CheckBox
-Form=11
-  
-[Text]
-Position=48,155,87,171
-Text=AH151
- 
-  
-[Field]
-Name=AH152
-Position=174,178,203,198
-Item=AH152,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=48,181,87,197
-Text=AH152
- 
-  
-[Field]
-Name=AH153
-Position=174,207,203,227
-Item=AH153,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=48,210,87,226
-Text=AH153
- 
-  
-[Field]
-Name=AH154
-Position=174,299,203,319
-Item=AH154,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=47,302,86,318
-Text=AH154
- 
-  
-[Field]
-Name=AH155
-Position=188,325,203,345
-Item=AH155,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=47,328,86,344
-Text=AH155
- 
-  
-[Field]
-Name=AHFS1
-Position=409,94,424,114
-Item=AHFS1,CCHH80
+Name=QH148B
+Position=159,112,174,132
+Item=QH148B,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=11
+Form=8
   
 [Text]
-Position=256,97,298,113
-Text=AHFS1
+Position=77,115,126,131
+Text=QH148B
  
   
 [Field]
-Name=AHFS2
-Position=409,124,424,144
-Item=AHFS2,CCHH80
+Name=QH148C
+Position=159,142,174,162
+Item=QH148C,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=11
+Form=8
   
 [Text]
-Position=256,127,298,143
-Text=AHFS2
+Position=77,145,126,161
+Text=QH148C
  
   
 [Field]
-Name=AHFS3
-Position=409,154,424,174
-Item=AHFS3,CCHH80
+Name=QH148DM
+Position=159,172,188,192
+Item=QH148DM,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=11
+Form=8
   
 [Text]
-Position=256,157,298,173
-Text=AHFS3
+Position=77,175,137,191
+Text=QH148DM
  
   
 [Field]
-Name=AHFS4
-Position=409,184,424,204
-Item=AHFS4,CCHH80
+Name=QH148DY
+Position=159,202,216,222
+Item=QH148DY,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+Form=8
+  
+[Text]
+Position=77,205,134,221
+Text=QH148DY
+ 
+  
+[Field]
+Name=QH148E
+Position=159,232,174,252
+Item=QH148E,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=11
+Form=8
   
 [Text]
-Position=256,187,298,203
-Text=AHFS4
+Position=77,235,125,251
+Text=QH148E
  
   
 [Field]
-Name=AHFS5
-Position=409,214,424,234
-Item=AHFS5,CCHH80
+Name=QH148FM
+Position=159,262,188,282
+Item=QH148FM,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=11
+Form=8
   
 [Text]
-Position=256,217,298,233
-Text=AHFS5
+Position=77,265,136,281
+Text=QH148FM
  
   
 [Field]
-Name=AHFS6
-Position=409,244,424,264
-Item=AHFS6,CCHH80
+Name=QH148FY
+Position=159,292,216,312
+Item=QH148FY,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=11
+DataCaptureType=ComboBox
+Form=8
   
 [Text]
-Position=256,247,298,263
-Text=AHFS6
- 
-  
-[Field]
-Name=AHFS7
-Position=409,274,424,294
-Item=AHFS7,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=256,277,298,293
-Text=AHFS7
- 
-  
-[Field]
-Name=AHFS8
-Position=409,304,424,324
-Item=AHFS8,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=256,307,298,323
-Text=AHFS8
- 
-  
-[Field]
-Name=AH156H
-Position=395,348,424,368
-Item=AH156H,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Verify=No
-UpperCase=Yes
-Form=11
-  
-[Text]
-Position=256,351,308,367
-Text=AH156 H
- 
-  
-[Field]
-Name=AH156M
-Position=395,374,424,394
-Item=AH156M,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Verify=No
-UpperCase=Yes
-Form=11
-  
-[Text]
-Position=297,375,308,391
-Text=M
- 
-  
-[Field]
-Name=AHNUMDV
-Position=395,399,424,419
-Item=AHNUMDV,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Verify=No
-UpperCase=Yes
-Form=11
-  
-[Text]
-Position=256,402,372,418
-Text=Domestic violence
- 
-  
-[Field]
-Name=AHLANGQ
-Position=507,137,536,157
-Item=AHLANGQ,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=475,116,564,132
-Text=Questionnaire
-Form=7
- 
-  
-[Field]
-Name=AHLANGI
-Position=603,137,632,157
-Item=AHLANGI,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=586,100,670,132
-Text=Language of \nInterview
-Form=9
- 
-  
-[Field]
-Name=AHLANGR
-Position=699,137,728,157
-Item=AHLANGR,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=681,116,756,132
-Text=Respondent
-Form=9
- 
-  
-[Field]
-Name=AHTRANS
-Position=806,134,821,154
-Item=AHTRANS,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=780,98,844,130
-Text=Translator\nUsed
-Form=9
- 
-  
-[Field]
-Name=GHAUX
-Position=772,225,787,245
-Item=GHAUX,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-[Text]
-Position=482,224,580,240
-Text=HH Coordinates
- 
-  
-[Field]
-Name=GHINTRO
-Position=812,225,827,245
-Item=GHINTRO,CCHH80
-UseEnterKey=Yes
-DataCaptureType=RadioButton
-Form=11
-  
-  
-[Field]
-Name=GHLATITUDE
-Position=658,251,827,271
-Item=GHLATITUDE,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Form=11
-  
-[Text]
-Position=482,253,605,269
-Text=Latitude in degrees
- 
-  
-[Field]
-Name=GHLONGITUDE
-Position=658,278,827,298
-Item=GHLONGITUDE,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Form=11
-  
-[Text]
-Position=482,281,617,297
-Text=Longitude in degrees
- 
-  
-[Field]
-Name=GHALTITUDE
-Position=756,306,827,326
-Item=GHALTITUDE,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Form=11
-  
-[Text]
-Position=482,309,594,325
-Text=Altitude in meters
- 
-  
-[Field]
-Name=GHACCURACY
-Position=798,333,827,353
-Item=GHACCURACY,CCHH80
-UseEnterKey=Yes
-Protected=Yes
-Form=11
-  
-[Text]
-Position=482,336,715,352
-Text=Accuracy 1-The best, 50-The weakest
- 
-  
-[Field]
-Name=AHFINISH
-Position=693,400,708,420
-Item=AHFINISH,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-Form=11
-  
-[Text]
-Position=482,403,655,419
-Text=End of household interview
+Position=77,295,133,311
+Text=QH148FY
  
 [EndGroup]
   
 [Group]
 Required=Yes
-Name=ABSECOVER_FORM
-Label=Biomarker questionnaire cover page
-Form=12
-LogicControl=No
+Name=QHSEC04_FORM
+Label=Additional household characteristics
+Form=9
 Max=1
   
 [Field]
-Name=AHCLUST000
+Name=QH149
+Position=265,91,280,111
+Item=QH149,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=114,94,154,110
+Text=QH149
+ 
+  
+[Field]
+Name=QH150
+Position=265,117,280,137
+Item=QH150,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=114,120,154,136
+Text=QH150
+ 
+  
+[Field]
+Name=QH151
+Position=237,143,280,163
+Item=QH151,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=CheckBox
+Form=9
+  
+[Text]
+Position=114,146,154,162
+Text=QH151
+ 
+  
+[Field]
+Name=QH152
+Position=251,169,280,189
+Item=QH152,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=114,172,154,188
+Text=QH152
+ 
+  
+[Field]
+Name=QH153
+Position=251,198,280,218
+Item=QH153,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=114,201,154,217
+Text=QH153
+ 
+  
+[Field]
+Name=QH154
+Position=251,290,280,310
+Item=QH154,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=113,293,153,309
+Text=QH154
+ 
+  
+[Field]
+Name=QH155
+Position=265,316,280,336
+Item=QH155,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=113,319,153,335
+Text=QH155
+ 
+  
+[Field]
+Name=QH156H
+Position=251,349,280,369
+Item=QH156H,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+Form=9
+  
+[Text]
+Position=112,352,165,368
+Text=QH156 H
+ 
+  
+[Field]
+Name=QH156M
+Position=251,375,280,395
+Item=QH156M,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+Form=9
+  
+[Text]
+Position=153,376,164,392
+Text=M
+ 
+[EndGroup]
+  
+[Group]
+Required=Yes
+Name=QHSECEND_FORM
+Label=End of household questionnaire
+Form=10
+Max=1
+  
+[Field]
+Name=QHLANGQ
+Position=250,81,279,101
+Item=QHLANGQ,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=RadioButton
+Form=10
+  
+[Text]
+Position=155,82,244,98
+Text=Questionnaire
+ 
+  
+[Field]
+Name=QHLANGI
+Position=385,82,414,102
+Item=QHLANGI,CGHH80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=10
+  
+[Text]
+Position=288,83,371,99
+Text=L'INTERVIEW
+ 
+  
+[Field]
+Name=QHLANGR
+Position=504,80,533,100
+Item=QHLANGR,CGHH80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=10
+  
+[Text]
+Position=419,84,479,100
+Text=ENQUÊTÉ
+ 
+  
+[Field]
+Name=QHTRANS
+Position=264,111,279,131
+Item=QHTRANS,CGHH80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=10
+  
+[Text]
+Position=155,114,235,130
+Text=INTERPRÈTE
+ 
+  
+[Field]
+Name=GHAUX
+Position=489,179,504,199
+Item=GHAUX,CGHH80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=10
+  
+[Text]
+Position=155,182,253,198
+Text=HH Coordinates
+ 
+  
+[Field]
+Name=GHINTRO
+Position=518,179,533,199
+Item=GHINTRO,CGHH80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=10
+  
+  
+[Field]
+Name=GHLATITUDE
+Position=364,211,533,231
+Item=GHLATITUDE,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=TextBox
+Form=10
+  
+[Text]
+Position=154,215,277,231
+Text=Latitude in degrees
+ 
+  
+[Field]
+Name=GHLONGITUDE
+Position=364,240,533,260
+Item=GHLONGITUDE,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=TextBox
+Form=10
+  
+[Text]
+Position=154,244,289,260
+Text=Longitude in degrees
+ 
+  
+[Field]
+Name=GHALTITUDE
+Position=462,265,533,285
+Item=GHALTITUDE,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=TextBox
+Form=10
+  
+[Text]
+Position=154,269,266,285
+Text=Altitude in meters
+ 
+  
+[Field]
+Name=GHACCURACY
+Position=504,291,533,311
+Item=GHACCURACY,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=TextBox
+Form=10
+  
+[Text]
+Position=154,292,212,308
+Text=Accuracy
+ 
+  
+[Field]
+Name=QHFINISH
+Position=434,336,452,356
+Item=QHFINISH,CGHH80
+UseEnterKey=Yes
+UpperCase=Yes
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+Form=10
+  
+[Text]
+Position=218,339,429,355
+Text=FIN DE QUESTIONNAIRE MENAGE
+ 
+[EndGroup]
+  
+[Group]
+Required=Yes
+Name=QBSECOVER_FORM
+Label=Biomarker questionnaire cover page
+Form=11
+Max=1
+  
+[Field]
+Name=QHCLUST000
 Position=448,84,505,104
-Item=AHCLUST,CCHH80
+Item=QHCLUST,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=73,86,170,102
@@ -5667,11 +4425,12 @@ Text=Cluster number
  
   
 [Field]
-Name=AHNUMBER000
+Name=QHNUMBER000
 Position=448,110,505,130
-Item=AHNUMBER,CCHH80
+Item=QHNUMBER,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=73,113,193,129
@@ -5679,11 +4438,12 @@ Text=Household number
  
   
 [Field]
-Name=AHELIGM000
+Name=QHELIGM000
 Position=490,144,505,164
-Item=AHELIGM,CCHH80
+Item=QHELIGM,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=73,149,302,165
@@ -5692,14 +4452,14 @@ Text=Biomarker subsample (if applicable)
   
   
 [Field]
-Name=ABINTD
+Name=QBINTD
 Position=476,179,505,199
-Item=ABINTD,CCHH80
+Item=QBINTD,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=12
+Form=11
   
 [Text]
 Position=390,182,414,198
@@ -5707,14 +4467,14 @@ Text=Day
  
   
 [Field]
-Name=ABINTM
+Name=QBINTM
 Position=476,203,505,223
-Item=ABINTM,CCHH80
+Item=QBINTM,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=12
+Form=11
   
 [Text]
 Position=390,206,429,222
@@ -5722,14 +4482,14 @@ Text=Month
  
   
 [Field]
-Name=ABINTY
+Name=QBINTY
 Position=448,228,505,248
-Item=ABINTY,CCHH80
+Item=QBINTY,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=12
+Form=11
   
 [Text]
 Position=390,231,419,247
@@ -5737,14 +4497,14 @@ Text=Year
  
   
 [Field]
-Name=ABVISITS
+Name=QBVISITS
 Position=490,263,505,283
-Item=ABVISITS,CCHH80
+Item=QBVISITS,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=12
+Form=11
   
 [Text]
 Position=73,266,174,282
@@ -5752,11 +4512,12 @@ Text=Number of visits
  
   
 [Field]
-Name=AHWOMEN000
+Name=QHWOMEN000
 Position=476,290,505,310
-Item=AHWOMEN,CCHH80
+Item=QHWOMEN,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=73,293,208,309
@@ -5764,11 +4525,12 @@ Text=Total eligible women
  
   
 [Field]
-Name=AHMEN000
+Name=QHMEN000
 Position=476,317,505,337
-Item=AHMEN,CCHH80
+Item=QHMEN,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=73,320,189,336
@@ -5776,14 +4538,15 @@ Text=Total eligible men
  
   
 [Field]
-Name=ABCHILD
+Name=QBCHILD
 Position=476,344,505,364
-Item=ABCHILD,CCHH80
+Item=QBCHILD,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=73,347,213,363
@@ -5791,11 +4554,12 @@ Text=Total eligible children
  
   
 [Field]
-Name=AHLANGQ000
+Name=QHLANGQ000
 Position=115,431,144,451
-Item=AHLANGQ,CCHH80
+Item=QHLANGQ,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=88,409,177,425
@@ -5803,11 +4567,12 @@ Text=Questionnaire
  
   
 [Field]
-Name=AHLANGI000
+Name=QHLANGI000
 Position=218,431,247,451
-Item=AHLANGI,CCHH80
+Item=QHLANGI,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=196,393,280,425
@@ -5815,11 +4580,12 @@ Text=Language of \nInterview
  
   
 [Field]
-Name=AHLANGR000
+Name=QHLANGR000
 Position=302,431,331,451
-Item=AHLANGR,CCHH80
+Item=QHLANGR,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=286,409,361,425
@@ -5827,11 +4593,12 @@ Text=Respondent
  
   
 [Field]
-Name=AHTRANS000
+Name=QHTRANS000
 Position=461,429,476,449
-Item=AHTRANS,CCHH80
+Item=QHTRANS,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=436,390,500,422
@@ -5839,11 +4606,12 @@ Text=Translator\nUsed
  
   
 [Field]
-Name=AHSUPERV000
+Name=QHSUPERV000
 Position=155,480,212,500
-Item=AHSUPERV,CCHH80
+Item=QHSUPERV,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=63,481,131,497
@@ -5851,11 +4619,12 @@ Text=Supervisor
  
   
 [Field]
-Name=AHINTNUM000
+Name=QHINTNUM000
 Position=448,480,505,500
-Item=AHINTNUM,CCHH80
+Item=QHINTNUM,CGHH80
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=360,481,432,497
@@ -5863,19 +4632,20 @@ Text=Interviewer
  
   
 [Field]
-Name=AHTEAM000
+Name=QHTEAM000
 Position=305,482,334,502
-Item=AHTEAM,CCHH80
+Item=QHTEAM,CGHH80
 UseEnterKey=Yes
 Mirror=Yes
-Form=12
+DataCaptureType=TextBox
+Form=11
   
 [Text]
 Position=253,484,289,500
 Text=Team
  
 [Block]
-Name=ABINT_BLOCK
+Name=QBINT_BLOCK
 Label=Date of biomarker completion
 DisplayTogether=Yes
 Position=3
@@ -5885,21 +4655,20 @@ Length=3
   
 [Group]
 Required=No
-Name=ABSEC01_FORM
+Name=QBSEC01_FORM
 Label=Weight, Height and Hemoglobin Measurement for Children age 0-5
-Form=13
-LogicControl=No
+Form=12
 Max=1
   
 [Grid]
-Name=ABSEC01_ROSTER
+Name=QBSEC01_ROSTER
 Label=Height, Weight, Hemoglobin (children)
-Form=13
+Form=12
 Required=No
 Type=Record
-TypeName=ABSEC01
+TypeName=QBSEC01
 Max=20
-DisplaySize=0,43,868,1289
+DisplaySize=1,43,869,1203
 Orientation=Vertical
 ColumnWidth=80
 StubColumnWidth=69
@@ -6045,13 +4814,14 @@ Text=Column
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=ABCOL1
+Name=QBCOL1
 Position=33,0,62,20
-Item=ABCOL1,CCHH80
+Item=QBCOL1,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,4,65,28
@@ -6065,21 +4835,22 @@ Width=28
   
 [HeaderText]
 Position=4,4,69,28
-Text=AB102
+Text=QB102
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB102
+Name=QB102
 Position=33,0,62,20
-Item=AB102,CCHH80
+Item=QB102,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,42,16
-Text=AB102
+Text=QB102
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -6088,13 +4859,13 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=4,4,69,28
-Text=ACAUXIL
+Position=3,4,69,28
+Text=QCAUXIL
  
 [Field]
-Name=ACAUXIL
+Name=QCAUXIL
 Position=46,0,61,20
-Item=ACAUXIL,CCHH80
+Item=QCAUXIL,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6102,7 +4873,7 @@ FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ACAUXIL
+Text=QCAUXIL
  
 [EndColumn]
   
@@ -6111,14 +4882,14 @@ Width=74
   
 [HeaderText]
 Position=4,25,69,49
-Text=AB103
+Text=QB103
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 VerticalAlignment=Middle
  
 [Field]
-Name=AB103D
+Name=QB103D
 Position=33,0,62,20
-Item=AB103D,CCHH80
+Item=QB103D,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6130,9 +4901,9 @@ Text=503
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB103M
+Name=QB103M
 Position=33,23,62,43
-Item=AB103M,CCHH80
+Item=QB103M,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6144,9 +4915,9 @@ Text=Month of birth
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB103Y
+Name=QB103Y
 Position=5,46,62,66
-Item=AB103Y,CCHH80
+Item=QB103Y,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6163,20 +4934,20 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=22,4,69,28
-Text=AB104
+Position=21,4,69,28
+Text=QB104
  
 [Field]
-Name=AB104
+Name=QB104
 Position=46,0,61,20
-Item=AB104,CCHH80
+Item=QB104,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,51,20
-Text=AB104
+Text=QB104
  
 [EndColumn]
   
@@ -6185,13 +4956,13 @@ Width=53
   
 [HeaderText]
 Position=4,0,69,53
-Text=AB106
+Text=QB106
 VerticalAlignment=Middle
  
 [Field]
-Name=AB106
+Name=QB106
 Position=1,0,72,20
-Item=AB106,CCHH80
+Item=QB106,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6199,13 +4970,13 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,42,16
-Text=AB106
+Text=QB106
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB106W
+Name=QB106W
 Position=1,24,72,44
-Item=AB106W,CCHH80
+Item=QB106W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6214,7 +4985,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,319,16
-Text=Weight in kilograms - working field for re-entering
+Text=Poids en kilogrammes - variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -6223,18 +4994,18 @@ Width=28
   
 [HeaderText]
 Position=21,4,69,28
-Text=AB107
+Text=QB107
  
 [Field]
-Name=AB107
+Name=QB107
 Position=50,0,65,20
-Item=AB107,CCHH80
+Item=QB107,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB107
+Text=QB107
  
 [EndColumn]
   
@@ -6243,25 +5014,25 @@ Width=54
   
 [HeaderText]
 Position=4,0,69,54
-Text=AB108
+Text=QB108
  
 [Field]
-Name=AB108
+Name=QB108
 Position=1,0,72,20
-Item=AB108,CCHH80
+Item=QB108,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB108
+Text=QB108
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB108W
+Name=QB108W
 Position=1,24,72,44
-Item=AB108W,CCHH80
+Item=QB108W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6270,130 +5041,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,327,16
-Text=Height in centimeters - working field for re-entering
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=4,4,69,28
-Text=AB109
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=AB109
-Position=48,0,63,20
-Item=AB109,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB109
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=23,4,69,28
-Text=AB110
- 
-[Field]
-Name=AB110
-Position=48,0,63,20
-Item=AB110,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB110
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=24,4,69,28
-Text=AB111
- 
-[Field]
-Name=AB111
-Position=48,0,63,20
-Item=AB111,CCHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Position=0,0,51,20
-Text=AB111
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=23,4,69,28
-Text=AB112
- 
-[Field]
-Name=AB112
-Position=48,0,63,20
-Item=AB112,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB112
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=4,4,69,28
-Text=AB113
- 
-[Field]
-Name=AB113
-Position=15,0,72,20
-Item=AB113,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=AB113
- 
-[EndColumn]
-  
-[Column]
-Width=34
-  
-[HeaderText]
-Position=23,0,69,34
-Text=AB114
- 
-[Field]
-Name=AB114
-Position=15,0,72,20
-Item=AB114,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB114
+Text=Taille en centimètres - Variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -6401,42 +5049,129 @@ Text=AB114
 Width=76
   
 [HeaderText]
-Position=23,26,69,50
-Text=AB115
+Position=21,0,69,76
+Text=QB109
 VerticalAlignment=Middle
  
 [Field]
-Name=AB115D
+Name=QB109D
 Position=40,0,69,20
-Item=AB115D,CCHH80
+Item=QB109D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB115D
+Text=QB109D
  
 [Field]
-Name=AB115M
+Name=QB109M
 Position=40,24,69,44
-Item=AB115M,CCHH80
+Item=QB109M,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB115M
+Text=QB109M
  
 [Field]
-Name=AB115Y
+Name=QB109Y
 Position=12,48,69,68
-Item=AB115Y,CCHH80
+Item=QB109Y,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB115Y
+Text=QB109Y
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=4,0,69,28
+Text=QB110
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[Field]
+Name=QB110
+Position=48,0,63,20
+Item=QB110,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB110
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=22,4,69,28
+Text=QB112
+ 
+[Field]
+Name=QB112
+Position=48,0,63,20
+Item=QB112,CGHH80
+UseEnterKey=Yes
+UpperCase=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Position=0,0,51,20
+Text=QB112
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=22,4,69,28
+Text=QB113
+ 
+[Field]
+Name=QB113
+Position=48,0,63,20
+Item=QB113,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB113
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=22,0,69,28
+Text=QB114
+VerticalAlignment=Top
+ 
+[Field]
+Name=QB114
+Position=50,0,65,20
+Item=QB114,CGHH80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+  
+[Text]
+Position=23,96,69,120
+Text=QB114
+VerticalAlignment=Top
  
 [EndColumn]
   
@@ -6445,13 +5180,54 @@ Width=28
   
 [HeaderText]
 Position=4,4,69,28
-Text=AB118
+Text=QB115
+ 
+[Field]
+Name=QB115
+Position=15,0,72,20
+Item=QB115,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB115
+ 
+[EndColumn]
+  
+[Column]
+Width=34
+  
+[HeaderText]
+Position=22,0,69,34
+Text=QB116
+ 
+[Field]
+Name=QB116
+Position=15,0,72,20
+Item=QB116,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB116
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=4,4,69,28
+Text=QB118
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB118
+Name=QB118
 Position=36,0,65,20
-Item=AB118,CCHH80
+Item=QB118,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6459,7 +5235,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,42,16
-Text=AB118
+Text=QB118
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -6469,20 +5245,20 @@ Width=33
   
 [HeaderText]
 Position=4,0,69,33
-Text=AB120
+Text=QB120
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB120
+Name=QB120
 Position=48,0,63,20
-Item=AB120,CCHH80
+Item=QB120,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB120
+Text=QB120
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -6491,41 +5267,19 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Width=28
   
 [HeaderText]
-Position=22,4,69,28
-Text=AB121
+Position=21,4,69,28
+Text=QB121
  
 [Field]
-Name=AB121
+Name=QB121
 Position=15,0,72,20
-Item=AB121,CCHH80
+Item=QB121,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
+DataCaptureType=TextBox
   
 [Text]
-Text=AB121
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=12,4,69,28
-Text=ABM112
- 
-[Field]
-Name=ABM112
-Position=0,0,71,20
-Item=ABM112,CCHH80
-UseEnterKey=Yes
-ValidationMethod=NoConfirm
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Position=0,0,65,20
-Text=ABM112
+Text=QB121
  
 [EndColumn]
   
@@ -6533,27 +5287,27 @@ Text=ABM112
 Width=64
   
 [HeaderText]
-Position=22,0,69,64
-Text=AB122
+Position=21,0,69,64
+Text=QB123
 VerticalAlignment=Top
  
 [Field]
-Name=AB122
+Name=QB123
 Position=15,0,72,20
-Item=AB122,CCHH80
+Item=QB123,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB122
+Text=QB123
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
-Name=AB122W
+Name=QB123W
 Position=15,24,72,44
-Item=AB122W,CCHH80
+Item=QB123W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -6562,7 +5316,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,339,16
-Text=Hemoglobin level (g/dl) - working field for re-entering
+Text=Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -6570,19 +5324,19 @@ Text=Hemoglobin level (g/dl) - working field for re-entering
 Width=28
   
 [HeaderText]
-Position=12,4,69,28
-Text=ABM114
+Position=10,4,69,28
+Text=QB124
  
 [Field]
-Name=ABM114
+Name=QB124
 Position=54,0,69,20
-Item=ABM114,CCHH80
+Item=QB124,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM114
+Text=QB124
  
 [EndColumn]
   
@@ -6590,97 +5344,97 @@ Text=ABM114
 Width=196
   
 [HeaderText]
-Position=12,86,69,110
-Text=ABM115
+Position=10,86,69,110
+Text=QB125
 VerticalAlignment=Middle
  
 [Field]
-Name=ABM115A
+Name=QB125A
 Position=54,0,69,20
-Item=ABM115A,CCHH80
+Item=QB125A,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115A
+Text=QB125A
  
 [Field]
-Name=ABM115B
+Name=QB125B
 Position=54,24,69,44
-Item=ABM115B,CCHH80
+Item=QB125B,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115B
+Text=QB125B
  
 [Field]
-Name=ABM115C
+Name=QB125C
 Position=54,48,69,68
-Item=ABM115C,CCHH80
+Item=QB125C,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115C
+Text=QB125C
  
 [Field]
-Name=ABM115D
+Name=QB125D
 Position=54,73,69,93
-Item=ABM115D,CCHH80
+Item=QB125D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115D
+Text=QB125D
  
 [Field]
-Name=ABM115E
+Name=QB125E
 Position=54,96,69,116
-Item=ABM115E,CCHH80
+Item=QB125E,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115E
+Text=QB125E
  
 [Field]
-Name=ABM115F
+Name=QB125F
 Position=54,120,69,140
-Item=ABM115F,CCHH80
+Item=QB125F,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115F
+Text=QB125F
  
 [Field]
-Name=ABM115G
+Name=QB125G
 Position=54,144,69,164
-Item=ABM115G,CCHH80
+Item=QB125G,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115G
+Text=QB125G
  
 [Field]
-Name=ABM115H
+Name=QB125H
 Position=54,168,69,188
-Item=ABM115H,CCHH80
+Item=QB125H,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM115H
+Text=QB125H
  
 [EndColumn]
   
@@ -6688,19 +5442,19 @@ Text=ABM115H
 Width=28
   
 [HeaderText]
-Position=12,4,69,28
-Text=ABM117
+Position=10,4,69,28
+Text=QB127
  
 [Field]
-Name=ABM117
+Name=QB127
 Position=54,0,69,20
-Item=ABM117,CCHH80
+Item=QB127,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM117
+Text=QB127
  
 [EndColumn]
   
@@ -6708,19 +5462,19 @@ Text=ABM117
 Width=28
   
 [HeaderText]
-Position=12,4,69,28
-Text=ABM119
+Position=10,4,69,28
+Text=QB128
  
 [Field]
-Name=ABM119
+Name=QB128
 Position=54,0,69,20
-Item=ABM119,CCHH80
+Item=QB128,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM119
+Text=QB128
  
 [EndColumn]
   
@@ -6728,19 +5482,19 @@ Text=ABM119
 Width=28
   
 [HeaderText]
-Position=11,4,69,28
-Text=ABM122
+Position=10,4,69,28
+Text=QB131
  
 [Field]
-Name=ABM122
+Name=QB131
 Position=54,0,69,20
-Item=ABM122,CCHH80
+Item=QB131,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABM122
+Text=QB131
  
 [EndColumn]
   
@@ -6748,38 +5502,19 @@ Text=ABM122
 Width=28
   
 [HeaderText]
-Position=11,4,69,28
-Text=ABM123
+Position=10,4,69,28
+Text=QB132
  
 [Field]
-Name=ABM123
+Name=QB132
 Position=12,0,69,20
-Item=ABM123,CCHH80
+Item=QB132,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
+DataCaptureType=TextBox
   
 [Text]
-Text=ABM123
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=22,4,69,28
-Text=AB123
- 
-[Field]
-Name=AB123
-Position=54,0,69,20
-Item=AB123,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB123
+Text=QB132
  
 [EndColumn]
   
@@ -6787,74 +5522,74 @@ Text=AB123
 Width=76
   
 [HeaderText]
-Position=11,26,69,50
-Text=ABM128
+Position=10,26,69,50
+Text=QB135
 VerticalAlignment=Middle
  
 [Field]
-Name=ABM128D
+Name=QB135D
 Position=40,0,69,20
-Item=ABM128D,CCHH80
+Item=QB135D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,77,20
-Text=ABM128D
+Text=QB135D
  
 [Field]
-Name=ABM128M
+Name=QB135M
 Position=41,24,70,44
-Item=ABM128M,CCHH80
+Item=QB135M,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,79,20
-Text=ABM128M
+Text=QB135M
  
 [Field]
-Name=ABM128Y
+Name=QB135Y
 Position=13,48,70,68
-Item=ABM128Y,CCHH80
+Item=QB135Y,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,76,20
-Text=ABM128Y
+Text=QB135Y
  
 [EndColumn]
   
 [Block]
-Name=AB103_BLOCK
+Name=QB103_BLOCK
 Label=Child's date of birth
 DisplayTogether=Yes
 Position=3
 Length=3
   
 [Block]
-Name=AB115_BLOCK
+Name=QB109_BLOCK
 Label=Date of measurement
 DisplayTogether=Yes
-Position=19
+Position=13
 Length=3
   
 [Block]
-Name=ABM115_BLOCK
+Name=QB125_BLOCK
 Label=Malaria symptoms
 DisplayTogether=Yes
-Position=30
+Position=29
 Length=8
   
 [Block]
-Name=ABM128_BLOCK
+Name=QB135_BLOCK
 Label=Date measurement for malaria
 DisplayTogether=Yes
-Position=44
+Position=42
 Length=3
   
 [EndGrid]
@@ -6863,125 +5598,125 @@ Length=3
   
 [Group]
 Required=No
-Name=ABSEC02_FORM
+Name=QBSEC02_FORM
 Label=Weight, Height and Hemoglobin Measurement for Women
-Form=14
-LogicControl=No
+Form=13
 Max=1
   
 [Grid]
-Name=ABSEC02_ROSTER
+Name=QBSEC02_ROSTER
 Label=Height, Weight, Hemoglobin (women)
-Form=14
+Form=13
 Required=No
 Type=Record
-TypeName=ABSEC02
+TypeName=QBSEC02
 Max=20
-DisplaySize=18,38,1016,1050
+DisplaySize=24,45,1022,1101
 Orientation=Vertical
 ColumnWidth=93
-StubColumnWidth=68
+StubColumnWidth=113
 HeadingRowHeight=24
+UseOccurrenceLabels=Yes
 FreeMovement=No
  
 [Text]
-Position=25,0,93,24
-Text=Woman 1
+Position=79,0,94,24
+Text=1
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 2
+Position=79,0,94,24
+Text=2
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 3
+Position=79,0,94,24
+Text=3
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 4
+Position=79,0,94,24
+Text=4
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 5
+Position=79,0,94,24
+Text=5
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 6
+Position=79,0,94,24
+Text=6
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 7
+Position=79,0,94,24
+Text=7
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 8
+Position=79,0,94,24
+Text=8
  
   
 [Text]
-Position=25,0,93,24
-Text=Woman 9
+Position=79,0,94,24
+Text=9
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 10
+Position=72,0,94,24
+Text=10
  
   
 [Text]
-Position=19,0,93,24
-Text=Woman 11
+Position=73,0,94,24
+Text=11
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 12
+Position=72,0,94,24
+Text=12
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 13
+Position=72,0,94,24
+Text=13
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 14
+Position=72,0,94,24
+Text=14
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 15
+Position=72,0,94,24
+Text=15
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 16
+Position=72,0,94,24
+Text=16
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 17
+Position=72,0,94,24
+Text=17
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 18
+Position=72,0,94,24
+Text=18
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 19
+Position=72,0,94,24
+Text=19
  
   
 [Text]
-Position=18,0,93,24
-Text=Woman 20
+Position=72,0,94,24
+Text=20
  
   
 [Column]
@@ -6992,21 +5727,22 @@ Width=10
 Width=28
   
 [HeaderText]
-Position=8,4,68,28
-Text=ABCOL2
+Position=52,4,113,28
+Text=QBCOL2
  
 [Field]
-Name=ABCOL2
+Name=QBCOL2
 Position=56,0,85,20
-Item=ABCOL2,CCHH80
+Item=QBCOL2,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,53,16
-Text=ABCOL2
+Text=QBCOL2
  
 [EndColumn]
   
@@ -7014,21 +5750,22 @@ Text=ABCOL2
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB202
+Position=65,4,113,28
+Text=QB202
  
 [Field]
-Name=AB202
+Name=QB202
 Position=56,0,85,20
-Item=AB202,CCHH80
+Item=QB202,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,42,16
-Text=AB202
+Text=QB202
  
 [EndColumn]
   
@@ -7036,13 +5773,13 @@ Text=AB202
 Width=28
   
 [HeaderText]
-Position=1,4,68,28
-Text=AWAUXIL
+Position=44,4,113,28
+Text=QWAUXIL
  
 [Field]
-Name=AWAUXIL
+Name=QWAUXIL
 Position=70,0,85,20
-Item=AWAUXIL,CCHH80
+Item=QWAUXIL,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -7050,7 +5787,7 @@ FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AWAUXIL
+Text=QWAUXIL
  
 [EndColumn]
   
@@ -7058,20 +5795,20 @@ Text=AWAUXIL
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB203
+Position=65,4,113,28
+Text=QB203
  
 [Field]
-Name=AB203
+Name=QB203
 Position=70,0,85,20
-Item=AB203,CCHH80
+Item=QB203,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB203
+Text=QB203
  
 [EndColumn]
   
@@ -7079,20 +5816,20 @@ Text=AB203
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB204
+Position=65,4,113,28
+Text=QB204
  
 [Field]
-Name=AB204
+Name=QB204
 Position=70,0,85,20
-Item=AB204,CCHH80
+Item=QB204,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB204
+Text=QB204
  
 [EndColumn]
   
@@ -7100,13 +5837,13 @@ Text=AB204
 Width=57
   
 [HeaderText]
-Position=21,0,68,57
-Text=AB205
+Position=65,0,113,57
+Text=QB205
  
 [Field]
-Name=AB205
+Name=QB205
 Position=0,0,85,20
-Item=AB205,CCHH80
+Item=QB205,CGHH80
 UseEnterKey=Yes
 HideInCaseTree=Yes
 Verify=No
@@ -7114,12 +5851,12 @@ UpperCase=Yes
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB205
+Text=QB205
  
 [Field]
-Name=AB205W
+Name=QB205W
 Position=0,24,85,44
-Item=AB205W,CCHH80
+Item=QB205W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -7128,7 +5865,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,323,16
-Text=Weight in kilograms - working field for re-entering
+Text=Poids en kilogrammes - variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -7136,19 +5873,19 @@ Text=Weight in kilograms - working field for re-entering
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB206
+Position=65,4,113,28
+Text=QB206
  
 [Field]
-Name=AB206
+Name=QB206
 Position=70,0,85,20
-Item=AB206,CCHH80
+Item=QB206,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB206
+Text=QB206
  
 [EndColumn]
   
@@ -7156,13 +5893,13 @@ Text=AB206
 Width=54
   
 [HeaderText]
-Position=21,0,68,54
-Text=AB207
+Position=65,0,113,54
+Text=QB207
  
 [Field]
-Name=AB207
+Name=QB207
 Position=14,0,85,20
-Item=AB207,CCHH80
+Item=QB207,CGHH80
 UseEnterKey=Yes
 HideInCaseTree=Yes
 Verify=No
@@ -7170,12 +5907,12 @@ UpperCase=Yes
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB207
+Text=QB207
  
 [Field]
-Name=AB207W
+Name=QB207W
 Position=14,24,85,44
-Item=AB207W,CCHH80
+Item=QB207W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -7184,66 +5921,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,327,16
-Text=Height in centimeters - working field for re-entering
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB208
- 
-[Field]
-Name=AB208
-Position=70,0,85,20
-Item=AB208,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB208
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB209
- 
-[Field]
-Name=AB209
-Position=28,0,85,20
-Item=AB209,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=AB209
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB210
- 
-[Field]
-Name=AB210
-Position=28,0,85,20
-Item=AB210,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB210
+Text=Taille en centimètres - variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -7251,42 +5929,42 @@ Text=AB210
 Width=76
   
 [HeaderText]
-Position=22,26,68,50
-Text=AB211
+Position=66,26,113,50
+Text=QB211
 VerticalAlignment=Middle
  
 [Field]
-Name=AB211D
-Position=56,0,85,20
-Item=AB211D,CCHH80
+Name=QB211D
+Position=57,0,86,20
+Item=QB211D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB211D
+Text=QB211D
  
 [Field]
-Name=AB211M
-Position=56,24,85,44
-Item=AB211M,CCHH80
+Name=QB211M
+Position=57,24,86,44
+Item=QB211M,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB211M
+Text=QB211M
  
 [Field]
-Name=AB211Y
-Position=28,48,85,68
-Item=AB211Y,CCHH80
+Name=QB211Y
+Position=29,48,86,68
+Item=QB211Y,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB211Y
+Text=QB211Y
  
 [EndColumn]
   
@@ -7294,20 +5972,40 @@ Text=AB211Y
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB215
+Position=65,4,113,28
+Text=QB208
  
 [Field]
-Name=AB215
+Name=QB208
 Position=70,0,85,20
-Item=AB215,CCHH80
+Item=QB208,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB208
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB209
+ 
+[Field]
+Name=QB209
+Position=28,0,85,20
+Item=QB209,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
-DataCaptureType=RadioButton
+DataCaptureType=TextBox
   
 [Text]
-Text=AB215
+Text=QB209
  
 [EndColumn]
   
@@ -7315,51 +6013,41 @@ Text=AB215
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB216
+Position=65,4,113,28
+Text=QB210
  
 [Field]
-Name=AB216
+Name=QB210
 Position=28,0,85,20
-Item=AB216,CCHH80
+Item=QB210,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
+DataCaptureType=TextBox
   
 [Text]
-Text=AB216
+Text=QB210
  
 [EndColumn]
   
 [Column]
-Width=52
+Width=28
   
 [HeaderText]
-Position=0,14,68,38
-Text=ABWHIV1
+Position=45,2,113,26
+Text=QB214
 VerticalAlignment=Middle
  
 [Field]
-Name=ABWHIV1
+Name=QB214
 Position=70,0,85,20
-Item=ABWHIV1,CCHH80
+Item=QB214,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABWHIV1
- 
-[Field]
-Name=ABWHIV2
-Position=28,24,85,44
-Item=ABWHIV2,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=ABWHIV2
+Text=QB214
  
 [EndColumn]
   
@@ -7367,20 +6055,18 @@ Text=ABWHIV2
 Width=28
   
 [HeaderText]
-Position=0,4,68,28
-Text=ABWHIV3
+Position=65,4,113,28
+Text=QB215
  
 [Field]
-Name=ABWHIV3
-Position=70,0,85,20
-Item=ABWHIV3,CCHH80
+Name=QB215
+Position=29,0,86,20
+Item=QB215,CGHH80
 UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
+DataCaptureType=TextBox
   
 [Text]
-Text=ABWHIV3
+Text=QB215
  
 [EndColumn]
   
@@ -7388,21 +6074,369 @@ Text=ABWHIV3
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB217
+Position=65,4,113,28
+Text=QB216
  
 [Field]
-Name=AB217
-Position=56,0,85,20
-Item=AB217,CCHH80
+Name=QB216
+Position=71,0,86,20
+Item=QB216,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB216
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB217
+ 
+[Field]
+Name=QB217
+Position=29,0,86,20
+Item=QB217,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB217
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB219
+ 
+[Field]
+Name=QB219
+Position=71,0,86,20
+Item=QB219,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB219
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=45,0,113,28
+Text=QB222
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB222
+Position=71,0,86,20
+Item=QB222,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
+  
+[Text]
+Text=QB222
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB220
+ 
+[Field]
+Name=QB220
+Position=29,0,86,20
+Item=QB220,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB220
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,0,113,28
+Text=QB221
+ 
+[Field]
+Name=QB221
+Position=57,0,86,20
+Item=QB221,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+  
+[Text]
+Text=QB221
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=57,2,113,26
+Text=QB223
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB223
+Position=29,0,86,20
+Item=QB223,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB223
+VerticalAlignment=Middle
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=45,0,113,28
+Text=QB226
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB226
+Position=71,0,86,20
+Item=QB226,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB226
+ 
+[EndColumn]
+  
+[Column]
+Width=33
+  
+[HeaderText]
+Position=57,0,113,33
+Text=QB227
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB227
+Position=29,0,86,20
+Item=QB227,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB227
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB228
+ 
+[Field]
+Name=QB228
+Position=71,0,86,20
+Item=QB228,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB228
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB229
+ 
+[Field]
+Name=QB229
+Position=29,0,86,20
+Item=QB229,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB229
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB231
+ 
+[Field]
+Name=QB231
+Position=71,0,86,20
+Item=QB231,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB231
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB232
+ 
+[Field]
+Name=QB232
+Position=29,0,86,20
+Item=QB232,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB232
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB234
+ 
+[Field]
+Name=QB234
+Position=71,0,86,20
+Item=QB234,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB234
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB235
+ 
+[Field]
+Name=QB235
+Position=29,0,86,20
+Item=QB235,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB235
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB237
+ 
+[Field]
+Name=QB237
+Position=71,0,86,20
+Item=QB237,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB237
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB238
+ 
+[Field]
+Name=QB238
+Position=29,0,86,20
+Item=QB238,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB238
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB239
+ 
+[Field]
+Name=QB239
+Position=43,0,86,20
+Item=QB239,CGHH80
+UseEnterKey=Yes
+UpperCase=Yes
+DataCaptureType=CheckBox
   
 [Text]
 Position=0,0,42,16
-Text=AB217
+Text=QB239
  
 [EndColumn]
   
@@ -7410,246 +6444,13 @@ Text=AB217
 Width=28
   
 [HeaderText]
-Position=21,4,68,28
-Text=AB219
+Position=45,4,113,28
+Text=QB240
  
 [Field]
-Name=AB219
-Position=70,0,85,20
-Item=AB219,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB219
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB220
- 
-[Field]
-Name=AB220
-Position=28,0,85,20
-Item=AB220,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB220
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB223
- 
-[Field]
-Name=AB223
-Position=70,0,85,20
-Item=AB223,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB223
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB224
- 
-[Field]
-Name=AB224
-Position=28,0,85,20
-Item=AB224,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB224
- 
-[EndColumn]
-  
-[Column]
-Width=52
-  
-[HeaderText]
-Position=0,14,68,38
-Text=ABWHIV4
-VerticalAlignment=Middle
- 
-[Field]
-Name=ABWHIV4
-Position=70,0,85,20
-Item=ABWHIV4,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABWHIV4
- 
-[Field]
-Name=ABWHIV5
-Position=28,24,85,44
-Item=ABWHIV5,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=ABWHIV6A
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=0,2,68,26
-Text=ABWHIV6
-VerticalAlignment=Middle
- 
-[Field]
-Name=ABWHIV6
-Position=70,0,85,20
-Item=ABWHIV6,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABWHIV6
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=0,4,68,28
-Text=ABWHIV7
- 
-[Field]
-Name=ABWHIV7
-Position=70,0,85,20
-Item=ABWHIV7,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABWHIV7
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=0,4,68,28
-Text=ABWHIV8
- 
-[Field]
-Name=ABWHIV8
-Position=70,0,85,20
-Item=ABWHIV8,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABWHIV8
- 
-[EndColumn]
-  
-[Column]
-Width=54
-  
-[HeaderText]
-Position=21,0,68,54
-Text=AB225
- 
-[Field]
-Name=AB225
-Position=28,0,85,20
-Item=AB225,CCHH80
-UseEnterKey=Yes
-HideInCaseTree=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=ComboBox
-  
-[Text]
-Text=AB225
- 
-[Field]
-Name=AB225W
-Position=28,24,85,44
-Item=AB225W,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-FieldLabelType=DictionaryLabel
-DataCaptureType=ComboBox
-  
-[Text]
-Position=0,0,339,16
-Text=Hemoglobin level (g/dl) - working field for re-entering
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=21,4,68,28
-Text=AB226
- 
-[Field]
-Name=AB226
-Position=70,0,85,20
-Item=AB226,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB226
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=0,4,68,28
-Text=ABWHIV9
- 
-[Field]
-Name=ABWHIV9
+Name=QB240
 Position=14,0,85,20
-Item=ABWHIV9,CCHH80
+Item=QB240,CGHH80
 UseEnterKey=Yes
 Verify=No
 ValidationMethod=NoConfirm
@@ -7658,16 +6459,123 @@ DataCaptureType=RadioButton
   
 [Text]
 Position=0,0,76,20
-Text=ABWHIV9
+Text=QB240
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB241
+ 
+[Field]
+Name=QB241
+Position=71,0,86,20
+Item=QB241,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB241
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB242
+ 
+[Field]
+Name=QB242
+Position=71,0,86,20
+Item=QB242,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB242
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=56,4,113,28
+Text=QB241A
+ 
+[Field]
+Name=QB241A
+Position=71,0,86,20
+Item=QB241A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB241A
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=56,4,113,28
+Text=QB242A
+ 
+[Field]
+Name=QB242A
+Position=71,0,86,20
+Item=QB242A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB242A
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB244
+ 
+[Field]
+Name=QB244
+Position=71,0,86,20
+Item=QB244,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB244
  
 [EndColumn]
   
 [Block]
-Name=AB211_BLOCK
-Label=Date measurement - woman
+Name=QB211_BLOCK
+Label=Date of measurement
 DisplayTogether=Yes
-Position=13
+Position=10
 Length=3
+  
+[Block]
+Name=Z_B240_BLOCK
+Label=Time for third reading
+DisplayTogether=Yes
+Position=37
+Length=0
   
 [EndGrid]
  
@@ -7675,24 +6583,23 @@ Length=3
   
 [Group]
 Required=Yes
-Name=ABSEC03_FORM
+Name=QBSEC03_FORM
 Label=Weight, Height and Hemoglobin Measurement for Men 15-49
-Form=15
-LogicControl=No
+Form=14
 Max=1
   
 [Grid]
-Name=ABSEC03_ROSTER
-Label=Height, Weight, Hemoglobin (men)
-Form=15
+Name=QBSEC03_ROSTER
+Label=Eaten?
+Form=14
 Required=No
 Type=Record
-TypeName=ABSEC03
+TypeName=QBSEC03
 Max=20
-DisplaySize=12,50,1009,1074
+DisplaySize=14,44,1011,2140
 Orientation=Vertical
 ColumnWidth=93
-StubColumnWidth=67
+StubColumnWidth=69
 HeadingRowHeight=24
 FreeMovement=No
  
@@ -7817,27 +6724,33 @@ Text=Man 20
   
 [Column]
 Width=10
+  
+[HeaderText]
+Position=21,0,69,24
+Text=QB340
+ 
 [EndColumn]
   
 [Column]
 Width=28
   
 [HeaderText]
-Position=7,4,67,28
-Text=ABCOL3
+Position=8,4,69,28
+Text=QBCOL3
  
 [Field]
-Name=ABCOL3
+Name=QBCOL3
 Position=56,0,85,20
-Item=ABCOL3,CCHH80
+Item=QBCOL3,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,53,16
-Text=ABCOL3
+Text=QBCOL3
  
 [EndColumn]
   
@@ -7845,21 +6758,22 @@ Text=ABCOL3
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB302
+Position=21,4,69,28
+Text=QB302
  
 [Field]
-Name=AB302
+Name=QB302
 Position=56,0,85,20
-Item=AB302,CCHH80
+Item=QB302,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,42,16
-Text=AB302
+Text=QB302
  
 [EndColumn]
   
@@ -7867,13 +6781,13 @@ Text=AB302
 Width=28
   
 [HeaderText]
-Position=0,4,67,28
-Text=AMAUXIL
+Position=1,4,69,28
+Text=QMAUXIL
  
 [Field]
-Name=AMAUXIL
+Name=QMAUXIL
 Position=70,0,85,20
-Item=AMAUXIL,CCHH80
+Item=QMAUXIL,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -7881,7 +6795,7 @@ FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AMAUXIL
+Text=QMAUXIL
  
 [EndColumn]
   
@@ -7889,20 +6803,20 @@ Text=AMAUXIL
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB303
+Position=21,4,69,28
+Text=QB303
  
 [Field]
-Name=AB303
+Name=QB303
 Position=70,0,85,20
-Item=AB303,CCHH80
+Item=QB303,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB303
+Text=QB303
  
 [EndColumn]
   
@@ -7910,20 +6824,20 @@ Text=AB303
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB304
+Position=21,4,69,28
+Text=QB304
  
 [Field]
-Name=AB304
+Name=QB304
 Position=70,0,85,20
-Item=AB304,CCHH80
+Item=QB304,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB304
+Text=QB304
  
 [EndColumn]
   
@@ -7931,25 +6845,25 @@ Text=AB304
 Width=59
   
 [HeaderText]
-Position=20,0,67,59
-Text=AB305
+Position=21,0,69,59
+Text=QB305
  
 [Field]
-Name=AB305
+Name=QB305
 Position=0,0,85,20
-Item=AB305,CCHH80
+Item=QB305,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB305
+Text=QB305
  
 [Field]
-Name=AB305W
+Name=QB305W
 Position=0,24,85,44
-Item=AB305W,CCHH80
+Item=QB305W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -7958,7 +6872,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,319,16
-Text=Weight in kilograms - working field for re-entering
+Text=Poids en kilogrammes - variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -7966,19 +6880,19 @@ Text=Weight in kilograms - working field for re-entering
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB306
+Position=21,4,69,28
+Text=QB306
  
 [Field]
-Name=AB306
+Name=QB306
 Position=70,0,85,20
-Item=AB306,CCHH80
+Item=QB306,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB306
+Text=QB306
  
 [EndColumn]
   
@@ -7986,13 +6900,13 @@ Text=AB306
 Width=56
   
 [HeaderText]
-Position=20,0,67,56
-Text=AB307
+Position=21,0,69,56
+Text=QB307
  
 [Field]
-Name=AB307
+Name=QB307
 Position=14,0,85,20
-Item=AB307,CCHH80
+Item=QB307,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -8000,12 +6914,12 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,42,16
-Text=AB307
+Text=QB307
  
 [Field]
-Name=AB307W
+Name=QB307W
 Position=14,24,85,44
-Item=AB307W,CCHH80
+Item=QB307W,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
@@ -8014,66 +6928,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,327,16
-Text=Height in centimeters - working field for re-entering
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB308
- 
-[Field]
-Name=AB308
-Position=70,0,85,20
-Item=AB308,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB308
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB309
- 
-[Field]
-Name=AB309
-Position=28,0,85,20
-Item=AB309,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=AB309
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB310
- 
-[Field]
-Name=AB310
-Position=28,0,85,20
-Item=AB310,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB310
+Text=Taille en centimètres - variable de travail pour re-saisir
  
 [EndColumn]
   
@@ -8081,42 +6936,42 @@ Text=AB310
 Width=76
   
 [HeaderText]
-Position=21,26,67,50
-Text=AB311
+Position=22,26,69,50
+Text=QB311
 VerticalAlignment=Middle
  
 [Field]
-Name=AB311D
+Name=QB311D
 Position=56,0,85,20
-Item=AB311D,CCHH80
+Item=QB311D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
   
 [Text]
-Text=AB311D
+Text=QB311D
  
 [Field]
-Name=AB311M
+Name=QB311M
 Position=56,24,85,44
-Item=AB311M,CCHH80
+Item=QB311M,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB311M
+Text=QB311M
  
 [Field]
-Name=AB311Y
+Name=QB311Y
 Position=28,48,85,68
-Item=AB311Y,CCHH80
+Item=QB311Y,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
   
 [Text]
-Text=AB311Y
+Text=QB311Y
  
 [EndColumn]
   
@@ -8124,20 +6979,40 @@ Text=AB311Y
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB315
+Position=21,4,69,28
+Text=QB308
  
 [Field]
-Name=AB315
+Name=QB308
 Position=70,0,85,20
-Item=AB315,CCHH80
+Item=QB308,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB308
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB309
+ 
+[Field]
+Name=QB309
+Position=28,0,85,20
+Item=QB309,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
-DataCaptureType=RadioButton
+DataCaptureType=TextBox
   
 [Text]
-Text=AB315
+Text=QB309
  
 [EndColumn]
   
@@ -8145,51 +7020,41 @@ Text=AB315
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB316
+Position=21,4,69,28
+Text=QB310
  
 [Field]
-Name=AB316
+Name=QB310
 Position=28,0,85,20
-Item=AB316,CCHH80
+Item=QB310,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
+DataCaptureType=TextBox
   
 [Text]
-Text=AB316
+Text=QB310
  
 [EndColumn]
   
 [Column]
-Width=52
+Width=28
   
 [HeaderText]
-Position=1,14,67,38
-Text=ABMHIV1
+Position=3,2,69,26
+Text=QB314
 VerticalAlignment=Middle
  
 [Field]
-Name=ABMHIV1
+Name=QB314
 Position=70,0,85,20
-Item=ABMHIV1,CCHH80
+Item=QB314,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Text=ABMHIV1
- 
-[Field]
-Name=ABMHIV2
-Position=28,24,85,44
-Item=ABMHIV2,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=ABMHIV2
+Text=QB314
  
 [EndColumn]
   
@@ -8197,20 +7062,18 @@ Text=ABMHIV2
 Width=28
   
 [HeaderText]
-Position=1,4,67,28
-Text=ABMHIV3
+Position=21,4,69,28
+Text=QB315
  
 [Field]
-Name=ABMHIV3
-Position=70,0,85,20
-Item=ABMHIV3,CCHH80
+Name=QB315
+Position=28,0,85,20
+Item=QB315,CGHH80
 UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
+DataCaptureType=TextBox
   
 [Text]
-Text=ABMHIV3
+Text=QB315
  
 [EndColumn]
   
@@ -8218,21 +7081,369 @@ Text=ABMHIV3
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB317
+Position=21,4,69,28
+Text=QB316
  
 [Field]
-Name=AB317
+Name=QB316
+Position=70,0,85,20
+Item=QB316,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB316
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB317
+ 
+[Field]
+Name=QB317
+Position=28,0,85,20
+Item=QB317,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB317
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB319
+ 
+[Field]
+Name=QB319
+Position=70,0,85,20
+Item=QB319,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB319
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB320
+ 
+[Field]
+Name=QB320
+Position=28,0,85,20
+Item=QB320,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB320
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB321
+ 
+[Field]
+Name=QB321
 Position=56,0,85,20
-Item=AB317,CCHH80
+Item=QB321,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+  
+[Text]
+Text=QB321
+ 
+[EndColumn]
+  
+[Column]
+Width=31
+  
+[HeaderText]
+Position=3,0,69,31
+Text=QB322
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB322
+Position=70,0,85,20
+Item=QB322,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
+  
+[Text]
+Text=QB322
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=13,2,69,26
+Text=QB323
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB323
+Position=28,0,85,20
+Item=QB323,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Position=0,0,52,16
+Text=QB323
+ 
+[EndColumn]
+  
+[Column]
+Width=29
+  
+[HeaderText]
+Position=3,0,69,29
+Text=QB326
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB326
+Position=70,0,85,20
+Item=QB326,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB326
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=13,2,69,26
+Text=QB327
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB327
+Position=28,0,85,20
+Item=QB327,CGHH80
+UseEnterKey=Yes
+Verify=No
+UpperCase=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB327
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB328
+ 
+[Field]
+Name=QB328
+Position=70,0,85,20
+Item=QB328,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB328
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB329
+ 
+[Field]
+Name=QB329
+Position=28,0,85,20
+Item=QB329,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB329
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB331
+ 
+[Field]
+Name=QB331
+Position=70,0,85,20
+Item=QB331,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB331
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB332
+ 
+[Field]
+Name=QB332
+Position=28,0,85,20
+Item=QB332,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB332
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB334
+ 
+[Field]
+Name=QB334
+Position=70,0,85,20
+Item=QB334,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB334
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB335
+ 
+[Field]
+Name=QB335
+Position=28,0,85,20
+Item=QB335,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB335
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB337
+ 
+[Field]
+Name=QB337
+Position=70,0,85,20
+Item=QB337,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB337
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB338
+ 
+[Field]
+Name=QB338
+Position=28,0,85,20
+Item=QB338,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB338
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB339
+ 
+[Field]
+Name=QB339
+Position=42,0,85,20
+Item=QB339,CGHH80
+UseEnterKey=Yes
+UpperCase=Yes
+DataCaptureType=CheckBox
   
 [Text]
 Position=0,0,42,16
-Text=AB317
+Text=QB339
  
 [EndColumn]
   
@@ -8240,246 +7451,13 @@ Text=AB317
 Width=28
   
 [HeaderText]
-Position=20,4,67,28
-Text=AB319
+Position=3,4,69,28
+Text=QB340
  
 [Field]
-Name=AB319
-Position=70,0,85,20
-Item=AB319,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB319
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB320
- 
-[Field]
-Name=AB320
-Position=28,0,85,20
-Item=AB320,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB320
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB323
- 
-[Field]
-Name=AB323
-Position=70,0,85,20
-Item=AB323,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB323
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB324
- 
-[Field]
-Name=AB324
-Position=28,0,85,20
-Item=AB324,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-  
-[Text]
-Text=AB324
- 
-[EndColumn]
-  
-[Column]
-Width=52
-  
-[HeaderText]
-Position=1,14,67,38
-Text=ABMHIV4
-VerticalAlignment=Middle
- 
-[Field]
-Name=ABMHIV4
-Position=70,0,85,20
-Item=ABMHIV4,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABMHIV4
- 
-[Field]
-Name=ABMHIV5
-Position=28,24,85,44
-Item=ABMHIV5,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-  
-[Text]
-Text=ABMHIV6A
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,2,67,26
-Text=ABMHIV6
-VerticalAlignment=Middle
- 
-[Field]
-Name=ABMHIV6
-Position=70,0,85,20
-Item=ABMHIV6,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABMHIV6
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,67,28
-Text=ABMHIV7
- 
-[Field]
-Name=ABMHIV7
-Position=70,0,85,20
-Item=ABMHIV7,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABMHIV7
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,67,28
-Text=ABMHIV8
- 
-[Field]
-Name=ABMHIV8
-Position=70,0,85,20
-Item=ABMHIV8,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ABMHIV8
- 
-[EndColumn]
-  
-[Column]
-Width=55
-  
-[HeaderText]
-Position=20,0,67,55
-Text=AB325
- 
-[Field]
-Name=AB325
-Position=28,0,85,20
-Item=AB325,CCHH80
-UseEnterKey=Yes
-HideInCaseTree=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=ComboBox
-  
-[Text]
-Text=AB325
- 
-[Field]
-Name=AB325W
-Position=28,24,85,44
-Item=AB325W,CCHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-FieldLabelType=DictionaryLabel
-DataCaptureType=ComboBox
-  
-[Text]
-Position=0,0,339,16
-Text=Hemoglobin level (g/dl) - working field for re-entering
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=20,4,67,28
-Text=AB326
- 
-[Field]
-Name=AB326
-Position=70,0,85,20
-Item=AB326,CCHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=AB326
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=1,4,67,28
-Text=ABMHIV9
- 
-[Field]
-Name=ABMHIV9
+Name=QB340
 Position=14,0,85,20
-Item=ABMHIV9,CCHH80
+Item=QB340,CGHH80
 UseEnterKey=Yes
 Verify=No
 ValidationMethod=NoConfirm
@@ -8487,28 +7465,158 @@ UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
-Position=0,0,42,16
-Text=ABMHIV9
+Position=0,0,59,16
+Text=QB340
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB341
+ 
+[Field]
+Name=QB341
+Position=70,0,85,20
+Item=QB341,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB341
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB342
+ 
+[Field]
+Name=QB342
+Position=70,0,85,20
+Item=QB342,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB342
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=12,4,69,28
+Text=QB341A
+ 
+[Field]
+Name=QB341A
+Position=70,0,85,20
+Item=QB341A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB341A
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=12,4,69,28
+Text=QB342A
+ 
+[Field]
+Name=QB342A
+Position=70,0,85,20
+Item=QB342A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB342A
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=21,4,69,28
+Text=QB344
+ 
+[Field]
+Name=QB344
+Position=70,0,85,20
+Item=QB344,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB344
  
 [EndColumn]
   
 [Block]
-Name=AB311_BLOCK
+Name=QB311_BLOCK
 Label=Date of measurement
 DisplayTogether=Yes
-Position=13
+Position=10
 Length=3
+  
+[Block]
+Name=AB324_BLOCK
+Label=Things done last 30 minutes
+DisplayTogether=Yes
+Position=30
+Length=0
+  
+[Block]
+Name=Z_B328_BLOCK
+Label=Time for second reading
+DisplayTogether=Yes
+Position=31
+Length=0
+  
+[Block]
+Name=Z_B337_BLOCK
+Label=Time for second reading
+DisplayTogether=Yes
+Position=32
+Length=0
+  
+[Block]
+Name=Z_B340_BLOCK
+Label=Time for third reading
+DisplayTogether=Yes
+Position=33
+Length=0
   
 [EndGrid]
  
   
 [Field]
-Name=ABFINISH
+Name=QBFINISH
 Position=1113,36,1131,56
-Item=ABFINISH,CCHH80
+Item=QBFINISH,CGHH80
+UseEnterKey=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
-Form=15
+DataCaptureType=TextBox
+Form=14
   
 [Text]
 Position=1028,13,1228,29

@@ -50,7 +50,7 @@ EN={\colortbl ;\red0\green0\blue255;\red255\green0\blue255;}
 EN={\*\generator Riched20 10.0.17134}\viewkind4\uc1
 EN=\pard\qc\cf1\f0\fs22\lang1033 SUPERVISOR MENU \par
 EN=Cluster: %WCLUSTER%   Supervisor:%WSUPER%-%SupName%\par
-EN=\cf2 Press the Enter key and Select an option from the list to be displayed\par
+EN=\cf2 Press the ENTER key and Select an option from the list to be displayed\par
 EN=}
 ES={\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
 ES={\colortbl ;\red0\green0\blue255;\red255\green0\blue255;}
@@ -58,26 +58,24 @@ ES={\*\generator Riched20 10.0.17134}\viewkind4\uc1
 ES=\pard\qc\cf1\f0\fs22\lang1033 MENU DE SUPERVISION \par
 ES=Segmento: %WCLUSTER%   Supervisor(a):%WSUPER%-%SupName%\par
 ES=\par
-ES=\cf2 Presione la tecla Enter y luego seleccione una opcion del menu que se desplega\par
+ES=\cf2 Presione la tecla ENTER y luego seleccione una opcion del menu que se desplega\par
 ES=
 ES=\pard\cf1\par
 ES=}
 
 [QUESTION]
 Field=MENU_DICT.WFINAL2
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
 EN={\colortbl ;\red0\green0\blue255;\red255\green0\blue0;}
-EN={\*\generator Riched20 10.0.17134}\viewkind4\uc1
-EN=\pard\cf1\f0\fs22\lang1033 INDIVIDUAL MENU\par
-EN=Select an option from the menu for eligible women and men \cf2 (press the Enter key to display the menu)\par
-EN=}
-ES={\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+EN=\viewkind4\uc1\pard\cf1\lang1033\f0\fs22 INDIVIDUAL MENU
+EN=\par Select an option from the menu for eligible women and men \cf2 (press any key to display the menu)
+EN=\par }
+ES={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
 ES={\colortbl ;\red0\green0\blue255;\red255\green0\blue0;}
-ES={\*\generator Riched20 10.0.17134}\viewkind4\uc1
-ES=\pard\cf1\f0\fs22\lang1033 MENU INDIVIDUAL\par
-ES=Seleccione una opcion del menu para mujeres y hombres elegibles \cf2 (presione la tecla Enter para desplegar el menu)\par
-ES=\cf1\par
-ES=}
+ES=\viewkind4\uc1\pard\cf1\lang1033\f0\fs22 MENU INDIVIDUAL
+ES=\par Seleccione una opcion del menu para mujeres y hombres elegibles \cf2 (presione una tecla para desplegar el menu)
+ES=\par \cf1
+ES=\par }
 
 [QUESTION]
 Field=MENU_DICT.WINTNUM
@@ -93,22 +91,19 @@ ES=\par }
 
 [QUESTION]
 Field=MENU_DICT.WINTRO
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
 EN={\colortbl ;\red255\green0\blue255;\red0\green0\blue255;\red0\green0\blue0;}
-EN={\*\generator Riched20 10.0.17134}\viewkind4\uc1
-EN=\pard\qc\cf1\f0\fs24\lang1033 Welcome to the\par
+EN={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\qc\cf1\lang1033\f0\fs24 Welcome to the\par
 EN=\cf2 Demographic & Health Survey\par
 EN=\cf1 Supervisor's Menu\cf3\par
-EN=\fs16 Press the Enter key to continue\f1\par
+EN=\fs16 Press any key to continue\f1\par
 EN=}
-ES={\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ES={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
 ES={\colortbl ;\red255\green0\blue255;\red0\green0\blue255;\red0\green0\blue0;}
-ES={\*\generator Riched20 10.0.17134}\viewkind4\uc1
-ES=\pard\qc\cf1\f0\fs24\lang1033 Bienvenido a la\par
+ES={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\qc\cf1\lang1033\f0\fs24 Bienvenido a la\par
 ES=\cf2 Encuesta de Demografia y Salud\par
 ES=\cf1 Menu para Supervisoras\cf3\par
-ES=\fs16 Presione la tecla Enter para continuar\f1\par
-ES=
+ES=\fs16 Presione una tecla para continuar\f1\par
 ES=\pard\cf1\f0\fs24\par
 ES=}
 

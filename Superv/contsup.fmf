@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.3
+Version=CSPro 7.7
 Name=FL_CONTSUP
 Label=control
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -116,7 +116,6 @@ Required=Yes
 Name=SUPERVISOR
 Label=Control sheet
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
@@ -125,6 +124,7 @@ Position=257,137,314,157
 Item=SSAMPLE,CONTSUP
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -146,6 +146,7 @@ Position=179,256,208,276
 Item=SHTOTAL,CONTSUP
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -155,6 +156,7 @@ Position=254,256,283,276
 Item=SHCOMP,CONTSUP
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -164,6 +166,7 @@ Position=351,256,380,276
 Item=SHINCOMP,CONTSUP
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -172,6 +175,7 @@ Name=SITOTAL
 Position=165,283,208,303
 Item=SITOTAL,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -180,6 +184,7 @@ Name=SICOMP
 Position=240,283,283,303
 Item=SICOMP,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -188,24 +193,27 @@ Name=SIINCOMP
 Position=337,283,380,303
 Item=SIINCOMP,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
   
 [Field]
 Name=SCRDATE
-Position=312,339,397,359
+Position=312,339,425,359
 Item=SCRDATE,CONTSUP
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
 [Field]
 Name=SFINDATE
-Position=313,364,398,384
+Position=313,364,426,384
 Item=SFINDATE,CONTSUP
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -221,7 +229,7 @@ Form=1
 Required=Yes
 Type=SubItem
 TypeName=SALLHH
-Max=40
+Max=50
 DisplaySize=426,0,666,751
 Orientation=Horizontal
 FieldRowHeight=28
@@ -428,6 +436,56 @@ Position=0,4,22,28
 Text=40
  
   
+[Text]
+Position=0,4,22,28
+Text=41
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=42
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=43
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=44
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=45
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=46
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=47
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=48
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=49
+ 
+  
+[Text]
+Position=0,4,22,28
+Text=50
+ 
+  
 [Column]
 Width=10
 [EndColumn]
@@ -445,6 +503,7 @@ Name=SNUMBER
 Position=0,0,57,20
 Item=SNUMBER,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,112,16
@@ -465,6 +524,7 @@ Name=SINTNUM
 Position=0,0,57,20
 Item=SINTNUM,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,146,16
@@ -485,6 +545,7 @@ Name=SACCEPTH
 Position=3,0,18,20
 Item=SACCEPTH,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,132,16
@@ -495,6 +556,7 @@ Name=SACCEPTI
 Position=22,0,37,20
 Item=SACCEPTI,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,65,16
@@ -505,6 +567,7 @@ Name=SACCEPTHW
 Position=41,0,56,20
 Item=SACCEPTHW,CONTSUP
 Protected=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,85,16
@@ -520,6 +583,7 @@ Name=SEND
 Position=219,412,234,432
 Item=SEND,CONTSUP
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [EndGroup]

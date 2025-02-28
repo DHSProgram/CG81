@@ -1,0 +1,36 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=MD5 Log for files to transfer
+Name=MD5
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=67E8458B07B65AA33D6C0C7835083742
+
+[Level]
+Label=MD5 Log
+Name=LEVEL1
+
+[IdItems]
+
+[Item]
+Label=File name
+Name=FILE_NAME
+Start=1
+Len=80
+DataType=Alpha
+
+[Record]
+Label=Transfer record
+Name=MD5_LOG
+RecordTypeValue=''
+RecordLen=130
+
+[Item]
+Label=Transfer log
+Name=MD5CODE
+Start=81
+Len=50
+DataType=Alpha

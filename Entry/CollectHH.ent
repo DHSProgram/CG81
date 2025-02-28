@@ -26,7 +26,7 @@ ParadataCollectEvent=message_event
 [External Dictionaries]
 File=..\Dicts\Clusters.dcf
 File=..\Dicts\HHForInt.dcf
-File=..\Dicts\ccIN80.dcf
+File=..\Dicts\CGIN80.dcf
 File=..\Dicts\Interv.dcf
 [AppCode]
 File=.\CollectHH.apc
@@ -37,12 +37,12 @@ File=.\CollecTot.mgf
 [Help]
 File=.\CollectHH.qsf
 [Forms]
-File=.\ccHH80.fmf
+File=.\CGHH80.fmf
 File=.\Others.fmf
 [Dictionary Types]
 Dict-Type=..\Dicts\Clusters.dcf,External
 Dict-Type=..\Dicts\HHForInt.dcf,External
 Dict-Type=..\Dicts\Others.dcf,External,.\Others.fmf
-Dict-Type=..\Dicts\ccHH80.dcf,Input,.\ccHH80.fmf
-Dict-Type=..\Dicts\ccIN80.dcf,External
+Dict-Type=..\Dicts\CGHH80.dcf,Input,.\CGHH80.fmf
+Dict-Type=..\Dicts\CGIN80.dcf,External
 Dict-Type=..\Dicts\Interv.dcf,External
