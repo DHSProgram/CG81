@@ -1,0 +1,1468 @@
+﻿//Dictionary (C:\CG81\Dicts\CGIN80.dcf)
+CGIN80      -> CGIN80      //DHS-8 Core 06-19-2020
+
+//Level (INDIVIDUAL) - Individual
+INDIVIDUAL  -> INDIVIDUAL  //Individual
+ACLUSTER    -> QCLUSTER    //Cluster number
+ANUMBER     -> QNUMBER     //Household number
+ALINE       -> QLINE       //Individual line number
+
+//Record (ASECOVER) - Individual identification
+ASECOVER    -> QSECOVER    //Individual identification
+AVIOLEN     -> QVIOLEN     //Individual selected for domestic violence|Femme sélectionnée pour violence domestique
+AREGION     -> QREGION     //Region|Région
+ATYPE       -> QTYPE       //Type of place of residence|Type de résidence
+AQTYPE      -> QQTYPE      //Type of questionnaire|Type de questionnaire
+ACONTVIST   -> QCONTVIST   //Group to control visits
+AVLINE      -> QVLINE      //Visit line number
+AVDAY       -> QVDAY       //Day of visit
+AVMONTH     -> QVMONTH     //Month of visit
+AVYEAR      -> QVYEAR      //Year of visit
+AVHOUR      -> QVHOUR      //Hour of visit
+AVMINUTE    -> QVMINUTE    //Minute of visit
+AVRESULT    -> QVRESULT    //Result of visit|Résultat de la visite
+AINTD       -> QINTD       //Day of interview|Jour de l'interview
+AINTM       -> QINTM       //Month of interview|Mois de l'interview
+AINTY       -> QINTY       //Year of interview|Année de l'interview
+AINTNUM     -> QINTNUM     //Interviewer number
+ARESULT     -> QRESULT     //Result of individual interview|Résultat de l'interview individuel
+AVISITS     -> QVISITS     //Total number of visits|Nombre total de visites
+ATEAM       -> QTEAM       //Team number
+ASUPERV     -> QSUPERV     //Supervisor number
+ALANGQ      -> QLANGQ      //Language of questionnaire|Langue du questionnaire
+ALANGI      -> QLANGI      //Language of interview|Langue de l'interview
+ALANGR      -> QLANGR      //Language of respondent|Langue de l’enquêté(e)
+ATRANS      -> QTRANS      //Translator used|Traducteur
+AINTC       -> QINTC       //Date of interview (CMC)
+AINTCD      -> QINTCD      //Date of interview Century Day Code (CDC)
+AWEIGHT     -> QWEIGHT     //Sample weight (6 decimals)
+ADWEIGHT    -> QDWEIGHT    //Domestic violence weight (6 decimals)
+ANAME       -> QNAME       //Name
+AQTYPET     -> QQTYPET     //Textual type of questionnaire
+ACORRECT    -> QCORRECT    //Is the correct individual
+ACONSENT    -> QCONSENT    //Consent agreement
+AINTROUSE   -> QINTROUSE   //Auxiliary to display introduction to contraceptive history
+AESEC4      -> QESEC4      //Entries in section 4 pregnancy/postnatal care
+AESEC5      -> QESEC5      //Entries in section 5 immunizations
+AESEC6      -> QESEC6      //Entries in section 6 health and nutrition
+AESECECD    -> QESECECD    //Entries in section ECD early child development
+AFINAL      -> QFINAL      //Auxiliary to end individual interview
+A214        -> Q214        //Introduction to pregnancy history
+A301_INTRO  -> Q301_INTRO  //Introduction to contraceptive table
+A403        -> Q403        //Introduction to section 4
+A502        -> Q502        //Introduction to section 5
+A602        -> Q602        //Introduction to section 6
+A636_INTRO  -> Q636_INTRO  //Introduction to A636
+A637_INTRO  -> Q637_INTRO  //Introduction to A637
+A643_INTRO  -> Q643_INTRO  //Introduction to A643
+AECDB_INTRO -> QECDB_INTRO //Introduction to Early Child Development
+GIAUX       -> GIAUX       //Auxiliary for Individual coordinates|Auxiliary for Individual coordinates|Auxiliar para coordenadas de Individual
+GIINTRO     -> GIINTRO     //Introduction|Introduction|Introduccion
+GILATITUDE  -> GILATITUDE  //Latitude in degrees
+GILATPOLE   -> GILATPOLE   //Pole north-south for latitude|Pole north-south for latitude|Polo para latitude norte-sur
+GILONGITUDE -> GILONGITUDE //Longitude in degrees
+GILNGPOLE   -> GILNGPOLE   //East-west longitude|East-west longitude|Longitud este-oeste
+GIALTITUDE  -> GIALTITUDE  //Altitude in meters
+GISATELLIT  -> GISATELLIT  //Number of satellites
+GIACCURACY  -> GIACCURACY  //Accuracy (between 1-50) 1-the best 50-the weakest
+AM301_INTRO -> QM301_INTRO //Introduction to contraceptive table
+A643_FIX    -> Q643_FIX    //Temporary field to solve a CSPro bug
+
+//Record (AWSEC01) - Respondent's Background
+AWSEC01     -> QWSEC01     //Respondent's Background
+A101        -> Q101        //Start of interview/first blood pressure reading
+A101H       -> Q101H       //Start of interview (hour)|Début de l'interview (heure)
+A101M       -> Q101M       //Start of interview (minutes)|Début de l'interview (minutes)
+A1116       -> Q1116       //End of interview
+A1116H      -> Q1116H      //End of interview (hour)|Fin interview (heure)
+A1116M      -> Q1116M      //End of interview (minutes)|Fin interview (minutes)
+A102        -> Q102        //State of birth|Province/Région/Etat de naissance
+A103        -> Q103        //Country of birth|Pays de naissance
+A104        -> Q104        //Time living in place of interview|Combien de temps a habité au lieu de l’interview
+A106        -> Q106        //Date of move
+A106M       -> Q106M       //Month of move|Mois de déménagement
+A106Y       -> Q106Y       //Year of move|Année de déménagement
+A107        -> Q107        //Province/state lived before moved to place of interview|Province/Etat habité avant d'être au lieu d’interview
+A108        -> Q108        //Lived in a city/town or rural area|A habité dans une ville/village ou une zone rurale
+A109        -> Q109        //Reason for moving|Raison du déménagement
+A110        -> Q110        //Date of birth
+A110M       -> Q110M       //Month of birth|Mois de naissance
+A110Y       -> Q110Y       //Year of birth|Année de naissance
+A111        -> Q111        //Current age of respondent|Age actuel de l'enquétée
+A112        -> Q112        //Self reported health status|Auto-déclaration de l’état de santé
+A113        -> Q113        //Ever attended school|A déjà fréquenté l'école
+A114        -> Q114        //Highest educational level|Plus haut niveau d'étude
+A115        -> Q115        //Highest grade/form/year at that level|Plus haute Classe/Année à ce niveau
+A117        -> Q117        //Sentence read|Phrase lue
+A119        -> Q119        //Reads newspaper|Lit le journal/magazine
+A120        -> Q120        //Listens to radio|Ecoute la radio
+A121        -> Q121        //Watches television|Regarde la télévision
+A122        -> Q122        //Own a mobile telephone|Posséde un téléphone mobile
+A123        -> Q123        //Phone is a smart phone|Le téléphone est un "smart phone"
+A127        -> Q127        //Have ever used the internet|A déjà utilisé Internet
+A128        -> Q128        //Have used the internet last 12 months|A utilisé Internet les 12 derniers mois
+A129        -> Q129        //How often used internet the last month|Combien de fois a utilisé Internet le mois dernier
+A130        -> Q130        //Religion
+A131        -> Q131        //Ethnicity|Ethnie
+A110C       -> Q110C       //Date of birth (CMC)
+A110F       -> Q110F       //Date flag for A110C
+A111C       -> Q111C       //Age of respondent calculated
+A114A       -> Q114A       //Highest educational level
+AWFTOTAL    -> QWFTOTAL    //All woman factor - total
+AWFTYPE     -> QWFTYPE     //All woman factor - urban/rural
+AWFREG      -> QWFREG      //All woman factor - regional
+AWFEDUC     -> QWFEDUC     //All woman factor - educational
+AWFWLTH     -> QWFWLTH     //All woman factor - wealth index
+
+//Record (AWSEC2A) - Reproduction
+AWSEC2A     -> QWSEC2A     //Reproduction
+A201        -> Q201        //Ever given birth|Eu une naissance
+A202        -> Q202        //Sons or daughters living with|Fils et filles à la maison
+A203A       -> Q203A       //Sons at home|Fils à la maison
+A203B       -> Q203B       //Daughters at home|Filles à la maison
+A204        -> Q204        //Sons or daughters living away|Fils et filles vivant ailleurs
+A205A       -> Q205A       //Sons living elsewhere|Fils vivant ailleurs
+A205B       -> Q205B       //Daughters living elsewhere|Filles vivant ailleurs
+A206        -> Q206        //Sons or daughters who died|Fils ou filles décédés
+A207A       -> Q207A       //Boys who died|Fils décédés
+A207B       -> Q207B       //Girls who died|Filles décédés
+A208        -> Q208        //Total children ever born|Nombre total d'enfants nés
+A209        -> Q209        //Probe to children ever born|Sonder total enfants nés
+A210        -> Q210        //Had pregnancy ended in not a live birth|Eu une grossesse  qui s'était terminée par une naissance non vivante
+A211        -> Q211        //Number of non-live births|Nombre de naissances non vivantes
+A212        -> Q212        //Total pregnancies
+A212W       -> Q212W       //Total pregnancies - working version
+A222A       -> Q222A       //Pregnancy between last pregnancy and interview|Grossesse entre le dernier et l'interview
+A222AW      -> Q222AW      //Pregnancy between last pregnancy and interview (working var)
+A222B       -> Q222B       //Auxiliary to display pregnancy history|Auxiliaire pour afficher l'historique de grossesse
+
+//Record (AWSEC2B) - Pregnancy History
+AWSEC2B     -> QWSEC2B     //Pregnancy History
+A215L       -> Q215L       //Line number of pregnancy|Numéro de ligne de grossesse
+A215        -> Q215        //Single or multiple pregnancy|Grossesse simple ou multiple
+A216        -> Q216        //Pregnancy outcome|Résultat de la grossesse
+A217        -> Q217        //Baby cried, moved or breathed|Bébé a crié, a bougé ou respiré
+A218        -> Q218        //Child's name
+A219        -> Q219        //Sex of child|Sexe de l'enfant
+A220        -> Q220        //Date of birth/end of pregnancy
+A220D       -> Q220D       //Day of birth/end of pregnancy|Jour de naissance/fin de grossesse
+A220M       -> Q220M       //Month of birth/end of pregnancy|Mois de naissance/fin de grossesse
+A220Y       -> Q220Y       //Year of birth/end of pregnancy|Année de naissance/fin de grossesse
+A221        -> Q221        //Duration of pregnancy
+A221U       -> Q221U       //Duration of pregnancy (unit)|Durée de grossesse (unité)
+A221N       -> Q221N       //Duration of pregnancy (number)|Durée de grossesse (nombres)
+A222        -> Q222        //Pregnancies between previous and current pregnancy|Grossesses entre la grossesse précédente et la grossesse actuelle
+A223        -> Q223        //Pregnancy outcome (final)|Résultat de la grossesse (final)
+A224        -> Q224        //Child is still alive|L'enfant est toujours en vie
+A225        -> Q225        //Current age of child|Âge actuel de l'enfant
+A226        -> Q226        //Child living with respondent|Enfant vivant avec l’enquêtée
+A227        -> Q227        //Line number in the household|Numéro de ligne dans le ménage
+A228        -> Q228        //Age at death
+A228U       -> Q228U       //Age at death (units)|Age au décès (unité)
+A228N       -> Q228N       //Age at death (number)|Age au décès (nombres)
+ALAST5      -> QLAST5      //Pregnancy in the calendar|Grossesses pendant le calendrier
+A220C       -> Q220C       //Date of birth/end of pregnancy (CMC)
+A220CD      -> Q220CD      //Date of birth/end of pregnancy Century Day Code (CDC)
+A220DI      -> Q220DI      //Imputed day of birth/end of pregnancy
+A220F       -> Q220F       //Date flag for A220C
+A228C       -> Q228C       //Age at death months (imputed)
+A228F       -> Q228F       //Date flag for A228C
+APLINE      -> QPLINE      //Line number of pregnancy (for second roster)
+A221DUR     -> Q221DUR     //Pregnancy duration in months
+A222W       -> Q222W       //Pregnancy between this and prior pregnancy (working version keeps track of any uses of Yes)
+
+//Record (AWSEC2Y) - Working calendar
+AWSEC2Y     -> QWSEC2Y     //Working calendar
+ACAL1       -> QCAL1       //Column 1
+ACAL2       -> QCAL2       //Column 2
+
+//Record (AWSEC2C) - Calendar
+AWSEC2C     -> QWSEC2C     //Calendar
+ACAL        -> QCAL        //Calendar|Calendrier
+
+//Record (AWSEC2D) - Reproduction (continued)
+AWSEC2D     -> QWSEC2D     //Reproduction (continued)
+A232        -> Q232        //Currently pregnant|Actuellement enceinte
+A233        -> Q233        //Duration of current pregnancy
+A233U       -> Q233U       //Pregnancy duration unit|Durée de la grossesse actuelle (unité)
+A233N       -> Q233N       //Pregnancy duration number|Durée de la grossesse actuelle (nombres)
+A234        -> Q234        //Wanted pregnancy at that time|Voulait une grossesse à ce moment-là
+A235        -> Q235        //Wanted pregnancy later or not at all|Voulait une grossesse plus tard ou pas du tout
+A236        -> Q236        //Time since last period
+A236U       -> Q236U       //Time since last period (unit)|Durée depuis les dernières règles (unité)
+A236N       -> Q236N       //Time since last period (number)|Durée depuis les dernières règles (nombres)
+A238        -> Q238        //Used during last menstrual cycle|A utilisé lors des dernières règles
+A239        -> Q239        //Last menstrual cycle: change in privacy|Dernier cycle menstruel: se laver et changer en privé
+A240        -> Q240        //Age at first menstrual period|Âge aux premières règles
+A241        -> Q241        //Knowledge of fertile period|Connaissance de la période féconde
+A242        -> Q242        //When is the fertile period|Quand est la période féconde
+A243        -> Q243        //After birth, can a woman get pregnant before period returns|Après la naissance, une femme peut-elle tomber enceinte avant le retour des règles?
+A233C       -> Q233C       //Date of conception (CMC)
+A233F       -> Q233F       //Date flag for A233C
+A236F       -> Q236F       //Flag for A236
+A233DUR     -> Q233DUR     //Current pregnancy duration in months
+
+//Record (AWSEC3A) - Contraceptive Knowledge & Use
+AWSEC3A     -> QWSEC3A     //Contraceptive Knowledge & Use
+AWSEC31_GRP -> QWSEC31_GRP //Contraception listing
+A301N       -> Q301N       //Contraceptive method|Méthode contraceptive
+A301        -> Q301        //Heard of method|Entendu parler de la méthode
+A301OT      -> Q301OT      //Auxiliary to capture other methods|Auxiliaire pour capter d'autres méthodes
+AALLMETH    -> QALLMETH    //Auxiliary to capture spontaneous knowledge of methods|Auxiliaire pour capter les connaissances spontanées des méthodes
+
+//Record (AWSEC3B) - Contraceptive Practice
+AWSEC3B     -> QWSEC3B     //Contraceptive Practice
+A303        -> Q303        //Currently using any method|Utilisation actuelle d'une méthode
+A304        -> Q304        //Respondent/partner sterilized|L’enquêtée/partenaire stérilisé
+A306        -> Q306        //Check to make sure not using a method|Assurez-vous qu’une autre méthode n’est pas utilisée
+A307        -> Q307        //Current contraceptive method|Méthode contraceptive actuelle
+A308        -> Q308        //Type of injectable|Type d'injectable
+A309        -> Q309        //Who injected|Qui a injecté
+A310        -> Q310        //Brand name of pills reported|Nom de marque des pilules utilisé
+A311        -> Q311        //Brand name of condoms reported|Nom de marque des condoms utilisé
+A312        -> Q312        //Where sterilization took place|Où a eu lieu la stérilisation
+A313        -> Q313        //Date sterilization was performed
+A313M       -> Q313M       //Month sterilization was performed|Mois de la stérilisation a été effectuée
+A313Y       -> Q313Y       //Year sterilization was performed|Année de la stérilisation a été effectuée
+A314        -> Q314        //Time started using current method
+A314M       -> Q314M       //Month started using current method|Mois début utilisation de la méthode actuelle
+A314Y       -> Q314Y       //Year started using current method|Année début utilisation de la méthode actuelle
+A318        -> Q318        //Used emergency contraception in past 12 months|A Utilisé une contraception d'urgence au cours des 12 derniers mois
+A320        -> Q320        //Ever used a contraceptive method|A déjà utilisé une méthode contraceptive
+A321        -> Q321        //Current contraceptive method (filter)|Méthode contraceptive actuelle (filtre)
+A322        -> Q322        //Source for current method when started|Source au début de l’utilisation de la méthode actuelle
+A323        -> Q323        //Told about side effects|Informé des effets secondaires
+A324        -> Q324        //Told about side effects when sterilized|Informé des effets secondaires lors de la stérilisation
+A325        -> Q325        //Told how to deal with side effects|Informé comment gérer les effets secondaires
+A326        -> Q326        //Told about other FP methods|Informé sur d'autres méthodes de PF
+A327        -> Q327        //Current contraceptive method (filter)|Méthode contraceptive actuelle (filtre)
+A328        -> Q328        //Could switch method if wanted/needed to|Pourrait changer de méthode si souhaite/nécessaire
+A329        -> Q329        //Current contraceptive method (filter)|Méthode contraceptive actuelle (filtre)
+A330        -> Q330        //Last source of FP|Dernière source de PF
+A331        -> Q331        //Know source for FP|Connaît source de PF
+A332        -> Q332        //Visited by FP worker in last 12 months|Visité par un agent de santé au cours des 12 derniers mois
+A333        -> Q333        //Fieldworker talked about FP|Agent de santé a parlé de PF
+A334        -> Q334        //Visited health facility in last 12 months|A visité un établissement de santé au cours des 12 derniers mois
+A335        -> Q335        //At health facility, told of FP|Au centre de santé, informé sur les méthodes de PF
+A307N       -> Q307N       //Current contraceptive method (major method)|Méthode contraceptive actuelle (méthode principale)
+A314C       -> Q314C       //Date started using current method (CMC)
+A314F       -> Q314F       //Date flag for A314C
+
+//Record (AWSEC3C) - Contraceptive Use History
+AWSEC3C     -> QWSEC3C     //Contraceptive Use History
+A317N       -> Q317N       //Line number
+A317A       -> Q317A       //Date episode began
+A317AM      -> Q317AM      //Month episode began|Mois du début de l’épisode
+A317AY      -> Q317AY      //Year episode began
+A317B       -> Q317B       //If used a method|Si a utilisé une méthode
+A317C       -> Q317C       //Method used in interval|Méthode utilisée dans l'intervalle
+A317D       -> Q317D       //Months after episode and before began using|Mois après l'épisode et avant de commencer à utiliser
+A317E       -> Q317E       //Date began using a method
+A317EM      -> Q317EM      //Month began using|Mois debut utilisation
+A317EY      -> Q317EY      //Year began using|Année debut utilisation
+A317F       -> Q317F       //Months of continuous use|Durée d'utilisation continue en mois
+A317G       -> Q317G       //Date ended using method
+A317GM      -> Q317GM      //Month ended use|Mois de fin d'utilisation
+A317GY      -> Q317GY      //Year ended use|Année de fin d'utilisation
+A317H       -> Q317H       //Discontinuation reason|Raison de l'arrêt d'utilisation
+ACAUXM1     -> QCAUXM1     //Auxiliary month began using|Auxiliaire mois début d'utilisation
+ACAUXY1     -> QCAUXY1     //Auxiliary year began using|Auxiliaire année début d'utilisation
+ACAUXM2     -> QCAUXM2     //Auxiliary month ended use|Auxiliaire mois de fin d’utilisation
+ACAUXY2     -> QCAUXY2     //Auxiliary year ended use|Auxiliaire  année de fin d’utilisation
+ACROWNEXT   -> QCROWNEXT   //Row where next episode start
+ACDIRNEXT   -> QCDIRNEXT   //Direction for next episode|Direction du prochain épisode
+ACFEVENT    -> QCFEVENT    //End of interval between pregnancy-births-terminations
+ACBEVENT    -> QCBEVENT    //Begin of interval between pregnancy-births-terminations
+ACDURIN     -> QCDURIN     //Interval estimated before beginning of use
+
+//Record (AWSEC04) - Pregnancy and Postnatal Care
+AWSEC04     -> QWSEC04     //Pregnancy and Postnatal Care
+ACOL41      -> QCOL41      //Column number|Numéro de colonne
+A404        -> Q404        //Line number in pregnancy history|Numéro de ligne dans l'historique de grossesse
+A405        -> Q405        //Pregnancy outcome|Résultat de la grossesse
+A406        -> Q406        //Date of end of pregnancy
+A406D       -> Q406D       //Day of end of pregnancy|Jour de fin de grossesse
+A406M       -> Q406M       //Month of end of pregnancy|Mois de fin de grossesse
+A406Y       -> Q406Y       //Year of end of pregnancy|Année de fin de grossesse
+A407        -> Q407        //Child name
+A408        -> Q408        //Wanted to get pregnant at that time|Voulais tomber enceinte à ce moment-là
+A409        -> Q409        //Wanted pregnancy later or not at all|Voulait une grossesse plus tard ou pas du tout
+A410        -> Q410        //Time would have waited
+A410U       -> Q410U       //Time would have waited (unit)|Temps d'attente (unité)
+A410N       -> Q410N       //Time would have waited (number)|Temps d'attente (nombre)
+A411        -> Q411        //Pregnancy outcome (filter)|Résultat de la grossesse (filtre)
+A412        -> Q412        //Received antenatal care for pregnancy|A reçu des soins prénatals pour la grossesse
+A414        -> Q414        //Provider of antenatal care for pregnancy|Prestataire de soins prénatals pour la grossesse
+A415        -> Q415        //Where antenatal care took place|Où les soins prénatals ont eu lieu
+A416        -> Q416        //Weeks/months pregnant when received antenatal care
+A416U       -> Q416U       //Time of first antenatal visit (unit)|Durée de grossesse (unité)
+A416N       -> Q416N       //Time of first antenatal visit (number)|Durée de grossesse (nombre)
+A417        -> Q417        //Antenatal visits during pregnancy|Visites prénatales pendant la grossesse
+A418A       -> Q418A       //Antenatal care: Blood pressure|Soins prénatals: tension artérielle
+A418B       -> Q418B       //Antenatal care: Urine sample|Soins prénatals: échantillon d'urine
+A418C       -> Q418C       //Antenatal care: Blood sample|Soins prénatals: échantillon de sang
+A418D       -> Q418D       //Antenatal care: heartbeat|Soins prénatals: battements cardiaques
+A418E       -> Q418E       //Antenatal care: foods|Soins prénatals: aliments
+A418F       -> Q418F       //Antenatal care: breastfeed|Soins prénatals: allaitement
+A418G       -> Q418G       //Antenatal care: bleeding|Soins prénatals: saignements
+A418H       -> Q418H       //Antenatal care: weight|Soins prénatals: saignements
+A418I       -> Q418I       //Antenatal care: talked about delivery due date|Soins prénatals: saignements
+A418J       -> Q418J       //Antenatal care: told to pay attention to baby movements|Soins prénatals: saignements
+A420        -> Q420        //Tetanus injection during pregnancy|Injection de tétanos pendant la grossesse
+A421        -> Q421        //Number of tetanus injections|Nombre d'injections de tétanos
+A423        -> Q423        //Tetanus injections before pregnancy|Injections de tétanos avant la grossesse
+A424        -> Q424        //Number of tetanus injections before pregnancy|Nombre d'injections de tétanos avant la grossesse
+A425        -> Q425        //Years ago received last tetanus injection before pregnancy|Il y a des années a reçu la dernière injection de tétanos avant la grossesse
+A426        -> Q426        //Iron tablets or syrup during pregnancy|Comprimés ou sirop de fer pendant la grossesse
+A427        -> Q427        //Where iron tablets or syrup were obtained|Lieu d’obtention des comprimés ou du sirop de fer
+A428        -> Q428        //Number of days took iron tablets or syrup|Nombre de jours de prise de comprimés ou de sirop de fer
+A429        -> Q429        //Drugs for intestinal parasites|Médicaments contre les vers intestinaux
+A430        -> Q430        //Receive food/cash through assistance program|Reçu de la nourriture/de l'argent grâce au programme d'assistance
+A431        -> Q431        //During pregnancy took SP/Fansidar for malaria|Pendant la grossesse, pris SP/Fansidar contre le paludisme
+A432        -> Q432        //How many times took SP/Fansidar (Malaria)|Combien de fois a pris SP/Fansidar (Paludisme)
+A433        -> Q433        //Got SP/Fansidar during antenatal visit (Malaria)|Pris SP/Fansidar lors de la visite prénatale (paludisme)
+A434        -> Q434        //Assistance at delivery|Assistance à l’accouchement
+A435        -> Q435        //Place of delivery|Lieu d'accouchement
+A436        -> Q436        //Delivery by caesarean section|Accouchement par césarienne
+A437        -> Q437        //Pregnancy outcome (filter)|Résultat de la grossesse (filtre)
+A438        -> Q438        //Child was put on the chest after birth|L'enfant a été mis sur la poitrine après la naissance
+A439        -> Q439        //Child bare skin touched respondent bare skin|La peau de l'enfant a touché la peau de l’enquêtée
+A440        -> Q440        //Time to put child to mother's chest in hours|Combien de temps après la naissance l'enfant a été mis sur la poitrine de l’enquêtée (nombres)
+A441        -> Q441        //Size of child at birth|Taille de l'enfant à la naissance
+A442        -> Q442        //Weighed at birth|Pesé à la naissance
+A443        -> Q443        //Weight at birth
+A443U       -> Q443U       //Weight at birth from card or recall|Poids à la naissance à partir du carnet ou mémoire
+A443N       -> Q443N       //Weight in kilograms|Poids à la naissance
+A447        -> Q447        //Time spent in health facility after delivery
+A447U       -> Q447U       //Time spent in health facility after delivery (unit)|Temps passé dans l'établissement de santé après l'accouchement (unité)
+A447N       -> Q447N       //Time spent in health facility after delivery (number)|Temps passé dans l'établissement de santé après l'accouchement (nombre)
+A448        -> Q448        //Postnatal check on respondent before discharge|Contrôle postnatal de l’enquêtée avant la sortie
+A449        -> Q449        //First postnatal check on respondent
+A449U       -> Q449U       //First postnatal check on respondent (unit)|Premier contrôle postnatal de l’enquêtée (unité)
+A449N       -> Q449N       //First postnatal check on respondent (number)|Premier contrôle postnatal de l’enquêtée (nombre)
+A450        -> Q450        //Person giving postnatal care to respondent|Personne qui donne des soins postnatals à l’enquêtée
+A452        -> Q452        //First postnatal check on child in facility|Premier contrôle postnatal de l'enfant dans l’établissement
+A453        -> Q453        //Time first postnatal check on child  in facility
+A453U       -> Q453U       //Time first postnatal check on child in facility (unit)|Durée premier examen de l'enfant dans l'établissement (unité)
+A453N       -> Q453N       //Time first postnatal check on child in facility (number)|Durée premier examen de l'enfant dans l'établissement (nombre)
+A454        -> Q454        //Person giving postnatal care to child  in facility|Personne qui a donne des soins postnatals à l'enfant dans l'établissement
+A455        -> Q455        //Checkup on respondent after discharge from place of delivery|Examen de l’enquêtée après la sortie dans l'établissement
+A456        -> Q456        //Time checkup on respondent after discharge
+A456U       -> Q456U       //Time checkup on respondent after discharge (unit)|Durée après l'accouchement cet examen a eu lieu (unité)
+A456N       -> Q456N       //Time checkup on respondent after discharge (number)|Durée après l'accouchement cet examen a eu lieu (nombre)
+A457        -> Q457        //Person giving checkup on respondent after discharge
+A458        -> Q458        //Place of checkup of respondent after discharge|Lieu de l'examen
+A460        -> Q460        //Child{s health checked after birth|L'Etat de santé l’enfant a été vérifié dans les 2 premiers mois après la naissance
+A461        -> Q461        //First postnatal check on child
+A461U       -> Q461U       //First postnatal check on child (unit)|Premier examen postnatal de l'enfant (unité)
+A461N       -> Q461N       //First postnatal check on child (number)|Premier examen postnatal de l'enfant (nombre)
+A462        -> Q462        //Person giving postnatal check on child
+A463        -> Q463        //Place of first postnatal check
+A464        -> Q464        //Respondent received postnatal check after home delivery|L’enquêtée a reçu un contrôle postnatal après l'accouchement à domicile
+A465        -> Q465        //Time respondent received postnatal check after home delivery
+A465U       -> Q465U       //Time respondent received postnatal check after home delivery (unit)|Durée du contrôle postnatal après l'accouchement à domicile par l’enquêtée (unité)
+A465N       -> Q465N       //Time respondent received postnatal check after home delivery (number)|Durée du contrôle postnatal après l'accouchement à domicile par l’enquêtée (nombre)
+A466        -> Q466        //Person giving postnatal check on respondent after home delivery
+A467        -> Q467        //Place postnatal check on respondent after home delivery
+A469        -> Q469        //Child received postnatal check after home delivery|L'enfant a reçu un contrôle postnatal après l'accouchement à domicile
+A470        -> Q470        //Time child received postnatal check after home delivery
+A470U       -> Q470U       //Time child received postnatal check after home delivery (unit)|Durée du contrôle postnatal de l'enfant après l'accouchement à domicile (unité)
+A470N       -> Q470N       //Time child received postnatal check after home delivery (number)|Durée du contrôle postnatal de l'enfant après l'accouchement à domicile (nombre)
+A471        -> Q471        //Person giving postnatal check on child after home delivery
+A472        -> Q472        //Place postnatal check on child after home delivery
+A473A       -> Q473A       //During first two days, health care provider: examine the cord|Au cours des deux jours suivants, prestataire de santé: examinez le cordon
+A473B       -> Q473B       //During first two days, health care provider: measure temperature|Au cours des deux jours suivants, prestataire de santé: vérifier la température
+A473C       -> Q473C       //During first two days, health care provider: counsel on medical attention|Au cours des deux jours suivants, prestataire de santé: attention médicale
+A473D       -> Q473D       //During first two days, health care provider: counsel on breastfeeding|Au cours des deux jours suivants, prestataire de santé: parlé allaitement
+A473E       -> Q473E       //During first two days, health care provider: observe breastfeeding|Au cours des deux jours suivants, prestataire de santé: observé allaitement
+A473F       -> Q473F       //During first two days, health care provider: help breastfeed|Au cours des deux jours suivants, prestataire de santé: examinez le cordon
+A474A       -> Q474A       //Respondent checked two days after birth: blood pressure|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
+A474B       -> Q474B       //Respondent checked two days after birth: bleeding|L’enquêtée a été contrôlée deux jours après la naissance: saignements
+A474C       -> Q474C       //Respondent checked two days after birth: family planning|L’enquêtée a été contrôlée deux jours après la naissance: Planification familiale
+A474D       -> Q474D       //Respondent checked two days after birth: urination|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
+A474E       -> Q474E       //Respondent checked two days after birth: pain|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
+A474F       -> Q474F       //Respondent checked two days after birth: sad or depressed|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
+A476        -> Q476        //Period returned|Règles revenues
+A478        -> Q478        //Begun to have sexual intercourse|A commencé à avoir des rapports sexuels
+A479        -> Q479        //Pregnancy outcome (filter)|Résultat de la grossesse (filtre)
+A480        -> Q480        //Ever breastfed|A allaité
+A482        -> Q482        //When child put to breast
+A482U       -> Q482U       //When child put to breast (unit)|Quand l'enfant est mis au sein (unité)
+A482N       -> Q482N       //When child put to breast (number)|Quand l'enfant est mis au sein (nombre)
+A483        -> Q483        //Any fluid given besides breast milk in first 2 days|Reçu autre liquide que le lait dans les 2 premiers jours
+A485        -> Q485        //Still breastfeeding
+A486        -> Q486        //Drink in a bottle with nipple|Boire quelque chose au biberon
+ANBINTRO    -> QNBINTRO    //To indicate the beginning of "Newborn Module" questions
+ANB1        -> QNB1        //Time after birth child was bathed
+ANB1U       -> QNB1U       //Time after birth child was bathed (unit)|Temps passé dans l'établissement de santé après l'accouchement (unité)
+ANB1N       -> QNB1N       //Time after birth child was bathed (number)|Temps passé dans l'établissement de santé après l'accouchement (nombre)
+ANB3        -> QNB3        //Device used to cut the cord
+ANB4        -> QNB4        //Was the device new or had it been used before
+ANB5        -> QNB5        //Was the device boiled before used to cut the cord
+ANB6        -> QNB6        //Anyting applied to the cord from the time it was cut until it fell off
+ANB7        -> QNB7        //What was applied to the cord
+ACH2        -> QCH2        //Was chlorhexidine applied to the cord at any time
+ACH3        -> QCH3        //Time after cord was cut chlorhexidine was first applied
+ACH3U       -> QCH3U       //Time after cord was cut chlorhexidine was first applied (unit)|Temps passé dans l'établissement de santé après l'accouchement (unité)
+ACH3N       -> QCH3N       //Time after cord was cut chlorhexidine was first applied (number)|Temps passé dans l'établissement de santé après l'accouchement (nombre)
+ACH4        -> QCH4        //Days chlorhexidine was applied to the cord
+AMHINTRO    -> QMHINTRO    //To indicate the beginning of "Maternal Healthcare Module" questions
+AMH1        -> QMH1        //During antenatal care was told of danger signs of pregnancy problems|Soins prénatals: saignements
+AMH2        -> QMH2        //During antenatal care was told where to go in case of danger signs of pregnancy problems|Soins prénatals: saignements
+AMH3A       -> QMH3A       //During antenatal care discussed: where to deliver baby|Soins prénatals: saignements
+AMH3B       -> QMH3B       //During antenatal care discussed: if wanted a relative, friend, neighbor during delivery|Soins prénatals: saignements
+AMH3C       -> QMH3C       //During antenatal care discussed: transportation to delivery place|Soins prénatals: saignements
+AMH3D       -> QMH3D       //During antenatal care discussed: source of funds for delivery|Soins prénatals: saignements
+AMH3E       -> QMH3E       //During antenatal care discussed: asking someone as blood donor if necessary|Soins prénatals: saignements
+AMH3F       -> QMH3F       //During antenatal care discussed: find healthcare provider to deliver child|Soins prénatals: saignements
+AMH4        -> QMH4        //Pregnancy outcome (filter)|Résultat de la grossesse (filtre)
+AMH5        -> QMH5        //Healthcare provider measure blood pressure before delivery|Soins prénatals: saignements
+AMH6        -> QMH6        //While in labor wanted to have someone by your side|Soins prénatals: saignements
+AMH7        -> QMH7        //While in labor the person you wanted by your side was with you|Soins prénatals: saignements
+AMH8        -> QMH8        //While in labor how much time the person you wanted by your side was allowed to stay|Soins prénatals: saignements
+AMH9        -> QMH9        //Reason the person you wanted by your side was not with you during labor|Soins prénatals: saignements
+AMH10       -> QMH10       //During delivery wanted to have someone by your side|Soins prénatals: saignements
+AMH11       -> QMH11       //During delivery the person you wanted by your side was with you|Soins prénatals: saignements
+AMH12       -> QMH12       //During delivery how much time the person you wanted by your side was allowed to stay|Soins prénatals: saignements
+AMH13       -> QMH13       //Reason the person you wanted by your side was not with you during delivery|Soins prénatals: saignements
+AMH14       -> QMH14       //Was an instrument used to help pull out the baby|Soins prénatals: saignements
+AMH15       -> QMH15       //While in labor or delivery did feel ignored/neglected by facility staff |Soins prénatals: saignements
+AMH16       -> QMH16       //While in labor or delivery did have privacy|Soins prénatals: saignements
+AMH17A      -> QMH17A      //At delivery place did healthcare providers: treated you with respect|Soins prénatals: saignements
+AMH17B      -> QMH17B      //At delivery place did healthcare providers: explained examinations/procedures|Soins prénatals: saignements
+AMH17C      -> QMH17C      //At delivery place did healthcare providers: took best care of you|Soins prénatals: saignements
+AMH18A      -> QMH18A      //During stay at health facility: shared bed with other patient|Soins prénatals: saignements
+AMH18B      -> QMH18B      //During stay at health facility: rest/sleep on floor without mattress|Soins prénatals: saignements
+AMH19       -> QMH19       //During stay at health facility were denied medical services for lack of money|Soins prénatals: saignements
+AMH20       -> QMH20       //Were delayed or prevented to leave facility because of lack of payment|Soins prénatals: saignements
+AMH21A      -> QMH21A      //During stay staff at health facility: slap you|Soins prénatals: saignements
+AMH21B      -> QMH21B      //During stay staff at health facility: hit or punch you|Soins prénatals: saignements
+AMH21C      -> QMH21C      //During stay staff at health facility: physically threaten you|Soins prénatals: saignements
+AMH21D      -> QMH21D      //During stay staff at health facility: physically mistreat or harm you|Soins prénatals: saignements
+AMH22A      -> QMH22A      //During stay staff at health facility: shout at you|Soins prénatals: saignements
+AMH22B      -> QMH22B      //During stay staff at health facility: say or do something to humilliate you|Soins prénatals: saignements
+AMH22C      -> QMH22C      //During stay staff at health facility: verbally threaten |Soins prénatals: saignements
+AMH22D      -> QMH22D      //During stay staff at health facility: verbally mistreat you in any other way|Soins prénatals: saignements
+AMH23       -> QMH23       //Did health facility have toilet/latrine for patitents|Soins prénatals: saignements
+AMH24       -> QMH24       //At any time wanted to use toilet/latrine but was not working|Soins prénatals: saignements
+AMH25       -> QMH25       //Where did baby stay in first two days after birth |Soins prénatals: saignements
+
+//Record (AWSEC05) - Child Immunization
+AWSEC05     -> QWSEC05     //Child Immunization
+ACOL51      -> QCOL51      //Column number|Numéro de colonne
+A503        -> Q503        //Line number in pregnancy history|Numéro de ligne dans l'historique de grossesse
+A503N       -> Q503N       //Child name
+A504        -> Q504        //Has vaccination card|Possède une carte de vaccination
+A505        -> Q505        //Ever had vaccination card|A eu un carnet de vaccination
+A507        -> Q507        //Observation of vaccination card|Observation du carnet de vaccination
+A508        -> Q508        //Date of birth from vaccination card
+A508D       -> Q508D       //Day of birth|Jour de naissance
+A508M       -> Q508M       //Month of birth|Mois de naissance
+A508Y       -> Q508Y       //Year of birth|Année de naissance
+A509B       -> Q509B       //BCG
+D509B       -> D509B       //BCG day|BCG: jour
+M509B       -> M509B       //BCG month|BCG: mois
+Y509B       -> Y509B       //BCG year|BCG: année
+A509H       -> Q509H       //Hepatitis B at birth
+D509H       -> D509H       //Hepatitis B at birth day
+M509H       -> M509H       //Hepatitis B at birth month
+Y509H       -> Y509H       //Hepatitis B at birth year
+A509P0      -> Q509P0      //Polio at birth
+D509P0      -> D509P0      //Polio at birth day
+M509P0      -> M509P0      //Polio at birth month
+Y509P0      -> Y509P0      //Polio at birth year
+A509P1      -> Q509P1      //Polio 1
+D509P1      -> D509P1      //Polio 1 day
+M509P1      -> M509P1      //Polio 1 month
+Y509P1      -> Y509P1      //Polio 1 year
+A509P2      -> Q509P2      //Polio 2
+D509P2      -> D509P2      //Polio 2 day
+M509P2      -> M509P2      //Polio 2 month
+Y509P2      -> Y509P2      //Polio 2 year
+A509P3      -> Q509P3      //Polio 3
+D509P3      -> D509P3      //Polio 3 day
+M509P3      -> M509P3      //Polio 3 month
+Y509P3      -> Y509P3      //Polio 3 year
+A509IPV     -> Q509IPV     //IPV date
+D509IPV     -> D509IPV     //IPV day
+M509IPV     -> M509IPV     //IPV month
+Y509IPV     -> Y509IPV     //IPV year
+A509D1      -> Q509D1      //Pentavalent 1
+D509D1      -> D509D1      //Pentavalent 1 day
+M509D1      -> M509D1      //Pentavalent 1 month
+Y509D1      -> Y509D1      //Pentavalent 1 year
+A509D2      -> Q509D2      //Pentavalent 2
+D509D2      -> D509D2      //Pentavalent 2 day
+M509D2      -> M509D2      //Pentavalent 2 month
+Y509D2      -> Y509D2      //Pentavalent 2 year
+A509D3      -> Q509D3      //Pentavalent 3
+D509D3      -> D509D3      //Pentavalent 3 day
+M509D3      -> M509D3      //Pentavalent 3 month
+Y509D3      -> Y509D3      //Pentavalent 3 year
+A509D4      -> Q509D4      //Pentavalent 4 date
+D509D4      -> D509D4      //Pentavalent 4 day
+M509D4      -> M509D4      //Pentavalent 4 month
+Y509D4      -> Y509D4      //Pentavalent 4 year
+A509N1      -> Q509N1      //Pneumococcal 1
+D509N1      -> D509N1      //Pneumococcal 1 day
+M509N1      -> M509N1      //Pneumococcal 1 month
+Y509N1      -> Y509N1      //Pneumococcal 1 year
+A509N2      -> Q509N2      //Pneumococcal 2
+D509N2      -> D509N2      //Pneumococcal 2 day
+M509N2      -> M509N2      //Pneumococcal 2 month
+Y509N2      -> Y509N2      //Pneumococcal 2 year
+A509N3      -> Q509N3      //Pneumococcal 3
+D509N3      -> D509N3      //Pneumococcal 3 day
+M509N3      -> M509N3      //Pneumococcal 3 month
+Y509N3      -> Y509N3      //Pneumococcal 3 year
+A509R1      -> Q509R1      //Rotavirus 1
+D509R1      -> D509R1      //Rotavirus 1 day
+M509R1      -> M509R1      //Rotavirus 1 month
+Y509R1      -> Y509R1      //Rotavirus 1 year
+A509R2      -> Q509R2      //Rotavirus 2
+D509R2      -> D509R2      //Rotavirus 2 day
+M509R2      -> M509R2      //Rotavirus 2 month
+Y509R2      -> Y509R2      //Rotavirus 2 year
+A509R3      -> Q509R3      //Rotavirus 3
+D509R3      -> D509R3      //Rotavirus 3 day
+M509R3      -> M509R3      //Rotavirus 3 month
+Y509R3      -> Y509R3      //Rotavirus 3 year
+A509M1      -> Q509M1      //Measles 1
+D509M1      -> D509M1      //Measles 1 day
+M509M1      -> M509M1      //Measles 1 month
+Y509M1      -> Y509M1      //Measles 1 year
+A509M2      -> Q509M2      //Measles 2
+D509M2      -> D509M2      //Measles 2 day
+M509M2      -> M509M2      //Measles 2 month
+Y509M2      -> Y509M2      //Measles 2 year
+A509V       -> Q509V       //Last Vitamin A
+D509V       -> D509V       //Last Vitamin A day
+M509V       -> M509V       //Last Vitamin A month
+Y509V       -> Y509V       //Last Vitamin A year
+A510        -> Q510        //Photograph taken of vaccination card|Photographie prise du carnet de vaccination
+A512        -> Q512        //Other vaccination not recorded|Autre vaccination non enregistrée
+A512W       -> Q512W       //Used to capture other vaccinations that may be given
+A513        -> Q513        //Ever receive vaccinations|Reçu  des vaccinations
+A514        -> Q514        //BCG vaccination|Vaccination BCG
+A515        -> Q515        //Hepatitis B vaccination|Vaccination Hepatitis B
+A516        -> Q516        //Received Hep B within 24 of birth|A reçu l'hépatite B dans les 24 jours suivant la naissance
+A517        -> Q517        //Polio vaccine|Vaccin Polio
+A518        -> Q518        //When first polio was given|Quand la première polio a été administrée
+A519        -> Q519        //Number of Polio vaccines|Nombre de vaccins Polio
+A520        -> Q520        //IPV vaccination|Vaccination IPV
+A521        -> Q521        //Pentavalent vaccination|Vaccination Pentavalent
+A522        -> Q522        //Number of Pentavalent vaccines|Nombre de vaccins pentavalents
+A523        -> Q523        //Pneumococcal vaccination|Vaccination Pneumocoque
+A524        -> Q524        //Number of pneumococcal vaccines|Nombre de vaccins Pneumocoque
+A525        -> Q525        //Rotavirus vaccination|Vaccination Rotavirus
+A526        -> Q526        //Number of rotavirus vaccines|Nombre de vaccins antirotavirus
+A527        -> Q527        //Measles vaccine|Vaccin antirougeoleux
+A528        -> Q528        //Number of measles vaccines|Nombre de vaccin de antirougeoleux
+A529        -> Q529        //Where child received most vaccines|Lieu d’administration de la plus part des vaccins
+
+//Record (AWSEC6A) - Child Health
+AWSEC6A     -> QWSEC6A     //Child Health
+ACOL61      -> QCOL61      //Column number|Numéro de colonne
+A603        -> Q603        //Line number in pregnancy history|Numéro de ligne dans l'historique de grossesse
+A603N       -> Q603N       //Child name
+A604A       -> Q604A       //Received in the past 12 months: pills/syrup|Reçu au cours des 12 derniers mois: pilules/sirop
+A604B       -> Q604B       //Received in the past 12 months: [multiple micronutrient powders]|Reçu au cours des 12 derniers mois: [micronutriments multiples sous forme de poudre]
+A605        -> Q605        //Vitamin-A dose within last 6 months|Dose de vitamine A au cours des 6 derniers mois
+A606        -> Q606        //Drugs for intestinal parasites in last 6 months|Médicaments contre les vers intestinaux au cours des 6 derniers mois
+A607A       -> Q607A       //Past 3 months has a health care provider measured child's weight|Au cours des 3 derniers mois, un prestataire de santé a mesuré le poids de l'enfant
+A607B       -> Q607B       //Past 3 months has a health care provider measured child's length/height|Au cours des 3 derniers mois, un prestataire de santé a mesuré longueur/taille de l'enfant
+A607C       -> Q607C       //Past 3 months has a health care provider measured around child's upper arm|Au cours des 3 derniers mois, un prestataire de santé a mesuré la circonférence du bras à mi-hauteur de l’enfant
+A608        -> Q608        //Diarrhea in last 2 weeks|Diarrhée au cours des 2 dernières semaines
+A609        -> Q609        //Drinking pattern with diarrhea (including breast milk)|Quantité de liquide donnée pendant la diarrhée (y compris lait maternel)
+A610        -> Q610        //Eating pattern with diarrhea|Fréquence d'alimentation pendant la diarrhée
+A611        -> Q611        //Sought treatment for diarrhea|A recherché conseils/traitement pour la diarrhée
+A612        -> Q612        //Where sought treatment|Lieu de conseils/traitement
+A614        -> Q614        //First advice or treatment for diarrhea|1er lieu de conseils/traitement pour la diarrhée
+A615A       -> Q615A       //Fluid from ORS Packet|Liquide à partir de sachet spécial de SRO
+A615B       -> Q615B       //Pre-packaged ORS liquid|Liquide SRO préconditionnés
+A615C       -> Q615C       //Zinc
+A615D       -> Q615D       //Home-made fluid|Liquide fait à la maison
+A616        -> Q616        //Anything else to treat diarrhea|Quelque chose autre pour traiter la diarrhée
+A617        -> Q617        //Given to treat diarrhea|Qu’a-t-on donné pour traiter la diarrhée
+A618        -> Q618        //Fever in last 2 weeks|Fièvre au cours des 2 dernières semaines
+A619        -> Q619        //Blood taken from finger or heel for testing|Sang prélevé au doigt ou au talon pour le test
+A620        -> Q620        //Respondent told child had malaria|L’enquêtée a dit que l'enfant avait le paludisme
+A621        -> Q621        //Cough in last 2 weeks|Toux au cours des 2 dernières semaines
+A622        -> Q622        //Fast, short, rapid breaths or difficulty breathing|Souffle rapide ou ces difficultés pour respirer
+A623        -> Q623        //Problem in the chest or blocked or runny nose|Problème dans la poitrine ou nez bouché ou qui coule
+A625        -> Q625        //Sought advice/treatment for fever/cough|A recherché Conseil/traitement pour la fièvre/toux
+A626        -> Q626        //Where sought advice/treatment|Lieu de conseils/traitement
+A628        -> Q628        //First advice or treatment for fever/cough|1er lieu de conseils/traitement pour la diarrhée
+A629        -> Q629        //Days started treatment after illness began|Jours de début de traitement après le début de la maladie
+A630        -> Q630        //Any drugs for fever/cough|A pris des médicaments contre la fièvre/la toux
+A631        -> Q631        //Drugs for fever/cough|Médicaments contre la fièvre/la toux
+A633        -> Q633        //How long after fever started took Artemisinin combination therapy|Combien de temps après le début de la fièvre a pris une combinaison d'artémisinine
+
+//Record (AWSEC6B) - Child Feeding and Women's Feeding
+AWSEC6B     -> QWSEC6B     //Child Feeding and Women's Feeding
+A635        -> Q635        //Line number in pregnancy history|Numéro de ligne dans l'historique de grossesse
+A635N       -> Q635N       //Child name
+A636A       -> Q636A       //Child drank: plain water|Enfant a bu: de l'eau plate
+A636B       -> Q636B       //Child drank infant formula|Enfant a bu: lait en poudre pour bébé
+A636BN      -> Q636BN      //Times child drank infant formula|Nombre de fois a bu lait en poudre pour bébé
+A636C       -> Q636C       //Child drank: milk such as tinned, powdered or fresh animal milk|Enfant a bu: du lait tel que du lait en boite, en poudre ou du lait frais d'animal
+A636CN      -> Q636CN      //Times child drank milk|Nombre de fois a bu lait
+A636CA      -> Q636CA      //Child drank sweetened/flavored milk|Enfant a bu du lait sucré/aromatisé
+A636E       -> Q636E       //Child drank: soymilk|Enfant a bu: tout autre liquide
+A636EA      -> Q636EA      //Child drank: sweetened soymilk|Enfant a bu: d'autres liquides sucrés
+A636F       -> Q636F       //Child drank: chocolate or other flavored drinks|Enfant a bu: du chocolat ou d'autres boissons aromatisées
+A636G       -> Q636G       //Child drank: juice or juice drinks|Enfant a bu: jus de fruits ou boissons aromatisées ou fruit
+A636H       -> Q636H       //Child drank: sodas, sports, or energy drinks|Enfant a bu: sodas, de malt, sport oo énergétiques
+A636I       -> Q636I       //Child drank: tea, coffee, or herbal drinks|Enfant a bu: thé, café ou ou de la tisane
+A636IA      -> Q636IA      //Child drank: sweetened tea, coffee or herbal drinks|Enfant a bu: thé, café ou ou de la tisane
+A636J       -> Q636J       //Child drank: clear broth or soup|Enfant a bu: bouillon clair ou soupe
+A636K       -> Q636K       //Child drank: any other liquids|Enfant a bu: tout autre liquide
+A636KA      -> Q636KA      //Child drank: sweetened other liquids|Enfant a bu: d'autres liquides sucrés
+A637A       -> Q637A       //Child ate yogurt|Enfant a mangé yaourt
+A637AN      -> Q637AN      //Times child ate yogurt|Nombre de fois a mangé yaourt
+A637AY      -> Q637AY      //Child drank: yogurt drinks|Enfant bu: yaourt
+A637AYA     -> Q637AYA     //Child drank sweetened/flavored yogurt drink|Enfant a bu du yogourt sucré/aromatisé
+A637B       -> Q637B       //Child ate porridge, pasta, bread, rice, noodles, or other foods made from grains|Enfant a mangé des bouillies, du pain, du riz, des nouilles, des pâtes
+A637C       -> Q637C       //Child ate pumpkin, carrots, squash or sweet potatoes that are yellow or orange inside|Enfant a mangé des citrouilles, carottes, courges ou patates douces
+A637D       -> Q637D       //Child ate plantains, white potatoes, white yams, manioc, cassava, or any other foods made from roots|Enfant a mangé des plantains, pommes de terre blanches, ignames blancs, manioc
+A637E       -> Q637E       //Child ate any dark green, leafy vegetables|Enfant a mangé n'importe quel légume à feuilles vert foncé
+A637F       -> Q637F       //Child ate other vegetables|Enfant a mangé d'autres légumes
+A637G       -> Q637G       //Child ate ripe mangoes, papayas or any other vitamin A-rich fruits|Enfant a mangé des mangues ou des papayes mures
+A637H       -> Q637H       //Child ate any other fruits|Enfant a mangé d'autres fruits
+A637I       -> Q637I       //Child ate fresh or dried fish or shellfish|Enfant a mangé du poisson frais ou séché ou des crustacés
+A637J       -> Q637J       //Child ate liver, kidney, heart or other organ meats|Enfant a mangé du foie, des rognons, du cœur
+A637K       -> Q637K       //Child ate sausages, hot dogs, frankfurters|Enfant a mangé de la saucisse, des hot dogs, du jambon, bacon, salami, viande en boîte
+A637L       -> Q637L       //Child ate meat such as: beef, pork, lamb, goat, chicken or duck|Enfant a mangé autres viandes tels que: le bœuf, le porc, l'agneau, la chèvre, le poulet ou le canard
+A637M       -> Q637M       //Child ate eggs|Enfant a mangé des œufs
+A637N       -> Q637N       //Child ate any foods made from beans, peas, lentils|Enfant a mangé aricots, pois, lentilles, noix,
+A637O       -> Q637O       //Child ate nuts, seeds|Enfant a mangé aricots, pois, lentilles, noix,
+A637P       -> Q637P       //Child ate cheese|Enfant a mangé du fromage dur ou à pâte molle
+A637Q       -> Q637Q       //Child ate any insects|Enfant a mangé aricots, pois, lentilles, noix,
+A637R       -> Q637R       //Child ate sweet foods|Enfant a mangé des aliments sucrés
+A637S       -> Q637S       //Sentinel sweet foods|Enfant a mangé chips, chips soufflés, frites, beignets, nouilles à cuisson rapide
+A637T       -> Q637T       //Child ate chips, crisps, french fries|Enfant a mangé chips, chips soufflés, frites, beignets, nouilles à cuisson rapide
+A637U       -> Q637U       //Child ate red palm oil|Enfant a mangé aricots, pois, lentilles, noix,
+A637V       -> Q637V       //Child ate any other solid or semi-solid food|Enfant a mangé n'importe quel autre aliment solide, semi-solide ou mou
+A639        -> Q639        //Child ate any solid, semi-solid or soft foods yesterday
+A640        -> Q640        //Times ate solid, semisolid, or soft foods yesterday|Nombre de fois a mangé des aliments solides, semi-solides ou mous
+A641        -> Q641        //Last six months, health care provider talked about what to feed child|Au cours des 6 derniers mois, un prestataire de santé ou un agent de santé communautaire vous a dit comment nourrir  l'enfant
+A642        -> Q642        //Disposal of stools|Débarrasser des selles
+A643A       -> Q643A       //Respondent ate: porridge, bread, rice, noodles|L’enquêtée a mangé: bouillie, pain, riz, nouilles
+A643B       -> Q643B       //Respondent ate: pumpkin, carrots, squash|L’enquêtée a mangé: citrouille, carottes, courges
+A643C       -> Q643C       //Respondent ate: plantains, white potatoes, white yams|L’enquêtée a mangé: plantains, pommes de terre blanches, ignames blanches
+A643D       -> Q643D       //Respondent ate: any dark greens, leafy vegetables|L’enquêtée a mangé: des légumes verts foncés, des légumes à feuilles
+A643E       -> Q643E       //Respondent ate: any other vegetables|L’enquêtée a mangé: d'autres légumes
+A643F       -> Q643F       //Respondent ate: ripe mangoes or ripe papayas|L’enquêtée a mangé: mangues mûres ou papayes mûres
+A643G       -> Q643G       //Respondent ate: any other fruits|L’enquêtée a mangé: d'autres fruits
+A643H       -> Q643H       //Respondent ate: fresh or dried fish or shellfish|L’enquêtée a mangé: du poisson frais ou séché ou des crustacés
+A643I       -> Q643I       //Respondent ate: liver, kidney, heart or other organ meats|L'enquêtée a mangé: du foie, des rognons, du cœur ou d'autres abats
+A643J       -> Q643J       //Respondent ate: sausages, hot dogs, frankfurters, ham, bacon, salami, canned meat|L'enquêtée a mangé: du foie, des rognons, du cœur ou d'autres abats
+A643K       -> Q643K       //Respondent ate: other meat: beef, pork, lamb, goat, chicken, duck|L’enquêtée a mangé d'autres viandes: bœuf, porc, agneau, chèvre, poulet, canard
+A643L       -> Q643L       //Respondent ate: eggs|L’enquêtée a mangé: des œufs
+A643M       -> Q643M       //Respondent ate: beans or lentils or food made out beans or lentils|L’enquêtée a mangé: des haricots, des pois ou des lentilles ou des préparations à base de haricots, de pois ou de lentilles
+A643N       -> Q643N       //Respondent ate: nuts or seeds|L’enquêtée a mangé: n'importe quel noix ou des graines
+A643O       -> Q643O       //Respondent ate: milk, cheese, yogurt or other milk products|L’enquêtée a mangé: n'importe quel lait ou des produits laitiers
+A643P       -> Q643P       //Respondent ate: any insects|L’enquêtée a mangé: n'importe quel lait ou des produits laitiers
+A643Q       -> Q643Q       //Respondent ate: any sweet foods, chocolates, candies, cakes, biscuits|L’enquêtée a mangé: n'importe quels aliments sucrés, des chocolats, des bonbons
+A643R       -> Q643R       //Respondent ate: sentinel sweet foods|L’enquêtée a mangé: Chips, chips soufflés, frites, beignets, nouilles à cuisson rapid
+A643S       -> Q643S       //Respondent ate: chips, crisps, french fries|L’enquêtée a mangé: Chips, chips soufflés, frites, beignets, nouilles à cuisson rapid
+A643T       -> Q643T       //Respondent ate: fruit juice or fruit-flavored drinks|L’enquêtée a mangé: n'importe quelle boisson sucrée
+A643U       -> Q643U       //Respondent ate: sodas, malt drinks, sport drinks, energy drinks|L’enquêtée a mangé: n'importe quelle boisson sucrée
+A643V       -> Q643V       //Respondent ate: sweetened tea, coffee, herbal drinks|L’enquêtée a mangé: n'importe quelle boisson sucrée
+A643W       -> Q643W       //Respondent ate: red palm oil|L’enquêtée a mangé: n'importe quelle boisson sucrée
+A643X       -> Q643X       //Respondent ate: any other liquids|L’enquêtée a mangé: n'importe quelle boisson sucrée
+A643XA      -> Q643XA      //Respondent ate: sweetened other liquids|L’enquêtée a mangé: n'importe quelle boisson sucrée
+A643Y       -> Q643Y       //Respondent ate: any other food|L’enquêtée a mangé: d'autres boissons ou aliments
+A636Z       -> Q636Z       //Used to capture other liquids for children
+A636KZ      -> Q636KZ      //Working variable to properly handle code Z in A636Z
+A637Z       -> Q637Z       //Used to capture other foods for children
+A643Z       -> Q643Z       //Used to capture other foods for women
+
+//Record (AWSEC07) - Marriage and Sexual Activity
+AWSEC07     -> QWSEC07     //Marriage and Sexual Activity
+A701        -> Q701        //Currently in union|Actuellement en union
+A702        -> Q702        //Have ever been married or lived with a man|A déjà été mariée ou vécue avec un homme
+A703        -> Q703        //Current marital status|Etat matrimonial actuel
+A706A       -> Q706A       //Has a marriage certificate for this marriage|Possède un certificat de mariage pour le dernier mariage
+A706B       -> Q706B       //Documents for current marriage/union
+A707        -> Q707        //Marriage registered with civil authority|Mariage enregistré à l’état civil
+A709        -> Q709        //Partner living with respondent|Mari/partenaire vit actuellement avec l’enquêtée
+A710        -> Q710        //Line number of husband|Numéro de ligne du mari
+A711        -> Q711        //Husband has other wives|Mari a d'autres femmes
+A712        -> Q712        //Number of wives including respondent|Nombre d'épouses y compris l’enquêtée
+A713        -> Q713        //Wife's rank number|Rang de l'épouse
+A714        -> Q714        //In union more than once|En union plus d'une fois
+A715        -> Q715        //Date of first union
+A715M       -> Q715M       //Date of first union (month)|Durée depuis la première union (mois)
+A715Y       -> Q715Y       //Date of first union (year)|Durée depuis la première union (année)
+A716        -> Q716        //Age at first union|Age à la première union
+A719        -> Q719        //Date of current union
+A719M       -> Q719M       //Date of current union (month)|Durée depuis l'union actuelle (mois)
+A719Y       -> Q719Y       //Date of current union (year)|Durée depuis l'union actuelle (année)
+A720        -> Q720        //Age at current union|Age de l'union actuelle
+A721        -> Q721        //Introduction to sexual intercourse questions
+A722        -> Q722        //Age at first intercourse|Age au premier rapport sexuel
+A723        -> Q723        //Time since last intercourse
+A723U       -> Q723U       //Time since last intercourse (unit)|Durée depuis le dernier rapport sexuel (unité)
+A723N       -> Q723N       //Time since last intercourse (number)|Durée depuis le dernier rapport sexuel (nombre)
+A725        -> Q725        //Used method during last sexual intercourse|A utilisée une méthode lors du dernier rapport sexuel
+A726        -> Q726        //Method used during last sexual intercourse|Méthode utilisée lors du dernier rapport sexuel
+A727        -> Q727        //Used condom during last intercourse|Condom utilisé lors du dernier rapport sexuel
+A728        -> Q728        //Brand name of condoms used in last sex|Marque du condom utilisé lors du dernier rapport sexuel
+A729        -> Q729        //Source for condoms|Source des condoms
+A730        -> Q730        //Relationship with last partner|Lien avec le dernier partenaire
+A731        -> Q731        //Intercourse with anyone else in last 12 months|Rapports sexuels avec quelqu'un d'autre au cours des 12 derniers mois
+A732        -> Q732        //Condom used with second partner|Condom utilisé avec le deuxième partenaire
+A733        -> Q733        //Relationship with second partner|Lien avec le deuxième partenaire
+A734        -> Q734        //Sexual intercourse with any other person|Rapports sexuels avec une autre personne
+A735        -> Q735        //Condom used with third partner|Condom utilisé avec le troisième partenaire
+A736        -> Q736        //Relationship with third partner|Lien avec le troisième partenaire
+A737        -> Q737        //Total lifetime number of sexual partners|Nombre total de partenaires sexuels dans votre vie
+A738A       -> Q738A       //Children present during interview section 7|Présence des enfants pendant l'interview de la section 7
+A738B       -> Q738B       //Male adults present during interview section 7|Présence des hommes adultes pendant l'interview de la section 7
+A738C       -> Q738C       //Female adults present during interview section 7|Présence des femmes adultes pendant l'interview de la section 7
+A715C       -> Q715C       //Date of first union (CMC)
+A715F       -> Q715F       //Date flag for A715C
+A716C       -> Q716C       //Age at first union (calculated)
+A719C       -> Q719C       //Date of current union (CMC)
+A719F       -> Q719F       //Date flag for A719C
+A720C       -> Q720C       //Age at current union (calculated)
+A722F       -> Q722F       //Flag for A722
+A723F       -> Q723F       //Flag for A723
+
+//Record (AWSEC08) - Fertility Preferences
+AWSEC08     -> QWSEC08     //Fertility Preferences
+A803        -> Q803        //Desire future child|Désir d'avoir un enfant  dans le  futur
+A804        -> Q804        //Desire future child|Désir d'avoir un enfant  dans le  futur
+A805        -> Q805        //Time for future birth
+A805U       -> Q805U       //Time for future birth (unit)|Temps d’attente pour avoir un enfant dans l'avenir (unité)
+A805N       -> Q805N       //Time for future birth (number)|Temps d’attente pour avoir un enfant dans l'avenir (nombre)
+A810        -> Q810        //Main reason not using to limit or to space|Raison principale de ne pas utiliser une méthode pour éviter une grossesse
+A812        -> Q812        //Intend to use method any time in the future|Intention d'utiliser une méthode à tout moment dans le futur
+A813        -> Q813        //Ideal number of children|Nombre idéal d'enfants
+A814A       -> Q814A       //Ideal number of boys|Nombre idéal: garçons
+A814B       -> Q814B       //Ideal number of girls|Nombre idéal: filles
+A814C       -> Q814C       //Ideal number of either|Nombre idéal: n'importe (les deux)
+A815A       -> Q815A       //Heard FP on radio 12 months|12 derniers mois: entendu parler de PF à la radio
+A815B       -> Q815B       //Heard FP on TV 12 months|12 derniers mois: vu quelque chose sur la PF à la télévision
+A815C       -> Q815C       //Saw FP newspaper or magazine last 12 months|12 derniers mois: lu quelque chose sur la PF dans un journal ou magazine
+A815D       -> Q815D       //Received voice/text messages about FP on mobile phone last 12 months|12 derniers mois: reçu un message vocal ou un texte sur la PF sur votre portable
+A815E       -> Q815E       //Saw FP on social media last 12 months|12 derniers moi: vu quelque chose sur la PF sur les média sociaux
+A815F       -> Q815F       //Saw FP on poster/leaflet/brochure last 12 months|12 derniers moi: vu quelque chose sur la PF sur un poster/une affiche/une brochure
+A815G       -> Q815G       //Saw FP on outdoor sign/billboard last 12 months|12 derniers mois: vu quelque chose sur la PF sur une affiche extérieure ou un panneau d'affichage
+A815H       -> Q815H       //Heard FP in community event last 12 months|12 derniers mois: entendu quelque chose sur la PF lors d'une réunion/d'évènements dans la communauté
+A816        -> Q816        //COUNTRY SPECIFIC QUESTIONS ABOUT FP MESSAGING
+A818        -> Q818        //Decision maker for using contraception|Prise de décision pour l'utilisation de la contraception
+A819        -> Q819        //How important respondent's opinion is to husband's opinion|Quelle est l'importance de l'opinion de l’enquêtée par rapport à l'opinion du mari/partenaire
+A820        -> Q820        //Respondent pressured to become pregnant|Faire pression sur l’enquêtée pour tomber enceinte
+A822        -> Q822        //Partner's preferred number of children same as respondent|Nombre d'enfants préféré par le partenaire par rapport à l'enquétée
+
+//Record (AWSEC09) - Husband's and Woman's Background
+AWSEC09     -> QWSEC09     //Husband's and Woman's Background
+A902        -> Q902        //Partner's age|Age du mari/partenaire
+A903        -> Q903        //Partner ever attended school|Mari/Partenaire a fréquenté l'école
+A904        -> Q904        //Partner's level of education|Plus haut niveau d'étude du mari/partenaire
+A905        -> Q905        //Partner's highest grade|Classe/Année la plus élevée
+A906        -> Q906        //Husband worked in last 7 days|Mari a travaillé au cours des 7 derniers jours
+A907        -> Q907        //Husband worked in last 12 months|Mari a travaillé au cours des 12 derniers mois
+A908        -> Q908        //Partner's occupation|Occupation du mari/partenaire
+A909        -> Q909        //Respondent worked in last 7 days (apart from own housework)|Enquêtée a travaillé dans les 7 derniers jours (en dehors du travail domestique)
+A910        -> Q910        //Worked in last 7 days: probed|Travaillé 7 derniers jours: sondé/description
+A911        -> Q911        //Have a job from which she was absent|Avoir un travail pour lequel elle a été absente
+A912        -> Q912        //Worked in last 12 months|A travaillé au cours des 12 derniers mois
+A913        -> Q913        //Respondent's occupation|Occupation de l'enquêtée
+A914        -> Q914        //Work for a family member|Travaille pour un membre de la famille
+A915        -> Q915        //Work through year/seasonally|Travaille toute l'année/saisonnière
+A916        -> Q916        //Paid in cash or kind|Payée en espèces ou en nature
+A919        -> Q919        //Who usually decides how earnings are used|Qui décide habituellement de l'utilisation de l’argent gagné
+A920        -> Q920        //Earns more than partner|Gagne plus que mari/partenaire
+A921        -> Q921        //Who usually decides on spending husband's/partner's earnings|Qui décide habituellement de l'utilisation de l’argent gagné par mari/partenaire
+A922        -> Q922        //Final say on: Own health care|Dernier mot: propres soins de santé
+A923        -> Q923        //Final say on: Making large household purchases|Dernier mot sur: faire des achats importants pour le ménage
+A924        -> Q924        //Final say on: Visits to family|Dernier mot sur: visites en famille
+A925        -> Q925        //Owns own house alone or jointly|Possède sa propre maison seule ou conjointement
+A926        -> Q926        //Respondent has a title deed for any house owned|L’enquêtée a un titre de propriété pour une maison l’appartenant
+A927        -> Q927        //Is respondent name on house title deed|Le nom de l’enquêtée figure-t-il sur le titre de propriété
+A928        -> Q928        //Owns land alone or jointly|Possède un terrain seule ou conjointement
+A929        -> Q929        //Respondent has a title deed for any land owned|L’enquêtée a un titre de propriété pour des terres l’appartenant
+A930        -> Q930        //Is respondent name on land title deed|Le nom de l’enquêtée figure-t-il sur le titre foncier
+A930C       -> Q930C       //Use mobile telephone for financial transactions|Utilise le téléphone mobile pour les transactions financières
+A930A       -> Q930A       //Have a bank or other financial account|Avoir un compte bancaire ou autre compte financier
+A930B       -> Q930B       //Taken money in or out of bank account|Retrait ou dépôt d’argent dans le compte bancaire
+A931A       -> Q931A       //Presence of: Children <10|Présence de: enfants <10
+A931B       -> Q931B       //Presence of: Husband|Présence de: mari
+A931C       -> Q931C       //Presence of: Other males|Présence de: autres hommes
+A931D       -> Q931D       //Presence of: Other females|Présence de: autres femmes
+A932A       -> Q932A       //Justifies domestic violence: Wife goes out|Justifie la violence domestique: la femme sort
+A932B       -> Q932B       //Justifies domestic violence: Wife neglects children|Justifie la violence domestique: la femme néglige les enfants
+A932C       -> Q932C       //Justifies domestic violence: Wife argues|Justifie la violence domestique: femme argumente avec lui
+A932D       -> Q932D       //Justifies domestic violence: Wife refuses sex|Justifie la violence domestique: la femme refuse les relations sexuelles
+A932E       -> Q932E       //Justifies domestic violence: Wife burns food|Justifie la violence domestique: la femme brûle de la nourriture
+
+//Record (AWSEC10) - HIV/AIDS
+AWSEC10     -> QWSEC10     //HIV/AIDS
+A1000       -> Q1000       //Introduction to HIV/AIDS questions
+A1001       -> Q1001       //Ever heard of HIV or AIDS|Entendu parler de VIH ou de SIDA
+A1003       -> Q1003       //Reduce chances of AIDS by having just one uninfected sex partner|Reduire le risque du SIDA en ayant un seul partenaire sexuel non infecté
+A1004       -> Q1004       //Can get HIV from mosquito bites|Peut attraper le VIH par les piqûres de moustiques
+A1005       -> Q1005       //Reduce chances of HIV by using condom|Réduire les risques de VIH en utilisant un condom
+A1006       -> Q1006       //Can get HIV by sharing food|Peut contracter le VIH en partageant de la nourriture avec une personne infectée par le VIH
+A1007       -> Q1007       //Can a healthy-looking person have HIV|Une personne paraissant en bonne santé peut-elle avoir le VIH
+A1008       -> Q1008       //Heard of ARVs|Entendu parler des TAR
+A1009       -> Q1009       //Drugs to avoid indicator transmission to baby during pregnancy|Médicaments spéciaux pour réduire le risque de transmission au bébé
+A1010       -> Q1010       //Heard of PrEP|Entendu parler de la PrEP
+A1011       -> Q1011       //Approve of people taking pills to prevent HIV|Approuver les personnes prenant des pilules pour éviter le VIH
+A1014       -> Q1014       //Check for presence of others
+A1015       -> Q1015       //Tested for HIV as part of antenatal care|Test du VIH dans le cadre des soins prénatals
+A1016       -> Q1016       //Place were HIV test was done|Lieu où le test VIH a été effectué
+A1017       -> Q1017       //Got results of HIV test as part of antenatal care|J'ai obtenu les résultats du test VIH dans le cadre des soins prénatals
+A1019       -> Q1019       //Tested for HIV during delivery|Testé pour le VIH pendant l'accouchement
+A1020       -> Q1020       //Got results of HIV test during delivery|A reçu les résultats du test
+A1022       -> Q1022       //Tested for HIV since test as part of antenatal care or during delivery|Testée pour le VIH depuis que vous avez fait ce test durant votre grossesse
+A1023       -> Q1023       //Date of most recent HIV test during antenatal care
+A1023M      -> Q1023M      //Date of most recent HIV test during antenatal care (month)|Date du dernier test VIH pendant les soins prénatals (mois)
+A1023Y      -> Q1023Y      //Date of most recent HIV test during antenatal care (year)|Date du dernier test VIH pendant les soins prénatals (année)
+A1024       -> Q1024       //Ever been tested for HIV|A déjà été testé pour le VIH
+A1025       -> Q1025       //Date of most recent HIV test
+A1025M      -> Q1025M      //Date of most recent HIV test (month)|Date du test du VIH le plus récent (mois)
+A1025Y      -> Q1025Y      //Date of most recent HIV test (year)|Date du test du VIH le plus récent (année)
+A1026       -> Q1026       //Place of HIV test|Lieu du test VIH
+A1027       -> Q1027       //Did get the test results of HIV test|A obtenu les résultats du test du VIH
+A1028       -> Q1028       //Result of HIV test|Résultat du test VIH
+A1029       -> Q1029       //Date of first HIV test
+A1029M      -> Q1029M      //Date of first HIV test (month)|Date du premier test VIH (mois)
+A1029Y      -> Q1029Y      //Date of first HIV test (year)|Date du premier test VIH (année)
+A1030       -> Q1030       //Currently taking ARVs|Prenant actuellement des TAR
+A1031       -> Q1031       //Number of HIV tests|Nombre de tests VIH
+A1032       -> Q1032       //Have heard of test kits for HIV self-testing|Entendu parler de kits de test pour l'auto-dépistage du VIH
+A1033       -> Q1033       //Have ever tested using self-test kits|A déjà été testé avec les kits d'autotest
+A1034       -> Q1034       //Would buy vegetables from vendor with HIV|Achèterait des légumes à un vendeur séropositif
+A1035       -> Q1035       //Children with HIV should be allowed to go to school with children with no HIV|Les enfants séropositifs devraient être autorisés à aller à l'école avec des enfants non séropositifs
+A1037       -> Q1037       //Disclosed HIV status to others|Révélation du statut du VIH à d'autres
+A1038       -> Q1038       //Respondent feels ashamed of HIV status|L’enquêtée a honte de son statut VIH
+A1039A      -> Q1039A      //Respondent had happened: people talk badly|Il est arrivé à l’enquêtée: les gens ont mal parlée d’elle
+A1039B      -> Q1039B      //Respondent had happened: someone else disclosed status|Il est arrivé à l’enquêtée: quelqu'un d'autre a relevé son statut
+A1039C      -> Q1039C      //Respondent had happened: verbally insulted|Il est arrivé à l’enquêtée: insultée, harcelée ou menacée
+A1039D      -> Q1039D      //Respondent had happened: healthcare workers talked badly|Il est arrivé à l’enquêtée: personnels de santé parlaient mal
+A1039E      -> Q1039E      //Respondent had happened: healthcare workers verbally abused|Il est arrivé à l’enquêtée: le personnel de santé a crié/grondé/agressé verbalement
+A1040       -> Q1040       //Heard about other STDs|Entendu parler des autres MSTs
+A1043       -> Q1043       //Had an STD in last 12 months|A eu une MST au cours des 12 derniers mois
+A1044       -> Q1044       //Had abnormal genital discharge in last 12 months|A eu de pertes vaginales, anormales et malodorantes au cours des 12 derniers mois
+A1045       -> Q1045       //Had a genital sore or ulcer in last 12 months|A eu une plaie ou un ulcère génital au cours des 12 derniers mois
+A1046       -> Q1046       //Wife is justified to ask use of condom when husband has STD|Il est justifié  pour la femme de demander l'utilisation du préservatif lorsque le mari a une MST
+A1047       -> Q1047       //Wife is justified to refuse sex when knows husband has sex with other women|Il est justifié pour la femme de refuser des rapports sexuels quand le mari a eu des rapports avec autres femmes
+A1049       -> Q1049       //Can respondent refuse sex|L’enquêtée peut-il refuser le sexe
+A1050       -> Q1050       //Can ask partner to use condom|Peut demander à son partenaire d'utiliser un condom
+
+//Record (AWSEC11) - Other Health Issues
+AWSEC11     -> QWSEC11     //Other Health Issues
+A1101       -> Q1101       //Minutes to nearest healthcare facility|Minutes pour aller à l'établissement de santé le plus proche
+A1102       -> Q1102       //Mode of transportation to nearest healthcare facility|Moyen de transport vers l'établissement de santé le plus proche
+A1103       -> Q1103       //Breasts examined for cancer|Seins examinés pour le cancer
+A1104       -> Q1104       //Introduction to cervical cancer questions
+A1105       -> Q1105       //Ever tested for cervical cancer|A été testé pour le cancer du col de l'utérus
+A1106       -> Q1106       //Currently smokes cigarettes|Fume actuellement des cigarettes
+A1107       -> Q1107       //Number of cigarettes smoked in last 24 hours, on average|Nombre de cigarettes fumées au cours des dernières 24 heures, en moyenne
+A1108       -> Q1108       //Currently smokes or uses tobacco besides cigarettes|Fume ou utilise actuellement un autre type de tabac en plus des cigarettes
+A1109       -> Q1109       //Type of tobacco used besides cigarettes|Type de tabac utilisé en plus des cigarettes
+A1110       -> Q1110       //Ever consumed alcohol|A consommé de l'alcool
+A1111       -> Q1111       //Number of days respondent drank alcoholic drinks in the past month|Nombre de jours que l’enquêtée a bu au moins un verre d'alcool au cours du mois dernier
+A1112       -> Q1112       //Number of alcoholic drinks per day|Nombre de verres alcoolisés par jour
+A1113A      -> Q1113A      //Care factors: Getting permission|Facteurs de soins: obtenir la permission d'aller voir un médecin
+A1113B      -> Q1113B      //Care factors: Getting money needed for treatment|Facteurs de soins: obtenir l'argent nécessaire pour le conseil ou le traitement
+A1113C      -> Q1113C      //Care factors: Distance, no nearby health facility|Facteurs de soins: distance pour atteindre l'établissement de santé
+A1113D      -> Q1113D      //Care factors: Not wanting to go alone|Facteurs de soins:  ne pas vouloir y aller seule
+A1114       -> Q1114       //Covered by health insurance|Couverte par une assurance médicale
+A1115       -> Q1115       //Type of health insurance|Type d'assurance médicale
+
+//Record (AWSECHPV) - Human papilloma virus HPV
+AWSECHPV    -> QWSECHPV    //Human papilloma virus HPV
+AHPV02      -> QHPV02      //Introduction to the module
+AHPV03      -> QHPV03      //Ever received a vaccination against HPV
+AHPV04      -> QHPV04      //Ever received an HPV vaccination card
+AHPV05      -> QHPV05      //Number of HPV vaccine doses
+AHPV06      -> QHPV06      //Place where most recent HPV vaccination was received
+
+//Record (AWSECMH) - Mental health module
+AWSECMH     -> QWSECMH     //Mental health module
+AMTH0       -> QMTH0       //Introduction to the module
+AMTHGAD1    -> QMTHGAD1    //Last 2 weeks: feeling nervous, anxious, on edge
+AMTHGAD2    -> QMTHGAD2    //Last 2 weeks: not able to stop/control worrying
+AMTHGAD3    -> QMTHGAD3    //Last 2 weeks: worrying about things
+AMTHGAD4    -> QMTHGAD4    //Last 2 weeks: trouble relaxing
+AMTHGAD5    -> QMTHGAD5    //Last 2 weeks: restless and hard to sit still
+AMTHGAD6    -> QMTHGAD6    //Last 2 weeks: become easily annoyed/irritable
+AMTHGAD7    -> QMTHGAD7    //Last 2 weeks: feeling afraid as something awful might happen
+AMTHPHQ1    -> QMTHPHQ1    //Last 2 weeks: little interst/pleasure in doing things
+AMTHPHQ2    -> QMTHPHQ2    //Last 2 weeks: feeling down, depressed or hopeless
+AMTHPHQ3    -> QMTHPHQ3    //Last 2 weeks: trouble falling asleep or sleeping too much
+AMTHPHQ4    -> QMTHPHQ4    //Last 2 weeks: feeling tired or having little energy
+AMTHPHQ5    -> QMTHPHQ5    //Last 2 weeks: poor appetite or overeating
+AMTHPHQ6    -> QMTHPHQ6    //Last 2 weeks: feeling bad about yourself, you are a failure or let yourself or family down
+AMTHPHQ7    -> QMTHPHQ7    //Last 2 weeks: trouble concentrating in reading or watching TV
+AMTHPHQ8    -> QMTHPHQ8    //Last 2 weeks: moving/speaking slowly or moving around a lot more than usual
+AMTHPHQ9    -> QMTHPHQ9    //Last 2 weeks: thoughts of better off dead or hurting yourself
+AMTH2       -> QMTH2       //Ever tried to seek help for the things you experienced
+AMTH3       -> QMTH3       //Persons/professionals have sought help
+AMTH4A      -> QMTH4A      //Ever been told by a doctor/health care worker you have: depression
+AMTH4B      -> QMTH4B      //Ever been told by a doctor/health care worker you have: anxiety
+AMTH5       -> QMTH5       //Last 2 weeks took medication prescribed by doctor/health woker for depression/anxiety
+AMTH6       -> QMTH6       //PHQ score
+AMTH8       -> QMTH8       //Referral based on PHQ score
+
+//Record (AWSECCHD) - Chronic diseases
+AWSECCHD    -> QWSECCHD    //Chronic diseases
+ACHD01      -> QCHD01      //Ever had blood pressure measured by doctor other healthcare worker|Seins examinés pour le cancer
+ACHD02      -> QCHD02      //Ever been told that you have high blood pressure or hypertension|Seins examinés pour le cancer
+ACHD03      -> QCHD03      //In past 12 months have been told that you have high blood pressure or hypertension|Seins examinés pour le cancer
+ACHD04      -> QCHD04      //Have been prescribed medication to control high blood pressure |Seins examinés pour le cancer
+ACHD05      -> QCHD05      //Are you taken medication to control your blood pressure |Seins examinés pour le cancer
+ACHD06      -> QCHD06      //Ever had blood sugar measured by doctor other healthcare worker|Seins examinés pour le cancer
+ACHD07      -> QCHD07      //Ever been told that you have high blood sugar or diabetes|Seins examinés pour le cancer
+ACHD08      -> QCHD08      //In past 12 months have been told that you have high blood sugar or diabetes|Seins examinés pour le cancer
+ACHD09      -> QCHD09      //Have been prescribed medication to control high blood sugar|Seins examinés pour le cancer
+ACHD10      -> QCHD10      //Are you taken medication to control your blood sugar|Seins examinés pour le cancer
+ACHD11      -> QCHD11      //Ever been told by a doctor or other healthcare worker that you have heart disease |Seins examinés pour le cancer
+ACHD12      -> QCHD12      //Are you receiving any treatment for your heart disease or chronic heart condition|Seins examinés pour le cancer
+ACHD13      -> QCHD13      //Ever been told by a doctor or other healthcare worker that you have lung disease|Seins examinés pour le cancer
+ACHD14      -> QCHD14      //Are you receiving any treatment for your lung disease |Seins examinés pour le cancer
+ACHD15      -> QCHD15      //Ever been told by a doctor or other healthcare worker that you have cancer or a tumor|Seins examinés pour le cancer
+ACHD16      -> QCHD16      //Are you receiving any treatment for cancer or tumor|Seins examinés pour le cancer
+ACHD17A     -> QCHD17A     //Ever been told by a doctor or other healthcare worker that you have depression|Seins examinés pour le cancer
+ACHD17B     -> QCHD17B     //Ever been told by a doctor or other healthcare worker that you have anxiety|Seins examinés pour le cancer
+ACHD19      -> QCHD19      //Are you receiving any treatment for depression or anxiety|Seins examinés pour le cancer
+ACHD20      -> QCHD20      //Ever been told by a doctor or other healthcare worker that you have arthritis|Seins examinés pour le cancer
+ACHD21      -> QCHD21      //Are you receiving any treatment for arthritis|Seins examinés pour le cancer
+ACHD22      -> QCHD22      //Ever been told by a doctor or other healthcare worker that you have other chronic disease|Seins examinés pour le cancer
+ACHD23      -> QCHD23      //Are you receiving any treatment for other chronic disease|Seins examinés pour le cancer
+ACHD24      -> QCHD24      //Ever heard of cervical cancer|Seins examinés pour le cancer
+ACHD25      -> QCHD25      //Ever heard of any test for cervical cancer|Seins examinés pour le cancer
+ACHD27      -> QCHD27      //Ever been tested by a doctor or other healthcare worker for cervical cancer|Seins examinés pour le cancer
+ACHD28      -> QCHD28      //Years since last cervical cancer test
+ACHD29      -> QCHD29      //Result of last cervical cancer
+ACHD30      -> QCHD30      //Did receive treatment for cervix|Seins examinés pour le cancer
+ACHD31      -> QCHD31      //Did receive treatment the same or different day the results were received  |Seins examinés pour le cancer
+ACHD32      -> QCHD32      //Did have any follow up visits after treatment |Seins examinés pour le cancer
+ACHD33      -> QCHD33      //Did have any follow up visits because of test results|Seins examinés pour le cancer
+
+//Record (AWSECM1) - Names of siblings for maternal mortality
+AWSECM1     -> QWSECM1     //Names of siblings for maternal mortality
+AMM01N      -> QMM01N      //Sibling name
+AMM01       -> QMM01       //Siblings order number|Numéro d’ordre des frères et sœurs
+AMMMORE     -> QMMMORE     //Any more siblings|Autres frères et sœurs
+
+//Record (AWSECM2) - Maternal mortality summary and filters
+AWSECM2     -> QWSECM2     //Maternal mortality summary and filters
+AMM00       -> QMM00       //Start Adult and Maternal Mortality Module|Commencer le module sur la mortalité adulte et maternelle
+AMM03       -> QMM03       //Other brothers and sisters|Autres frères et sœurs
+AMM04       -> QMM04       //Other brothers and sisters living elsewhere|Autres frères et sœurs vivant ailleurs
+AMM05       -> QMM05       //Other brothers and sisters who died|Autres frères et sœurs décédés
+AMM06       -> QMM06       //Other brothers and sisters  of same mother but different father|Autres frères et sœurs de même mère mais de père différent
+AMM07       -> QMM07       //Number of brothers and sisters recorded in MM01 (excluding respondent)|Nombre de frères et sœurs enregistrés dans MM01 (à l'exclusion de l’enquêtée)
+AMM08       -> QMM08       //Check for total brothers and sisters|Vérifiez le nombre total de frères et sœurs
+AMM10       -> QMM10       //Ordering of brothers and sisters|Ordonner les frères et sœurs
+AMM11       -> QMM11       //Brothers and sisters born before respondent (excluding respondent)|Frères et sœurs nés avant l’enquêtée (excluant l’enquêtée)
+
+//Record (AWSECM3) - Maternal Mortality
+AWSECM3     -> QWSECM3     //Maternal Mortality
+AMM13       -> QMM13       //Column number|Numéro de colonne
+AMM13N      -> QMM13N      //Sibling name
+AMM14       -> QMM14       //Sex of sibling|Sexe frère/sœur
+AMM15       -> QMM15       //Sibling alive|Frère/soeur toujours en vie
+AMM16       -> QMM16       //Age of sibling|Age frère/soeur
+AMM17       -> QMM17       //Years since siblings death|Années depuis le décès du frère/soeur
+AMM18       -> QMM18       //Age of sibling at death|Age au décès du frère/soeur
+AMM19       -> QMM19       //Died while pregnant|Décédée pendant qu'elle était en grossesse
+AMM20       -> QMM20       //Died during childbirth|Décédée durant un accouchement
+AMM21       -> QMM21       //Died within 2 months of delivery|Décédée dans les 2 mois suivant fin d'une grossesse ou un accouchement
+AMM22       -> QMM22       //Days after end of pregnancy sister died|Quelques jours après la fin de la grossesse, sa sœur est décédée
+AMM23       -> QMM23       //Death due to violence|Décès dû à un acte de violence
+AMM24       -> QMM24       //Death due to accident|Décès dû à un accident
+AMM16C      -> QMM16C      //CMC date of birth of sibling
+AMM17C      -> QMM17C      //CMC date of death of sibling
+
+//Record (AWSECDV) - Domestic Violence
+AWSECDV     -> QWSECDV     //Domestic Violence
+DV01        -> DV01        //Privacy obtained|Intimité obtenue
+DV02        -> DV02        //Domestic violence introduction
+DV04        -> DV04        //Currently in an intimate relationship with a man|Actuellement en relation intime avec un homme
+DV05        -> DV05        //Have ever been in an intimate relationship with a man|A déjà été dans une relation intime avec un homme
+DV06A1      -> DV06A1      //He is/was jealous or angry if talk/talked to other men|Il est/était jaloux ou en colère si ell parle/parlait à d'autres hommes
+DV06A2      -> DV06A2      //How often last 12 months: jealous/angry|À quelle fréquence au cours des 12 derniers mois: jaloux / en colère
+DV06B1      -> DV06B1      //He accuses/accused you of being unfaithful|Il vous a accuse/vous accuse d'être infidèle
+DV06B2      -> DV06B2      //How often last 12 months: accuses of unfaithful|À quelle fréquence au cours des 12 derniers mois: accuse d'infidélité
+DV06C1      -> DV06C1      //He does/did not permit you to to meet your female friends|Il ne vous permet pas/Il ne vous a pas permis de rencontrer vos amies
+DV06C2      -> DV06C2      //How often last 12 months: not permit meet with female friends|À quelle fréquence au cours des 12 derniers mois: pas permis de rencontrer des amies
+DV06D1      -> DV06D1      //He tries/tried to limit your contact with your family|Il essaie/a essayé de limiter vos contacts avec votre famille
+DV06D2      -> DV06D2      //How often last 12 months: limit contact with family|À quelle fréquence dans les 12 derniers mois: limiter les contacts avec la famille
+DV06E1      -> DV06E1      //He insists/insisted on knowing where you are/were at all times|Il insiste/a insisté pour savoir où vous êtes /étiez à tout moment
+DV06E2      -> DV06E2      //How often last 12 months: knowing where you are|À quelle fréquence au cours des 12 derniers mois: savoir où vous êtes
+DV07A1      -> DV07A1      //Say or do something to humiliate you in front of others|Dit ou fait quelque chose pour vous humilier devant les autres
+DV07A2      -> DV07A2      //How often last 12 months: humiliate|À quelle fréquence au cours des 12 derniers mois: humilier
+DV07B1      -> DV07B1      //Threaten to hurt or harm you or someone you care about|Menace de vous blesser ou blesser quelqu'un qui vous tient à cœur
+DV07B2      -> DV07B2      //How often last 12 months: threaten to hurt/harm|À quelle fréquence dans les 12 derniers mois: menace de blesser
+DV07C1      -> DV07C1      //Insulted you or make you feel bad about yourself|Vous a insulté ou vous a fait pour vous sentir mal dans votre peau
+DV07C2      -> DV07C2      //How often last 12 months: insulted/make feel bad|À quelle fréquence au cours des 12 derniers mois: insulté/se sentir mal
+DV08A1      -> DV08A1      //Push you, shake you or throw something at you|Vous poussez, vous secouez ou vous jeter quelque chose
+DV08A2      -> DV08A2      //How often last 12 months: push/shake/throw something|À quelle fréquence au cours des 12 derniers mois: pousser/secouer/jeter quelque chose
+DV08B1      -> DV08B1      //Slap you|Vous gifle
+DV08B2      -> DV08B2      //How often last 12 months: slap|À quelle fréquence au cours des 12 derniers mois: gifle
+DV08C1      -> DV08C1      //Twist your arm or pull your hair|Tord votre bras ou tire vos cheveux
+DV08C2      -> DV08C2      //How often last 12 months: twist arm/pull hair|À quelle fréquence au cours des 12 derniers mois: tordre le bras/tirer les cheveux
+DV08D1      -> DV08D1      //Punch you with his fist or with something that could hurt you|Vous frappe a coup de poing ou avec quelque chose qui pouvais vous blesser
+DV08D2      -> DV08D2      //How often last 12 months: punch with fist or something else|À quelle fréquence au cours des 12 derniers mois: coup de poing ou autre chose
+DV08E1      -> DV08E1      //Kick you, drag you or beat you up|Vous donnez un coup de pied, vous traînez à terre ou vous battre
+DV08E2      -> DV08E2      //How often last 12 months: kick/drag/beat|À quelle fréquence au cours des 12 derniers mois: donner un coup de pied/traînez à terre/battre
+DV08F1      -> DV08F1      //Try to choke you or burn you on purpose|Essaye de vous étouffer ou de vous brûler par exprès
+DV08F2      -> DV08F2      //How often last 12 months: choke/burn|À quelle fréquence au cours des 12 derniers mois: étouffer/brûler
+DV08G1      -> DV08G1      //Attack you with a knife, gun or any other weapon|Vous attaque avec un couteau, une arme à feu ou toute autre arme
+DV08G2      -> DV08G2      //How often last 12 months: attack with knife/gun|À quelle fréquence au cours des 12 derniers mois: attaque avec un couteau/une arme à feu
+DV08H1      -> DV08H1      //Physically force you to have sexual intercourse|Vous force physiquement à avoir des rapports sexuels
+DV08H2      -> DV08H2      //How often last 12 months: physically force to have sex|À quelle fréquence au cours des 12 derniers mois: force physiquement à avoir des relations sexuelles
+DV08I1      -> DV08I1      //Physically force you to perform other sexual acts|Vous force physiquement à avoir d'autres actes sexuels
+DV08I2      -> DV08I2      //How often last 12 months; physically force to perform sexual acts|À quelle fréquence au cours des 12 deniers mois: force physiquement à avoir des actes sexuels
+DV08J1      -> DV08J1      //Force with threats or in any other way to perform sexual acts|Force avec des menaces ou toute autre manière pour accomplir des actes sexuels
+DV08J2      -> DV08J2      //How often last 12 months: force with threats perform sexual acts|À quelle fréquence au cours des 12 derniers mois: force avec des menaces pour accomplir des actes sexuels
+DV10A       -> DV10A       //Ever had cuts, bruises or aches because of husband's act
+DV10B       -> DV10B       //Ever had eye injuries, sprains, dislocations or burns|A déjà eu des blessures aux yeux, des entorses, des brûlures
+DV10C       -> DV10C       //Ever had deep wounds, broken bones, broken teeth or other serious injury|A déjà eu des blessures profondes, des os cassés, des dents cassées ou d'autres blessures graves
+DV11        -> DV11        //Ever physically hurt husband when he was not hurting you|A physiquement blessé son mari quand il ne lui faisait pas de mal
+DV12        -> DV12        //How often physically hurt your husband: times last 12 months|Combien de fois blessé physiquement votre mari: nombre 12 derniers mois
+DV13        -> DV13        //Partner drinks alcohol|Le partenaire boit de l'alcool
+DV14        -> DV14        //Times partner gets drunk|Nombre de fois partenaire se souler
+DV15        -> DV15        //Afraid of husband/partner most of the time, sometimes or never|Peur du mari/partenaire la plupart du temps, parfois ou jamais
+DV16A1      -> DV16A1      //Any previous husband/partner ever hit, slapped, kicked or hurt her physically|Ancien mari/partenaire l’a frappé, giflé ou blessé physiquement
+DV16A2      -> DV16A2      //How long ago did hit, slap, kick happened|Depuis combien de temps cela est arrivé : frappé, giflé, coup de pied
+DV16B1      -> DV16B1      //Any previous husband/partner ever physically forced to have intercourse or perform any other sexual act|Ancien mari/partenaire a forcé physiquement à avoir des relations sexuelles ou à accomplir tout autre acte sexuel
+DV16B2      -> DV16B2      //How long ago did physically forced to have intercourse|Depuis combien de temps a-t-elle été physiquement forcée d'avoir des relations sexuelles
+DV16C1      -> DV16C1      //Any previous husband/partner humiliate, threaten to hurt, insult or make feel bad|Un ancien mari/partenaire humilie, menace de blesser, insulte ou fait se sentir mal
+DV16C2      -> DV16C2      //How long ago did humiliate, threaten to hurt, insult or make feel bad|Depuis combien de temps: humilier, menacer de vous blesser, insulter ou se faire sentir mal
+DV18        -> DV18        //Age at first time was forced to have sex or perform sexual acts|Age pour la première fois a été forcée d'avoir des relations sexuelles ou de commettre des actes sexuels
+DV20        -> DV20        //Ever physically hurt during pregnancy|A été blessée physiquement pendant la grossesse
+DV21        -> DV21        //Person who hurt her during pregnancy|Personne qui l'a blessée pendant la grossesse
+DV22        -> DV22        //Ever physically hurt by someone|A été blessée physiquement par quelqu'un
+DV23        -> DV23        //Person besides husband/partner who hurt respondent after age 14|Personne en dehors du mari/partenaire qui a blessé l’enquêtée après 14 ans
+DV24        -> DV24        //Times hit by other than partner during last 12 months|Fréquence frappée par un autre que le partenaire au cours des 12 derniers mois
+DV26        -> DV26        //Anyone (besides partner) ever forced respondent to have intercourse (ever married)|Quelqu’un (à part partenaire) a déjà forcé l’enquêtée à avoir des relations sexuelles (mariée)
+DV27        -> DV27        //Anyone ever forced respondent to have intercourse (never married)|Quelqu’un a déjà forcé l’enquêtée à avoir des relations sexuelles (marié)
+DV28        -> DV28        //Age at first time was forced to have sex perform sexual acts (other than husband)|Age pour la première fois a été forcé d'avoir des relations sexuelles (autre que le mari)
+DV29        -> DV29        //Person who forced respondent to first sexual activity|Personne qui a forcé l’enquêtée à la première activité sexuelle
+DV30        -> DV30        //Anyone (besides partner) forced respondent to have intercourse in last 12 m|Une personne (en dehors du partenaire) a forcé l’enquêtée à avoir des rapports sexuels au cours des 12 derniers mètres
+DV32        -> DV32        //Sought help from someone|A cherché l'aide de quelqu'un
+DV33        -> DV33        //From whom have you sought help|Auprès de qui a cherché de l'aide
+DV34        -> DV34        //Ever told anyone about violence|A parlé de la violence à quelqu’un
+DV35        -> DV35        //Did her father ever beat her mother|Son père a-t-il déjà battu sa mère
+DV36A       -> DV36A       //Interrupted interview because of husband's presence|Interview interrompue en raison de la présence du mari
+DV36B       -> DV36B       //Interrupted interview because of other adult male's presence|Interview interrompue en raison de la présence d'un autre homme adulte
+DV36C       -> DV36C       //Interrupted interview because of adult female's presence|Interview interrompue en raison de la présence d'une femme adulte
+DV37        -> DV37        //Comments explanation as to why the module couldn't be completed
+DVFIN       -> DVFIN       //Auxiliary to display end of DV module
+
+//Record (AWSECG1) - Female Genital Cutting
+AWSECG1     -> QWSECG1     //Female Genital Cutting
+GC01        -> GC01        //Ever heard of female circumcision|A entendu parler de l'excision génitale
+GC02        -> GC02        //Ever heard of genital cutting (probed)|A entendu parler de l'excision génitale (sondé)
+GC03        -> GC03        //Respondent circumcised|Enquêtée excisée
+GC04        -> GC04        //Flesh removed from genital area|Chair retirée dans la zone génitale
+GC05        -> GC05        //Genital area just nicked without removing any flesh|Zone génitale juste entaillée sans enlever de chairs
+GC06        -> GC06        //Genital area sewn closed|Zone génitale fermée par une couture
+GC07        -> GC07        //Age at circumcision|Age à l'excision
+GC08        -> GC08        //Who performed circumcision|Qui a procédé l'excision
+GC10        -> GC10        //Intro to questions about FGC and daughters
+GC17        -> GC17        //Do you believe that female circumcision is required by religion|Pensez-vous que l'excision est exigée par la religion
+GC18        -> GC18        //Circumcision should continue or be stopped|L'excision doit continuer ou être abandonnée
+GCDAUGHT    -> GCDAUGHT    //Number of daughters that apply to the daughters roster
+
+//Record (AWSECG2) - Female genital cutting for daughters
+AWSECG2     -> QWSECG2     //Female genital cutting for daughters
+LINEGC      -> LINEGC      //Line number
+GC11        -> GC11        //Daughter's line number in birth history
+GC11N       -> GC11N       //Daughter's name|Nom de la fille
+GC12        -> GC12        //Is daughter circumcised|La fille est-elle excisée
+GC13        -> GC13        //Daughter's age at circumcision|Age de la fille à l'excision
+GC14        -> GC14        //Was daughter's genital area sewn closed|La zone génitale de la fille a-t-elle été fermée par couture
+GC15        -> GC15        //Who performed daughter's circumcision|Qui a procédé à l'excision de sa fille
+
+//Record (AWSECECD) - Early childhood development
+AWSECECD    -> QWSECECD    //Early childhood development
+ACOLECD     -> QCOLECD     //Column number|Numéro de colonne
+AECDCA      -> QECDCA      //Child line number|Numéro de ligne l'enfant
+AECDCN      -> QECDCN      //Child name under 5
+AECD1       -> QECD1       //Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
+AECD2       -> QECD2       //Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
+AECD3       -> QECD3       //Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
+AECD4       -> QECD4       //Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
+AECD5       -> QECD5       //Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
+AECD6       -> QECD6       //Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
+AECD7       -> QECD7       //Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
+AECD8       -> QECD8       //Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
+AECD9       -> QECD9       //Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
+AECD10      -> QECD10      //Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
+AECD11      -> QECD11      //Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
+AECD12      -> QECD12      //Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
+AECD13      -> QECD13      //If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
+AECD14      -> QECD14      //Can child count 10 objects without mistakes
+AECD15      -> QECD15      //Can color or play with building blocks without asking for help or giving up
+AECD16      -> QECD16      //Does child ask about familiar people other than parents when not there
+AECD17      -> QECD17      //Does child offer to help someone who seems to need help
+AECD18      -> QECD18      //Does child get along well with other children
+AECD19      -> QECD19      //How often does child seem to be very sad or depressed
+AECD20      -> QECD20      //Compared with other children, how much does child kick, bite, or hit other children or adults
+
+//Record (AWSECSBC) - Social behavior change communication - Malaria
+AWSECSBC    -> QWSECSBC    //Social behavior change communication - Malaria
+AML501      -> QML501      //Last six months heard/seen malaria messages
+AML502      -> QML502      //Where messages were seen
+AML503      -> QML503      //Are there ways to avoid getting malaria
+AML504      -> QML504      //Things people can do to prevent from getting malaria
+AML505      -> QML505      //Agree/disagree with: people in community get malaria in rainy season
+AML506      -> QML506      //Agree/disagree with: when child has fever worry it is malaria
+AML507      -> QML507      //Agree/disagree with: getting malaria not a problem as can be treated
+AML508      -> QML508      //Agree/disagree with: only weak children can die from malaria
+AML509      -> QML509      //Agree/disagree with: sleep under net when there are lots of mosquitoes
+AML510      -> QML510      //Agree/disagree with: sleep under net when there are few mosquitoes
+AML511      -> QML511      //Agree/disagree with: don't like sleep in a net when is too warm
+AML512      -> QML512      //Agree/disagree with: if child has fever good to give medicine available at home
+AML513      -> QML513      //Agree/disagree with: people take children to health provider same day develop fever
+AML514      -> QML514      //Agree/disagree with: people who have nets usually sleep under every night
+
+//Record (AWSECFIS) - Fistula module
+AWSECFIS    -> QWSECFIS    //Fistula module
+AFI1        -> QFI1        //Currently experience constant leakage of urine or stool from vagina during the day and night
+AFI2        -> QFI2        //Have ever experienced a problem of leakage of urine or stool from vagina
+AFI3        -> QFI3        //Have ever heard of the problem of leakage of urine or stool from vagina
+AFI4        -> QFI4        //Did the leakage problem start after a delivery of a baby or a stillbirth
+AFI5        -> QFI5        //Did the leakage problem start after a normal labor and delivery, or after a difficult labor and delivery
+AFI6        -> QFI6        //What do you think caused the leakage problem
+AFI7        -> QFI7        //How many days after what caused the problem did the leakage start
+AFI8        -> QFI8        //Have you sought treatment for this condition
+AFI9        -> QFI9        //Reason treatment was not sought
+AFI10       -> QFI10       //Person whom treatment was last sought
+AFI11       -> QFI11       //Did have an operation to fix the leakage problem
+AFI12       -> QFI12       //Did the treatment stop or reduce the leakage completely
+
+//Record (AMSEC01) - [Men] Respondent's Background
+AMSEC01     -> QMSEC01     //[Men] Respondent's Background
+AM101       -> QM101       //Start of interview
+AM101H      -> QM101H      //Start of interview (hour)|Début de l'interview (heure)
+AM101M      -> QM101M      //Start of interview (minutes)|Début de l'interview (minutes)
+AM819       -> QM819       //End of interview
+AM819H      -> QM819H      //End of interview (hour)|Fin interview (heure)
+AM819M      -> QM819M      //End of interview (minutes)|Fin interview (minutes)
+AM102       -> QM102       //State of birth|Province/Région/Etat de naissance
+AM103       -> QM103       //Country of birth|Pays de naissance
+AM104       -> QM104       //Time living in place of interview|Combien de temps a habité au lieu de l’interview
+AM106       -> QM106       //Date of move
+AM106M      -> QM106M      //Month of move|Mois de déménagement
+AM106Y      -> QM106Y      //Year of move|Année de déménagement
+AM107       -> QM107       //Province/state lived before moved to place of interview|Province/Etat habité avant d'être au lieu d’interview
+AM108       -> QM108       //Lived in a city/town or rural area|A habité dans une ville/village ou une zone rurale
+AM109       -> QM109       //Reason for moving|Raison du déménagement
+AM110       -> QM110       //Date of birth
+AM110M      -> QM110M      //Month of birth|Mois de naissance
+AM110Y      -> QM110Y      //Year of birth|Année de naissance
+AM111       -> QM111       //Current age of respondent|Age actuel de l'enquété
+AM112       -> QM112       //Self reporting health status|Auto-déclaration de l’état de santé
+AM113       -> QM113       //Ever attended school|A déjà fréquenté l'école
+AM114       -> QM114       //Highest educational level|Plus haut niveau d'étude
+AM115       -> QM115       //Highest grade/form/year at that level|Plus haute Classe/Année à ce niveau
+AM117       -> QM117       //Sentence read|Phrase lue
+AM119       -> QM119       //Reads newspaper or magazine|Lit le journal/magazine
+AM120       -> QM120       //Listens to radio|Ecoute la radio
+AM121       -> QM121       //Watches TV|Regarde la télévision
+AM122       -> QM122       //Own a mobile telephone|Posséde un téléphone mobile
+AM123       -> QM123       //Phone is a smart phone|Le téléphone est un "smart phone"
+AM127       -> QM127       //Have ever used the internet|A déjà utilisé Internet
+AM128       -> QM128       //Have used the internet last 12 months|A utilisé Internet les 12 derniers mois
+AM129       -> QM129       //How often used internet the last month|Combien de fois a utilisé Internet le mois dernier
+AM130       -> QM130       //Religion
+AM131       -> QM131       //Ethnicity|Ethnie
+AM110C      -> QM110C      //Date of birth (CMC)
+AM110F      -> QM110F      //Date flag for AM110C
+AM111C      -> QM111C      //Age of respondent calculated
+AM114A      -> QM114A      //Highest educational level
+
+//Record (AMSEC02) - [Men] Reproduction
+AMSEC02     -> QMSEC02     //[Men] Reproduction
+AM201       -> QM201       //Ever fathered any children|Eu des enfants dont vous êtes père
+AM202       -> QM202       //Sons or daughters living with|Fils ou filles vivant avec vous
+AM203A      -> QM203A      //Sons at home|Fils à la maison
+AM203B      -> QM203B      //Daughters at home|Filles à la maison
+AM204       -> QM204       //Sons or daughters living away|Fils ou filles vivant ailleurs
+AM205A      -> QM205A      //Sons living elsewhere|Fils vivant ailleurs
+AM205B      -> QM205B      //Daughters living elsewhere|Filles vivant ailleurs
+AM206       -> QM206       //Sons or daughters who died|Fils ou filles décédés
+AM207A      -> QM207A      //Boys who died|Garçons décédés
+AM207B      -> QM207B      //Girls who died|Filles décédées
+AM208       -> QM208       //Total children ever fathered|Nombre d'enfants dont il est père
+AM210       -> QM210       //All children have fathered by the same mother|Tous les enfants ont la même mère biologique
+AM211       -> QM211       //Respondent age at birth of first child|Age de l’enquêté à la naissance du premier enfant
+AM213       -> QM213       //Age of youngest child|Age du plus jeune enfant
+AM215       -> QM215       //Name of youngest child
+AM216       -> QM216       //Antenatal check-ups for the mother|Visite prénatale pour la mère pendant la grossesse
+AM217       -> QM217       //Present during check-ups|Présence pendant la visite prénatale
+AM218       -> QM218       //Place of birth of youngest|Lieu de naissance du plus jeune
+AM219       -> QM219       //Go with child's mother to health facility for birth|Accompagner la mère de l'enfant a l’établissement de la santé pour l'accouchement
+
+//Record (AMSEC3A) - [Men] Contraceptive Knowledge & Use
+AMSEC3A     -> QMSEC3A     //[Men] Contraceptive Knowledge & Use
+AMSEC31_GRP -> QMSEC31_GRP //Contraception listing
+AM3N        -> QM3N        //Contraceptive method|Méthode contraceptive
+AM301       -> QM301       //Heard of method|Entendu parler de la méthode
+AM301OT     -> QM301OT     //Auxiliary to capture other methods|Auxiliaire pour capter d'autres méthodes
+AMALLMETH   -> QMALLMETH   //Auxiliary to capture spontaneous knowledge of methods|Auxiliaire pour capter les connaissances spontanées des méthodes
+
+//Record (AMSEC3B) - [Men] Contraceptive Practice
+AMSEC3B     -> QMSEC3B     //[Men] Contraceptive Practice
+AM302A      -> QM302A      //Heard about FP: on the radio last 12 months|12 derniers mois: entendu parler de PF à la radio
+AM302B      -> QM302B      //Saw FP: on the television last 12 months|12 derniers mois: vu quelque chose sur la PF à la télévision
+AM302C      -> QM302C      //Saw FP: in a newspaper or magazine last 12 months|12 derniers mois: lu quelque chose sur la PF dans un journal ou magazine
+AM302D      -> QM302D      //Received voice/text messages about FP on mobile phone last 12 months|12 derniers mois: reçu un message vocal ou un texte sur la PF sur votre portable
+AM302E      -> QM302E      //Saw FP on social media last 12 months|12 derniers moi: vu quelque chose sur la PF sur les média sociaux
+AM302F      -> QM302F      //Saw FP on poster/leaflet/brochure last 12 months|12 derniers moi: vu quelque chose sur la PF sur un poster/une affiche/une brochure
+AM302G      -> QM302G      //Saw FP on outdoor sign/billboard last 12 months|12 derniers mois: vu quelque chose sur la PF sur une affiche extérieure ou un panneau d'affichage
+AM302H      -> QM302H      //Heard FP in community event last 12 months|12 derniers mois: entendu quelque chose sur la PF lors d'une réunion/d'évènements dans la communauté
+AM303       -> QM303       //Discussed family planning with a health worker or health professional|Discuté de la planification familiale avec un agent de santé ou un professionnel de la santé
+AM304       -> QM304       //Increased chance of woman getting pregnant on certain days|Y a-t-il une période où les femmes ont plus de chances de tomber enceintes
+AM305       -> QM305       //Days when increased chance of getting pregnant|Période à laquelle la femme a plus de chances de tomber enceintes
+AM306       -> QM306       //Can woman get pregnant after birth and before period returns|Une femme peut-elle tomber enceinte après la naissance et avant le retour des règles
+AM307A      -> QM307A      //Contraception is woman's business, man should not worry|La contraception est un problème des femmes, l'homme ne doit pas s'en occuper
+AM307B      -> QM307B      //Women use contraception may become promiscuous|Une femme qui utilise la contraception peut devenir une femme légère
+
+//Record (AMSEC04) - [Men] Marriage and Sexual Activity
+AMSEC04     -> QMSEC04     //[Men] Marriage and Sexual Activity
+AM401       -> QM401       //Currently in union|Actuellement en union
+AM402       -> QM402       //Have ever been married or lived with a woman|A déjà été marié ou vécu avec un homme
+AM403       -> QM403       //Current marital status|Etat matrimonial actuel
+AM404       -> QM404       //Partner living with respondent|Epouse/partenaire vit actuellement avec l’enquêté
+AM405       -> QM405       //Other partners|Autres épouses/autre femmes
+AM406       -> QM406       //Number of women|Nombre de femmes
+AMSEC04_GRP -> QMSEC04_GRP //Wife/partner listing
+AM407       -> QM407       //Line number of wife, partner|Numéro de ligne de l'épouse/partenaire
+AM408       -> QM408       //Age of wife/partner|Age épouse/partenaire
+AM410       -> QM410       //Times married|Nombe de fois marié
+AM411       -> QM411       //Date of first union
+AM411M      -> QM411M      //Date of first union (month)|Date de la première union (mois)
+AM411Y      -> QM411Y      //Date of first union (year)|Date de la première union (année)
+AM412       -> QM412       //Age at first union|Age à la première union
+AM413       -> QM413       //Check for presence of others
+AM414       -> QM414       //Age at first intercourse|Age au premier rapport sexuel
+AM415       -> QM415       //Time since last intercourse
+AM415U      -> QM415U      //Time since last intercourse (unit)|Durée depuis le dernier rapport (unité)
+AM415N      -> QM415N      //Time since last intercourse (number)|Durée depuis le dernier rapport (nombre)
+AM416       -> QM416       //Used FP during last intercourse|PF utilisé lors du dernier rapport sexuel
+AM417       -> QM417       //Know a place to obtain family planning methods|Connaît un endroit pour se procurer des méthodes de PF
+AM418       -> QM418       //Contraceptive method|Méthode contraceptive
+AM419       -> QM419       //Used condom during last intercourse|Condom utilisé lors du dernier rapport sexuel
+AM420       -> QM420       //Brand of condom used during last sex|Marque du condom utilisé lors du dernier rapport sexuel
+AM421       -> QM421       //Place obtained condom last time|Lieu d’obtention du condom la dernière fois
+AM422       -> QM422       //Relationship with last partner|Lien avec la dernière partenaire
+AM423       -> QM423       //Sexual intercourse with any other person in last 12 months|Rapports sexuels avec une autre personne au cours des 12 derniers mois
+AM424       -> QM424       //Condom used with second partner|Condom utilisé avec la deuxième personne
+AM425       -> QM425       //Relationship with second partner|Lien avec la deuxième personne
+AM426       -> QM426       //Sexual intercourse with any other person|Rapports sexuels avec d'autres personnes au cours des 12 derniers mois
+AM427       -> QM427       //Condom used with third partner|Condom utilisé avec la troisième personne
+AM428       -> QM428       //Relationship with third partner|Lien avec le troisième personne
+AM429       -> QM429       //Number of lifetime sexual partners|Nombre de partenaires sexuels dans votre vie
+AM411C      -> QM411C      //Date of first union (CMC)
+AM411F      -> QM411F      //Date flag for AM411C
+AM412C      -> QM412C      //Age at first union (calculated)
+AM414F      -> QM414F      //Flag for AM414
+AM415F      -> QM415F      //Flag for AM415
+
+//Record (AMSEC05) - [Men] Fertility Preferences
+AMSEC05     -> QMSEC05     //[Men] Fertility Preferences
+AM504       -> QM504       //Wife/partner currently pregnant|Epouse/partenaire actuellement enceinte
+AM505       -> QM505       //Desire for future child wife pregnant|Désir d'avoir un enfant  dans l'avenir
+AM506       -> QM506       //Time for future birth wife pregnant
+AM506U      -> QM506U      //Time for future birth (unit)|Temps d’attente pour avoir un enfant dans l'avenir (unité)
+AM506N      -> QM506N      //Time for future birth (number)|Temps d’attente pour avoir un enfant dans l'avenir (nombre)
+AM507       -> QM507       //Desire for future child wife not pregnant|Désir d'avoir un enfant  dans l'avenir
+AM508       -> QM508       //Time to next birth wife not pregnant
+AM508U      -> QM508U      //Time to next birth (units)|Temps pour une naissance future (unité)
+AM508N      -> QM508N      //Time to next birth (number)|Temps pour une naissance future (nombre)
+AM509       -> QM509       //Any wives/partners currently pregnant|Une de vos épouses/partenaires actuellement enceinte
+AM510       -> QM510       //Desire for future child at least one wife pregnant|Désir d'avoir un enfant  dans l'avenir
+AM511       -> QM511       //Time for future birth at least one wife pregnant
+AM511U      -> QM511U      //Time for future birth (unit)|Temps pour une naissance future (unité)
+AM511N      -> QM511N      //Time for future birth (number)|Temps pour une naissance future (nombre)
+AM512       -> QM512       //Desire for future child none of the wives pregnant|Désir d'avoir un enfant  dans l'avenir
+AM513       -> QM513       //Time to next child none of the wives pregnant
+AM513U      -> QM513U      //Time to next birth (units)|Temps pour une naissance future (unité)
+AM513N      -> QM513N      //Time to next birth (number)|Temps pour une naissance future (nombre)
+AM514       -> QM514       //Ideal number of children|Nombre idéal d'enfants
+AM515A      -> QM515A      //Ideal number of boys|Nombre idéal: garçons
+AM515B      -> QM515B      //Ideal number of girls|Nombre idéal: filles
+AM515C      -> QM515C      //Ideal number of either|Nombre idéal: n'importe (les deux)
+
+//Record (AMSEC06) - [Men] Employment and Gender Roles
+AMSEC06     -> QMSEC06     //[Men] Employment and Gender Roles
+AM601       -> QM601       //Currently working|Travaille actuellement
+AM602       -> QM602       //Has job from which was absent|Avoir un travail pour lequel il a été absent
+AM603       -> QM603       //Worked last 12 months|A travaillé au cours des 12 derniers mois
+AM604       -> QM604       //Occupation|Occupation de l'enquêté
+AM605       -> QM605       //Works seasonally|Travaille toute l'année/saisonnière
+AM606       -> QM606       //Paid in cash or kind|Payée en espèces ou en nature
+AM609       -> QM609       //Decision maker on using the money earned|Qui décide habituellement de l'utilisation de l’argent gagné
+AM610       -> QM610       //Decision on health care for respondent|Décision sur les soins de santé de l’enquêté
+AM611       -> QM611       //Decision on large HH purchases|Décision sur les achats importants du ménage
+AM612       -> QM612       //Owns own house alone or jointly|Possède sa propre maison seul ou conjointement
+AM613       -> QM613       //Respondent has a title deed for any house owned|L’enquêté a un titre de propriété pour une maison l’appartenant
+AM614       -> QM614       //Respondent's name on house title deed|Le nom de l’enquêté figure-t-il sur le titre de propriété
+AM615       -> QM615       //Owns land alone or jointly|Possède un terrain seul ou conjointement
+AM616       -> QM616       //Respondent has a title deed for any land owned|L’enquêté a un titre de propriété pour des terres l’appartenant
+AM617       -> QM617       //Respondent's name on land title deed|Nom de l’enquêté sur le titre foncier
+AM617C      -> QM617C      //Use mobile telephone for financial transactions|Utilise le téléphone mobile pour les transactions financières
+AM617A      -> QM617A      //Have a bank or other financial account|Avoir un compte bancaire ou autre compte financier
+AM617B      -> QM617B      //Taken money in or out of bank account|Retrait ou dépôt d’argent dans le compte bancaire
+AM618A      -> QM618A      //Beating justification: going out without telling him|Justification de frapper ou battre: sort sans le lui dire
+AM618B      -> QM618B      //Beating justification: neglects children|Justification de frapper ou battre: la femme néglige les enfants
+AM618C      -> QM618C      //Beating justification: arguing|Justification de frapper ou battre: femme argumente avec lui
+AM618D      -> QM618D      //Beating justification: refusing sex|Justification de frapper ou battre: la femme refuse les relations sexuelles
+AM618E      -> QM618E      //Beating justification: burning food|Justification de frapper ou battre: la femme brûle de la nourriture
+AM619       -> QM619       //Respondent's father beat mother|Son père a-t-il déjà battu sa mère
+
+//Record (AMSEC07) - [Men] HIV/AIDS
+AMSEC07     -> QMSEC07     //[Men] HIV/AIDS
+AM700       -> QM700       //Introduction to HIV/AIDS questions
+AM701       -> QM701       //Ever heard of HIV or AIDS|Entendu parler de VIH ou de SIDA
+AM703       -> QM703       //Reduce chance getting HIV by having just one uninfected sex partner who has no other sex partners|Reduire le risque du SIDA en ayant un seul partenaire sexuel non infecté
+AM704       -> QM704       //Can get HIV from mosquito bites|Peut attraper le VIH par les piqûres de moustiques
+AM705       -> QM705       //Reduce chance of HIV by using condom every time they have sex|Réduire les risques de VIH en utilisant un condom
+AM706       -> QM706       //Can get HIV by sharing food with someone infected with HIV|Peut contracter le VIH en partageant de la nourriture avec une personne infectée par le VIH
+AM707       -> QM707       //Possible for healthy-looking person to have HIV|Une personne paraissant en bonne santé peut-elle avoir le VIH
+AM708       -> QM708       //Heard of ARVs|Entendu parler des TAR
+AM709       -> QM709       //Special drugs to avoid HIV transmission to baby|Médicaments spéciaux pour réduire le risque de transmission au bébé
+AM710       -> QM710       //Heard of PrEP|Entendu parler de la PrEP
+AM711       -> QM711       //Approve of people taking pills to prevent HIV|Approuver les personnes prenant des pilules pour éviter le VIH
+AM712       -> QM712       //Check for presence of others
+AM713       -> QM713       //Ever been tested for HIV|A déjà fait un test du VIH
+AM714       -> QM714       //Date of most recent HIV test
+AM714M      -> QM714M      //Date of most recent HIV test (month)|Date du test du VIH le plus récent (mois)
+AM714Y      -> QM714Y      //Date of most recent HIV test (year)|Date du test du VIH le plus récent (année)
+AM715       -> QM715       //Place for HIV test|Lieu du test de VIH
+AM716       -> QM716       //Received results of test|Reçu les résultats du test
+AM717       -> QM717       //Result of HIV test|Résultat du test VIH
+AM718       -> QM718       //Date of first HIV test
+AM718M      -> QM718M      //Date of first HIV test (month)|Date du premier test VIH (mois)
+AM718Y      -> QM718Y      //Date of first HIV test (year)|Date du premier test VIH (année)
+AM719       -> QM719       //Currently taking ARVs|Prenant actuellement des TAR
+AM720       -> QM720       //Number of HIV tests|Nombre de tests VIH
+AM721       -> QM721       //Have heard of test kits for HIV self-testing|Entendu parler de kits de test pour l'auto-dépistage du VIH
+AM722       -> QM722       //Have ever tested using self-test kits|A déjà été testé avec les kits d'autotest
+AM723       -> QM723       //Would buy vegetables from vendor with HIV|Achèterait des légumes à un vendeur séropositif
+AM724       -> QM724       //Children with HIV should be allowed to go to school with children with no HIV|Les enfants séropositifs devraient être autorisés à aller à l'école avec des enfants non séropositifs
+AM726       -> QM726       //Disclosed HIV status to others|Révélation du statut du VIH à d'autres
+AM727       -> QM727       //Respondent feels ashamed of HIV status|L’enquêté a honte de son statut VIH
+AM728A      -> QM728A      //Respondent had happened: people talk badly|Il est arrivé à l’enquêté: les gens ont mal parlée d’elle
+AM728B      -> QM728B      //Respondent had happened: someone else disclosed status|Il est arrivé à l’enquêté: quelqu'un d'autre a relevé son statut
+AM728C      -> QM728C      //Respondent had happened: verbally insulted|Il est arrivé à l’enquêté: insulté, harcelé ou menacé
+AM728D      -> QM728D      //Respondent had happened: healthcare workers talked badly|Il est arrivé à l’enquêté: personnels de santé parlaient mal
+AM728E      -> QM728E      //Respondent had happened: healthcare workers verbally abused|Il est arrivé à l’enquêté: le personnel de santé a crié/grondé/agressé verbalement
+AM729       -> QM729       //Heard about other STDs|Entendu parler des autres MSTs
+AM732       -> QM732       //Had an STD in last 12 months|A eu une MST au cours des 12 derniers mois
+AM733       -> QM733       //Genital discharge in last 12 months|Ecoulement anormal du pénis au cours des 12 derniers mois
+AM734       -> QM734       //Genital sore or ulcer in last 12 months|Une plaie ou un ulcère sur leur pénis ou à côté u cours des 12 derniers mois
+AM735       -> QM735       //Justified to ask for use of condom when husband has STD|Il est justifié de demander l'utilisation du condom lorsque le mari a une MST
+AM736       -> QM736       //Right to refuse sex: husband has other partners|Droit de refuser des relations sexuelles: le mari a d'autres partenaires
+
+//Record (AMSEC08) - [Men] Other Health Issues
+AMSEC08     -> QMSEC08     //[Men] Other Health Issues
+AM801       -> QM801       //Respondent circumcised|L'enquêté est circoncis
+AM802       -> QM802       //Respondent is traditionally circumcised|L'enquêté est traditionnellement circoncis
+AM803       -> QM803       //Age at traditional circumcision|Age à la circonsision
+AM804       -> QM804       //Respondent is medically circumcised|L'enquêté est médicalement circoncis
+AM805       -> QM805       //Age at medical circumcision|Age à la circoncision médicale
+AM806       -> QM806       //Frequency smoking tobacco currently|Fréquence de fumer du tabac actuellement
+AM807       -> QM807       //In the past, smoked every day|Dans le passé, a fumé tous les jours
+AM808       -> QM808       //Frequency smoked tobacco in the past|Fréquence du tabac fumé dans le passé
+AM809A      -> QM809A      //Daily frequency of smoking: manufactured cigarettes|Fréquence quotidienne du tabagisme: cigarettes fabriquées commercialement
+AM809B      -> QM809B      //Daily frequency of smoking: hand-rolled cigarettes|Fréquence quotidienne du tabagisme: cigarettes roulées à la main
+AM809C      -> QM809C      //Daily frequency of smoking: kreteks|Fréquence quotidienne du tabagisme: kreteks
+AM809D      -> QM809D      //Daily frequency of smoking: pipes full of tobacco|Fréquence quotidienne du tabagisme: pipes remplies de tabac
+AM809E      -> QM809E      //Daily frequency of smoking: cigars, cheroots, cigarillos|Fréquence quotidienne du tabagisme: cigares, cheroots ou cigarillos
+AM809F      -> QM809F      //Daily frequency of smoking: water pipe sessions|Fréquence quotidienne de fumer: nombre de séances de pipe à eau/narguilé
+AM809G      -> QM809G      //Daily frequency of smoking: other|Fréquence quotidienne du tabagisme: autre
+AM810A      -> QM810A      //Weekly frequency of smoking: manufactured cigarettes|Fréquence par semaine du tabagisme: cigarettes fabriquées commercialement
+AM810B      -> QM810B      //Weekly frequency of smoking: hand-rolled cigarettes|Fréquence par semaine du tabagisme: cigarettes roulées à la main
+AM810C      -> QM810C      //Weekly frequency of smoking: kreteks|Fréquence par semaine du tabagisme: Kreteks
+AM810D      -> QM810D      //Weekly frequency of smoking: pipes full of tobacco|Fréquence par semaine du tabagisme: pipes à tabac
+AM810E      -> QM810E      //Weekly frequency of smoking: cigars, cheroots, cigarillos|Fréquence par semaine du tabagisme: cigares, cheroots ou cigarillos
+AM810F      -> QM810F      //Weekly frequency of smoking: water pipe sessions|Fréquence par semaine du tabagisme: nombre de séances de pipe à eau/narguilé
+AM810G      -> QM810G      //Weekly frequency of smoking: other|Fréquence par semaine du tabagisme: autre chose
+AM811       -> QM811       //Frequency use smokeless tobacco|Fréquence d'utilisation du tabac non-fumé
+AM812A      -> QM812A      //Daily frequency using smokeless: snuff by mouth|Fréquence quotidienne d'utilisation des produits: tabac à chiquer, dans la bouche
+AM812B      -> QM812B      //Daily frequency using smokeless: snuff by nose|Fréquence quotidienne d'utilisation des produits: tabac à priser, à inhaler par le nez
+AM812C      -> QM812C      //Daily frequency using smokeless: chewing tobacco|Fréquence quotidienne d'utilisation des produits: tabac à mâcher
+AM812D      -> QM812D      //Daily frequency using smokeless: betel quid with tobacco|Fréquence quotidienne d'utilisation des produits: betel à mâcher
+AM812E      -> QM812E      //Daily frequency using smokeless: other|Fréquence quotidienne d'utilisation des produits: autre chose
+AM813A      -> QM813A      //Weekly frequency using smokeless: snuff by mouth|Fréquence d’utilisation par semaine des produits: tabac à chiquer, dans la bouche
+AM813B      -> QM813B      //Weekly frequency using smokeless: snuff by nose|Fréquence d’utilisation par semaine des produits: tabac à priser, à inhaler par le nez
+AM813C      -> QM813C      //Weekly frequency using smokeless: chewing tobacco|Fréquence d’utilisation par semaine des produits: tabac à mâcher
+AM813D      -> QM813D      //Weekly frequency using smokeless: betel quid with tobacco|Fréquence d’utilisation par semaine des produits: betel à mâcher
+AM813E      -> QM813E      //Weekly frequency using smokeless: other|Fréquence d’utilisation par semaine des produits:autre chose
+AM814       -> QM814       //Ever consumed alcohol|A consommé de l'alcool
+AM815       -> QM815       //Number of days respondent drank alcoholic drinks in the past month|Nombre de jours que l’enquêté a bu des boissons alcoolisées au cours du dernier mois
+AM816       -> QM816       //Number of alcoholic drinks per day|Nombre de verres alcoolisés par jour
+AM817       -> QM817       //Health insurance|Couvert par une assurance médicale
+AM818       -> QM818       //Type of health insurance|Type d'assurance médicale
+
+//Record (AMSECCHD) - [Men] Chronic diseases
+AMSECCHD    -> QMSECCHD    //[Men] Chronic diseases
+AMCHD01     -> QMCHD01     //Ever had blood pressure measured by doctor other healthcare worker
+AMCHD02     -> QMCHD02     //Ever been told that you have high blood pressure or hypertension
+AMCHD03     -> QMCHD03     //In past 12 months have been told that you have high blood pressure or hypertension
+AMCHD04     -> QMCHD04     //Have been prescribed medication to control high blood pressure
+AMCHD05     -> QMCHD05     //Are you taken medication to control your blood pressure
+AMCHD06     -> QMCHD06     //Ever had blood sugar measured by doctor other healthcare worker
+AMCHD07     -> QMCHD07     //Ever been told that you have high blood sugar or diabetes
+AMCHD08     -> QMCHD08     //In past 12 months have been told that you have high blood sugar or diabetes
+AMCHD09     -> QMCHD09     //Have been prescribed medication to control high blood sugar
+AMCHD10     -> QMCHD10     //Are you taken medication to control your blood sugar
+AMCHD11     -> QMCHD11     //Ever been told by a doctor or other healthcare worker that you have heart disease
+AMCHD12     -> QMCHD12     //Are you receiving any treatment for your heart disease or chronic heart condition
+AMCHD13     -> QMCHD13     //Ever been told by a doctor or other healthcare worker that you have lung disease
+AMCHD14     -> QMCHD14     //Are you receiving any treatment for your lung disease
+AMCHD15     -> QMCHD15     //Ever been told by a doctor or other healthcare worker that you have cancer or a tumor
+AMCHD16     -> QMCHD16     //Are you receiving any treatment for cancer or tumor
+AMCHD17A    -> QMCHD17A    //Ever been told by a doctor or other healthcare worker that you have depression
+AMCHD17B    -> QMCHD17B    //Ever been told by a doctor or other healthcare worker that you have anxiety
+AMCHD19     -> QMCHD19     //Are you receiving any treatment for depression or anxiety
+AMCHD20     -> QMCHD20     //Ever been told by a doctor or other healthcare worker that you have arthritis
+AMCHD21     -> QMCHD21     //Are you receiving any treatment for arthritis
+AMCHD22     -> QMCHD22     //Ever been told by a doctor or other healthcare worker that you have other chronic disease
+AMCHD23     -> QMCHD23     //Are you receiving any treatment for other chronic disease
+
+//Record (AMSECMH) - [Men] Mental health module
+AMSECMH     -> QMSECMH     //[Men] Mental health module
+AMMTH0      -> QMMTH0      //Introduction to the module
+AMMTHGAD1   -> QMMTHGAD1   //Last 2 weeks: feeling nervous, anxious, on edge
+AMMTHGAD2   -> QMMTHGAD2   //Last 2 weeks: not able to stop/control worrying
+AMMTHGAD3   -> QMMTHGAD3   //Last 2 weeks: worrying about things
+AMMTHGAD4   -> QMMTHGAD4   //Last 2 weeks: trouble relaxing
+AMMTHGAD5   -> QMMTHGAD5   //Last 2 weeks: restless and hard to sit still
+AMMTHGAD6   -> QMMTHGAD6   //Last 2 weeks: become easily annoyed/irritable
+AMMTHGAD7   -> QMMTHGAD7   //Last 2 weeks: feeling afraid as something awful might happen
+AMMTHPHQ1   -> QMMTHPHQ1   //Last 2 weeks: little interst/pleasure in doing things
+AMMTHPHQ2   -> QMMTHPHQ2   //Last 2 weeks: feeling down, depressed or hopeless
+AMMTHPHQ3   -> QMMTHPHQ3   //Last 2 weeks: trouble falling asleep or sleeping too much
+AMMTHPHQ4   -> QMMTHPHQ4   //Last 2 weeks: feeling tired or having little energy
+AMMTHPHQ5   -> QMMTHPHQ5   //Last 2 weeks: poor appetite or overeating
+AMMTHPHQ6   -> QMMTHPHQ6   //Last 2 weeks: feeling bad about yourself, you are a failure or let yourself or family down
+AMMTHPHQ7   -> QMMTHPHQ7   //Last 2 weeks: trouble concentrating in reading or watching TV
+AMMTHPHQ8   -> QMMTHPHQ8   //Last 2 weeks: moving/speaking slowly or moving around a lot more than usual
+AMMTHPHQ9   -> QMMTHPHQ9   //Last 2 weeks: thoughts of better off dead or hurting yourself
+AMMTH2      -> QMMTH2      //Ever tried to seek help for the things you experienced
+AMMTH3      -> QMMTH3      //Persons/professionals have sought help
+AMMTH4A     -> QMMTH4A     //Ever been told by a doctor/health care worker you have: depression
+AMMTH4B     -> QMMTH4B     //Ever been told by a doctor/health care worker you have: anxiety
+AMMTH5      -> QMMTH5      //Last 2 weeks took medication prescribed by doctor/health woker for depression/anxiety
+AMMTH6      -> QMMTH6      //PHQ score
+AMMTH8      -> QMMTH8      //Referral based on PHQ score
+
+//Record (AMSECGC) - [Men] Female Genital Cutting
+AMSECGC     -> QMSECGC     //[Men] Female Genital Cutting
+GCM01       -> GCM01       //Ever heard of female circumcision|A entendu parler de l'excision génitale
+GCM02       -> GCM02       //Ever heard of genital cutting (probed)|A entendu parler de l'excision génitale (sondé)
+GCM03       -> GCM03       //Circumcision is required by religion|La circoncision est exigée par la religion
+GCM04       -> GCM04       //Circumcision should continue or be stopped|La circoncision doit continuer ou être abandonnée

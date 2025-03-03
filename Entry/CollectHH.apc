@@ -1985,6 +1985,7 @@ PROC QB108W
 
 PROC QB109Y
   if !DateOK( QHINTD, QHINTM, QHINTY, QB109D, QB109M, QB109Y ) |
+     !DateOK( QB109D, QB109M, QB109Y, sday, smonth, syear )    |
      BefDBio( QB109D, QB109M, QB109Y, QBINTD, QBINTM, QBINTY ) then
     errmsg( 2146 )
       select( tr("Date biomarker"), QBINTD, tr("Date measurement"), QB109D );
@@ -2040,32 +2041,6 @@ preproc
 onfocus
   chage = ( QCAGEM in 24:72 );
 
-postproc
-  { Either parent or respondent refused then QB340 = "99995" }
-  if QB120 <> 1 & !$ in "99993":"99996","?" then
-    errmsg( 0501, QB120, $ )
-      select( tr("Consent"), QB120, tr("Barcode"), $ );
-  endif;
-  { check for duplicates }
-  n = curocc();
-  for i in QBSEC01_ROSTER do
-    if QBCOL1 <> QBCOL1(n) & !$ in "99993":"99996","?" & $ = $(n) then
-      errmsg( 0484, i ) select( tr("Barcode"), $ );
-    endif;
-  enddo;
-  { check barcode composition }
-  x = BarCodeError( $ );
-  if x = 1 then
-    { missing should be one "?" in first position }
-    errmsg( 0494, $ ) select( tr("Barcode"), $ );
-  elseif x = 2 then
-    { sequence of characters incorrect }
-    errmsg( 0495, $ ) select( tr("Barcode"), $ );
-  elseif x = 3 then
-    { check digit incorrect }
-    errmsg( 0496, $ ) select( tr("Barcode"), $ );
-  endif;
-
 PROC QB115
   { Verify that fieldworker is registered }
   ICODE = $;
@@ -2109,7 +2084,7 @@ PROC QB121
     errmsg( 0025, tr("Fieldworker"), $ ) select( tr("Fieldworker"), $ );
   endif;
   if QB120 <> 1 then
-    skip to next QBCOL1
+    skip to QB135D
   endif;	
 
 PROC QB123
@@ -2170,6 +2145,19 @@ PROC QB132
   if QB131 = 2 then
     skip to QB135D
   endif;	
+
+PROC QB135Y
+  if !DateOK( QHINTD, QHINTM, QHINTY, QB135D, QB135M, QB135Y ) |
+     BefDBio( QB135D, QB135M, QB135Y, QBINTD, QBINTM, QBINTY ) then
+    errmsg( 2146 )
+      select( tr("Date biomarker"), QBINTD, tr("Date measurement"), QB135D );
+  endif;
+  if !DateOK( QHINTD, QHINTM, QHINTY, QB135D, QB135M, QB135Y ) |
+     !DateOK( QB135D, QB135M, QB135Y, sday, smonth, syear )    |
+     BefDBio( QB135D, QB135M, QB135Y, QBINTD, QBINTM, QBINTY ) then
+    errmsg( 2146 )
+      select( tr("Date biomarker"), QBINTD, tr("Date measurement"), QB135D );
+  endif;
 
 PROC QBCOL2
 { @@@ Begin Height/Weight, Hemoglobin and BP and HIV for Women }
