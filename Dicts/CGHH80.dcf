@@ -202,7 +202,7 @@ DataType=Numeric
 [ValueSet]
 Label=Interview year|Année de l'enquête
 Name=QHINTY_VS1
-Value=2020:2030
+Value=2020:2025
 
 [Item]
 Label=Interviewer number
@@ -3430,7 +3430,7 @@ DataType=Numeric
 [ValueSet]
 Label=Year of household interview|Année de l'interview ménage
 Name=QBINTY_VS1
-Value=2020:2030
+Value=2020:2025
 
 [Item]
 Label=Number of visits for biomarker questionnaire|Nombre de visites pour le questionnaire biomarqueurs
@@ -3573,11 +3573,6 @@ DataType=Numeric
 [ValueSet]
 Label=Year of birth|Année de naissance
 Name=QB103Y_VS1
-Value=2015;2015|2015
-Value=2016;2016|2016
-Value=2017;2017|2017
-Value=2018;2018|2018
-Value=2019;2019|2019
 Value=2020;2020|2020
 Value=2021;2021
 Value=2022;2022
@@ -4216,6 +4211,7 @@ Value=2021;2021|2021
 Value=2022;2022|2022
 Value=2023;2023|2023
 Value=2024;2024|2024
+Value=2025;2025|2025
 
 [Item]
 Label=Child's CMC of birth
