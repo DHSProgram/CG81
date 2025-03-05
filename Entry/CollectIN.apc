@@ -1,7 +1,6 @@
 ﻿PROC GLOBAL
 { CAPI for DHS-8 surveys - version 1.2.0 December 2022 }
-
-  { Definitions of working variables }
+{ Definitions of working variables }
   alpha(60) wothresp;     { Other answers response }
   numeric   wothcode;     { Other answers code }
   numeric   meth;         { modified method number to be used with calendar }
@@ -16,6 +15,7 @@
   string facility;        { Alpha variable for the type of facility }
   string asource;         { source of methods for calendar column 3 }
   string strnotes;        { for editnote at the end of the interview }
+  string vaccstr;
   
   string fname;           { String for data filenames }
   string pregstr;         { Pregnancy codes for the calendar }
@@ -1115,26 +1115,27 @@
 	  3 - Name of variable for reentry
 	}
     numeric v = 0;
-	inc(v); vacc_array(v,3) = "D509B"  ; vacc_array(v,1) = "BCG"                            ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509B  (vc)), visualvalue(M509B  (vc)), visualvalue(Y509B  (vc)) );
-	inc(v); vacc_array(v,3) = "D509H"  ; vacc_array(v,1) = "Hep.B at birth"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509H  (vc)), visualvalue(M509H  (vc)), visualvalue(Y509H  (vc)) );
-	inc(v); vacc_array(v,3) = "D509P0" ; vacc_array(v,1) = "Oral Polio at birth (OPV0)"     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P0 (vc)), visualvalue(M509P0 (vc)), visualvalue(Y509P0 (vc)) );
-	inc(v); vacc_array(v,3) = "D509P1" ; vacc_array(v,1) = "Oral Polio (OPV) 1"             ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P1 (vc)), visualvalue(M509P1 (vc)), visualvalue(Y509P1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509P2" ; vacc_array(v,1) = "Oral Polio (OPV) 2"             ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P2 (vc)), visualvalue(M509P2 (vc)), visualvalue(Y509P2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509P3" ; vacc_array(v,1) = "Oral Polio (OPV) 3"             ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P3 (vc)), visualvalue(M509P3 (vc)), visualvalue(Y509P3 (vc)) );
-	inc(v); vacc_array(v,3) = "D509IPV1"; vacc_array(v,1) = "Inactivated Polio Vaccine (IPV)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV1(vc)), visualvalue(M509IPV1(vc)), visualvalue(Y509IPV1(vc)) );
-	inc(v); vacc_array(v,3) = "D509D1" ; vacc_array(v,1) = "DPT-Hep.B-Hib (Pentavalent) 1"  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D1 (vc)), visualvalue(M509D1 (vc)), visualvalue(Y509D1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509D2" ; vacc_array(v,1) = "DPT-Hep.B-Hib (Pentavalent) 2"  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D2 (vc)), visualvalue(M509D2 (vc)), visualvalue(Y509D2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509D3" ; vacc_array(v,1) = "DPT-Hep.B-Hib (Pentavalent) 3"  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D3 (vc)), visualvalue(M509D3 (vc)), visualvalue(Y509D3 (vc)) );
-	inc(v); vacc_array(v,3) = "D509D4" ; vacc_array(v,1) = "DPT-Hep.B-Hib (Pentavalent) 4"  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D4 (vc)), visualvalue(M509D4 (vc)), visualvalue(Y509D4 (vc)) );
-	inc(v); vacc_array(v,3) = "D509N1" ; vacc_array(v,1) = "Pneumococcal 1"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N1 (vc)), visualvalue(M509N1 (vc)), visualvalue(Y509N1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509N2" ; vacc_array(v,1) = "Pneumococcal 2"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N2 (vc)), visualvalue(M509N2 (vc)), visualvalue(Y509N2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509N3" ; vacc_array(v,1) = "Pneumococcal 3"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N3 (vc)), visualvalue(M509N3 (vc)), visualvalue(Y509N3 (vc)) );
-	inc(v); vacc_array(v,3) = "D509R1" ; vacc_array(v,1) = "Rotavirus 1"                    ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R1 (vc)), visualvalue(M509R1 (vc)), visualvalue(Y509R1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509R2" ; vacc_array(v,1) = "Rotavirus 2"                    ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R2 (vc)), visualvalue(M509R2 (vc)), visualvalue(Y509R2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509R3" ; vacc_array(v,1) = "Rotavirus 3"                    ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R3 (vc)), visualvalue(M509R3 (vc)), visualvalue(Y509R3 (vc)) );
-	inc(v); vacc_array(v,3) = "D509M1" ; vacc_array(v,1) = "Measles containing vaccine 1"   ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M1 (vc)), visualvalue(M509M1 (vc)), visualvalue(Y509M1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509M2" ; vacc_array(v,1) = "Measles containing vaccine 2"   ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M2 (vc)), visualvalue(M509M2 (vc)), visualvalue(Y509M2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509V"  ; vacc_array(v,1) = "Vitamin A (most recent)"        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509V  (vc)), visualvalue(M509V  (vc)), visualvalue(Y509V  (vc)) );
+	inc(v); vacc_array(v,3) = "D509B"  ; vacc_array(v,1) = "BCG"                                       ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509B  (vc)), visualvalue(M509B  (vc)), visualvalue(Y509B  (vc)) );
+	inc(v); vacc_array(v,3) = "D509H"  ; vacc_array(v,1) = "HÉPATITE B À LA NAISSANCE"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509H  (vc)), visualvalue(M509H  (vc)), visualvalue(Y509H  (vc)) );
+	inc(v); vacc_array(v,3) = "D509P0" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 0 (DOSE NAISSANCE)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P0 (vc)), visualvalue(M509P0 (vc)), visualvalue(Y509P0 (vc)) );
+        inc(v); vacc_array(v,3) = "D509D1" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 1"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D1 (vc)), visualvalue(M509D1 (vc)), visualvalue(Y509D1 (vc)) );
+        inc(v); vacc_array(v,3) = "D509R1" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 1"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R1 (vc)), visualvalue(M509R1 (vc)), visualvalue(Y509R1 (vc)) );
+        inc(v); vacc_array(v,3) = "D509N1" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 1"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N1 (vc)), visualvalue(M509N1 (vc)), visualvalue(Y509N1 (vc)) );
+	inc(v); vacc_array(v,3) = "D509P1" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 1"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P1 (vc)), visualvalue(M509P1 (vc)), visualvalue(Y509P1 (vc)) );
+        inc(v); vacc_array(v,3) = "D509D2" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 2"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D2 (vc)), visualvalue(M509D2 (vc)), visualvalue(Y509D2 (vc)) );
+        inc(v); vacc_array(v,3) = "D509R2" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 2"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R2 (vc)), visualvalue(M509R2 (vc)), visualvalue(Y509R2 (vc)) );
+        inc(v); vacc_array(v,3) = "D509N2" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 2"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N2 (vc)), visualvalue(M509N2 (vc)), visualvalue(Y509N2 (vc)) );
+	inc(v); vacc_array(v,3) = "D509P2" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 2"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P2 (vc)), visualvalue(M509P2 (vc)), visualvalue(Y509P2 (vc)) );
+        inc(v); vacc_array(v,3) = "D509D3" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 3"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D3 (vc)), visualvalue(M509D3 (vc)), visualvalue(Y509D3 (vc)) );
+        inc(v); vacc_array(v,3) = "D509R3" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 3"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R3 (vc)), visualvalue(M509R3 (vc)), visualvalue(Y509R3 (vc)) );
+        inc(v); vacc_array(v,3) = "D509N3" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 3"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N3 (vc)), visualvalue(M509N3 (vc)), visualvalue(Y509N3 (vc)) );
+        inc(v); vacc_array(v,3) = "D509P3" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 3"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P3 (vc)), visualvalue(M509P3 (vc)), visualvalue(Y509P3 (vc)) );
+        inc(v); vacc_array(v,3) = "D509IPV1"; vacc_array(v,1)= "VACCIN POLIO INACTIVÉ (VPI) 1"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV1(vc)), visualvalue(M509IPV1(vc)), visualvalue(Y509IPV1(vc)) );
+        inc(v); vacc_array(v,3) = "D509IPV2"; vacc_array(v,1)= "VACCIN POLIO INACTIVÉ (VPI) 2"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV2(vc)), visualvalue(M509IPV2(vc)), visualvalue(Y509IPV2(vc)) );
+        inc(v); vacc_array(v,3) = "D509M1" ; vacc_array(v,1) = "VACCIN ANTIROUGEOLEUX (VAR) 1"             ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M1 (vc)), visualvalue(M509M1 (vc)), visualvalue(Y509M1 (vc)) );
+	inc(v); vacc_array(v,3) = "D509FJ"  ; vacc_array(v,1)= "VACCIN CONTRE LA FIÈVRE JAUNE (VAA) "  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509FJ  (vc)), visualvalue(M509FJ  (vc)), visualvalue(Y509FJ  (vc)) );
+	inc(v); vacc_array(v,3) = "D509M2" ; vacc_array(v,1) = "VACCIN ANTIROUGEOLEUX (VAR) 2/RUBÉOLE (RR)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M2 (vc)), visualvalue(M509M2 (vc)), visualvalue(Y509M2 (vc)) );
+	inc(v); vacc_array(v,3) = "D509V"  ; vacc_array(v,1) = "VITAMINE A (LA PLUS RÉCENTE)"          ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509V  (vc)), visualvalue(M509V  (vc)), visualvalue(Y509V  (vc)) );
     getvaccs = v;
   end;
 
@@ -1145,7 +1146,7 @@
     vacc = showarray( maketext( "Vaccinations for %s. Select vaccination to modify or exit to continue", strip(Q503N(vc)) ), vacc_array, nvaccs,
           title( tr("Vaccination"), tr("Date of vaccination") ) );
     if vacc then
-      string vaccstr = maketext("%s(%d)", vacc_array(vacc,3), vc); 	  
+      vaccstr = maketext("%s(%d)", vacc_array(vacc,3), vc); 	  
 	  reenter vaccstr;
 	endif;
   end;
@@ -1279,10 +1280,10 @@ preproc
     setproperty(M509P2,  "CaptureType", "ComboBox" );
     setproperty(M509P3,  "CaptureType", "ComboBox" );
     setproperty(M509IPV1, "CaptureType", "ComboBox" );
+    setproperty(M509IPV2, "CaptureType", "ComboBox" );
     setproperty(M509D1,  "CaptureType", "ComboBox" );
     setproperty(M509D2,  "CaptureType", "ComboBox" );
     setproperty(M509D3,  "CaptureType", "ComboBox" );
-    setproperty(M509D4,  "CaptureType", "ComboBox" );
     setproperty(M509N1,  "CaptureType", "ComboBox" );
     setproperty(M509N2,  "CaptureType", "ComboBox" );
     setproperty(M509N3,  "CaptureType", "ComboBox" );
@@ -1291,6 +1292,7 @@ preproc
     setproperty(M509R3,  "CaptureType", "ComboBox" );
     setproperty(M509M1,  "CaptureType", "ComboBox" );
     setproperty(M509M2,  "CaptureType", "ComboBox" );
+    setproperty(M509FJ,   "CaptureType", "ComboBox" );
     setproperty(M509V,   "CaptureType", "ComboBox" );
     setproperty(Q715M,   "CaptureType", "ComboBox" );
     setproperty(Q719M,   "CaptureType", "ComboBox" );
@@ -1740,27 +1742,9 @@ PROC Q114
 
 PROC Q115
 onfocus
-  grades.clear();
-  grades.add(tr("Less than one year"), 0);
-  n = maxgrade(Q114);
-  do i = 1 while i <= n
-    grades.add(maketext("Year %d", i), i);
-    // change the above to match the terms used in the country
-    // e.g. it might be "Year" that is used in most levels, but "Form" is used in secondary schooling
-    // if Q114 = 2 then
-    //   grades.add(maketext("Form %d", i), i);
-    // else
-    //   grades.add(maketext("Year %d", i), i);
-    // endif;
-  enddo;
-  SetValueSet( $, grades );
+    setvalueset(Q115, maketext("Q115_VS%1d", Q114));
   
 postproc
-  { Verify the maximum grade for the level }
-  if !levelYears( Q114, $ ) then
-    errmsg( 1091 ) 
-	  select( tr("Level of education"), Q114, tr("Grade/year/form"), $ );
-  endif;
 
   { Check education in individual questionnaire agrees with education in hh }
   if $ <> QH17B(QLINE) & demode() = add & !inAdvance() then
@@ -2916,11 +2900,9 @@ postproc
 
   if Q307N in stermeth,stermetm then  { Female or male sterilization }
     skip to Q312
-  elseif Q307N in 3,5,8:96 then       { IUD, implants, f/condom, emergency, SDM, LAM, rhythm, withdrawal, others }
+  elseif Q307N in 3,5:96 then       { IUD, implants, pill, c/condom, f/condom, emergency, SDM, LAM, rhythm, withdrawal, others }
     skip to Q314_BLOCK;
-  elseif Q307N in 6 then              { pill }
-  elseif Q307N in 7 then              { condom }
-    endif;
+  endif;
 
 PROC Q308
   if $ <> 1 then
@@ -3993,38 +3975,6 @@ PROC Q418J
 preproc
   if copytwin(visualvalue($), QCOL41) then noinput endif;
 
-PROC Z_MH1
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH2
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH3A
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH3B
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH3C
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH3D
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH3E
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH3F
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
 PROC Q420
 preproc
   if Q405 <> 1 then
@@ -4137,49 +4087,6 @@ postproc
     skip to Q437
   endif;
 
-PROC Z_MH4
-preproc
-  $ = Q405;
-  
-postproc
-  if $ in 2,4 then  
-    skip to Q437
-  endif;
-
-PROC Z_MH6
-  if $ = 2 then
-    skip to Z_MH10
-  elseif $ = 3 then
-    skip to Q437
-  endif;	
-
-PROC Z_MH7
-  if $ <> 1 then
-    skip to Z_MH9
-  endif;	
-
-PROC Z_MH8
-  skip to Z_MH10;
-
-PROC Z_MH10
-  if $ <> 1 then
-    skip to Z_MH14
-  endif;	
-
-PROC Z_MH11
-  if $ <> 1 then
-    skip to Z_MH13
-  endif;	
-
-PROC Z_MH12
-  skip to Z_MH14;
-
-PROC Z_MH16
-  if $ = 6 then
-    getother( GetSymbol(), curocc() );
-    enter FL_OTHERS;
-  endif;
-      
 PROC Q437
 preproc
   $ = Q405;
@@ -4195,107 +4102,17 @@ postproc
 
 PROC Q438
   if $ <> 1 then
-    skip to Z_NB1N        // if no Newborn module skip should be to Q441
+    skip to Q441        // if no Newborn module skip should be to Q441
   endif;
 
 PROC Q439
   if $ <> 1 then
-    skip to Z_NB1N        // if no Newborn module skip should be to Q441
+    skip to Q441        // if no Newborn module skip should be to Q441
   endif;
 
-{ !!!! remove fields Z_NB1 to Z_NB7 and Z_CH2 to Z_CH4 if Newborn module not used }
-PROC Z_NB1N
-onfocus
-  protect( Z_NB1U, false );
-
-PROC Z_NB1U
-preproc
-  if Z_NB1N in 98 then
-    protect( $, true );
-    $ = 9;
-  endif;
-
-postproc
-  { Check special answers }
-  badspecial( $, Z_NB1N, getsymbol() );
-  
-  recode $ :: Z_NB1N -> err;
-         0 ::   0   -> 0;     { immediaweeks }
-         1 ::  1:24 -> 0;     { hours }
-	     2 ::  1:30 -> 0;     { days }
-         9 ::  98   -> 0;
-           ::       -> 1;
-  endrecode;
-  if err then
-    errmsg( 4165 ) select( tr("Timing for 1st bath"), Z_NB1_BLOCK );
-  endif;
-
-PROC Z_NB3
-preproc
-  if !Q435 in 11,12,96 then
-    skip to Z_NB6
-  endif;	
-
-postproc
-  if $ = 8 then
-    skip to Z_NB6
-  endif;	
-
-PROC Z_NB6
-  if $ <> 1 then
-    skip to Q441
-  endif;	
-
-PROC Z_NB7
-  $ = SortAlpha( $ );
-  { Check "No one" is only response }
-  if pos( "Z", $ ) & length(strip($)) > 1 then
-    errmsg( 9996 ) select( tr("Fix answers marked"), $ );
-  { Get other answer }
-  elseif pos( "X", $ ) then
-    getother( GetSymbol(), curocc() );
-    enter FL_OTHERS
-  endif;
-
-PROC Z_CH2
-preproc
-  if pos("A",Z_NB7) then
-    skip to Z_CH3_BLOCK
-  endif;	
-
-postproc
-  if $ <> 1 then
-    skip to Q441
-  endif;	
-
-PROC Z_CH3N
-onfocus
-  protect( Z_CH3U, false );
-
-PROC Z_CH3U
-preproc
-  if Z_CH3N in 98 then
-    protect( $, true );
-    $ = 9;
-  endif;
-
-postproc
-  { Check special answers }
-  badspecial( $, Z_CH3N, getsymbol() );
-  
-  recode $ :: Z_CH3N -> err;
-         1 ::  0:24 -> 0;     { hours, zero hours is used for less than 1 hour }
-	     2 ::  1:30 -> 0;     { days }
-         9 ::  98   -> 0;
-           ::       -> 1;
-  endrecode;
-  if err then
-    errmsg( 4170 ) select( tr("Timing to apply chlorhexidine"), Z_CH3_BLOCK );
-  endif;
-  
 PROC Q442
   if $ <> 1 then
-    skip to Z_MH17A
+    skip to Q447N
   endif;
 
 PROC Q443N
@@ -4319,87 +4136,6 @@ postproc
     warning( 9993 ) 
 	  select( tr("Weight"), Q443N, tr("Continue"), continue );
   endif;
-
-PROC Z_MH17A 
-{ !!!! Same PROC as that of Q447_BLOCK but repeated here to facilitate 
-  the incorporation of maternal health module. If module not used just 
-  remove this and all PROCs up to PROC Q447_BLOCK                      }
-preproc
-  if Q405 = 2 then // can't use <> 1 due to skip from 437
-    skip to Q480
-  elseif Q435 in 11:12,96 then	
-    skip to Q464
-  endif;
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH17B
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH17C
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH18A
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH18B
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH19
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH20
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH21A
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH21B
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH21C
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH21D
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH22A
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH22B
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH22C
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH22D
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Z_MH23
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-  
-postproc
-  if $ <> 1 then
-    skip to Q447_BLOCK
-  endif;	
-
-PROC Z_MH24
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
 
 PROC Q447_BLOCK
 preproc
@@ -4498,14 +4234,6 @@ preproc
 postproc
   { Check special answers }
   badspecial( $, Q453N, getsymbol() );
-
-PROC Z_MH25
-{ !!!! Same PROC as that of Q452 but repeated here to facilitate 
-  the incorporation of maternal health module.                    }
-preproc
-  if Q405 <> 1 then
-    skip to Q455
-  endif;	
 
 PROC Q454
   majorgrp( $ );
@@ -4937,6 +4665,7 @@ onfocus
   else
     setvalueset( $, D509B_VS1 );
   endif;
+  vaccstr = getlabel($);
 
 postproc
   if $ in 0,44,66 then
@@ -4945,7 +4674,13 @@ postproc
     advance to D509H
   endif;
 
+PROC M509B
+onfocus
+  vaccstr = getlabel($);
 PROC Y509B
+onfocus
+  vaccstr = getlabel($);
+postproc
   vcheck  ( D509B, M509B, $ );
   vckbirth( D509B, M509B, $, Q503 );
 
@@ -4984,7 +4719,7 @@ postproc
   if $ in 0,44,66 then
     M509P0 = $;
     Y509P0 = $*100+$;
-    advance to D509P1
+    advance to D509D1
   endif;
 
 PROC Y509P0
@@ -5005,7 +4740,7 @@ postproc
   if $ in 0,44,66 then
     M509D1 = $;
     Y509D1 = $*100+$;
-    advance to D509D2
+    advance to D509R1
   endif;
 
 PROC Y509D1
@@ -5026,7 +4761,7 @@ postproc
   if $ in 0,44,66 then
     M509R1 = $;
     Y509R1 = $*100+$;
-    advance to D509R2
+    advance to D509N1
   endif;
 
 PROC Y509R1
@@ -5047,7 +4782,7 @@ postproc
   if $ in 0,44,66 then
     M509N1 = $;
     Y509N1 = $*100+$;
-    advance to D509N2
+    advance to D509P1
   endif;
 
 PROC Y509N1
@@ -5068,7 +4803,7 @@ postproc
   if $ in 0,44,66 then
     M509P1 = $;
     Y509P1 = $*100+$;
-    advance to D509P2
+    advance to D509D2
   endif;
 
 PROC Y509P1
@@ -5089,7 +4824,7 @@ postproc
   if $ in 0,44,66 then
     M509D2 = $;
     Y509D2 = $*100+$;
-    advance to D509D3
+    advance to D509R2
   endif;
 
 PROC Y509D2
@@ -5110,7 +4845,7 @@ postproc
   if $ in 0,44,66 then
     M509R2 = $;
     Y509R2 = $*100+$;
-    advance to D509R3
+    advance to D509N2
   endif;
 
 PROC Y509R2
@@ -5131,7 +4866,7 @@ postproc
   if $ in 0,44,66 then
     M509N2 = $;
     Y509N2 = $*100+$;
-    advance to D509N3
+    advance to D509P2
   endif;
 
 PROC Y509N2
@@ -5152,7 +4887,7 @@ postproc
   if $ in 0,44,66 then
     M509P2 = $;
     Y509P2 = $*100+$;
-    advance to D509P3
+    advance to D509D3
   endif;
 
 PROC Y509P2
@@ -5173,7 +4908,7 @@ postproc
   if $ in 0,44,66 then
     M509D3 = $;
     Y509D3 = $*100+$;
-    advance to D509N1
+    advance to D509R3
   endif;
 
 PROC Y509D3
@@ -5194,7 +4929,7 @@ postproc
   if $ in 0,44,66 then
     M509R3 = $;
     Y509R3 = $*100+$;
-    advance to D509M1
+    advance to D509N3
   endif;
 
 PROC Y509R3
@@ -5215,7 +4950,7 @@ postproc
   if $ in 0,44,66 then
     M509N3 = $;
     Y509N3 = $*100+$;
-    advance to D509R1
+    advance to D509P3
   endif;
 
 PROC Y509N3
@@ -5257,8 +4992,32 @@ postproc
   if $ in 0,44,66 then
     M509IPV1 = $;
     Y509IPV1 = $*100+$;
-    advance to D509D1
+    advance to D509IPV2
   endif;
+
+PROC Y509IPV1
+ vcheck  ( D509IPV1, M509IPV1, $ );
+  vckbirth( D509IPV1, M509IPV1, $, Q503 );
+
+PROC D509IPV2
+onfocus
+  if visualvalue(Q512) = notappl then
+    vs = D509B_VS1;
+	vs.remove(66);
+    setvalueset( $, vs );
+  else  
+    setvalueset( $, D509B_VS1 );
+  endif;
+
+postproc
+  if $ in 0,44,66 then
+    M509IPV2 = $;
+    Y509IPV2 = $*100+$;
+    advance to D509M1
+  endif;
+PROC Y509IPV2
+ vcheck  ( D509IPV2, M509IPV2, $ );
+  vckbirth( D509IPV2, M509IPV2, $, Q503 );
 
 PROC D509M1
 onfocus
@@ -5274,12 +5033,33 @@ postproc
   if $ in 0,44,66 then
     M509M1 = $;
     Y509M1 = $*100+$;
-    advance to D509M2
+    advance to D509FJ
   endif;
 
 PROC Y509M1
   vcheck  ( D509M1, M509M1, $ );
   vckbirth( D509M1, M509M1, $, Q503 );
+
+PROC D509FJ
+onfocus
+  if visualvalue(Q512) = notappl then
+    vs = D509B_VS1;
+	vs.remove(66);
+    setvalueset( $, vs );
+  else  
+    setvalueset( $, D509B_VS1 );
+  endif;
+
+postproc
+  if $ in 0,44,66 then
+    M509FJ = $;
+    Y509FJ = $*100+$;
+    advance to D509M2
+  endif;
+
+PROC Y509FJ
+ vcheck  ( D509FJ, M509FJ, $ );
+ vckbirth( D509FJ, M509FJ, $, Q503 );
 
 PROC D509M2
 onfocus
@@ -5347,10 +5127,12 @@ preproc
   { !! don't include Vitamin A but include other country specific }
   if vacgiven(D509B ) & vacgiven(D509H ) & vacgiven(D509P0) &
      vacgiven(D509P1) & vacgiven(D509P2) & vacgiven(D509P3) & vacgiven(D509IPV1) &
-     vacgiven(D509D1) & vacgiven(D509D2) & vacgiven(D509D3) & vacgiven(D509D4) &
+     vacgiven(D509D1) & vacgiven(D509D2) & vacgiven(D509D3) & 
      vacgiven(D509N1) & vacgiven(D509N2) & vacgiven(D509N3) &
      vacgiven(D509R1) & vacgiven(D509R2) & vacgiven(D509R3) &
-     vacgiven(D509M1) & vacgiven(D509M2) then
+     vacgiven(D509M1) & vacgiven(D509M2) &
+     vacgiven(D509IPV2) & vacgiven(D509FJ)  // !! CS 
+     then
     skip to Q529;
   endif;
 
@@ -5359,10 +5141,12 @@ postproc
   if $ <> 1 then
     if vacgiven(D509B ) | vacgiven(D509H ) | vacgiven(D509P0) |
        vacgiven(D509P1) | vacgiven(D509P2) | vacgiven(D509P3) | vacgiven(D509IPV1) |
-       vacgiven(D509D1) | vacgiven(D509D2) | vacgiven(D509D3) | vacgiven(D509D4) |
+       vacgiven(D509D1) | vacgiven(D509D2) | vacgiven(D509D3) | 
        vacgiven(D509N1) | vacgiven(D509N2) | vacgiven(D509N3) |
        vacgiven(D509R1) | vacgiven(D509R2) | vacgiven(D509R3) |
-       vacgiven(D509M1) | vacgiven(D509M2) | vacgiven(D509V) then
+       vacgiven(D509M1) | vacgiven(D509M2) | vacgiven(D509V)  | 
+       vacgiven(D509IPV2) & vacgiven(D509FJ)  // !! CS 
+       then
       skip to Q529;
     else
       skip to next QCOL51;
@@ -5372,63 +5156,27 @@ postproc
 PROC Q512W
 onfocus
   vaccinations.clear();
-  if D509B in 0,66 then
-    vaccinations.add(GetLabel(Q509B), "A" );     // BCG
-  endif;
-  if D509H in 0,66 then
-    vaccinations.add(GetLabel(Q509H), "B" );     // Hepatitis B
-  endif;
-  if D509P0 in 0,66 then
-    vaccinations.add(GetLabel(Q509P0), "C" );    // Polio 0
-  endif;
-  if D509P1 in 0,66 then
-    vaccinations.add(GetLabel(Q509P1), "D" );    // Polio 1
-  endif;
-  if D509P2 in 0,66 then
-    vaccinations.add(GetLabel(Q509P2), "E" );    // Polio 2
-  endif;
-  if D509P3 in 0,66 then
-    vaccinations.add(GetLabel(Q509P3), "F" );    // Polio 3
-  endif;
-  if D509IPV1 in 0,66 then
-    vaccinations.add(GetLabel(Q509IPV1), "G" );    // Polio IPV
-  endif;
-  if D509D1 in 0,66 then
-    vaccinations.add(GetLabel(Q509D1), "H" );    // DPT 1
-  endif;
-  if D509D2 in 0,66 then
-    vaccinations.add(GetLabel(Q509D2), "I" );    // DPT 2
-  endif;
-  if D509D3 in 0,66 then
-    vaccinations.add(GetLabel(Q509D3), "J" );    // DPT 3
-  endif;
-  if D509D4 in 0,66 then
-    vaccinations.add(GetLabel(Q509D4), "K" );    // DPT 4
-  endif;
-  if D509N1 in 0,66 then
-    vaccinations.add(GetLabel(Q509N1), "L" );    // Pneumococcal 1
-  endif;
-  if D509N2 in 0,66 then
-    vaccinations.add(GetLabel(Q509N2), "M" );    // Pneumococcal 2    
-  endif;
-  if D509N3 in 0,66 then
-    vaccinations.add(GetLabel(Q509N3), "N" );    // Pneumococcal 3
-  endif;
-  if D509R1 in 0,66 then
-    vaccinations.add(GetLabel(Q509R1), "O" );    // Rotavirus 1
-  endif;
-  if D509R2 in 0,66 then
-    vaccinations.add(GetLabel(Q509R2), "P" );    // Rotavirus 2
-  endif;
-  if D509R3 in 0,66 then
-    vaccinations.add(GetLabel(Q509R3), "Q" );    // Rotavirus 3
-  endif;
-  if D509M1 in 0,66 then
-    vaccinations.add(GetLabel(Q509M1), "R" );    // Measles 1
-  endif;
-  if D509M2 in 0,66 then
-    vaccinations.add(GetLabel(Q509M2), "S" );    // Measles 2
-  endif;
+  if D509B in 0,66 then vaccinations.add(GetLabel(Q509B),       "A" )  endif;    // BCG 
+  if D509H in 0,66 then vaccinations.add(GetLabel(Q509H),       "B" )  endif;    // Hepatitis B 
+  if D509P0 in 0,66 then vaccinations.add(GetLabel(Q509P0),     "C" )  endif;    // Polio 0 
+  if D509D1 in 0,66 then vaccinations.add(GetLabel(Q509D1),     "D" )  endif;    // DPT 1 
+  if D509R1 in 0,66 then vaccinations.add(GetLabel(Q509R1),     "E" )  endif;    // Rotavirus 1 
+  if D509N1 in 0,66 then vaccinations.add(GetLabel(Q509N1),     "F" )  endif;    // Pneumococcal 1 
+  if D509P1 in 0,66 then vaccinations.add(GetLabel(Q509P1),     "G" )  endif;    // Polio 1 
+  if D509D2 in 0,66 then vaccinations.add(GetLabel(Q509D2),     "H" )  endif;    // DPT 2 
+  if D509R2 in 0,66 then vaccinations.add(GetLabel(Q509R2),     "I" )  endif;    // Rotavirus 2 
+  if D509N2 in 0,66 then vaccinations.add(GetLabel(Q509N2),     "J" )  endif;    // Pneumococcal 2    
+  if D509P2 in 0,66 then vaccinations.add(GetLabel(Q509P2),     "K" )  endif;    // Polio 2 
+  if D509D3 in 0,66 then vaccinations.add(GetLabel(Q509D3),     "L" )  endif;    // DPT 3 
+  if D509R3 in 0,66 then vaccinations.add(GetLabel(Q509R3),     "M" )  endif;    // Rotavirus 3 
+  if D509N3 in 0,66 then vaccinations.add(GetLabel(Q509N3),     "N" )  endif;    // Pneumococcal 3 
+  if D509P3 in 0,66 then vaccinations.add(GetLabel(Q509P3),     "O" )  endif;    // Polio 3 
+  if D509IPV1 in 0,66 then vaccinations.add(GetLabel(Q509IPV1), "P" )  endif;    // Polio IPV 1
+  if D509IPV2 in 0,66 then vaccinations.add(GetLabel(Q509IPV2), "Q" )  endif;    // Polio IPV 2
+  if D509M1 in 0,66 then vaccinations.add(GetLabel(Q509M1),     "R" )  endif;    // Measles 1 
+  if D509FJ in 0,66 then vaccinations.add(GetLabel(Q509FJ),     "S" )  endif;    // yellow fever
+  if D509M2 in 0,66 then vaccinations.add(GetLabel(Q509M2),     "T" )  endif;    // Measles 2 
+
   SetValueSet( $, VACCINATIONS );
   
 postproc
@@ -5439,22 +5187,23 @@ postproc
   if pos("A",$) then D509B   = 66; M509B   = D509B ;  Y509B   = D509B *101  endif;       // BCG
   if pos("B",$) then D509H   = 66; M509H   = D509H ;  Y509H   = D509H *101  endif;       // Hepatitis B
   if pos("C",$) then D509P0  = 66; M509P0  = D509P0;  Y509P0  = D509P0*101  endif;       // Polio 0
-  if pos("D",$) then D509P1  = 66; M509P1  = D509P1;  Y509P1  = D509P1*101  endif;       // Polio 1
-  if pos("E",$) then D509P2  = 66; M509P2  = D509P2;  Y509P2  = D509P2*101  endif;       // Polio 2
-  if pos("F",$) then D509P3  = 66; M509P3  = D509P3;  Y509P3  = D509P3*101  endif;       // Polio 3
-  if pos("G",$) then D509IPV1 = 66; M509IPV1 = D509IPV1; Y509IPV1 = D509IPV1*101 endif;       // Polio IPV
-  if pos("H",$) then D509D1  = 66; M509D1  = D509D1;  Y509D1  = D509D1*101  endif;       // DPT 1
-  if pos("I",$) then D509D2  = 66; M509D2  = D509D2;  Y509D2  = D509D2*101  endif;       // DPT 2
-  if pos("J",$) then D509D3  = 66; M509D3  = D509D3;  Y509D3  = D509D3*101  endif;       // DPT 3
-  if pos("K",$) then D509D4  = 66; M509D4  = D509D4;  Y509D4  = D509D4*101  endif;       // DPT 4
-  if pos("L",$) then D509N1  = 66; M509N1  = D509N1;  Y509N1  = D509N1*101  endif;       // Pneumococcal 1
-  if pos("M",$) then D509N2  = 66; M509N2  = D509N2;  Y509N2  = D509N2*101  endif;       // Pneumococcal 2 
+  if pos("D",$) then D509D1  = 66; M509D1  = D509D1;  Y509D1  = D509D1*101  endif;       // DPT 1
+  if pos("E",$) then D509R1  = 66; M509R1  = D509R1;  Y509R1  = D509R1*101  endif;       // Rotavirus 1
+  if pos("F",$) then D509N1  = 66; M509N1  = D509N1;  Y509N1  = D509N1*101  endif;       // Pneumococcal 1
+  if pos("G",$) then D509P1  = 66; M509P1  = D509P1;  Y509P1  = D509P1*101  endif;       // Polio 1
+  if pos("H",$) then D509D2  = 66; M509D2  = D509D2;  Y509D2  = D509D2*101  endif;       // DPT 2
+  if pos("I",$) then D509R2  = 66; M509R2  = D509R2;  Y509R2  = D509R2*101  endif;       // Rotavirus 2
+  if pos("J",$) then D509N2  = 66; M509N2  = D509N2;  Y509N2  = D509N2*101  endif;       // Pneumococcal 2 
+  if pos("K",$) then D509P2  = 66; M509P2  = D509P2;  Y509P2  = D509P2*101  endif;       // Polio 2
+  if pos("L",$) then D509D3  = 66; M509D3  = D509D3;  Y509D3  = D509D3*101  endif;       // DPT 3
+  if pos("M",$) then D509R3  = 66; M509R3  = D509R3;  Y509R3  = D509R3*101  endif;       // Rotavirus 3
   if pos("N",$) then D509N3  = 66; M509N3  = D509N3;  Y509N3  = D509N3*101  endif;       // Pneumococcal 3
-  if pos("O",$) then D509R1  = 66; M509R1  = D509R1;  Y509R1  = D509R1*101  endif;       // Rotavirus 1
-  if pos("P",$) then D509R2  = 66; M509R2  = D509R2;  Y509R2  = D509R2*101  endif;       // Rotavirus 2
-  if pos("Q",$) then D509R3  = 66; M509R3  = D509R3;  Y509R3  = D509R3*101  endif;       // Rotavirus 3
+  if pos("O",$) then D509P3  = 66; M509P3  = D509P3;  Y509P3  = D509P3*101  endif;       // Polio 3
+  if pos("P",$) then D509IPV1 = 66; M509IPV1 = D509IPV1; Y509IPV1 = D509IPV1*101 endif;       // Polio IPV1
+  if pos("Q",$) then D509IPV2 = 66; M509IPV2 = D509IPV2; Y509IPV2 = D509IPV2*101 endif;       // Polio IPV2
   if pos("R",$) then D509M1  = 66; M509M1  = D509M1;  Y509M1  = D509M1*101  endif;       // Measles 1
-  if pos("S",$) then D509M2  = 66; M509M2  = D509M2;  Y509M2  = D509M2*101  endif;       // Measles 2
+  if pos("S",$) then D509FJ  = 66; M509FJ  = D509FJ;  Y509FJ  = D509FJ*101  endif;       // yellow fever
+  if pos("T",$) then D509M2  = 66; M509M2  = D509M2;  Y509M2  = D509M2*101  endif;       // Measles 2
   skip Q529;
 
 PROC Q513
@@ -8630,38 +8379,6 @@ postproc
     skip to AMMTH4A
   endif;	
 
-PROC AMMTH3
-  $ = SortAlpha( $ );
-  { Get other answer }
-  if pos( "X", $ ) then
-    getother( "Z_MTH3", 1 );
-    enter FL_OTHERS
-  endif;
-
-PROC AMMTH6
-preproc
-  $ = ScorePHQ(AMMTHPHQ1) + ScorePHQ(AMMTHPHQ2) + ScorePHQ(AMMTHPHQ3) + ScorePHQ(AMMTHPHQ4) + 
-	  ScorePHQ(AMMTHPHQ5) + ScorePHQ(AMMTHPHQ6) + ScorePHQ(AMMTHPHQ7) + ScorePHQ(AMMTHPHQ8) + 
-	  ScorePHQ(AMMTHPHQ9); 
-	  
-PROC AMMTH8
-preproc
-  if !(AMMTH6 >= 10 | AMMTHPHQ9 in 1:3) then
-    endgroup
-  endif;	
-{ @@@ End Mental Health Module for Men }
-
-{ @@@ Begin Female Genital Cutting Module for Men }
-PROC GCM01
-  if $ = 1 then
-    skip to GCM03
-  endif;
-
-PROC GCM02
-  if $ <> 1 then
-    endgroup
-  endif;
-{ @@@ End Female Genital Cutting Module for Men }
 
 PROC AM819H
 preproc

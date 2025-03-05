@@ -664,18 +664,6 @@ questions:
       - questionText:
           EN: |
             <p>309. The last time you received your injectable, did you inject DMPA-SC/Sayana Press yourself or did a health care provider do it for you?</p>
-  - name: CGIN80.Z_310
-    conditions:
-      - questionText:
-          EN: |
-            <p>310. What is the brand name of the pills you are using?</p>
-            <p><span class="instruction">IF DON'T KNOW THE BRAND, ASK TO SEE THE PACKAGE.</span></p>
-  - name: CGIN80.Z_311
-    conditions:
-      - questionText:
-          EN: |
-            <p>311. What is the brand name of the condoms you are using?</p>
-            <p><span class="instruction">IF DON'T KNOW THE BRAND, ASK TO SEE THE PACKAGE.</span></p>
   - name: CGIN80.Q312
     conditions:
       - questionText:
@@ -1000,51 +988,11 @@ questions:
       - questionText:
           EN: |
             <p>j) Tell you to pay attention to the baby's movements?</p>
-  - name: CGIN80.Z_MH1
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH1. During (any of) your antenatal care visit(s), were you told by a healthcare provider about danger signs that might indicate problems with the pregnancy?</p>
-  - name: CGIN80.Z_MH2
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH2. Were you told by a healthcare provider where to go if you experienced danger signs of serious health problems during the pregnancy?</p>
   - name: AMH3_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>MH3. During (any of) your antenatal care visit(s), did any healthcare provider discuss with you any of the following preparations for giving birth:</p>
-  - name: CGIN80.Z_MH3A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) Where you planned to deliver your baby?</p>
-  - name: CGIN80.Z_MH3B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) If you wanted to have a relative, friend or neighbor with you during labor or delivery?</p>
-  - name: CGIN80.Z_MH3C
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) Transportation to where the baby would be born?</p>
-  - name: CGIN80.Z_MH3D
-    conditions:
-      - questionText:
-          EN: |
-            <p>d) What funds or finances you would use for the delivery?</p>
-  - name: CGIN80.Z_MH3E
-    conditions:
-      - questionText:
-          EN: |
-            <p>e) Asking someone to be a blood donor if you needed blood?</p>
-  - name: CGIN80.Z_MH3F
-    conditions:
-      - questionText:
-          EN: |
-            <p>f) Finding a healthcare provider to deliver your child?</p>
   - name: CGIN80.Q420
     conditions:
       - questionText:
@@ -1101,11 +1049,6 @@ questions:
       - questionText:
           EN: |
             <p>429. During this pregnancy, did you take any medicine for intestinal worms?</p>
-  - name: CGIN80.Z_430
-    conditions:
-      - questionText:
-          EN: |
-            <p>430. During this pregnancy, did you receive food or cash assistance through the [INSERT NAME OF PROGRAM FOR CASH OR FOOD ASSISTANCE FOR PREGNANT WOMEN] program?</p>
   - name: CGIN80.Q431
     conditions:
       - questionText:
@@ -1162,86 +1105,6 @@ questions:
         questionText:
           EN: |
             <p>436. Was this stillbirth delivered by caesarean, that is, did they cut your belly open to take the baby out?</p>
-  - name: CGIN80.Z_MH5
-    conditions:
-      - logic: Q405 = 1
-        questionText:
-          EN: |
-            <p>MH5. Did a healthcare provider measure your blood pressure in the health facility before you gave birth to ~~Q407~~?</p>
-      - logic: Q405 = 3
-        questionText:
-          EN: |
-            <p>MH5. Did a healthcare provider measure your blood pressure in the health facility before you gave birth?</p>
-  - name: CGIN80.Z_MH6
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH6. Some women prefer to have someone in addition to the health facility staff, such as their husband, another relative or a friend, stay with them during labor or delivery.</p><p>While you were in labor, did you want to have someone in addition to the staff at the health facility stay with you?</p>
-  - name: CGIN80.Z_MH7
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH7. While you were in labor, was the person you wanted with you?</p>
-  - name: CGIN80.Z_MH8
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH8. While you were in labor, how much of the time was this person allowed to stay with you: some of the time, most of the time, or all of the time?</p>
-  - name: CGIN80.Z_MH9
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH9. Why was that person not with you during labor?</p>
-  - name: CGIN80.Z_MH10
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH10. During delivery, did you want to have someone in addition to the staff at the health facility stay with you?</p>
-  - name: CGIN80.Z_MH11
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH11. During delivery, was the person you wanted with you?</p>
-  - name: CGIN80.Z_MH12
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH12. During delivery, how much of the time was this person allowed to stay with you: some of the time, most of the time, or all of the time?</p>
-  - name: CGIN80.Z_MH13
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH13. Why was that person not with you during delivery? </p>
-  - name: CGIN80.Z_MH14
-    conditions:
-      - logic: Q405 = 1
-        questionText:
-          EN: |
-            <p>MH14. When ~~Q407~~ was born, was an instrument used to help pull the baby out, such as forceps or vacuum suction?</p>
-      - logic: Q405 = 3
-        questionText:
-          EN: |
-            <p>MH14. For this stillbirth, was an instrument used to help pull the baby out, such as forceps or vacuum?</p>
-  - name: CGIN80.Z_MH15
-    conditions:
-      - logic: Q405 = 1
-        questionText:
-          EN: |
-            <p>MH15. When you were in labor with or giving birth to ~~Q407~~, did you ever feel like you were being ignored or neglected by health facility staff?</p>
-      - logic: Q405 = 3
-        questionText:
-          EN: |
-            <p>MH15. During labor or delivery for this stillbirth, did you ever feel like you were being ignored or neglected by health facility staff?</p>
-  - name: CGIN80.Z_MH16
-    conditions:
-      - logic: Q405 = 1
-        questionText:
-          EN: |
-            <p>MH16. When you were in labor with or giving birth to ~~Q407~~, did you have privacy, for example, were you surrounded by curtains, or did you have a separate room?</p>
-      - logic: Q405 = 3
-        questionText:
-          EN: |
-            <p>MH16. During labor or delivery for this stillbirth, did you have privacy, for example, were you surrounded by curtains, or did you have a separate room?</p>
   - name: CGIN80.Q438
     conditions:
       - questionText:
@@ -1265,67 +1128,11 @@ questions:
       - questionText:
           EN: |
             <p>NB1. How long after the birth was ~~Q407~~ bathed for the first time?</p>
-  - name: CGIN80.Z_NB1N
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD NUMBER.</span></p>
-  - name: CGIN80.Z_NB1U
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD UNITS.</span></p>
-  - name: CGIN80.Z_NB3
-    conditions:
-      - questionText:
-          EN: |
-            <p>NB3. What was used to cut the cord?</p>
-  - name: CGIN80.Z_NB4
-    conditions:
-      - questionText:
-          EN: |
-            <p>NB4. Was it new or had it ever been used before?</p>
-  - name: CGIN80.Z_NB5
-    conditions:
-      - questionText:
-          EN: |
-            <p>NB5. Was it boiled before it was used to cut the cord?</p>
-  - name: CGIN80.Z_NB6
-    conditions:
-      - questionText:
-          EN: |
-            <p>NB6. From the time the cord was cut till it fell off, was anything applied to the cord?</p>
-  - name: CGIN80.Z_NB7
-    conditions:
-      - questionText:
-          EN: |
-            <p>NB7. What was applied?</p>
-            <p>Anything else?</p>
-  - name: CGIN80.Z_CH2
-    conditions:
-      - questionText:
-          EN: |
-            <p>CH2. Was chlorhexidine applied to the cord at any time?</p>
   - name: Z_CH3_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>CH3. How long after the cord was cut was chlorhexidine first applied?</p>
-  - name: CGIN80.Z_CH3N
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class=instruction">RECORD NUMBER.</span></p>
-  - name: CGIN80.Z_CH3U
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class=instruction">RECORD UNITS.</span></p>
-  - name: CGIN80.Z_CH4
-    conditions:
-      - questionText:
-          EN: |
-            <p>CH4. For how many days was chlorhexidine applied to the cord?</p>
   - name: CGIN80.Q441
     conditions:
       - questionText:
@@ -1357,106 +1164,21 @@ questions:
       - questionText:
           EN: |
             <p>MH17. Please tell me if the doctors, nurses or other healthcare providers the health facility where you delivered did the following all of the time, some of the time, or not at all:</p>
-  - name: CGIN80.Z_MH17A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) Treat you with respect?</p>
-  - name: CGIN80.Z_MH17B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) Explain to you why they were doing examinations or procedures on you?</p>
-  - name: CGIN80.Z_MH17C
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) Take the best care of you?</p>
   - name: Z_MH18_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>MH18. At any time during your stay in the health facility, did you:</p>
-  - name: CGIN80.Z_MH18A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) Share a bed with another patient? </p>
-  - name: CGIN80.Z_MH18B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) Rest or sleep on the floor without any mattress?</p>
-  - name: CGIN80.Z_MH19
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH19. At any time during your stay in the health facility, were you denied medical services due to a lack of money?</p>
-  - name: CGIN80.Z_MH20
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH20. Were you delayed or prevented from leaving the health facility due to lack of payment?</p>
   - name: Z_MH21_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>MH21. At any time during your stay in the health facility, did any staff member:</p>
-  - name: CGIN80.Z_MH21A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) Slap you?</p>
-  - name: CGIN80.Z_MH21B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) Hit or punch you?</p>
-  - name: CGIN80.Z_MH21C
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) Physically threaten you?</p>
-  - name: CGIN80.Z_MH21D
-    conditions:
-      - questionText:
-          EN: |
-            <p>d) Physically mistreat or harm you in any other way?</p>
   - name: Z_MH22_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>MH22. At any time during your stay in the health facility, did any staff member:</p>
-  - name: CGIN80.Z_MH22A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) Shout at you?</p>
-  - name: CGIN80.Z_MH22B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) Say or do something to humiliate you?</p>
-  - name: CGIN80.Z_MH22C
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) Verbally threaten you?</p>
-  - name: CGIN80.Z_MH22D
-    conditions:
-      - questionText:
-          EN: |
-            <p>d) Verbally mistreat you in any other way?</p>
-  - name: CGIN80.Z_MH23
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH23. Did the health facility have a toilet or latrine for patients?</p>
-  - name: CGIN80.Z_MH24
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH24. Was there any time when you wanted to use the toilet or latrine, but it was not working?</p>
   - name: Q447_BLOCK
     conditions:
       - logic: Q405 = 3
@@ -1531,11 +1253,6 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
-  - name: CGIN80.Z_MH25
-    conditions:
-      - questionText:
-          EN: |
-            <p>MH25. In the first two days after ~~Q407~~’s) birth, where did ~~Q407~~ stay most of the time during the day and at night, in the same room with you or in a separate room?</p>
   - name: CGIN80.Q454
     conditions:
       - questionText:
@@ -1864,6 +1581,11 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR.</span></p>
+  - name: Q509B_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <br><p></p>
   - name: CGIN80.D509B
     conditions:
       - questionText:
@@ -1871,301 +1593,593 @@ questions:
             <p><span class="instruction">509. COPY DATES FROM THE CARD FOR ~~Q503N~~</span></p>
             <p><span class="instruction">RECORD '44' IN 'DAY' COLUMN IF CARD SHOWS THAT A DOSE WAS GIVEN, BUT NO DATE IS RECORDED.  RECORD '00&quot; IN 'DAY' COLUMN IF CARD IS BLANK FOR THE DOSE</span></p>
             <p><span class="instruction">BCG DAY</span></p>
+          FR: |
+            <table border="0" cellpadding="0" cellspacing="0" width="534" style="width: 402pt;"><p>
+             <colgroup><col width="16" span="16" style="width:12pt">
+             <col width="10" span="2" style="mso-width-source:userset;mso-width-alt:426;
+             width:8pt">
+             <col width="16" span="15" style="width:12pt">
+             <col width="18" style="mso-width-source:userset;mso-width-alt:768;width:14pt">
+             </colgroup><tbody><tr height="15" style="height:11.25pt">
+              <td colspan="34" height="15" class="xl70" width="534" style="height:11.25pt;
+              width:402pt"><font color="#0000ff">RECOPIEZ LES DATES DES VACCINATIONS DU CARNET DE ~~Q503N~~.</font></td>
+             </tr>
+             <tr height="15" style="mso-height-source:userset;height:11.25pt">
+              <td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
+              width:402pt"><font color="#0000ff">INSCRIVEZ ‘44' DANS LA COLONNE ‘JOUR' SI LE CARNET MONTRE QU'UNE
+              DOSE A ÉTÉ DONNÉE MAIS QUE LA DATE N'A PAS ÉTÉ ENREGISTRÉE. INSCRIVEZ '00'
+              DANS LA COLONNE 'JOUR' SI LA CARTE EST VIDE POUR LA DOSE.</font></td></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
+              width:402pt"><font color="#0000ff">~~vaccstr~~</font></td></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
+              width:402pt"><font color="#0000ff"><br></font></td>
+             </tr>
+             <tr height="15" style="mso-height-source:userset;height:11.25pt">
+             </tr>
+             <tr height="15" style="mso-height-source:userset;height:11.25pt">
+             </tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><br></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><br></tr></tbody></p></table><p></p>
   - name: CGIN80.M509B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">BCG MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><p></p>
   - name: CGIN80.Y509B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">BCG YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><p></p>
+  - name: Q509H_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">HÉPATITE B À LA NAISSANCE</font><p></p>
+          FR: |
+            <font color="#0000ff">HÉPATITE B À LA NAISSANCE</font><p></p>
   - name: CGIN80.D509H
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">HEPATITIS B DAY.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">JOUR</span><p></p>
   - name: CGIN80.M509H
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">HEPATITIS B MONTH.</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
   - name: CGIN80.Y509H
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">HEPATITIS B YEAR.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ANNEE</span><p></p>
+  - name: Q509P0_BLOCK
+    conditions:
+      - questionText:
+          FR: |
+            <font color="#0000ff">VACCIN POLIO ORAL (VPO) 0 (DOSE NAISSANCE)</font><p></p>
   - name: CGIN80.D509P0
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">POLIO 0 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
   - name: CGIN80.M509P0
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">POLIO 0 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
   - name: CGIN80.Y509P0
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">POLIO 0 YEAR</span></p>
-  - name: CGIN80.D509P1
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509D1_BLOCK
     conditions:
       - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 1 DAY</span></p>
-  - name: CGIN80.M509P1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 1 MONTH</span></p>
-  - name: CGIN80.Y509P1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 1 YEAR</span></p>
-  - name: CGIN80.D509P2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 2 DAY</span></p>
-  - name: CGIN80.M509P2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 2 MONTH</span></p>
-  - name: CGIN80.Y509P2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 2 YEAR</span></p>
-  - name: CGIN80.D509P3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 3 DAY</span></p>
-  - name: CGIN80.M509P3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 3 MONTH</span></p>
-  - name: CGIN80.Y509P3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO 3 YEAR</span></p>
-  - name: CGIN80.D509IPV
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO IPV DAY</span></p>
-  - name: CGIN80.M509IPV
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO IPV MONTH</span></p>
-  - name: CGIN80.Y509IPV
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">POLIO IPV YEAR</span></p>
+          FR: |
+            <font color="#0000ff">DTCoq-HEP.B-HIB (PENTAVALENT) 1</font><p></p>
   - name: CGIN80.D509D1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">DPT 1 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
   - name: CGIN80.M509D1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">DPT 1 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
   - name: CGIN80.Y509D1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">DPT 1 YEAR</span></p>
-  - name: CGIN80.D509D2
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509R1_BLOCK
     conditions:
       - questionText:
-          EN: |
-            <p><span class="instruction">DPT 2 DAY</span></p>
-  - name: CGIN80.M509D2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 2 MONTH</span></p>
-  - name: CGIN80.Y509D2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 2 YEAR</span></p>
-  - name: CGIN80.D509D3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 3 DAY</span></p>
-  - name: CGIN80.M509D3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 3 MONTH</span></p>
-  - name: CGIN80.Y509D3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 3 YEAR</span></p>
-  - name: CGIN80.D509D4
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 4 DAY</span></p>
-  - name: CGIN80.M509D4
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 4 MONTH</span></p>
-  - name: CGIN80.Y509D4
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DPT 4 YEAR</span></p>
-  - name: CGIN80.D509N1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 1 DAY</span></p>
-  - name: CGIN80.M509N1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 1 MONTH</span></p>
-  - name: CGIN80.Y509N1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 1 YEAR</span></p>
-  - name: CGIN80.D509N2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 2 DAY</span></p>
-  - name: CGIN80.M509N2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 2 MONTH</span></p>
-  - name: CGIN80.Y509N2
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 2 YEAR</span></p>
-  - name: CGIN80.D509N3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 3 DAY</span></p>
-  - name: CGIN80.M509N3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 3 MONTH</span></p>
-  - name: CGIN80.Y509N3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">PNEUMOCOCCAL 3 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ROTAVIRUS (ROTA) 1</font><p></p>
   - name: CGIN80.D509R1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 1 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
   - name: CGIN80.M509R1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 1 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
   - name: CGIN80.Y509R1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 1 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509N1_BLOCK
+    conditions:
+      - questionText:
+          FR: |
+            <font color="#0000ff">PNEUMOCOQUE (PCV13) 1</font><p></p>
+  - name: CGIN80.D509N1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 1 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509N1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 1 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509N1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 1 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509P1_BLOCK
+    conditions:
+      - questionText:
+          FR: |
+            <font color="#0000ff">VACCIN POLIO ORAL (VPO) 1</font><p></p>
+  - name: CGIN80.D509P1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 1 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509P1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 1 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509P1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 1 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509D2_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">DTCoq-HEP.B-HIB (PENTAVALENT) 2</font><p></p>
+          FR: |
+            <font color="#0000ff">DTCoq-HEP.B-HIB (PENTAVALENT) 2</font><p></p>
+  - name: CGIN80.D509D2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 2 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509D2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 2 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509D2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 2 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509R2_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">ROTAVIRUS (ROTA) 2</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ROTAVIRUS (ROTA) 2</span><p></p>
   - name: CGIN80.D509R2
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 2 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
   - name: CGIN80.M509R2
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 2 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
   - name: CGIN80.Y509R2
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 2 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509N2_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">PNEUMOCOQUE (PCV13) 2</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">PNEUMOCOQUE (PCV13) 2</span><p></p>
+  - name: CGIN80.D509N2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 2 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509N2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 2 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509N2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 2 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509P2_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO ORAL (VPO) 2</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO ORAL (VPO) 2</span><p></p>
+  - name: CGIN80.D509P2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 2 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509P2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 2 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509P2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 2 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509D3_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">DTCoq-HEP.B-HIB (PENTAVALENT) 3</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">DTCoq-HEP.B-HIB (PENTAVALENT) 3</span><p></p>
+  - name: CGIN80.D509D3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 3 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509D3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 3 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509D3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 3 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509R3_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">ROTAVIRUS (ROTA) 3</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ROTAVIRUS (ROTA) 3</span><p></p>
   - name: CGIN80.D509R3
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 3 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
   - name: CGIN80.M509R3
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 3 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
   - name: CGIN80.Y509R3
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ROTAVIRUS 3 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509N3_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">PNEUMOCOQUE (PCV13) 3</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">PNEUMOCOQUE (PCV13) 3</span><p></p>
+  - name: CGIN80.D509N3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 3 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509N3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 3 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509N3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">PNEUMOCOCCAL 3 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509P3_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO ORAL (VPO) 3</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO ORAL (VPO) 3</span><p></p>
+  - name: CGIN80.D509P3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 3 DAY</span></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509P3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 3 MONTH</span></p>
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
+  - name: CGIN80.Y509P3
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO 3 YEAR</span></p>
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
+  - name: Q509IPV_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">VACCIN POLIO INACTIVÉ (VPI) 1</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO INACTIVÉ (VPI) 1</span><p></p>
+  - name: CGIN80.D509IPV1
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">IPV1&nbsp; DAY</span><p></p>
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
+  - name: CGIN80.M509IPV1
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">IPV1&nbsp; MONTH</span><p></p>
+          FR: |
+            <font color="#0000ff"><span class="instruction">MOIS</span></font><p></p>
+  - name: CGIN80.Y509IPV1
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">IPV1&nbsp; YEAR</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
+  - name: Q509IPV2_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO INACTIVÉ (VPI) 2</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">VACCIN POLIO INACTIVÉ (VPI) 2</span><p></p>
+  - name: CGIN80.D509IPV2
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">IPV2 DAY</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿JOUR</span></p>
+  - name: CGIN80.M509IPV2
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">IPV2 MONTH</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿MOIS</span></p>
+  - name: CGIN80.Y509IPV2
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">IPV2 YEAR</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
+  - name: Q509M1_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">﻿VACCIN ANTIROUGEOLEUX (VAR) 1</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿VACCIN ANTIROUGEOLEUX (VAR) 1</span></p>
   - name: CGIN80.D509M1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">MEASLES 1 DAY</span></p>
+          FR: |
+            <p><span class="instruction">﻿JOUR</span></p>
   - name: CGIN80.M509M1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">MEASLES 1 MONTH</span></p>
+          FR: |
+            <p><span class="instruction">﻿MOIS</span></p>
   - name: CGIN80.Y509M1
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">MEASLES 1 YEAR</span></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
+  - name: Q509FJ_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">VACCIN CONTRE LA FIÈVRE JAUNE (VAA)&nbsp;</span><p></p>
+          ES: |
+            <p><span class="instruction">﻿</span></p>
+          FR: |
+            <span class="instruction">VACCIN CONTRE LA FIÈVRE JAUNE (VAA)&nbsp;</span><p></p>
+  - name: CGIN80.D509FJ
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">YELLOW FEVER&nbsp; DAY</span><p></p>
+          FR: |
+            <p><span class="instruction">JOUR</span></p>
+  - name: CGIN80.M509FJ
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">YELLOW FEVER&nbsp; MONTH</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿MOIS</span></p>
+  - name: CGIN80.Y509FJ
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">YELLOW FEVER&nbsp; YEAR</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
+  - name: Q509M2_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">﻿VACCIN ANTIROUGEOLEUX (VAR) 2</span><p></p>
   - name: CGIN80.D509M2
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">MEASLES 2 DAY</span></p>
+          FR: |
+            <p><span class="instruction">﻿JOUR</span></p>
   - name: CGIN80.M509M2
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">MEASLES 2 MONTH</span></p>
+          FR: |
+            <p><span class="instruction">﻿MOIS</span></p>
   - name: CGIN80.Y509M2
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">MEASLES 2 YEAR</span></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
+  - name: Q509V_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span class="instruction">VITAMINE A (LA PLUS RÉCENTE)</span><p></p>
+          FR: |
+            <p><span class="instruction">VITAMINE A (LA PLUS RÉCENTE)</span></p>
   - name: CGIN80.D509V
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">VITAMIN A (MOST RECENT) DAY</span></p>
+          FR: |
+            <p><span class="instruction">﻿JOUR</span></p>
   - name: CGIN80.M509V
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">VITAMIN A (MOST RECENT) MONTH</span></p>
+          FR: |
+            <p><span class="instruction">﻿MOIS</span></p>
   - name: CGIN80.Y509V
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">VITAMIN A (MOST RECENT) YEAR</span></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
   - name: CGIN80.Q510
     conditions:
       - questionText:
@@ -3940,1259 +3954,31 @@ questions:
           EN: |
             <p>1115. What type of health insurance are you covered by?</p>
             <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.Z_CHD01
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD01. Have you ever had your blood pressure measured by a doctor or other healthcare worker?</p>
-  - name: CGIN80.Z_CHD02
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD02. Have you ever been told by a doctor or other healthcare worker that you have high blood pressure or hypertension?</p>
-  - name: CGIN80.Z_CHD03
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD03. In the past 12 months, have you been told by a doctor or other healthcare worker that you have high blood pressure or hypertension?</p>
-  - name: CGIN80.Z_CHD04
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD04. Has a doctor or other healthcare worker prescribed medication to control your blood pressure?</p>
-  - name: CGIN80.Z_CHD05
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD05. Are you taking medication to control your blood pressure?</p>
-  - name: CGIN80.Z_CHD06
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD06. Have you ever had your blood sugar measured by a doctor or other healthcare worker?</p>
-  - name: CGIN80.Z_CHD07
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD07. Have you ever been told by a doctor or other healthcare worker that you have high blood sugar or diabetes?</p>
-  - name: CGIN80.Z_CHD08
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD08. In the past 12 months, have you been told by a doctor or other healthcare worker that you have high blood sugar or diabetes?</p>
-  - name: CGIN80.Z_CHD09
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD09. Has a doctor or other healthcare worker prescribed medication to control your high blood sugar or diabetes?</p>
-  - name: CGIN80.Z_CHD10
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD10. Are you taking medication to control your high blood sugar or diabetes?</p>
-  - name: CGIN80.Z_CHD11
-    conditions:
-      - questionText:
-          EN: |
-            Z_CHD11. Have you ever been told by a doctor or other healthcare worker that you have heart disease or a chronic heart condition?</p>
-  - name: CGIN80.Z_CHD12
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD12. Are you receiving any treatment for your heart disease or chronic heart condition?</p>
-  - name: CGIN80.Z_CHD13
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD13. Have you ever been told by a doctor or other healthcare worker that you have lung disease or a chronic lung condition?</p>
-  - name: CGIN80.Z_CHD14
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD14. Are you receiving any treatment for your lung disease or chronic lung condition?</p>
-  - name: CGIN80.Z_CHD15
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD15. Have you ever been told by a doctor or other healthcare worker that you have cancer or a tumor?</p>
-  - name: CGIN80.Z_CHD16
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD16. Are you receiving any treatment for cancer or a tumor?</p>
-  - name: ACHD17_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>ACHD17. Have you ever been told by a doctor or other healthcare worker that you have:</p>
-  - name: CGIN80.Z_CHD17A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) Depression?</p>
-  - name: CGIN80.Z_CHD17B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) Anxiety?</p>
-  - name: CGIN80.Z_CHD19
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD19. Are you receiving any treatment for depression or anxiety?</p>
-  - name: CGIN80.Z_CHD20
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD20. Have you ever been told by a doctor or other healthcare worker that you have arthritis?</p>
-  - name: CGIN80.Z_CHD21
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD21. Are you receiving any treatment for arthritis?</p>
-  - name: CGIN80.Z_CHD22
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD22. Have you ever been told by a doctor or other healthcare worker that you have any other chronic disease, that is, any other disease that is long lasting?</p>
-  - name: CGIN80.Z_CHD23
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD23. Are you receiving any treatment for (CHRONIC DISEASE FROM CD22)?</p>
-  - name: CGIN80.Z_CHD24
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD24. Have you heard of cervical cancer?</p>
-  - name: CGIN80.Z_CHD25
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD25. Have you heard of any test for cervical cancer?</p>
-  - name: CGIN80.Z_CHD27
-    conditions:
-      - questionText:
-          EN: |
-            <p>ACHD26. Now I’m going to ask you about tests a healthcare worker can do to check for cervical cancer, which is cancer in the cervix. The cervix connects the womb to the vagina. To be checked for cervical cancer, a woman is asked to lie on her back with her legs apart. Then the healthcare worker will use a brush or swab to collect a sample from inside her. The sample is sent to a laboratory for testing. This test is called a Pap smear or HPV test. Another method is called a VIA or Visual Inspection with Acetic Acid. In this test, the healthcare worker puts vinegar on the cervix to see if there is a reaction.</p><p>Z_CHD27. Has a doctor or other healthcare worker ever tested you for cervical cancer?<br></p></p></p></p>
-  - name: CGIN80.Z_CHD28
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD28. When was your last test for cervical cancer?</p>
-  - name: CGIN80.Z_CHD29
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD29. What was the result of your last test for cervical cancer?</p>
-  - name: CGIN80.Z_CHD30
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD30. Did you receive any treatment to your cervix?</p>
-  - name: CGIN80.Z_CHD31
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD31. Did you receive treatment on the same day you received your test results, or on a different day?</p>
-  - name: CGIN80.Z_CHD32
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD32. Did you have any follow up visits after your treatment? </p>
-  - name: CGIN80.Z_CHD33
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_CHD33. Did have any follow up visits because of your test results?</p>
-  - name: CGIN80.Z_MTH0
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH0. Now I will ask you a few questions on how you have felt or behaved in the last 2 weeks. You may find some of these questions very personal. Let me assure you that your answers are completely confidential and will not be told to anyone. If I ask you any question you don't want to answer, just let me know and I will go on to the next question.</span></p>
-            <p><span class="instruction">Press enter to continue</span></p>
   - name: AMTHGAD_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>The next questions are about how you have been feeling during the last 2 weeks. Over the last 2 weeks, how often have you been bothered by the following problems? Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTHGAD1
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD1. Feeling nervous, anxious or on edge?<br>Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTHGAD2
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD2. Not being able to stop or control worrying?</span></p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTHGAD3
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD3. Worrying too much about different things?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?﻿</p>
-  - name: CGIN80.Z_MTHGAD4
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD4. Trouble relaxing?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTHGAD5
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD5. Being so restless that it is hard to sit still?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTHGAD6
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD6. Becoming easily annoyed or irritable?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTHGAD7
-    conditions:
-      - questionText:
-          EN: |
-            <p>GAD7. Feeling afraid as if something awful might happen?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
   - name: AMTHPHQ_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>Over the last 2 weeks, how often have you been bothered by the following problems? Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ1
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ1. Little interest or pleasure in doing things? Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ2
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ2. Feeling down, depressed or hopeless?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ3
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ3. Trouble falling asleep, staying asleep, or sleeping too much?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ4
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ4. Feeling tired or having little energy?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ5
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ5. Poor appetite or overeating?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ6
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ7
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ7. Trouble concentrating on things, such as reading the newspaper or watching television?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ8
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ8. Moving or speaking so slowly that other people could have noticed. Or, the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.AMTHPHQ9
-    conditions:
-      - questionText:
-          EN: |
-            <p>PHQ9. Thoughts that you would be better off dead or of hurting yourself in some way?</p>
-            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
-  - name: CGIN80.Z_MTH2
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH2. Thinking about what you yourself have experienced among the different things we have been talking about, have you ever tried to seek help?</p>
-  - name: CGIN80.Z_MTH3
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH3. From whom have you sought help?</p>
-            <p>Anyone else?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
   - name: AMTH4_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>Have you ever been told by a doctor or other healthcare worker that you have:</p>
-  - name: CGIN80.Z_MTH4A
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH4A. Depression?</p>
-  - name: CGIN80.Z_MTH4B
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH4B. Anxiety?</p>
-  - name: CGIN80.Z_MTH5
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH5. During the last 2 weeks, did you take medicine prescribed by a doctor or other healthcare worker for depression or anxiety?</p>
-  - name: CGIN80.Z_MTH8
-    conditions:
-      - questionText:
-          EN: |
-            <p>MTH8. Thank you for answering this series of questions. Based on the information you shared with me about your recent experiences, you may benefit from services provided by [NAME OF AGENCY].</p>
-            <p><span class="red">PROVIDE RESPONDENT WITH REFERRAL CARD.</span> This card provides [NAME OF AGENCY]'s contact information.</p>
-            <p><span class="instruction">Press enter to continue</span></p>
-  - name: CGIN80.Z_MM00
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ADULT AND MATERNAL MORTALITY MODULE</span></p>
-            <p><span class="instruction">PRESS ENTER OR ADVANCE TO CONTINUE</span></p>
-  - name: CGIN80.Z_MM01N
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM01. Now I would like to ask you some questions about your brothers and sisters born to your natural mother, including those who are living with you, those living elsewhere and those who have died. From our experience in prior surveys, we know it may sometimes be difficult to establish a complete list of all the children born to your natural mother. We will work together to draw the most complete list and work to recall all your siblings. Could you please now give me the names of all of your brothers and sisters born to your natural mother.</p>
-            <p><span class="instruction">IF RESPONDENT DOESN'T HAVE ANY BROTHERS OR SISTERS PRESS FORWARD BUTTON TO CONTINUE.</span></p>
-            <p><span class="instruction">DO NOT FILL IN THE ORDER NUMBER YET.</span></p>
-  - name: CGIN80.Z_MM01
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM01. Please tell me, which brother or sister was born first? And which was born next?</p>
-            <p><span class="instruction">RECORD '01' FOR THE ORDER NUMBER FOR THE FIRST BROTHER OR SISTER, '02' FOR THE SECOND, AND SO ON UNTIL YOU HAVE RECORDED THE ORDER NUMBER FOR ALL BROTHERS AND SISTERS.</span></p>
-  - name: CGIN80.Z_MMMORE
-    conditions:
-      - questionText:
-          EN: |
-            <p>Any more brothers or sisters?</p>
-  - name: CGIN80.Z_MM03
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">Z_MM03. READ THE NAMES OF THE BROTHERS AND SISTERS TO THE RESPONDENT AND AFTER THE LAST ONE ASK:</span></p>
-            <p>Are there any other brothers and sisters from the same mother that you have not mentioned?</p>
-  - name: CGIN80.Z_MM04
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM04. Sometimes people forget to mention children born to their natural mother because they do not live with them or they do not see them very often. Are there any brothers or sisters who do not live with you that you have not mentioned?</p>
-  - name: CGIN80.Z_MM05
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM05. Sometimes people forget to mention children born to their natural mother because they have died. Are there any brothers or sisters who died that you have not mentioned?</p>
-  - name: CGIN80.Z_MM06
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM06. Some people have brothers or sisters from the same mother but a different father. Are there any brothers or sisters born to your natural mother, but who have a different natural father, that you have not mentioned?</p>
-  - name: CGIN80.Z_MM08
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM08. Just to make sure that I have this right: Your mother had in total ~~Z_MM07~~ births, excluding you, during her lifetime. Is that correct?</p>
-  - name: CGIN80.Z_MM10
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM10. Please tell me, which brother or sister was born first? And which was born next?</p>
-            <p><span class="instruction">RECORD '01' FOR THE ORDER NUMBER IN MM01 FOR THE FIRST BROTHER OR SISTER, '02' FOR THE SECOND, AND SO ON UNTIL YOU HAVE RECORDED THE ORDER NUMBER FOR ALL BROTHERS AND SISTERS.</span></p>
-  - name: CGIN80.Z_MM11
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM11. How many births did your mother have before you were born?</p>
-  - name: CGIN80.Z_MM14
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM14. Is ~~Z_MM13N~~ male or female?</p>
-  - name: CGIN80.Z_MM15
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM15. Is ~~Z_MM13N~~ still alive?</p>
-  - name: CGIN80.Z_MM16
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM16. How old is ~~Z_MM13N~~?</p>
-  - name: CGIN80.Z_MM17
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM17. How many years ago did ~~Z_MM13N~~ die?</p>
-  - name: CGIN80.Z_MM18
-    conditions:
-      - logic: Z_MM14 = 1
-        questionText:
-          EN: |
-            <p>Z_MM18. How old was ~~Z_MM13N~~ when he died?</p>
-            <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
-      - logic: Z_MM14 = 2
-        questionText:
-          EN: |
-            <p>Z_MM18. How old was ~~Z_MM13N~~ when she died?</p>
-            <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
-  - name: CGIN80.Z_MM19
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM19. Was ~~Z_MM13N~~ pregnant when she died?</p>
-  - name: CGIN80.Z_MM20
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM20. Did ~~Z_MM13N~~ die during childbirth?</p>
-  - name: CGIN80.Z_MM21
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM21. Did ~~Z_MM13N~~ die within two months after the end of a pregnancy or childbirth?</p>
-  - name: CGIN80.Z_MM22
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM22. How many days after the end of the pregnancy did ~~Z_MM13N~~ die?</p>
-  - name: CGIN80.Z_MM23
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM23. Was ~~Z_MM13N~~'s death due to an act of violence?</p>
-  - name: CGIN80.Z_MM24
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_MM24. Was ~~Z_MM13N~~'s death due to an accident?</p>
-  - name: CGIN80.DV01
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DV01. CHECK FOR PRESENCE OF OTHERS:  DO NOT CONTINUE UNTIL PRIVACY IS ENSURED.</span></p>
-            <p><span class="instruction">IF PRIVACY OBTAINED, READ TO THE RESPONDENT</span></p>
-  - name: CGIN80.DV02
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV02. Now I would like to ask you questions about some other important aspects of a woman's life. You may find some of these questions very personal. However, your answers are crucial for helping to understand the condition of women in [COUNTRY]. Let me assure you that your answers are completely confidential and will not be told to anyone and no one else in your HOUSEHOLD will know that you were asked these questions. If I ask you any question you don't want to answer, just let me know and I will go on to the next question.</p>
-  - name: CGIN80.DV04
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV04. You have said that you are not married and are not living with a man as if married. Are you currently in an intimate relationship with a man even though you are not living with him?</p>
-  - name: CGIN80.DV05
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV05. Have you ever been in an intimate relationship with a man even though you did not ever live with him? </p>
-  - name: CGIN80.DV06A1
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>DV06. Now, I am going to ask you about some situations that can happen between some women and their ~~partype~~. </p>
-            <p>A. Please tell me if these descriptions apply to your relationship with your ~~rellast~~~~partype~~.</p>
-            <p>a) He was jealous or angry if you talked to other men?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>DV06. Now, I am going to ask you about some situations that can happen between some women and their ~~partype~~. </p>
-            <p>A. Please tell me if these descriptions apply to your relationship with your ~~rellast~~~~partype~~.</p>
-            <p>a) He is jealous or angry if you talk to other men?</p>
-  - name: CGIN80.DV06A2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV06B1
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>b) He wrongly accused you of being unfaithful?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>b) He wrongly accuses you of being unfaithful?</p>
-  - name: CGIN80.DV06B2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV06C1
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>c) He did not permit you to meet your female friends?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>c) He does not permit you to meet your female friends?</p>
-  - name: CGIN80.DV06C2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV06D1
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>d) He tried to limit your contact with your family?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>d) He tries to limit your contact with your family?</p>
-  - name: CGIN80.DV06D2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV06E1
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>e) He insisted on knowing where you were at all times?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>e) He insists on knowing where you are at all times?</p>
-  - name: CGIN80.DV06E2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV07A1
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV07. Now I need to ask some more questions about your relationship with your ~~rellast~~~~partype~~.</p>
-            <p>A. Did your ~~rellast~~~~partype~~ ever:</p>
-            <p>a) say or do something to humiliate you in front of others?</p>
-  - name: CGIN80.DV07A2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV07B1
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) threaten to hurt or harm you or someone you care about?</p>
-  - name: CGIN80.DV07B2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV07C1
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) insult you or make you feel bad about yourself?</p>
-  - name: CGIN80.DV07C2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08A1
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV08. Did your ~~rellast~~~~partype~~ ever do any of the following things to you:</p>
-            <p>a) push you, shake you, or throw something at you?</p>
-  - name: CGIN80.DV08A2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08B1
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) slap you?</p>
-  - name: CGIN80.DV08B2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08C1
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) twist your arm or pull your hair?</p>
-  - name: CGIN80.DV08C2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08D1
-    conditions:
-      - questionText:
-          EN: |
-            <p>d) punch you with his fist or with something that could hurt you?</p>
-  - name: CGIN80.DV08D2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08E1
-    conditions:
-      - questionText:
-          EN: |
-            <p>e) kick you, drag you or beat you up?</p>
-  - name: CGIN80.DV08E2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08F1
-    conditions:
-      - questionText:
-          EN: |
-            <p>f) try to choke you or burn you on purpose?</p>
-  - name: CGIN80.DV08F2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08G1
-    conditions:
-      - questionText:
-          EN: |
-            <p>g) attack you with a knife, gun, or any other weapon?</p>
-  - name: CGIN80.DV08G2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08H1
-    conditions:
-      - questionText:
-          EN: |
-            <p>h) physically force you to have sexual intercourse with him even when you did not want to?</p>
-  - name: CGIN80.DV08H2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08I1
-    conditions:
-      - questionText:
-          EN: |
-            <p>i) physically force you to perform any other sexual acts you did not want to?</p>
-  - name: CGIN80.DV08I2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV08J1
-    conditions:
-      - questionText:
-          EN: |
-            <p>j) force you with threats or in any other way to perform sexual acts you did not want to?</p>
-  - name: CGIN80.DV08J2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
   - name: DV10_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>DV10. Did the following ever happen as a result of what your ~~rellast~~~~partype~~ did to you:</p>
-  - name: CGIN80.DV10A
-    conditions:
-      - questionText:
-          EN: |
-            <p>a) You had cuts, bruises or aches?</p>
-  - name: CGIN80.DV10B
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) You had eye injuries, sprains, dislocations, or burns?</p>
-  - name: CGIN80.DV10C
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) You had deep wounds, broken bones, broken teeth, or any other serious injury?</p>
-  - name: CGIN80.DV11
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV11. Have you ever hit, slapped, kicked, or done anything else to physically hurt your ~~rellast~~~~partype~~ at times when he was not already beating or physically hurting you?</p>
-  - name: CGIN80.DV12
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV12. In the last 12 months, how often have you done this to your ~~rellast~~~~partype~~: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV13
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>DV13. Did your ~~rellast~~~~partype~~ drink alcohol?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>DV13. Does your ~~rellast~~~~partype~~ drink alcohol?</p>
-  - name: CGIN80.DV14
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>DV14. How often did he get drunk: often, only sometimes, or never?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>DV14. How often does he get drunk: often, only sometimes, or never?</p>
-  - name: CGIN80.DV15
-    conditions:
-      - logic: relprev <> 1
-        questionText:
-          EN: |
-            <p>DV15. Were you afraid of your ~~rellast~~~~partype~~: most of the time, sometimes, or never?</p>
-      - logic: relprev = 1
-        questionText:
-          EN: |
-            <p>DV15. Are you afraid of your ~~rellast~~~~partype~~: most of the time, sometimes, or never?</p>
-  - name: CGIN80.DV16A1
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV16. So far we have been talking about the behavior of your ~~relpast~~ ~~partype~~. Now I want to ask you about the behavior of any previous husband or any other current or previous male partner that you may have ever had.</p>
-            <p>a) Did any previous husband or any other current or previous male partner ever hit, slap, kick, or do anything else to hurt you physically?</p>
-  - name: CGIN80.DV16A2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How long ago did this last happen?</p>
-  - name: CGIN80.DV16B1
-    conditions:
-      - questionText:
-          EN: |
-            <p>b) Did any previous husband or any other current or previous male partner physically force you to have intercourse or perform any other sexual acts that you did not want to?</p>
-  - name: CGIN80.DV16B2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How long ago did this last happen?</p>
-  - name: CGIN80.DV16C1
-    conditions:
-      - questionText:
-          EN: |
-            <p>c) Did any previous husband or any other current or previous male partner humiliate you in front of others, threaten to hurt you or someone you care about, or insult you or make you feel bad about yourself?</p>
-  - name: CGIN80.DV16C2
-    conditions:
-      - questionText:
-          EN: |
-            <p>How long ago did this last happen?</p>
-  - name: CGIN80.DV18
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV18. How old were you the first time you were forced to have sexual intercourse or perform any other sexual acts that you did not want to by any current or previous husband or male partner?</p>
-  - name: CGIN80.DV20
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV20. Has any one ever hit, slapped, kicked, or done anything else to hurt you physically while you were pregnant?</p>
-  - name: CGIN80.DV21
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV21. Who has done any of these things to physically hurt you while you were pregnant?</p>
-            <p>Anyone else?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.DV22
-    conditions:
-      - logic: DV06A1 <> notappl
-        questionText:
-          EN: |
-            <p>DV22. From the time you were 15 years old, has anyone other than a husband or male partner, hit you, slapped you, kicked you, or done anything else to hurt you physically? Remember, I do not want you to include any husband or any other male partner. </p>
-      - logic: DV06A1 = notappl
-        questionText:
-          EN: |
-            <p>DV22. From the time you were 15 years old has anyone hit you, slapped you, kicked you, or done anything else to hurt you physically?</p>
-  - name: CGIN80.DV23
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV23. Who has hurt you in this way?</p>
-            <p>Anyone else?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.DV24
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV24. In the last 12 months, how often (has this person/have these persons) physically hurt you: often, only sometimes, or not at all?</p>
-  - name: CGIN80.DV26
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV26. At any time in your life, as a child or as an adult, has anyone other than any previous husband or any other current or previous male partner ever forced you in any way to have sexual intercourse or perform any other sexual acts when you did not want to? Remember I do not want you to include any husband or male partner. </p>
-  - name: CGIN80.DV27
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV27. At any time in your life, as a child or as an adult, has anyone ever forced you in any way to have sexual intercourse or perform any other sexual acts when you did not want to?</p>
-  - name: CGIN80.DV28
-    conditions:
-      - logic: DV06A1 <> notappl
-        questionText:
-          EN: |
-            <p>DV28. How old were you the first time you were forced to have sexual intercourse or perform any other sexual acts that you did not want to by anyone, not including any husband or any other male partner? </p>
-      - logic: DV06A1 = notappl
-        questionText:
-          EN: |
-            <p>DV28. How old were you the first time you were forced to have sexual intercourse or perform any other sexual acts that you did not want to?</p>
-  - name: CGIN80.DV29
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV29. Who has forced you to have sexual intercourse or perform any other sexual acts that you did not want to? </p>
-            <p>Anyone else?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.DV30
-    conditions:
-      - logic: DV06A1 <> notappl
-        questionText:
-          EN: |
-            <p>DV30. In the last 12 months, has anyone other than any previous husband or any other current or previous male partner forced you to have sexual intercourse or perform any other sexual acts that you did not want to?</p>
-      - logic: DV06A1 = notappl
-        questionText:
-          EN: |
-            <p>DV30. In the last 12 months, has anyone forced you to have sexual intercourse or perform any other sexual acts that you did not want to?</p>
-  - name: CGIN80.DV32
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV32. Thinking about what you yourself have experienced among the different things we have been talking about, have you ever tried to seek help?</p>
-  - name: CGIN80.DV33
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV33. From whom have you sought help?</p>
-            <p>Anyone else?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.DV34
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV34. Have you ever told any one else about this?</p>
-  - name: CGIN80.DV35
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV35. As far as you know, did your father ever beat your mother?</p>
-  - name: CGIN80.DVFIN
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">THANK THE RESPONDENT FOR HER COOPERATION AND REASSURE HER ABOUT THE CONFIDENTIALITY OF HER ANSWERS. FILL OUT THE QUESTIONS BELOW WITH REFERENCE TO THE DOMESTIC VIOLENCE MODULE ONLY.</span></p>
-            <p><span class="instruction">Press enter to continue</span></p>
   - name: DV36_BLOCK
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">DV36. DID YOU HAVE TO INTERRUPT THE INTERVIEW BECAUSE SOME ADULT WAS TRYING TO LISTEN, OR CAME INTO THE ROOM, OR INTERFERED IN ANY OTHER WAY?</span></p>
-  - name: CGIN80.DV36A
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">a) HUSBAND</span></p>
-  - name: CGIN80.DV36B
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">b) OTHER MALE ADULT</span></p>
-  - name: CGIN80.DV36C
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">c) FEMALE ADULT</span></p>
-  - name: CGIN80.DV37
-    conditions:
-      - logic: DV01 <> 1
-        questionText:
-          EN: |
-            <p><span class="instruction">DV37. A window will be displayed to provide an explanation as to why the Domestic Violence Module was not completed.</span></p>
-            <p><span class="instruction">Press enter to continue</span></p>
-      - logic: DV01 = 1
-        questionText:
-          EN: |
-            <p><span class="instruction">DV37. A window will be displayed to enter comments you may have while completing the Domestic Violence Module.</span></p>
-            <p><span class="instruction">Press enter to continue</span></p>
-  - name: CGIN80.GC01
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC01. Now I would like to ask some questions about a practice known as female circumcision. Have you ever heard of female circumcision?</p>
-  - name: CGIN80.GC02
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC02. In some countries, there is a practice in which a girl may have part of her genitals cut. Have you ever heard about this practice?</p>
-  - name: CGIN80.GC03
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC03. Have you yourself ever been circumcised?</p>
-  - name: CGIN80.GC04
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC04. Now I would like to ask you what was done to you at that time.  Was any flesh removed from the genital area?</p>
-  - name: CGIN80.GC05
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC05. Was the genital area just nicked without removing any flesh?</p>
-  - name: CGIN80.GC06
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC06. Was your genital area sewn closed?</p>
-  - name: CGIN80.GC07
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC07. How old were you when you were circumcised?</p>
-            <p><span class="instruction">IF THE RESPONDENT DOES NOT KNOW THE EXACT AGE, PROBE TO GET AN ESTIMATE.</span></p>
-  - name: CGIN80.GC08
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC08. Who performed the circumcision?</p>
-  - name: CGIN80.GC10
-    conditions:
-      - logic: daughter = 1
-        questionText:
-          EN: |
-            <p>GC10. Now I would like to ask you some questions about your daughter.</p>
-      - logic: daughter > 1
-        questionText:
-          EN: |
-            <p>GC10. Now I would like to ask you some questions about your daughters.</p>
-  - name: CGIN80.GC12
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC12. Is ~~GC11N~~ circumcised?</p>
-  - name: CGIN80.GC13
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC13. How old was ~~GC11N~~ when she was circumcised?</p>
-            <p><span class="instruction">IF THE RESPONDENT DOES NOT KNOW THE AGE, PROBE TO GET AN ESTIMATE.</span></p>
-  - name: CGIN80.GC14
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC14. Was her genital area sewn closed?</p>
-  - name: CGIN80.GC15
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC15. Who performed the circumcision?</p>
-  - name: CGIN80.GC17
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC17. Do you believe that female circumcision is required by your religion?</p>
-  - name: CGIN80.GC18
-    conditions:
-      - questionText:
-          EN: |
-            <p>GC18. Do you think that female circumcision should be continued, or should it be stopped?</p>
-  - name: CGIN80.QECDB_INTRO
-    conditions:
-      - questionText:
-          EN: |
-            <p>I would like to ask you some questions about your children age 2-4 years who live with you. These questions are about certain things that they are currently able to do. Please keep in mind that children can develop and learn at a different pace. For example, some start talking earlier than others, or they might already say some words but not yet form sentences. So, it is fine if your child is not able to do all the things I am going to ask you about. You can let me know if you have any doubts about what answer to give.</p>
-            <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
-  - name: CGIN80.Z_ECD1
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD1. Can ~~Z_ECDCN~~ walk on an uneven surface, for example, a bumpy or steep road, without falling?</p>
-  - name: CGIN80.Z_ECD2
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD2. Can ~~Z_ECDCN~~ jump up with both feet leaving the ground?</p>
-  - name: CGIN80.Z_ECD3
-    conditions:
-      - logic: Q219(Z_ECDCA) = 1
-        questionText:
-          EN: |
-            <p>ECD3. Can ~~Z_ECDCN~~ dress himself, that is, put on pants and a shirt, without help?</p>
-      - logic: Q219(Z_ECDCA) = 2
-        questionText:
-          EN: |
-            <p>ECD3. Can ~~Z_ECDCN~~ dress herself, that is, put on pants and a shirt, without help?</p>
-  - name: CGIN80.Z_ECD4
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD4. Can ~~Z_ECDCN~~ fasten and unfasten buttons without help?</p>
-  - name: CGIN80.Z_ECD5
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD5. Can ~~Z_ECDCN~~ say 10 or more words, like 'mama' or 'ball'?</p>
-  - name: CGIN80.Z_ECD6
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD6. Can ~~Z_ECDCN~~ speak using sentences of 3 or more words that go together, for example, "I want water" or "The house is big"?</p>
-  - name: CGIN80.Z_ECD7
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD7. Can ~~Z_ECDCN~~ speak using sentences of 5 or more words that go together, for example, "The house is very big"?</p>
-  - name: CGIN80.Z_ECD8
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD8. Can ~~Z_ECDCN~~ correctly use any of the words 'I', 'you', 'she', or 'he', for example, "I want water" or "He eats rice"?</p>
-  - name: CGIN80.Z_ECD9
-    conditions:
-      - logic: Q219(Z_ECDCA) = 1
-        questionText:
-          EN: |
-            <p>ECD9. If you show ~~Z_ECDCN~~ an object he knows well, such as a cup or animal, can he consistently name it? By consistently, we mean that he uses the same word to refer to the same object, even if the word used is not fully correct.</p>
-      - logic: Q219(Z_ECDCA) = 2
-        questionText:
-          EN: |
-            <p>ECD9. If you show ~~Z_ECDCN~~ an object she knows well, such as a cup or animal, can she consistently name it? By consistently, we mean that she uses the same word to refer to the same object, even if the word used is not fully correct.</p>
-  - name: CGIN80.Z_ECD10
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD10. Can ~~Z_ECDCN~~ recognize at least 5 letters of the alphabet?</p>
-  - name: CGIN80.Z_ECD11
-    conditions:
-      - logic: Q219(Z_ECDCA) = 1
-        questionText:
-          EN: |
-            <p>ECD11. Can ~~Z_ECDCN~~ write his name?</p>
-      - logic: Q219(Z_ECDCA) = 2
-        questionText:
-          EN: |
-            <p>ECD11. Can ~~Z_ECDCN~~ write her name?</p>
-  - name: CGIN80.Z_ECD12
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD12. Can ~~Z_ECDCN~~ recognize all numbers from 1 to 5?</p>
-  - name: CGIN80.Z_ECD13
-    conditions:
-      - logic: Q219(Z_ECDCA) = 1
-        questionText:
-          EN: |
-            <p>ECD13. If you ask ~~Z_ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does he give you the correct amount?</p>
-      - logic: Q219(Z_ECDCA) = 2
-        questionText:
-          EN: |
-            <p>ECD13. If you ask ~~Z_ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does she give you the correct amount?</p>
-  - name: CGIN80.Z_ECD14
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD14. Can ~~Z_ECDCN~~ count 10 objects, for example, 10 fingers or 10 blocks, without mistakes?</p>
-  - name: CGIN80.Z_ECD15
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD15. Can ~~Z_ECDCN~~ do an activity, such as coloring or playing with building blocks, without repeatedly asking for help or giving up too quickly?</p>
-  - name: CGIN80.Z_ECD16
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD16. Does ~~Z_ECDCN~~ ask about familiar people other than parents when they are not there, for example, "Where is Grandma?"?</p>
-  - name: CGIN80.Z_ECD17
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD17. Does ~~Z_ECDCN~~ offer to help someone who seems to need help?</p>
-  - name: CGIN80.Z_ECD18
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD18. Does ~~Z_ECDCN~~ get along well with other children?</p>
-  - name: CGIN80.Z_ECD19
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD19. How often does ~~Z_ECDCN~~ seem to be very sad or depressed? Would you say: daily, weekly, monthly, a few times a year, or never?</p>
-  - name: CGIN80.Z_ECD20
-    conditions:
-      - questionText:
-          EN: |
-            <p>ECD20. Compared with other children of the same age, how much does ~~Z_ECDCN~~ kick, bite, or hit other children or adults? Would you say: not at all, the same or less, more, or a lot more?</p>
-  - name: CGIN80.Z_ML501
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML501. In the last six months, have you seen or heard any messages about malaria?</p>
-  - name: CGIN80.Z_ML502
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML502. Where did you see or hear these messages?</p>
-            <p><span class="instruction">PROBE:</span> Anywhere else?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.Z_ML503
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML503. Are there ways to avoid getting malaria?</p>
-  - name: CGIN80.Z_ML504
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML504. What are the things that people can do to prevent themselves from getting malaria?</p>
-            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-  - name: CGIN80.Z_ML505
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML505. Now I am going to read some statements and I would like you to tell me whether you agree or disagree with each statement. If you don't know, say, don't know.</p>
-            <p>People in this community only get malaria during the rainy season. Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML506
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML506. When a child has a fever, you almost always worry it might be malaria.</p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML507
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML507. Getting malaria is not a problem because it can be easily treated.</p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML508
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML508. Only weak children can die from malaria.</p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML509
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML509. You can sleep under a mosquito net for the entire night when there are lots of mosquitoes. </p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML510
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML510. You can sleep under a mosquito net for the entire night when there are few mosquitoes</p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML511
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML511. You do not like sleeping under a mosquito net when the weather is too warm.</p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML512
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML512. When a child has a fever, it is best to start by giving them any medicine you have at home.</p>
-            <p>Do you agree or disagree?</p>
-  - name: CGIN80.Z_ML513
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML513. People in your community usually take their children to a health care provider on the same day or day after they develop a fever.</p>
-            <p>Do you agree or disagree?</p>
-            <p><span class="instruction">IF RESPONDENT DOESN'T KNOW, PROBE:</span> Would you say more than half or less than half of the community does this?</p>
-  - name: CGIN80.Z_ML514
-    conditions:
-      - questionText:
-          EN: |
-            <p>ML514. People in your community who have a mosquito net usually sleep under a mosquito net every night.</p>
-            <p>Do you agree or disagree?</p>
-            <p><span class="instruction">IF RESPONDENT DOESN'T KNOW, PROBE:</span> Would you say more than half or less than half of the community does this?</p>
-  - name: CGIN80.Z_FI1
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI1. Sometimes a woman can have a problem of constant leakage of urine or stool from her vagina during the day and night. This problem usually occurs after a difficult childbirth, but may also occur after a sexual assault or after pelvic surgery or a severe injury.</p>
-            <p>Do you currently experience a constant leakage of urine or stool from your vagina during the day and night?</p>
-  - name: CGIN80.Z_FI2
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI2. Have you ever experienced this problem?</p>
-  - name: CGIN80.Z_FI3
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI3. Have you ever heard of this problem?</p>
-  - name: CGIN80.Z_FI4
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI4. Did this problem start after you delivered a baby or had a stillbirth?</p>
-  - name: CGIN80.Z_FI5
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI5. Did this problem start after a normal labor and delivery, or after a very difficult labor and delivery?</p>
-  - name: CGIN80.Z_FI6
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI6. What do you think caused this problem?</p>
-  - name: CGIN80.Z_FI7
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI7. How many days after ~~textstr1~~ did the leakage start?</p>
-  - name: CGIN80.Z_FI8
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI8. Have you sought treatment for this condition?</p>
-  - name: CGIN80.Z_FI9
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI9. Why have you not sought treatment?</p>
-            <p><span class="instruction">PROBE AND RECORD ALL MENTIONED.</p>
-  - name: CGIN80.Z_FI10
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI10. From whom did you last seek treatment?</p>
-  - name: CGIN80.Z_FI11
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI11. Did you have an operation to fix the problem?</p>
-  - name: CGIN80.Z_FI12
-    conditions:
-      - questionText:
-          EN: |
-            <p>Z_FI12. Did the treatment stop the leakage completely?</p>
-            <p><span class="instruction">IF NO:</span> Did the treatment reduce the leakage?</p>
   - name: CGIN80.AM102
     conditions:
       - questionText:
@@ -6860,9 +5646,1550 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD &quot;OTHER&quot; ANSWER</span></p>
+  - name: ACHD17_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>ACHD17. Have you ever been told by a doctor or other healthcare worker that you have:</p>
   - name: AMCHD17_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>AMCHD17. Have you ever been told by a doctor or other healthcare worker that you have:</p>
+  - name: CGIN80.AMTHPHQ1
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ1. Little interest or pleasure in doing things? Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ2
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ2. Feeling down, depressed or hopeless?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ3
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ3. Trouble falling asleep, staying asleep, or sleeping too much?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ4
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ4. Feeling tired or having little energy?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ5
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ5. Poor appetite or overeating?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ6
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ7
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ7. Trouble concentrating on things, such as reading the newspaper or watching television?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ8
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ8. Moving or speaking so slowly that other people could have noticed. Or, the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.AMTHPHQ9
+    conditions:
+      - questionText:
+          EN: |
+            <p>PHQ9. Thoughts that you would be better off dead or of hurting yourself in some way?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.D509D4
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 4 DAY</span></p>
+  - name: CGIN80.D509IPV
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO IPV DAY</span></p>
+  - name: CGIN80.DV01
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DV01. CHECK FOR PRESENCE OF OTHERS:  DO NOT CONTINUE UNTIL PRIVACY IS ENSURED.</span></p>
+            <p><span class="instruction">IF PRIVACY OBTAINED, READ TO THE RESPONDENT</span></p>
+  - name: CGIN80.DV02
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV02. Now I would like to ask you questions about some other important aspects of a woman's life. You may find some of these questions very personal. However, your answers are crucial for helping to understand the condition of women in [COUNTRY]. Let me assure you that your answers are completely confidential and will not be told to anyone and no one else in your HOUSEHOLD will know that you were asked these questions. If I ask you any question you don't want to answer, just let me know and I will go on to the next question.</p>
+  - name: CGIN80.DV04
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV04. You have said that you are not married and are not living with a man as if married. Are you currently in an intimate relationship with a man even though you are not living with him?</p>
+  - name: CGIN80.DV05
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV05. Have you ever been in an intimate relationship with a man even though you did not ever live with him? </p>
+  - name: CGIN80.DV06A1
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>DV06. Now, I am going to ask you about some situations that can happen between some women and their ~~partype~~. </p>
+            <p>A. Please tell me if these descriptions apply to your relationship with your ~~rellast~~~~partype~~.</p>
+            <p>a) He was jealous or angry if you talked to other men?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>DV06. Now, I am going to ask you about some situations that can happen between some women and their ~~partype~~. </p>
+            <p>A. Please tell me if these descriptions apply to your relationship with your ~~rellast~~~~partype~~.</p>
+            <p>a) He is jealous or angry if you talk to other men?</p>
+  - name: CGIN80.DV06A2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV06B1
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>b) He wrongly accused you of being unfaithful?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>b) He wrongly accuses you of being unfaithful?</p>
+  - name: CGIN80.DV06B2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV06C1
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>c) He did not permit you to meet your female friends?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>c) He does not permit you to meet your female friends?</p>
+  - name: CGIN80.DV06C2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV06D1
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>d) He tried to limit your contact with your family?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>d) He tries to limit your contact with your family?</p>
+  - name: CGIN80.DV06D2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV06E1
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>e) He insisted on knowing where you were at all times?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>e) He insists on knowing where you are at all times?</p>
+  - name: CGIN80.DV06E2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV07A1
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV07. Now I need to ask some more questions about your relationship with your ~~rellast~~~~partype~~.</p>
+            <p>A. Did your ~~rellast~~~~partype~~ ever:</p>
+            <p>a) say or do something to humiliate you in front of others?</p>
+  - name: CGIN80.DV07A2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV07B1
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) threaten to hurt or harm you or someone you care about?</p>
+  - name: CGIN80.DV07B2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV07C1
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) insult you or make you feel bad about yourself?</p>
+  - name: CGIN80.DV07C2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08A1
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV08. Did your ~~rellast~~~~partype~~ ever do any of the following things to you:</p>
+            <p>a) push you, shake you, or throw something at you?</p>
+  - name: CGIN80.DV08A2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08B1
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) slap you?</p>
+  - name: CGIN80.DV08B2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08C1
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) twist your arm or pull your hair?</p>
+  - name: CGIN80.DV08C2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08D1
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) punch you with his fist or with something that could hurt you?</p>
+  - name: CGIN80.DV08D2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08E1
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) kick you, drag you or beat you up?</p>
+  - name: CGIN80.DV08E2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08F1
+    conditions:
+      - questionText:
+          EN: |
+            <p>f) try to choke you or burn you on purpose?</p>
+  - name: CGIN80.DV08F2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08G1
+    conditions:
+      - questionText:
+          EN: |
+            <p>g) attack you with a knife, gun, or any other weapon?</p>
+  - name: CGIN80.DV08G2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08H1
+    conditions:
+      - questionText:
+          EN: |
+            <p>h) physically force you to have sexual intercourse with him even when you did not want to?</p>
+  - name: CGIN80.DV08H2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08I1
+    conditions:
+      - questionText:
+          EN: |
+            <p>i) physically force you to perform any other sexual acts you did not want to?</p>
+  - name: CGIN80.DV08I2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV08J1
+    conditions:
+      - questionText:
+          EN: |
+            <p>j) force you with threats or in any other way to perform sexual acts you did not want to?</p>
+  - name: CGIN80.DV08J2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How often did this happen during the last 12 months: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV10A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) You had cuts, bruises or aches?</p>
+  - name: CGIN80.DV10B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) You had eye injuries, sprains, dislocations, or burns?</p>
+  - name: CGIN80.DV10C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) You had deep wounds, broken bones, broken teeth, or any other serious injury?</p>
+  - name: CGIN80.DV11
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV11. Have you ever hit, slapped, kicked, or done anything else to physically hurt your ~~rellast~~~~partype~~ at times when he was not already beating or physically hurting you?</p>
+  - name: CGIN80.DV12
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV12. In the last 12 months, how often have you done this to your ~~rellast~~~~partype~~: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV13
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>DV13. Did your ~~rellast~~~~partype~~ drink alcohol?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>DV13. Does your ~~rellast~~~~partype~~ drink alcohol?</p>
+  - name: CGIN80.DV14
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>DV14. How often did he get drunk: often, only sometimes, or never?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>DV14. How often does he get drunk: often, only sometimes, or never?</p>
+  - name: CGIN80.DV15
+    conditions:
+      - logic: relprev <> 1
+        questionText:
+          EN: |
+            <p>DV15. Were you afraid of your ~~rellast~~~~partype~~: most of the time, sometimes, or never?</p>
+      - logic: relprev = 1
+        questionText:
+          EN: |
+            <p>DV15. Are you afraid of your ~~rellast~~~~partype~~: most of the time, sometimes, or never?</p>
+  - name: CGIN80.DV16A1
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV16. So far we have been talking about the behavior of your ~~relpast~~ ~~partype~~. Now I want to ask you about the behavior of any previous husband or any other current or previous male partner that you may have ever had.</p>
+            <p>a) Did any previous husband or any other current or previous male partner ever hit, slap, kick, or do anything else to hurt you physically?</p>
+  - name: CGIN80.DV16A2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How long ago did this last happen?</p>
+  - name: CGIN80.DV16B1
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Did any previous husband or any other current or previous male partner physically force you to have intercourse or perform any other sexual acts that you did not want to?</p>
+  - name: CGIN80.DV16B2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How long ago did this last happen?</p>
+  - name: CGIN80.DV16C1
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Did any previous husband or any other current or previous male partner humiliate you in front of others, threaten to hurt you or someone you care about, or insult you or make you feel bad about yourself?</p>
+  - name: CGIN80.DV16C2
+    conditions:
+      - questionText:
+          EN: |
+            <p>How long ago did this last happen?</p>
+  - name: CGIN80.DV18
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV18. How old were you the first time you were forced to have sexual intercourse or perform any other sexual acts that you did not want to by any current or previous husband or male partner?</p>
+  - name: CGIN80.DV20
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV20. Has any one ever hit, slapped, kicked, or done anything else to hurt you physically while you were pregnant?</p>
+  - name: CGIN80.DV21
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV21. Who has done any of these things to physically hurt you while you were pregnant?</p>
+            <p>Anyone else?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.DV22
+    conditions:
+      - logic: DV06A1 <> notappl
+        questionText:
+          EN: |
+            <p>DV22. From the time you were 15 years old, has anyone other than a husband or male partner, hit you, slapped you, kicked you, or done anything else to hurt you physically? Remember, I do not want you to include any husband or any other male partner. </p>
+      - logic: DV06A1 = notappl
+        questionText:
+          EN: |
+            <p>DV22. From the time you were 15 years old has anyone hit you, slapped you, kicked you, or done anything else to hurt you physically?</p>
+  - name: CGIN80.DV23
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV23. Who has hurt you in this way?</p>
+            <p>Anyone else?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.DV24
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV24. In the last 12 months, how often (has this person/have these persons) physically hurt you: often, only sometimes, or not at all?</p>
+  - name: CGIN80.DV26
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV26. At any time in your life, as a child or as an adult, has anyone other than any previous husband or any other current or previous male partner ever forced you in any way to have sexual intercourse or perform any other sexual acts when you did not want to? Remember I do not want you to include any husband or male partner. </p>
+  - name: CGIN80.DV27
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV27. At any time in your life, as a child or as an adult, has anyone ever forced you in any way to have sexual intercourse or perform any other sexual acts when you did not want to?</p>
+  - name: CGIN80.DV28
+    conditions:
+      - logic: DV06A1 <> notappl
+        questionText:
+          EN: |
+            <p>DV28. How old were you the first time you were forced to have sexual intercourse or perform any other sexual acts that you did not want to by anyone, not including any husband or any other male partner? </p>
+      - logic: DV06A1 = notappl
+        questionText:
+          EN: |
+            <p>DV28. How old were you the first time you were forced to have sexual intercourse or perform any other sexual acts that you did not want to?</p>
+  - name: CGIN80.DV29
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV29. Who has forced you to have sexual intercourse or perform any other sexual acts that you did not want to? </p>
+            <p>Anyone else?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.DV30
+    conditions:
+      - logic: DV06A1 <> notappl
+        questionText:
+          EN: |
+            <p>DV30. In the last 12 months, has anyone other than any previous husband or any other current or previous male partner forced you to have sexual intercourse or perform any other sexual acts that you did not want to?</p>
+      - logic: DV06A1 = notappl
+        questionText:
+          EN: |
+            <p>DV30. In the last 12 months, has anyone forced you to have sexual intercourse or perform any other sexual acts that you did not want to?</p>
+  - name: CGIN80.DV32
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV32. Thinking about what you yourself have experienced among the different things we have been talking about, have you ever tried to seek help?</p>
+  - name: CGIN80.DV33
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV33. From whom have you sought help?</p>
+            <p>Anyone else?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.DV34
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV34. Have you ever told any one else about this?</p>
+  - name: CGIN80.DV35
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV35. As far as you know, did your father ever beat your mother?</p>
+  - name: CGIN80.DV36A
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">a) HUSBAND</span></p>
+  - name: CGIN80.DV36B
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">b) OTHER MALE ADULT</span></p>
+  - name: CGIN80.DV36C
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">c) FEMALE ADULT</span></p>
+  - name: CGIN80.DV37
+    conditions:
+      - logic: DV01 <> 1
+        questionText:
+          EN: |
+            <p><span class="instruction">DV37. A window will be displayed to provide an explanation as to why the Domestic Violence Module was not completed.</span></p>
+            <p><span class="instruction">Press enter to continue</span></p>
+      - logic: DV01 = 1
+        questionText:
+          EN: |
+            <p><span class="instruction">DV37. A window will be displayed to enter comments you may have while completing the Domestic Violence Module.</span></p>
+            <p><span class="instruction">Press enter to continue</span></p>
+  - name: CGIN80.DVFIN
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">THANK THE RESPONDENT FOR HER COOPERATION AND REASSURE HER ABOUT THE CONFIDENTIALITY OF HER ANSWERS. FILL OUT THE QUESTIONS BELOW WITH REFERENCE TO THE DOMESTIC VIOLENCE MODULE ONLY.</span></p>
+            <p><span class="instruction">Press enter to continue</span></p>
+  - name: CGIN80.GC01
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC01. Now I would like to ask some questions about a practice known as female circumcision. Have you ever heard of female circumcision?</p>
+  - name: CGIN80.GC02
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC02. In some countries, there is a practice in which a girl may have part of her genitals cut. Have you ever heard about this practice?</p>
+  - name: CGIN80.GC03
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC03. Have you yourself ever been circumcised?</p>
+  - name: CGIN80.GC04
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC04. Now I would like to ask you what was done to you at that time.  Was any flesh removed from the genital area?</p>
+  - name: CGIN80.GC05
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC05. Was the genital area just nicked without removing any flesh?</p>
+  - name: CGIN80.GC06
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC06. Was your genital area sewn closed?</p>
+  - name: CGIN80.GC07
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC07. How old were you when you were circumcised?</p>
+            <p><span class="instruction">IF THE RESPONDENT DOES NOT KNOW THE EXACT AGE, PROBE TO GET AN ESTIMATE.</span></p>
+  - name: CGIN80.GC08
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC08. Who performed the circumcision?</p>
+  - name: CGIN80.GC10
+    conditions:
+      - logic: daughter = 1
+        questionText:
+          EN: |
+            <p>GC10. Now I would like to ask you some questions about your daughter.</p>
+      - logic: daughter > 1
+        questionText:
+          EN: |
+            <p>GC10. Now I would like to ask you some questions about your daughters.</p>
+  - name: CGIN80.GC12
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC12. Is ~~GC11N~~ circumcised?</p>
+  - name: CGIN80.GC13
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC13. How old was ~~GC11N~~ when she was circumcised?</p>
+            <p><span class="instruction">IF THE RESPONDENT DOES NOT KNOW THE AGE, PROBE TO GET AN ESTIMATE.</span></p>
+  - name: CGIN80.GC14
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC14. Was her genital area sewn closed?</p>
+  - name: CGIN80.GC15
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC15. Who performed the circumcision?</p>
+  - name: CGIN80.GC17
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC17. Do you believe that female circumcision is required by your religion?</p>
+  - name: CGIN80.GC18
+    conditions:
+      - questionText:
+          EN: |
+            <p>GC18. Do you think that female circumcision should be continued, or should it be stopped?</p>
+  - name: CGIN80.M509D4
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 4 MONTH</span></p>
+  - name: CGIN80.M509IPV
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO IPV MONTH</span></p>
+  - name: CGIN80.QECDB_INTRO
+    conditions:
+      - questionText:
+          EN: |
+            <p>I would like to ask you some questions about your children age 2-4 years who live with you. These questions are about certain things that they are currently able to do. Please keep in mind that children can develop and learn at a different pace. For example, some start talking earlier than others, or they might already say some words but not yet form sentences. So, it is fine if your child is not able to do all the things I am going to ask you about. You can let me know if you have any doubts about what answer to give.</p>
+            <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
+  - name: CGIN80.Y509D4
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DPT 4 YEAR</span></p>
+  - name: CGIN80.Y509IPV
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">POLIO IPV YEAR</span></p>
+  - name: CGIN80.Z_310
+    conditions:
+      - questionText:
+          EN: |
+            <p>310. What is the brand name of the pills you are using?</p>
+            <p><span class="instruction">IF DON'T KNOW THE BRAND, ASK TO SEE THE PACKAGE.</span></p>
+  - name: CGIN80.Z_311
+    conditions:
+      - questionText:
+          EN: |
+            <p>311. What is the brand name of the condoms you are using?</p>
+            <p><span class="instruction">IF DON'T KNOW THE BRAND, ASK TO SEE THE PACKAGE.</span></p>
+  - name: CGIN80.Z_430
+    conditions:
+      - questionText:
+          EN: |
+            <p>430. During this pregnancy, did you receive food or cash assistance through the [INSERT NAME OF PROGRAM FOR CASH OR FOOD ASSISTANCE FOR PREGNANT WOMEN] program?</p>
+  - name: CGIN80.Z_CH2
+    conditions:
+      - questionText:
+          EN: |
+            <p>CH2. Was chlorhexidine applied to the cord at any time?</p>
+  - name: CGIN80.Z_CH3N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class=instruction">RECORD NUMBER.</span></p>
+  - name: CGIN80.Z_CH3U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class=instruction">RECORD UNITS.</span></p>
+  - name: CGIN80.Z_CH4
+    conditions:
+      - questionText:
+          EN: |
+            <p>CH4. For how many days was chlorhexidine applied to the cord?</p>
+  - name: CGIN80.Z_CHD01
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD01. Have you ever had your blood pressure measured by a doctor or other healthcare worker?</p>
+  - name: CGIN80.Z_CHD02
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD02. Have you ever been told by a doctor or other healthcare worker that you have high blood pressure or hypertension?</p>
+  - name: CGIN80.Z_CHD03
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD03. In the past 12 months, have you been told by a doctor or other healthcare worker that you have high blood pressure or hypertension?</p>
+  - name: CGIN80.Z_CHD04
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD04. Has a doctor or other healthcare worker prescribed medication to control your blood pressure?</p>
+  - name: CGIN80.Z_CHD05
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD05. Are you taking medication to control your blood pressure?</p>
+  - name: CGIN80.Z_CHD06
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD06. Have you ever had your blood sugar measured by a doctor or other healthcare worker?</p>
+  - name: CGIN80.Z_CHD07
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD07. Have you ever been told by a doctor or other healthcare worker that you have high blood sugar or diabetes?</p>
+  - name: CGIN80.Z_CHD08
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD08. In the past 12 months, have you been told by a doctor or other healthcare worker that you have high blood sugar or diabetes?</p>
+  - name: CGIN80.Z_CHD09
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD09. Has a doctor or other healthcare worker prescribed medication to control your high blood sugar or diabetes?</p>
+  - name: CGIN80.Z_CHD10
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD10. Are you taking medication to control your high blood sugar or diabetes?</p>
+  - name: CGIN80.Z_CHD11
+    conditions:
+      - questionText:
+          EN: |
+            Z_CHD11. Have you ever been told by a doctor or other healthcare worker that you have heart disease or a chronic heart condition?</p>
+  - name: CGIN80.Z_CHD12
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD12. Are you receiving any treatment for your heart disease or chronic heart condition?</p>
+  - name: CGIN80.Z_CHD13
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD13. Have you ever been told by a doctor or other healthcare worker that you have lung disease or a chronic lung condition?</p>
+  - name: CGIN80.Z_CHD14
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD14. Are you receiving any treatment for your lung disease or chronic lung condition?</p>
+  - name: CGIN80.Z_CHD15
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD15. Have you ever been told by a doctor or other healthcare worker that you have cancer or a tumor?</p>
+  - name: CGIN80.Z_CHD16
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD16. Are you receiving any treatment for cancer or a tumor?</p>
+  - name: CGIN80.Z_CHD17A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Depression?</p>
+  - name: CGIN80.Z_CHD17B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Anxiety?</p>
+  - name: CGIN80.Z_CHD19
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD19. Are you receiving any treatment for depression or anxiety?</p>
+  - name: CGIN80.Z_CHD20
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD20. Have you ever been told by a doctor or other healthcare worker that you have arthritis?</p>
+  - name: CGIN80.Z_CHD21
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD21. Are you receiving any treatment for arthritis?</p>
+  - name: CGIN80.Z_CHD22
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD22. Have you ever been told by a doctor or other healthcare worker that you have any other chronic disease, that is, any other disease that is long lasting?</p>
+  - name: CGIN80.Z_CHD23
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD23. Are you receiving any treatment for (CHRONIC DISEASE FROM CD22)?</p>
+  - name: CGIN80.Z_CHD24
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD24. Have you heard of cervical cancer?</p>
+  - name: CGIN80.Z_CHD25
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD25. Have you heard of any test for cervical cancer?</p>
+  - name: CGIN80.Z_CHD27
+    conditions:
+      - questionText:
+          EN: |
+            <p>ACHD26. Now I’m going to ask you about tests a healthcare worker can do to check for cervical cancer, which is cancer in the cervix. The cervix connects the womb to the vagina. To be checked for cervical cancer, a woman is asked to lie on her back with her legs apart. Then the healthcare worker will use a brush or swab to collect a sample from inside her. The sample is sent to a laboratory for testing. This test is called a Pap smear or HPV test. Another method is called a VIA or Visual Inspection with Acetic Acid. In this test, the healthcare worker puts vinegar on the cervix to see if there is a reaction.</p><p>Z_CHD27. Has a doctor or other healthcare worker ever tested you for cervical cancer?<br></p></p></p></p>
+  - name: CGIN80.Z_CHD28
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD28. When was your last test for cervical cancer?</p>
+  - name: CGIN80.Z_CHD29
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD29. What was the result of your last test for cervical cancer?</p>
+  - name: CGIN80.Z_CHD30
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD30. Did you receive any treatment to your cervix?</p>
+  - name: CGIN80.Z_CHD31
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD31. Did you receive treatment on the same day you received your test results, or on a different day?</p>
+  - name: CGIN80.Z_CHD32
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD32. Did you have any follow up visits after your treatment? </p>
+  - name: CGIN80.Z_CHD33
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_CHD33. Did have any follow up visits because of your test results?</p>
+  - name: CGIN80.Z_ECD1
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD1. Can ~~Z_ECDCN~~ walk on an uneven surface, for example, a bumpy or steep road, without falling?</p>
+  - name: CGIN80.Z_ECD10
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD10. Can ~~Z_ECDCN~~ recognize at least 5 letters of the alphabet?</p>
+  - name: CGIN80.Z_ECD11
+    conditions:
+      - logic: Q219(Z_ECDCA) = 1
+        questionText:
+          EN: |
+            <p>ECD11. Can ~~Z_ECDCN~~ write his name?</p>
+      - logic: Q219(Z_ECDCA) = 2
+        questionText:
+          EN: |
+            <p>ECD11. Can ~~Z_ECDCN~~ write her name?</p>
+  - name: CGIN80.Z_ECD12
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD12. Can ~~Z_ECDCN~~ recognize all numbers from 1 to 5?</p>
+  - name: CGIN80.Z_ECD13
+    conditions:
+      - logic: Q219(Z_ECDCA) = 1
+        questionText:
+          EN: |
+            <p>ECD13. If you ask ~~Z_ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does he give you the correct amount?</p>
+      - logic: Q219(Z_ECDCA) = 2
+        questionText:
+          EN: |
+            <p>ECD13. If you ask ~~Z_ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does she give you the correct amount?</p>
+  - name: CGIN80.Z_ECD14
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD14. Can ~~Z_ECDCN~~ count 10 objects, for example, 10 fingers or 10 blocks, without mistakes?</p>
+  - name: CGIN80.Z_ECD15
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD15. Can ~~Z_ECDCN~~ do an activity, such as coloring or playing with building blocks, without repeatedly asking for help or giving up too quickly?</p>
+  - name: CGIN80.Z_ECD16
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD16. Does ~~Z_ECDCN~~ ask about familiar people other than parents when they are not there, for example, "Where is Grandma?"?</p>
+  - name: CGIN80.Z_ECD17
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD17. Does ~~Z_ECDCN~~ offer to help someone who seems to need help?</p>
+  - name: CGIN80.Z_ECD18
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD18. Does ~~Z_ECDCN~~ get along well with other children?</p>
+  - name: CGIN80.Z_ECD19
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD19. How often does ~~Z_ECDCN~~ seem to be very sad or depressed? Would you say: daily, weekly, monthly, a few times a year, or never?</p>
+  - name: CGIN80.Z_ECD2
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD2. Can ~~Z_ECDCN~~ jump up with both feet leaving the ground?</p>
+  - name: CGIN80.Z_ECD20
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD20. Compared with other children of the same age, how much does ~~Z_ECDCN~~ kick, bite, or hit other children or adults? Would you say: not at all, the same or less, more, or a lot more?</p>
+  - name: CGIN80.Z_ECD3
+    conditions:
+      - logic: Q219(Z_ECDCA) = 1
+        questionText:
+          EN: |
+            <p>ECD3. Can ~~Z_ECDCN~~ dress himself, that is, put on pants and a shirt, without help?</p>
+      - logic: Q219(Z_ECDCA) = 2
+        questionText:
+          EN: |
+            <p>ECD3. Can ~~Z_ECDCN~~ dress herself, that is, put on pants and a shirt, without help?</p>
+  - name: CGIN80.Z_ECD4
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD4. Can ~~Z_ECDCN~~ fasten and unfasten buttons without help?</p>
+  - name: CGIN80.Z_ECD5
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD5. Can ~~Z_ECDCN~~ say 10 or more words, like 'mama' or 'ball'?</p>
+  - name: CGIN80.Z_ECD6
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD6. Can ~~Z_ECDCN~~ speak using sentences of 3 or more words that go together, for example, "I want water" or "The house is big"?</p>
+  - name: CGIN80.Z_ECD7
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD7. Can ~~Z_ECDCN~~ speak using sentences of 5 or more words that go together, for example, "The house is very big"?</p>
+  - name: CGIN80.Z_ECD8
+    conditions:
+      - questionText:
+          EN: |
+            <p>ECD8. Can ~~Z_ECDCN~~ correctly use any of the words 'I', 'you', 'she', or 'he', for example, "I want water" or "He eats rice"?</p>
+  - name: CGIN80.Z_ECD9
+    conditions:
+      - logic: Q219(Z_ECDCA) = 1
+        questionText:
+          EN: |
+            <p>ECD9. If you show ~~Z_ECDCN~~ an object he knows well, such as a cup or animal, can he consistently name it? By consistently, we mean that he uses the same word to refer to the same object, even if the word used is not fully correct.</p>
+      - logic: Q219(Z_ECDCA) = 2
+        questionText:
+          EN: |
+            <p>ECD9. If you show ~~Z_ECDCN~~ an object she knows well, such as a cup or animal, can she consistently name it? By consistently, we mean that she uses the same word to refer to the same object, even if the word used is not fully correct.</p>
+  - name: CGIN80.Z_FI1
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI1. Sometimes a woman can have a problem of constant leakage of urine or stool from her vagina during the day and night. This problem usually occurs after a difficult childbirth, but may also occur after a sexual assault or after pelvic surgery or a severe injury.</p>
+            <p>Do you currently experience a constant leakage of urine or stool from your vagina during the day and night?</p>
+  - name: CGIN80.Z_FI10
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI10. From whom did you last seek treatment?</p>
+  - name: CGIN80.Z_FI11
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI11. Did you have an operation to fix the problem?</p>
+  - name: CGIN80.Z_FI12
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI12. Did the treatment stop the leakage completely?</p>
+            <p><span class="instruction">IF NO:</span> Did the treatment reduce the leakage?</p>
+  - name: CGIN80.Z_FI2
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI2. Have you ever experienced this problem?</p>
+  - name: CGIN80.Z_FI3
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI3. Have you ever heard of this problem?</p>
+  - name: CGIN80.Z_FI4
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI4. Did this problem start after you delivered a baby or had a stillbirth?</p>
+  - name: CGIN80.Z_FI5
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI5. Did this problem start after a normal labor and delivery, or after a very difficult labor and delivery?</p>
+  - name: CGIN80.Z_FI6
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI6. What do you think caused this problem?</p>
+  - name: CGIN80.Z_FI7
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI7. How many days after ~~textstr1~~ did the leakage start?</p>
+  - name: CGIN80.Z_FI8
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI8. Have you sought treatment for this condition?</p>
+  - name: CGIN80.Z_FI9
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_FI9. Why have you not sought treatment?</p>
+            <p><span class="instruction">PROBE AND RECORD ALL MENTIONED.</p>
+  - name: CGIN80.Z_MH1
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH1. During (any of) your antenatal care visit(s), were you told by a healthcare provider about danger signs that might indicate problems with the pregnancy?</p>
+  - name: CGIN80.Z_MH10
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH10. During delivery, did you want to have someone in addition to the staff at the health facility stay with you?</p>
+  - name: CGIN80.Z_MH11
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH11. During delivery, was the person you wanted with you?</p>
+  - name: CGIN80.Z_MH12
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH12. During delivery, how much of the time was this person allowed to stay with you: some of the time, most of the time, or all of the time?</p>
+  - name: CGIN80.Z_MH13
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH13. Why was that person not with you during delivery? </p>
+  - name: CGIN80.Z_MH14
+    conditions:
+      - logic: Q405 = 1
+        questionText:
+          EN: |
+            <p>MH14. When ~~Q407~~ was born, was an instrument used to help pull the baby out, such as forceps or vacuum suction?</p>
+      - logic: Q405 = 3
+        questionText:
+          EN: |
+            <p>MH14. For this stillbirth, was an instrument used to help pull the baby out, such as forceps or vacuum?</p>
+  - name: CGIN80.Z_MH15
+    conditions:
+      - logic: Q405 = 1
+        questionText:
+          EN: |
+            <p>MH15. When you were in labor with or giving birth to ~~Q407~~, did you ever feel like you were being ignored or neglected by health facility staff?</p>
+      - logic: Q405 = 3
+        questionText:
+          EN: |
+            <p>MH15. During labor or delivery for this stillbirth, did you ever feel like you were being ignored or neglected by health facility staff?</p>
+  - name: CGIN80.Z_MH16
+    conditions:
+      - logic: Q405 = 1
+        questionText:
+          EN: |
+            <p>MH16. When you were in labor with or giving birth to ~~Q407~~, did you have privacy, for example, were you surrounded by curtains, or did you have a separate room?</p>
+      - logic: Q405 = 3
+        questionText:
+          EN: |
+            <p>MH16. During labor or delivery for this stillbirth, did you have privacy, for example, were you surrounded by curtains, or did you have a separate room?</p>
+  - name: CGIN80.Z_MH17A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Treat you with respect?</p>
+  - name: CGIN80.Z_MH17B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Explain to you why they were doing examinations or procedures on you?</p>
+  - name: CGIN80.Z_MH17C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Take the best care of you?</p>
+  - name: CGIN80.Z_MH18A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Share a bed with another patient? </p>
+  - name: CGIN80.Z_MH18B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Rest or sleep on the floor without any mattress?</p>
+  - name: CGIN80.Z_MH19
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH19. At any time during your stay in the health facility, were you denied medical services due to a lack of money?</p>
+  - name: CGIN80.Z_MH2
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH2. Were you told by a healthcare provider where to go if you experienced danger signs of serious health problems during the pregnancy?</p>
+  - name: CGIN80.Z_MH20
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH20. Were you delayed or prevented from leaving the health facility due to lack of payment?</p>
+  - name: CGIN80.Z_MH21A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Slap you?</p>
+  - name: CGIN80.Z_MH21B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Hit or punch you?</p>
+  - name: CGIN80.Z_MH21C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Physically threaten you?</p>
+  - name: CGIN80.Z_MH21D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Physically mistreat or harm you in any other way?</p>
+  - name: CGIN80.Z_MH22A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Shout at you?</p>
+  - name: CGIN80.Z_MH22B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Say or do something to humiliate you?</p>
+  - name: CGIN80.Z_MH22C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Verbally threaten you?</p>
+  - name: CGIN80.Z_MH22D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Verbally mistreat you in any other way?</p>
+  - name: CGIN80.Z_MH23
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH23. Did the health facility have a toilet or latrine for patients?</p>
+  - name: CGIN80.Z_MH24
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH24. Was there any time when you wanted to use the toilet or latrine, but it was not working?</p>
+  - name: CGIN80.Z_MH25
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH25. In the first two days after ~~Q407~~’s) birth, where did ~~Q407~~ stay most of the time during the day and at night, in the same room with you or in a separate room?</p>
+  - name: CGIN80.Z_MH3A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Where you planned to deliver your baby?</p>
+  - name: CGIN80.Z_MH3B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) If you wanted to have a relative, friend or neighbor with you during labor or delivery?</p>
+  - name: CGIN80.Z_MH3C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Transportation to where the baby would be born?</p>
+  - name: CGIN80.Z_MH3D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) What funds or finances you would use for the delivery?</p>
+  - name: CGIN80.Z_MH3E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Asking someone to be a blood donor if you needed blood?</p>
+  - name: CGIN80.Z_MH3F
+    conditions:
+      - questionText:
+          EN: |
+            <p>f) Finding a healthcare provider to deliver your child?</p>
+  - name: CGIN80.Z_MH5
+    conditions:
+      - logic: Q405 = 1
+        questionText:
+          EN: |
+            <p>MH5. Did a healthcare provider measure your blood pressure in the health facility before you gave birth to ~~Q407~~?</p>
+      - logic: Q405 = 3
+        questionText:
+          EN: |
+            <p>MH5. Did a healthcare provider measure your blood pressure in the health facility before you gave birth?</p>
+  - name: CGIN80.Z_MH6
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH6. Some women prefer to have someone in addition to the health facility staff, such as their husband, another relative or a friend, stay with them during labor or delivery.</p><p>While you were in labor, did you want to have someone in addition to the staff at the health facility stay with you?</p>
+  - name: CGIN80.Z_MH7
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH7. While you were in labor, was the person you wanted with you?</p>
+  - name: CGIN80.Z_MH8
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH8. While you were in labor, how much of the time was this person allowed to stay with you: some of the time, most of the time, or all of the time?</p>
+  - name: CGIN80.Z_MH9
+    conditions:
+      - questionText:
+          EN: |
+            <p>MH9. Why was that person not with you during labor?</p>
+  - name: CGIN80.Z_ML501
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML501. In the last six months, have you seen or heard any messages about malaria?</p>
+  - name: CGIN80.Z_ML502
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML502. Where did you see or hear these messages?</p>
+            <p><span class="instruction">PROBE:</span> Anywhere else?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.Z_ML503
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML503. Are there ways to avoid getting malaria?</p>
+  - name: CGIN80.Z_ML504
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML504. What are the things that people can do to prevent themselves from getting malaria?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.Z_ML505
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML505. Now I am going to read some statements and I would like you to tell me whether you agree or disagree with each statement. If you don't know, say, don't know.</p>
+            <p>People in this community only get malaria during the rainy season. Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML506
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML506. When a child has a fever, you almost always worry it might be malaria.</p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML507
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML507. Getting malaria is not a problem because it can be easily treated.</p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML508
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML508. Only weak children can die from malaria.</p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML509
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML509. You can sleep under a mosquito net for the entire night when there are lots of mosquitoes. </p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML510
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML510. You can sleep under a mosquito net for the entire night when there are few mosquitoes</p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML511
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML511. You do not like sleeping under a mosquito net when the weather is too warm.</p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML512
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML512. When a child has a fever, it is best to start by giving them any medicine you have at home.</p>
+            <p>Do you agree or disagree?</p>
+  - name: CGIN80.Z_ML513
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML513. People in your community usually take their children to a health care provider on the same day or day after they develop a fever.</p>
+            <p>Do you agree or disagree?</p>
+            <p><span class="instruction">IF RESPONDENT DOESN'T KNOW, PROBE:</span> Would you say more than half or less than half of the community does this?</p>
+  - name: CGIN80.Z_ML514
+    conditions:
+      - questionText:
+          EN: |
+            <p>ML514. People in your community who have a mosquito net usually sleep under a mosquito net every night.</p>
+            <p>Do you agree or disagree?</p>
+            <p><span class="instruction">IF RESPONDENT DOESN'T KNOW, PROBE:</span> Would you say more than half or less than half of the community does this?</p>
+  - name: CGIN80.Z_MM00
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">ADULT AND MATERNAL MORTALITY MODULE</span></p>
+            <p><span class="instruction">PRESS ENTER OR ADVANCE TO CONTINUE</span></p>
+  - name: CGIN80.Z_MM01
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM01. Please tell me, which brother or sister was born first? And which was born next?</p>
+            <p><span class="instruction">RECORD '01' FOR THE ORDER NUMBER FOR THE FIRST BROTHER OR SISTER, '02' FOR THE SECOND, AND SO ON UNTIL YOU HAVE RECORDED THE ORDER NUMBER FOR ALL BROTHERS AND SISTERS.</span></p>
+  - name: CGIN80.Z_MM01N
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM01. Now I would like to ask you some questions about your brothers and sisters born to your natural mother, including those who are living with you, those living elsewhere and those who have died. From our experience in prior surveys, we know it may sometimes be difficult to establish a complete list of all the children born to your natural mother. We will work together to draw the most complete list and work to recall all your siblings. Could you please now give me the names of all of your brothers and sisters born to your natural mother.</p>
+            <p><span class="instruction">IF RESPONDENT DOESN'T HAVE ANY BROTHERS OR SISTERS PRESS FORWARD BUTTON TO CONTINUE.</span></p>
+            <p><span class="instruction">DO NOT FILL IN THE ORDER NUMBER YET.</span></p>
+  - name: CGIN80.Z_MM03
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">Z_MM03. READ THE NAMES OF THE BROTHERS AND SISTERS TO THE RESPONDENT AND AFTER THE LAST ONE ASK:</span></p>
+            <p>Are there any other brothers and sisters from the same mother that you have not mentioned?</p>
+  - name: CGIN80.Z_MM04
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM04. Sometimes people forget to mention children born to their natural mother because they do not live with them or they do not see them very often. Are there any brothers or sisters who do not live with you that you have not mentioned?</p>
+  - name: CGIN80.Z_MM05
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM05. Sometimes people forget to mention children born to their natural mother because they have died. Are there any brothers or sisters who died that you have not mentioned?</p>
+  - name: CGIN80.Z_MM06
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM06. Some people have brothers or sisters from the same mother but a different father. Are there any brothers or sisters born to your natural mother, but who have a different natural father, that you have not mentioned?</p>
+  - name: CGIN80.Z_MM08
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM08. Just to make sure that I have this right: Your mother had in total ~~Z_MM07~~ births, excluding you, during her lifetime. Is that correct?</p>
+  - name: CGIN80.Z_MM10
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM10. Please tell me, which brother or sister was born first? And which was born next?</p>
+            <p><span class="instruction">RECORD '01' FOR THE ORDER NUMBER IN MM01 FOR THE FIRST BROTHER OR SISTER, '02' FOR THE SECOND, AND SO ON UNTIL YOU HAVE RECORDED THE ORDER NUMBER FOR ALL BROTHERS AND SISTERS.</span></p>
+  - name: CGIN80.Z_MM11
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM11. How many births did your mother have before you were born?</p>
+  - name: CGIN80.Z_MM14
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM14. Is ~~Z_MM13N~~ male or female?</p>
+  - name: CGIN80.Z_MM15
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM15. Is ~~Z_MM13N~~ still alive?</p>
+  - name: CGIN80.Z_MM16
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM16. How old is ~~Z_MM13N~~?</p>
+  - name: CGIN80.Z_MM17
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM17. How many years ago did ~~Z_MM13N~~ die?</p>
+  - name: CGIN80.Z_MM18
+    conditions:
+      - logic: Z_MM14 = 1
+        questionText:
+          EN: |
+            <p>Z_MM18. How old was ~~Z_MM13N~~ when he died?</p>
+            <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
+      - logic: Z_MM14 = 2
+        questionText:
+          EN: |
+            <p>Z_MM18. How old was ~~Z_MM13N~~ when she died?</p>
+            <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
+  - name: CGIN80.Z_MM19
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM19. Was ~~Z_MM13N~~ pregnant when she died?</p>
+  - name: CGIN80.Z_MM20
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM20. Did ~~Z_MM13N~~ die during childbirth?</p>
+  - name: CGIN80.Z_MM21
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM21. Did ~~Z_MM13N~~ die within two months after the end of a pregnancy or childbirth?</p>
+  - name: CGIN80.Z_MM22
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM22. How many days after the end of the pregnancy did ~~Z_MM13N~~ die?</p>
+  - name: CGIN80.Z_MM23
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM23. Was ~~Z_MM13N~~'s death due to an act of violence?</p>
+  - name: CGIN80.Z_MM24
+    conditions:
+      - questionText:
+          EN: |
+            <p>Z_MM24. Was ~~Z_MM13N~~'s death due to an accident?</p>
+  - name: CGIN80.Z_MMMORE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Any more brothers or sisters?</p>
+  - name: CGIN80.Z_MTH0
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH0. Now I will ask you a few questions on how you have felt or behaved in the last 2 weeks. You may find some of these questions very personal. Let me assure you that your answers are completely confidential and will not be told to anyone. If I ask you any question you don't want to answer, just let me know and I will go on to the next question.</span></p>
+            <p><span class="instruction">Press enter to continue</span></p>
+  - name: CGIN80.Z_MTH2
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH2. Thinking about what you yourself have experienced among the different things we have been talking about, have you ever tried to seek help?</p>
+  - name: CGIN80.Z_MTH3
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH3. From whom have you sought help?</p>
+            <p>Anyone else?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+  - name: CGIN80.Z_MTH4A
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH4A. Depression?</p>
+  - name: CGIN80.Z_MTH4B
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH4B. Anxiety?</p>
+  - name: CGIN80.Z_MTH5
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH5. During the last 2 weeks, did you take medicine prescribed by a doctor or other healthcare worker for depression or anxiety?</p>
+  - name: CGIN80.Z_MTH8
+    conditions:
+      - questionText:
+          EN: |
+            <p>MTH8. Thank you for answering this series of questions. Based on the information you shared with me about your recent experiences, you may benefit from services provided by [NAME OF AGENCY].</p>
+            <p><span class="red">PROVIDE RESPONDENT WITH REFERRAL CARD.</span> This card provides [NAME OF AGENCY]'s contact information.</p>
+            <p><span class="instruction">Press enter to continue</span></p>
+  - name: CGIN80.Z_MTHGAD1
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD1. Feeling nervous, anxious or on edge?<br>Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.Z_MTHGAD2
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD2. Not being able to stop or control worrying?</span></p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.Z_MTHGAD3
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD3. Worrying too much about different things?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?﻿</p>
+  - name: CGIN80.Z_MTHGAD4
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD4. Trouble relaxing?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.Z_MTHGAD5
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD5. Being so restless that it is hard to sit still?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.Z_MTHGAD6
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD6. Becoming easily annoyed or irritable?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.Z_MTHGAD7
+    conditions:
+      - questionText:
+          EN: |
+            <p>GAD7. Feeling afraid as if something awful might happen?</p>
+            <p><span class="instruction">IF NECESSARY ASK:</span> Would you say never, rarely, often, or always?</p>
+  - name: CGIN80.Z_NB1N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER.</span></p>
+  - name: CGIN80.Z_NB1U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD UNITS.</span></p>
+  - name: CGIN80.Z_NB3
+    conditions:
+      - questionText:
+          EN: |
+            <p>NB3. What was used to cut the cord?</p>
+  - name: CGIN80.Z_NB4
+    conditions:
+      - questionText:
+          EN: |
+            <p>NB4. Was it new or had it ever been used before?</p>
+  - name: CGIN80.Z_NB5
+    conditions:
+      - questionText:
+          EN: |
+            <p>NB5. Was it boiled before it was used to cut the cord?</p>
+  - name: CGIN80.Z_NB6
+    conditions:
+      - questionText:
+          EN: |
+            <p>NB6. From the time the cord was cut till it fell off, was anything applied to the cord?</p>
+  - name: CGIN80.Z_NB7
+    conditions:
+      - questionText:
+          EN: |
+            <p>NB7. What was applied?</p>
+            <p>Anything else?</p>
 ...

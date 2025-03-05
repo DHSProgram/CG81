@@ -1,4 +1,4 @@
-﻿  FILE      filedups;                      { to read result of duplicates for HOUSEHOLDs, individuals and biomarkers }
+﻿  FILE      filedups;                      { to read result of duplicates for HOUSEHOLDs, INDIVIDUALs and biomarkers }
   
   array string TeamShare(20,3);            { use to select team members to transfer data }
   
@@ -58,7 +58,7 @@
     // looks for duplicate cases in hh or ind files across list of folders
     // parms: wdir -list of folders to check
     //        str_cluster - cluster number to check, use * for all clusters
-    //        checktype - 1 : hh 2: individual
+    //        checktype - 1 : hh 2: INDIVIDUAL
     //        autodelete : if set to 1 function will delete 1st dup case in pair and not display msgs
     //                      use this flag when running fct tables from reeive
     FILE DUPREPORT;
@@ -108,7 +108,7 @@
         if checktype = 1 then
           DUPREPORT.write(maketext("HOUSEHOLD %4s is duplicated\n", caseidlist(ctr)[5:4]));
         else
-          DUPREPORT.write( maketext("Individual line %s in HOUSEHOLD %04s is duplicated\n", caseidlist(ctr)[9:2], caseidlist(ctr)[5:4]) );
+          DUPREPORT.write( maketext("INDIVIDUAL line %s in HOUSEHOLD %04s is duplicated\n", caseidlist(ctr)[9:2], caseidlist(ctr)[5:4]) );
         endif;
         do fctr = 1 while fctr <= fileListing.length()
           if checktype = 1 then
@@ -130,12 +130,12 @@
             SetFile(CGIN80, fileListing(fctr), update);
             if loadcase(CGIN80, caseidlist(ctr) ) then
               // if ckpartial(caseidlist(ctr), fileListing(fctr)) then
-              if partialcs( 2, ACLUSTER, ANUMBER, ALINE, fileListing(fctr)  ) then
+              if partialcs( 2, QCLUSTER, QNUMBER, QLINE, fileListing(fctr)  ) then
                 partialcase = "-Partial case"
               else
                 partialcase = ""
               endif;
-              DUPREPORT.write( maketext("Case created by RA %4d, %s Auestionaire, %s, Result =%s (%1d) %s\n File:%s\n", AINTNUM, GetLabel(AQTYPE, AQTYPE), strip( ANAME ), getlabel(ARESULT, ARESULT), ARESULT, partialcase, fileListing(fctr)) );
+              DUPREPORT.write( maketext("Case created by RA %4d, %s Auestionaire, %s, Result =%s (%1d) %s\n File:%s\n", QINTNUM, GetLabel(QQTYPE, QQTYPE), strip( QNAME ), getlabel(QRESULT, QRESULT), QRESULT, partialcase, fileListing(fctr)) );
               if autodelete then
                 dres = delcase(CGIN80, caseidlist(ctr));
                 // errmsg("dres=%d, fname=%s, case=%s", dres, fileListing(fctr), caseidlist(ctr));

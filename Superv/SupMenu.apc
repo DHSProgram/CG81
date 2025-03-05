@@ -1239,13 +1239,13 @@ PROC GLOBAL
       if !FindDups( dirstocheck, xcluster, 2) then
         setfile(CGIN80, fname );
         header = maketext (tr("Select an individual to interview from HOUSEHOLD %04d"), hhtoget);
-        if selcase(header, CGIN80, "", 15) include(ANUMBER, ALINE, ANAME, ARESULT, AINTNUM) where ANUMBER = hhtoget then
-          xcase  = edit("9999", WCLUSTER) + edit("9999",ANUMBER) + edit("99",ALINE);
-          xparamet = xparaux + edit("9999",ANUMBER) + edit("99",ALINE);
+        if selcase(header, CGIN80, "", 15) include(QNUMBER, QLINE, QNAME, QRESULT, QINTNUM) where QNUMBER = hhtoget then
+          xcase  = edit("9999", WCLUSTER) + edit("9999",QNUMBER) + edit("99",QLINE);
+          xparamet = xparaux + edit("9999",QNUMBER) + edit("99",QLINE);
           AppName = "CollectIN";
           { review HOUSEHOLDs including incomplete }
-          if ARESULT <> 1 then
-            errmsg( 0011, ARESULT );
+          if QRESULT <> 1 then
+            errmsg( 0011, QRESULT );
           endif;
           { modify, hh, partial, revisit, change, height/weight }
           SaveSetting( "SupSession", "6" );

@@ -113,7 +113,7 @@
     FileWrite( piffile, "OperatorID=" + xintnum );
   end;
 
-  { prepares PIF file for HOUSEHOLDs or individual data collection }
+  { prepares PIF file for HOUSEHOLDs or INDIVIDUAL data collection }
   function genpff( addmode, questype, savpart, revisit, change, hghtwght )
     InitPff();
 
@@ -197,7 +197,7 @@
   end;
 
   { makes a backup as soon after leaving the data collection application }
-  { copies HOUSEHOLDs, individual and others }
+  { copies HOUSEHOLDs, INDIVIDUAL and others }
   function backupf()
     set trace(on);
     numeric nextbkp;
@@ -240,7 +240,7 @@
   function csrun( addmode, questype, savpart, revisit, change, hghtwght )
   {
     Parameters - addmode,  the start mode of a data entry program
-                 questype, 1-HOUSEHOLD, 2-Individual (women/men)
+                 questype, 1-HOUSEHOLD, 2-INDIVIDUAL (women/men)
                  savpart,  if the case was partially saved (1-partial add, 2-partial modify)
                  revisit,  if it is a revisit to an incomplete interview (result code <> 1)
                  change,   advance to the first field after the control of visits
@@ -273,14 +273,14 @@
   { runs wrkelig logic  }
   function WrkElig( xtype, xhhnum, xintsex )
     SetEligFile(1);
-    { type   1-HOUSEHOLDs, 2-individual, 3: HOUSEHOLDs not including shared }
+    { type   1-HOUSEHOLDs, 2-INDIVIDUAL, 3: HOUSEHOLDs not including shared }
     alpha(10)  key_HH;                     { !! adjust to the length of the key cluster+hh+line }
-    string     fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and individual dictionaries }
+    string     fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and INDIVIDUAL dictionaries }
     
     fnameHH = work + "\ALLHH.DAT";
     fnameIN = data + "\I" + xfilenum + ".DAT";
 
-    // check if hh file and individual file exists and create empty file if necessary to avoid error message
+    // check if hh file and INDIVIDUAL file exists and create empty file if necessary to avoid error message
     if FileExist(fnameHH) then
       setfile(CGHH80, fnameHH, update);
     else
@@ -327,14 +327,14 @@
         ZQUEST  = 1;
         writecase( ELIGINDV );
               
-      { individuals requested }
+      { INDIVIDUALs requested }
       elseif xhhnum = QHNUMBER then
         ZADDRESS = QHADDRESS;
         if !length(strip(QHADDRESS)) & soccurs( CGHH80.QHSEC01X ) then
           ZADDRESS = strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1));
         endif;
         for i in record QHSEC01 do
-        { eligible individuals according to interviewer's sex.  3 is used by supervisor menu as they can see both individuals }
+        { eligible INDIVIDUALs according to interviewer's sex.  3 is used by supervisor menu as they can see both INDIVIDUALs }
          if QH09 & xintsex = 2 | QH10 & xintsex = 1 | ( QH09 | QH10 ) & xintsex = 3 then
           // if QH09 | QH10 then    
             if QH09 then
@@ -360,19 +360,19 @@
             ZSTATUS  = tr("Not Visited");
             ZSTATUSC = 0;
             if loadcase( CGIN80, key_HH) then
-              ZOWNER   = AINTNUM;
-              ZRESULT  = NaToZero( ARESULT );
-              if ARESULT <> 1 then
-                ZSTATUS  = getlabel(ARESULT, ARESULT);
+              ZOWNER   = QINTNUM;
+              ZRESULT  = NaToZero( QRESULT );
+              if QRESULT <> 1 then
+                ZSTATUS  = getlabel(QRESULT, QRESULT);
                 ZSTATUSC = 2;
-              elseif partialcs( 2, ACLUSTER, ANUMBER, ALINE, fnameIN  ) then
+              elseif partialcs( 2, QCLUSTER, QNUMBER, QLINE, fnameIN  ) then
                 ZSTATUS  = tr("Partial");
                 ZSTATUSC = 3;
               else
                 ZSTATUS  = tr("Complete");
                 ZSTATUSC = 1;
               endif;
-              ZOWNER  = AINTNUM;
+              ZOWNER  = QINTNUM;
             endif;
             writecase( ELIGINDV );
           endif;
@@ -432,11 +432,11 @@
     numeric ctr = 0;
     caselist.clear();
     // reads cases from ELIGINDV into a list based on selection criteria
-    // list is used to display hh/individual cases for selection
+    // list is used to display hh/INDIVIDUAL cases for selection
     // seltype: 0:all hhs assigned to interviewer
     //          1:only completed hhs assigned to interviewer
    //           2:completed hhs assigned to other interviewers
-   //           3:all cases - used for selection of individuals
+   //           3:all cases - used for selection of INDIVIDUALs
     SetEligFile(0);
     forcase ELIGINDV do
       // do selection first skip if case doesn't meet criteria
@@ -454,7 +454,7 @@
           caselist(ctr,3) = maketext("%04d", ZOWNER );
           caselist(ctr,4) = ZSTATUS;
           caselist(ctr,5) = "YN"[ZMALE:1];
-        else                                               // individuals
+        else                                               // INDIVIDUALs
           caselist(ctr,1) = maketext("%04d", ZNUMBER );
           caselist(ctr,2) = maketext("%02d", ZLINE );
           caselist(ctr,3) = ZNAME;
@@ -492,7 +492,7 @@
       FileWrite( piffile, " " );
       FileWrite( piffile, "[Parameters]" );
       FileWrite( piffile, "Language=" + GetLanguage() );
-      { parameters are HOUSEHOLD number, whether HOUSEHOLD or individual questionnaire and interviewer sex }
+      { parameters are HOUSEHOLD number, whether HOUSEHOLD or INDIVIDUAL questionnaire and interviewer sex }
       FileWrite( piffile, "Parameter=" + edit("9999",IntCode) + edit("9999",VNUMBER) );
       FileWrite( piffile, "ViewListing=Never" );     { Do not show .lst -- will be shown manually }
       FileWrite( piffile, "ViewResults=No" );        { Do not show .wrt -- will be shown manually }
@@ -500,8 +500,8 @@
       close( piffile );
     end;
 
-    { generates a list of eligible individuals for individual questionnaire and eligible  }
-    { individuals for height and weight                                                   }
+    { generates a list of eligible INDIVIDUALs for INDIVIDUAL questionnaire and eligible  }
+    { INDIVIDUALs for height and weight                                                   }
     function ListElig()
       InitPff();
       FileWrite( piffile, "StartMode=ADD" );
@@ -621,9 +621,9 @@
         GenFileXML( data, "H", ".dat",       btsup );    { HOUSEHOLDs data file }
         GenFileXML( data, "H", ".dat.sts",   btsup );    { HOUSEHOLDs partial save file }
         GenFileXML( data, "H", ".dat.csnot", btsup );    { HOUSEHOLDs notes file }
-        GenFileXML( data, "I", ".dat",       btsup );    { individual data file }
-        GenFileXML( data, "I", ".dat.sts",   btsup );    { individual partial save file }
-        GenFileXML( data, "I", ".dat.csnot", btsup );    { individual notes file }
+        GenFileXML( data, "I", ".dat",       btsup );    { INDIVIDUAL data file }
+        GenFileXML( data, "I", ".dat.sts",   btsup );    { INDIVIDUAL partial save file }
+        GenFileXML( data, "I", ".dat.csnot", btsup );    { INDIVIDUAL notes file }
         GenFileXML( data, "O", ".dat",       btsup );    { others file }
         { close XML definition }
         FileWrite( piffile, "</transfer>" );
@@ -876,9 +876,9 @@
         errmsg( 095, fname, WCLUSTER );
         ifok = 0;
       else
-        if task = 4 then  { eligible individuals }
+        if task = 4 then  { eligible INDIVIDUALs }
           { find if HOUSEHOLD assigned or not to interviewer by supervisor }
-          x = accept( tr("Individual interview is from"),
+          x = accept( tr("INDIVIDUAL interview is from"),
                       tr("HOUSEHOLD interviewed by you"),
                       tr("HOUSEHOLD interviewed by someone else (shared)"),
                       tr("Cancel") );
@@ -893,8 +893,8 @@
         elseif task = 3 then // biomarkers - only hhs with result = 1
           fill_caselist(4);
           heading = tr("Select HOUSEHOLD for Biomarkers Entry");
-        elseif task = 4 then // individuals ( only hhs with result = 1 )
-          heading = tr("Select HOUSEHOLD for individual interview");
+        elseif task = 4 then // INDIVIDUALs ( only hhs with result = 1 )
+          heading = tr("Select HOUSEHOLD for INDIVIDUAL interview");
           if x = 1  then // not shared
           fill_caselist(1);
           else // shared
@@ -1001,14 +1001,14 @@
       endif;
     end;
 
-    { concatenates the interviewer's HOUSEHOLD and individual notes taken in the cluster }
+    { concatenates the interviewer's HOUSEHOLD and INDIVIDUAL notes taken in the cluster }
     function ConcatNotes()
       numeric fh, fi, fres;
       { concatenate HOUSEHOLDs from all interviewers sharing data but first delete files }
       fdel( work + "\ALLNOTES.DAT" );
       { concatenate HH data files }
       fh = FileExist(data + "\H" + xfilenum + ".DAT.CSNOT" );      { notes for HH interviews }
-      fi = FileExist(data + "\I" + xfilenum + ".DAT.CSNOT" );      { notes for individual interviews }
+      fi = FileExist(data + "\I" + xfilenum + ".DAT.CSNOT" );      { notes for INDIVIDUAL interviews }
           recode fh :: fi -> fres;
               0 ::  0 -> 0;       
               1 ::  1 -> 1;
@@ -1017,10 +1017,10 @@
       endrecode;
           if fres = 0 then
             errmsg( 030 )
-      elseif fres = 1 then    { notes in individual interviews }
+      elseif fres = 1 then    { notes in INDIVIDUAL interviews }
         FileConcat( work + "\ALLNOTES.DAT",                      { resulting file }
                   data + "\H" + xfilenum + ".DAT.CSNOT",         { notes in HOUSEHOLD interviews }
-                  data + "\I" + xfilenum + ".DAT.CSNOT" );       { notes in individual interviews }
+                  data + "\I" + xfilenum + ".DAT.CSNOT" );       { notes in INDIVIDUAL interviews }
       elseif fres = 2 then
         FileConcat( work + "\ALLNOTES.DAT",                      { resulting file }
                   data + "\H" + xfilenum + ".DAT.CSNOT" );       { notes in HOUSEHOLD interviews }
@@ -1038,9 +1038,9 @@
 
 
     { generates the PIF file for the application used to display }
-    { individuals available to be interviewed in a HOUSEHOLD     }
+    { INDIVIDUALs available to be interviewed in a HOUSEHOLD     }
     function MapHHpff( type )
-      { type   1-HOUSEHOLDs, 2-individual }
+      { type   1-HOUSEHOLDs, 2-INDIVIDUAL }
       InitPff();
 
       FileWrite( piffile, "StartMode=ADD" );
@@ -1064,7 +1064,7 @@
       FileWrite( piffile, " " );
       FileWrite( piffile, "[Parameters]" );
       FileWrite( piffile, "Language=" + GetLanguage() );
-      { parameters passed are: HOUSEHOLD number, HOUSEHOLD or individual questionnaire and interviewer sex }
+      { parameters passed are: HOUSEHOLD number, HOUSEHOLD or INDIVIDUAL questionnaire and interviewer sex }
       FileWrite( piffile, "Parameter=" + edit("9999",WNUMBER) + edit("9",type) + edit("9",IntSex) );
       FileWrite( piffile, "ViewListing=Never" );
       FileWrite( piffile, "ViewResults=No" );
@@ -1162,7 +1162,7 @@
   {********** functions to handle fieldworker qre in CAPI **********}
   {*****************************************************************}
 
-  { reads the CSPro sts file to find out if a HOUSEHOLD or individual has been partially saved }
+  { reads the CSPro sts file to find out if a HOUSEHOLD or INDIVIDUAL has been partially saved }
   function partialFW( nintnum, string FileToCheck )
     numeric FoundPart = 0, zlen;
     string  PartialRecord, findadd, findmod;
@@ -1608,9 +1608,9 @@ postproc
     if getlanguage() = "EN" then
       action = accept( heading,
                  { 1}  "1 HOUSEHOLD Interview",
-                 { 2}  "2 List eligible individuals/biomarkers",
+                 { 2}  "2 List eligible INDIVIDUALs/biomarkers",
                  { 3}  "3 Enter biomarker data",
-                 { 4}  "4 Individual Interview",
+                 { 4}  "4 INDIVIDUAL Interview",
                  { 5}  "--------------------------------------",
                  { 6}  "5 List questionnaires in cluster",
                  { 7}  "6 List cluster notes",
@@ -1646,7 +1646,7 @@ postproc
 
     { all options to deal with HOUSEHOLDs manipulation and where women may be found }
     elseif action in 1:4 then
-      if action = 4 & IntRole = 3 then //!!! prevent biomarker technicians from doing individual interviews
+      if action = 4 & IntRole = 3 then //!!! prevent biomarker technicians from doing INDIVIDUAL interviews
         errmsg(103);
         reenter;
       else
@@ -1696,7 +1696,7 @@ postproc
                   {  3} "3 Share HH data with other interviewers",
                   {  4} "4 Receive HH data from other interviewer",
                   {  5} "5 Receive system updates from supervisor",
-                  {  6} "6 Modify IDs/delete individuals",
+                  {  6} "6 Modify IDs/delete INDIVIDUALs",
                   {  7} "7 Fix interviewer code/result in a HOUSEHOLD",
                   {  8} "8 Get restore data from supervisor tablet",
                   {  9} "9 Split a HOUSEHOLD",
@@ -1767,7 +1767,7 @@ postproc
       elseif option = 10 then 
     // clear shared data from work folder
     // used to fix issues with duplicated cases
-        x = errmsg("Are you sure you wish to remove shared HOUSEHOLD data from the interviewer tablet ?\n To access individual interviews from already shared HOUSEHOLDs you will need to receive shared data again ") select ("No", continue, "Yes, remove", continue);
+        x = errmsg("Are you sure you wish to remove shared HOUSEHOLD data from the interviewer tablet ?\n To access INDIVIDUAL interviews from already shared HOUSEHOLDs you will need to receive shared data again ") select ("No", continue, "Yes, remove", continue);
         if x = 2 then
           FileDelete(work + "\H" + xcluster + "????.DAT");
           FileDelete(work + "\H" + xcluster + "????.DAT.sts");
@@ -1918,7 +1918,7 @@ postproc
       { add, hh, !partial, !revisit, !change, height/weight }
       AppName = "COLLECTHH";
       csrun( 1, 1, 0, 0, 0, 1 );
-    { HOUSEHOLD where eligible individuals will be selected }
+    { HOUSEHOLD where eligible INDIVIDUALs will be selected }
     elseif action = 4 then
       if ZOWNER = IntCode & ZRESULT <> 1 then
         errmsg( 080, ZRESULT );
@@ -1951,7 +1951,7 @@ preproc
     SaveSetting( "DCSession", "1" );
     // if selcase( ELIGINDV, "", 4) include( ZOWNER, ZNUMBER, ZLINE, ZNAME, ZQTYPEA, ZSTATUS )
     //             where ZQUEST = 2 & ZNUMBER = WNUMBER then
-      ifok = showarray(tr( "Select Individual for interview" ), caselist, 
+      ifok = showarray(tr( "Select INDIVIDUAL for interview" ), caselist, 
       title ( tr("HH"), tr("Line"),tr("Name"), tr("Interviewer"),tr("Ques."), tr("Status") )  );
       if ifok then
        SetEligFile(0);
@@ -1986,11 +1986,11 @@ postproc
     partial = partialcs( 2, WCLUSTER, WNUMBER, WINDIV, strip(data)+"\I"+strip(xfilenum)+".dat" );
     recode partial :: ZSTATUSC-> x   ;
                   0:: 0       -> csrun( 1, 2, 0, 0, 0, 0 ); { NEW : add, wm, !partial, !revisit, !change, !heigth/weight }
-                  0:: 2       -> csrun( 0, 2, 1, 1, 0, 0 ); { modify, individual, !partial, revisit, !change, !height/weight }
+                  0:: 2       -> csrun( 0, 2, 1, 1, 0, 0 ); { modify, INDIVIDUAL, !partial, revisit, !change, !height/weight }
                >= 1:: 2       -> csrun( 0, 2, 1, 1, 0, 0 ); { PARTIAL : modify, wm, !partial, revisit, !change, !heigth/weight }
                    :: 1       -> csrun( 0, 2, 0, 0, 1, 0 ); { MODIFY CMPLETE : modify, wm, !partial, !revisit, change, !heigth/weight }
-                   :: 3       -> csrun( 0, 2, partial, 1, 0, 0 ); { modify, individual, partial, revisit, !change, !height/weight }
-                  1:: 0       -> csrun( 1, 2, 0, 0, 0, 0 ); { modify, individual, partial, revisit, !change, !height/weight }
+                   :: 3       -> csrun( 0, 2, partial, 1, 0, 0 ); { modify, INDIVIDUAL, partial, revisit, !change, !height/weight }
+                  1:: 0       -> csrun( 1, 2, 0, 0, 0, 0 ); { modify, INDIVIDUAL, partial, revisit, !change, !height/weight }
                    ::         -> 9;
     endrecode; 
     if x = 9 then

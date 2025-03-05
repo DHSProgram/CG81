@@ -1784,14 +1784,14 @@ preproc
   do i = 1 while i <= QHMEMBER
     xline = edit("99", QH09(i));
     if QH09(i) & loadcase(CGIN80, QHCLUST, QHNUMBER, xline) then
-      do j = 1 while j <= soccurs(AWSEC2B)
-        if A227(j) in 1:QHMEMBER then
-          chi = A227(j);
+      do j = 1 while j <= soccurs(QWSEC2B)
+        if Q227(j) in 1:QHMEMBER then
+          chi = Q227(j);
           chfound(chi) = 1;
-          birthd(chi)  = A220D(j);
-          birthm(chi)  = A220M(j);
-          birthy(chi)  = A220Y(j);
-		  if validyr(A220Y(J)) & QBINTY - A220Y(j) > 5 then birthy(chi) = 9998 endif;
+          birthd(chi)  = Q220D(j);
+          birthm(chi)  = Q220M(j);
+          birthy(chi)  = Q220Y(j);
+		  if validyr(Q220Y(J)) & QBINTY - Q220Y(j) > 5 then birthy(chi) = 9998 endif;
         endif;
       enddo;
     endif;
