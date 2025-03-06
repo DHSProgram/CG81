@@ -1880,7 +1880,7 @@ Label=Household Characteristics
 Name=QHSEC02
 RecordTypeValue='H02'
 Required=No
-RecordLen=109
+RecordLen=108
 
 [Item]
 Label=Source of drinking water|Source d'eau potable
@@ -2705,22 +2705,9 @@ Value=1;Yes|Oui|Si
 Value=2;No|Non|No
 
 [Item]
-Label=Un panneau solaire        |Un panneau solaire        |Un panneau solaire
-Name=QH132Q
-Start=95
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=.|Réfrigérateur
-Name=QH132H9_VS1
-Value=1;Yes|Oui|Si
-Value=2;No|Non|No
-
-[Item]
 Label=Watch|Montre
 Name=QH133A
-Start=96
+Start=95
 Len=1
 DataType=Numeric
 
@@ -2733,7 +2720,7 @@ Value=2;No|Non|No
 [Item]
 Label=Mobile telephone|Téléphone portable
 Name=QH133B
-Start=97
+Start=96
 Len=1
 DataType=Numeric
 
@@ -2746,7 +2733,7 @@ Value=2;No|Non|No
 [Item]
 Label=Bicycle|Bicyclette
 Name=QH133C
-Start=98
+Start=97
 Len=1
 DataType=Numeric
 
@@ -2759,7 +2746,7 @@ Value=2;No|Non|No
 [Item]
 Label=Motorcycle or scooter|Motocyclette ou un scooter
 Name=QH133D
-Start=99
+Start=98
 Len=1
 DataType=Numeric
 
@@ -2772,7 +2759,7 @@ Value=2;No|Non|No
 [Item]
 Label=Un tricycle|Un tricycle
 Name=QH133E
-Start=100
+Start=99
 Len=1
 DataType=Numeric
 
@@ -2785,7 +2772,7 @@ Value=2;No|Non|No
 [Item]
 Label=Une voiture ou une camionnette |Une voiture ou une camionnette
 Name=QH133F
-Start=101
+Start=100
 Len=1
 DataType=Numeric
 
@@ -2798,7 +2785,7 @@ Value=2;No|Non|No
 [Item]
 Label=Une pirogue/bateau sans moteur|Une pirogue/bateau sans moteur
 Name=QH133G
-Start=102
+Start=101
 Len=1
 DataType=Numeric
 
@@ -2811,7 +2798,7 @@ Value=2;No|Non|No
 [Item]
 Label=Une pirogue/bateau avec moteur/hors bord|Une pirogue/bateau avec moteur/hors bord
 Name=QH133H
-Start=103
+Start=102
 Len=1
 DataType=Numeric
 
@@ -2824,7 +2811,7 @@ Value=2;No|Non|No
 [Item]
 Label=Un bus ou camion |Un bus ou camion
 Name=QH133I
-Start=104
+Start=103
 Len=1
 DataType=Numeric
 
@@ -2837,7 +2824,7 @@ Value=2;No|Non|No
 [Item]
 Label=Bank account|Compte bancaire
 Name=QH134
-Start=105
+Start=104
 Len=1
 DataType=Numeric
 
@@ -2850,7 +2837,7 @@ Value=2;No|Non|No
 [Item]
 Label=Mobile phone used financial transactions|Téléphone mobile utilisé pour des transactions financières
 Name=QH135
-Start=106
+Start=105
 Len=1
 DataType=Numeric
 
@@ -2863,7 +2850,7 @@ Value=2;No|Non|No
 [Item]
 Label=Frequency of smoking inside house|Fréquence de fumer à l'intérieur de la maison
 Name=QH136
-Start=107
+Start=106
 Len=1
 DataType=Numeric
 
@@ -2879,7 +2866,7 @@ Value=5;Never|Jamais
 [Item]
 Label=Owns mosquito nets for sleeping|Possède des moustiquaires pour dormir
 Name=QH137
-Start=108
+Start=107
 Len=1
 DataType=Numeric
 
@@ -2892,7 +2879,7 @@ Value=2;No|Non|No
 [Item]
 Label=Number of mosquito nets|Nombre de moustiquaires
 Name=QH138
-Start=109
+Start=108
 Len=1
 DataType=Numeric
 
@@ -3097,7 +3084,7 @@ Label=Transfers sociaux|Transfers sociaux
 Name=QHSEC03B
 RecordTypeValue='H3B'
 Required=No
-RecordLen=26
+RecordLen=20
 
 [Item]
 Label=Connait "Projet Filets Sociaux Lisungi" |Connait "Projet Filets Sociaux Lisungi"
@@ -3127,24 +3114,23 @@ Value=2;No|Non|No
 Value=8;Don't know|Ne sait pas|No sabe
 
 [Item]
-Label=Date de reception de l'aide Projet Lisungi
+Label=Reception de l'aide Projet Lisungi
 Name=QH148D
 Start=14
-Len=6
+Len=3
 DataType=Alpha
 
 [Item]
-Label=Date de reception de l'aide Projet Lisungi: Mois|Date de reception de l'aide project Lisungi: Mois
-Name=QH148DM
+Label=Reception de l'aide Projet Lisungi: Unité|Date de reception de l'aide project Lisungi: Mois
+Name=QH148DU
 Start=14
-Len=2
+Len=1
 ItemType=SubItem
 DataType=Numeric
 
 [ValueSet]
-Label=Date de reception de l'aide Projet Lisungi: Mois|Date de reception de l'aide project Lisungi: Mois
-Name=QH148DM_VS1
-Link=121053112
+Label=Reception de l'aide Projet Lisungi: Unité|Date de reception de l'aide project Lisungi: Mois
+Name=QH148DU_VS1
 Value=1;January|Janvier
 Value=2;February|Février
 Value=3;March|Mars
@@ -3155,28 +3141,27 @@ Value=7;July|Juillet
 Value=8;August|Août
 Value=9;September|Septembre
 Value=0;October|Octobre
-Value=11;November|Novembre
-Value=12;December|Décembre
-Value=98;Don’t know month|Ne sait pas mois
+Value=1;November|Novembre
+Value=2;December|Décembre
+Value=8;Don’t know month|Ne sait pas mois
 
 [Item]
-Label=Date de reception de l'aide: Projet Lisungi Année|Date de reception de l'aide project Lisungi: Année
-Name=QH148DY
-Start=16
-Len=4
+Label=Reception de l'aide: Projet Lisungi Nombre|Date de reception de l'aide project Lisungi: Année
+Name=QH148DN
+Start=15
+Len=2
 ItemType=SubItem
 DataType=Numeric
 
 [ValueSet]
-Label=Date de reception de l'aide: Projet Lisungi Année|Date de reception de l'aide project Lisungi: Année
-Name=QH148DY_VS1
-Link=121051432
-Value=1970:2025;Année|Année
+Label=Reception de l'aide: Projet Lisungi Nombre|Date de reception de l'aide project Lisungi: Année
+Name=QH148DN_VS1
+Value=70;Année|Année
 
 [Item]
 Label=A reçu une aide a reçu une aide grâce à un programme d'aide économique extérieure autre que le Projet Lisungi
 Name=QH148E
-Start=20
+Start=17
 Len=1
 DataType=Numeric
 
@@ -3188,37 +3173,49 @@ Value=2;No|Non|No
 Value=8;Don't know|Ne sait pas|No sabe
 
 [Item]
-Label=Date de reception de l'aide grâce à l'autre programme
+Label=Reception de l'aide grâce à l'autre programme
 Name=QH148F
-Start=21
-Len=6
+Start=18
+Len=3
 DataType=Alpha
 
 [Item]
-Label=Date de reception de l'aide grâce à l'autre programme: Mois|Date de reception de l'aide d'un autre project: Mois
-Name=QH148FM
-Start=21
+Label=Reception de l'aide grâce à l'autre programme: Unité|Date de reception de l'aide project Lisungi: Mois
+Name=QH148FU
+Start=18
+Len=1
+ItemType=SubItem
+DataType=Numeric
+
+[ValueSet]
+Label=Reception de l'aide grâce à l'autre programme: Unité|Date de reception de l'aide project Lisungi: Mois
+Name=QH148FU_VS1
+Value=1;January|Janvier
+Value=2;February|Février
+Value=3;March|Mars
+Value=4;April|Avril
+Value=5;May|Mai
+Value=6;June|Juin
+Value=7;July|Juillet
+Value=8;August|Août
+Value=9;September|Septembre
+Value=0;October|Octobre
+Value=1;November|Novembre
+Value=2;December|Décembre
+Value=8;Don’t know month|Ne sait pas mois
+
+[Item]
+Label=Reception de l'aide grâce à l'autre programme: Nombre|Date de reception de l'aide project Lisungi: Année
+Name=QH148FN
+Start=19
 Len=2
 ItemType=SubItem
 DataType=Numeric
 
 [ValueSet]
-Label=Date de reception de l'aide d'un autre project: Mois|Date de reception de l'aide d'un autre project: Mois
-Name=QH148FM_VS1
-Link=121053112
-
-[Item]
-Label=Date de reception de l'aide grâce à l'autre programme: Année|Date de reception de l'aide d'un autre project: Année
-Name=QH148FY
-Start=23
-Len=4
-ItemType=SubItem
-DataType=Numeric
-
-[ValueSet]
-Label=Date de reception de l'aide grâce à l'autre programme: Année|Date de reception de l'aide d'un autre project: Année
-Name=QH148FY_VS1
-Link=121051432
+Label=Reception de l'aide grâce à l'autre programme: Nombre|Date de reception de l'aide project Lisungi: Année
+Name=QH148FN_VS1
+Value=70;Année|Année
 
 [Record]
 Label=Additional household characteristics

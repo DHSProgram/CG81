@@ -138,6 +138,57 @@ Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
 [EndForm]
   
 [Form]
+Name=FORM002
+Label=Child Labor
+QuestionTextHeight=273
+Level=1
+Size=572,561
+  
+Item=QCHL2A
+Item=QCHL2B
+Item=QCHL2C
+Item=QCHL2D
+Item=QCHL4
+Item=QCHL5
+Item=QCHL6
+Item=QCHL7A
+Item=QCHL7B
+Item=QCHL7C
+Item=QCHL7D
+Item=QCHL7E
+Item=QCHL7F
+Item=QCHL8
+Item=QCHL9
+Item=QCHL10
+Item=QCHL11
+Item=QCHL12A
+Item=QCHL12B
+Item=QCHL12C
+Item=QCHL12D
+Item=QCHL12E
+Item=QCHL12F
+Item=QCHL12G
+Item=QCHL14
+Item=QCHLINE
+Item=QCHLNAME
+  
+  
+[Text]
+Name=TEXT2
+Position=35,28,185,44
+Text=TRAVAIL DES ENFANTS
+Form=5
+ 
+  
+[Text]
+Name=TEXT3
+Position=337,21,373,37
+Text=Ligne
+Form=5
+ 
+[EndForm]
+  
+[Form]
 Name=AHFORMCD
 Label=Child Discipline
 QuestionTextHeight=172
@@ -166,7 +217,7 @@ Box=34,91,380,462,Etched
 Name=TEXT7
 Position=138,14,404,38
 Text=DISCIPLINE DES ENFANTS
-Form=5
+Form=6
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -230,7 +281,6 @@ Item=QH132M
 Item=QH132N
 Item=QH132O
 Item=QH132P
-Item=QH132Q
 Item=QH133A
 Item=QH133B
 Item=QH133C
@@ -257,7 +307,7 @@ Box=912,48,1075,579,Etched
 Name=FT000025
 Position=293,11,636,35
 Text=CARACTÉRISTIQUES DU MÉNAGE
-Form=6
+Form=7
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -276,7 +326,7 @@ Item=QHSEC03_ROSTER
 Name=TEXT027
 Position=119,27,291,51
 Text=MOUSTIQUAIRES
-Form=7
+Form=8
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -290,18 +340,18 @@ Size=521,339
   
 Item=QH148B
 Item=QH148C
-Item=QH148DM
-Item=QH148DY
 Item=QH148E
-Item=QH148FM
-Item=QH148FY
+Item=QH148DU
+Item=QH148DN
+Item=QH148FU
+Item=QH148FN
   
   
 [Text]
 Name=TEXT1
 Position=276,15,496,37
 Text=TRANSFERTS SOCIAUX
-Form=8
+Form=9
 Font=-019 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -319,7 +369,6 @@ Item=QH151
 Item=QH152
 Item=QH153
 Item=QH154
-Item=QH155
 Item=QH156H
 Item=QH156M
   
@@ -330,7 +379,7 @@ Box=88,279,298,446,Etched
 Name=TEXT13
 Position=11,24,472,48
 Text=AUTRES CARACTÉRISTIQUES DU LOGEMENT
-Form=9
+Form=10
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -361,7 +410,7 @@ Box=139,149,554,320,Etched
 Name=TEXT6
 Position=243,11,556,33
 Text=FIN DE QUESTIONNAIRE MENAGE
-Form=10
+Form=11
 Font=-019 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
  
   
@@ -369,14 +418,14 @@ Font=-019 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 Name=TEXT8
 Position=239,55,349,71
 Text=Langues utilisées
-Form=10
+Form=11
  
   
 [Text]
 Name=TEXT9
 Position=276,160,408,179
 Text=GPS Coordinates
-Form=10
+Form=11
 Font=-016 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 Color=16711935
  
@@ -412,7 +461,7 @@ Box=72,377,512,468,Etched
 Name=TEXT15
 Position=133,20,470,44
 Text=Demographic and Health Surveys
-Form=11
+Form=12
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 Color=16711935
  
@@ -421,7 +470,7 @@ Color=16711935
 Name=TEXT17
 Position=175,48,426,72
 Text=Biomarker Questionnaire
-Form=11
+Form=12
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
 Color=16711808
  
@@ -430,7 +479,7 @@ Color=16711808
 Name=TEXT18
 Position=73,182,147,198
 Text=Date of visit
-Form=11
+Form=12
  
 [EndForm]
   
@@ -448,7 +497,7 @@ Item=QBSEC01_ROSTER
 Name=TEXT059
 Position=143,7,810,31
 Text=Weight, Height and Hemoglobin Measurement for Children Age 0-4
-Form=12
+Form=13
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -467,7 +516,7 @@ Item=QBSEC02_ROSTER
 Name=TEXT060
 Position=274,7,913,31
 Text=Weight, Height and Hemoglobin Measurement for Women 15-49
-Form=13
+Form=14
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -487,7 +536,7 @@ Item=QBFINISH
 Name=TEXT000
 Position=301,10,904,34
 Text=Weight, Height and Hemoglobin Measurement for Men 15-49
-Form=14
+Form=15
 Font=-021 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
  
 [EndForm]
@@ -2456,9 +2505,408 @@ Text=Hommes éligibles
   
 [Group]
 Required=Yes
+Name=QHSECCL_FORM
+Label=Child Labor
+Form=5
+Max=1
+  
+[Field]
+Name=QCHL2A
+Position=147,126,162,146
+Item=QCHL2A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,129,90,145
+Text=QCHL2A
+ 
+  
+[Field]
+Name=QCHL2B
+Position=147,156,162,176
+Item=QCHL2B,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,159,90,175
+Text=QCHL2B
+ 
+  
+[Field]
+Name=QCHL2C
+Position=147,186,162,206
+Item=QCHL2C,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,189,90,205
+Text=QCHL2C
+ 
+  
+[Field]
+Name=QCHL2D
+Position=147,216,162,236
+Item=QCHL2D,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,219,90,235
+Text=QCHL2D
+ 
+  
+[Field]
+Name=QCHL4
+Position=133,246,162,266
+Item=QCHL4,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+Form=5
+  
+[Text]
+Position=38,249,81,265
+Text=QCHL4
+ 
+  
+[Field]
+Name=QCHL5
+Position=147,276,162,296
+Item=QCHL5,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,279,81,295
+Text=QCHL5
+ 
+  
+[Field]
+Name=QCHL6
+Position=147,306,162,326
+Item=QCHL6,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,309,81,325
+Text=QCHL6
+ 
+  
+  
+[Field]
+Name=QCHL7A
+Position=147,336,162,356
+Item=QCHL7A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,339,90,355
+Text=QCHL7A
+ 
+  
+[Field]
+Name=QCHL7B
+Position=147,366,162,386
+Item=QCHL7B,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,369,90,385
+Text=QCHL7B
+ 
+  
+[Field]
+Name=QCHL7C
+Position=147,396,162,416
+Item=QCHL7C,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,399,90,415
+Text=QCHL7C
+ 
+  
+[Field]
+Name=QCHL7D
+Position=147,426,162,446
+Item=QCHL7D,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,429,90,445
+Text=QCHL7D
+ 
+  
+[Field]
+Name=QCHL7E
+Position=147,456,162,476
+Item=QCHL7E,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,459,89,475
+Text=QCHL7E
+ 
+  
+[Field]
+Name=QCHL7F
+Position=147,486,162,506
+Item=QCHL7F,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,489,89,505
+Text=QCHL7F
+ 
+  
+[Field]
+Name=QCHL8
+Position=147,516,162,536
+Item=QCHL8,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=38,519,81,535
+Text=QCHL8
+ 
+  
+[Field]
+Name=QCHL9
+Position=335,128,364,148
+Item=QCHL9,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+Form=5
+  
+[Text]
+Position=240,131,283,147
+Text=QCHL9
+ 
+  
+[Field]
+Name=QCHL10
+Position=349,158,364,178
+Item=QCHL10,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,161,290,177
+Text=QCHL10
+ 
+  
+[Field]
+Name=QCHL11
+Position=335,188,364,208
+Item=QCHL11,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+Form=5
+  
+[Text]
+Position=240,191,290,207
+Text=QCHL11
+ 
+  
+  
+[Field]
+Name=QCHL12A
+Position=349,218,364,238
+Item=QCHL12A,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,221,299,237
+Text=QCHL12A
+ 
+  
+[Field]
+Name=QCHL12B
+Position=349,248,364,268
+Item=QCHL12B,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,251,299,267
+Text=QCHL12B
+ 
+  
+[Field]
+Name=QCHL12C
+Position=349,278,364,298
+Item=QCHL12C,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,281,299,297
+Text=QCHL12C
+ 
+  
+[Field]
+Name=QCHL12D
+Position=349,308,364,328
+Item=QCHL12D,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,311,299,327
+Text=QCHL12D
+ 
+  
+[Field]
+Name=QCHL12E
+Position=349,338,364,358
+Item=QCHL12E,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,341,298,357
+Text=QCHL12E
+ 
+  
+[Field]
+Name=QCHL12F
+Position=349,368,364,388
+Item=QCHL12F,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,371,298,387
+Text=QCHL12F
+ 
+  
+[Field]
+Name=QCHL12G
+Position=349,398,364,418
+Item=QCHL12G,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=5
+  
+[Text]
+Position=240,401,300,417
+Text=QCHL12G
+ 
+  
+[Field]
+Name=QCHL14
+Position=335,428,364,448
+Item=QCHL14,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+Form=5
+  
+[Text]
+Position=240,431,290,447
+Text=QCHL14
+ 
+  
+[Field]
+Name=QCHLINE
+Position=339,45,368,65
+Item=QCHLINE,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=TextBox
+Form=5
+  
+  
+[Field]
+Name=QCHLNAME
+Position=377,45,547,65
+Item=QCHLNAME,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+Form=5
+  
+[Text]
+Position=444,21,473,37
+Text=Nom
+ 
+[Block]
+Name=QHCL7_BLOCK
+Label=CL7 Block
+DisplayTogether=Yes
+Position=7
+Length=6
+  
+[Block]
+Name=QHCL12_BLOCK
+Label=CL 12 Block
+DisplayTogether=Yes
+Position=18
+Length=7
+  
+[EndGroup]
+  
+[Group]
+Required=Yes
 Name=QHSECCDI_FORM
 Label=Child Discipline
-Form=5
+Form=6
 Max=1
   
 [Field]
@@ -2468,7 +2916,7 @@ Item=QCDI2,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=ComboBox
-Form=5
+Form=6
   
 [Text]
 Position=31,59,67,75
@@ -2484,7 +2932,7 @@ Protected=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
-Form=5
+Form=6
   
 [Text]
 Position=145,59,174,75
@@ -2500,7 +2948,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
-Form=5
+Form=6
   
 [Text]
 Position=47,101,86,117
@@ -2513,7 +2961,7 @@ Position=224,97,239,117
 Item=QCDI3A,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=170,100,178,116
@@ -2526,7 +2974,7 @@ Position=224,127,239,147
 Item=QCDI3B,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=170,130,178,146
@@ -2539,7 +2987,7 @@ Position=224,157,239,177
 Item=QCDI3C,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=171,160,178,176
@@ -2552,7 +3000,7 @@ Position=224,187,239,207
 Item=QCDI3D,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=170,190,178,206
@@ -2565,7 +3013,7 @@ Position=224,217,239,237
 Item=QCDI3E,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=170,220,178,236
@@ -2578,7 +3026,7 @@ Position=224,247,239,267
 Item=QCDI3F,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=174,249,178,265
@@ -2591,7 +3039,7 @@ Position=224,277,239,297
 Item=QCDI3G,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=170,280,178,296
@@ -2604,7 +3052,7 @@ Position=224,307,239,327
 Item=QCDI3H,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=170,310,178,326
@@ -2617,7 +3065,7 @@ Position=224,337,239,357
 Item=QCDI3I,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=174,340,178,356
@@ -2630,7 +3078,7 @@ Position=224,367,239,387
 Item=QCDI3J,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=174,370,178,386
@@ -2643,7 +3091,7 @@ Position=224,397,239,417
 Item=QCDI3K,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=171,400,178,416
@@ -2657,7 +3105,7 @@ Item=QCDI4,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=5
+Form=6
   
 [Text]
 Position=124,432,163,448
@@ -2669,7 +3117,7 @@ Text=QCDI4
 Required=No
 Name=QHSEC02_FORM
 Label=Household Characteristics
-Form=6
+Form=7
 Max=1
   
 [Field]
@@ -2680,7 +3128,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=35,129,75,145
@@ -2696,7 +3144,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=35,166,75,182
@@ -2711,7 +3159,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=35,198,75,214
@@ -2727,7 +3175,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=35,233,75,249
@@ -2742,7 +3190,7 @@ Item=QH105,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=35,291,75,307
@@ -2756,7 +3204,7 @@ Item=QH106,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,81,213,97
@@ -2771,7 +3219,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,107,213,123
@@ -2787,7 +3235,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=CheckBox
-Form=6
+Form=7
   
 [Text]
 Position=173,137,213,153
@@ -2803,7 +3251,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,167,213,183
@@ -2819,7 +3267,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,197,213,213
@@ -2835,7 +3283,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=173,227,213,243
@@ -2851,7 +3299,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,255,213,271
@@ -2865,7 +3313,7 @@ Item=QH114,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,287,213,303
@@ -2879,7 +3327,7 @@ Item=QH115,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=173,317,213,333
@@ -2893,7 +3341,7 @@ Item=QH116,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=374,78,414,94
@@ -2907,7 +3355,7 @@ Item=QH117,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=374,107,414,123
@@ -2921,7 +3369,7 @@ Item=QH118,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=374,140,414,156
@@ -2936,7 +3384,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=374,202,414,218
@@ -2952,7 +3400,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=374,229,414,245
@@ -2968,7 +3416,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=374,259,414,275
@@ -2983,7 +3431,7 @@ Item=QH123,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=557,78,597,94
@@ -2997,7 +3445,7 @@ Item=QH124,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=557,107,597,123
@@ -3011,7 +3459,7 @@ Item=QH125,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=557,135,597,151
@@ -3025,7 +3473,7 @@ Item=QH126,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=557,164,597,180
@@ -3040,7 +3488,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=557,194,597,210
@@ -3056,7 +3504,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=557,231,597,247
@@ -3073,7 +3521,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=558,275,622,291
@@ -3089,7 +3537,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=614,306,622,322
@@ -3105,7 +3553,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=615,329,622,345
@@ -3121,7 +3569,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=614,359,622,375
@@ -3137,7 +3585,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=614,389,622,405
@@ -3153,7 +3601,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=618,419,622,435
@@ -3167,7 +3615,7 @@ Position=659,444,688,464
 Item=QH129G,CGHH80
 UseEnterKey=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=614,442,622,458
@@ -3180,7 +3628,7 @@ Position=659,468,688,488
 Item=QH129H,CGHH80
 UseEnterKey=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=614,463,622,479
@@ -3195,7 +3643,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=561,504,601,520
@@ -3211,14 +3659,13 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=561,532,601,548
 Text=QH131
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
-  
   
   
 [Field]
@@ -3228,7 +3675,7 @@ Item=QH132A,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,66,810,82
@@ -3242,7 +3689,7 @@ Item=QH132B,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,96,810,112
@@ -3256,7 +3703,7 @@ Item=QH132C,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,126,810,142
@@ -3270,7 +3717,7 @@ Item=QH132D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,156,810,172
@@ -3284,7 +3731,7 @@ Item=QH132E,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,186,809,202
@@ -3298,7 +3745,7 @@ Item=QH132F,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,216,809,232
@@ -3312,7 +3759,7 @@ Item=QH132G,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,246,811,262
@@ -3326,7 +3773,7 @@ Item=QH132H,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,276,810,292
@@ -3340,7 +3787,7 @@ Item=QH132I,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,306,805,322
@@ -3354,7 +3801,7 @@ Item=QH132J,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,336,808,352
@@ -3368,7 +3815,7 @@ Item=QH132K,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,366,810,382
@@ -3382,7 +3829,7 @@ Item=QH132L,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,396,809,412
@@ -3396,7 +3843,7 @@ Item=QH132M,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,426,812,442
@@ -3410,7 +3857,7 @@ Item=QH132N,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,456,810,472
@@ -3424,7 +3871,7 @@ Item=QH132O,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,486,811,502
@@ -3438,26 +3885,13 @@ Item=QH132P,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=761,516,810,532
 Text=QH132P
  
   
-[Field]
-Name=QH132Q
-Position=834,543,849,563
-Item=QH132Q,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=6
-  
-[Text]
-Position=761,546,811,562
-Text=QH132Q
- 
   
 [Field]
 Name=QH133A
@@ -3466,7 +3900,7 @@ Item=QH133A,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,69,977,85
@@ -3480,7 +3914,7 @@ Item=QH133B,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,99,977,115
@@ -3494,7 +3928,7 @@ Item=QH133C,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,129,977,145
@@ -3508,7 +3942,7 @@ Item=QH133D,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,159,977,175
@@ -3522,7 +3956,7 @@ Item=QH133E,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,189,976,205
@@ -3536,7 +3970,7 @@ Item=QH133F,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,219,976,235
@@ -3550,7 +3984,7 @@ Item=QH133G,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,249,978,265
@@ -3564,7 +3998,7 @@ Item=QH133H,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,279,977,295
@@ -3578,7 +4012,7 @@ Item=QH133I,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=928,309,972,325
@@ -3592,7 +4026,7 @@ Item=QH134,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=927,363,967,379
@@ -3606,7 +4040,7 @@ Item=QH135,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=927,393,967,409
@@ -3620,7 +4054,7 @@ Item=QH136,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=927,423,967,439
@@ -3634,7 +4068,7 @@ Item=QH137,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=6
+Form=7
   
 [Text]
 Position=927,453,967,469
@@ -3648,7 +4082,7 @@ Item=QH138,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
-Form=6
+Form=7
   
 [Text]
 Position=927,483,967,499
@@ -3666,14 +4100,14 @@ Name=QH132_BLOCK
 Label=Household possessions
 DisplayTogether=Yes
 Position=37
-Length=0
+Length=16
   
 [Block]
 Name=QH133_BLOCK
 Label=Possessions of household members
 DisplayTogether=Yes
-Position=38
-Length=0
+Position=54
+Length=9
   
 [EndGroup]
   
@@ -3681,13 +4115,13 @@ Length=0
 Required=No
 Name=QHSEC03_FORM
 Label=Malaria module - mosquito nets
-Form=7
+Form=8
 Max=1
   
 [Grid]
 Name=QHSEC03_ROSTER
 Label=Mosquito Nets
-Form=7
+Form=8
 Required=No
 Type=Record
 TypeName=QHSEC03
@@ -4003,17 +4437,17 @@ Text=QH147
 Required=Yes
 Name=QHSEC3B_FORM
 Label=Social Transfers
-Form=8
+Form=9
 Max=1
   
 [Field]
 Name=QH148B
-Position=159,112,174,132
+Position=179,114,194,134
 Item=QH148B,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=8
+Form=9
   
 [Text]
 Position=77,115,126,131
@@ -4022,94 +4456,99 @@ Text=QH148B
   
 [Field]
 Name=QH148C
-Position=159,142,174,162
+Position=179,144,194,164
 Item=QH148C,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=8
+Form=9
   
 [Text]
 Position=77,145,126,161
 Text=QH148C
  
   
+  
 [Field]
-Name=QH148DM
-Position=159,172,188,192
-Item=QH148DM,CGHH80
+Name=QH148DN
+Position=148,193,177,213
+Item=QH148DN,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=8
+Form=9
   
 [Text]
-Position=77,175,137,191
-Text=QH148DM
+Position=80,194,138,210
+Text=QH148DN
  
   
 [Field]
-Name=QH148DY
-Position=159,202,216,222
-Item=QH148DY,CGHH80
+Name=QH148DU
+Position=180,193,195,213
+Item=QH148DU,CGHH80
 UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Form=8
+DataCaptureType=RadioButton
+Form=9
   
-[Text]
-Position=77,205,134,221
-Text=QH148DY
- 
   
 [Field]
 Name=QH148E
-Position=159,232,174,252
+Position=179,234,194,254
 Item=QH148E,CGHH80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=8
+Form=9
   
 [Text]
 Position=77,235,125,251
 Text=QH148E
  
   
+  
 [Field]
-Name=QH148FM
-Position=159,262,188,282
-Item=QH148FM,CGHH80
+Name=QH148FN
+Position=146,276,175,296
+Item=QH148FN,CGHH80
 UseEnterKey=Yes
-FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
-Form=8
+Form=9
   
-[Text]
-Position=77,265,136,281
-Text=QH148FM
- 
   
 [Field]
-Name=QH148FY
-Position=159,292,216,312
-Item=QH148FY,CGHH80
+Name=QH148FU
+Position=181,276,196,296
+Item=QH148FU,CGHH80
 UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Form=8
+DataCaptureType=RadioButton
+Form=9
   
 [Text]
-Position=77,295,133,311
-Text=QH148FY
+Position=77,281,125,297
+Text=QH148F
  
+[Block]
+Name=QH148D_BLOCK
+Label=QH148D Block
+DisplayTogether=Yes
+Position=2
+Length=2
+  
+[Block]
+Name=QH148F_BLOCK
+Label=QH148F Block
+DisplayTogether=Yes
+Position=6
+Length=2
+  
 [EndGroup]
   
 [Group]
 Required=Yes
 Name=QHSEC04_FORM
 Label=Additional household characteristics
-Form=9
+Form=10
 Max=1
   
 [Field]
@@ -4120,7 +4559,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=10
   
 [Text]
 Position=114,94,154,110
@@ -4135,7 +4574,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=10
   
 [Text]
 Position=114,120,154,136
@@ -4150,7 +4589,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=CheckBox
-Form=9
+Form=10
   
 [Text]
 Position=114,146,154,162
@@ -4165,7 +4604,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=10
   
 [Text]
 Position=114,172,154,188
@@ -4180,7 +4619,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=10
   
 [Text]
 Position=114,201,154,217
@@ -4195,26 +4634,11 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=9
+Form=10
   
 [Text]
 Position=113,293,153,309
 Text=QH154
- 
-  
-[Field]
-Name=QH155
-Position=265,316,280,336
-Item=QH155,CGHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=RadioButton
-Form=9
-  
-[Text]
-Position=113,319,153,335
-Text=QH155
  
   
 [Field]
@@ -4226,7 +4650,7 @@ Protected=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=TextBox
-Form=9
+Form=10
   
 [Text]
 Position=112,352,165,368
@@ -4242,7 +4666,7 @@ Protected=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=TextBox
-Form=9
+Form=10
   
 [Text]
 Position=153,376,164,392
@@ -4254,7 +4678,7 @@ Text=M
 Required=Yes
 Name=QHSECEND_FORM
 Label=End of household questionnaire
-Form=10
+Form=11
 Max=1
   
 [Field]
@@ -4264,7 +4688,7 @@ Item=QHLANGQ,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=RadioButton
-Form=10
+Form=11
   
 [Text]
 Position=155,82,244,98
@@ -4277,7 +4701,7 @@ Position=385,82,414,102
 Item=QHLANGI,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=10
+Form=11
   
 [Text]
 Position=288,83,371,99
@@ -4290,7 +4714,7 @@ Position=504,80,533,100
 Item=QHLANGR,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=10
+Form=11
   
 [Text]
 Position=419,84,479,100
@@ -4303,7 +4727,7 @@ Position=264,111,279,131
 Item=QHTRANS,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=10
+Form=11
   
 [Text]
 Position=155,114,235,130
@@ -4316,7 +4740,7 @@ Position=489,179,504,199
 Item=GHAUX,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=10
+Form=11
   
 [Text]
 Position=155,182,253,198
@@ -4329,7 +4753,7 @@ Position=518,179,533,199
 Item=GHINTRO,CGHH80
 UseEnterKey=Yes
 DataCaptureType=RadioButton
-Form=10
+Form=11
   
   
 [Field]
@@ -4339,7 +4763,7 @@ Item=GHLATITUDE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
-Form=10
+Form=11
   
 [Text]
 Position=154,215,277,231
@@ -4353,7 +4777,7 @@ Item=GHLONGITUDE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
-Form=10
+Form=11
   
 [Text]
 Position=154,244,289,260
@@ -4367,7 +4791,7 @@ Item=GHALTITUDE,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
-Form=10
+Form=11
   
 [Text]
 Position=154,269,266,285
@@ -4381,7 +4805,7 @@ Item=GHACCURACY,CGHH80
 UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
-Form=10
+Form=11
   
 [Text]
 Position=154,292,212,308
@@ -4396,7 +4820,7 @@ UseEnterKey=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
-Form=10
+Form=11
   
 [Text]
 Position=218,339,429,355
@@ -4408,7 +4832,7 @@ Text=FIN DE QUESTIONNAIRE MENAGE
 Required=Yes
 Name=QBSECOVER_FORM
 Label=Biomarker questionnaire cover page
-Form=11
+Form=12
 Max=1
   
 [Field]
@@ -4417,7 +4841,7 @@ Position=448,84,505,104
 Item=QHCLUST,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=73,86,170,102
@@ -4430,7 +4854,7 @@ Position=448,110,505,130
 Item=QHNUMBER,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=73,113,193,129
@@ -4443,7 +4867,7 @@ Position=490,144,505,164
 Item=QHELIGM,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=73,149,302,165
@@ -4459,7 +4883,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=11
+Form=12
   
 [Text]
 Position=390,182,414,198
@@ -4474,7 +4898,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=RadioButton
-Form=11
+Form=12
   
 [Text]
 Position=390,206,429,222
@@ -4489,7 +4913,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=11
+Form=12
   
 [Text]
 Position=390,231,419,247
@@ -4504,7 +4928,7 @@ UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
-Form=11
+Form=12
   
 [Text]
 Position=73,266,174,282
@@ -4517,7 +4941,7 @@ Position=476,290,505,310
 Item=QHWOMEN,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=73,293,208,309
@@ -4530,7 +4954,7 @@ Position=476,317,505,337
 Item=QHMEN,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=73,320,189,336
@@ -4546,7 +4970,7 @@ Protected=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=73,347,213,363
@@ -4559,7 +4983,7 @@ Position=115,431,144,451
 Item=QHLANGQ,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=88,409,177,425
@@ -4572,7 +4996,7 @@ Position=218,431,247,451
 Item=QHLANGI,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=196,393,280,425
@@ -4585,7 +5009,7 @@ Position=302,431,331,451
 Item=QHLANGR,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=286,409,361,425
@@ -4598,7 +5022,7 @@ Position=461,429,476,449
 Item=QHTRANS,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=436,390,500,422
@@ -4611,7 +5035,7 @@ Position=155,480,212,500
 Item=QHSUPERV,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=63,481,131,497
@@ -4624,7 +5048,7 @@ Position=448,480,505,500
 Item=QHINTNUM,CGHH80
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=360,481,432,497
@@ -4638,7 +5062,7 @@ Item=QHTEAM,CGHH80
 UseEnterKey=Yes
 Mirror=Yes
 DataCaptureType=TextBox
-Form=11
+Form=12
   
 [Text]
 Position=253,484,289,500
@@ -4657,13 +5081,13 @@ Length=3
 Required=No
 Name=QBSEC01_FORM
 Label=Weight, Height and Hemoglobin Measurement for Children age 0-5
-Form=12
+Form=13
 Max=1
   
 [Grid]
 Name=QBSEC01_ROSTER
 Label=Height, Weight, Hemoglobin (children)
-Form=12
+Form=13
 Required=No
 Type=Record
 TypeName=QBSEC01
@@ -4985,7 +5409,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,319,16
-Text=Poids en kilogrammes - variable de travail pour re-saisir
+Text=Weight in kilograms - working field for re-entering
  
 [EndColumn]
   
@@ -5041,7 +5465,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,327,16
-Text=Taille en centimètres - Variable de travail pour re-saisir
+Text=Height in centimeters - working field for re-entering
  
 [EndColumn]
   
@@ -5316,7 +5740,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,339,16
-Text=Niveau d'hémoglobine (g/dl) - variable de travail pour re-saisir
+Text=Hemoglobin level (g/dl) - working field for re-entering
  
 [EndColumn]
   
@@ -5600,13 +6024,13 @@ Length=3
 Required=No
 Name=QBSEC02_FORM
 Label=Weight, Height and Hemoglobin Measurement for Women
-Form=13
+Form=14
 Max=1
   
 [Grid]
 Name=QBSEC02_ROSTER
 Label=Height, Weight, Hemoglobin (women)
-Form=13
+Form=14
 Required=No
 Type=Record
 TypeName=QBSEC02
@@ -5865,7 +6289,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,323,16
-Text=Poids en kilogrammes - variable de travail pour re-saisir
+Text=Weight in kilograms - working field for re-entering
  
 [EndColumn]
   
@@ -5921,7 +6345,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,327,16
-Text=Taille en centimètres - variable de travail pour re-saisir
+Text=Height in centimeters - working field for re-entering
  
 [EndColumn]
   
@@ -6585,13 +7009,13 @@ Length=0
 Required=Yes
 Name=QBSEC03_FORM
 Label=Weight, Height and Hemoglobin Measurement for Men 15-49
-Form=14
+Form=15
 Max=1
   
 [Grid]
 Name=QBSEC03_ROSTER
 Label=Eaten?
-Form=14
+Form=15
 Required=No
 Type=Record
 TypeName=QBSEC03
@@ -6872,7 +7296,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,319,16
-Text=Poids en kilogrammes - variable de travail pour re-saisir
+Text=Weight in kilograms - working field for re-entering
  
 [EndColumn]
   
@@ -6928,7 +7352,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,327,16
-Text=Taille en centimètres - variable de travail pour re-saisir
+Text=Height in centimeters - working field for re-entering
  
 [EndColumn]
   
@@ -7616,7 +8040,7 @@ UseEnterKey=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
-Form=14
+Form=15
   
 [Text]
 Position=1028,13,1228,29

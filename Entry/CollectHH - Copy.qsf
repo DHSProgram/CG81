@@ -4,6 +4,8 @@ version: CSPro 7.7
 languages:
   - name: EN
     label: English
+  - name: ES
+    label: Español
   - name: FR
     label: French
 styles:
@@ -46,8 +48,6 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">VISIT ~~QHVLINE~~, ENTER 1 TO START INTERVIEW OR RECORD THE RESULT OF THE INTERVIEW.</span></p>
-          FR: |
-            <p><span style="font-family: Arial, sans-serif; font-size: 24px;"><font color="#0000ff" style="">VISITE&nbsp;</font><font color="#ff0000" style="">~~QHVLINE~~</font></span></p><p><span style="font-family: Arial, sans-serif; font-size: 24px;"><font color="#0000ff" style="">ENTRER 1 POUR DEMMARRER L'INTERVIEW OU ENREGISTRER LE RESULTAT DE L'INTERVIEW.&nbsp;</font></span><p></p></p>
   - name: CGHH80.QHCONSENT
     conditions:
       - questionText:
@@ -57,8 +57,6 @@ questions:
             <p><span class="instruction">GIVE CARD WITH CONTACT INFORMATION</span></p>
             <p>Do you have any questions?</p>
             <p>May I begin the interview now?</p>
-          FR: |
-            <p>Bonjour. Je m'appelle _______________________________________. Je travaille pour l'Institut National de la Statistique. En collaboration avec le Ministère de la Santé et de la Population, nous effectuons une enquête nationale sur la santé et sur d'autres sujets partout en République du Congo. Les informations que nous collectons aideront à améliorer les services de santé. Votre ménage a été sélectionné pour cette enquête. Nous voudrions vous poser quelques questions sur votre ménage. Les questions prennent habituellement entre 15 et 20 minutes. Toutes les informations que vous nous donnerez sont strictement confidentielles et elles ne seront transmises à personne d'autres que les membres de l'équipe d'enquête. Vous n'êtes pas obligé de participer à cette enquête, mais nous espérons que vous accepterez de répondre à nos questions car votre opinion est très importante. S'il arrivait que je pose une question à laquelle vous ne voulez pas répondre, dites-le moi et je passerai à la question suivante ou vous pouvez également interrompre l'interview à n'importe quel moment. Si vous souhaitez plus d'informations sur l'enquête, vous pouvez contacter les personnes figurant sur cette carte.&nbsp;</p><p><br></p><p><font color="#0000ff">DONNEZ LA CARTE AVEC LES INFORMATIONS POUR CONTACTER CES PERSONNES</font></p><p><br></p><p>Avez-vous des questions à me poser ?</p><p>Puis-je commencer l'interview maintenant ?</p>
   - name: CGHH80.QHFIRSTN
     conditions:
       - logic: curocc() in 1
@@ -66,8 +64,6 @@ questions:
           EN: |
             <p>Please give me the names of the persons who usually live in your household and guests of the household who stayed here last night, starting with the head of the household.</p>
             <p><span class="instruction">RECORD THE FIRST NAME OF THE HEAD OF THE HOUSEHOLD</span></p>
-          FR: |
-            <p>2.  S&#39;il vous plait, donnez-moi les noms des personnes qui vivent habituellement dans votre m&#233;nage et des visiteurs qui ont pass&#233; la nuit derni&#232;re ici, en commen&#231;ant par le chef de m&#233;nage.</p><p><span class="instruction">NOTEZ LE PR&#201;NOM DU CHEF DE MENAGE</span></p>
       - logic: curocc() in 2:50
         questionText:
           EN: |
@@ -92,44 +88,32 @@ questions:
         questionText:
           EN: |
             <p>What is the relationship of ~~QHFIRSTN~~ ~~QHLASTN~~ to the head of the household?</p>
-          FR: |
-            <p>3.  Quel est le lien de parent&#233; de ~~QHFIRSTN~~ ~~QHLASTN~~ avec le chef de m&#233;nage ?</p>
   - name: CGHH80.QHSEX
     conditions:
       - questionText:
           EN: |
             <p>Is ~~QHFIRSTN~~ ~~QHLASTN~~ male or female?</p>
-          FR: |
-            <p>4.  ~~QHFIRSTN~~ ~~QHLASTN~~ est-il de sexe masculin ou f&#233;minin&#160;?</p>
   - name: CGHH80.QHLIVES
     conditions:
       - questionText:
           EN: |
             <p>Does ~~QHFIRSTN~~ ~~QHLASTN~~ usually live here?</p>
-          FR: |
-            <p>5.  ~~QHFIRSTN~~ ~~QHLASTN~~ vit-il/ elle ici habituellement&#160;?</p>
   - name: CGHH80.QHSTAYED
     conditions:
       - questionText:
           EN: |
             <p>Did ~~QHFIRSTN~~ ~~QHLASTN~~ stay here last night?</p>
-          FR: |
-            <p>6.  ~~QHFIRSTN~~ ~~QHLASTN~~ a t-il/ elle pass&#233; la nuit derni&#232;re ici&#160;?</p>
   - name: CGHH80.QHAGE
     conditions:
       - questionText:
           EN: |
             <p>How old is ~~QHFIRSTN~~  ~~QHLASTN~~?</p>
             <p><span class="instruction">IF 95 OR MORE, RECORD '95'</span></p>
-          FR: |
-            <p>7.  Quel &#226;ge a ~~QHFIRSTN~~ ~~QHLASTN~~&#160;?</p><p><span class="instruction">SI 95 OU PLUS, NOTEZ &#39;95&#39;.</span></p>
   - name: CGHH80.QHMORE
     conditions:
       - questionText:
           EN: |
             <p>Are there any other persons living in this household?</p>
-          FR: |
-            <p>7-1.  Y a-t-il d&#39;autres personnes qui vivent dans ce m&#233;nage ?</p>
   - name: CGHH80.QHRESP
     conditions:
       - questionText:
@@ -140,50 +124,36 @@ questions:
       - questionText:
           EN: |
             <p>Just to make sure that I have a complete listing: are there any other persons such as small children or infants that we have not listed?</p>
-          FR: |
-            <p>7A).  Juste pour &#234;tre s&#251;r que j&#39;ai une liste compl&#232;te : y a-t-il d&#39;autres personnes comme des petits enfants ou des nourrissons que nous n&#39;avons pas list&#233;s ?</p>
   - name: CGHH80.QH07B
     conditions:
       - questionText:
           EN: |
             <p>Are there any other people who may not be members of your family, such as domestic servants, lodgers, or friends who usually live here?</p>
-          FR: |
-            <p>7B).  Y a-t-il d&#39;autres personnes qui ne sont peut-&#234;tre pas membres de votre famille, comme des domestiques, locataires ou amis qui vivent habituellement ici ?</p>
   - name: CGHH80.QH07C
     conditions:
       - questionText:
           EN: |
             <p>Are there any guests or temporary visitors staying here, or anyone else who stayed here last night, who have not been listed?</p>
-          FR: |
-            <p>7C).  Avez-vous des invit&#233;s ou des visiteurs temporaires qui sont chez vous, ou d&#39;autres personnes qui ont dormi ici la nuit derni&#232;re et qui n&#39;ont pas &#233;t&#233; list&#233;s ?</p>
   - name: CGHH80.QH08
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>What is ~~QH02~~'s current marital status?</p>
-          FR: |
-            <p>8.  Quel est l&#39;&#233;tat matrimonial actuel de ~~QH02~~&#160;?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>What is your current marital status?</p>
-          FR: |
-            <p>8.  Quel est votre &#233;tat matrimonial actuel ?</p>
   - name: CGHH80.QH12
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>Is ~~QH02~~'s biological mother alive?</p>
-          FR: |
-            <p>12.  La m&#232;re biologique de ~~QH02~~ est-elle en vie&#160;?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>Is your biological mother alive?</p>
-          FR: |
-            <p>12.  Votre m&#232;re biologique est-elle vivante ?</p>
   - name: CGHH80.QH13
     conditions:
       - logic: QH01 <> QHRESP
@@ -192,30 +162,22 @@ questions:
             <p>Does ~~QH02~~'s biological mother usually live in this household or was she a guest last night?</p>
             <p><span class="instruction">IF YES:</span> What is her name? <span class="instruction">RECORD MOTHER'S LINE NUMBER.</span></p>
             <p><span class="instruction">IF NO: RECORD '0'.</span></p>
-          FR: |
-            <p>13.  La m&#232;re biologique de ~~QH02~~ vit-elle habituellement dans ce m&#233;nage ou &#233;tait-elle en visite ici la nuit derni&#232;re&#160;?</p><p>SI OUI : Quel est son nom ?</p><p><span class="instruction">NOTEZ LE N&#176;  DE LIGNE DE LA M&#200;RE.</span></p><p><span class="instruction">SI NON, NOTEZ &#39;00&#39;.</span></p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>Does your biological mother usually live in this household or was she a guest last night?</p>
             <p><span class="instruction">IF YES:</span> What is her name? <span class="instruction">RECORD MOTHER'S LINE NUMBER.</span></p>
             <p><span class="instruction">IF NO: RECORD '0'.</span></p>
-          FR: |
-            <p>13.  Votre m&#232;re biologique vit-elle habituellement dans ce m&#233;nage ou &#233;tait-elle en visite ici la nuit derni&#232;re ?</p><p>SI OUI : Quel est son nom ?</p><p><span class="instruction">NOTEZ LE N&#176;  DE LIGNE DE LA M&#200;RE.</span></p><p><span class="instruction">SI NON, NOTEZ &#39;00&#39;.</span></p>
   - name: CGHH80.QH14
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>Is ~~QH02~~'s biological father alive?</p>
-          FR: |
-            <p>14.  Le p&#232;re biologique de ~~QH02~~ est-il en vie&#160;?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>Is your biological father alive?</p>
-          FR: |
-            <p>14.  Votre p&#232;re biologique est-il en vie ?</p>
   - name: CGHH80.QH15
     conditions:
       - logic: QH01 <> QHRESP
@@ -224,100 +186,72 @@ questions:
             <p>Does ~~QH02~~'s biological father usually live in this household or was he a guest last night?</p>
             <p><span class="instruction">IF YES:</span> What is his name? <span class="instruction">RECORD FATHER'S LINE NUMBER.</span></p>
             <p><span class="instruction">IF NO: RECORD '0'.</span></p>
-          FR: |
-            <p>15.  Le p&#232;re biologique de ~~QH02~~ vit-il habituellement dans ce m&#233;nage ou &#233;tait-il en visite ici la nuit derni&#232;re&#160;?</p><p>SI OUI : Quel est son nom ?</p><p><span class="instruction">NOTEZ LE N&#176;  DE LIGNE DU P&#200;RE.</span></p><p><span class="instruction">SI NON, NOTEZ &#39;00&#39;.</span></p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>Does your biological father usually live in this household or was he a guest last night?</p>
             <p><span class="instruction">IF YES:</span> What is his name? <span class="instruction">RECORD FATHER'S LINE NUMBER.</span></p>
             <p><span class="instruction">IF NO: RECORD '0'.</span></p>
-          FR: |
-            <p>15.  Votre p&#232;re biologique vit-il habituellement dans ce m&#233;nage ou &#233;tait-il en visite ici la nuit derni&#232;re ?</p><p>SI OUI : Quel est son nom ?</p><p><span class="instruction">NOTEZ LE N&#176;  DE LIGNE DU P&#200;RE.</span></p><p><span class="instruction">SI NON, NOTEZ &#39;00&#39;.</span></p>
   - name: CGHH80.QH16
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>Has ~~QH02~~ ever attended school or any early childhood education program?</p>
-          FR: |
-            <p>16.  Est-ce que ~~QH02~~ a d&#233;j&#224; fr&#233;quent&#233; l&#39;&#233;cole ou a-t-il suivi un programme &#233;ducatif pr&#233;scolaire ?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>Have you ever attended school or any early childhood education program?</p>
-          FR: |
-            <p>16.  Avez-vous d&#233;j&#224; fr&#233;quent&#233; l&#39;&#233;cole ou suivi un programme &#233;ducatif pr&#233;scolaire ?</p>
   - name: CGHH80.QH17A
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>What is the highest level of school ~~QH02~~ has attended?</p>
-          FR: |
-            <p>17A.  Quel est le plus haut niveau d&#39;&#233;tudes que ~~QH02~~ a atteint ?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>What is the highest level of school you have attended?</p>
-          FR: |
-            <p>17A.  Quel est le plus haut niveau d&#39;&#233;tudes que vous avez atteint ?</p>
   - name: CGHH80.QH17B
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>What is the highest grade ~~QH02~~ completed at that level?</p>
-          FR: |
-            <p>17B.  Quelle est la classe la plus &#233;lev&#233;e que ~~QH02~~ a achev&#233;e &#224; ce niveau ?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>What is the highest grade you completed at that level?</p>
-          FR: |
-            <p>17B.  Quelle est la classe la plus &#233;lev&#233;e que vous avez achev&#233;e &#224; ce niveau ?</p>
   - name: CGHH80.QH18
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>Did ~~QH02~~ attend school or any early childhood education program at any time during the [2019-2020] school year?</p>
-          FR: |
-            <p>18.  Est-ce que ~~QH02~~ est allé à l'école ou a suivi un programme éducatif préscolaire à un moment au cours de l'année scolaire 2024-2025 ?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>Did you attend school or any early childhood education program at any time during the [2019-2020] school year?</p>
-          FR: |
-            <p>18.  Avez-vous été à l'école ou avez-vous suivi un programme d'éducation préscolaire à un moment quelconque au cours de l'année scolaire 2024-2025 ?</p>
   - name: CGHH80.QH19A
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>During [this/that] school year, what level [is/was] ~~QH02~~ attending?</p>
-          FR: |
-            <p>19.  Au cours de l'année scolaire&nbsp;&nbsp;2024-2025, à quel niveau et en quelle classe est/était ~~QH02~~&nbsp;?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>During [this/that] school year, what level [are/were] you attending?</p>
-          FR: |
-            <p>19.  Au cours de l'année scolaire&nbsp;&nbsp;2024-2025, à quel niveau et en quelle classe êtest/était vous&nbsp;?</p>
   - name: CGHH80.QH19B
     conditions:
       - logic: QH01 <> QHRESP
         questionText:
           EN: |
             <p>During [this/that] school year, what grade [is/was] ~~QH02~~ attending?</p>
-          FR: |
-            <p>19.  Au cours de l'année scolaire&nbsp;&nbsp;2024-2025, à quel niveau et en quelle classe est/était ~~QH02~~&nbsp;?</p>
       - logic: QH01 = QHRESP
         questionText:
           EN: |
             <p>During [this/that] school year, what grade [are/were] you attending?</p>
-          FR: |
-            <p>19.  Au cours de l'année scolaire&nbsp;&nbsp;2024-2025, à quel niveau et en quelle classe êtest/était vous&nbsp;?</p>
   - name: CGHH80.QH20
     conditions:
       - questionText:
@@ -325,438 +259,157 @@ questions:
             <p>Does ~~QH02~~ have a birth certificate?</p>
             <p><span class="instruction">IF NO, PROBE:</span></p>
             <p>Has ~~QH02~~'s birth ever been registered with the civil authority?</p>
-          FR: |
-            <p>20.  ~~QH02~~ a-t-il/elle un acte de naissance&nbsp;?</p><p><span class="instruction">SI NON, INSISTEZ :</span></p><p>La naissance de ~~QH02~~ a-t-elle été declarée à l'état civil&nbsp;?</p>
-  - name: CGHH80.QCHL2A
-    conditions:
-      - questionText:
-          EN: |
-            <p>Now I would like to ask about any work ~~QCHLNAME~~ may do.</p>
-            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ do any of the following activities, even for only one hour?</p>
-            <p>Did ~~QCHLNAME~~ do any work or help on ~~hisher~~ own or the household's plot, farm, or food garden or looked after animals? For example, growing farm produce, harvesting, or feeding, grazing, or milking animals?</p>
-          FR: |
-            <p>Maintenant je voudrais vous parler de tout travail que ~~QCHLNAME~~ pourrait faire.</p><p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ a-t-il/elle fait une des activités suivantes, même si c’est pendant une heure seulement ?</p><p></p>
-  - name: CGHH80.QCHL2B
-    conditions:
-      - questionText:
-          EN: |
-            <p>Did ~~QCHLNAME~~ help in a family business or relative's business with or without pay, or run ~~hisher~~ own business?</p>
-          FR: |
-            Est-ce que ~~QCHLNAME~~ a aidé dans l’entreprise familiale, ou dans celle d’autres parents avec ou sans paiement ou&nbsp; a travaillé dans sa propre entreprise ?<p></p>
-  - name: CGHH80.QCHL2C
-    conditions:
-      - questionText:
-          EN: |
-            <p>Did ~~QCHLNAME~~ produce or sell articles, handicrafts, clothes, food or agricultural products?</p>
-          FR: |
-            Est-ce que ~~QCHLNAME~~ a produit, ou vendu des articles, des produits artisanaux, des vêtements, de la nourriture ou des produits agricoles ?<p></p>
-  - name: CGHH80.QCHL2D
-    conditions:
-      - questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ engage in any other activity in return for income in cash or in kind, even for only one hour?</p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ a-t-~~hisher~~ été engagé(e) dans n’importe quelle autre activité en échange de paiement en espèces ou en nature, même pour une seule heure ?</p>
-  - name: CGHH80.QCHL4
-    conditions:
-      - logic: activity1 <> 1
-        questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~ about how many hours did ~~QCHLNAME~~ engage in these activities, in total?</p>
-            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ a-t-~~hisher~~ été engagé(e) dans n’importe quelle autre activité en échange de paiement en espèces ou en nature, même pour une seule heure ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
-      - logic: activity1 = 1
-        questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~ about how many hours did ~~QCHLNAME~~ engage in this activity, in total?</p>
-            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, a peu près combien d’heures au total ~~QCHLNAME~~ a-t-~~hisher~~ travaillé sur (cette  activité/ces activités) ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
-  - name: CGHH80.QCHL5
-    conditions:
-      - logic: activity1 <> 1
-        questionText:
-          EN: |
-            <p>Do these activities require carrying heavy loads?</p>
-          FR: |
-            <p>Est-ce que (cette activité/ces activités) requièrent de porter des charges lourdes ?</p>
-      - logic: activity1 = 1
-        questionText:
-          EN: |
-            <p>Does the activity require carrying heavy loads?</p>
-          FR: |
-            <p>Est-ce que (cette activité/ces activités) requièrent de porter des charges lourdes ?</p>
-  - name: CGHH80.QCHL6
-    conditions:
-      - questionText:
-          EN: |
-            <p>Do these activities require working with dangerous tools, such as knives, or operating heavy machinery?</p>
-          FR: |
-            <p>Est-ce que (cette /ces activité(s)) requièrent de travailler avec des outils dangereux tels que des couteaux et autres outils similaires ou de faire fonctionner des grosses machines ?</p>
-  - name: CGHH80.QCHL7A
-    conditions:
-      - questionText:
-          EN: |
-            <p>How would you describe the work environment of ~~QCHLNAME~~?</p>
-            <p>Is ~~QCHLNAME~~ exposed to dust, fumes or gas?</p>
-          FR: |
-            <p>Comment décririez-vous l’environnement de travail de ~~QCHLNAME~~ ?</p>
-            <p>Est-ce que ~~QCHLNAME~~ est exposé  à la poussière/fumées ou gaz ? </p>
-  - name: CGHH80.QCHL7B
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~QCHLNAME~~ exposed to extreme cold, heat or humidity?</p>
-          FR: |
-            <p>Est-ce que ~~QCHLNAME~~ est exposé  au froid, à la chaleur ou à de l’humidité extrême ?</p>
-  - name: CGHH80.QCHL7C
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~QCHLNAME~~ exposed to loud noise or vibration?</p>
-          FR: |
-            <p>Est-ce que ~~QCHLNAME~~ est exposé à des bruits intenses ou a des vibrations ?</p>
-  - name: CGHH80.QCHL7D
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~QCHLNAME~~ required to work at heights?</p>
-          FR: |
-            <p>Est-ce que ~~QCHLNAME~~ est amené à travailler en hauteur ?</p>
-  - name: CGHH80.QCHL7E
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~QCHLNAME~~ required to work with chemicals, pesticides, glues, etc., or explosives?</p>
-          FR: |
-            <p>Est-ce que, dans son travail, ~~QCHLNAME~~ est exposé à des produits chimiques, tels que des pesticides, des colles ou similaires ou des explosifs ?</p>
-  - name: CGHH80.QCHL7F
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~QCHLNAME~~ exposed to other things, processes or conditions bad for ~~QCHLNAME~~'s health or safety?</p>
-          FR: |
-            <p>Est-ce que ~~QCHLNAME~~ est exposé à d’autres choses, ou soumis à des processus ou des conditions défavorables à sa santé ou sa sécurité ?</p>
-  - name: CGHH80.QCHL8
-    conditions:
-      - questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ fetch water for household use?</p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ est-~~hisher~~ allé chercher de l’eau pour le ménage ?</p>
-  - name: CGHH80.QCHL9
-    conditions:
-      - questionText:
-          EN: |
-            <p>In total, how many hours did ~~QCHLNAME~~ spend on fetching water for household use, since last ~~dayalpha~~?</p>
-            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
-          FR: |
-            <p>Au total, depuis ~~dayalpha~~ dernier, combien d’heures ~~QCHLNAME~~ a-t-~~hisher~~ passe à chercher de l’eau pour le ménage ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
-  - name: CGHH80.QCHL10
-    conditions:
-      - questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ collect firewood for household use?</p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ est-~~hisher~~ allé chercher du bois pour le ménage ?</p>
-  - name: CGHH80.QCHL11
-    conditions:
-      - questionText:
-          EN: |
-            <p>In total, how many hours did ~~QCHLNAME~~ spend on collecting firewood for household use, since last ~~dayalpha~~?</p>
-            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
-          FR: |
-            <p>Au total, depuis ~~dayalpha~~ dernier, combien d’heures ~~QCHLNAME~~ a-t-~~hisher~~ passe à chercher  du bois pour le ménage ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
-  - name: QHCL12_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>Depuis ~~dayalpha~~ dernier, est-ce que ~~QCHLNAME~~ a fait une des choses suivantes pour le ménage :</p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, est-ce que ~~QCHLNAME~~ a fait une des choses suivantes pour le ménage :</p>
-  - name: CGHH80.QCHL12A
-    conditions:
-      - questionText:
-          EN: |
-            <p>Shopping for the household?</p>
-          FR: |
-            <p>Des courses pour le ménage ?</p>
-  - name: CGHH80.QCHL12B
-    conditions:
-      - questionText:
-          EN: |
-            <p>Cooking?</p>
-          FR: |
-            <p>Cuisiner ?</p>
-  - name: CGHH80.QCHL12C
-    conditions:
-      - questionText:
-          EN: |
-            <p>Washing dishes or cleaning around the house?</p>
-          FR: |
-            <p>Laver la vaisselle ou nettoyer la maison ?</p>
-  - name: CGHH80.QCHL12D
-    conditions:
-      - questionText:
-          EN: |
-            <p>Washing clothes?</p>
-          FR: |
-            <p>Laver des vêtements ?</p>
-  - name: CGHH80.QCHL12E
-    conditions:
-      - questionText:
-          EN: |
-            <p>Caring for children?</p>
-          FR: |
-            <p>Prendre soin des enfants ?</p>
-  - name: CGHH80.QCHL12F
-    conditions:
-      - questionText:
-          EN: |
-            <p>Caring for someone old or sick?</p>
-          FR: |
-            <p>Prendre soin des personnes âgées ou malades ?</p>
-  - name: CGHH80.QCHL12G
-    conditions:
-      - questionText:
-          EN: |
-            <p>Other household tasks?</p>
-          FR: |
-            <p>Autres tâches de ménage ?</p>
-  - name: CGHH80.QCHL14
-    conditions:
-      - logic: activity2 <> 1
-        questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~, about how many hours did ~~QCHLNAME~~ engage in these activities, in total?</p>
-            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, combien d’heures à peu près, ~~QCHLNAME~~ a-t-~~hisher~~ travaillé sur ces activités ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER «&nbsp;0&nbsp;».</span></p>
-      - logic: activity2 = 1
-        questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~, about how many hours did ~~QCHLNAME~~ engage in this activity, in total?</p>
-            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
-          FR: |
-            <p>Depuis ~~dayalpha~~ dernier, combien d’heures à peu près, ~~QCHLNAME~~ a-t-~~hisher~~ travaillé sur cette activité ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
   - name: CGHH80.QCDI3
     conditions:
       - questionText:
           EN: |
             <p>Adults use certain ways to teach children the right behaviour or to address a behaviour problem. I will read various methods that are used. Please tell me if you or any other adult in this household has used this method with ~~QCDINAME~~ in the past month.</p>
-          FR: |
-            Les adultes utilisent certains moyens pour apprendre aux enfants à bien se comporter ou pour traiter des problèmes de comportement. Je vais vous lire une liste de méthodes qui sont utilisées et j’aimerais que vous me disiez&nbsp; si vous avez ou n'importe quel autre membre de votre ménage a utilisé une de ces méthodes avec ~~QCDINAME~~ au cours du mois dernier<p></p>
   - name: CGHH80.QCDI3A
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Took away privileges, forbade something ~~QCDINAME~~ liked or did not allow her to leave the house.</p>
-          FR: |
-            Retirer des privilèges, interdire quelque chose que ~~QCDINAME~~ aime faire ou ne pas lui permettre de quitter la maison<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Took away privileges, forbade something ~~QCDINAME~~ liked or did not allow him to leave the house.</p>
-          FR: |
-            Retirer des privilèges, interdire quelque chose que ~~QCDINAME~~ aime faire ou ne pas lui permettre de quitter la maison<p></p>
   - name: CGHH80.QCDI3B
     conditions:
       - questionText:
           EN: |
             <p>Explained why ~~QCDINAME~~'s behaviour was wrong.</p>
-          FR: |
-            Expliquer à ~~QCDINAME~~ pourquoi son comportement n’est pas acceptable<p></p>
   - name: CGHH80.QCDI3C
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Shook her.</p>
-          FR: |
-            La secouer<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Shook him.</p>
-          FR: |
-            Le secouer<p></p>
   - name: CGHH80.QCDI3D
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Shouted, yelled at or screamed at her.</p>
-          FR: |
-            Hurler, lui crier dessus<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Shouted, yelled at or screamed at him.</p>
-          FR: |
-            Hurler, lui crier dessus<p></p>
   - name: CGHH80.QCDI3E
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Gave her something else to do.</p>
-          FR: |
-            Lui donner quelque chose d’autre à faire<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Gave him something else to do.</p>
-          FR: |
-            Lui donner quelque chose d’autre à faire<p></p>
   - name: CGHH80.QCDI3F
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Spanked, hit or slapped her on the bottom with bare hand.</p>
-          FR: |
-            Lui donner une fessée, la frapper ou la taper sur les fesses à main nues<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Spanked, hit or slapped him on the bottom with bare hand.</p>
-          FR: |
-            Lui donner une fessée, le frapper ou le taper sur les fesses à main nues<p></p>
   - name: CGHH80.QCDI3G
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Hit her on the bottom or elsewhere on the body with something like a belt, hairbrush, stick, or other hard object.</p>
-          FR: |
-            La frapper sur les fesses ou sur d’autres parties du corps avec quelque chose tel ceinture, brosse à cheveux, bâton ou autre objet dur.&nbsp;<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Hit him on the bottom or elsewhere on the body with something like a belt, hairbrush, stick, or other hard object.</p>
-          FR: |
-            Le frapper sur les fesses ou sur d’autres parties du corps avec quelque chose tel ceinture, brosse à cheveux, bâton ou autre objet dur.&nbsp;<p></p>
   - name: CGHH80.QCDI3H
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Called her dumb, lazy, or another name like that.</p>
-          FR: |
-            La traiter d’idiot, de paresseux ou d’un autre nom comme ça.&nbsp;<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Called him dumb, lazy, or another name like that.</p>
-          FR: |
-            Le traiter d’idiot, de paresseux ou d’un autre nom comme ça.&nbsp;<p></p>
   - name: CGHH80.QCDI3I
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Hit or slapped her on the face, head, or ears.</p>
-          FR: |
-            La frapper ou (le/la) gifler sur le visage, la tête ou les oreilles.&nbsp;<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Hit or slapped him on the face, head, or ears.</p>
-          FR: |
-            Le frapper ou (le/la) gifler sur le visage, la tête ou les oreilles.&nbsp;<p></p>
   - name: CGHH80.QCDI3J
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Hit or slapped her on the hand, arm, or leg.</p>
-          FR: |
-            (Le/la) frapper ou (le/la) taper sur les mains, les bras ou les jambes<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Hit or slapped him on the hand, arm, or leg.</p>
-          FR: |
-            (Le/la) frapper ou (le/la) taper sur les mains, les bras ou les jambes<p></p>
   - name: CGHH80.QCDI3K
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
             <p>Beat her up, that is hit her over and over as hard as one could.</p>
-          FR: |
-            La battre, c’est-à-dire la frapper encore et encore aussi fort que possible<p></p>
       - logic: xsex = 1
         questionText:
           EN: |
             <p>Beat him up, that is hit him over and over as hard as one could.</p>
-          FR: |
-            Le battre, c’est-à-dire le&nbsp; frapper encore et encore aussi fort que possible<p></p>
   - name: CGHH80.QCDI4
     conditions:
       - questionText:
           EN: |
             <p>Do you believe that in order to bring up, raise or educate a child properly, the child needs to be physically punished?</p>
-          FR: |
-            Pensez-vous que pour élever ou éduquer correctement un enfant, il est nécessaire qu’il soit puni physiquement ?<p></p>
   - name: CGHH80.QH101
     conditions:
       - questionText:
           EN: |
             <p>What is the main source of drinking water for members of your household?</p>
-          FR: |
-            <p>101.  D&#39;o&#249; provient principalement l&#39;eau que boivent les membres de votre m&#233;nage&#160;?</p>
   - name: CGHH80.QH102
     conditions:
       - questionText:
           EN: |
             <p>What is the main source of water used by your household for other purposes such as cooking and handwashing?</p>
-          FR: |
-            <p>102.  D&#39;o&#249; provient principalement l&#39;eau utilis&#233;e par votre m&#233;nage pour d&#39;autres usages comme faire la cuisine et se laver les mains ?</p>
   - name: CGHH80.QH103
     conditions:
       - questionText:
           EN: |
             <p>Where is that water source located?</p>
-          FR: |
-            <p>103.  O&#249; est situ&#233;e cette source d&#39;approvisionnement de l&#39;eau&#160;?</p>
   - name: CGHH80.QH104
     conditions:
       - questionText:
           EN: |
             <p>How long does it take to go there, get water, and come back?</p>
-          FR: |
-            <p>104.  Combien de temps faut-il pour s&#39;y rendre, prendre l&#39;eau et revenir&#160;?</p>
   - name: CGHH80.QH105
     conditions:
       - questionText:
           EN: |
             <p>Who usually goes to this source to collect the water for your household?</p>
             <p><span class="instruction">RECORD THE PERSON'S NAME AND LINE NUMBER FROM THE HOUSEHOLD SCHEDULE.  IF THE PERSON IS NOT LISTED IN THE HOUSEHOLD ROSTER, RECORD '0'.</span></p>
-          FR: |
-            <p>105.  Qui habituellement va &#224; la source d&#39;approvisionnement pour prendre l&#39;eau pour le m&#233;nage ?</p><p><span class="instruction">ENREGISTREZ LE NOM DE LA PERSONNE ET LE NUM&#201;RO DE LIGNE &#192; PARTIR DU TABLEAU M&#201;NAGE. SI LA PERSONNE N&#39;EST PAS LIST&#201;E DANS LE TABLEAU M&#201;NAGE, INSCRIVEZ ‘00’.</span></p>
   - name: CGHH80.QH106
     conditions:
       - questionText:
           EN: |
             <p>In the last month, has there been any time when your household did not have sufficient quantities of drinking water when needed?</p>
-          FR: |
-            <p>106.  Au cours du mois dernier, est-ce qu&#39;il est arriv&#233; que votre m&#233;nage n&#39;ait pas eu suffisamment d&#39;eau pour boire quand vous en aviez besoin ?</p>
   - name: CGHH80.QH107
     conditions:
       - questionText:
           EN: |
             <p>Do you do anything to the water to make it safer to drink?</p>
-          FR: |
-            <p>107.  Faites-vous quelque chose pour rendre l&#39;eau plus saine &#224; boire&#160;?</p>
   - name: CGHH80.QH108
     conditions:
       - questionText:
@@ -764,162 +417,116 @@ questions:
             <p>What do you usually do to make the water safer to drink?</p>
             <p>Anything else?</p>
             <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
-          FR: |
-            <p>108.  Habituellement, que faites-vous pour rendre l&#39;eau que vous buvez plus saine&#160;?</p><p>Quelque chose d&#39;autre ?</p><p><span class="instruction">ENREGISTREZ TOUT CE QUI EST MENTIONN&#201;.</span></p>
   - name: CGHH80.QH109
     conditions:
       - questionText:
           EN: |
             <p>What kind of toilet facility do members of your household usually use?</p>
             <p><span class="instruction">IF NOT POSSIBLE TO DETERMINE, ASK PERMISSION TO OBSERVE THE FACILITY.</span></p>
-          FR: |
-            <p>109.  Quel type de toilettes les membres de votre m&#233;nage utilisent-ils habituellement ?</p><p><span class="instruction">S&#39;IL N&#39;EST PAS POSSIBLE DE D&#201;TERMINER LE TYPE DE TOILETTES, DEMANDEZ LA PERMISSION DE VOIR L&#39;INSTALLATION.</span></p>
   - name: CGHH80.QH110
     conditions:
       - questionText:
           EN: |
             <p>Do you share this toilet facility with other households?</p>
-          FR: |
-            <p>110.  Partagez-vous ces toilettes avec d&#39;autres m&#233;nages ?</p>
   - name: CGHH80.QH111
     conditions:
       - questionText:
           EN: |
             <p>Including your own household, how many households use this toilet facility?</p>
-          FR: |
-            <p>111.  En comptant votre propre m&#233;nage, combien de m&#233;nages utilisent ces toilettes ?</p>
   - name: CGHH80.QH112
     conditions:
       - questionText:
           EN: |
             <p>Where is this toilet facility located?</p>
-          FR: |
-            <p>112.  O&#249; se trouvent ces toilettes ?</p>
   - name: CGHH80.QH114
     conditions:
       - logic: faciltype = 1
         questionText:
           EN: |
             <p>Has your septic tank ever been emptied?</p>
-          FR: |
-            <p>114a).  Est-ce que votre fosse septique a d&#233;j&#224; &#233;t&#233; vid&#233;e ?</p>
       - logic: faciltype = 2
         questionText:
           EN: |
             <p>Has your pit latrine ever been emptied?</p>
-          FR: |
-            <p>114b).  Est-ce que votre fosse a d&#233;j&#224; &#233;t&#233; vid&#233;e ?</p>
       - logic: faciltype = 3
         questionText:
           EN: |
             <p>Has your composting toilet ever been emptied?</p>
-          FR: |
-            <p>114c).  Est-ce que votre toilettes &#224; compostage a d&#233;j&#224; &#233;t&#233; vid&#233;e ?</p>
   - name: CGHH80.QH115
     conditions:
       - logic: faciltype = 1
         questionText:
           EN: |
             <p>The last time the septic tank was emptied, was it emptied by a service provider?</p>
-          FR: |
-            <p>115a).  La derni&#232;re fois que votre fosse septique a &#233;t&#233; vid&#233;e, est-ce que cela a &#233;t&#233; fait par un professionnel ?</p>
       - logic: faciltype = 2
         questionText:
           EN: |
             <p>The last time the pit latrine was emptied, was it emptied by a service provider?</p>
-          FR: |
-            <p>115b).  La derni&#232;re fois que votre fosse a &#233;t&#233; vid&#233;e, est-ce que cela a &#233;t&#233; fait par un professionnel ?</p>
       - logic: faciltype = 3
         questionText:
           EN: |
             <p>The last time the composting toilet was emptied, was it emptied by a service provider?</p>
-          FR: |
-            <p>115c).  La derni&#232;re fois que votre toilettes &#224; compostage a &#233;t&#233; vid&#233;e, est-ce que cela a &#233;t&#233; fait par un professionnel ?</p>
   - name: CGHH80.QH116
     conditions:
       - questionText:
           EN: |
             <p>Where were the contents emptied to?</p>
-          FR: |
-            <p>116.  O&#249; le contenu a-t-il &#233;t&#233; vid&#233; ?</p>
   - name: CGHH80.QH117
     conditions:
       - questionText:
           EN: |
             <p>In your household, what type of cookstove is mainly used for cooking?</p>
-          FR: |
-            <p>117.  Dans ce m&#233;nage, quel type de cuisini&#232;re est habituellement utilis&#233;e pour la cuisine ?</p>
   - name: CGHH80.QH118
     conditions:
       - questionText:
           EN: |
             <p>Does the stove have a chimney?</p>
-          FR: |
-            <p>118.  Est-ce que la cuisini&#232;re a une chemin&#233;e ?</p>
   - name: CGHH80.QH120
     conditions:
       - questionText:
           EN: |
             <p>What type of fuel or energy source is used in this cookstove?</p>
-          FR: |
-            <p>120.  Avec quel type de combustible ou d&#39;&#233;nergie fonctionne cette cuisini&#232;re ?</p>
   - name: CGHH80.QH121
     conditions:
       - questionText:
           EN: |
             <p>Is the cooking usually done in the house, in a separate building, or outdoors?</p>
-          FR: |
-            <p>121.  Est-ce que la cuisine est faite habituellement dans la maison, dans un b&#226;timent s&#233;par&#233; ou &#224; l&#39;ext&#233;rieur&#160;?</p>
   - name: CGHH80.QH122
     conditions:
       - questionText:
           EN: |
             <p>Do you have a separate room which is used as a kitchen?</p>
-          FR: |
-            <p>122.  Avez-vous une pi&#232;ce s&#233;par&#233;e que vous utilisez comme cuisine&#160;?</p>
   - name: CGHH80.QH123
     conditions:
       - questionText:
           EN: |
             <p>What does this household use to heat the home when needed?</p>
             <p><span class="instruction">IF THE RESPONDENT SAYS ELECTRICITY OR GAS, ASK: What type of heater is the (electricity/gas) used in?</span></p>
-          FR: |
-            <p>123.  Dans ce m&#233;nage, qu&#39;utilisez-vous pour chauffer la maison quand c&#39;est n&#233;cessaire ?</p><p>SI L&#39;ENQU&#202;T&#201; R&#201;POND &#201;LECTRICIT&#201; OU GAZ , DEMANDEZ : Dans quel type d&#39;appareil chauffant (l&#39;electricit&#233;/gas) est-il utilis&#233; ?</p>
   - name: CGHH80.QH124
     conditions:
       - questionText:
           EN: |
             <p>Does it have a chimney?</p>
-          FR: |
-            <p>124.  Est-ce que l&#39;appareil a une chemin&#233;e ?</p>
   - name: CGHH80.QH125
     conditions:
       - questionText:
           EN: |
             <p>What type of fuel or energy source is used in this heater?</p>
-          FR: |
-            <p>125.  Avec quel type de combustible ou d&#39;&#233;nergie fonctionne cet appareil ?</p>
   - name: CGHH80.QH126
     conditions:
       - questionText:
           EN: |
             <p>At night, what does your household mainly use to light the home?</p>
-          FR: |
-            <p>126.  Dans ce m&#233;nage, quand il fait nuit, qu&#39;est-ce que vous utilisez habituellement pour vous &#233;clairer ?</p>
   - name: CGHH80.QH127
     conditions:
       - questionText:
           EN: |
             <p>How many rooms in this household are used for sleeping?</p>
-          FR: |
-            <p>127.  Dans ce m&#233;nage, combien de pi&#232;ces utilisez-vous pour dormir&#160;?</p>
   - name: CGHH80.QH128
     conditions:
       - questionText:
           EN: |
             <p>Does this household own any livestock, herds, other farm animals, or poultry?</p>
-          FR: |
-            <p>128.  Est-ce que votre m&#233;nage poss&#232;de du b&#233;tail, des troupeaux, d&#39;autres animaux de ferme ou de la volaille&#160;?</p>
   - name: QH129_BLOCK
     conditions:
       - questionText:
@@ -928,305 +535,245 @@ questions:
             <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
             <p><span class="instruction">IF MORE THAN 95, RECORD '95'.</span></p>
             <p><span class="instruction">IF UNKNOWN, RECORD '98'.</span></p>
-          FR: |
-            <p>129.  Parmi les animaux suivants, combien votre m&#233;nage en poss&#232;de-t-il&#160;?</p><p><span class="instruction">SI AUCUN, NOTEZ &#39;00&#39;.</span></p><p><span class="instruction">SI 95 OU PLUS, NOTEZ &#39;95&#39;.</span></p><p><span class="instruction">SI NE SAIT PAS, NOTEZ &#39;98&#39;.</span></p>
   - name: CGHH80.QH129A
     conditions:
       - questionText:
           EN: |
             <p>Milk cows or bulls?</p>
-          FR: |
-            <p>129a).  Vaches laiti&#232;res ou taureaux ?</p>
   - name: CGHH80.QH129B
     conditions:
       - questionText:
           EN: |
             <p>Other cattle?</p>
-          FR: |
-            <p>129b).  Autre bovin ?</p>
   - name: CGHH80.QH129C
     conditions:
       - questionText:
           EN: |
             <p>Horses, donkeys, or mules?</p>
-          FR: |
-            <p>129c).  Chevaux, &#226;nes ou mulets ?</p>
   - name: CGHH80.QH129D
     conditions:
       - questionText:
           EN: |
             <p>Goats?</p>
-          FR: |
-            <p>129d).  Ch&#232;vres ?</p>
   - name: CGHH80.QH129E
     conditions:
       - questionText:
           EN: |
             <p>Sheep?</p>
-          FR: |
-            <p>129e).  Moutons ?</p>
   - name: CGHH80.QH129F
     conditions:
       - questionText:
           EN: |
             <p>Chickens or other poultry?</p>
-          FR: |
-            <p>129f).  Poulets ou autre volaille ?</p>
   - name: CGHH80.QH129G
     conditions:
       - questionText:
           EN: |
-            <p></p>
-          FR: |
-            Cochons ?<p></p>
+            .<p></p>
+          ES: |
+            .<p></p>
   - name: CGHH80.QH129H
     conditions:
       - questionText:
           EN: |
-            <p></p>
-          FR: |
-            Lapins ?<p></p>
+            .<p></p>
+          ES: |
+            .<p></p>
   - name: CGHH80.QH130
     conditions:
       - questionText:
           EN: |
             <p>Does any member of this household own any agricultural land?</p>
-          FR: |
-            <p>130.  Est-ce qu&#39;un membre de votre m&#233;nage poss&#232;de des terres cultivables&#160;?</p>
   - name: CGHH80.QH131
     conditions:
       - questionText:
           EN: |
             <p>How many hectares of agricultural land do members of this household own?</p>
             <p><span class="instruction">IF 95 OR MORE, RECORD '950'.</span></p>
-          FR: |
-            <p>131.  Combien d&#39;hectares de terres cultivables les membres du m&#233;nage poss&#232;dent-ils&#160;?</p><p><span class="instruction">SI 95 OU PLUS, ENCERCLEZ &#39;950&#39;.</span></p>
   - name: QH132_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>Does your household have:</p>
-          FR: |
-            <p>132.  Dans ce m&#233;nage, avez-vous :</p>
-  - name: CGHH80.QH132A
-    conditions:
-      - questionText:
-          EN: |
-            <p>Electricity?</p>
-          FR: |
-            <p>132a).  L&#39;&#233;lectricit&#233; ?</p>
-  - name: CGHH80.QH132B
-    conditions:
-      - questionText:
-          EN: |
-            <p>A radio?</p>
-          FR: |
-            <p>132b).  Un poste radio ?</p>
-  - name: CGHH80.QH132C
-    conditions:
-      - questionText:
-          EN: |
-            <p>A television?</p>
-          FR: |
-            <p>132c).  Une t&#233;l&#233;vision ?</p>
-  - name: CGHH80.QH132D
-    conditions:
-      - questionText:
-          EN: |
-            <p>A non-mobile telephone?</p>
-          FR: |
-            <p>132d).  Un t&#233;l&#233;phone fixe ?</p>
-  - name: CGHH80.QH132E
-    conditions:
-      - questionText:
-          EN: |
-            <p>A computer?</p>
-          FR: |
-            <p>132e).  Un ordinateur ?</p>
-  - name: CGHH80.QH132F
-    conditions:
-      - questionText:
-          EN: |
-            <p>A refrigerator?</p>
-          FR: |
-            <p>132f).  Un r&#233;frig&#233;rateur ?</p>
-  - name: CGHH80.QH132G
-    conditions:
-      - questionText:
-          EN: |
-            Une lampe à pétrole ?<p></p>
-          FR: |
-            Une lampe à pétrole ?<p></p>
-  - name: CGHH80.QH132H
-    conditions:
-      - questionText:
-          EN: |
-            Une horloge ?<p></p>
-          FR: |
-            Une horloge ?<p></p>
-  - name: CGHH80.QH132I
-    conditions:
-      - questionText:
-          EN: |
-            Un lit ?<p></p>
-          FR: |
-            Un lit ?<p></p>
-  - name: CGHH80.QH132J
-    conditions:
-      - questionText:
-          EN: |
-            Une table ?<p></p>
-          FR: |
-            Une table ?<p></p>
-  - name: CGHH80.QH132K
-    conditions:
-      - questionText:
-          EN: |
-            Une chaise?<p></p>
-          FR: |
-            Une chaise?<p></p>
-  - name: CGHH80.QH132L
-    conditions:
-      - questionText:
-          EN: |
-            Un canapé / fauteuil?<p></p>
-          FR: |
-            Un canapé / fauteuil?<p></p>
-  - name: CGHH80.QH132M
-    conditions:
-      - questionText:
-          EN: |
-            Une armoire?<p></p>
-          FR: |
-            Une armoire?<p></p>
-  - name: CGHH80.QH132N
-    conditions:
-      - questionText:
-          EN: |
-            Une machine à coudre?<p></p>
-          FR: |
-            Une machine à coudre?<p></p>
-  - name: CGHH80.QH132O
-    conditions:
-      - questionText:
-          EN: |
-            Une parabole / Un décodeur?<p></p>
-          FR: |
-            Une parabole / Un décodeur?<p></p>
-  - name: CGHH80.QH132P
-    conditions:
-      - questionText:
-          EN: |
-            Un panneau solaire?<p></p>
-          FR: |
-            Un panneau solaire?<p></p>
   - name: QH133_BLOCK
     conditions:
       - questionText:
           EN: |
             <p> Does any member of this household own:</p>
+  - name: CGHH80.QH132A
+    conditions:
+      - questionText:
+          EN: |
+            <p>Electricity?</p>
+  - name: CGHH80.QH132B
+    conditions:
+      - questionText:
+          EN: |
+            <p>A radio?</p>
+  - name: CGHH80.QH132C
+    conditions:
+      - questionText:
+          EN: |
+            <p>A television?</p>
+  - name: CGHH80.QH132D
+    conditions:
+      - questionText:
+          EN: |
+            <p>A non-mobile telephone?</p>
+  - name: CGHH80.QH132E
+    conditions:
+      - questionText:
+          EN: |
+            <p>A computer?</p>
+  - name: CGHH80.QH132F
+    conditions:
+      - questionText:
+          EN: |
+            <p>A refrigerator?</p>
+  - name: CGHH80.QH132G
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          ES: |
+            .<p></p>
           FR: |
-            <p>133.  Est-ce qu&#39;un membre de votre m&#233;nage poss&#232;de :</p>
+            .<p></p>
+  - name: CGHH80.QH132H
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132I
+    conditions:
+      - questionText:
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132J
+    conditions:
+      - questionText:
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132K
+    conditions:
+      - questionText:
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132L
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132M
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132N
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132O
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          FR: |
+            .<p></p>
+  - name: CGHH80.QH132P
+    conditions:
+      - questionText:
+          EN: |
+            .<p></p>
+          FR: |
+            .<p></p>
   - name: CGHH80.QH133A
     conditions:
       - questionText:
           EN: |
             <p>A watch?</p>
-          FR: |
-            <p>133a).  Une montre ?</p>
   - name: CGHH80.QH133B
     conditions:
       - questionText:
           EN: |
             <p>A mobile telephone?</p>
-          FR: |
-            <p>133b).  Un t&#233;l&#233;phone portable ?</p>
   - name: CGHH80.QH133C
     conditions:
       - questionText:
           EN: |
             <p>A bicycle?</p>
-          FR: |
-            <p>133c).  Une bicyclette ?</p>
   - name: CGHH80.QH133D
     conditions:
       - questionText:
           EN: |
             <p>A motorcycle or motor scooter?</p>
-          FR: |
-            <p>133d).  Une motocyclette ou un scooter&#160;?</p>
   - name: CGHH80.QH133E
     conditions:
       - questionText:
-          EN: |
-            133e). Une charrette tirée par un animal&nbsp;?<p></p>
           FR: |
-            <p>133e).  Une charrette tir&#233;e par un animal&#160;?</p>
+            .<p></p>
   - name: CGHH80.QH133F
     conditions:
       - questionText:
-          EN: |
-            133f). Une voiture ou une camionnette&nbsp;?<p></p>
           FR: |
-            <p>133f).  Une voiture ou une camionnette&#160;?</p>
+            .<p></p>
   - name: CGHH80.QH133G
     conditions:
       - questionText:
           EN: |
-            Une pirogue/bateau sans moteur?<p></p>
+            .<p></p>
           FR: |
-            <p>Une pirogue/bateau sans moteur?</p>
+            .<p></p>
   - name: CGHH80.QH133H
     conditions:
       - questionText:
           EN: |
             <p>A boat with a motor?</p>
           FR: |
-            Une pirogue/bateau avec moteur/hors bord?<p></p>
+            .<p></p>
   - name: CGHH80.QH133I
     conditions:
       - questionText:
           EN: |
-            Un bus ou camion ?<p></p>
+            .<p></p>
           FR: |
-            Un bus ou camion ?<p></p>
+            .<p></p>
   - name: CGHH80.QH134
     conditions:
       - questionText:
           EN: |
             <p>Does any member of this household have an account in a bank or other financial institution?</p>
-          FR: |
-            <p>134.  Est-ce qu&#39;un membre de ce m&#233;nage poss&#232;de un compte dans une banque ou dans une autre institution financi&#232;re ?</p>
   - name: CGHH80.QH135
     conditions:
       - questionText:
           EN: |
             <p>Does any member of this household use a mobile phone to make financial transactions such as sending or receiving money, paying bills, purchasing goods or services, or receiving wages?</p>
-          FR: |
-            <p>135.  Est-ce qu&#39;un membre de ce m&#233;nage utilise un t&#233;l&#233;phone portable pour effectuer des transactions financi&#232;res comme envoyer ou recevoir de l&#39;argent, payer des factures, acheter des biens ou services ou recevoir un salaire ?</p>
   - name: CGHH80.QH136
     conditions:
       - questionText:
           EN: |
             <p>How often does anyone smoke inside your house?</p>
             <p>Would you say daily, weekly, monthly, less often than once a month, or never?</p>
-          FR: |
-            <p>136.  Est-ce qu&#39;il arrive que quelqu&#39;un fume dans votre maison&#160;? Diriez-vous que cela arrive tous les jours, une fois par semaine, une fois par mois, moins d&#39;une fois par mois ou jamais&#160;?</p>
   - name: CGHH80.QH137
     conditions:
       - questionText:
           EN: |
             <p>Does your household have any mosquito nets?</p>
-          FR: |
-            <p>137.  Est-ce que votre m&#233;nage a des moustiquaires ?</p>
   - name: CGHH80.QH138
     conditions:
       - questionText:
           EN: |
             <p>How many mosquito nets does your household have?</p>
             <p><span class="instruction">IF 7 OR MORE NETS, RECORD '7'.</span></p>
-          FR: |
-            <p>138.  Combien de moustiquaires votre m&#233;nage a-t-il&#160;?</p><p><span class="instruction">SI SEPT MOUSTIQUAIRES OU PLUS, NOTEZ &#39;7&#39;.</span></p>
   - name: CGHH80.QH140
     conditions:
       - logic: curocc() in 1 & QH138 = 1
@@ -1234,30 +781,22 @@ questions:
           EN: |
             <p>I would like to take a look at the net.  Can you show me the net?</p>
             <p><span class="instruction">RECORD IF THE NET WAS OBSERVED OR NOT OBSERVED.</span></p>
-          FR: |
-            <p>140.  Je voudrais voir la moustiquaire. Pouvez-vous me montrer la moustiquaire ?</p><p><span class="instruction">ENREGISTRER SI LA MOUSTIQUAIRE A &#201;T&#201; OBSERV&#201;E OU NON</span></p>
       - logic: curocc() in 1 & QH138 <> 1
         questionText:
           EN: |
             <p>I would like to take a look at the nets.  Can you show me the first net?</p>
             <p><span class="instruction">RECORD IF THE NET WAS OBSERVED OR NOT OBSERVED.</span></p>
-          FR: |
-            <p>140.  Je voudrais voir les moustiquaires. Pouvez-vous me montrer la premi&#232;re moustiquaire ? </p><p><span class="instruction">ENREGISTRER SI LA MOUSTIQUAIRE A &#201;T&#201; OBSERV&#201;E OU NON</span></p>
       - logic: curocc() in 2:7
         questionText:
           EN: |
             <p>Can you show me the next net?</p>
             <p><span class="instruction">RECORD IF THE NET WAS OBSERVED OR NOT OBSERVED.</span></p>
-          FR: |
-            <p>140.  Pouvez-vous me montrer la moustiquaire suivante ?</p><p><span class="instruction">ENREGISTRER SI LA MOUSTIQUAIRE A &#201;T&#201; OBSERV&#201;E OU NON</span></p>
   - name: CGHH80.QH141
     conditions:
       - questionText:
           EN: |
             <p>How many months ago did your household get the mosquito net?</p>
             <p><span class="instruction">IF LESS THAN ONE MONTH AGO, RECORD '0'.</span></p>
-          FR: |
-            <p>141.  Cela fait combien de mois que votre m&#233;nage a la moustiquaire&#160;?</p><p><span class="instruction">SI MOINS D&#39;UN MOIS, NOTEZ &#39;00&#39;.</span></p>
   - name: CGHH80.QH142
     conditions:
       - questionText:
@@ -1269,178 +808,133 @@ questions:
       - questionText:
           EN: |
             <p>Did you get the net through a [LOCAL NAME OF MASS DISTRIBUTION CAMPAIGN], during an antenatal care visit, or during an immunization visit?</p>
-          FR: |
-            <p>143.  Avez-vous obtenu la moustiquaire &#224; l&#39;occasion [NOM LOCAL D&#39;UNE CAMPAGNE DE DISTRIBUTION DE MASSE], durant une visite pr&#233;natale ou au cours d&#39;une visite pour une vaccination ?</p>
   - name: CGHH80.QH144
     conditions:
       - questionText:
           EN: |
             <p>Where did you get the net?</p>
-          FR: |
-            <p>144.  O&#249; avez-vous obtenu la moustiquaire ?</p>
   - name: CGHH80.QH145
     conditions:
       - questionText:
           EN: |
             <p>Did anyone sleep under this mosquito net last night?</p>
-          FR: |
-            <p>145.  Est-ce que, la nuit derni&#232;re, quelqu&#39;un a dormi sous cette moustiquaire&#160;?</p>
   - name: CGHH80.QH146A
     conditions:
       - questionText:
           EN: |
             <p>Who slept under this mosquito net last night?</p>
             <p><span class="instruction">SELECT THE PERSON'S NAME AND LINE NUMBER WHO SLEPT UNDER THE NET.</span></p>
-          FR: |
-            <p>146.  Qui a dormi sous cette moustiquaire la nuit derni&#232;re&#160;?</p><p><span class="instruction">INSCRIVEZ LE NOM DE LA PERSONNE ET SON NUM&#201;RO DE LIGNE DU TABLEAU M&#201;NAGE.</span></p>
   - name: CGHH80.QH146B
     conditions:
       - questionText:
           EN: |
             <p>Who else slept under this mosquito net last night?</p>
             <p><span class="instruction">SELECT THE PERSON'S NAME AND LINE NUMBER WHO SLEPT UNDER THE NET. SELECT '0' IF NO ONE ELSE SLEPT UNDER THE NET.</span></p>
-          FR: |
-            <p>146.  Qui d&#39;autre a dormi sous cette moustiquaire la nuit derni&#232;re ?</p><p><span class="instruction">S&#201;LECTIONNEZ LE NOM ET LE NUM&#201;RO DE LIGNE DE LA PERSONNE QUI A DORMI SOUS LA MOUSTIQUAIRE. S&#201;LECTIONNEZ &quot;00&quot; SI PERSONNE D&#39;AUTRE N&#39;A DORMI SOUS LA MOUSTIQUAIRE.</span></p>
   - name: CGHH80.QH146C
     conditions:
       - questionText:
           EN: |
             <p>Who else slept under this mosquito net last night?</p>
             <p><span class="instruction">SELECT THE PERSON'S NAME AND LINE NUMBER WHO SLEPT UNDER THE NET. SELECT '0' IF NO ONE ELSE SLEPT UNDER THE NET.</span></p>
-          FR: |
-            <p>146.  Qui d&#39;autre a dormi sous cette moustiquaire la nuit derni&#232;re ?</p><p><span class="instruction">S&#201;LECTIONNEZ LE NOM ET LE NUM&#201;RO DE LIGNE DE LA PERSONNE QUI A DORMI SOUS LA MOUSTIQUAIRE. S&#201;LECTIONNEZ &quot;00&quot; SI PERSONNE D&#39;AUTRE N&#39;A DORMI SOUS LA MOUSTIQUAIRE.</span></p>
   - name: CGHH80.QH146D
     conditions:
       - questionText:
           EN: |
             <p>Who else slept under this mosquito net last night?</p>
             <p><span class="instruction">SELECT THE PERSON'S NAME AND LINE NUMBER WHO SLEPT UNDER THE NET. SELECT '0' IF NO ONE ELSE SLEPT UNDER THE NET.</span></p>
-          FR: |
-            <p>146.  Qui d&#39;autre a dormi sous cette moustiquaire la nuit derni&#232;re ?</p><p><span class="instruction">S&#201;LECTIONNEZ LE NOM ET LE NUM&#201;RO DE LIGNE DE LA PERSONNE QUI A DORMI SOUS LA MOUSTIQUAIRE. S&#201;LECTIONNEZ &quot;00&quot; SI PERSONNE D&#39;AUTRE N&#39;A DORMI SOUS LA MOUSTIQUAIRE.</span></p>
   - name: CGHH80.QH147
     conditions:
       - questionText:
           EN: |
             <p>What was the main reason this net was not used last night?</p>
-          FR: |
-            <p>147.  Pour quelle raison principale, cette moustiquaire n&#39;a-t-elle pas &#233;t&#233; utilis&#233;e la nuit derni&#232;re ?</p>
   - name: CGHH80.QH148B
     conditions:
       - questionText:
           EN: |
-            <p>J'aimerais vous poser des questions sur les multiples programmes d'aide économique extérieure dont peuvent bénéficier les ménages. Par aide extérieure, j'entends le soutien apporté par le gouvernement ou par des organisations non gouvernementales telles que des organisations religieuses, caritatives ou communautaires. Cela exclut le soutien apporté par la famille, par d'autres personnes proches, par des amis ou des voisins.</p><p>Connaissez-vous le Projet Filets Sociaux Lisungi?</p><p></p><p></p>
+            .<p></p>
           FR: |
-            <p>J'aimerais vous poser des questions sur les multiples programmes d'aide économique extérieure dont peuvent bénéficier les ménages. Par aide extérieure, j'entends le soutien apporté par le gouvernement ou par des organisations non gouvernementales telles que des organisations religieuses, caritatives ou communautaires. Cela exclut le soutien apporté par la famille, par d'autres personnes proches, par des amis ou des voisins.</p><p>Connaissez-vous le Projet Filets Sociaux Lisungi?<p></p></p>
+            .<p></p>
   - name: CGHH80.QH148C
     conditions:
       - questionText:
           EN: |
-            Est-ce que votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce au Projet Lisungi?<p></p>
+            .<p></p>
           FR: |
-            Est-ce que votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce au Projet Lisungi?<p></p>
-  - name: QH148D_BLOCK
+            .<p></p>
+  - name: CGHH80.QH148DM
     conditions:
       - questionText:
           EN: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide pour la dernière fois grâce Projet Lisungi?</p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p></p>
+            .<p></p>
           FR: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide pour la dernière fois grâce Projet Lisungi?</p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p></p>
-  - name: CGHH80.QH148DN
+            .<p></p>
+  - name: CGHH80.QH148DY
     conditions:
       - questionText:
           EN: |
-            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTREZ LE NOMBRE DE MOIS OU ANNÉES RÉVOLUS.&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;"></span></p><p></p><p></p>
+            .<p></p>
           FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTREZ LE NOMBRE DE MOIS OU ANNÉES RÉVOLUS.&nbsp;</span><p></p>
-  - name: CGHH80.QH148DU
-    conditions:
-      - questionText:
-          EN: |
-            <span class="instruction">ENREGISTRER SI MOIS OU ANNÉES</span><p></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255);">ENREGISTRER SI MOIS OU ANNÉES</span><p></p>
+            .<p></p>
   - name: CGHH80.QH148E
     conditions:
       - questionText:
           EN: |
-            Est-ce que votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure autre que le Projet Lisungi?<p></p>
+            .<p></p>
           FR: |
-            Est-ce que votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure autre que le Projet Lisungi?<p></p>
-  - name: QH148F_BLOCK
-    conditions:
-      - logic: QH148B = 2 | QH148C = 2 | QH148C = 8
-        questionText:
-          EN: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure pour la dernière fois ?<span style="white-space: pre;">	</span><span style="color: rgb(0, 0, 255);"></span></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p></p><p></p>
-          FR: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure pour la dernière fois ?<span style="white-space:pre">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><div><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></div><p></p>
-      - logic: "!(QH148B = 2 | QH148C = 2 | QH148C = 8)"
-        questionText:
-          EN: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à cet autre programme pour la dernière fois ?<span style="white-space:pre">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><div><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></div><p></p>
-          FR: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à cet autre programme pour la dernière fois ?<span style="white-space:pre">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><p><span style="white-space: pre; white-space: normal;">						</span></p><div><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></div><p></p>
-  - name: CGHH80.QH148FN
+            ..<p></p>
+  - name: CGHH80.QH148FM
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTREZ LE NOMBRE DE MOIS OU ANNÉES RÉVOLUS.&nbsp;</span><p></p>
+            .<p></p>
           FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTREZ LE NOMBRE DE MOIS OU ANNÉES RÉVOLUS.&nbsp;</span><p></p>
-  - name: CGHH80.QH148FU
+            .<p></p>
+  - name: CGHH80.QH148FY
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255);">ENREGISTRER SI MOIS OU ANNÉES</span><p></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255);">ENREGISTRER SI MOIS OU ANNÉES</span><p></p>
+            .<p></p>
   - name: CGHH80.QH149
     conditions:
       - questionText:
           EN: |
             <p>We would like to learn about the places that households use to wash their hands. Can you please show me where members of your household most often wash their hands?</p>
-          FR: |
-            <p>149.  Nous voudrions conna&#238;tre l&#39;endroit utilis&#233; par les membres du m&#233;nage pour se laver les mains. Pouvez-vous me montrer, s&#39;il vous plait, o&#249; les membres du m&#233;nage se lavent les mains ?</p>
   - name: CGHH80.QH150
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">OBSERVE PRESENCE OF WATER AT THE PLACE FOR HANDWASHING.</span></p>
             <p><span class="instruction">RECORD OBSERVATION.</span></p>
-          FR: |
-            <p><font color="#0000ff">OBSERVEZ LA PRÉSENCE D'EAU À L'ENDROIT UTILISÉ POUR SE LAVER LES MAINS.</font></p><p><span style="color: rgb(0, 0, 255);">NOTEZ L'OBSERVATION.</span></p><p></p>
   - name: CGHH80.QH151
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">OBSERVE PRESENCE OF SOAP, DETERGENT, OR OTHER CLEANSING AGENT AT THE PLACE OF HANDWASHING.</span></p>
             <p><span class="instruction">RECORD OBSERVATION.</span></p>
-          FR: |
-            <p><span class="instruction">OBSERVEZ LA PRÉSENCE DE SAVON, DE DÉTERGENT OU D'AUTRES PRODUITS NETTOYANTS À L'ENDROIT UTILISÉ POUR SE LAVER LES MAINS&nbsp;</span></p><p><span style="color: rgb(0, 0, 255);">NOTEZ L'OBSERVATION.</span></p><p></p>
   - name: CGHH80.QH152
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">OBSERVE MAIN MATERIAL OF THE FLOOR OF THE DWELLING.</span></p>
             <p><span class="instruction">RECORD OBSERVATION.</span></p>
-          FR: |
-            <p><span class="instruction">﻿</span><font color="#0000ff">OBSERVEZ LE MATÉRIAU PRINCIPAL DU SOL DU LOGEMENT.</font></p><p><span style="color: rgb(0, 0, 255);">NOTEZ L'OBSERVATION</span></p>
   - name: CGHH80.QH153
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">OBSERVE MAIN MATERIAL OF THE ROOF OF THE DWELLING.</span></p>
             <p><span class="instruction">RECORD OBSERVATION.</span></p>
-          FR: |
-            <p><span class="instruction">﻿</span><font color="#0000ff">OBSERVEZ LE MATÉRIAU PRINCIPAL DU TOIT DU LOGEMENT.</font></p><p><span style="color: rgb(0, 0, 255);">NOTEZ L'OBSERVATION.</span></p>
   - name: CGHH80.QH154
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">OBSERVE MAIN MATERIAL OF THE EXTERIOR WALLS OF THE DWELLING.</span></p>
             <p><span class="instruction">RECORD OBSERVATION.</span></p>
-          FR: |
-            <p><span class="instruction">﻿</span><font color="#0000ff">OBSERVEZ LE MATÉRIAU PRINCIPAL DES MURS EXTÈRIEURS DU LOGEMENT.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">NOTEZ L'OBSERVATION.</font></p>
+  - name: CGHH80.QH155
+    conditions:
+      - questionText:
+          EN: |
+            <p>I would like to check whether the salt used in your household is iodized. May I have a sample of the salt used to cook meals in your household?</p>
+            <p><span class="instruction">TEST SALT FOR IODINE.</span></p>
   - name: CGHH80.QHLANGQ
     conditions:
       - questionText:
@@ -1451,44 +945,32 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER THE LANGUAGE OF THE INTERVIEW</span></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Enregistrer la langue de l'interview&nbsp;</span><p></p>
   - name: CGHH80.QHLANGR
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER THE NATIVE LANGUAGE OF THE RESPONDENT</span></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Enregistrer la langue maternelle de l'enquêté(e)&nbsp;</span><p></p>
   - name: CGHH80.QHTRANS
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER WHETHER A TRANSLATOR WAS USED DURING THE INTERVIEW</span></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Traducteur utilisé&nbsp;</span><p></p>
   - name: CGHH80.GHAUX
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Coordinates for the household were already collected, do you want to replace the current coordinates?</span></p>
-          FR: |
-            <span style="font-size: 24px;" class="instruction">Les coordonnées de localisation du ménage ont déjà été collectées, voulez-vous remplacer les coordonnées actuelles?</span><p></p>
   - name: CGHH80.GHINTRO
     conditions:
       - logic: capturecoor = 0
         questionText:
           EN: |
             <p><span class="instruction">Are you sure that you want to replace the current coordinates?</span></p>
-          FR: |
-            <span style="font-size: 24px;" class="instruction">Êtes-vous sûr de vouloir remplacer les coordonnées actuelles ?</span><p></p>
       - logic: capturecoor = 1
         questionText:
           EN: |
             <p><span class="instruction">As part of the CC DHS/MIS survey, it is necessary to take coordinates for households in the sample.  Please make sure that the dongle is connected to the tablet and step in the household front door (away from blocking buildings/trees).</span></p>
             <p><span class="instruction">Are you ready to capture the coordinates?</span></p>
-          FR: |
-            <span style="font-size: 24px;"><span class="instruction">D</span><span class="instruction">ans le cadre de l’enquête EDS, il est nécessaire de prendre les coordonnées des ménages de l’échantillon. Assurez-vous que la tablette est, au moins, la porte d’entrée de la maison (loin du blocage des bâtiments / arbres). Si necessaire, veuillez sortir completement a l'exterieur pour enregistrer les coordonnees.</span></span><p></p>
   - name: CGHH80.QHFINISH
     conditions:
       - questionText:
@@ -2094,49 +1576,167 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER FOR ACCEPTANCE OF MALARIA MEDICINE.</span></p>
+  - name: CGHH80.QCHL10
+    conditions:
+      - questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ collect firewood for household use?</p>
+  - name: CGHH80.QCHL11
+    conditions:
+      - questionText:
+          EN: |
+            <p>In total, how many hours did ~~QCHLNAME~~ spend on collecting firewood for household use, since last ~~dayalpha~~?</p>
+            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
+  - name: CGHH80.QCHL12A
+    conditions:
+      - questionText:
+          EN: |
+            <p>Shopping for the household?</p>
+  - name: CGHH80.QCHL12B
+    conditions:
+      - questionText:
+          EN: |
+            <p>Cooking?</p>
+  - name: CGHH80.QCHL12C
+    conditions:
+      - questionText:
+          EN: |
+            <p>Washing dishes or cleaning around the house?</p>
+  - name: CGHH80.QCHL12D
+    conditions:
+      - questionText:
+          EN: |
+            <p>Washing clothes?</p>
+  - name: CGHH80.QCHL12E
+    conditions:
+      - questionText:
+          EN: |
+            <p>Caring for children?</p>
+  - name: CGHH80.QCHL12F
+    conditions:
+      - questionText:
+          EN: |
+            <p>Caring for someone old or sick?</p>
+  - name: CGHH80.QCHL12G
+    conditions:
+      - questionText:
+          EN: |
+            <p>Other household tasks?</p>
+  - name: CGHH80.QCHL14
+    conditions:
+      - logic: activity2 <> 1
+        questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~, about how many hours did ~~QCHLNAME~~ engage in these activities, in total?</p>
+            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
+      - logic: activity2 = 1
+        questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~, about how many hours did ~~QCHLNAME~~ engage in this activity, in total?</p>
+            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
+  - name: CGHH80.QCHL2A
+    conditions:
+      - questionText:
+          EN: |
+            <p>Now I would like to ask about any work ~~QCHLNAME~~ may do.</p>
+            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ do any of the following activities, even for only one hour?</p>
+            <p>Did ~~QCHLNAME~~ do any work or help on ~~hisher~~ own or the household's plot, farm, or food garden or looked after animals? For example, growing farm produce, harvesting, or feeding, grazing, or milking animals?</p>
+  - name: CGHH80.QCHL2B
+    conditions:
+      - questionText:
+          EN: |
+            <p>Did ~~QCHLNAME~~ help in a family business or relative's business with or without pay, or run ~~hisher~~ own business?</p>
+  - name: CGHH80.QCHL2C
+    conditions:
+      - questionText:
+          EN: |
+            <p>Did ~~QCHLNAME~~ produce or sell articles, handicrafts, clothes, food or agricultural products?</p>
+  - name: CGHH80.QCHL2D
+    conditions:
+      - questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ engage in any other activity in return for income in cash or in kind, even for only one hour?</p>
+  - name: CGHH80.QCHL4
+    conditions:
+      - logic: activity1 <> 1
+        questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~ about how many hours did ~~QCHLNAME~~ engage in these activities, in total?</p>
+            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
+      - logic: activity1 = 1
+        questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~ about how many hours did ~~QCHLNAME~~ engage in this activity, in total?</p>
+            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
+  - name: CGHH80.QCHL5
+    conditions:
+      - logic: activity1 <> 1
+        questionText:
+          EN: |
+            <p>Do these activities require carrying heavy loads?</p>
+      - logic: activity1 = 1
+        questionText:
+          EN: |
+            <p>Does the activity require carrying heavy loads?</p>
+  - name: CGHH80.QCHL6
+    conditions:
+      - logic: activity1 <> 1
+        questionText:
+          EN: |
+            <p>Do these activities require working with dangerous tools, such as knives, or operating heavy machinery?</p>
+      - logic: activity1 = 1
+        questionText:
+          EN: |
+            <p>Does the activity require working with dangerous tools, such as knives, or operating heavy machinery?</p>
+  - name: CGHH80.QCHL7A
+    conditions:
+      - questionText:
+          EN: |
+            <p>How would you describe the work environment of ~~QCHLNAME~~?</p>
+            <p>Is ~~QCHLNAME~~ exposed to dust, fumes or gas?</p>
+  - name: CGHH80.QCHL7B
+    conditions:
+      - questionText:
+          EN: |
+            <p>Is ~~QCHLNAME~~ exposed to extreme cold, heat or humidity?</p>
+  - name: CGHH80.QCHL7C
+    conditions:
+      - questionText:
+          EN: |
+            <p>Is ~~QCHLNAME~~ exposed to loud noise or vibration?</p>
+  - name: CGHH80.QCHL7D
+    conditions:
+      - questionText:
+          EN: |
+            <p>Is ~~QCHLNAME~~ required to work at heights?</p>
+  - name: CGHH80.QCHL7E
+    conditions:
+      - questionText:
+          EN: |
+            <p>Is ~~QCHLNAME~~ required to work with chemicals, pesticides, glues, etc., or explosives?</p>
+  - name: CGHH80.QCHL7F
+    conditions:
+      - questionText:
+          EN: |
+            <p>Is ~~QCHLNAME~~ exposed to other things, processes or conditions bad for ~~QCHLNAME~~'s health or safety?</p>
+  - name: CGHH80.QCHL8
+    conditions:
+      - questionText:
+          EN: |
+            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ fetch water for household use?</p>
+  - name: CGHH80.QCHL9
+    conditions:
+      - questionText:
+          EN: |
+            <p>In total, how many hours did ~~QCHLNAME~~ spend on fetching water for household use, since last ~~dayalpha~~?</p>
+            <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
   - name: CGHH80.QH132Q
     conditions:
       - questionText:
           EN: |
-            <p></p>
+            .<p></p>
           FR: |
-            <p></p>
-  - name: CGHH80.QH148DM
-    conditions:
-      - questionText:
-          EN: |
-            <p><font color="#0000ff">MOIS</font></p><p></p>
-          FR: |
-            <p><span style="color: rgb(0, 0, 255);">MOIS</span></p><p></p>
-  - name: CGHH80.QH148DY
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">ANNEE</span><p></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255);">ANNEE</span><p></p>
-  - name: CGHH80.QH148FM
-    conditions:
-      - questionText:
-          EN: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure pour la dernière fois ?</p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p><p></p></p>
-          FR: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure pour la dernière fois ?</p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p><p></p></p>
-  - name: CGHH80.QH148FY
-    conditions:
-      - questionText:
-          EN: |
-            <span class="instruction">ANNEE</span><p></p>
-          FR: |
-            <br><p></p>
-  - name: CGHH80.QH155
-    conditions:
-      - questionText:
-          EN: |
-            <p>I would like to check whether the salt used in your household is iodized. May I have a sample of the salt used to cook meals in your household?</p>
-            <p><span class="instruction">TEST SALT FOR IODINE.</span></p>
-          FR: |
-            <p>155.  Je voudrais v&#233;rifier si le sel utilis&#233; dans votre m&#233;nage est iod&#233;. Puis-je avoir un peu de sel qui est utilis&#233; pour cuisiner dans votre m&#233;nage ?</p><p><span class="instruction">TEST DU SEL POUR L&#39;IODE.</span></p>
+            .<p></p>
   - name: CGHH80.QH202
     conditions:
       - questionText:

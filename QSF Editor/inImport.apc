@@ -1,0 +1,74 @@
+//--Script to import language from Excel questionnaier to QSF file
+
+//set the following variables according to your scenario
+
+//Full path to excel workbook file. Note the C language type escaping of the '\' character
+string excelFile = "C:\\CG81\\Questionnaires\\EDSC-III 2025_Femmes_QRE.xlsx";
+//name of the sheet with translations within the excel workbook
+string transl = "translations_CSPro";
+//language name as written in the first row of the translations sheet
+string languageName = "FRANÇAIS";
+
+
+//Function that does the importing based on the language name in the first row of the translations sheet
+function importLang(string langName)
+	//Getting index of the column with French text
+	numeric col = getColIndex(transl, 1, langName);
+	
+	if col then
+		write("* Importing language " + langName);
+		
+		//Getting language ID from the row 4
+		string langId = getCell(transl, 4, col);
+		
+		//adding language definition to QSF if doesn't already exist
+		if !getLanguageIndex(langId) then
+			addLanguage(langId, langName);
+		endif;
+		
+		numeric qCount = getQuestionsCount();
+		//Looping through all questions in the file
+		do numeric i = 1 while i <= qCount by 1
+			//getting full question name that includes dictionary name
+		    string qName = getQuestionName(i);
+		    //getting short question name without the dictionary name
+	        string qNameShort = getQuestionName(i, true);
+			
+			numeric cCount = getConditionsCount(qName);
+			//looping through all conditions in the question
+			//if there are no conditions, that means there is one empty condition, so 'ccount' will always be >= 1
+		    do numeric j = 1 while j <= cCount by 1
+		    	string cond = getCondition(qName, j);
+	
+	            //looking for a question in the spreadsheet using the question short name and condition
+	            numeric row = getRowIndex(transl, 2, qNameShort, 3, cond);
+	
+	            if row > 0 & col > 0 then
+	                write("* Importing question " + qNameShort + " Condition: " + cond);
+	                
+	                //Getting question text from the cell
+	                string qText = getCell(transl, row, col);
+	                //Setting question text in the QSF while converting to HTML
+	                setQuestionHtml(qName, j, langId, texttohtml(qText, "Normal", "Instruction"));
+	            else
+	            	write("Question " + qNameShort + " not found in the spreadsheet. Condition: " + cond);
+	            endif;
+	
+		    enddo;
+		enddo;
+		
+	else
+		write("Language " + langName + " not found in the spreadsheet");
+	endif;
+end;
+
+//Loading Excel file
+write("* Loading Excel file");
+if loadspreadsheet(excelFile) then
+    write("Excel file loaded");
+
+	importLang(languageName);
+else
+    write("Excel file not loaded");
+endif;
+
