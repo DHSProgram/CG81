@@ -116,11 +116,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q106Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q107
     conditions:
       - questionText:
@@ -154,11 +158,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH OF BIRTH</span></p>
+          FR: |
+            <span class="instruction">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q110Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR OF BIRTH</span></p>
+          FR: |
+            <span class="instruction">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q111
     conditions:
       - questionText:
@@ -459,16 +467,22 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD DAY OF BIRTH.</span></p>
+          FR: |
+            <span class="instruction">ENREGISTRER LE JOUR DE NAISSANCE&nbsp;</span><p></p>
   - name: CGIN80.Q220M
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH OF BIRTH</span></p>
+          FR: |
+            <span class="instruction">ENREGISTRER LE MOIS DE NAISSANCE&nbsp;</span><p></p>
   - name: CGIN80.Q220Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR OF BIRTH.</span></p>
+          FR: |
+            <span class="instruction">ENREGISTRER L'ANNEE DE NAISSANCE&nbsp;</span><p></p>
   - name: Q221_BLOCK
     conditions:
       - questionText:
@@ -481,11 +495,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD IN COMPLETED WEEKS OR MONTHS.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTRER EN SEMAINES OU MOIS RÉVOLUS.</span></p>
   - name: CGIN80.Q221U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD WHETHER WEEKS OR MONTHS.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTREZ SI EN SEMAINES OU EN MOIS</span></p>
   - name: CGIN80.Q222
     conditions:
       - logic: curocc() in 1
@@ -607,11 +625,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD IN COMPLETED WEEKS OR MONTHS.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTRER EN SEMAINES OU MOIS RÉVOLUS.</span></p>
   - name: CGIN80.Q233U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD WHETHER WEEKS OR MONTHS.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTREZ SI EN SEMAINES OU EN MOIS</span></p>
   - name: CGIN80.Q234
     conditions:
       - questionText:
@@ -645,11 +667,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD NUMBER OF: DAYS AGO, WEEKS AGO, MONTHS AGO, OR YEARS AGO.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTRER EN JOURS, SEMAINES OU MOIS.</span></p>
   - name: CGIN80.Q236U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTREZ SI EN JOURS, SEMAINES OU EN MOIS</span></p>
   - name: CGIN80.Q238
     conditions:
       - questionText:
@@ -879,11 +905,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTREZ LE MOIS</span></p>
   - name: CGIN80.Q313Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: Q314_BLOCK
     conditions:
       - questionText:
@@ -951,11 +981,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q317EY
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q317F
     conditions:
       - questionText:
@@ -969,16 +1003,21 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">317G. RECORD MONTH AND YEAR RESPONDENT STOPPED USING METHOD.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">317G. ENREGISTRER LE MOIS ET L’ANNÉE OÙ LA RÉPONDANTE&nbsp;</span><font color="#0000ff">A CESSÉ D'UTILISER LA MÉTHODE.&nbsp;</font><p></p>
   - name: CGIN80.Q317GM
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ENREGISTRER LE MOIS</span><p></p>
   - name: CGIN80.Q317GY
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR.</span></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q317H
     conditions:
       - questionText:
@@ -1008,7 +1047,7 @@ questions:
             <p><span class="instruction">PROBE TO IDENTIFY THE TYPE OF SOURCE.</span></p>
             <p><span class="instruction">IF UNABLE TO DETERMINE IF PUBLIC, PRIVATE, OR NGO SECTOR, RECORD '96' AND WRITE THE NAME OF THE PLACE</span></p>
           FR: |
-            <p>322.  Vous avez commenc&#233; &#224; utiliser ~~ALPHMETH~~ en ~~MNTHSTR1~~ ~~A314Y~~. O&#249; l&#39;avez-vous obtenue &#224; ce moment-l&#224; ?</p><p><span class="instruction">INSISTEZ POUR D&#201;TERMINER LE TYPE D&#39;ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ D&#201;TERMINER SI L&#39;ENDROIT EST DU SECTEUR PUBLIC, PRIV&#201;, OU UNE ONG, ENREGISTREZ &#39;96&#39; ET &#201;CRIVEZ LE NOM DE L&#39;ENDROIT.</span></p>
+            <p>322.  Vous avez commenc&#233; &#224; utiliser ~~ALPHMETH~~ en ~~MNTHSTR1~~ ~~Q314Y~~. O&#249; l&#39;avez-vous obtenue &#224; ce moment-l&#224; ?</p><p><span class="instruction">INSISTEZ POUR D&#201;TERMINER LE TYPE D&#39;ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ D&#201;TERMINER SI L&#39;ENDROIT EST DU SECTEUR PUBLIC, PRIV&#201;, OU UNE ONG, ENREGISTREZ &#39;96&#39; ET &#201;CRIVEZ LE NOM DE L&#39;ENDROIT.</span></p>
   - name: CGIN80.Q323
     conditions:
       - questionText:
@@ -1118,7 +1157,7 @@ questions:
           EN: |
             <p>408. When you got pregnant with the pregnancy that ended in ~~mnthstr1~~ ~~Q406Y~~, did you want to get pregnant at that time?</p>
           FR: |
-            <p>408b).  Quand vous &#234;tes tomber enceinte pendant la grossesse qui s&#39;est termin&#233;e en ~~MNTHSTR1~~ ~~A406Y~~, vouliez-vous &#234;tre enceinte &#224; ce moment-l&#224; ?</p>
+            <p>408b).  Quand vous &#234;tes tomber enceinte pendant la grossesse qui s&#39;est termin&#233;e en ~~MNTHSTR1~~ ~~Q406Y~~, vouliez-vous &#234;tre enceinte &#224; ce moment-l&#224; ?</p>
       - logic: pregtype = 1
         questionText:
           EN: |
@@ -1144,11 +1183,13 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD NUMBER.</span></p>
+            <p><span class="instruction">ENREGISTRER EN MOIS OU ANNÉES RÉVOLUS.</span></p>
   - name: CGIN80.Q410U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS.</span></p>
+            <p><span class="instruction">ENREGISTREZ SI EN MOIS OU ANNÉES</span></p>
   - name: CGIN80.Q412
     conditions:
       - questionText:
@@ -1187,11 +1228,13 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD NUMBER.</span></p>
+            <p><span class="instruction">ENREGISTRER EN SEMAINES OU MOIS RÉVOLUS.</span></p>
   - name: CGIN80.Q416U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS.</span></p>
+            <p><span class="instruction">ENREGISTREZ SI EN SEMAINES OU EN MOIS</span></p>
   - name: CGIN80.Q417
     conditions:
       - questionText:
@@ -1199,11 +1242,13 @@ questions:
             <p>417. How many times did you receive antenatal care during this pregnancy?</p>
           FR: |
             <p>417.  Durant cette grossesse, combien de fois avez-vous re&#231;u des soins pr&#233;natals&#160;?</p>
-  - name: A418_BLOCK
+  - name: Q418_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>418. As part of your antenatal care during this pregnancy, did a healthcare provider do any of the following:</p>
+          FR: |
+            <p>418.  Dans le cadre de vos soins pr&#233;natals durant cette grossesse, est-ce qu&#39;un prestataire de sant&#233; a effectu&#233; l&#39;un des actes suivants :</p>
   - name: CGIN80.Q418A
     conditions:
       - questionText:
@@ -1390,7 +1435,7 @@ questions:
             <p><span class="instruction">PROBE FOR THE TYPE(S) OF PERSON(S) AND RECORD ALL MENTIONED.</span></p>
             <p><span class="instruction">IF RESPONDENT SAYS NO ONE ASSISTED, PROBE TO DETERMINE WHETHER ANY ADULTS WERE PRESENT AT THE DELIVERY.</span></p>
           FR: |
-            <p>434b).  Qui a assist&#233; l&#39;accouchement de l&#39;enfant mort-n&#233; que vous avez eu en ~~MNTHSTR1~~ ~~A406Y~~ ?</p><p>Quelqu&#39;un d&#39;autre&#160;?</p><p><span class="instruction">INSISTEZ POUR LE/LES TYPES DE PERSONNE ET ENREGISTREZ TOUT CE QUI EST MENTIONN&#201;.</span></p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201;E D&#201;CLARE QUE PERSONNE N&#39;A ASSIST&#201; L&#39;ACCOUCHEMENT, INSISTEZ POUR D&#201;TERMINER SI DES ADULTES &#201;TAIENT PR&#201;SENTS &#192; L&#39;ACCOUCHEMENT.</span></p>
+            <p>434b).  Qui a assist&#233; l&#39;accouchement de l&#39;enfant mort-n&#233; que vous avez eu en ~~MNTHSTR1~~ ~~Q406Y~~ ?</p><p>Quelqu&#39;un d&#39;autre&#160;?</p><p><span class="instruction">INSISTEZ POUR LE/LES TYPES DE PERSONNE ET ENREGISTREZ TOUT CE QUI EST MENTIONN&#201;.</span></p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201;E D&#201;CLARE QUE PERSONNE N&#39;A ASSIST&#201; L&#39;ACCOUCHEMENT, INSISTEZ POUR D&#201;TERMINER SI DES ADULTES &#201;TAIENT PR&#201;SENTS &#192; L&#39;ACCOUCHEMENT.</span></p>
   - name: CGIN80.Q435
     conditions:
       - logic: Q405 in 1,2
@@ -1484,11 +1529,15 @@ questions:
           EN: |
             <p><span class="instruction">RECORD WEIGHT IN KILOGRAMS FROM CHILD HEALTH CARD, IF AVAILABLE</span></p>
             <p><span class="instruction">(Record in the format x.xxx, including the decimal point)</span></p>
+          FR: |
+            <p><font color="#0000ff">DE LA CARTE DE L'ENFANT, ENREGISTRER LE POIDS EN KILOGRAMMES, LE CAS ÉCHÉANT</font></p><p><font color="#0000ff">(Enregistrez au format x.xxx, y compris la virgule)</font><br></p><p></p>
   - name: CGIN80.Q443U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD WHETHER WEIGHT WAS FROM CHILD HEALTH CARD OR MOTHER'S RECALL</span></p>
+          FR: |
+            <font color="#0000ff">NOTEZ SI LE POIDS PROVIENT DE LA CARTE SANTÉ DE L’ENFANT OU DU RAPPEL DE LA MÈRE.</font><p></p>
   - name: Z_MH17_BLOCK
     conditions:
       - questionText:
@@ -1516,7 +1565,7 @@ questions:
           EN: |
             <p>447. For the stillbirth you had in ~~mnthstr1~~ ~~Q406Y~~, how long after the baby was born did you stay in the ~~facility~~?</p>
           FR: |
-            <p>447b).  Pour l&#39;enfant mort-n&#233; que vous avez eu en ~~MNTHSTR1~~ ~~A406Y~~, pendant combien de temps apr&#232;s la naissance &#234;tes-vous rest&#233;e dans ~~FACILITY~~ ?</p>
+            <p>447b).  Pour l&#39;enfant mort-n&#233; que vous avez eu en ~~MNTHSTR1~~ ~~Q406Y~~, pendant combien de temps apr&#232;s la naissance &#234;tes-vous rest&#233;e dans ~~FACILITY~~ ?</p>
       - logic: Q405 = 1
         questionText:
           EN: |
@@ -1530,11 +1579,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS.</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE D’HEURES, DE JOURS OU DE SEMAINES<br>S’IL S’AGIT D’UNE JOURNÉE DE MOINS D’UNE JOURNÉE, NOTEZ LES HEURES.</font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE SEMAINE INFÉRIEURE, ENREGISTREZ LES JOURS.</font><br></p><p></p>
   - name: CGIN80.Q447U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNIT</font><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q448
     conditions:
       - questionText:
@@ -1557,11 +1610,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS;</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p>449.  Combien de temps apr&#232;s l&#39;accouchement a eu lieu le premier examen&#160;?</p>
   - name: CGIN80.Q449U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ENREGISTRER L'UNIT</span><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q450
     conditions:
       - questionText:
@@ -1592,11 +1649,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS.</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE D’HEURES, DE JOURS OU DE SEMAINES<br>S’IL S’AGIT D’UNE JOURNÉE DE MOINS D’UNE JOURNÉE, NOTEZ LES HEURES.</font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE SEMAINE INFÉRIEURE, ENREGISTREZ LES JOURS.</font></p><p></p>
   - name: CGIN80.Q453U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNIT</font><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q454
     conditions:
       - questionText:
@@ -1627,11 +1688,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS.</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE D’HEURES, DE JOURS OU DE SEMAINES<br>S’IL S’AGIT D’UNE JOURNÉE DE MOINS D’UNE JOURNÉE, NOTEZ LES HEURES.</font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE SEMAINE INFÉRIEURE, ENREGISTREZ LES JOURS.</font></p><p></p>
   - name: CGIN80.Q456U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS.</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNIT</font><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q457
     conditions:
       - questionText:
@@ -1670,11 +1735,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS.</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE D’HEURES, DE JOURS OU DE SEMAINES<br>S’IL S’AGIT D’UNE JOURNÉE DE MOINS D’UNE JOURNÉE, NOTEZ LES HEURES.</font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE SEMAINE INFÉRIEURE, ENREGISTREZ LES JOURS.</font></p><p></p>
   - name: CGIN80.Q461U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNIT</font><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q462
     conditions:
       - questionText:
@@ -1705,7 +1774,7 @@ questions:
           EN: |
             <p>464. I would like to talk to you about checks on your health after delivery, for example, someone asking you questions about your health or examining you. Did anyone check on your health after you delivered the stillbirth you had in ~~mnthstr1~~ ~~Q406Y~~?</p>
           FR: |
-            <p>464b).  Je voudrais vous parler des v&#233;rifications de votre &#233;tat de sant&#233; apr&#232;s l&#39;accouchement, par exemple, quelqu&#39;un qui vous a pos&#233; des questions sur votre sant&#233; ou qui vous a examin&#233;e. Est-ce que quelqu&#39;un vous a examin&#233;e apr&#232;s avoir accouch&#233; de l&#39;enfant mort-n&#233; que vous avez eu en ~~MNTHSTR1~~ ~~A406Y~~ ?</p>
+            <p>464b).  Je voudrais vous parler des v&#233;rifications de votre &#233;tat de sant&#233; apr&#232;s l&#39;accouchement, par exemple, quelqu&#39;un qui vous a pos&#233; des questions sur votre sant&#233; ou qui vous a examin&#233;e. Est-ce que quelqu&#39;un vous a examin&#233;e apr&#232;s avoir accouch&#233; de l&#39;enfant mort-n&#233; que vous avez eu en ~~MNTHSTR1~~ ~~Q406Y~~ ?</p>
   - name: Q465_BLOCK
     conditions:
       - questionText:
@@ -1720,11 +1789,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS.</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE D’HEURES, DE JOURS OU DE SEMAINES<br>S’IL S’AGIT D’UNE JOURNÉE DE MOINS D’UNE JOURNÉE, NOTEZ LES HEURES.</font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE SEMAINE INFÉRIEURE, ENREGISTREZ LES JOURS.</font></p><p></p>
   - name: CGIN80.Q465U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNIT</font><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q466
     conditions:
       - questionText:
@@ -1764,11 +1837,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF HOURS, DAYS, OR WEEKS</span></p>
             <p><span class="instruction">IF LESS THAN ONE DAY, RECORD HOURS.</span></p>
             <p><span class="instruction">IF LESS THAN ONE WEEK, RECORD DAYS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE D’HEURES, DE JOURS OU DE SEMAINES<br>S’IL S’AGIT D’UNE JOURNÉE DE MOINS D’UNE JOURNÉE, NOTEZ LES HEURES.</font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE SEMAINE INFÉRIEURE, ENREGISTREZ LES JOURS.</font></p><p></p>
   - name: CGIN80.Q470U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS.</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNIT</font><span style="color: rgb(0, 0, 255);">É</span><p></p>
   - name: CGIN80.Q471
     conditions:
       - questionText:
@@ -1786,11 +1863,13 @@ questions:
             <p><span class="instruction">IF UNABLE TO DETERMINE IF PUBLIC, PRIVATE, OR NGO SECTOR, RECORD '96' AND WRITE THE NAME OF THE PLACE.</span></p>
           FR: |
             <p>472.  O&#249; a eu lieu le premier examen de ~~Q407~~ ?</p><p><span class="instruction">INSISTEZ POUR D&#201;TERMINER LE TYPE D&#39;ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ D&#201;TERMINER SI L&#39;ENDROIT EST DU SECTEUR PUBLIC, PRIV&#201;, OU UNE ONG, ENREGISTREZ &#39;96&#39; ET &#201;CRIVEZ LE NOM DE L&#39;ENDROIT.</span></p>
-  - name: A473_BLOCK
+  - name: Q473_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>473. During the first 2 days after ~~Q407~~'s birth, did any health care provider do the following:</p>
+          FR: |
+            <p>473.  Au cours des 2 jours suivant la naissance de ~~Q407~~, est-ce qu&#39;un prestataire de sant&#233; a fait l&#39;une des choses suivantes ?</p>
   - name: CGIN80.Q473A
     conditions:
       - questionText:
@@ -1831,11 +1910,13 @@ questions:
       - questionText:
           EN: |
             <p>f) Tell you where you could get help with breastfeeding?</p>
-  - name: A474_BLOCK
+  - name: Q474_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>474. During the first 2 days after the birth, did any healthcare provider do the following to you:</p>
+          FR: |
+            <p>474.  Durant les 2 premiers jours apr&#232;s la naissance, est-ce qu&#39;un prestataire de sant&#233; a effectu&#233; l&#39;un des actes suivants :</p>
   - name: CGIN80.Q474A
     conditions:
       - questionText:
@@ -1879,7 +1960,7 @@ questions:
           EN: |
             <p>476. Has your menstrual period returned since the pregnancy that ended in ~~mnthstr1~~ ~~Q406Y~~?</p>
           FR: |
-            <p>476b).  Est-ce que vos r&#232;gles sont revenues depuis la grossesse qui s&#39;est termin&#233;e en ~~MNTHSTR1~~ ~~A406Y~~ ?</p>
+            <p>476b).  Est-ce que vos r&#232;gles sont revenues depuis la grossesse qui s&#39;est termin&#233;e en ~~MNTHSTR1~~ ~~Q406Y~~ ?</p>
       - logic: pregtype = 1
         questionText:
           EN: |
@@ -1893,7 +1974,7 @@ questions:
           EN: |
             <p>478. Have you had sexual intercourse since the pregnancy that ended in ~~mnthstr1~~ ~~Q406Y~~?</p>
           FR: |
-            <p>478b).  Avez-vous eu des rapports sexuels depuis la grossesse qui s&#39;est termin&#233;e ~~MNTHSTR1~~ ~~A406Y~~ ?</p>
+            <p>478b).  Avez-vous eu des rapports sexuels depuis la grossesse qui s&#39;est termin&#233;e ~~MNTHSTR1~~ ~~Q406Y~~ ?</p>
       - logic: pregtype = 1
         questionText:
           EN: |
@@ -1990,21 +2071,29 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">508. RECORD ~~Q503N~~'S DATE OF BIRTH FROM THE VACCINATION CARD OR OTHER DOCUMENT.</span></p>
+          FR: |
+            508. ENREGISTRER LA DATE DE NAISSANCE DE ~~Q503N~~ DE LA CARTE DE VACCINATION OU D’UN AUTRE DOCUMENT.<br><p></p>
   - name: CGIN80.Q508D
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD DAY.</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER LE JOUR</font><p></p>
   - name: CGIN80.Q508M
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ENREGISTRER LE MOIS</span><p></p>
   - name: CGIN80.Q508Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ENREGISTRER L'ANNEE</span><p></p>
   - name: Q509B_BLOCK
     conditions:
       - questionText:
@@ -2769,6 +2858,8 @@ questions:
       - questionText:
           EN: |
             <p>604. In the last 12 months, was ~~Q603N~~ given any of the following:</p>
+          FR: |
+            <p>604.  Au cours des 12 derniers mois, est-ce que l&#39;on a donn&#233; &#224; ~~Q603N~~ l&#39;une des choses suivantes :</p>
   - name: CGIN80.Q604A
     conditions:
       - questionText:
@@ -2805,6 +2896,8 @@ questions:
       - questionText:
           EN: |
             <p>607. In the last 3 months, has any healthcare provider or community health worker measured:</p>
+          FR: |
+            607. Au cours des 3 derniers mois, un prestataire de soins de santé ou un agent de santé communautaire a-t-il mesuré :<p></p>
   - name: CGIN80.Q607A
     conditions:
       - questionText:
@@ -2887,6 +2980,8 @@ questions:
       - questionText:
           EN: |
             <p>615. Was ~~Q603N~~ given any of the following to drink at any time since ~~Q603N~~ started having the diarrhea:</p>
+          FR: |
+            <p>615.  Avez-vous donn&#233; &#224; ~~Q603N~~ les choses suivantes &#224; n&#39;importe quel moment d&#232;s qu&#39;il/elle a commenc&#233; &#224; avoir la diarrh&#233;e&#160;:</p>
   - name: CGIN80.Q615A
     conditions:
       - questionText:
@@ -3793,11 +3888,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q715Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q716
     conditions:
       - questionText:
@@ -3817,11 +3916,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q719Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q720
     conditions:
       - questionText:
@@ -3856,11 +3959,15 @@ questions:
             <p><span class="instruction">RECORD NUMBER OF DAYS, WEEKS, MONTHS, OR YEARS</span></p>
             <p><span class="instruction">IF LESS THAN 12 MONTHS, ANSWER MUST BE RECORDED IN DAYS, WEEKS OR MONTHS.</span></p>
             <p><span class="instruction">IF 12 MONTHS (ONE YEAR) OR MORE, ANSWER MUST BE RECORDED IN YEARS.</span></p>
+          FR: |
+            <p><font color="#0000ff">ENREGISTREZ LE NOMBRE DE JOURS, DE SEMAINES, DE MOIS OU D’ANNÉES</font></p><p><font color="#0000ff">SI ELLE EST INFÉRIEURE À 12 MOIS, LA RÉPONSE DOIT ÊTRE ENREGISTRÉE EN JOURS, SEMAINES OU MOIS.<br></font></p><p><font color="#0000ff">S’IL S’AGIT D’UNE PÉRIODE DE 12 MOIS (UN AN) OU PLUS, LA RÉPONSE DOIT ÊTRE ENREGISTRÉE EN ANNÉES.</font><br></p><p></p>
   - name: CGIN80.Q723U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTRER L'UNITÉ</font><p></p>
   - name: CGIN80.Q725
     conditions:
       - questionText:
@@ -4032,11 +4139,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD NUMBER OF MONTHS OR YEARS.</span></p>
+          FR: |
+            <font color="#0000ff">ENREGISTREZ LE NOMBRE DE MOIS OU D’ANNÉES.</font><p></p>
   - name: CGIN80.Q805U
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD UNITS.</span></p>
+          FR: |
+            <p><span class="instruction">ENREGISTREZ SI EN MOIS OU ANNÉES</span></p>
   - name: CGIN80.Q810
     conditions:
       - logic: Q208 > 0 & Q804 = 1
@@ -4417,21 +4528,29 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">a) CHILDREN &lt; 10</span></p>
-  - name: CGIN80.Q931B
+          FR: |
+            <font color="#0000ff">931a. ENFANTS &lt; 10</font><p></p>
+  - name: GNIN80.Q931B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">b) HUSBAND</span></p>
-  - name: CGIN80.Q931C
+          FR: |
+            <span style="color: rgb(0, 0, 255);">931a. MARI</span><p></p>
+  - name: GNIN80.Q931C
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">c) OTHER MALES</span></p>
-  - name: CGIN80.Q931D
+          FR: |
+            <span style="color: rgb(0, 0, 255);">931a. AUTRES MALES</span><p></p>
+  - name: GNIN80.Q931D
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">d) OTHER FEMALES</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">931a. AUTRES FEMMES</span><p></p>
   - name: CGIN80.Q930C
     conditions:
       - questionText:
@@ -4619,11 +4738,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q1023Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q1024
     conditions:
       - questionText:
@@ -4683,11 +4806,15 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER LE MOIS&nbsp;</span><p></p>
   - name: CGIN80.Q1029Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ENREGISTRER L'ANNEE&nbsp;</span><p></p>
   - name: CGIN80.Q1030
     conditions:
       - questionText:
@@ -4991,16 +5118,6 @@ questions:
             <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
           FR: |
             <p>1115.  Par quel type d&#39;assurance m&#233;dicale &#234;tes-vous couverte ?</p><p><span class="instruction">ENREGISTREZ TOUT CE QUI EST MENTIONN&#201;.</span></p>
-  - name: DV10_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>DV10. Did the following ever happen as a result of what your ~~rellast~~~~partype~~ did to you:</p>
-  - name: DV36_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">DV36. DID YOU HAVE TO INTERRUPT THE INTERVIEW BECAUSE SOME ADULT WAS TRYING TO LISTEN, OR CAME INTO THE ROOM, OR INTERFERED IN ANY OTHER WAY?</span></p>
   - name: CGIN80.AM102
     conditions:
       - questionText:
@@ -6623,32 +6740,44 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">Enter the language of the interview.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Enregistrer la langue de l'interview&nbsp;</span><p></p>
   - name: CGIN80.QLANGR
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Enter the native language of the respondent.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Enregistrer la langue maternelle de l'enquêté(e)&nbsp;</span><p></p>
   - name: CGIN80.QTRANS
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Enter whether a translator was used during the interview.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Traducteur utilisé&nbsp;</span><p></p>
   - name: CGIN80.GIAUX
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Coordinates for the INDIVIDUAL were already collected, do you want to replace the current coordinates?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">Les coordonnées de l'individus ont déjà été collectées, souhaitez-vous remplacer les coordonnées actuelles?&nbsp;</span><p></p>
   - name: CGIN80.GIINTRO
     conditions:
       - logic: capturecoor = 0
         questionText:
           EN: |
             <p><span class="instruction">Are you sure that you want to replace the current coordinates?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">Êtes-vous sûr de vouloir remplacer les coordonnées actuelles ?&nbsp;</span><p></p>
       - logic: capturecoor = 1
         questionText:
           EN: |
             <p><span class="instruction">As part of the CC DHS/MIS survey, it is necessary to take coordinates for INDIVIDUALs interviewed.  Please make sure that the dongle is connected to the tablet and step in the dwelling front door (away from blocking buildings/trees).</span></p>
             <p><span class="instruction">Are you ready to capture the coordinates?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">Dans le cadre des enquêtes EDS, il est nécessaire de prendre les coordonnées des individus enquêtés. Veuillez vous assurer que le dongle est connecté à la tablette et que vous entrez dans la porte d'entrée du ménage (loin des bâtiments/arbres qui bloquent).&nbsp;</span><p></p>
   - name: CGIN80.QFINAL
     conditions:
       - logic: QQTYPE = 1
@@ -6657,12 +6786,16 @@ questions:
             <p><span class="instruction">END OF MAN'S QUESTIONNAIRE.</span></p>
             <p><span class="instruction">THE QUESTIONNAIRE OR ANY CHANGES MADE WILL BE SAVED AUTOMATICALLY.</span></p>
             <p><span class="instruction">PRESS ENTER OR ADVANCE TO CONTINUE, A WINDOW WILL BE DISPLAYED FOR YOU TO ENTER ANY COMMENTS ABOUT THE INTERVIEW.</span></p>
+          FR: |
+            <p style="font-size: 16px;"><span style="font-size: 24px; color: rgb(0, 0, 255);">FIN DU QUESTIONNAIRE HOMME&nbsp;</span></p><p style="font-size: 16px;">&nbsp;</p><p style="font-size: 16px;"><span style="font-size: 24px; color: rgb(0, 0, 255);">LE QUESTIONNAIRE SERA AUTOMATIQUEMENT SAUVEGARDE&nbsp;</span></p><p></p>
       - logic: QQTYPE = 2
         questionText:
           EN: |
             <p><span class="instruction">END OF WOMAN'S QUESTIONNAIRE.</span></p>
             <p><span class="instruction">THE QUESTIONNAIRE OR ANY CHANGES MADE WILL BE SAVED AUTOMATICALLY.</span></p>
             <p><span class="instruction">PRESS ENTER OR ADVANCE TO CONTINUE, A WINDOW WILL BE DISPLAYED FOR YOU TO ENTER ANY COMMENTS ABOUT THE INTERVIEW.</span></p>
+          FR: |
+            <p style="font-size: 16px;"><span style="font-size: 24px; color: rgb(0, 0, 255);">FIN DU QUESTIONNAIRE FEMME&nbsp;</span></p><p style="font-size: 16px;">&nbsp;</p><p style="font-size: 16px;"><span style="font-size: 24px; color: rgb(0, 0, 255);">LE QUESTIONNAIRE SERA AUTOMATIQUEMENT SAUVEGARDE&nbsp;</span></p><p style="font-size: 16px;">&nbsp;</p><p></p>
   - name: OTHERS.OTHRESP
     conditions:
       - questionText:
@@ -7511,126 +7644,126 @@ questions:
       - questionText:
           EN: |
             <p>Z_CHD33. Did have any follow up visits because of your test results?</p>
-  - name: CGIN80.Z_ECD1
+  - name: CGIN80.ECD1
     conditions:
       - questionText:
           EN: |
-            <p>ECD1. Can ~~Z_ECDCN~~ walk on an uneven surface, for example, a bumpy or steep road, without falling?</p>
-  - name: CGIN80.Z_ECD10
+            <p>ECD1. Can ~~ECDCN~~ walk on an uneven surface, for example, a bumpy or steep road, without falling?</p>
+  - name: CGIN80.ECD10
     conditions:
       - questionText:
           EN: |
-            <p>ECD10. Can ~~Z_ECDCN~~ recognize at least 5 letters of the alphabet?</p>
-  - name: CGIN80.Z_ECD11
+            <p>ECD10. Can ~~ECDCN~~ recognize at least 5 letters of the alphabet?</p>
+  - name: CGIN80.ECD11
     conditions:
-      - logic: Q219(Z_ECDCA) = 1
+      - logic: Q219(ECDCA) = 1
         questionText:
           EN: |
-            <p>ECD11. Can ~~Z_ECDCN~~ write his name?</p>
-      - logic: Q219(Z_ECDCA) = 2
+            <p>ECD11. Can ~~ECDCN~~ write his name?</p>
+      - logic: Q219(ECDCA) = 2
         questionText:
           EN: |
-            <p>ECD11. Can ~~Z_ECDCN~~ write her name?</p>
-  - name: CGIN80.Z_ECD12
+            <p>ECD11. Can ~~ECDCN~~ write her name?</p>
+  - name: CGIN80.ECD12
     conditions:
       - questionText:
           EN: |
-            <p>ECD12. Can ~~Z_ECDCN~~ recognize all numbers from 1 to 5?</p>
-  - name: CGIN80.Z_ECD13
+            <p>ECD12. Can ~~ECDCN~~ recognize all numbers from 1 to 5?</p>
+  - name: CGIN80.ECD13
     conditions:
-      - logic: Q219(Z_ECDCA) = 1
+      - logic: Q219(ECDCA) = 1
         questionText:
           EN: |
-            <p>ECD13. If you ask ~~Z_ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does he give you the correct amount?</p>
-      - logic: Q219(Z_ECDCA) = 2
+            <p>ECD13. If you ask ~~ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does he give you the correct amount?</p>
+      - logic: Q219(ECDCA) = 2
         questionText:
           EN: |
-            <p>ECD13. If you ask ~~Z_ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does she give you the correct amount?</p>
-  - name: CGIN80.Z_ECD14
+            <p>ECD13. If you ask ~~ECDCN~~ to give you 3 objects, such as 3 stones or 3 beans, does she give you the correct amount?</p>
+  - name: CGIN80.ECD14
     conditions:
       - questionText:
           EN: |
-            <p>ECD14. Can ~~Z_ECDCN~~ count 10 objects, for example, 10 fingers or 10 blocks, without mistakes?</p>
-  - name: CGIN80.Z_ECD15
+            <p>ECD14. Can ~~ECDCN~~ count 10 objects, for example, 10 fingers or 10 blocks, without mistakes?</p>
+  - name: CGIN80.ECD15
     conditions:
       - questionText:
           EN: |
-            <p>ECD15. Can ~~Z_ECDCN~~ do an activity, such as coloring or playing with building blocks, without repeatedly asking for help or giving up too quickly?</p>
-  - name: CGIN80.Z_ECD16
+            <p>ECD15. Can ~~ECDCN~~ do an activity, such as coloring or playing with building blocks, without repeatedly asking for help or giving up too quickly?</p>
+  - name: CGIN80.ECD16
     conditions:
       - questionText:
           EN: |
-            <p>ECD16. Does ~~Z_ECDCN~~ ask about familiar people other than parents when they are not there, for example, "Where is Grandma?"?</p>
-  - name: CGIN80.Z_ECD17
+            <p>ECD16. Does ~~ECDCN~~ ask about familiar people other than parents when they are not there, for example, "Where is Grandma?"?</p>
+  - name: CGIN80.ECD17
     conditions:
       - questionText:
           EN: |
-            <p>ECD17. Does ~~Z_ECDCN~~ offer to help someone who seems to need help?</p>
-  - name: CGIN80.Z_ECD18
+            <p>ECD17. Does ~~ECDCN~~ offer to help someone who seems to need help?</p>
+  - name: CGIN80.ECD18
     conditions:
       - questionText:
           EN: |
-            <p>ECD18. Does ~~Z_ECDCN~~ get along well with other children?</p>
-  - name: CGIN80.Z_ECD19
+            <p>ECD18. Does ~~ECDCN~~ get along well with other children?</p>
+  - name: CGIN80.ECD19
     conditions:
       - questionText:
           EN: |
-            <p>ECD19. How often does ~~Z_ECDCN~~ seem to be very sad or depressed? Would you say: daily, weekly, monthly, a few times a year, or never?</p>
-  - name: CGIN80.Z_ECD2
+            <p>ECD19. How often does ~~ECDCN~~ seem to be very sad or depressed? Would you say: daily, weekly, monthly, a few times a year, or never?</p>
+  - name: CGIN80.ECD2
     conditions:
       - questionText:
           EN: |
-            <p>ECD2. Can ~~Z_ECDCN~~ jump up with both feet leaving the ground?</p>
-  - name: CGIN80.Z_ECD20
+            <p>ECD2. Can ~~ECDCN~~ jump up with both feet leaving the ground?</p>
+  - name: CGIN80.ECD20
     conditions:
       - questionText:
           EN: |
-            <p>ECD20. Compared with other children of the same age, how much does ~~Z_ECDCN~~ kick, bite, or hit other children or adults? Would you say: not at all, the same or less, more, or a lot more?</p>
-  - name: CGIN80.Z_ECD3
+            <p>ECD20. Compared with other children of the same age, how much does ~~ECDCN~~ kick, bite, or hit other children or adults? Would you say: not at all, the same or less, more, or a lot more?</p>
+  - name: CGIN80.ECD3
     conditions:
-      - logic: Q219(Z_ECDCA) = 1
+      - logic: Q219(ECDCA) = 1
         questionText:
           EN: |
-            <p>ECD3. Can ~~Z_ECDCN~~ dress himself, that is, put on pants and a shirt, without help?</p>
-      - logic: Q219(Z_ECDCA) = 2
+            <p>ECD3. Can ~~ECDCN~~ dress himself, that is, put on pants and a shirt, without help?</p>
+      - logic: Q219(ECDCA) = 2
         questionText:
           EN: |
-            <p>ECD3. Can ~~Z_ECDCN~~ dress herself, that is, put on pants and a shirt, without help?</p>
-  - name: CGIN80.Z_ECD4
+            <p>ECD3. Can ~~ECDCN~~ dress herself, that is, put on pants and a shirt, without help?</p>
+  - name: CGIN80.ECD4
     conditions:
       - questionText:
           EN: |
-            <p>ECD4. Can ~~Z_ECDCN~~ fasten and unfasten buttons without help?</p>
-  - name: CGIN80.Z_ECD5
+            <p>ECD4. Can ~~ECDCN~~ fasten and unfasten buttons without help?</p>
+  - name: CGIN80.ECD5
     conditions:
       - questionText:
           EN: |
-            <p>ECD5. Can ~~Z_ECDCN~~ say 10 or more words, like 'mama' or 'ball'?</p>
-  - name: CGIN80.Z_ECD6
+            <p>ECD5. Can ~~ECDCN~~ say 10 or more words, like 'mama' or 'ball'?</p>
+  - name: CGIN80.ECD6
     conditions:
       - questionText:
           EN: |
-            <p>ECD6. Can ~~Z_ECDCN~~ speak using sentences of 3 or more words that go together, for example, "I want water" or "The house is big"?</p>
-  - name: CGIN80.Z_ECD7
+            <p>ECD6. Can ~~ECDCN~~ speak using sentences of 3 or more words that go together, for example, "I want water" or "The house is big"?</p>
+  - name: CGIN80.ECD7
     conditions:
       - questionText:
           EN: |
-            <p>ECD7. Can ~~Z_ECDCN~~ speak using sentences of 5 or more words that go together, for example, "The house is very big"?</p>
-  - name: CGIN80.Z_ECD8
+            <p>ECD7. Can ~~ECDCN~~ speak using sentences of 5 or more words that go together, for example, "The house is very big"?</p>
+  - name: CGIN80.ECD8
     conditions:
       - questionText:
           EN: |
-            <p>ECD8. Can ~~Z_ECDCN~~ correctly use any of the words 'I', 'you', 'she', or 'he', for example, "I want water" or "He eats rice"?</p>
-  - name: CGIN80.Z_ECD9
+            <p>ECD8. Can ~~ECDCN~~ correctly use any of the words 'I', 'you', 'she', or 'he', for example, "I want water" or "He eats rice"?</p>
+  - name: CGIN80.ECD9
     conditions:
-      - logic: Q219(Z_ECDCA) = 1
+      - logic: Q219(ECDCA) = 1
         questionText:
           EN: |
-            <p>ECD9. If you show ~~Z_ECDCN~~ an object he knows well, such as a cup or animal, can he consistently name it? By consistently, we mean that he uses the same word to refer to the same object, even if the word used is not fully correct.</p>
-      - logic: Q219(Z_ECDCA) = 2
+            <p>ECD9. If you show ~~ECDCN~~ an object he knows well, such as a cup or animal, can he consistently name it? By consistently, we mean that he uses the same word to refer to the same object, even if the word used is not fully correct.</p>
+      - logic: Q219(ECDCA) = 2
         questionText:
           EN: |
-            <p>ECD9. If you show ~~Z_ECDCN~~ an object she knows well, such as a cup or animal, can she consistently name it? By consistently, we mean that she uses the same word to refer to the same object, even if the word used is not fully correct.</p>
+            <p>ECD9. If you show ~~ECDCN~~ an object she knows well, such as a cup or animal, can she consistently name it? By consistently, we mean that she uses the same word to refer to the same object, even if the word used is not fully correct.</p>
   - name: CGIN80.Z_FI1
     conditions:
       - questionText:
@@ -7989,125 +8122,125 @@ questions:
             <p>ML514. People in your community who have a mosquito net usually sleep under a mosquito net every night.</p>
             <p>Do you agree or disagree?</p>
             <p><span class="instruction">IF RESPONDENT DOESN'T KNOW, PROBE:</span> Would you say more than half or less than half of the community does this?</p>
-  - name: CGIN80.Z_MM00
+  - name: CGIN80.MM00
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ADULT AND MATERNAL MORTALITY MODULE</span></p>
             <p><span class="instruction">PRESS ENTER OR ADVANCE TO CONTINUE</span></p>
-  - name: CGIN80.Z_MM01
+  - name: CGIN80.MM01
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM01. Please tell me, which brother or sister was born first? And which was born next?</p>
+            <p>MM01. Please tell me, which brother or sister was born first? And which was born next?</p>
             <p><span class="instruction">RECORD '01' FOR THE ORDER NUMBER FOR THE FIRST BROTHER OR SISTER, '02' FOR THE SECOND, AND SO ON UNTIL YOU HAVE RECORDED THE ORDER NUMBER FOR ALL BROTHERS AND SISTERS.</span></p>
-  - name: CGIN80.Z_MM01N
+  - name: CGIN80.MM01N
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM01. Now I would like to ask you some questions about your brothers and sisters born to your natural mother, including those who are living with you, those living elsewhere and those who have died. From our experience in prior surveys, we know it may sometimes be difficult to establish a complete list of all the children born to your natural mother. We will work together to draw the most complete list and work to recall all your siblings. Could you please now give me the names of all of your brothers and sisters born to your natural mother.</p>
+            <p>MM01. Now I would like to ask you some questions about your brothers and sisters born to your natural mother, including those who are living with you, those living elsewhere and those who have died. From our experience in prior surveys, we know it may sometimes be difficult to establish a complete list of all the children born to your natural mother. We will work together to draw the most complete list and work to recall all your siblings. Could you please now give me the names of all of your brothers and sisters born to your natural mother.</p>
             <p><span class="instruction">IF RESPONDENT DOESN'T HAVE ANY BROTHERS OR SISTERS PRESS FORWARD BUTTON TO CONTINUE.</span></p>
             <p><span class="instruction">DO NOT FILL IN THE ORDER NUMBER YET.</span></p>
-  - name: CGIN80.Z_MM03
+  - name: CGIN80.MM03
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">Z_MM03. READ THE NAMES OF THE BROTHERS AND SISTERS TO THE RESPONDENT AND AFTER THE LAST ONE ASK:</span></p>
+            <p><span class="instruction">MM03. READ THE NAMES OF THE BROTHERS AND SISTERS TO THE RESPONDENT AND AFTER THE LAST ONE ASK:</span></p>
             <p>Are there any other brothers and sisters from the same mother that you have not mentioned?</p>
-  - name: CGIN80.Z_MM04
+  - name: CGIN80.MM04
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM04. Sometimes people forget to mention children born to their natural mother because they do not live with them or they do not see them very often. Are there any brothers or sisters who do not live with you that you have not mentioned?</p>
-  - name: CGIN80.Z_MM05
+            <p>MM04. Sometimes people forget to mention children born to their natural mother because they do not live with them or they do not see them very often. Are there any brothers or sisters who do not live with you that you have not mentioned?</p>
+  - name: CGIN80.MM05
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM05. Sometimes people forget to mention children born to their natural mother because they have died. Are there any brothers or sisters who died that you have not mentioned?</p>
-  - name: CGIN80.Z_MM06
+            <p>MM05. Sometimes people forget to mention children born to their natural mother because they have died. Are there any brothers or sisters who died that you have not mentioned?</p>
+  - name: CGIN80.MM06
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM06. Some people have brothers or sisters from the same mother but a different father. Are there any brothers or sisters born to your natural mother, but who have a different natural father, that you have not mentioned?</p>
-  - name: CGIN80.Z_MM08
+            <p>MM06. Some people have brothers or sisters from the same mother but a different father. Are there any brothers or sisters born to your natural mother, but who have a different natural father, that you have not mentioned?</p>
+  - name: CGIN80.MM08
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM08. Just to make sure that I have this right: Your mother had in total ~~Z_MM07~~ births, excluding you, during her lifetime. Is that correct?</p>
-  - name: CGIN80.Z_MM10
+            <p>MM08. Just to make sure that I have this right: Your mother had in total ~~MM07~~ births, excluding you, during her lifetime. Is that correct?</p>
+  - name: CGIN80.MM10
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM10. Please tell me, which brother or sister was born first? And which was born next?</p>
+            <p>MM10. Please tell me, which brother or sister was born first? And which was born next?</p>
             <p><span class="instruction">RECORD '01' FOR THE ORDER NUMBER IN MM01 FOR THE FIRST BROTHER OR SISTER, '02' FOR THE SECOND, AND SO ON UNTIL YOU HAVE RECORDED THE ORDER NUMBER FOR ALL BROTHERS AND SISTERS.</span></p>
-  - name: CGIN80.Z_MM11
+  - name: CGIN80.MM11
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM11. How many births did your mother have before you were born?</p>
-  - name: CGIN80.Z_MM14
+            <p>MM11. How many births did your mother have before you were born?</p>
+  - name: CGIN80.MM14
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM14. Is ~~Z_MM13N~~ male or female?</p>
-  - name: CGIN80.Z_MM15
+            <p>MM14. Is ~~MM13N~~ male or female?</p>
+  - name: CGIN80.MM15
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM15. Is ~~Z_MM13N~~ still alive?</p>
-  - name: CGIN80.Z_MM16
+            <p>MM15. Is ~~MM13N~~ still alive?</p>
+  - name: CGIN80.MM16
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM16. How old is ~~Z_MM13N~~?</p>
-  - name: CGIN80.Z_MM17
+            <p>MM16. How old is ~~MM13N~~?</p>
+  - name: CGIN80.MM17
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM17. How many years ago did ~~Z_MM13N~~ die?</p>
-  - name: CGIN80.Z_MM18
+            <p>MM17. How many years ago did ~~MM13N~~ die?</p>
+  - name: CGIN80.MM18
     conditions:
-      - logic: Z_MM14 = 1
+      - logic: MM14 = 1
         questionText:
           EN: |
-            <p>Z_MM18. How old was ~~Z_MM13N~~ when he died?</p>
+            <p>MM18. How old was ~~MM13N~~ when he died?</p>
             <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
-      - logic: Z_MM14 = 2
+      - logic: MM14 = 2
         questionText:
           EN: |
-            <p>Z_MM18. How old was ~~Z_MM13N~~ when she died?</p>
+            <p>MM18. How old was ~~MM13N~~ when she died?</p>
             <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
-  - name: CGIN80.Z_MM19
+  - name: CGIN80.MM19
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM19. Was ~~Z_MM13N~~ pregnant when she died?</p>
-  - name: CGIN80.Z_MM20
+            <p>MM19. Was ~~MM13N~~ pregnant when she died?</p>
+  - name: CGIN80.MM20
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM20. Did ~~Z_MM13N~~ die during childbirth?</p>
-  - name: CGIN80.Z_MM21
+            <p>MM20. Did ~~MM13N~~ die during childbirth?</p>
+  - name: CGIN80.MM21
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM21. Did ~~Z_MM13N~~ die within two months after the end of a pregnancy or childbirth?</p>
-  - name: CGIN80.Z_MM22
+            <p>MM21. Did ~~MM13N~~ die within two months after the end of a pregnancy or childbirth?</p>
+  - name: CGIN80.MM22
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM22. How many days after the end of the pregnancy did ~~Z_MM13N~~ die?</p>
-  - name: CGIN80.Z_MM23
+            <p>MM22. How many days after the end of the pregnancy did ~~MM13N~~ die?</p>
+  - name: CGIN80.MM23
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM23. Was ~~Z_MM13N~~'s death due to an act of violence?</p>
-  - name: CGIN80.Z_MM24
+            <p>MM23. Was ~~MM13N~~'s death due to an act of violence?</p>
+  - name: CGIN80.MM24
     conditions:
       - questionText:
           EN: |
-            <p>Z_MM24. Was ~~Z_MM13N~~'s death due to an accident?</p>
-  - name: CGIN80.Z_MMMORE
+            <p>MM24. Was ~~MM13N~~'s death due to an accident?</p>
+  - name: CGIN80.MMMORE
     conditions:
       - questionText:
           EN: |
@@ -8229,4 +8362,14 @@ questions:
           EN: |
             <p>NB7. What was applied?</p>
             <p>Anything else?</p>
+  - name: DV10_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>DV10. Did the following ever happen as a result of what your ~~rellast~~~~partype~~ did to you:</p>
+  - name: DV36_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">DV36. DID YOU HAVE TO INTERRUPT THE INTERVIEW BECAUSE SOME ADULT WAS TRYING TO LISTEN, OR CAME INTO THE ROOM, OR INTERFERED IN ANY OTHER WAY?</span></p>
 ...

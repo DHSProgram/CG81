@@ -7950,6 +7950,330 @@ Len=20
 DataType=Alpha
 
 [Record]
+Label=Early childhood development
+Name=QWSECECD
+RecordTypeValue='WEC'
+Required=No
+MaxRecords=4
+RecordLen=51
+
+[Item]
+Label=Column number|Numéro de colonne
+Name=QCOLECD
+Start=14
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Column number|Numéro de colonne
+Name=QCOLECD_VS1
+Value=1:6
+
+[Item]
+Label=Child line number|Numéro de ligne l'enfant
+Name=QECDCA
+Start=15
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Child line number|Numéro de ligne l'enfant
+Name=AECDCA_VS1
+Value=1:24
+
+[Item]
+Label=Child name under 5
+Name=AECDCN
+Start=17
+Len=15
+DataType=Alpha
+
+[Item]
+Label=Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
+Name=AECD1
+Start=32
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
+Name=AECD1_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
+Name=AECD2
+Start=33
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
+Name=AECD2_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
+Name=AECD3
+Start=34
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
+Name=AECD3_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
+Name=AECD4
+Start=35
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
+Name=AECD4_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
+Name=AECD5
+Start=36
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
+Name=AECD5_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
+Name=AECD6
+Start=37
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
+Name=AECD6_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
+Name=AECD7
+Start=38
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
+Name=AECD7_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
+Name=AECD8
+Start=39
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
+Name=AECD8_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
+Name=AECD9
+Start=40
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
+Name=AECD9_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
+Name=AECD10
+Start=41
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
+Name=AECD10_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
+Name=AECD11
+Start=42
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
+Name=AECD11_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
+Name=AECD12
+Start=43
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
+Name=AECD12_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
+Name=AECD13
+Start=44
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
+Name=AECD13_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can child count 10 objects without mistakes
+Name=AECD14
+Start=45
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can child count 10 objects without mistakes
+Name=AECD14_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Can color or play with building blocks without asking for help or giving up
+Name=AECD15
+Start=46
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Can color or play with building blocks without asking for help or giving up
+Name=AECD15_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Does child ask about familiar people other than parents when not there
+Name=AECD16
+Start=47
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Does child ask about familiar people other than parents when not there
+Name=AECD16_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Does child offer to help someone who seems to need help
+Name=AECD17
+Start=48
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Does child offer to help someone who seems to need help
+Name=AECD17_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Does child get along well with other children
+Name=AECD18
+Start=49
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Does child get along well with other children
+Name=AECD18_VS1
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=How often does child seem to be very sad or depressed
+Name=AECD19
+Start=50
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=How often does child seem to be very sad or depressed
+Name=AECD19_VS1
+Value=1;Daily|Oui
+Value=2;Weekly|Non
+Value=3;Monthly
+Value=4;A few times a year
+Value=5;Never
+Value=8;Don't know|Ne sait pas
+
+[Item]
+Label=Compared with other children, how much does child kick, bite, or hit other children or adults
+Name=AECD20
+Start=51
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Compared with other children, how much does child kick, bite, or hit other children or adults
+Name=AECD20_VS1
+Value=1;Not at all|Oui
+Value=2;The same or less|Non
+Value=3;More
+Value=4;A lot more
+Value=8;Don't know|Ne sait pas
+
+[Record]
 Label=Marriage and Sexual Activity
 Name=QWSEC07
 RecordTypeValue='W07'
@@ -10590,6 +10914,536 @@ Value='B    ';Assurance santé par l'employeur
 Value='C    ';Securité sociale
 Value='D    ';Autre assurance privée commerciale
 Value='X    ';Autre
+
+[Record]
+Label=Names of siblings for maternal mortality
+Name=QWSECM1
+RecordTypeValue='WM1'
+Required=No
+MaxRecords=20
+RecordLen=44
+
+[Item]
+Label=Occurrence
+Name=QMMLINE
+Start=14
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Sibling name
+Name=QMM01N
+Start=16
+Len=24
+DataType=Alpha
+
+[Item]
+Label=Any more siblings
+Name=QMMMORE
+Start=40
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any more siblings
+Name=QMMMORE_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Other brothers and sisters
+Name=QMM03
+Start=41
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Other brothers and sisters
+Name=QMM03_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Other brothers and sisters living elsewhere
+Name=QMM04
+Start=42
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Other brothers and sisters living elsewhere
+Name=QMM04_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Other brothers and sisters who died
+Name=QMM05
+Start=43
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Other brothers and sisters who died
+Name=QMM05_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Other brothers and sisters  of same mother but different father
+Name=QMM06
+Start=44
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Other brothers and sisters  of same mother but different father
+Name=QMM06_VS1
+Value=1;Yes
+Value=2;No
+
+[Record]
+Label=Maternal mortality summary and filters
+Name=QWSECM2
+RecordTypeValue='WM2'
+Required=No
+RecordLen=60
+
+[Item]
+Label=Start Adult and Maternal Mortality Module
+Name=QMM00
+Start=14
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Start Adult and Maternal Mortality Module
+Name=QMM00_VS1
+Value=1;Press 1 to Continue
+
+[Item]
+Label=Siblings order number
+Name=QMM01
+Start=15
+Len=2
+DataType=Numeric
+Occurrences=20
+
+[ValueSet]
+Label=Siblings order number
+Name=QMM01_VS1
+Value=1:24
+
+[Item]
+Label=Number of brothers and sisters recorded in MM01 (excluding respondent)
+Name=QMM07
+Start=55
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Number of brothers and sisters recorded in MM01 (excluding respondent)
+Name=QMM07_VS1
+Value=0;No brother/sister
+Value=1:20
+
+[Item]
+Label=Check for total brothers and sisters
+Name=QMM08
+Start=57
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Check for total brothers and sisters
+Name=QMM08_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Ordering of brothers and sisters
+Name=QMM10
+Start=58
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Ordering of brothers and sisters
+Name=QMM10_VS1
+Value=1;Go back and enter/edit order number
+Value=2;Order number is already entered, Continue interview
+
+[Item]
+Label=Brothers and sisters born before respondent (excluding respondent)
+Name=QMM11
+Start=59
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Brothers and sisters born before respondent (excluding respondent)
+Name=QMM11_VS1
+Value=0:23
+
+[Record]
+Label=Maternal Mortality
+Name=QWSECM3
+RecordTypeValue='WM3'
+Required=No
+MaxRecords=20
+RecordLen=58
+
+[Item]
+Label=Column number
+Name=QMM13
+Start=14
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Column number
+Name=QMM13_VS1
+Value=1:24
+
+[Item]
+Label=Sibling name
+Name=QMM13N
+Start=16
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Sex of sibling
+Name=QMM14
+Start=36
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sex of sibling
+Name=QMM14_VS1
+Value=1;Male
+Value=2;Female
+
+[Item]
+Label=Sibling alive
+Name=QMM15
+Start=37
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sibling alive
+Name=QMM15_VS1
+Value=1;Yes
+Value=2;No
+Value=8;Don't know
+
+[Item]
+Label=Age of sibling
+Name=QMM16
+Start=38
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Age of sibling
+Name=QMM16_VS1
+Value=0:75
+
+[Item]
+Label=Years since siblings death
+Name=QMM17
+Start=40
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Years since siblings death
+Name=QMM17_VS1
+Value=0:75
+
+[Item]
+Label=Age of sibling at death
+Name=QMM18
+Start=42
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Age of sibling at death
+Name=QMM18_VS1
+Value=0:75
+
+[Item]
+Label=Died while pregnant
+Name=QMM19
+Start=44
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Died while pregnant
+Name=QMM19_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Died during childbirth
+Name=QMM20
+Start=45
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Died during childbirth
+Name=QMM20_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Died within 2 months of delivery
+Name=QMM21
+Start=46
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Died within 2 months of delivery
+Name=QMM21_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Days after end of pregnancy sister died
+Name=QMM22
+Start=47
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Days after end of pregnancy sister died
+Name=QMM22_VS1
+Value=0:62
+
+[Item]
+Label=Death due to violence
+Name=QMM23
+Start=49
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Death due to violence
+Name=QMM23_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Death due to accident
+Name=QMM24
+Start=50
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Death due to accident
+Name=QMM24_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=CMC date of birth of sibling
+Name=QMM16C
+Start=51
+Len=4
+DataType=Numeric
+
+[Item]
+Label=CMC date of death of sibling
+Name=QMM17C
+Start=55
+Len=4
+DataType=Numeric
+
+[Record]
+Label=Fistula module
+Name=QWSECFIS
+RecordTypeValue='WFI'
+Required=No
+RecordLen=34
+
+[Item]
+Label=Currently experience constant leakage of urine or stool from vagina during the day and night
+Name=AFI1
+Start=14
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Currently experience constant leakage of urine or stool from vagina during the day and night
+Name=AFI1_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Have ever experienced a problem of leakage of urine or stool from vagina
+Name=AFI2
+Start=15
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have ever experienced a problem of leakage of urine or stool from vagina
+Name=AFI2_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Have ever heard of the problem of leakage of urine or stool from vagina
+Name=AFI3
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have ever heard of the problem of leakage of urine or stool from vagina
+Name=AFI3_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Did the leakage problem start after a delivery of a baby or a stillbirth
+Name=AFI4
+Start=17
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Did the leakage problem start after a delivery of a baby or a stillbirth
+Name=AFI4_VS1
+Value=1;After deliverd baby
+Value=2;After had a stillbirth
+Value=3;Neither
+
+[Item]
+Label=Did the leakage problem start after a normal labor and delivery, or after a difficult labor and delivery
+Name=AFI5
+Start=18
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Did the leakage problem start after a normal labor and delivery, or after a difficult labor and delivery
+Name=AFI5_VS1
+Value=1;Normal labor/delivery
+Value=2;Very difficult labor/delivery
+
+[Item]
+Label=What do you think caused the leakage problem
+Name=AFI6
+Start=19
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=What do you think caused the leakage problem
+Name=AFI6_VS1
+Value=1;Pelvic surgery
+Value=2;Sexual assault
+Value=3;Other injury
+Value=6;Other
+Value=8;Don't know
+
+[Item]
+Label=How many days after what caused the problem did the leakage start
+Name=AFI7
+Start=20
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=How many days after what caused the problem did the leakage start
+Name=AFI7_VS1
+Value=0:89
+Value=90;90 days or more
+
+[Item]
+Label=Have you sought treatment for this condition
+Name=AFI8
+Start=22
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have you sought treatment for this condition
+Name=AFI8_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Reason treatment was not sought
+Name=AFI9
+Start=23
+Len=9
+DataType=Alpha
+
+[ValueSet]
+Label=Reason treatment was not sought
+Name=AFI9_VS1
+Value='A        ';Do not know can be fixed
+Value='B        ';Do not know where to go
+Value='C        ';Too expensive
+Value='D        ';Too far
+Value='E        ';Poor quality of care
+Value='F        ';Could not get permission
+Value='G        ';Embarrassment
+Value='H        ';Problem disappeared
+Value='X        ';Other
+
+[Item]
+Label=Person whom treatment was last sought
+Name=AFI10
+Start=32
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Person whom treatment was last sought
+Name=AFI10_VS1
+Value=0;Health professional
+Value=1;Doctor
+Value=2;Nurse/midwife
+Value=5;Other person
+Value=3;Community/village health worker
+Value=6;Other
+
+[Item]
+Label=Did have an operation to fix the leakage problem
+Name=AFI11
+Start=33
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Did have an operation to fix the leakage problem
+Name=AFI11_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Did the treatment stop or reduce the leakage completely
+Name=AFI12
+Start=34
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Did the treatment stop or reduce the leakage completely
+Name=AFI12_VS1
+Value=1;Yes, stopped completely
+Value=2;Not stopped but reduced
+Value=3;Not stopped at all
 
 [Record]
 Label=[Men] Respondent's Background

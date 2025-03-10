@@ -140,8 +140,6 @@
       elseif sec = 15 & totocc(QWSEC09_FORM)  then move to QWSEC09_FORM  advance 
       elseif sec = 16 & totocc(QWSEC10_FORM)  then move to QWSEC10_FORM  advance 
       elseif sec = 17 & totocc(QWSEC11_FORM)  then move to QWSEC11_FORM  advance 
-      elseif sec = 18 & totocc(AWSECMT_FORM)  then move to AWSECMT_FORM  advance 
-      elseif sec = 21 & totocc(QWSECDV_FORM)  then move to QWSECDV_FORM  advance 
       elseif sec = 27 & totocc(ALANG_FORM)    then move to ALANG_FORM    advance 
 	  elseif sec = 28 then   // Cancel - do nothing
 	  else
