@@ -1,6 +1,6 @@
 ﻿[Dictionary]
 Version=CSPro 7.7
-Label=DHS-8 Core 06-19-2020
+Label=DHS-8 Republic of Congo DHS 2025
 Name=CGHH80
 RecordTypeStart=9
 RecordTypeLen=3
@@ -328,7 +328,7 @@ DataType=Numeric
 [ValueSet]
 Label=Language of questionnaire|Langue du questionnaire
 Name=QHLANGQ_VS1
-Value=2;French|Français|Francesa
+Value=1;French|Français|Francesa
 
 [Item]
 Label=Language of interview|Langue de l’interview

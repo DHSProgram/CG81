@@ -13,3 +13,16 @@ Language = ES
   ES ( "Households" ) Hogares
   ES ( "Individuals" ) Individuales
   ES ( "No notes found in this cluster" ) No se encontraron notas en este segmento
+
+Language = FR
+{ common strings used by the application }  
+  FR ( "Listing Notes for Cluster: %04d" ) Notes de liste pour la grappe : %04d
+  FR ( "Household" ) Ménage
+  FR ( "Line" ) Ligne
+  FR ( "Field" ) Field
+  FR ( "Date (dd/mm/yyyy)" ) Date (dd/mm/yyyy)
+  FR ( "Time (hh:mm)" ) Temps (hh:mm)
+  FR ( "Note/Observation" ) Note/Observation
+  FR ( "Households" ) Ménages
+  FR ( "Individuals" ) Individuels
+  FR ( "No notes found in this cluster" ) Aucune note trouvée dans cette grappe

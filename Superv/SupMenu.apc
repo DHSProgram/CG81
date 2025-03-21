@@ -1213,15 +1213,10 @@ PROC GLOBAL
     else
       if gethh() then
         { review HOUSEHOLDs including incomplete }
-        if QHRESULT <> 1 then
-          errmsg( 0011, ZRESULT );
-        endif;
         xcase  = edit("9999", WCLUSTER) + edit("9999",QHNUMBER);
-        xparamet = xparaux + edit("9999",QHNUMBER);
-        AppName = "CollectHH";
-      { modify, hh, partial, revisit, change, height/weight }
-        SaveSetting( "SupSession", "5" );
-        csrun( 0, 1, 0, 0, 1, 0 );
+        loadcase(CGHH80, xcase);
+        CGHH80.view();
+        close( CGHH80 );
       endif;
     endif;
   end;
@@ -1241,16 +1236,8 @@ PROC GLOBAL
         header = maketext (tr("Select an individual to interview from HOUSEHOLD %04d"), hhtoget);
         if selcase(header, CGIN80, "", 15) include(QNUMBER, QLINE, QNAME, QRESULT, QINTNUM) where QNUMBER = hhtoget then
           xcase  = edit("9999", WCLUSTER) + edit("9999",QNUMBER) + edit("99",QLINE);
-          xparamet = xparaux + edit("9999",QNUMBER) + edit("99",QLINE);
-          AppName = "CollectIN";
-          { review HOUSEHOLDs including incomplete }
-          if QRESULT <> 1 then
-            errmsg( 0011, QRESULT );
-          endif;
-          { modify, hh, partial, revisit, change, height/weight }
-          SaveSetting( "SupSession", "6" );
-          SaveSetting( "hhtoget", edit("9999", hhtoget));
-          csrun( 0, 2, 0, 0, 1, 0 );
+          loadcase(CGIN80, xcase);
+          CGIN80.view();
         endif;
         close( CGIN80 );
       endif;
@@ -1910,10 +1897,10 @@ postproc
               { 8} "8 Transférer des données au bureau central",
               { 9} "9 Lister des notes de la grappe",
               {10} "U Envoyer les mises à jour aux enquêteurs",
-             {11}  "R Height and weight remeasurement",
-             {12}  "I ---Reinterview Menu---",
+             {11}  "R Remesure de la taille et du poids",
+             {12}  "I ---Menu re-interview---",
               {13} "C Changer de numéro de grappe",
-             {14}  "D ---Other options------",
+             {14}  "D ---Autre------",
               {15} "L Changer la langue",
               {16} "E Quitter le système" );
   endif;

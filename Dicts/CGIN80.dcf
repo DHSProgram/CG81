@@ -288,12 +288,7 @@ DataType=Numeric
 [ValueSet]
 Label=Language of questionnaire|Langue du questionnaire
 Name=QLANGQ_VS1
-Value=1;English
-Value=2;Language 2
-Value=3;Language 3
-Value=4;Language 4
-Value=5;Language 5
-Value=6;Language 6
+Value=1;French|Français|Francesa
 
 [Item]
 Label=Language of interview|Langue de l'interview
@@ -305,12 +300,10 @@ DataType=Numeric
 [ValueSet]
 Label=Language of interview|Langue de l'interview
 Name=QLANGI_VS1
-Value=1;English
-Value=2;Language 2
-Value=3;Language 3
-Value=4;Language 4
-Value=5;Language 5
-Value=6;Language 6
+Value=1;Français
+Value=2;Kituba
+Value=3;Lingala
+Value=4;Autre
 
 [Item]
 Label=Language of respondent|Langue de l’enquêté(e)
@@ -322,12 +315,10 @@ DataType=Numeric
 [ValueSet]
 Label=Language of respondent|Langue de l’enquêté(e)
 Name=QLANGR_VS1
-Value=1;English
-Value=2;Language 2
-Value=3;Language 3
-Value=4;Language 4
-Value=5;Language 5
-Value=6;Language 6
+Value=1;Français
+Value=2;Kituba
+Value=3;Lingala
+Value=4;Autre
 
 [Item]
 Label=Translator used|Traducteur
@@ -538,8 +529,8 @@ DataType=Numeric
 [ValueSet]
 Label=Introduction|Introduction|Introduccion
 Name=GIINTRO_VS1
-Value=1;Si
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Latitude in degrees
@@ -1125,6 +1116,7 @@ DataType=Numeric
 [ValueSet]
 Label=Religion
 Name=Q130_VS1
+Link=17446744073709551616
 Value=1;Catholique
 Value=2;Protestante
 Value=3;Musulmane
@@ -1148,6 +1140,7 @@ DataType=Numeric
 [ValueSet]
 Label=Ethnicity
 Name=Q131_VS1
+Link=13952169
 Value=1;Oubanguiens
 Value=2;Sangha
 Value=3;Mekee/makaa
@@ -3271,7 +3264,7 @@ Name=QWSEC04
 RecordTypeValue='W04'
 Required=No
 MaxRecords=6
-RecordLen=213
+RecordLen=206
 
 [Item]
 Label=Column number|Numéro de colonne
@@ -3667,51 +3660,9 @@ Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
-Label=Antenatal care: weight|Soins prénatals: saignements
-Name=Q418H
-Start=84
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Antenatal care: weight|Soins prénatals: saignements
-Name=Q418H_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
-Label=Antenatal care: talked about delivery due date|Soins prénatals: saignements
-Name=Q418I
-Start=85
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Antenatal care: talked about delivery due date|Soins prénatals: saignements
-Name=Q418I_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
-Label=Antenatal care: told to pay attention to baby movements|Soins prénatals: saignements
-Name=Q418J
-Start=86
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Antenatal care: told to pay attention to baby movements|Soins prénatals: saignements
-Name=Q418J_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
 Label=Tetanus injection during pregnancy|Injection de tétanos pendant la grossesse
 Name=Q420
-Start=87
+Start=84
 Len=1
 DataType=Numeric
 
@@ -3725,7 +3676,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Number of tetanus injections|Nombre d'injections de tétanos
 Name=Q421
-Start=88
+Start=85
 Len=1
 DataType=Numeric
 
@@ -3744,7 +3695,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Tetanus injections before pregnancy|Injections de tétanos avant la grossesse
 Name=Q423
-Start=89
+Start=86
 Len=1
 DataType=Numeric
 
@@ -3758,7 +3709,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Number of tetanus injections before pregnancy|Nombre d'injections de tétanos avant la grossesse
 Name=Q424
-Start=90
+Start=87
 Len=1
 DataType=Numeric
 
@@ -3777,7 +3728,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Years ago received last tetanus injection before pregnancy|Il y a des années a reçu la dernière injection de tétanos avant la grossesse
 Name=Q425
-Start=91
+Start=88
 Len=2
 DataType=Numeric
 
@@ -3789,7 +3740,7 @@ Value=0:40
 [Item]
 Label=Iron tablets or syrup during pregnancy|Comprimés ou sirop de fer pendant la grossesse
 Name=Q426
-Start=93
+Start=90
 Len=1
 DataType=Numeric
 
@@ -3803,7 +3754,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Where iron tablets or syrup were obtained|Lieu d’obtention des comprimés ou du sirop de fer
 Name=Q427
-Start=94
+Start=91
 Len=20
 DataType=Alpha
 
@@ -3835,7 +3786,7 @@ Value='X                   ';AUTRE
 [Item]
 Label=Number of days took iron tablets or syrup|Nombre de jours de prise de comprimés ou de sirop de fer
 Name=Q428
-Start=114
+Start=111
 Len=3
 DataType=Numeric
 
@@ -3848,7 +3799,7 @@ Value=998;Ne sait pas
 [Item]
 Label=Drugs for intestinal parasites|Médicaments contre les vers intestinaux
 Name=Q429
-Start=117
+Start=114
 Len=1
 DataType=Numeric
 
@@ -3862,7 +3813,7 @@ Value=8;Ne sait pas
 [Item]
 Label=During pregnancy took SP/Fansidar for malaria|Pendant la grossesse, pris SP/Fansidar contre le paludisme
 Name=Q431
-Start=118
+Start=115
 Len=1
 DataType=Numeric
 
@@ -3876,7 +3827,7 @@ Value=8;Ne sait pas
 [Item]
 Label=How many times took SP/Fansidar (Malaria)|Combien de fois a pris SP/Fansidar (Paludisme)
 Name=Q432
-Start=119
+Start=116
 Len=2
 DataType=Numeric
 
@@ -3888,7 +3839,7 @@ Value=0:90
 [Item]
 Label=Got SP/Fansidar during antenatal visit (Malaria)|Pris SP/Fansidar lors de la visite prénatale (paludisme)
 Name=Q433
-Start=121
+Start=118
 Len=1
 DataType=Numeric
 
@@ -3902,7 +3853,7 @@ Value=6;Ailleurs
 [Item]
 Label=Assistance at delivery|Assistance à l’accouchement
 Name=Q434
-Start=122
+Start=119
 Len=7
 DataType=Alpha
 
@@ -3923,7 +3874,7 @@ Value='Y      ';Personne n'a assisté
 [Item]
 Label=Place of delivery|Lieu d'accouchement
 Name=Q435
-Start=129
+Start=126
 Len=2
 DataType=Numeric
 
@@ -3952,7 +3903,7 @@ Value=96;AUTRE
 [Item]
 Label=Delivery by caesarean section|Accouchement par césarienne
 Name=Q436
-Start=131
+Start=128
 Len=1
 DataType=Numeric
 
@@ -3965,7 +3916,7 @@ Value=2;Non
 [Item]
 Label=Pregnancy outcome (filter)|Résultat de la grossesse (filtre)
 Name=Q437
-Start=132
+Start=129
 Len=1
 DataType=Numeric
 
@@ -3980,7 +3931,7 @@ Value=4;Mort-né précédent
 [Item]
 Label=Child was put on the chest after birth|L'enfant a été mis sur la poitrine après la naissance
 Name=Q438
-Start=133
+Start=130
 Len=1
 DataType=Numeric
 
@@ -3994,7 +3945,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Child bare skin touched respondent bare skin|La peau de l'enfant a touché la peau de l’enquêtée
 Name=Q439
-Start=134
+Start=131
 Len=1
 DataType=Numeric
 
@@ -4008,7 +3959,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Time to put child to mother's chest in hours|Combien de temps après la naissance l'enfant a été mis sur la poitrine de l’enquêtée (nombres)
 Name=Q440
-Start=135
+Start=132
 Len=2
 DataType=Numeric
 
@@ -4022,7 +3973,7 @@ Value=24;24+
 [Item]
 Label=Size of child at birth|Taille de l'enfant à la naissance
 Name=Q441
-Start=137
+Start=134
 Len=1
 DataType=Numeric
 
@@ -4039,7 +3990,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Weighed at birth|Pesé à la naissance
 Name=Q442
-Start=138
+Start=135
 Len=1
 DataType=Numeric
 
@@ -4053,14 +4004,14 @@ Value=8;Ne sait pas
 [Item]
 Label=Weight at birth
 Name=Q443
-Start=139
+Start=136
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Weight at birth from card or recall|Poids à la naissance à partir du carnet ou mémoire
 Name=Q443U
-Start=139
+Start=136
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4075,7 +4026,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=Weight in kilograms|Poids à la naissance
 Name=Q443N
-Start=140
+Start=137
 Len=5
 ItemType=SubItem
 DataType=Numeric
@@ -4091,14 +4042,14 @@ Value=9.998;Ne sait pas
 [Item]
 Label=Time spent in health facility after delivery
 Name=Q447
-Start=145
+Start=142
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time spent in health facility after delivery (unit)|Temps passé dans l'établissement de santé après l'accouchement (unité)
 Name=Q447U
-Start=145
+Start=142
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4114,7 +4065,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=Time spent in health facility after delivery (number)|Temps passé dans l'établissement de santé après l'accouchement (nombre)
 Name=Q447N
-Start=146
+Start=143
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4128,7 +4079,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Postnatal check on respondent before discharge|Contrôle postnatal de l’enquêtée avant la sortie
 Name=Q448
-Start=148
+Start=145
 Len=1
 DataType=Numeric
 
@@ -4141,14 +4092,14 @@ Value=2;Non
 [Item]
 Label=First postnatal check on respondent
 Name=Q449
-Start=149
+Start=146
 Len=3
 DataType=Alpha
 
 [Item]
 Label=First postnatal check on respondent (unit)|Premier contrôle postnatal de l’enquêtée (unité)
 Name=Q449U
-Start=149
+Start=146
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4164,7 +4115,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=First postnatal check on respondent (number)|Premier contrôle postnatal de l’enquêtée (nombre)
 Name=Q449N
-Start=150
+Start=147
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4178,7 +4129,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Person giving postnatal care to respondent|Personne qui donne des soins postnatals à l’enquêtée
 Name=Q450
-Start=152
+Start=149
 Len=2
 DataType=Numeric
 
@@ -4198,7 +4149,7 @@ Value=96;Autre
 [Item]
 Label=First postnatal check on child in facility|Premier contrôle postnatal de l'enfant dans l’établissement
 Name=Q452
-Start=154
+Start=151
 Len=1
 DataType=Numeric
 
@@ -4212,14 +4163,14 @@ Value=8;Ne sait pas
 [Item]
 Label=Time first postnatal check on child  in facility
 Name=Q453
-Start=155
+Start=152
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time first postnatal check on child in facility (unit)|Durée premier examen de l'enfant dans l'établissement (unité)
 Name=Q453U
-Start=155
+Start=152
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4235,7 +4186,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=Time first postnatal check on child in facility (number)|Durée premier examen de l'enfant dans l'établissement (nombre)
 Name=Q453N
-Start=156
+Start=153
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4249,7 +4200,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Person giving postnatal care to child  in facility|Personne qui a donne des soins postnatals à l'enfant dans l'établissement
 Name=Q454
-Start=158
+Start=155
 Len=2
 DataType=Numeric
 
@@ -4261,7 +4212,7 @@ Link=2147483647
 [Item]
 Label=Checkup on respondent after discharge from place of delivery|Examen de l’enquêtée après la sortie dans l'établissement
 Name=Q455
-Start=160
+Start=157
 Len=1
 DataType=Numeric
 
@@ -4274,14 +4225,14 @@ Value=2;Non
 [Item]
 Label=Time checkup on respondent after discharge
 Name=Q456
-Start=161
+Start=158
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time checkup on respondent after discharge (unit)|Durée après l'accouchement cet examen a eu lieu (unité)
 Name=Q456U
-Start=161
+Start=158
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4297,7 +4248,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=Time checkup on respondent after discharge (number)|Durée après l'accouchement cet examen a eu lieu (nombre)
 Name=Q456N
-Start=162
+Start=159
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4311,7 +4262,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Person giving checkup on respondent after discharge
 Name=Q457
-Start=164
+Start=161
 Len=2
 DataType=Numeric
 
@@ -4323,7 +4274,7 @@ Link=2147483647
 [Item]
 Label=Place of checkup of respondent after discharge|Lieu de l'examen
 Name=Q458
-Start=166
+Start=163
 Len=2
 DataType=Numeric
 
@@ -4352,7 +4303,7 @@ Value=96;Autre
 [Item]
 Label=Child{s health checked after birth|L'Etat de santé l’enfant a été vérifié dans les 2 premiers mois après la naissance
 Name=Q460
-Start=168
+Start=165
 Len=1
 DataType=Numeric
 
@@ -4366,14 +4317,14 @@ Value=8;Ne sait pas
 [Item]
 Label=First postnatal check on child
 Name=Q461
-Start=169
+Start=166
 Len=3
 DataType=Alpha
 
 [Item]
 Label=First postnatal check on child (unit)|Premier examen postnatal de l'enfant (unité)
 Name=Q461U
-Start=169
+Start=166
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4389,7 +4340,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=First postnatal check on child (number)|Premier examen postnatal de l'enfant (nombre)
 Name=Q461N
-Start=170
+Start=167
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4403,7 +4354,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Person giving postnatal check on child
 Name=Q462
-Start=172
+Start=169
 Len=2
 DataType=Numeric
 
@@ -4415,7 +4366,7 @@ Link=2147483647
 [Item]
 Label=Place of first postnatal check
 Name=Q463
-Start=174
+Start=171
 Len=2
 DataType=Numeric
 
@@ -4427,7 +4378,7 @@ Link=186989368
 [Item]
 Label=Respondent received postnatal check after home delivery|L’enquêtée a reçu un contrôle postnatal après l'accouchement à domicile
 Name=Q464
-Start=176
+Start=173
 Len=1
 DataType=Numeric
 
@@ -4440,14 +4391,14 @@ Value=2;Non
 [Item]
 Label=Time respondent received postnatal check after home delivery
 Name=Q465
-Start=177
+Start=174
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time respondent received postnatal check after home delivery (unit)|Durée du contrôle postnatal après l'accouchement à domicile par l’enquêtée (unité)
 Name=Q465U
-Start=177
+Start=174
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4463,7 +4414,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=Time respondent received postnatal check after home delivery (number)|Durée du contrôle postnatal après l'accouchement à domicile par l’enquêtée (nombre)
 Name=Q465N
-Start=178
+Start=175
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4477,7 +4428,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Person giving postnatal check on respondent after home delivery
 Name=Q466
-Start=180
+Start=177
 Len=2
 DataType=Numeric
 
@@ -4489,7 +4440,7 @@ Link=2147483647
 [Item]
 Label=Place postnatal check on respondent after home delivery
 Name=Q467
-Start=182
+Start=179
 Len=2
 DataType=Numeric
 
@@ -4501,7 +4452,7 @@ Link=186989368
 [Item]
 Label=Child received postnatal check after home delivery|L'enfant a reçu un contrôle postnatal après l'accouchement à domicile
 Name=Q469
-Start=184
+Start=181
 Len=1
 DataType=Numeric
 
@@ -4515,14 +4466,14 @@ Value=8;Ne sait pas
 [Item]
 Label=Time child received postnatal check after home delivery
 Name=Q470
-Start=185
+Start=182
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time child received postnatal check after home delivery (unit)|Durée du contrôle postnatal de l'enfant après l'accouchement à domicile (unité)
 Name=Q470U
-Start=185
+Start=182
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4538,7 +4489,7 @@ Value=9;Réponses spéciales
 [Item]
 Label=Time child received postnatal check after home delivery (number)|Durée du contrôle postnatal de l'enfant après l'accouchement à domicile (nombre)
 Name=Q470N
-Start=186
+Start=183
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4552,7 +4503,7 @@ Value=98;Ne sait pas
 [Item]
 Label=Person giving postnatal check on child after home delivery
 Name=Q471
-Start=188
+Start=185
 Len=2
 DataType=Numeric
 
@@ -4564,7 +4515,7 @@ Link=2147483647
 [Item]
 Label=Place postnatal check on child after home delivery
 Name=Q472
-Start=190
+Start=187
 Len=2
 DataType=Numeric
 
@@ -4576,7 +4527,7 @@ Link=186989368
 [Item]
 Label=During first two days, health care provider: examine the cord|Au cours des deux jours suivants, prestataire de santé: examinez le cordon
 Name=Q473A
-Start=192
+Start=189
 Len=1
 DataType=Numeric
 
@@ -4590,7 +4541,7 @@ Value=8;Ne sait pas
 [Item]
 Label=During first two days, health care provider: measure temperature|Au cours des deux jours suivants, prestataire de santé: vérifier la température
 Name=Q473B
-Start=193
+Start=190
 Len=1
 DataType=Numeric
 
@@ -4604,7 +4555,7 @@ Value=8;Ne sait pas
 [Item]
 Label=During first two days, health care provider: counsel on medical attention|Au cours des deux jours suivants, prestataire de santé: attention médicale
 Name=Q473C
-Start=194
+Start=191
 Len=1
 DataType=Numeric
 
@@ -4618,7 +4569,7 @@ Value=8;Ne sait pas
 [Item]
 Label=During first two days, health care provider: counsel on breastfeeding|Au cours des deux jours suivants, prestataire de santé: parlé allaitement
 Name=Q473D
-Start=195
+Start=192
 Len=1
 DataType=Numeric
 
@@ -4632,7 +4583,7 @@ Value=8;Ne sait pas
 [Item]
 Label=During first two days, health care provider: observe breastfeeding|Au cours des deux jours suivants, prestataire de santé: observé allaitement
 Name=Q473E
-Start=196
+Start=193
 Len=1
 DataType=Numeric
 
@@ -4644,23 +4595,9 @@ Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
-Label=During first two days, health care provider: help breastfeed|Au cours des deux jours suivants, prestataire de santé: examinez le cordon
-Name=Q473F
-Start=197
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=During first two days, health care provider: help breastfeed|Au cours des deux jours suivants, prestataire de santé: examinez le cordon
-Name=Q473F_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
 Label=Respondent checked two days after birth: blood pressure|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
 Name=Q474A
-Start=198
+Start=194
 Len=1
 DataType=Numeric
 
@@ -4674,7 +4611,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Respondent checked two days after birth: bleeding|L’enquêtée a été contrôlée deux jours après la naissance: saignements
 Name=Q474B
-Start=199
+Start=195
 Len=1
 DataType=Numeric
 
@@ -4688,7 +4625,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Respondent checked two days after birth: family planning|L’enquêtée a été contrôlée deux jours après la naissance: Planification familiale
 Name=Q474C
-Start=200
+Start=196
 Len=1
 DataType=Numeric
 
@@ -4700,51 +4637,9 @@ Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
-Label=Respondent checked two days after birth: urination|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
-Name=Q474D
-Start=201
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Respondent checked two days after birth: urination|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
-Name=Q474D_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
-Label=Respondent checked two days after birth: pain|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
-Name=Q474E
-Start=202
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Respondent checked two days after birth: pain|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
-Name=Q474E_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
-Label=Respondent checked two days after birth: sad or depressed|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
-Name=Q474F
-Start=203
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Respondent checked two days after birth: sad or depressed|L’enquêtée a été contrôlée deux jours après la naissance: pression artérielle
-Name=Q474F_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
 Label=Period returned|Règles revenues
 Name=Q476
-Start=204
+Start=197
 Len=1
 DataType=Numeric
 
@@ -4757,7 +4652,7 @@ Value=2;Non
 [Item]
 Label=Begun to have sexual intercourse|A commencé à avoir des rapports sexuels
 Name=Q478
-Start=205
+Start=198
 Len=1
 DataType=Numeric
 
@@ -4770,7 +4665,7 @@ Value=2;Non
 [Item]
 Label=Pregnancy outcome (filter)|Résultat de la grossesse (filtre)
 Name=Q479
-Start=206
+Start=199
 Len=1
 DataType=Numeric
 
@@ -4784,7 +4679,7 @@ Value=5;Fausse-couche/avortement
 [Item]
 Label=Ever breastfed|A allaité
 Name=Q480
-Start=207
+Start=200
 Len=1
 DataType=Numeric
 
@@ -4797,14 +4692,14 @@ Value=2;Non
 [Item]
 Label=When child put to breast
 Name=Q482
-Start=208
+Start=201
 Len=3
 DataType=Alpha
 
 [Item]
 Label=When child put to breast (unit)|Quand l'enfant est mis au sein (unité)
 Name=Q482U
-Start=208
+Start=201
 Len=1
 ItemType=SubItem
 DataType=Numeric
@@ -4819,7 +4714,7 @@ Value=2;Jours
 [Item]
 Label=When child put to breast (number)|Quand l'enfant est mis au sein (nombre)
 Name=Q482N
-Start=209
+Start=202
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4833,7 +4728,7 @@ Value=1:23
 [Item]
 Label=Any fluid given besides breast milk in first 2 days|Reçu autre liquide que le lait dans les 2 premiers jours
 Name=Q483
-Start=211
+Start=204
 Len=1
 DataType=Numeric
 
@@ -4846,7 +4741,7 @@ Value=2;Non
 [Item]
 Label=Still breastfeeding
 Name=Q485
-Start=212
+Start=205
 Len=1
 DataType=Numeric
 
@@ -4859,7 +4754,7 @@ Value=2;No
 [Item]
 Label=Drink in a bottle with nipple|Boire quelque chose au biberon
 Name=Q486
-Start=213
+Start=206
 Len=1
 DataType=Numeric
 
@@ -7978,278 +7873,278 @@ DataType=Numeric
 
 [ValueSet]
 Label=Child line number|Numéro de ligne l'enfant
-Name=AECDCA_VS1
+Name=QECDCA_VS1
 Value=1:24
 
 [Item]
 Label=Child name under 5
-Name=AECDCN
+Name=QECDCN
 Start=17
 Len=15
 DataType=Alpha
 
 [Item]
 Label=Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
-Name=AECD1
+Name=QECD1
 Start=32
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
-Name=AECD1_VS1
+Name=QECD1_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
-Name=AECD2
+Name=QECD2
 Start=33
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
-Name=AECD2_VS1
+Name=QECD2_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
-Name=AECD3
+Name=QECD3
 Start=34
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
-Name=AECD3_VS1
+Name=QECD3_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
-Name=AECD4
+Name=QECD4
 Start=35
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
-Name=AECD4_VS1
+Name=QECD4_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
-Name=AECD5
+Name=QECD5
 Start=36
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
-Name=AECD5_VS1
+Name=QECD5_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
-Name=AECD6
+Name=QECD6
 Start=37
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
-Name=AECD6_VS1
+Name=QECD6_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
-Name=AECD7
+Name=QECD7
 Start=38
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
-Name=AECD7_VS1
+Name=QECD7_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
-Name=AECD8
+Name=QECD8
 Start=39
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
-Name=AECD8_VS1
+Name=QECD8_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
-Name=AECD9
+Name=QECD9
 Start=40
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
-Name=AECD9_VS1
+Name=QECD9_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
-Name=AECD10
+Name=QECD10
 Start=41
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
-Name=AECD10_VS1
+Name=QECD10_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
-Name=AECD11
+Name=QECD11
 Start=42
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
-Name=AECD11_VS1
+Name=QECD11_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
-Name=AECD12
+Name=QECD12
 Start=43
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
-Name=AECD12_VS1
+Name=QECD12_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
-Name=AECD13
+Name=QECD13
 Start=44
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
-Name=AECD13_VS1
+Name=QECD13_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can child count 10 objects without mistakes
-Name=AECD14
+Name=QECD14
 Start=45
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can child count 10 objects without mistakes
-Name=AECD14_VS1
+Name=QECD14_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Can color or play with building blocks without asking for help or giving up
-Name=AECD15
+Name=QECD15
 Start=46
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can color or play with building blocks without asking for help or giving up
-Name=AECD15_VS1
+Name=QECD15_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Does child ask about familiar people other than parents when not there
-Name=AECD16
+Name=QECD16
 Start=47
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Does child ask about familiar people other than parents when not there
-Name=AECD16_VS1
+Name=QECD16_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Does child offer to help someone who seems to need help
-Name=AECD17
+Name=QECD17
 Start=48
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Does child offer to help someone who seems to need help
-Name=AECD17_VS1
+Name=QECD17_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Does child get along well with other children
-Name=AECD18
+Name=QECD18
 Start=49
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Does child get along well with other children
-Name=AECD18_VS1
+Name=QECD18_VS1
 Value=1;Yes|Oui
 Value=2;No|Non
 Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=How often does child seem to be very sad or depressed
-Name=AECD19
+Name=QECD19
 Start=50
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=How often does child seem to be very sad or depressed
-Name=AECD19_VS1
+Name=QECD19_VS1
 Value=1;Daily|Oui
 Value=2;Weekly|Non
 Value=3;Monthly
@@ -8259,14 +8154,14 @@ Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Compared with other children, how much does child kick, bite, or hit other children or adults
-Name=AECD20
+Name=QECD20
 Start=51
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Compared with other children, how much does child kick, bite, or hit other children or adults
-Name=AECD20_VS1
+Name=QECD20_VS1
 Value=1;Not at all|Oui
 Value=2;The same or less|Non
 Value=3;More
@@ -10271,21 +10166,20 @@ DataType=Numeric
 [ValueSet]
 Label=Place of HIV test|Lieu du test VIH
 Name=Q1026_VS1
+Link=1301257
 Value=10;---PUBLIC SECTOR---
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé du gouvernement
-Value=13;Centre indépendant de test et conseil
-Value=14;Clinique planification familiale
-Value=15;Services mobiles de test et conseil
-Value=16;Autre secteur
+Value=11;Hôpital du gouvernem
+Value=12;Centre de santé intégré
+Value=13;Laboratoire national
+Value=14;Poste de santé
+Value=16;Autre secteur Public
 Value=20;---PRIVATE MEDICAL SECTOR---
 Value=21;Hôpital privé
-Value=22;Clinique privée
-Value=23;Médecin privé
-Value=24;Centre indépendant de test et conseil
-Value=25;Pharmacie
-Value=26;Services mobiles de test et conseil
-Value=27;Autre secteur médical privé
+Value=22;Clinique/polyclinique privée
+Value=23;Médecin/cabinet médical privé
+Value=24;Pharmacie
+Value=24;Laboratoire national
+Value=26;Autre secteur médical privé
 Value=30;---NGO MEDICAL SECTOR---
 Value=31;Hôpital ONG
 Value=32;Clinique ONG
@@ -11267,201 +11161,202 @@ Len=4
 DataType=Numeric
 
 [Record]
-Label=Fistula module
+Label=Fistule|Section 12. Fistule
 Name=QWSECFIS
-RecordTypeValue='WFI'
+RecordTypeValue='W12'
 Required=No
-RecordLen=34
+RecordLen=35
 
 [Item]
-Label=Currently experience constant leakage of urine or stool from vagina during the day and night
-Name=AFI1
+Label=A déjà eu des pertes urinaires ou fécales par le vagin
+Name=FI1
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Currently experience constant leakage of urine or stool from vagina during the day and night
-Name=AFI1_VS1
-Value=1;Yes
-Value=2;No
+Label=A déjà eu des pertes urinaires ou fécales par le vagin
+Name=FI1_VS1
+Value=1;Oui
+Value=2;Non
 
 [Item]
-Label=Have ever experienced a problem of leakage of urine or stool from vagina
-Name=AFI2
+Label=A déjà experimenté le fistule
+Name=FI2
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Have ever experienced a problem of leakage of urine or stool from vagina
-Name=AFI2_VS1
-Value=1;Yes
-Value=2;No
+Label=A déjà experimenté le fistule
+Name=FI2_VS1
+Value=1;Oui
+Value=2;Non
 
 [Item]
-Label=Have ever heard of the problem of leakage of urine or stool from vagina
-Name=AFI3
+Label=A entendu parler de fistule
+Name=FI3
 Start=16
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Have ever heard of the problem of leakage of urine or stool from vagina
-Name=AFI3_VS1
-Value=1;Yes
-Value=2;No
+Label=A entendu parler de fistule
+Name=FI3_VS1
+Value=1;Oui
+Value=2;Non
 
 [Item]
-Label=Did the leakage problem start after a delivery of a baby or a stillbirth
-Name=AFI4
+Label=Fistule a commencé après un accouchement ou fausse-couche
+Name=FI4
 Start=17
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Did the leakage problem start after a delivery of a baby or a stillbirth
-Name=AFI4_VS1
-Value=1;After deliverd baby
-Value=2;After had a stillbirth
-Value=3;Neither
+Label=Fistule a commencé après un accouchement ou fausse-couche
+Name=FI4_VS1
+Value=1;Après naissance d'un bébé vivant
+Value=2;Après naissance d'un mort-né
+Value=3;Nu l'un, ni l'autre
 
 [Item]
-Label=Did the leakage problem start after a normal labor and delivery, or after a difficult labor and delivery
-Name=AFI5
+Label=Fistule a commencé après un travail et un accouchement normaux ou un travail et un accouchement  très difficiles
+Name=FI5
 Start=18
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Did the leakage problem start after a normal labor and delivery, or after a difficult labor and delivery
-Name=AFI5_VS1
-Value=1;Normal labor/delivery
-Value=2;Very difficult labor/delivery
+Label=Fistule a commencé après un travail et un accouchement normaux ou un travail et un accouchement  très difficiles
+Name=FI5_VS1
+Value=1;Travail/ accouchement noramal
+Value=2;Travail/Accouchement très difficle
 
 [Item]
-Label=What do you think caused the leakage problem
-Name=AFI6
+Label=Causes de la fistule
+Name=FI6
 Start=19
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=What do you think caused the leakage problem
-Name=AFI6_VS1
-Value=1;Pelvic surgery
-Value=2;Sexual assault
-Value=3;Other injury
-Value=6;Other
-Value=8;Don't know
+Label=Causes de la fistule
+Name=FI6_VS1
+Value=1;Agression sexuelle
+Value=2;Opération du petit bassin
+Value=6;Autre
+Value=8;Ne sait pas
 
 [Item]
-Label=How many days after what caused the problem did the leakage start
-Name=AFI7
+Label=Nombre jours après accouchement/autre évènement
+Name=FI7
 Start=20
 Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=How many days after what caused the problem did the leakage start
-Name=AFI7_VS1
-Value=0:89
-Value=90;90 days or more
+Label=Nombre jours après accouchement/autre évènement
+Name=FI7_VS1
+Value=0;Même jour
+Value=1:89
+Value=90;90+
 
 [Item]
-Label=Have you sought treatment for this condition
-Name=AFI8
+Label=A cherché un traitement
+Name=FI8
 Start=22
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Have you sought treatment for this condition
-Name=AFI8_VS1
-Value=1;Yes
-Value=2;No
+Label=A cherché un traitement
+Name=FI8_VS1
+Value=1;Oui
+Value=2;Non
 
 [Item]
-Label=Reason treatment was not sought
-Name=AFI9
+Label=Pourquoi n'a pas cherché traitement
+Name=FI9
 Start=23
 Len=9
 DataType=Alpha
 
 [ValueSet]
-Label=Reason treatment was not sought
-Name=AFI9_VS1
-Value='A        ';Do not know can be fixed
-Value='B        ';Do not know where to go
-Value='C        ';Too expensive
-Value='D        ';Too far
-Value='E        ';Poor quality of care
-Value='F        ';Could not get permission
-Value='G        ';Embarrassment
-Value='H        ';Problem disappeared
-Value='X        ';Other
+Label=Pourquoi n'a pas cherché traitement
+Name=FI9_VS1
+Value='A        ';Ne savait pas qu'on peut réparer
+Value='B        ';Ne savait pas où aller
+Value='C        ';Trop cher
+Value='D        ';Trop éloigné
+Value='E        ';Mauvaise qualité de soins
+Value='F        ';N'a pas pu obtenir permission
+Value='G        ';Genée
+Value='H        ';Problème a disparu
+Value='X        ';Autre
 
 [Item]
-Label=Person whom treatment was last sought
-Name=AFI10
+Label=Auprès de qui a cherché traitement
+Name=FI10
 Start=32
-Len=1
+Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Person whom treatment was last sought
-Name=AFI10_VS1
-Value=0;Health professional
-Value=1;Doctor
-Value=2;Nurse/midwife
-Value=5;Other person
-Value=3;Community/village health worker
-Value=6;Other
+Label=Auprès de qui a cherché traitement
+Name=FI10_VS1
+Value=10;---PROFESSIONNEL DE SANTÉ---
+Value=1;Médecin
+Value=2;Infirmère/Sage-femme
+Value=20;---AUTRE PERSONNE---
+Value=3;Agent de santé communautaire/Villageoise
+Value=6;Autre
 
 [Item]
-Label=Did have an operation to fix the leakage problem
-Name=AFI11
-Start=33
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Did have an operation to fix the leakage problem
-Name=AFI11_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Did the treatment stop or reduce the leakage completely
-Name=AFI12
+Label=A eu une opération
+Name=FI11
 Start=34
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Did the treatment stop or reduce the leakage completely
-Name=AFI12_VS1
-Value=1;Yes, stopped completely
-Value=2;Not stopped but reduced
-Value=3;Not stopped at all
+Label=A eu une opération
+Name=FI11_VS1
+Value=1;Oui
+Value=2;Non
+
+[Item]
+Label=Le traitement a stoppé complètement les pertes
+Name=FI12
+Start=35
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Le traitement a stoppé complètement les pertes
+Name=FI12_VS1
+Value=1;Oui, pertes stoppées complètement
+Value=2;Pertes non stoppées mais réduites
+Value=3;Pertes pas stoppées du tout
+Value=4;N'a pas reçu de traitement
 
 [Record]
 Label=[Men] Respondent's Background
-Name=AMSEC01
+Name=QMSEC01
 RecordTypeValue='M01'
 Required=No
 RecordLen=72
 
 [Item]
 Label=Start of interview
-Name=AM101
+Name=QM101
 Start=14
 Len=4
 DataType=Alpha
 
 [Item]
 Label=Start of interview (hour)|Début de l'interview (heure)
-Name=AM101H
+Name=QM101H
 Start=14
 Len=2
 ItemType=SubItem
@@ -11469,12 +11364,12 @@ DataType=Numeric
 
 [ValueSet]
 Label=Start of interview (hour)|Début de l'interview (heure)
-Name=AM101H_VS1
+Name=QM101H_VS1
 Value=6:22
 
 [Item]
 Label=Start of interview (minutes)|Début de l'interview (minutes)
-Name=AM101M
+Name=QM101M
 Start=16
 Len=2
 ItemType=SubItem
@@ -11482,19 +11377,19 @@ DataType=Numeric
 
 [ValueSet]
 Label=Start of interview (minutes)|Début de l'interview (minutes)
-Name=AM101M_VS1
+Name=QM101M_VS1
 Value=0:59
 
 [Item]
 Label=End of interview
-Name=AM819
+Name=QM819
 Start=18
 Len=4
 DataType=Alpha
 
 [Item]
 Label=End of interview (hour)|Fin interview (heure)
-Name=AM819H
+Name=QM819H
 Start=18
 Len=2
 ItemType=SubItem
@@ -11502,13 +11397,13 @@ DataType=Numeric
 
 [ValueSet]
 Label=End of interview (hour)|Fin interview (heure)
-Name=AM819H_VS1
+Name=QM819H_VS1
 Value=6:22
 Value=97;Inconsistant
 
 [Item]
 Label=End of interview (minutes)|Fin interview (minutes)
-Name=AM819M
+Name=QM819M
 Start=20
 Len=2
 ItemType=SubItem
@@ -11516,36 +11411,32 @@ DataType=Numeric
 
 [ValueSet]
 Label=End of interview (minutes)|Fin interview (minutes)
-Name=AM819M_VS1
+Name=QM819M_VS1
 Value=0:59
 Value=97;Inconsistant
 
 [Item]
 Label=State of birth|Province/Région/Etat de naissance
-Name=AM102
+Name=QM102
 Start=22
 Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=State of birth|Province/Région/Etat de naissance
-Name=AM102_VS1
-Value=1;[PROVINCE/RÉGION/ÉTAT]
-Value=2;[PROVINCE/RÉGION/ÉTAT]
-Value=3;[PROVINCE/RÉGION/ÉTAT]
-Value=4;[PROVINCE/RÉGION/ÉTAT]
-Value=96;En dehors du [PAYS]
+Label=State of birth
+Name=QM102_VS1
+Link=158043744
 
 [Item]
 Label=Country of birth|Pays de naissance
-Name=AM103
+Name=QM103
 Start=24
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Country of birth|Pays de naissance
-Name=AM103_VS1
+Name=QM103_VS1
 Value=1;Pays 1
 Value=2;Pays 2
 Value=3;Pays 3
@@ -11555,14 +11446,14 @@ Value=96;Autre Pays
 
 [Item]
 Label=Time living in place of interview|Combien de temps a habité au lieu de l’interview
-Name=AM104
+Name=QM104
 Start=26
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Time living in place of interview|Combien de temps a habité au lieu de l’interview
-Name=AM104_VS1
+Name=QM104_VS1
 Value=0;Less than one year
 Value=1:49;Adjust based on upper age for eligible men!!!!
 Value=95;Always
@@ -11570,14 +11461,14 @@ Value=96;Visitor
 
 [Item]
 Label=Date of move
-Name=AM106
+Name=QM106
 Start=28
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Month of move|Mois de déménagement
-Name=AM106M
+Name=QM106M
 Start=28
 Len=2
 ItemType=SubItem
@@ -11585,7 +11476,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Month of move|Mois de déménagement
-Name=AM106M_VS1
+Name=QM106M_VS1
 Value=1;Janvier
 Value=2;Février
 Value=3;Mars
@@ -11602,7 +11493,7 @@ Value=98;Ne connait pas le mois
 
 [Item]
 Label=Year of move|Année de déménagement
-Name=AM106Y
+Name=QM106Y
 Start=30
 Len=4
 ItemType=SubItem
@@ -11610,50 +11501,46 @@ DataType=Numeric
 
 [ValueSet]
 Label=Year of move|Année de déménagement
-Name=AM106Y_VS1
+Name=QM106Y_VS1
 Value=2015:2025
 Value=9998;Ne connait pas l'année
 
 [Item]
 Label=Province/state lived before moved to place of interview|Province/Etat habité avant d'être au lieu d’interview
-Name=AM107
+Name=QM107
 Start=34
 Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Province/state lived before moved to place of interview|Province/Etat habité avant d'être au lieu d’interview
-Name=AM107_VS1
-Value=1;[PROVINCE/RÉGION/ÉTAT]
-Value=2;[PROVINCE/RÉGION/ÉTAT]
-Value=3;[PROVINCE/RÉGION/ÉTAT]
-Value=4;[PROVINCE/RÉGION/ÉTAT]
-Value=96;En dehors du [PAYS]
+Label=Province/state lived before moved to place of interview
+Name=QM107_VS1
+Link=158043744
 
 [Item]
 Label=Lived in a city/town or rural area|A habité dans une ville/village ou une zone rurale
-Name=AM108
+Name=QM108
 Start=36
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Lived in a city/town or rural area|A habité dans une ville/village ou une zone rurale
-Name=AM108_VS1
+Name=QM108_VS1
 Value=1;Ville
 Value=2;Petite ville
 Value=3;Zone rurale
 
 [Item]
 Label=Reason for moving|Raison du déménagement
-Name=AM109
+Name=QM109
 Start=37
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Reason for moving|Raison du déménagement
-Name=AM109_VS1
+Name=QM109_VS1
 Value=1;Emploi
 Value=2;Éducation/formation
 Value=3;Réunification de conjoints/mariage
@@ -11663,14 +11550,14 @@ Value=96;Autre
 
 [Item]
 Label=Date of birth
-Name=AM110
+Name=QM110
 Start=39
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Month of birth|Mois de naissance
-Name=AM110M
+Name=QM110M
 Start=39
 Len=2
 ItemType=SubItem
@@ -11678,7 +11565,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Month of birth|Mois de naissance
-Name=AM110M_VS1
+Name=QM110M_VS1
 Value=1;Janvier
 Value=2;Février
 Value=3;Mars
@@ -11695,7 +11582,7 @@ Value=98;Ne connait pas le mois
 
 [Item]
 Label=Year of birth|Année de naissance
-Name=AM110Y
+Name=QM110Y
 Start=41
 Len=4
 ItemType=SubItem
@@ -11703,33 +11590,33 @@ DataType=Numeric
 
 [ValueSet]
 Label=Year of birth|Année de naissance
-Name=AM110Y_VS1
+Name=QM110Y_VS1
 Value=1961:2025
 Value=9998;Ne connait pas l'année
 
 [Item]
 Label=Current age of respondent|Age actuel de l'enquété
-Name=AM111
+Name=QM111
 Start=45
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Current age of respondent|Age actuel de l'enquété
-Name=AM111_VS1
+Name=QM111_VS1
 Value=15:49
 Value=98;Ne connait pas
 
 [Item]
 Label=Self reporting health status|Auto-déclaration de l’état de santé
-Name=AM112
+Name=QM112
 Start=47
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Self reporting health status|Auto-déclaration de l’état de santé
-Name=AM112_VS1
+Name=QM112_VS1
 Value=1;Très bon
 Value=2;Bon
 Value=3;Moyennement bon
@@ -11738,54 +11625,54 @@ Value=5;Très mauvais
 
 [Item]
 Label=Ever attended school|A déjà fréquenté l'école
-Name=AM113
+Name=QM113
 Start=48
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Ever attended school|A déjà fréquenté l'école
-Name=AM113_VS1
+Name=QM113_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Highest educational level|Plus haut niveau d'étude
-Name=AM114
+Name=QM114
 Start=49
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Highest educational level|Plus haut niveau d'étude
-Name=AM114_VS1
+Name=QM114_VS1
 Value=1;Primaire
 Value=2;Secondaire
 Value=3;Supérieur
 
 [Item]
 Label=Highest grade/form/year at that level|Plus haute Classe/Année à ce niveau
-Name=AM115
+Name=QM115
 Start=50
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Highest grade/form/year at that level|Plus haute Classe/Année à ce niveau
-Name=AM115_VS1
+Name=QM115_VS1
 Value=0;Moins d'une année
 Value=1:8
 
 [Item]
 Label=Sentence read|Phrase lue
-Name=AM117
+Name=QM117
 Start=52
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Sentence read|Phrase lue
-Name=AM117_VS1
+Name=QM117_VS1
 Value=1;Ne peut pas lire du tout
 Value=2;Peut seulement lire une partie de la phrase
 Value=3;Peut lire toute la phrase
@@ -11794,108 +11681,108 @@ Value=5;Aveugle/problèmes de vue
 
 [Item]
 Label=Reads newspaper or magazine|Lit le journal/magazine
-Name=AM119
+Name=QM119
 Start=53
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Reads newspaper or magazine|Lit le journal/magazine
-Name=AM119_VS1
+Name=QM119_VS1
 Value=1;Au moins une fois par semaine
 Value=2;Moins d'une fois par semaine
 Value=3;Pas du tout
 
 [Item]
 Label=Listens to radio|Ecoute la radio
-Name=AM120
+Name=QM120
 Start=54
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Listens to radio|Ecoute la radio
-Name=AM120_VS1
+Name=QM120_VS1
 Value=1;Au moins une fois par semaine
 Value=2;Moins d'une fois par semaine
 Value=3;Pas du tout
 
 [Item]
 Label=Watches TV|Regarde la télévision
-Name=AM121
+Name=QM121
 Start=55
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Watches TV|Regarde la télévision
-Name=AM121_VS1
+Name=QM121_VS1
 Value=1;Au moins une fois par semaine
 Value=2;Moins d'une fois par semaine
 Value=3;Pas du tout
 
 [Item]
 Label=Own a mobile telephone|Posséde un téléphone mobile
-Name=AM122
+Name=QM122
 Start=56
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Own a mobile telephone|Posséde un téléphone mobile
-Name=AM122_VS1
+Name=QM122_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Phone is a smart phone|Le téléphone est un "smart phone"
-Name=AM123
+Name=QM123
 Start=57
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Phone is a smart phone|Le téléphone est un "smart phone"
-Name=AM123_VS1
+Name=QM123_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Have ever used the internet|A déjà utilisé Internet
-Name=AM127
+Name=QM127
 Start=58
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Have ever used the internet|A déjà utilisé Internet
-Name=AM127_VS1
+Name=QM127_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Have used the internet last 12 months|A utilisé Internet les 12 derniers mois
-Name=AM128
+Name=QM128
 Start=59
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Have used the internet last 12 months|A utilisé Internet les 12 derniers mois
-Name=AM128_VS1
+Name=QM128_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=How often used internet the last month|Combien de fois a utilisé Internet le mois dernier
-Name=AM129
+Name=QM129
 Start=60
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=How often used internet the last month|Combien de fois a utilisé Internet le mois dernier
-Name=AM129_VS1
+Name=QM129_VS1
 Value=1;Presque chaque jour
 Value=2;Au moins une fois par semaine
 Value=3;Moins d'une fois par semaine
@@ -11903,45 +11790,40 @@ Value=4;Pas du tout
 
 [Item]
 Label=Religion
-Name=AM130
+Name=QM130
 Start=61
 Len=2
 DataType=Numeric
 
-[ValueSet]
-Label=Religion
-Name=AM130_VS1
-Value=0:98;Modifier les modalités conséquemment
-
 [Item]
 Label=Ethnicity|Ethnie
-Name=AM131
+Name=QM131
 Start=63
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Ethnicity|Ethnie
-Name=AM131_VS1
-Value=0:98;Modifier les modalités conséquemment
+Name=QM131_VS1
+Link=13952169
 
 [Item]
 Label=Date of birth (CMC)
-Name=AM110C
+Name=QM110C
 Start=65
 Len=4
 DataType=Numeric
 
 [Item]
-Label=Date flag for AM110C
-Name=AM110F
+Label=Date flag for QM110C
+Name=QM110F
 Start=69
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Date flag for AM110C
-Name=AM110F_VS1
+Label=Date flag for QM110C
+Name=QM110F_VS1
 Value=1;Month and year
 Value=2;Month and age -y imp
 Value=3;Year and age - m imp
@@ -11953,21 +11835,21 @@ Value=8;None - all imp
 
 [Item]
 Label=Age of respondent calculated
-Name=AM111C
+Name=QM111C
 Start=70
 Len=2
 DataType=Numeric
 
 [Item]
 Label=Highest educational level
-Name=AM114A
+Name=QM114A
 Start=72
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Highest educational level
-Name=AM114A_VS1
+Name=QM114A_VS1
 Value=0;No education
 Value=1;Primary incomplete
 Value=2;Primary complete
@@ -11977,256 +11859,256 @@ Value=5;Higher
 
 [Record]
 Label=[Men] Reproduction
-Name=AMSEC02
+Name=QMSEC02
 RecordTypeValue='M02'
 Required=No
 RecordLen=55
 
 [Item]
 Label=Ever fathered any children|Eu des enfants dont vous êtes père
-Name=AM201
+Name=QM201
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Ever fathered any children|Eu des enfants dont vous êtes père
-Name=AM201_VS1
+Name=QM201_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Sons or daughters living with|Fils ou filles vivant avec vous
-Name=AM202
+Name=QM202
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Sons or daughters living with|Fils ou filles vivant avec vous
-Name=AM202_VS1
+Name=QM202_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Sons at home|Fils à la maison
-Name=AM203A
+Name=QM203A
 Start=16
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Sons at home|Fils à la maison
-Name=AM203A_VS1
+Name=QM203A_VS1
 Value=0:30
 
 [Item]
 Label=Daughters at home|Filles à la maison
-Name=AM203B
+Name=QM203B
 Start=18
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Daughters at home|Filles à la maison
-Name=AM203B_VS1
+Name=QM203B_VS1
 Value=0:30
 
 [Item]
 Label=Sons or daughters living away|Fils ou filles vivant ailleurs
-Name=AM204
+Name=QM204
 Start=20
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Sons or daughters living away|Fils ou filles vivant ailleurs
-Name=AM204_VS1
+Name=QM204_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Sons living elsewhere|Fils vivant ailleurs
-Name=AM205A
+Name=QM205A
 Start=21
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Sons living elsewhere|Fils vivant ailleurs
-Name=AM205A_VS1
+Name=QM205A_VS1
 Value=0:30
 
 [Item]
 Label=Daughters living elsewhere|Filles vivant ailleurs
-Name=AM205B
+Name=QM205B
 Start=23
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Daughters living elsewhere|Filles vivant ailleurs
-Name=AM205B_VS1
+Name=QM205B_VS1
 Value=0:30
 
 [Item]
 Label=Sons or daughters who died|Fils ou filles décédés
-Name=AM206
+Name=QM206
 Start=25
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Sons or daughters who died|Fils ou filles décédés
-Name=AM206_VS1
+Name=QM206_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Boys who died|Garçons décédés
-Name=AM207A
+Name=QM207A
 Start=26
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Boys who died|Garçons décédés
-Name=AM207A_VS1
+Name=QM207A_VS1
 Value=0:20
 
 [Item]
 Label=Girls who died|Filles décédées
-Name=AM207B
+Name=QM207B
 Start=28
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Girls who died|Filles décédées
-Name=AM207B_VS1
+Name=QM207B_VS1
 Value=0:20
 
 [Item]
 Label=Total children ever fathered|Nombre d'enfants dont il est père
-Name=AM208
+Name=QM208
 Start=30
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Total children ever fathered|Nombre d'enfants dont il est père
-Name=AM208_VS1
+Name=QM208_VS1
 Value=0:50
 
 [Item]
 Label=All children have fathered by the same mother|Tous les enfants ont la même mère biologique
-Name=AM210
+Name=QM210
 Start=32
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=All children have fathered by the same mother|Tous les enfants ont la même mère biologique
-Name=AM210_VS1
+Name=QM210_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Respondent age at birth of first child|Age de l’enquêté à la naissance du premier enfant
-Name=AM211
+Name=QM211
 Start=33
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent age at birth of first child|Age de l’enquêté à la naissance du premier enfant
-Name=AM211_VS1
+Name=QM211_VS1
 Value=10:49
 
 [Item]
 Label=Age of youngest child|Age du plus jeune enfant
-Name=AM213
+Name=QM213
 Start=35
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Age of youngest child|Age du plus jeune enfant
-Name=AM213_VS1
+Name=QM213_VS1
 Value=0:39
 
 [Item]
 Label=Name of youngest child
-Name=AM215
+Name=QM215
 Start=37
 Len=15
 DataType=Alpha
 
 [Item]
 Label=Antenatal check-ups for the mother|Visite prénatale pour la mère pendant la grossesse
-Name=AM216
+Name=QM216
 Start=52
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Antenatal check-ups for the mother|Visite prénatale pour la mère pendant la grossesse
-Name=AM216_VS1
+Name=QM216_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Present during check-ups|Présence pendant la visite prénatale
-Name=AM217
+Name=QM217
 Start=53
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Present during check-ups|Présence pendant la visite prénatale
-Name=AM217_VS1
+Name=QM217_VS1
 Value=1;Présent
 Value=2;Pas présent
 
 [Item]
 Label=Place of birth of youngest|Lieu de naissance du plus jeune
-Name=AM218
+Name=QM218
 Start=54
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Place of birth of youngest|Lieu de naissance du plus jeune
-Name=AM218_VS1
+Name=QM218_VS1
 Value=1;Hôpital/établissement de santé
 Value=2;Autre
 
 [Item]
 Label=Go with child's mother to health facility for birth|Accompagner la mère de l'enfant a l’établissement de la santé pour l'accouchement
-Name=AM219
+Name=QM219
 Start=55
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Go with child's mother to health facility for birth|Accompagner la mère de l'enfant a l’établissement de la santé pour l'accouchement
-Name=AM219_VS1
+Name=QM219_VS1
 Value=1;Oui
 Value=2;Non
 
 [Record]
 Label=[Men] Contraceptive Knowledge & Use
-Name=AMSEC3A
+Name=QMSEC3A
 RecordTypeValue='M3A'
 Required=No
 RecordLen=90
 
 [Item]
 Label=Contraception listing
-Name=AMSEC31_GRP
+Name=QMSEC31_GRP
 Start=14
 Len=4
 DataType=Alpha
@@ -12234,7 +12116,7 @@ Occurrences=15
 
 [Item]
 Label=Contraceptive method|Méthode contraceptive
-Name=AM3N
+Name=QM3N
 Start=14
 Len=2
 ItemType=SubItem
@@ -12242,7 +12124,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Contraceptive method|Méthode contraceptive
-Name=AM3N_VS1
+Name=QM3N_VS1
 Value=1;Stérilisation féminine
 Value=2;Stérilisation masculine
 Value=3;DIU
@@ -12261,7 +12143,7 @@ Value=15;Autre méthode traditionnelle
 
 [Item]
 Label=Heard of method|Entendu parler de la méthode
-Name=AM301
+Name=QM301
 Start=16
 Len=1
 ItemType=SubItem
@@ -12269,34 +12151,34 @@ DataType=Numeric
 
 [ValueSet]
 Label=Heard of method|Entendu parler de la méthode
-Name=AM301_VS1
+Name=QM301_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Auxiliary to capture other methods|Auxiliaire pour capter d'autres méthodes
-Name=AM301OT
+Name=QM301OT
 Start=74
 Len=3
 DataType=Alpha
 
 [ValueSet]
 Label=Auxiliary to capture other methods|Auxiliaire pour capter d'autres méthodes
-Name=AM301OT_VS1
+Name=QM301OT_VS1
 Value='A  ';Oui, Méthode moderne
 Value='B  ';Oui, Méthode traditionnelle
 Value='Y  ';Non
 
 [Item]
 Label=Auxiliary to capture spontaneous knowledge of methods|Auxiliaire pour capter les connaissances spontanées des méthodes
-Name=AMALLMETH
+Name=QMALLMETH
 Start=77
 Len=14
 DataType=Alpha
 
 [ValueSet]
 Label=Auxiliary to capture spontaneous knowledge of methods|Auxiliaire pour capter les connaissances spontanées des méthodes
-Name=AMALLMETH_VS1
+Name=QMALLMETH_VS1
 Value='A             ';Stérilisation féminine
 Value='B             ';Stérilisation masculine
 Value='C             ';DIU
@@ -12314,152 +12196,152 @@ Value='Y             ';Aucune méthod déclarée spontanément
 
 [Record]
 Label=[Men] Contraceptive Practice
-Name=AMSEC3B
+Name=QMSEC3B
 RecordTypeValue='M3B'
 Required=No
 RecordLen=27
 
 [Item]
 Label=Heard about FP: on the radio last 12 months|12 derniers mois: entendu parler de PF à la radio
-Name=AM302A
+Name=QM302A
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Heard about FP: on the radio last 12 months|12 derniers mois: entendu parler de PF à la radio
-Name=AM302A_VS1
+Name=QM302A_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Saw FP: on the television last 12 months|12 derniers mois: vu quelque chose sur la PF à la télévision
-Name=AM302B
+Name=QM302B
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Saw FP: on the television last 12 months|12 derniers mois: vu quelque chose sur la PF à la télévision
-Name=AM302B_VS1
+Name=QM302B_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Saw FP: in a newspaper or magazine last 12 months|12 derniers mois: lu quelque chose sur la PF dans un journal ou magazine
-Name=AM302C
+Name=QM302C
 Start=16
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Saw FP: in a newspaper or magazine last 12 months|12 derniers mois: lu quelque chose sur la PF dans un journal ou magazine
-Name=AM302C_VS1
+Name=QM302C_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Received voice/text messages about FP on mobile phone last 12 months|12 derniers mois: reçu un message vocal ou un texte sur la PF sur votre portable
-Name=AM302D
+Name=QM302D
 Start=17
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Received voice/text messages about FP on mobile phone last 12 months|12 derniers mois: reçu un message vocal ou un texte sur la PF sur votre portable
-Name=AM302D_VS1
+Name=QM302D_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Saw FP on social media last 12 months|12 derniers moi: vu quelque chose sur la PF sur les média sociaux
-Name=AM302E
+Name=QM302E
 Start=18
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Saw FP on social media last 12 months|12 derniers moi: vu quelque chose sur la PF sur les média sociaux
-Name=AM302E_VS1
+Name=QM302E_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Saw FP on poster/leaflet/brochure last 12 months|12 derniers moi: vu quelque chose sur la PF sur un poster/une affiche/une brochure
-Name=AM302F
+Name=QM302F
 Start=19
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Saw FP on poster/leaflet/brochure last 12 months|12 derniers moi: vu quelque chose sur la PF sur un poster/une affiche/une brochure
-Name=AM302F_VS1
+Name=QM302F_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Saw FP on outdoor sign/billboard last 12 months|12 derniers mois: vu quelque chose sur la PF sur une affiche extérieure ou un panneau d'affichage
-Name=AM302G
+Name=QM302G
 Start=20
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Saw FP on outdoor sign/billboard last 12 months|12 derniers mois: vu quelque chose sur la PF sur une affiche extérieure ou un panneau d'affichage
-Name=AM302G_VS1
+Name=QM302G_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Heard FP in community event last 12 months|12 derniers mois: entendu quelque chose sur la PF lors d'une réunion/d'évènements dans la communauté
-Name=AM302H
+Name=QM302H
 Start=21
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Heard FP in community event last 12 months|12 derniers mois: entendu quelque chose sur la PF lors d'une réunion/d'évènements dans la communauté
-Name=AM302H_VS1
+Name=QM302H_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Discussed family planning with a health worker or health professional|Discuté de la planification familiale avec un agent de santé ou un professionnel de la santé
-Name=AM303
+Name=QM303
 Start=22
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Discussed family planning with a health worker or health professional|Discuté de la planification familiale avec un agent de santé ou un professionnel de la santé
-Name=AM303_VS1
+Name=QM303_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Increased chance of woman getting pregnant on certain days|Y a-t-il une période où les femmes ont plus de chances de tomber enceintes
-Name=AM304
+Name=QM304
 Start=23
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Increased chance of woman getting pregnant on certain days|Y a-t-il une période où les femmes ont plus de chances de tomber enceintes
-Name=AM304_VS1
+Name=QM304_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Days when increased chance of getting pregnant|Période à laquelle la femme a plus de chances de tomber enceintes
-Name=AM305
+Name=QM305
 Start=24
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Days when increased chance of getting pregnant|Période à laquelle la femme a plus de chances de tomber enceintes
-Name=AM305_VS1
+Name=QM305_VS1
 Value=1;Juste avant que les régles commencent
 Value=2;Pendant les régles
 Value=3;Juste aprés la fin des régles
@@ -12469,136 +12351,136 @@ Value=8;Ne sait pas
 
 [Item]
 Label=Can woman get pregnant after birth and before period returns|Une femme peut-elle tomber enceinte après la naissance et avant le retour des règles
-Name=AM306
+Name=QM306
 Start=25
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can woman get pregnant after birth and before period returns|Une femme peut-elle tomber enceinte après la naissance et avant le retour des règles
-Name=AM306_VS1
+Name=QM306_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Contraception is woman's business, man should not worry|La contraception est un problème des femmes, l'homme ne doit pas s'en occuper
-Name=AM307A
+Name=QM307A
 Start=26
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Contraception is woman's business, man should not worry|La contraception est un problème des femmes, l'homme ne doit pas s'en occuper
-Name=AM307A_VS1
+Name=QM307A_VS1
 Value=1;D'accord
 Value=2;Pas d'accord
 Value=8;Ne sait pas
 
 [Item]
 Label=Women use contraception may become promiscuous|Une femme qui utilise la contraception peut devenir une femme légère
-Name=AM307B
+Name=QM307B
 Start=27
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Women use contraception may become promiscuous|Une femme qui utilise la contraception peut devenir une femme légère
-Name=AM307B_VS1
+Name=QM307B_VS1
 Value=1;D'accord
 Value=2;Pas d'accord
 Value=8;Ne sait pas
 
 [Record]
 Label=[Men] Marriage and Sexual Activity
-Name=AMSEC04
+Name=QMSEC04
 RecordTypeValue='M04'
 Required=No
-RecordLen=95
+RecordLen=93
 
 [Item]
 Label=Currently in union|Actuellement en union
-Name=AM401
+Name=QM401
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Currently in union|Actuellement en union
-Name=AM401_VS1
+Name=QM401_VS1
 Value=1;Oui, actuellement marié
 Value=2;Oui vit avec un femme
 Value=3;Non, pas en union
 
 [Item]
 Label=Have ever been married or lived with a woman|A déjà été marié ou vécu avec un homme
-Name=AM402
+Name=QM402
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Have ever been married or lived with a woman|A déjà été marié ou vécu avec un homme
-Name=AM402_VS1
+Name=QM402_VS1
 Value=1;Oui, a été marié
 Value=2;Oui, a vécu avec une femme
 Value=3;Non
 
 [Item]
 Label=Current marital status|Etat matrimonial actuel
-Name=AM403
+Name=QM403
 Start=16
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Current marital status|Etat matrimonial actuel
-Name=AM403_VS1
+Name=QM403_VS1
 Value=1;Veuf
 Value=2;Divorcé
 Value=3;Séparé
 
 [Item]
 Label=Partner living with respondent|Epouse/partenaire vit actuellement avec l’enquêté
-Name=AM404
+Name=QM404
 Start=17
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Partner living with respondent|Epouse/partenaire vit actuellement avec l’enquêté
-Name=AM404_VS1
+Name=QM404_VS1
 Value=1;Vit avec lui
 Value=2;Vit ailleurs
 
 [Item]
 Label=Other partners|Autres épouses/autre femmes
-Name=AM405
+Name=QM405
 Start=18
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Other partners|Autres épouses/autre femmes
-Name=AM405_VS1
+Name=QM405_VS1
 Value=1;Oui (plus d'une épouse)
 Value=2;Non (seulement une épouse)
 
 [Item]
 Label=Number of women|Nombre de femmes
-Name=AM406
+Name=QM406
 Start=19
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Number of women|Nombre de femmes
-Name=AM406_VS1
+Name=QM406_VS1
 Value=2:20
 
 [Item]
 Label=Wife/partner listing
-Name=AMSEC04_GRP
+Name=QMSEC04_GRP
 Start=21
 Len=4
 DataType=Alpha
@@ -12606,7 +12488,7 @@ Occurrences=5
 
 [Item]
 Label=Line number of wife, partner|Numéro de ligne de l'épouse/partenaire
-Name=AM407
+Name=QM407
 Start=21
 Len=2
 ItemType=SubItem
@@ -12614,13 +12496,13 @@ DataType=Numeric
 
 [ValueSet]
 Label=Line number of wife, partner|Numéro de ligne de l'épouse/partenaire
-Name=AM407_VS1
+Name=QM407_VS1
 Value=0;Pas listé dans le ménage
 Value=1:50
 
 [Item]
 Label=Age of wife/partner|Age épouse/partenaire
-Name=AM408
+Name=QM408
 Start=23
 Len=2
 ItemType=SubItem
@@ -12628,33 +12510,33 @@ DataType=Numeric
 
 [ValueSet]
 Label=Age of wife/partner|Age épouse/partenaire
-Name=AM408_VS1
+Name=QM408_VS1
 Value=8:94
 Value=95;95+
 
 [Item]
 Label=Times married|Nombe de fois marié
-Name=AM410
+Name=QM410
 Start=41
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Times married|Nombe de fois marié
-Name=AM410_VS1
+Name=QM410_VS1
 Value=1;Plus d'une fois
 Value=2;Une seule fois
 
 [Item]
 Label=Date of first union
-Name=AM411
+Name=QM411
 Start=42
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Date of first union (month)|Date de la première union (mois)
-Name=AM411M
+Name=QM411M
 Start=42
 Len=2
 ItemType=SubItem
@@ -12662,7 +12544,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Date of first union (month)|Date de la première union (mois)
-Name=AM411M_VS1
+Name=QM411M_VS1
 Value=1;Janvier
 Value=2;Février
 Value=3;Mars
@@ -12679,7 +12561,7 @@ Value=98;Ne connait pas le mois
 
 [Item]
 Label=Date of first union (year)|Date de la première union (année)
-Name=AM411Y
+Name=QM411Y
 Start=44
 Len=4
 ItemType=SubItem
@@ -12687,39 +12569,39 @@ DataType=Numeric
 
 [ValueSet]
 Label=Date of first union (year)|Date de la première union (année)
-Name=AM411Y_VS1
+Name=QM411Y_VS1
 Value=1980:2025
 Value=9998;Ne connait pas l'année
 
 [Item]
 Label=Age at first union|Age à la première union
-Name=AM412
+Name=QM412
 Start=48
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Age at first union|Age à la première union
-Name=AM412_VS1
+Name=QM412_VS1
 Value=8:49
 
 [Item]
 Label=Check for presence of others
-Name=AM413
+Name=QM413
 Start=50
 Len=1
 DataType=Alpha
 
 [Item]
 Label=Age at first intercourse|Age au premier rapport sexuel
-Name=AM414
+Name=QM414
 Start=51
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Age at first intercourse|Age au premier rapport sexuel
-Name=AM414_VS1
+Name=QM414_VS1
 Value=0;N'a jamais eu de rapports sexuels
 Value=8:49
 Value=99;Refused
@@ -12727,14 +12609,14 @@ Name=REFUSED,Special
 
 [Item]
 Label=Time since last intercourse
-Name=AM415
+Name=QM415
 Start=53
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time since last intercourse (unit)|Durée depuis le dernier rapport (unité)
-Name=AM415U
+Name=QM415U
 Start=53
 Len=1
 ItemType=SubItem
@@ -12742,7 +12624,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time since last intercourse (unit)|Durée depuis le dernier rapport (unité)
-Name=AM415U_VS1
+Name=QM415U_VS1
 Value=1;Il y a des jours
 Value=2;Il y a des semaines
 Value=3;Il y a des mois
@@ -12751,7 +12633,7 @@ Value=9;Réponses spéciales
 
 [Item]
 Label=Time since last intercourse (number)|Durée depuis le dernier rapport (nombre)
-Name=AM415N
+Name=QM415N
 Start=54
 Len=2
 ItemType=SubItem
@@ -12759,48 +12641,48 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time since last intercourse (number)|Durée depuis le dernier rapport (nombre)
-Name=AM415N_VS1
+Name=QM415N_VS1
 Value=0:90
 Value=99;A refusé
 Name=REFUSED,Special
 
 [Item]
 Label=Used FP during last intercourse|PF utilisé lors du dernier rapport sexuel
-Name=AM416
+Name=QM416
 Start=56
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Used FP during last intercourse|PF utilisé lors du dernier rapport sexuel
-Name=AM416_VS1
+Name=QM416_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Know a place to obtain family planning methods|Connaît un endroit pour se procurer des méthodes de PF
-Name=AM417
+Name=QM417
 Start=57
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Know a place to obtain family planning methods|Connaît un endroit pour se procurer des méthodes de PF
-Name=AM417_VS1
+Name=QM417_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Contraceptive method|Méthode contraceptive
-Name=AM418
+Name=QM418
 Start=58
 Len=15
 DataType=Alpha
 
 [ValueSet]
 Label=Contraceptive method|Méthode contraceptive
-Name=AM418_VS1
+Name=QM418_VS1
 Value='A              ';Stérilisation féminine
 Value='B              ';Stérilisation masculine
 Value='C              ';DIU
@@ -12819,165 +12701,148 @@ Value='Y              ';Autre méthode traditionnelle
 
 [Item]
 Label=Used condom during last intercourse|Condom utilisé lors du dernier rapport sexuel
-Name=AM419
+Name=QM419
 Start=73
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Used condom during last intercourse|Condom utilisé lors du dernier rapport sexuel
-Name=AM419_VS1
+Name=QM419_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
-Label=Brand of condom used during last sex|Marque du condom utilisé lors du dernier rapport sexuel
-Name=AM420
+Label=Place obtained condom last time|Lieu d’obtention du condom la dernière fois
+Name=QM421
 Start=74
 Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Brand of condom used during last sex|Marque du condom utilisé lors du dernier rapport sexuel
-Name=AM420_VS1
-Value=1;Marque A
-Value=2;Marque B
-Value=3;Marque C
-Value=96;Autre
-Value=98;Ne sait pas
-
-[Item]
 Label=Place obtained condom last time|Lieu d’obtention du condom la dernière fois
-Name=AM421
-Start=76
-Len=2
-DataType=Numeric
-
-[ValueSet]
-Label=Place obtained condom last time|Lieu d’obtention du condom la dernière fois
-Name=AM421_VS1
-Value=10;---PUBLIC SECTOR---
+Name=QM421_VS1
+Value=10;---SECTEUR PUBLIC---
 Value=11;Hôpital du gouvernement
-Value=12;Centre de santé du gouvernement
-Value=13;Clinique planification familiale
-Value=14;Clinique mobile
-Value=15;Agent de santé communautaire/agent de terrain
+Value=12;Centre de santé intégré
+Value=13;Poste de santé
 Value=16;Autre secteur public
-Value=20;---PRIVATE MEDICAL SECTOR---
+Value=20;---SECTEUR MÉDICAL PRIVÉ---
 Value=21;Hôpital privé
-Value=22;Clinique privée
-Value=23;Pharmacie
-Value=24;Médecin privé
-Value=25;Clinique mobile
-Value=26;Agent de santé communautaire/agent de terrain
+Value=22;Clinique/polyclinique privée
+Value=23;Médecin/cabinet médical
+Value=24;Pharmacie
+Value=25;Association Congolaise De bien-être Familiale
+Value=26;Agent de santé communautaire/ agent de terrain
 Value=27;Autre secteur médical privé
-Value=30;---NGO MEDICAL SECTOR---
+Value=30;---SECTEUR MÉDICAL ONG---
 Value=31;Hôpital ONG
 Value=32;Clinique ONG
 Value=36;Autre secteur médical ONG
-Value=40;---OTHER SOURCE---
-Value=41;Boutique
-Value=42;Institution religieuse
-Value=43;Amis/parents
-Value=96;Autre
+Value=40;---AUTRE SOURCE---
+Value=41;Vendeur ambulant/ pharmacie par terre
+Value=42;Boutique/marché
+Value=43;Bar/boîte de nuit/hôtel
+Value=44;Amis/parents
+Value=96;AUTRE
 Value=98;Ne sait pas
 
 [Item]
 Label=Relationship with last partner|Lien avec la dernière partenaire
-Name=AM422
+Name=QM422
+Start=76
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Relationship with last partner|Lien avec la dernière partenaire
+Name=QM422_VS1
+Value=1;Epouse
+Value=2;Partenaire vivant avec l'enquêté
+Value=3;Petite amie ne vivant pas avec l'enquêté
+Value=4;Rencontre occasionnelle
+Value=5;Cliente/travailleuse du sexe
+Value=6;Autre
+
+[Item]
+Label=Sexual intercourse with any other person in last 12 months|Rapports sexuels avec une autre personne au cours des 12 derniers mois
+Name=QM423
+Start=77
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sexual intercourse with any other person in last 12 months|Rapports sexuels avec une autre personne au cours des 12 derniers mois
+Name=QM423_VS1
+Value=1;Oui
+Value=2;Non
+
+[Item]
+Label=Condom used with second partner|Condom utilisé avec la deuxième personne
+Name=QM424
 Start=78
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Relationship with last partner|Lien avec la dernière partenaire
-Name=AM422_VS1
-Value=1;Epouse
-Value=2;Partenaire vivant avec l'enquêté
-Value=3;Petite amie ne vivant pas avec l'enquêté
-Value=4;Rencontre occasionnelle
-Value=5;Cliente/travailleuse du sexe
-Value=6;Autre
+Label=Condom used with second partner|Condom utilisé avec la deuxième personne
+Name=QM424_VS1
+Value=1;Oui
+Value=2;Non
 
 [Item]
-Label=Sexual intercourse with any other person in last 12 months|Rapports sexuels avec une autre personne au cours des 12 derniers mois
-Name=AM423
+Label=Relationship with second partner|Lien avec la deuxième personne
+Name=QM425
 Start=79
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Sexual intercourse with any other person in last 12 months|Rapports sexuels avec une autre personne au cours des 12 derniers mois
-Name=AM423_VS1
-Value=1;Oui
-Value=2;Non
+Label=Relationship with second partner|Lien avec la deuxième personne
+Name=QM425_VS1
+Value=1;Epouse
+Value=2;Partenaire vivant avec l'enquêté
+Value=3;Petite amie ne vivant pas avec l'enquêté
+Value=4;Rencontre occasionnelle
+Value=5;Cliente/travailleuse du sexe
+Value=6;Autre
 
 [Item]
-Label=Condom used with second partner|Condom utilisé avec la deuxième personne
-Name=AM424
+Label=Sexual intercourse with any other person|Rapports sexuels avec d'autres personnes au cours des 12 derniers mois
+Name=QM426
 Start=80
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Condom used with second partner|Condom utilisé avec la deuxième personne
-Name=AM424_VS1
+Label=Sexual intercourse with any other person|Rapports sexuels avec d'autres personnes au cours des 12 derniers mois
+Name=QM426_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
-Label=Relationship with second partner|Lien avec la deuxième personne
-Name=AM425
+Label=Condom used with third partner|Condom utilisé avec la troisième personne
+Name=QM427
 Start=81
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Relationship with second partner|Lien avec la deuxième personne
-Name=AM425_VS1
-Value=1;Epouse
-Value=2;Partenaire vivant avec l'enquêté
-Value=3;Petite amie ne vivant pas avec l'enquêté
-Value=4;Rencontre occasionnelle
-Value=5;Cliente/travailleuse du sexe
-Value=6;Autre
+Label=Condom used with third partner|Condom utilisé avec la troisième personne
+Name=QM427_VS1
+Value=1;Oui
+Value=2;Non
 
 [Item]
-Label=Sexual intercourse with any other person|Rapports sexuels avec d'autres personnes au cours des 12 derniers mois
-Name=AM426
+Label=Relationship with third partner|Lien avec le troisième personne
+Name=QM428
 Start=82
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Sexual intercourse with any other person|Rapports sexuels avec d'autres personnes au cours des 12 derniers mois
-Name=AM426_VS1
-Value=1;Oui
-Value=2;Non
-
-[Item]
-Label=Condom used with third partner|Condom utilisé avec la troisième personne
-Name=AM427
-Start=83
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Condom used with third partner|Condom utilisé avec la troisième personne
-Name=AM427_VS1
-Value=1;Oui
-Value=2;Non
-
-[Item]
 Label=Relationship with third partner|Lien avec le troisième personne
-Name=AM428
-Start=84
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Relationship with third partner|Lien avec le troisième personne
-Name=AM428_VS1
+Name=QM428_VS1
 Value=1;Epouse
 Value=2;Partenaire vivant avec l'enquêté
 Value=3;Petite amie ne vivant pas avec l'enquêté
@@ -12987,35 +12852,35 @@ Value=6;Autre
 
 [Item]
 Label=Number of lifetime sexual partners|Nombre de partenaires sexuels dans votre vie
-Name=AM429
-Start=85
+Name=QM429
+Start=83
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Number of lifetime sexual partners|Nombre de partenaires sexuels dans votre vie
-Name=AM429_VS1
+Name=QM429_VS1
 Value=1:94
 Value=95;95+
 Value=98;Ne sait pas
 
 [Item]
 Label=Date of first union (CMC)
-Name=AM411C
-Start=87
+Name=QM411C
+Start=85
 Len=4
 DataType=Numeric
 
 [Item]
-Label=Date flag for AM411C
-Name=AM411F
-Start=91
+Label=Date flag for QM411C
+Name=QM411F
+Start=89
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Date flag for AM411C
-Name=AM411F_VS1
+Label=Date flag for QM411C
+Name=QM411F_VS1
 Value=1;Month and year
 Value=2;Month and age -y imp
 Value=5;Year - a, m imp
@@ -13025,21 +12890,21 @@ Value=8;None - all imp
 
 [Item]
 Label=Age at first union (calculated)
-Name=AM412C
-Start=92
+Name=QM412C
+Start=90
 Len=2
 DataType=Numeric
 
 [Item]
-Label=Flag for AM414
-Name=AM414F
-Start=94
+Label=Flag for QM414
+Name=QM414F
+Start=92
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Flag for AM414
-Name=AM414F_VS1
+Label=Flag for QM414
+Name=QM414F_VS1
 Value=0;No flag
 Value=1;After interview
 Value=2;After conception >= 1 yr
@@ -13049,15 +12914,15 @@ Value=5;At marriage, after conception
 Value=6;After marriage
 
 [Item]
-Label=Flag for AM415
-Name=AM415F
-Start=95
+Label=Flag for QM415
+Name=QM415F
+Start=93
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Flag for AM415
-Name=AM415F_VS1
+Label=Flag for QM415
+Name=QM415F_VS1
 Value=0;No flag
 Value=1;N > interval since birth
 Value=2;N + abstinence > interval
@@ -13071,49 +12936,49 @@ Value=9;N, sex before last birth
 
 [Record]
 Label=[Men] Fertility Preferences
-Name=AMSEC05
+Name=QMSEC05
 RecordTypeValue='M05'
 Required=No
 RecordLen=39
 
 [Item]
 Label=Wife/partner currently pregnant|Epouse/partenaire actuellement enceinte
-Name=AM504
+Name=QM504
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Wife/partner currently pregnant|Epouse/partenaire actuellement enceinte
-Name=AM504_VS1
+Name=QM504_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Desire for future child wife pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM505
+Name=QM505
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Desire for future child wife pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM505_VS1
+Name=QM505_VS1
 Value=1;Avoir un autre enfant
 Value=2;Pas d'autre enfant
 Value=8;Indécisme/ne sait pas
 
 [Item]
 Label=Time for future birth wife pregnant
-Name=AM506
+Name=QM506
 Start=16
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time for future birth (unit)|Temps d’attente pour avoir un enfant dans l'avenir (unité)
-Name=AM506U
+Name=QM506U
 Start=16
 Len=1
 ItemType=SubItem
@@ -13121,14 +12986,14 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time for future birth (unit)|Temps d’attente pour avoir un enfant dans l'avenir (unité)
-Name=AM506U_VS1
+Name=QM506U_VS1
 Value=1;Mois
 Value=2;Années
 Value=9;Réponses spéciales
 
 [Item]
 Label=Time for future birth (number)|Temps d’attente pour avoir un enfant dans l'avenir (nombre)
-Name=AM506N
+Name=QM506N
 Start=17
 Len=2
 ItemType=SubItem
@@ -13136,7 +13001,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time for future birth (number)|Temps d’attente pour avoir un enfant dans l'avenir (nombre)
-Name=AM506N_VS1
+Name=QM506N_VS1
 Value=0:90
 Value=93;Bientôt/maintenant
 Value=96;Autre
@@ -13144,14 +13009,14 @@ Value=98;Ne sait pas
 
 [Item]
 Label=Desire for future child wife not pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM507
+Name=QM507
 Start=19
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Desire for future child wife not pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM507_VS1
+Name=QM507_VS1
 Value=1;Veut (un/un autre) enfant
 Value=2;Plus d'enfant/aucun
 Value=3;Dit que le couple ne peut pas avoir d'enfant
@@ -13161,14 +13026,14 @@ Value=8;Indécis/ne sait pas
 
 [Item]
 Label=Time to next birth wife not pregnant
-Name=AM508
+Name=QM508
 Start=20
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time to next birth (units)|Temps pour une naissance future (unité)
-Name=AM508U
+Name=QM508U
 Start=20
 Len=1
 ItemType=SubItem
@@ -13176,14 +13041,14 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time to next birth (units)|Temps pour une naissance future (unité)
-Name=AM508U_VS1
+Name=QM508U_VS1
 Value=1;Mois
 Value=2;Années
 Value=9;Réponses spéciales
 
 [Item]
 Label=Time to next birth (number)|Temps pour une naissance future (nombre)
-Name=AM508N
+Name=QM508N
 Start=21
 Len=2
 ItemType=SubItem
@@ -13191,7 +13056,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time to next birth (number)|Temps pour une naissance future (nombre)
-Name=AM508N_VS1
+Name=QM508N_VS1
 Value=0:90
 Value=93;Bientôt/maintenant
 Value=94;Dit que le couple ne peut pas avoir d'enfant
@@ -13200,42 +13065,42 @@ Value=98;Ne sait pas
 
 [Item]
 Label=Any wives/partners currently pregnant|Une de vos épouses/partenaires actuellement enceinte
-Name=AM509
+Name=QM509
 Start=23
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Any wives/partners currently pregnant|Une de vos épouses/partenaires actuellement enceinte
-Name=AM509_VS1
+Name=QM509_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Desire for future child at least one wife pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM510
+Name=QM510
 Start=24
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Desire for future child at least one wife pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM510_VS1
+Name=QM510_VS1
 Value=1;Avoir un autre enfant
 Value=2;Ne plus en avoir
 Value=8;Indécisme/ne sait pas
 
 [Item]
 Label=Time for future birth at least one wife pregnant
-Name=AM511
+Name=QM511
 Start=25
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time for future birth (unit)|Temps pour une naissance future (unité)
-Name=AM511U
+Name=QM511U
 Start=25
 Len=1
 ItemType=SubItem
@@ -13243,14 +13108,14 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time for future birth (unit)|Temps pour une naissance future (unité)
-Name=AM511U_VS1
+Name=QM511U_VS1
 Value=1;Mois
 Value=2;Années
 Value=9;Réponses spéciales
 
 [Item]
 Label=Time for future birth (number)|Temps pour une naissance future (nombre)
-Name=AM511N
+Name=QM511N
 Start=26
 Len=2
 ItemType=SubItem
@@ -13258,7 +13123,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time for future birth (number)|Temps pour une naissance future (nombre)
-Name=AM511N_VS1
+Name=QM511N_VS1
 Value=0:90
 Value=93;Bientôt/maintenant
 Value=96;Autre
@@ -13266,14 +13131,14 @@ Value=98;Ne sait pas
 
 [Item]
 Label=Desire for future child none of the wives pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM512
+Name=QM512
 Start=28
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Desire for future child none of the wives pregnant|Désir d'avoir un enfant  dans l'avenir
-Name=AM512_VS1
+Name=QM512_VS1
 Value=1;Veut (un/un autre) enfant
 Value=2;Plus d'enfant/aucun
 Value=3;Dit que le couple ne peut pas avoir d'enfant
@@ -13283,14 +13148,14 @@ Value=8;Indécis/ne sait pas
 
 [Item]
 Label=Time to next child none of the wives pregnant
-Name=AM513
+Name=QM513
 Start=29
 Len=3
 DataType=Alpha
 
 [Item]
 Label=Time to next birth (units)|Temps pour une naissance future (unité)
-Name=AM513U
+Name=QM513U
 Start=29
 Len=1
 ItemType=SubItem
@@ -13298,14 +13163,14 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time to next birth (units)|Temps pour une naissance future (unité)
-Name=AM513U_VS1
+Name=QM513U_VS1
 Value=1;Mois
 Value=2;Années
 Value=9;Valeurs spéciales
 
 [Item]
 Label=Time to next birth (number)|Temps pour une naissance future (nombre)
-Name=AM513N
+Name=QM513N
 Start=30
 Len=2
 ItemType=SubItem
@@ -13313,7 +13178,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Time to next birth (number)|Temps pour une naissance future (nombre)
-Name=AM513N_VS1
+Name=QM513N_VS1
 Value=0:90
 Value=93;Bientôt/maintenant
 Value=94;Dit que le couple ne peut pas avoir d'enfant
@@ -13322,140 +13187,140 @@ Value=98;Ne sait pas
 
 [Item]
 Label=Ideal number of children|Nombre idéal d'enfants
-Name=AM514
+Name=QM514
 Start=32
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Ideal number of children|Nombre idéal d'enfants
-Name=AM514_VS1
+Name=QM514_VS1
 Value=0;Aucun
 Value=1:50
 Value=96;Autre
 
 [Item]
 Label=Ideal number of boys|Nombre idéal: garçons
-Name=AM515A
+Name=QM515A
 Start=34
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Ideal number of boys|Nombre idéal: garçons
-Name=AM515A_VS1
+Name=QM515A_VS1
 Value=0:50
 Value=96;Autre
 
 [Item]
 Label=Ideal number of girls|Nombre idéal: filles
-Name=AM515B
+Name=QM515B
 Start=36
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Ideal number of girls|Nombre idéal: filles
-Name=AM515B_VS1
+Name=QM515B_VS1
 Value=0:50
 Value=96;Autre
 
 [Item]
 Label=Ideal number of either|Nombre idéal: n'importe (les deux)
-Name=AM515C
+Name=QM515C
 Start=38
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Ideal number of either|Nombre idéal: n'importe (les deux)
-Name=AM515C_VS1
+Name=QM515C_VS1
 Value=0:50
 Value=96;Autre
 
 [Record]
 Label=[Men] Employment and Gender Roles
-Name=AMSEC06
+Name=QMSEC06
 RecordTypeValue='M06'
 Required=No
 RecordLen=40
 
 [Item]
 Label=Currently working|Travaille actuellement
-Name=AM601
+Name=QM601
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Currently working|Travaille actuellement
-Name=AM601_VS1
+Name=QM601_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Has job from which was absent|Avoir un travail pour lequel il a été absent
-Name=AM602
+Name=QM602
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Has job from which was absent|Avoir un travail pour lequel il a été absent
-Name=AM602_VS1
+Name=QM602_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Worked last 12 months|A travaillé au cours des 12 derniers mois
-Name=AM603
+Name=QM603
 Start=16
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Worked last 12 months|A travaillé au cours des 12 derniers mois
-Name=AM603_VS1
+Name=QM603_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Occupation|Occupation de l'enquêté
-Name=AM604
+Name=QM604
 Start=17
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Occupation|Occupation de l'enquêté
-Name=AM604_VS1
+Name=QM604_VS1
 Value=0:95
 Value=96;Autre
 
 [Item]
 Label=Works seasonally|Travaille toute l'année/saisonnière
-Name=AM605
+Name=QM605
 Start=19
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Works seasonally|Travaille toute l'année/saisonnière
-Name=AM605_VS1
+Name=QM605_VS1
 Value=1;Toute l'année
 Value=2;Saisonnier/partie de l'année
 Value=3;De temps en temps
 
 [Item]
 Label=Paid in cash or kind|Payée en espèces ou en nature
-Name=AM606
+Name=QM606
 Start=20
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Paid in cash or kind|Payée en espèces ou en nature
-Name=AM606_VS1
+Name=QM606_VS1
 Value=1;Argent seulement
 Value=2;Argent et nature
 Value=3;Nature seulement
@@ -13463,14 +13328,14 @@ Value=4;Pas payé
 
 [Item]
 Label=Decision maker on using the money earned|Qui décide habituellement de l'utilisation de l’argent gagné
-Name=AM609
+Name=QM609
 Start=21
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Decision maker on using the money earned|Qui décide habituellement de l'utilisation de l’argent gagné
-Name=AM609_VS1
+Name=QM609_VS1
 Value=1;Enquêté
 Value=2;Epouse/partenaire
 Value=3;Enquêté et épouse/partenaire ensemble
@@ -13478,14 +13343,14 @@ Value=6;Autre
 
 [Item]
 Label=Decision on health care for respondent|Décision sur les soins de santé de l’enquêté
-Name=AM610
+Name=QM610
 Start=22
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Decision on health care for respondent|Décision sur les soins de santé de l’enquêté
-Name=AM610_VS1
+Name=QM610_VS1
 Value=1;Enquêté
 Value=2;Epouse/partenaire
 Value=3;Enquêté et épouse/partenaire ensemble
@@ -13494,14 +13359,14 @@ Value=6;Autre
 
 [Item]
 Label=Decision on large HH purchases|Décision sur les achats importants du ménage
-Name=AM611
+Name=QM611
 Start=23
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Decision on large HH purchases|Décision sur les achats importants du ménage
-Name=AM611_VS1
+Name=QM611_VS1
 Value=1;Enquêté
 Value=2;Epouse/partenaire
 Value=3;Enquêté et épouse/partenaire ensemble
@@ -13510,14 +13375,14 @@ Value=6;Autre
 
 [Item]
 Label=Owns own house alone or jointly|Possède sa propre maison seul ou conjointement
-Name=AM612
+Name=QM612
 Start=24
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Owns own house alone or jointly|Possède sa propre maison seul ou conjointement
-Name=AM612_VS1
+Name=QM612_VS1
 Value=1;Seul seulement
 Value=2;Conjointement avec épouse/partenaire seulement
 Value=3;Conjointement avec quelqu'un d'autre seulement
@@ -13527,42 +13392,42 @@ Value=6;N'en possède pas
 
 [Item]
 Label=Respondent has a title deed for any house owned|L’enquêté a un titre de propriété pour une maison l’appartenant
-Name=AM613
+Name=QM613
 Start=26
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent has a title deed for any house owned|L’enquêté a un titre de propriété pour une maison l’appartenant
-Name=AM613_VS1
+Name=QM613_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Respondent's name on house title deed|Le nom de l’enquêté figure-t-il sur le titre de propriété
-Name=AM614
+Name=QM614
 Start=27
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent's name on house title deed|Le nom de l’enquêté figure-t-il sur le titre de propriété
-Name=AM614_VS1
+Name=QM614_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Owns land alone or jointly|Possède un terrain seul ou conjointement
-Name=AM615
+Name=QM615
 Start=28
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Owns land alone or jointly|Possède un terrain seul ou conjointement
-Name=AM615_VS1
+Name=QM615_VS1
 Value=1;Seul seulement
 Value=2;Conjointement avec épouse/partenaire seulement
 Value=3;Conjointement avec quelqu'un d'autre seulement
@@ -13572,336 +13437,336 @@ Value=6;N'en possède pas
 
 [Item]
 Label=Respondent has a title deed for any land owned|L’enquêté a un titre de propriété pour des terres l’appartenant
-Name=AM616
+Name=QM616
 Start=30
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent has a title deed for any land owned|L’enquêté a un titre de propriété pour des terres l’appartenant
-Name=AM616_VS1
+Name=QM616_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Respondent's name on land title deed|Nom de l’enquêté sur le titre foncier
-Name=AM617
+Name=QM617
 Start=31
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent's name on land title deed|Nom de l’enquêté sur le titre foncier
-Name=AM617_VS1
+Name=QM617_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Use mobile telephone for financial transactions|Utilise le téléphone mobile pour les transactions financières
-Name=AM617C
+Name=QM617C
 Start=32
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Use mobile telephone for financial transactions|Utilise le téléphone mobile pour les transactions financières
-Name=AM617C_VS1
+Name=QM617C_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Have a bank or other financial account|Avoir un compte bancaire ou autre compte financier
-Name=AM617A
+Name=QM617A
 Start=33
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Have a bank or other financial account|Avoir un compte bancaire ou autre compte financier
-Name=AM617A_VS1
+Name=QM617A_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Taken money in or out of bank account|Retrait ou dépôt d’argent dans le compte bancaire
-Name=AM617B
+Name=QM617B
 Start=34
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Taken money in or out of bank account|Retrait ou dépôt d’argent dans le compte bancaire
-Name=AM617B_VS1
+Name=QM617B_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Beating justification: going out without telling him|Justification de frapper ou battre: sort sans le lui dire
-Name=AM618A
+Name=QM618A
 Start=35
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Beating justification: going out without telling him|Justification de frapper ou battre: sort sans le lui dire
-Name=AM618A_VS1
+Name=QM618A_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Beating justification: neglects children|Justification de frapper ou battre: la femme néglige les enfants
-Name=AM618B
+Name=QM618B
 Start=36
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Beating justification: neglects children|Justification de frapper ou battre: la femme néglige les enfants
-Name=AM618B_VS1
+Name=QM618B_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Beating justification: arguing|Justification de frapper ou battre: femme argumente avec lui
-Name=AM618C
+Name=QM618C
 Start=37
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Beating justification: arguing|Justification de frapper ou battre: femme argumente avec lui
-Name=AM618C_VS1
+Name=QM618C_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Beating justification: refusing sex|Justification de frapper ou battre: la femme refuse les relations sexuelles
-Name=AM618D
+Name=QM618D
 Start=38
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Beating justification: refusing sex|Justification de frapper ou battre: la femme refuse les relations sexuelles
-Name=AM618D_VS1
+Name=QM618D_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Beating justification: burning food|Justification de frapper ou battre: la femme brûle de la nourriture
-Name=AM618E
+Name=QM618E
 Start=39
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Beating justification: burning food|Justification de frapper ou battre: la femme brûle de la nourriture
-Name=AM618E_VS1
+Name=QM618E_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Respondent's father beat mother|Son père a-t-il déjà battu sa mère
-Name=AM619
+Name=QM619
 Start=40
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent's father beat mother|Son père a-t-il déjà battu sa mère
-Name=AM619_VS1
+Name=QM619_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Record]
 Label=[Men] HIV/AIDS
-Name=AMSEC07
+Name=QMSEC07
 RecordTypeValue='M07'
 Required=No
 RecordLen=62
 
 [Item]
 Label=Introduction to HIV/AIDS questions
-Name=AM700
+Name=QM700
 Start=14
 Len=1
 DataType=Alpha
 
 [Item]
 Label=Ever heard of HIV or AIDS|Entendu parler de VIH ou de SIDA
-Name=AM701
+Name=QM701
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Ever heard of HIV or AIDS|Entendu parler de VIH ou de SIDA
-Name=AM701_VS1
+Name=QM701_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Reduce chance getting HIV by having just one uninfected sex partner who has no other sex partners|Reduire le risque du SIDA en ayant un seul partenaire sexuel non infecté
-Name=AM703
+Name=QM703
 Start=16
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Reduce chance getting HIV by having just one uninfected sex partner who has no other sex partners|Reduire le risque du SIDA en ayant un seul partenaire sexuel non infecté
-Name=AM703_VS1
+Name=QM703_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Can get HIV from mosquito bites|Peut attraper le VIH par les piqûres de moustiques
-Name=AM704
+Name=QM704
 Start=17
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can get HIV from mosquito bites|Peut attraper le VIH par les piqûres de moustiques
-Name=AM704_VS1
+Name=QM704_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Reduce chance of HIV by using condom every time they have sex|Réduire les risques de VIH en utilisant un condom
-Name=AM705
+Name=QM705
 Start=18
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Reduce chance of HIV by using condom every time they have sex|Réduire les risques de VIH en utilisant un condom
-Name=AM705_VS1
+Name=QM705_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Can get HIV by sharing food with someone infected with HIV|Peut contracter le VIH en partageant de la nourriture avec une personne infectée par le VIH
-Name=AM706
+Name=QM706
 Start=19
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Can get HIV by sharing food with someone infected with HIV|Peut contracter le VIH en partageant de la nourriture avec une personne infectée par le VIH
-Name=AM706_VS1
+Name=QM706_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Possible for healthy-looking person to have HIV|Une personne paraissant en bonne santé peut-elle avoir le VIH
-Name=AM707
+Name=QM707
 Start=20
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Possible for healthy-looking person to have HIV|Une personne paraissant en bonne santé peut-elle avoir le VIH
-Name=AM707_VS1
+Name=QM707_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Heard of ARVs|Entendu parler des TAR
-Name=AM708
+Name=QM708
 Start=21
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Heard of ARVs|Entendu parler des TAR
-Name=AM708_VS1
+Name=QM708_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Special drugs to avoid HIV transmission to baby|Médicaments spéciaux pour réduire le risque de transmission au bébé
-Name=AM709
+Name=QM709
 Start=22
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Special drugs to avoid HIV transmission to baby|Médicaments spéciaux pour réduire le risque de transmission au bébé
-Name=AM709_VS1
+Name=QM709_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Heard of PrEP|Entendu parler de la PrEP
-Name=AM710
+Name=QM710
 Start=23
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Heard of PrEP|Entendu parler de la PrEP
-Name=AM710_VS1
+Name=QM710_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Approve of people taking pills to prevent HIV|Approuver les personnes prenant des pilules pour éviter le VIH
-Name=AM711
+Name=QM711
 Start=24
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Approve of people taking pills to prevent HIV|Approuver les personnes prenant des pilules pour éviter le VIH
-Name=AM711_VS1
+Name=QM711_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas/pas sûr/cela dépend
 
 [Item]
 Label=Check for presence of others
-Name=AM712
+Name=QM712
 Start=25
 Len=1
 DataType=Alpha
 
 [Item]
 Label=Ever been tested for HIV|A déjà fait un test du VIH
-Name=AM713
+Name=QM713
 Start=26
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Ever been tested for HIV|A déjà fait un test du VIH
-Name=AM713_VS1
+Name=QM713_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Date of most recent HIV test
-Name=AM714
+Name=QM714
 Start=27
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Date of most recent HIV test (month)|Date du test du VIH le plus récent (mois)
-Name=AM714M
+Name=QM714M
 Start=27
 Len=2
 ItemType=SubItem
@@ -13909,7 +13774,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Date of most recent HIV test (month)|Date du test du VIH le plus récent (mois)
-Name=AM714M_VS1
+Name=QM714M_VS1
 Value=1;Janvier
 Value=2;Février
 Value=3;Mars
@@ -13926,7 +13791,7 @@ Value=98;Ne connait pas le mois
 
 [Item]
 Label=Date of most recent HIV test (year)|Date du test du VIH le plus récent (année)
-Name=AM714Y
+Name=QM714Y
 Start=29
 Len=4
 ItemType=SubItem
@@ -13934,68 +13799,45 @@ DataType=Numeric
 
 [ValueSet]
 Label=Date of most recent HIV test (year)|Date du test du VIH le plus récent (année)
-Name=AM714Y_VS1
+Name=QM714Y_VS1
 Value=2000:2025
 Value=9998;Ne connait pas l'année
 
 [Item]
 Label=Place for HIV test|Lieu du test de VIH
-Name=AM715
+Name=QM715
 Start=33
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Place for HIV test|Lieu du test de VIH
-Name=AM715_VS1
-Value=10;---PUBLIC SECTOR---
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé du gouvernement
-Value=13;Centre indépendant de test et conseil
-Value=14;Clinique planification familiale
-Value=15;Services mobiles de test et conseil
-Value=16;Autre secteur
-Value=20;---PRIVATE MEDICAL SECTOR---
-Value=21;Hôpital privé
-Value=22;Clinique privée
-Value=23;Médecin privé
-Value=24;Centre indépendant de test et conseil
-Value=25;Pharmacie
-Value=26;Services mobiles de test et conseil
-Value=27;Autre secteur médical privé
-Value=30;---NGO MEDICAL SECTOR---
-Value=31;Hôpital ONG
-Value=32;Clinique ONG
-Value=36;Autre secteur médical ONG
-Value=40;---OTHER SOURCE---
-Value=41;Maison
-Value=42;Lieu de travail
-Value=43;Centre de détention
-Value=96;Autre
+Name=QM715_VS1
+Link=1301257
 
 [Item]
 Label=Received results of test|Reçu les résultats du test
-Name=AM716
+Name=QM716
 Start=35
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Received results of test|Reçu les résultats du test
-Name=AM716_VS1
+Name=QM716_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Result of HIV test|Résultat du test VIH
-Name=AM717
+Name=QM717
 Start=36
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Result of HIV test|Résultat du test VIH
-Name=AM717_VS1
+Name=QM717_VS1
 Value=1;Positif
 Value=2;Negatif
 Value=3;Indéterminé
@@ -14003,14 +13845,14 @@ Value=4;N'a pas voulu répondre
 
 [Item]
 Label=Date of first HIV test
-Name=AM718
+Name=QM718
 Start=37
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Date of first HIV test (month)|Date du premier test VIH (mois)
-Name=AM718M
+Name=QM718M
 Start=37
 Len=2
 ItemType=SubItem
@@ -14018,7 +13860,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Date of first HIV test (month)|Date du premier test VIH (mois)
-Name=AM718M_VS1
+Name=QM718M_VS1
 Value=1;Janvier
 Value=2;Février
 Value=3;Mars
@@ -14036,7 +13878,7 @@ Value=98;Ne connait pas le mois
 
 [Item]
 Label=Date of first HIV test (year)|Date du premier test VIH (année)
-Name=AM718Y
+Name=QM718Y
 Start=39
 Len=4
 ItemType=SubItem
@@ -14044,1542 +13886,799 @@ DataType=Numeric
 
 [ValueSet]
 Label=Date of first HIV test (year)|Date du premier test VIH (année)
-Name=AM718Y_VS1
+Name=QM718Y_VS1
 Value=1980:2025
 Value=9998;Ne connait pas l'année
 
 [Item]
 Label=Currently taking ARVs|Prenant actuellement des TAR
-Name=AM719
+Name=QM719
 Start=43
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Currently taking ARVs|Prenant actuellement des TAR
-Name=AM719_VS1
+Name=QM719_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Number of HIV tests|Nombre de tests VIH
-Name=AM720
+Name=QM720
 Start=44
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Number of HIV tests|Nombre de tests VIH
-Name=AM720_VS1
+Name=QM720_VS1
 Value=1:94
 Value=95;95+
 
 [Item]
 Label=Have heard of test kits for HIV self-testing|Entendu parler de kits de test pour l'auto-dépistage du VIH
-Name=AM721
+Name=QM721
 Start=46
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Have heard of test kits for HIV self-testing|Entendu parler de kits de test pour l'auto-dépistage du VIH
-Name=AM721_VS1
+Name=QM721_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Have ever tested using self-test kits|A déjà été testé avec les kits d'autotest
-Name=AM722
+Name=QM722
 Start=47
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Have ever tested using self-test kits|A déjà été testé avec les kits d'autotest
-Name=AM722_VS1
+Name=QM722_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Would buy vegetables from vendor with HIV|Achèterait des légumes à un vendeur séropositif
-Name=AM723
+Name=QM723
 Start=48
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Would buy vegetables from vendor with HIV|Achèterait des légumes à un vendeur séropositif
-Name=AM723_VS1
+Name=QM723_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas/pas sûr/cela dépend
 
 [Item]
 Label=Children with HIV should be allowed to go to school with children with no HIV|Les enfants séropositifs devraient être autorisés à aller à l'école avec des enfants non séropositifs
-Name=AM724
+Name=QM724
 Start=49
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Children with HIV should be allowed to go to school with children with no HIV|Les enfants séropositifs devraient être autorisés à aller à l'école avec des enfants non séropositifs
-Name=AM724_VS1
+Name=QM724_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas/pas sûr/cela dépend
 
 [Item]
 Label=Disclosed HIV status to others|Révélation du statut du VIH à d'autres
-Name=AM726
+Name=QM726
 Start=50
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Disclosed HIV status to others|Révélation du statut du VIH à d'autres
-Name=AM726_VS1
+Name=QM726_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Respondent feels ashamed of HIV status|L’enquêté a honte de son statut VIH
-Name=AM727
+Name=QM727
 Start=51
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent feels ashamed of HIV status|L’enquêté a honte de son statut VIH
-Name=AM727_VS1
+Name=QM727_VS1
 Value=1;D'accord
 Value=2;Pas d'accord
 
 [Item]
 Label=Respondent had happened: people talk badly|Il est arrivé à l’enquêté: les gens ont mal parlée d’elle
-Name=AM728A
+Name=QM728A
 Start=52
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent had happened: people talk badly|Il est arrivé à l’enquêté: les gens ont mal parlée d’elle
-Name=AM728A_VS1
+Name=QM728A_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Respondent had happened: someone else disclosed status|Il est arrivé à l’enquêté: quelqu'un d'autre a relevé son statut
-Name=AM728B
+Name=QM728B
 Start=53
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent had happened: someone else disclosed status|Il est arrivé à l’enquêté: quelqu'un d'autre a relevé son statut
-Name=AM728B_VS1
+Name=QM728B_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Respondent had happened: verbally insulted|Il est arrivé à l’enquêté: insulté, harcelé ou menacé
-Name=AM728C
+Name=QM728C
 Start=54
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent had happened: verbally insulted|Il est arrivé à l’enquêté: insulté, harcelé ou menacé
-Name=AM728C_VS1
+Name=QM728C_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Respondent had happened: healthcare workers talked badly|Il est arrivé à l’enquêté: personnels de santé parlaient mal
-Name=AM728D
+Name=QM728D
 Start=55
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent had happened: healthcare workers talked badly|Il est arrivé à l’enquêté: personnels de santé parlaient mal
-Name=AM728D_VS1
+Name=QM728D_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Respondent had happened: healthcare workers verbally abused|Il est arrivé à l’enquêté: le personnel de santé a crié/grondé/agressé verbalement
-Name=AM728E
+Name=QM728E
 Start=56
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent had happened: healthcare workers verbally abused|Il est arrivé à l’enquêté: le personnel de santé a crié/grondé/agressé verbalement
-Name=AM728E_VS1
+Name=QM728E_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Heard about other STDs|Entendu parler des autres MSTs
-Name=AM729
+Name=QM729
 Start=57
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Heard about other STDs|Entendu parler des autres MSTs
-Name=AM729_VS1
+Name=QM729_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Had an STD in last 12 months|A eu une MST au cours des 12 derniers mois
-Name=AM732
+Name=QM732
 Start=58
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Had an STD in last 12 months|A eu une MST au cours des 12 derniers mois
-Name=AM732_VS1
+Name=QM732_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Genital discharge in last 12 months|Ecoulement anormal du pénis au cours des 12 derniers mois
-Name=AM733
+Name=QM733
 Start=59
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Genital discharge in last 12 months|Ecoulement anormal du pénis au cours des 12 derniers mois
-Name=AM733_VS1
+Name=QM733_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Genital sore or ulcer in last 12 months|Une plaie ou un ulcère sur leur pénis ou à côté u cours des 12 derniers mois
-Name=AM734
+Name=QM734
 Start=60
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Genital sore or ulcer in last 12 months|Une plaie ou un ulcère sur leur pénis ou à côté u cours des 12 derniers mois
-Name=AM734_VS1
+Name=QM734_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Justified to ask for use of condom when husband has STD|Il est justifié de demander l'utilisation du condom lorsque le mari a une MST
-Name=AM735
+Name=QM735
 Start=61
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Justified to ask for use of condom when husband has STD|Il est justifié de demander l'utilisation du condom lorsque le mari a une MST
-Name=AM735_VS1
+Name=QM735_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Right to refuse sex: husband has other partners|Droit de refuser des relations sexuelles: le mari a d'autres partenaires
-Name=AM736
+Name=QM736
 Start=62
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Right to refuse sex: husband has other partners|Droit de refuser des relations sexuelles: le mari a d'autres partenaires
-Name=AM736_VS1
+Name=QM736_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Record]
 Label=[Men] Other Health Issues
-Name=AMSEC08
+Name=QMSEC08
 RecordTypeValue='M08'
 Required=No
 RecordLen=107
 
 [Item]
 Label=Respondent circumcised|L'enquêté est circoncis
-Name=AM801
+Name=QM801
 Start=14
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent circumcised|L'enquêté est circoncis
-Name=AM801_VS1
+Name=QM801_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Respondent is traditionally circumcised|L'enquêté est traditionnellement circoncis
-Name=AM802
+Name=QM802
 Start=15
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent is traditionally circumcised|L'enquêté est traditionnellement circoncis
-Name=AM802_VS1
+Name=QM802_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Age at traditional circumcision|Age à la circonsision
-Name=AM803
+Name=QM803
 Start=16
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Age at traditional circumcision|Age à la circonsision
-Name=AM803_VS1
+Name=QM803_VS1
 Value=5:49
 Value=95;Pendant l'enfance (<5 ans)
 Value=98;Ne sait pas
 
 [Item]
 Label=Respondent is medically circumcised|L'enquêté est médicalement circoncis
-Name=AM804
+Name=QM804
 Start=18
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Respondent is medically circumcised|L'enquêté est médicalement circoncis
-Name=AM804_VS1
+Name=QM804_VS1
 Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
 Label=Age at medical circumcision|Age à la circoncision médicale
-Name=AM805
+Name=QM805
 Start=19
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Age at medical circumcision|Age à la circoncision médicale
-Name=AM805_VS1
+Name=QM805_VS1
 Value=5:49
 Value=95;Pendant l'enfance (<5 ans)
 Value=98;Ne sait pas
 
 [Item]
 Label=Frequency smoking tobacco currently|Fréquence de fumer du tabac actuellement
-Name=AM806
+Name=QM806
 Start=21
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Frequency smoking tobacco currently|Fréquence de fumer du tabac actuellement
-Name=AM806_VS1
+Name=QM806_VS1
 Value=1;Tous les jours
 Value=2;Certains jours
 Value=3;Pas du tout
 
 [Item]
 Label=In the past, smoked every day|Dans le passé, a fumé tous les jours
-Name=AM807
+Name=QM807
 Start=22
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=In the past, smoked every day|Dans le passé, a fumé tous les jours
-Name=AM807_VS1
+Name=QM807_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Frequency smoked tobacco in the past|Fréquence du tabac fumé dans le passé
-Name=AM808
+Name=QM808
 Start=23
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Frequency smoked tobacco in the past|Fréquence du tabac fumé dans le passé
-Name=AM808_VS1
+Name=QM808_VS1
 Value=1;Tous les jours
 Value=2;Certains jours
 Value=3;Pas du tout
 
 [Item]
 Label=Daily frequency of smoking: manufactured cigarettes|Fréquence quotidienne du tabagisme: cigarettes fabriquées commercialement
-Name=AM809A
+Name=QM809A
 Start=24
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: manufactured cigarettes|Fréquence quotidienne du tabagisme: cigarettes fabriquées commercialement
-Name=AM809A_VS1
+Name=QM809A_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency of smoking: hand-rolled cigarettes|Fréquence quotidienne du tabagisme: cigarettes roulées à la main
-Name=AM809B
+Name=QM809B
 Start=27
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: hand-rolled cigarettes|Fréquence quotidienne du tabagisme: cigarettes roulées à la main
-Name=AM809B_VS1
+Name=QM809B_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency of smoking: kreteks|Fréquence quotidienne du tabagisme: kreteks
-Name=AM809C
+Name=QM809C
 Start=30
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: kreteks|Fréquence quotidienne du tabagisme: kreteks
-Name=AM809C_VS1
+Name=QM809C_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency of smoking: pipes full of tobacco|Fréquence quotidienne du tabagisme: pipes remplies de tabac
-Name=AM809D
+Name=QM809D
 Start=33
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: pipes full of tobacco|Fréquence quotidienne du tabagisme: pipes remplies de tabac
-Name=AM809D_VS1
+Name=QM809D_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency of smoking: cigars, cheroots, cigarillos|Fréquence quotidienne du tabagisme: cigares, cheroots ou cigarillos
-Name=AM809E
+Name=QM809E
 Start=36
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: cigars, cheroots, cigarillos|Fréquence quotidienne du tabagisme: cigares, cheroots ou cigarillos
-Name=AM809E_VS1
+Name=QM809E_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency of smoking: water pipe sessions|Fréquence quotidienne de fumer: nombre de séances de pipe à eau/narguilé
-Name=AM809F
+Name=QM809F
 Start=39
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: water pipe sessions|Fréquence quotidienne de fumer: nombre de séances de pipe à eau/narguilé
-Name=AM809F_VS1
+Name=QM809F_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency of smoking: other|Fréquence quotidienne du tabagisme: autre
-Name=AM809G
+Name=QM809G
 Start=42
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency of smoking: other|Fréquence quotidienne du tabagisme: autre
-Name=AM809G_VS1
+Name=QM809G_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Weekly frequency of smoking: manufactured cigarettes|Fréquence par semaine du tabagisme: cigarettes fabriquées commercialement
-Name=AM810A
+Name=QM810A
 Start=45
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: manufactured cigarettes|Fréquence par semaine du tabagisme: cigarettes fabriquées commercialement
-Name=AM810A_VS1
+Name=QM810A_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency of smoking: hand-rolled cigarettes|Fréquence par semaine du tabagisme: cigarettes roulées à la main
-Name=AM810B
+Name=QM810B
 Start=48
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: hand-rolled cigarettes|Fréquence par semaine du tabagisme: cigarettes roulées à la main
-Name=AM810B_VS1
+Name=QM810B_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency of smoking: kreteks|Fréquence par semaine du tabagisme: Kreteks
-Name=AM810C
+Name=QM810C
 Start=51
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: kreteks|Fréquence par semaine du tabagisme: Kreteks
-Name=AM810C_VS1
+Name=QM810C_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency of smoking: pipes full of tobacco|Fréquence par semaine du tabagisme: pipes à tabac
-Name=AM810D
+Name=QM810D
 Start=54
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: pipes full of tobacco|Fréquence par semaine du tabagisme: pipes à tabac
-Name=AM810D_VS1
+Name=QM810D_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency of smoking: cigars, cheroots, cigarillos|Fréquence par semaine du tabagisme: cigares, cheroots ou cigarillos
-Name=AM810E
+Name=QM810E
 Start=57
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: cigars, cheroots, cigarillos|Fréquence par semaine du tabagisme: cigares, cheroots ou cigarillos
-Name=AM810E_VS1
+Name=QM810E_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency of smoking: water pipe sessions|Fréquence par semaine du tabagisme: nombre de séances de pipe à eau/narguilé
-Name=AM810F
+Name=QM810F
 Start=60
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: water pipe sessions|Fréquence par semaine du tabagisme: nombre de séances de pipe à eau/narguilé
-Name=AM810F_VS1
+Name=QM810F_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency of smoking: other|Fréquence par semaine du tabagisme: autre chose
-Name=AM810G
+Name=QM810G
 Start=63
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency of smoking: other|Fréquence par semaine du tabagisme: autre chose
-Name=AM810G_VS1
+Name=QM810G_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Frequency use smokeless tobacco|Fréquence d'utilisation du tabac non-fumé
-Name=AM811
+Name=QM811
 Start=66
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Frequency use smokeless tobacco|Fréquence d'utilisation du tabac non-fumé
-Name=AM811_VS1
+Name=QM811_VS1
 Value=1;Tous les jours
 Value=2;Certains jours
 Value=3;Pas du tout
 
 [Item]
 Label=Daily frequency using smokeless: snuff by mouth|Fréquence quotidienne d'utilisation des produits: tabac à chiquer, dans la bouche
-Name=AM812A
+Name=QM812A
 Start=67
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency using smokeless: snuff by mouth|Fréquence quotidienne d'utilisation des produits: tabac à chiquer, dans la bouche
-Name=AM812A_VS1
+Name=QM812A_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency using smokeless: snuff by nose|Fréquence quotidienne d'utilisation des produits: tabac à priser, à inhaler par le nez
-Name=AM812B
+Name=QM812B
 Start=70
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency using smokeless: snuff by nose|Fréquence quotidienne d'utilisation des produits: tabac à priser, à inhaler par le nez
-Name=AM812B_VS1
+Name=QM812B_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency using smokeless: chewing tobacco|Fréquence quotidienne d'utilisation des produits: tabac à mâcher
-Name=AM812C
+Name=QM812C
 Start=73
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency using smokeless: chewing tobacco|Fréquence quotidienne d'utilisation des produits: tabac à mâcher
-Name=AM812C_VS1
+Name=QM812C_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency using smokeless: betel quid with tobacco|Fréquence quotidienne d'utilisation des produits: betel à mâcher
-Name=AM812D
+Name=QM812D
 Start=76
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency using smokeless: betel quid with tobacco|Fréquence quotidienne d'utilisation des produits: betel à mâcher
-Name=AM812D_VS1
+Name=QM812D_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Daily frequency using smokeless: other|Fréquence quotidienne d'utilisation des produits: autre chose
-Name=AM812E
+Name=QM812E
 Start=79
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Daily frequency using smokeless: other|Fréquence quotidienne d'utilisation des produits: autre chose
-Name=AM812E_VS1
+Name=QM812E_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas tous les jours
 
 [Item]
 Label=Weekly frequency using smokeless: snuff by mouth|Fréquence d’utilisation par semaine des produits: tabac à chiquer, dans la bouche
-Name=AM813A
+Name=QM813A
 Start=82
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency using smokeless: snuff by mouth|Fréquence d’utilisation par semaine des produits: tabac à chiquer, dans la bouche
-Name=AM813A_VS1
+Name=QM813A_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency using smokeless: snuff by nose|Fréquence d’utilisation par semaine des produits: tabac à priser, à inhaler par le nez
-Name=AM813B
+Name=QM813B
 Start=85
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency using smokeless: snuff by nose|Fréquence d’utilisation par semaine des produits: tabac à priser, à inhaler par le nez
-Name=AM813B_VS1
+Name=QM813B_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency using smokeless: chewing tobacco|Fréquence d’utilisation par semaine des produits: tabac à mâcher
-Name=AM813C
+Name=QM813C
 Start=88
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency using smokeless: chewing tobacco|Fréquence d’utilisation par semaine des produits: tabac à mâcher
-Name=AM813C_VS1
+Name=QM813C_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency using smokeless: betel quid with tobacco|Fréquence d’utilisation par semaine des produits: betel à mâcher
-Name=AM813D
+Name=QM813D
 Start=91
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency using smokeless: betel quid with tobacco|Fréquence d’utilisation par semaine des produits: betel à mâcher
-Name=AM813D_VS1
+Name=QM813D_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Weekly frequency using smokeless: other|Fréquence d’utilisation par semaine des produits:autre chose
-Name=AM813E
+Name=QM813E
 Start=94
 Len=3
 DataType=Numeric
 
 [ValueSet]
 Label=Weekly frequency using smokeless: other|Fréquence d’utilisation par semaine des produits:autre chose
-Name=AM813E_VS1
+Name=QM813E_VS1
 Value=0;Pas utilisé du tout
 Value=1:100
 Value=888;Utilisé mais pas toutes les semaines
 
 [Item]
 Label=Ever consumed alcohol|A consommé de l'alcool
-Name=AM814
+Name=QM814
 Start=97
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Ever consumed alcohol|A consommé de l'alcool
-Name=AM814_VS1
+Name=QM814_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Number of days respondent drank alcoholic drinks in the past month|Nombre de jours que l’enquêté a bu des boissons alcoolisées au cours du dernier mois
-Name=AM815
+Name=QM815
 Start=98
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Number of days respondent drank alcoholic drinks in the past month|Nombre de jours que l’enquêté a bu des boissons alcoolisées au cours du dernier mois
-Name=AM815_VS1
+Name=QM815_VS1
 Value=0;N'a même pas eu un verre
 Value=1:31
 Value=95;Chaque jour/presque chaque jour
 
 [Item]
 Label=Number of alcoholic drinks per day|Nombre de verres alcoolisés par jour
-Name=AM816
+Name=QM816
 Start=100
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Number of alcoholic drinks per day|Nombre de verres alcoolisés par jour
-Name=AM816_VS1
+Name=QM816_VS1
 Value=0;Less than one standard drink
 Value=1:39
 Value=40;40+
 
 [Item]
 Label=Health insurance|Couvert par une assurance médicale
-Name=AM817
+Name=QM817
 Start=102
 Len=1
 DataType=Numeric
 
 [ValueSet]
 Label=Health insurance|Couvert par une assurance médicale
-Name=AM817_VS1
+Name=QM817_VS1
 Value=1;Oui
 Value=2;Non
 
 [Item]
 Label=Type of health insurance|Type d'assurance médicale
-Name=AM818
+Name=QM818
 Start=103
 Len=5
 DataType=Alpha
 
 [ValueSet]
 Label=Type of health insurance|Type d'assurance médicale
-Name=AM818_VS1
+Name=QM818_VS1
 Value='A    ';Mutuelle de santé/assurance santé communautaire
 Value='B    ';Assurance santé par l'employeur
 Value='C    ';Securité sociale
 Value='D    ';Autre assurance privée commerciale
 Value='X    ';Autre
-
-[Record]
-Label=[Men] Chronic diseases
-Name=AMSECCHD
-RecordTypeValue='MCH'
-Required=No
-RecordLen=36
-
-[Item]
-Label=Ever had blood pressure measured by doctor other healthcare worker
-Name=AMCHD01
-Start=14
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever had blood pressure measured by doctor other healthcare worker
-Name=AMCHD01_VS1
-Value=1;Yes
-Value=2;No
-Value=8;Don't know
-
-[Item]
-Label=Ever been told that you have high blood pressure or hypertension
-Name=AMCHD02
-Start=15
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told that you have high blood pressure or hypertension
-Name=AMCHD02_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=In past 12 months have been told that you have high blood pressure or hypertension
-Name=AMCHD03
-Start=16
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=In past 12 months have been told that you have high blood pressure or hypertension
-Name=AMCHD03_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Have been prescribed medication to control high blood pressure
-Name=AMCHD04
-Start=17
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Have been prescribed medication to control high blood pressure
-Name=AMCHD04_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you taken medication to control your blood pressure
-Name=AMCHD05
-Start=18
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you taken medication to control your blood pressure
-Name=AMCHD05_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever had blood sugar measured by doctor other healthcare worker
-Name=AMCHD06
-Start=19
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever had blood sugar measured by doctor other healthcare worker
-Name=AMCHD06_VS1
-Value=1;Yes
-Value=2;No
-Value=8;Don't know
-
-[Item]
-Label=Ever been told that you have high blood sugar or diabetes
-Name=AMCHD07
-Start=20
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told that you have high blood sugar or diabetes
-Name=AMCHD07_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=In past 12 months have been told that you have high blood sugar or diabetes
-Name=AMCHD08
-Start=21
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=In past 12 months have been told that you have high blood sugar or diabetes
-Name=AMCHD08_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Have been prescribed medication to control high blood sugar
-Name=AMCHD09
-Start=22
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Have been prescribed medication to control high blood sugar
-Name=AMCHD09_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you taken medication to control your blood sugar
-Name=AMCHD10
-Start=23
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you taken medication to control your blood sugar
-Name=AMCHD10_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have heart disease
-Name=AMCHD11
-Start=24
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have heart disease
-Name=AMCHD11_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you receiving any treatment for your heart disease or chronic heart condition
-Name=AMCHD12
-Start=25
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you receiving any treatment for your heart disease or chronic heart condition
-Name=AMCHD12_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have lung disease
-Name=AMCHD13
-Start=26
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have lung disease
-Name=AMCHD13_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you receiving any treatment for your lung disease
-Name=AMCHD14
-Start=27
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you receiving any treatment for your lung disease
-Name=AMCHD14_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have cancer or a tumor
-Name=AMCHD15
-Start=28
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have cancer or a tumor
-Name=AMCHD15_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you receiving any treatment for cancer or tumor
-Name=AMCHD16
-Start=29
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you receiving any treatment for cancer or tumor
-Name=AMCHD16_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have depression
-Name=AMCHD17A
-Start=30
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have depression
-Name=AMCHD17A_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have anxiety
-Name=AMCHD17B
-Start=31
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have anxiety
-Name=AMCHD17B_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you receiving any treatment for depression or anxiety
-Name=AMCHD19
-Start=32
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you receiving any treatment for depression or anxiety
-Name=AMCHD19_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have arthritis
-Name=AMCHD20
-Start=33
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have arthritis
-Name=AMCHD20_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you receiving any treatment for arthritis
-Name=AMCHD21
-Start=34
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you receiving any treatment for arthritis
-Name=AMCHD21_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor or other healthcare worker that you have other chronic disease
-Name=AMCHD22
-Start=35
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor or other healthcare worker that you have other chronic disease
-Name=AMCHD22_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Are you receiving any treatment for other chronic disease
-Name=AMCHD23
-Start=36
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Are you receiving any treatment for other chronic disease
-Name=AMCHD23_VS1
-Value=1;Yes
-Value=2;No
-
-[Record]
-Label=[Men] Mental health module
-Name=AMSECMH
-RecordTypeValue='MMH'
-Required=No
-RecordLen=47
-
-[Item]
-Label=Introduction to the module
-Name=AMMTH0
-Start=14
-Len=1
-DataType=Alpha
-
-[Item]
-Label=Last 2 weeks: feeling nervous, anxious, on edge
-Name=AMMTHGAD1
-Start=15
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: feeling nervous, anxious, on edge
-Name=AMMTHGAD1_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: not able to stop/control worrying
-Name=AMMTHGAD2
-Start=16
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: not able to stop/control worrying
-Name=AMMTHGAD2_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: worrying about things
-Name=AMMTHGAD3
-Start=17
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: worrying about things
-Name=AMMTHGAD3_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: trouble relaxing
-Name=AMMTHGAD4
-Start=18
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: trouble relaxing
-Name=AMMTHGAD4_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: restless and hard to sit still
-Name=AMMTHGAD5
-Start=19
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: restless and hard to sit still
-Name=AMMTHGAD5_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: become easily annoyed/irritable
-Name=AMMTHGAD6
-Start=20
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: become easily annoyed/irritable
-Name=AMMTHGAD6_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: feeling afraid as something awful might happen
-Name=AMMTHGAD7
-Start=21
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: feeling afraid as something awful might happen
-Name=AMMTHGAD7_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: little interst/pleasure in doing things
-Name=AMMTHPHQ1
-Start=22
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: little interst/pleasure in doing things
-Name=AMMTHPHQ1_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: feeling down, depressed or hopeless
-Name=AMMTHPHQ2
-Start=23
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: feeling down, depressed or hopeless
-Name=AMMTHPHQ2_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: trouble falling asleep or sleeping too much
-Name=AMMTHPHQ3
-Start=24
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: trouble falling asleep or sleeping too much
-Name=AMMTHPHQ3_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: feeling tired or having little energy
-Name=AMMTHPHQ4
-Start=25
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: feeling tired or having little energy
-Name=AMMTHPHQ4_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: poor appetite or overeating
-Name=AMMTHPHQ5
-Start=26
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: poor appetite or overeating
-Name=AMMTHPHQ5_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: feeling bad about yourself, you are a failure or let yourself or family down
-Name=AMMTHPHQ6
-Start=27
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: feeling bad about yourself, you are a failure or let yourself or family down
-Name=AMMTHPHQ6_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: trouble concentrating in reading or watching TV
-Name=AMMTHPHQ7
-Start=28
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: trouble concentrating in reading or watching TV
-Name=AMMTHPHQ7_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: moving/speaking slowly or moving around a lot more than usual
-Name=AMMTHPHQ8
-Start=29
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: moving/speaking slowly or moving around a lot more than usual
-Name=AMMTHPHQ8_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Last 2 weeks: thoughts of better off dead or hurting yourself
-Name=AMMTHPHQ9
-Start=30
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks: thoughts of better off dead or hurting yourself
-Name=AMMTHPHQ9_VS1
-Value=0;Never
-Value=1;Rarely
-Value=2;Often
-Value=3;Always
-Value=7;Refused to answer
-Value=8;Don't know
-
-[Item]
-Label=Ever tried to seek help for the things you experienced
-Name=AMMTH2
-Start=31
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever tried to seek help for the things you experienced
-Name=AMMTH2_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Persons/professionals have sought help
-Name=AMMTH3
-Start=32
-Len=10
-DataType=Alpha
-
-[ValueSet]
-Label=Persons/professionals have sought help
-Name=AMMTH3_VS1
-Value='A         ';Doctor/medical personnel
-Value='B         ';Social service organization
-Value='C         ';Social worker
-Value='D         ';Community health worker/ fieldworker
-Value='E         ';Religious leader
-Value='F         ';Current/former spouse/partner
-Value='G         ';Other family member
-Value='H         ';Friend
-Value='I         ';Neighbor
-Value='X         ';Other
-
-[Item]
-Label=Ever been told by a doctor/health care worker you have: depression
-Name=AMMTH4A
-Start=42
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor/health care worker you have: depression
-Name=AMMTH4A_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Ever been told by a doctor/health care worker you have: anxiety
-Name=AMMTH4B
-Start=43
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever been told by a doctor/health care worker you have: anxiety
-Name=AMMTH4B_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Last 2 weeks took medication prescribed by doctor/health woker for depression/anxiety
-Name=AMMTH5
-Start=44
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Last 2 weeks took medication prescribed by doctor/health woker for depression/anxiety
-Name=AMMTH5_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=PHQ score
-Name=AMMTH6
-Start=45
-Len=2
-DataType=Numeric
-
-[Item]
-Label=Referral based on PHQ score
-Name=AMMTH8
-Start=47
-Len=1
-DataType=Alpha
-
-[Record]
-Label=[Men] Female Genital Cutting
-Name=AMSECGC
-RecordTypeValue='MGC'
-Required=No
-RecordLen=17
-
-[Item]
-Label=Ever heard of female circumcision|A entendu parler de l'excision génitale
-Name=GCM01
-Start=14
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever heard of female circumcision|A entendu parler de l'excision génitale
-Name=GCM01_VS1
-Value=1;Oui
-Value=2;Non
-
-[Item]
-Label=Ever heard of genital cutting (probed)|A entendu parler de l'excision génitale (sondé)
-Name=GCM02
-Start=15
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Ever heard of genital cutting (probed)|A entendu parler de l'excision génitale (sondé)
-Name=GCM02_VS1
-Value=1;Oui
-Value=2;Non
-
-[Item]
-Label=Circumcision is required by religion|La circoncision est exigée par la religion
-Name=GCM03
-Start=16
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Circumcision is required by religion|La circoncision est exigée par la religion
-Name=GCM03_VS1
-Value=1;Oui
-Value=2;Non
-Value=8;Ne sait pas
-
-[Item]
-Label=Circumcision should continue or be stopped|La circoncision doit continuer ou être abandonnée
-Name=GCM04
-Start=17
-Len=1
-DataType=Numeric
-
-[ValueSet]
-Label=Circumcision should continue or be stopped|La circoncision doit continuer ou être abandonnée
-Name=GCM04_VS1
-Value=1;Continuer
-Value=2;Abandonner
-Value=3;Cela dépend
-Value=8;Ne sait pas

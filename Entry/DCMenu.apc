@@ -437,12 +437,14 @@
     //          1:only completed hhs assigned to interviewer
    //           2:completed hhs assigned to other interviewers
    //           3:all cases - used for selection of INDIVIDUALs
+   //           4:biomarkers selection
     SetEligFile(0);
     forcase ELIGINDV do
       // do selection first skip if case doesn't meet criteria
       if ( seltype = 0 & ZOWNER = IntCode ) |                      // hh for interviewer
       ( seltype = 1 & ZRESULT = 1 & ZOWNER = IntCode { & ZSTATUSC = 1 }) |           // completed hhs of interviewer, no partials
-      ( seltype = 4 & ZRESULT = 1 & ZOWNER = IntCode               ) |           // completed hhs of interviewer, include partials for biomarkers
+      ( seltype = 4 & ZRESULT = 1 & ZOWNER = IntCode & ZMALE = 1   ) |           // completed hhs of interviewer, include partials for biomarkers
+                                                                                 // !! only hh's selected for male interview eligible for biomarkers !!       
       ( seltype = 2 & ZRESULT = 1 & ZOWNER <> IntCode & ZSTATUSC = 1 )|          //  completed hh's of other interviewers
         seltype  = 3                                              //  all cases 
       then 
@@ -453,7 +455,7 @@
           caselist(ctr,2) = ZNAME;
           caselist(ctr,3) = maketext("%04d", ZOWNER );
           caselist(ctr,4) = ZSTATUS;
-          caselist(ctr,5) = "YN"[ZMALE:1];
+          caselist(ctr,5) = tr( "YN" )[ZMALE:1];
         else                                               // INDIVIDUALs
           caselist(ctr,1) = maketext("%04d", ZNUMBER );
           caselist(ctr,2) = maketext("%02d", ZLINE );
@@ -878,9 +880,9 @@
       else
         if task = 4 then  { eligible INDIVIDUALs }
           { find if HOUSEHOLD assigned or not to interviewer by supervisor }
-          x = accept( tr("INDIVIDUAL interview is from"),
-                      tr("HOUSEHOLD interviewed by you"),
-                      tr("HOUSEHOLD interviewed by someone else (shared)"),
+          x = accept( tr("Individual interview is from"),
+                      tr("Household interviewed by you"),
+                      tr("Household interviewed by someone else (shared)"),
                       tr("Cancel") );
         else                    { other options use HOUSEHOLDs assigned to interviewer }
           x = 1;
@@ -889,12 +891,12 @@
         ifok = 0;
         if task in 1,2 then // hh int, list eligibles (all assigned hhs)
           fill_caselist(0);
-          heading = tr("Select HOUSEHOLD");
+          heading = tr("Select Household");
         elseif task = 3 then // biomarkers - only hhs with result = 1
           fill_caselist(4);
-          heading = tr("Select HOUSEHOLD for Biomarkers Entry");
+          heading = tr("Select Household for Biomarkers Entry");
         elseif task = 4 then // INDIVIDUALs ( only hhs with result = 1 )
-          heading = tr("Select HOUSEHOLD for INDIVIDUAL interview");
+          heading = tr("Select Household for individual interview");
           if x = 1  then // not shared
           fill_caselist(1);
           else // shared

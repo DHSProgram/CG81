@@ -72,12 +72,16 @@ questions:
         questionText:
           EN: |
             <p><span class="instruction">RECORD FIRST NAME OF HOUSEHOLD MEMBER.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">NOTEZ LE PRÉNOM DU MEMBRE DE MENAGE</span><p></p>
   - name: CGHH80.QHLASTN
     conditions:
       - logic: curocc() in 1
         questionText:
           EN: |
             <p><span class="instruction">RECORD THE LAST NAME OF THE HEAD OF THE HOUSEHOLD.</span></p>
+          FR: |
+            <p><b>2. S'il vous plait, donnez-moi les noms des personnes qui vivent habituellement dans votre ménage et des visiteurs qui ont passé la nuit dernière ici, en c</b>ommençant par le chef de ménage.</p><p><span class="instruction">NOTEZ LE PRÉNOM DU CHEF DE MENAGE</span></p><p></p>
       - logic: curocc() in 2:50
         questionText:
           EN: |
@@ -88,6 +92,8 @@ questions:
         questionText:
           EN: |
             <p><span class="instruction">ENTER 1 FOR HEAD OF HOUSEHOLD</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">ENTREZ 1 POUR LE CHEF DE MÉNAGE</span><p></p>
       - logic: curocc() in 2:50
         questionText:
           EN: |
@@ -135,6 +141,8 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD THE LINE NUMBER OF THE RESPONDENT TO THE HOUSEHOLD QUESTIONNAIRE.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">INSCRIVEZ LE NUMÉRO DE LIGNE DU RÉPONDANT DANS LE QUESTIONNAIRE DU MÉNAGE.</span><p></p>
   - name: CGHH80.QH07A
     conditions:
       - questionText:
@@ -1264,6 +1272,8 @@ questions:
           EN: |
             <p><span class="instruction">OBSERVE OR ASK THE BRAND/TYPE OF MOSQUITO NET.</span></p>
             <p><span class="instruction">IF BRAND IS UNKNOWN AND YOU CANNOT OBSERVE THE NET, SHOW PICTURES OF TYPICAL NET TYPES/BRANDS TO RESPONDENT.</span></p>
+          FR: |
+            <p><font color="#0000ff">142. OBSERVEZ OU DEMANDEZ LA MARQUE/LE TYPE DE MOUSTIQUAIRE.</font></p><p><font color="#0000ff">SI LA MARQUE EST INCONNUE ET QUE VOUS NE POUVEZ PAS OBSERVER LE RÉSEAU, MONTREZ DES PHOTOS DES TYPES OU DES MARQUES TYPIQUES DE MOUSTIQUAIRES AU RÉPONDANT.</font></p><p></p>
   - name: CGHH80.QH143
     conditions:
       - questionText:
@@ -1495,6 +1505,8 @@ questions:
           EN: |
             <p><span class="instruction">END OF HOUSEHOLD QUESTIONNAIRE.</span></p>
             <p><span class="instruction">A WINDOW WILL BE DISPLAYED TO WRITE ANY NOTES.  AFTER THAT THE QUESTIONNAIRE WILL BE SAVED AUTOMATICALLY.</span></p>
+          FR: |
+            <p><font color="#0000ff">QUESTIONNAIRE DE FIN DE MÉNAGE.</font></p><p><font color="#0000ff">UNE FENÊTRE S’AFFICHERA POUR ÉCRIRE DES NOTES. APRÈS CELA, LE QUESTIONNAIRE SERA ENREGISTRÉ AUTOMATIQUEMENT.</font></p><p></p>
   - name: CGHH80.QBINTD
     conditions:
       - questionText:
@@ -1788,11 +1800,6 @@ questions:
       - questionText:
           EN: |
             <font color="#0000ff">PREPARE EQUIPMENT AND SUPPLIES ONLY FOR THE TEST(S) FOR WHICH CONSENT HAS BEEN GRANTED.</font><p></p>
-  - name: Z_B240_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
   - name: CGHH80.QB240
     conditions:
       - questionText:
@@ -1888,26 +1895,6 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD FIELDWORKER NUMBER OF BIOMARKER MEASURER.</span></p>
-  - name: AB324_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER ~~QMNAME~~ HAVE DONE THIS WITHIN LAST 30 MINUTES:</span><p></p>
-  - name: Z_B328_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">TIME OF THE FIRST BP READING</font><p></p>
-  - name: Z_B337_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE SECOND BP READING</span><p></p>
-  - name: Z_B340_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
   - name: CGHH80.QB339
     conditions:
       - questionText:
@@ -3463,6 +3450,11 @@ questions:
       - questionText:
           EN: |
             <p>RECORD THE DATE OF MEASUREMENT</p>
+  - name: QB324_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">RECORD WHETHER ~~QMNAME~~ HAVE DONE THIS WITHIN LAST 30 MINUTES:</span><p></p>
   - name: QBM125_BLOCK
     conditions:
       - questionText:
@@ -3478,7 +3470,27 @@ questions:
       - questionText:
           EN: |
             <span style="color: rgb(0, 0, 255);">TIME OF THE SECOND BP READING</span><p></p>
+  - name: Z_B240_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
   - name: Z_B314_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
+  - name: Z_B328_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">TIME OF THE FIRST BP READING</font><p></p>
+  - name: Z_B337_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">TIME OF THE SECOND BP READING</span><p></p>
+  - name: Z_B340_BLOCK
     conditions:
       - questionText:
           EN: |

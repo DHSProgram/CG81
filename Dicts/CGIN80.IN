@@ -305,9 +305,9 @@ A418D       -> Q418D       //Antenatal care: heartbeat|Soins prénatals: batteme
 A418E       -> Q418E       //Antenatal care: foods|Soins prénatals: aliments
 A418F       -> Q418F       //Antenatal care: breastfeed|Soins prénatals: allaitement
 A418G       -> Q418G       //Antenatal care: bleeding|Soins prénatals: saignements
-A418H       -> Q418H       //Antenatal care: weight|Soins prénatals: saignements
-A418I       -> Q418I       //Antenatal care: talked about delivery due date|Soins prénatals: saignements
-A418J       -> Q418J       //Antenatal care: told to pay attention to baby movements|Soins prénatals: saignements
+A418H       -> Z_418H       //Antenatal care: weight|Soins prénatals: saignements
+A418I       -> Z_418I       //Antenatal care: talked about delivery due date|Soins prénatals: saignements
+A418J       -> Z_418J       //Antenatal care: told to pay attention to baby movements|Soins prénatals: saignements
 A420        -> Q420        //Tetanus injection during pregnancy|Injection de tétanos pendant la grossesse
 A421        -> Q421        //Number of tetanus injections|Nombre d'injections de tétanos
 A423        -> Q423        //Tetanus injections before pregnancy|Injections de tétanos avant la grossesse

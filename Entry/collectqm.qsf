@@ -1,0 +1,1823 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: French
+styles:
+  - name: Normal
+    className: normal
+    css: |-
+      font-family: Arial;font-size: 21px;
+  - name: Instruction
+    className: instruction
+    css: |-
+      font-family: Arial;font-size: 21px;color: #0000FF;
+  - name: Red
+    className: red
+    css: |-
+      font-family: Arial;font-size: 21px;color: #FF0000;
+  - name: Italic
+    className: italic
+    css: |-
+      font-family: Arial;font-size: 21px;font-style: italic
+  - name: Heading 1
+    className: heading1
+    css: |-
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |-
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |-
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: CGIN80.QM102
+    conditions:
+      - questionText:
+          EN: |
+            <p>102. What [PROVINCE/REGION/STATE] were you born in?</p>
+          FR: |-
+            <p>102.  Dans quel/quellle [PROVINCE, R&#201;GION, &#201;TAT] &#234;tes-vous n&#233; ?</p>
+  - name: CGIN80.QM103
+    conditions:
+      - questionText:
+          EN: |
+            <p>103. What country were you born in?</p>
+          FR: |-
+            <p>103.  Dans quel pays  &#234;tes-vous n&#233; ?</p>
+  - name: CGIN80.QM104
+    conditions:
+      - questionText:
+          EN: |
+            <p>104. How long have you been living continuously in (NAME OF CURRENT CITY, TOWN OR VILLAGE OF RESIDENCE)?</p>
+            <p><span class="instruction">IF LESS THAN ONE YEAR, RECORD '0' YEARS.</span></p>
+          FR: |-
+            <p>104.  Depuis combien de temps vivez-vous de mani&#232;re continue &#224; (NOM DE LA VILLE, PETITE VILLE OU VILLAGE ACTUEL DE R&#201;SIDENCE) ?</p><p><span class="instruction">SI MOINS D&#39;UNE ANN&#201;E, INSCRIVEZ ‘00’ ANN&#201;E.</span></p>
+  - name: QM106_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>106. In what month and year did you move here?</p>
+          FR: |-
+            <p>106.  En quel mois et en quelle ann&#233;e avez-vous emm&#233;nag&#233; ici ?</p>
+  - name: CGIN80.QM106M
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD MONTH</span></p>
+  - name: CGIN80.QM106Y
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD YEAR</span></p>
+  - name: CGIN80.QM107
+    conditions:
+      - questionText:
+          EN: |
+            <p>107. Just before you moved here, which [PROVINCE/REGION/STATE] did you live in?</p>
+          FR: |-
+            <p>107.  Juste avant d&#39;emm&#233;nager ici, dans quel/quelle [PROVINCE/R&#201;GION/&#201;TAT], viviez-vous ?</p>
+  - name: CGIN80.QM108
+    conditions:
+      - questionText:
+          EN: |
+            <p>108. Just before you moved here, did you live in a city, in a town, or in a rural area?</p>
+          FR: |-
+            <p>108.  Juste avant d&#39;emm&#233;nager ici, est-ce que vous viviez dans une ville, une petite ville ou en zone rurale ?</p>
+  - name: CGIN80.QM109
+    conditions:
+      - questionText:
+          EN: |
+            <p>109. Why did you move to this place?</p>
+          FR: |-
+            <p>109.  Pourquoi avez-vous d&#233;m&#233;nag&#233; dans cet endroit ?</p>
+  - name: QM110_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>110. In what month and year were you born?</p>
+          FR: |-
+            <p>110.  En quel mois et en quelle ann&#233;e &#234;tes-vous n&#233; ?</p>
+  - name: CGIN80.QM110M
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD MONTH OF BIRTH</span></p>
+  - name: CGIN80.QM110Y
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD YEAR OF BIRTH</span></p>
+  - name: CGIN80.QM111
+    conditions:
+      - questionText:
+          EN: |
+            <p>111. How old were you at your last birthday?</p>
+            <p><span class="instruction">COMPARE AND CORRECT 105 AND/OR 106 IF INCONSISTENT. </span></p>
+          FR: |-
+            <p>111.  Quel &#226;ge aviez-vous &#224; votre dernier anniversaire ?</p><p><span class="instruction">COMPAREZ ET CORRIGEZ 110 ET/OU 111 SI INCOH&#201;RENT.</span></p>
+  - name: CGIN80.QM112
+    conditions:
+      - questionText:
+          EN: |
+            <p>112. In general, would you say your health is very good, good, moderate, bad, or very bad?</p>
+          FR: |-
+            <p>112.  Globalement, comment jugez-vous votre &#233;tat de sant&#233;: tr&#232;s bon, bon, moyennement bon , mauvais ou tr&#232;s mauvais?</p>
+  - name: CGIN80.QM113
+    conditions:
+      - questionText:
+          EN: |
+            <p>113. Have you ever attended school?</p>
+          FR: |-
+            <p>113.  &#202;tes-vous all&#233; &#224; l&#39;&#233;cole ?</p>
+  - name: CGIN80.QM114
+    conditions:
+      - questionText:
+          EN: |
+            <p>114. What is the highest level of school you attended: primary, secondary, or higher?</p>
+          FR: |-
+            <p>114.  Quel est le plus haut niveau d&#39;&#233;tudes que vous avez atteint : primaire, secondaire ou sup&#233;rieur ?</p>
+  - name: CGIN80.QM115
+    conditions:
+      - questionText:
+          EN: |
+            <p>115. What is the highest [grade/form/year] you completed at that level?</p>
+            <p><span class="instruction">IF COMPLETED LESS THAN ONE YEAR AT THAT LEVEL, RECORD '0'.</span></p>
+          FR: |-
+            <p>115.  Quelle est [ANN&#201;E/CLASSE] la plus &#233;lev&#233;e que vous avez atteint &#224; ce niveau ?</p><p><span class="instruction">SI MOINS D&#39;UNE ANN&#201;E A &#201;T&#201; ACHEV&#201;E &#192; CE NIVEAU, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM117
+    conditions:
+      - questionText:
+          EN: |
+            <p>117. Now I would like you to read this sentence to me.</p>
+            <p><span class="red">SHOW CARD TO RESPONDENT.</span></p>
+            <p><span class="instruction">IF RESPONDENT CANNOT READ WHOLE SENTENCE, PROBE:</span></p>
+            <p>Can you read any part of the sentence to me?</p>
+          FR: |-
+            <p>117.  Je voudrais maintenant que vous me lisiez cette phrase.</p><p><span class="instruction">MONTREZ LA CARTE &#192; L&#39;ENQU&#202;T&#201;.</span></p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201; NE PEUT LIRE TOUTE LA PHRASE,</span></p><p>INSISTEZ : Pouvez-vous lire une partie de la phrase&#160;?</p>
+  - name: CGIN80.QM119
+    conditions:
+      - questionText:
+          EN: |
+            <p>119. Do you read a newspaper or magazine at least once a week, less than once a week or not at all?</p>
+          FR: |-
+            <p>119.  Lisez-vous un journal ou un magazine au moins une fois par semaine, moins d&#39;une fois par semaine ou pas du tout&#160;?</p>
+  - name: CGIN80.QM120
+    conditions:
+      - questionText:
+          EN: |
+            <p>120. Do you listen to the radio at least once a week, less than once a week or not at all?</p>
+          FR: |-
+            <p>120.  &#201;coutez-vous la radio au moins une fois par semaine, moins d&#39;une fois par semaine ou pas du tout&#160;?</p>
+  - name: CGIN80.QM121
+    conditions:
+      - questionText:
+          EN: |
+            <p>121. Do you watch television at least once a week, less than once a week or not at all?</p>
+          FR: |-
+            <p>121.  Regardez-vous la t&#233;l&#233;vision au moins une fois par semaine, moins d&#39;une fois par semaine ou pas du tout&#160;?</p>
+  - name: CGIN80.QM122
+    conditions:
+      - questionText:
+          EN: |
+            <p>122. Do you own a mobile phone?</p>
+          FR: |-
+            <p>122.  Avez-vous un t&#233;l&#233;phone portable ?</p>
+  - name: CGIN80.QM123
+    conditions:
+      - questionText:
+          EN: |
+            <p>123. Is your mobile phone a smart phone?</p>
+          FR: |-
+            <p>123.  Est-ce que votre t&#233;l&#233;phone portable est un smart phone ?</p>
+  - name: CGIN80.QM127
+    conditions:
+      - questionText:
+          EN: |
+            <p>127. Have you ever used the Internet from any location on any device? </p>
+          FR: |-
+            <p>127.  Avez-vous d&#233;j&#224; utilis&#233; l&#39;Internet depuis n&#39;importe quel endroit &#224; partir de n&#39;importe quel appareil ?</p>
+  - name: CGIN80.QM128
+    conditions:
+      - questionText:
+          EN: |
+            <p>128. In the last 12 months, have you used the Internet?</p>
+            <p><span class="instruction">IF NECESSARY, PROBE FOR USE FROM ANY LOCATION, WITH ANY DEVICE.</span></p>
+          FR: |-
+            <p>128.  Au cours des 12 derniers mois, avez-vous utilis&#233; l&#39;Internet ?</p><p><span class="instruction">SI N&#201;CESSAIRE, INSISTEZ POUR L&#39;UTILISATION &#192; PARTIR DE N&#39;IMPORTE QUEL ENDROIT ET DE N&#39;IMPORTE QUEL APPAREIL</span></p>
+  - name: CGIN80.QM129
+    conditions:
+      - questionText:
+          EN: |
+            <p>129. During the last one month, how often did you use the Internet: almost every day, at least once a week, less than once a week, or not at all?</p>
+          FR: |-
+            <p>129.  Au cours du dernier mois, combien de fois avez-vous utilis&#233; l&#39;Internet : presque chaque jour, au moins une fois par semaine, moins d&#39;une fois par semaine ou pas du tout ?</p>
+  - name: CGIN80.QM130
+    conditions:
+      - questionText:
+          EN: |
+            <p>130. What is your religion?</p>
+          FR: |-
+            <p>130.  Quelle est votre religion ?</p>
+  - name: CGIN80.QM131
+    conditions:
+      - questionText:
+          EN: |
+            <p>131. What is your ethnic group?</p>
+          FR: |-
+            <p>131.  Quelle est votre ethnie ?</p>
+  - name: CGIN80.QM201
+    conditions:
+      - questionText:
+          EN: |
+            <p>201. Now I would like to ask about any children you have had during your life. I am interested in all of the children that are biologically yours, even if they are not legally yours or do not have your last name. Have you ever fathered any children with any woman?</p>
+          FR: |-
+            <p>201.  Je voudrais maintenant vous poser des questions sur tous les enfants que vous avez eus durant votre vie. Je m&#39;int&#233;resse &#224; tous vos enfants biologiques, m&#234;me s&#39;ils ne sont pas l&#233;galement les votres ou s&#39;ils ne portent pas votre nom. Avez-vous ou avez-vous eu des enfants que vous avez engendr&#233;s&#160;?</p>
+  - name: CGIN80.QM202
+    conditions:
+      - questionText:
+          EN: |
+            <p>202. Do you have any sons or daughters that you have fathered who are now living with you?</p>
+          FR: |-
+            <p>202.  Avez-vous des fils ou des filles dont vous &#234;tes le p&#232;re et qui vivent actuellement avec vous&#160;?</p>
+  - name: CGIN80.QM203A
+    conditions:
+      - questionText:
+          EN: |
+            <p>203.a) How many sons live with you?</p>
+            <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
+          FR: |-
+            <p>203a).  Combien de fils vivent avec vous&#160;?</p><p><span class="instruction">SI AUCUN, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM203B
+    conditions:
+      - questionText:
+          EN: |
+            <p>203.b) And how many daughters live with you?</p>
+            <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
+          FR: |-
+            <p>203b).  Et combien de filles vivent avec vous ?</p><p><span class="instruction">SI AUCUN, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM204
+    conditions:
+      - questionText:
+          EN: |
+            <p>204. Do you have any sons or daughters that you have fathered who are alive but do not live with you?</p>
+          FR: |-
+            <p>204.  Avez-vous des fils ou filles dont vous &#234;tes le p&#232;re qui sont toujours en vie mais qui ne vivent pas avec vous&#160;?</p>
+  - name: CGIN80.QM205A
+    conditions:
+      - questionText:
+          EN: |
+            <p>205.a) How many sons are alive but do not live with you?</p>
+            <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
+          FR: |-
+            <p>205a).  Combien de fils sont vivants mais qui ne vivent pas avec vous&#160;?</p><p><span class="instruction">SI AUCUN, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM205B
+    conditions:
+      - questionText:
+          EN: |
+            <p>205.b) And how many daughters are alive but do not live with you?</p>
+            <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
+          FR: |-
+            <p>205b).  Combien de filles sont vivantes mais qui ne vivent pas avec vous&#160;?</p><p><span class="instruction">SI AUCUN, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM206
+    conditions:
+      - questionText:
+          EN: |
+            <p>206. Have you ever fathered a son or a daughter who was born alive but later died?</p>
+            <p><span class="instruction">IF NO, PROBE:</span> Any baby who cried, who made any movement, sound, or effort to breathe, or who showed any other signs of life even if for a very short time?</p>
+          FR: |-
+            <p>206.  Avez-vous eu une fille ou un gar&#231;on qui est n&#233; vivant mais qui est d&#233;c&#233;d&#233; par la suite&#160;?</p><p>SI NON, INSISTEZ : Aucun b&#233;b&#233; qui a cri&#233; ou fait un mouvement, qui a &#233;mis un son ou essay&#233; de respirer ou qui a montr&#233; d&#39;autres signes de vie m&#234;me pendant un tr&#232;s court moment ?</p>
+  - name: CGIN80.QM207A
+    conditions:
+      - questionText:
+          EN: |
+            <p>207.a) How many boys have died?</p>
+            <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
+          FR: |-
+            <p>207a).  Combien de gar&#231;ons sont d&#233;c&#233;d&#233;s&#160;?</p><p><span class="instruction">SI AUCUN, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM207B
+    conditions:
+      - questionText:
+          EN: |
+            <p>207.b) And how many girls have died?</p>
+            <p><span class="instruction">IF NONE, RECORD '0'.</span></p>
+          FR: |-
+            <p>207b).  Combien de filles sont d&#233;c&#233;d&#233;es&#160;?</p><p><span class="instruction">SI AUCUN, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM210
+    conditions:
+      - questionText:
+          EN: |
+            <p>210. Did all of the children you have fathered have the same biological mother?</p>
+          FR: |-
+            <p>210.  Est-ce que tous les enfants dont vous &#234;tes le p&#232;re ont tous la m&#234;me m&#232;re biologique&#160;?</p>
+  - name: CGIN80.QM211
+    conditions:
+      - logic: QM208 = 1
+        questionText:
+          EN: |
+            <p>211. How old were you when your child was born?</p>
+          FR: |-
+            <p>211b).  Quel &#226;ge aviez-vous quand votre enfant&#160;est n&#233; ?</p>
+      - logic: QM208 > 1
+        questionText:
+          EN: |
+            <p>211. How old were you when your first child was born?</p>
+          FR: |-
+            <p>211a).  Quel &#226;ge aviez-vous quand votre premier enfant&#160;est n&#233; ?</p>
+  - name: CGIN80.QM213
+    conditions:
+      - logic: lchild = 1
+        questionText:
+          EN: |
+            <p>213. How old is your child?</p>
+          FR: |-
+            <p>213b).  Quel &#226;ge a votre enfant&#160;?</p>
+      - logic: lchild > 1
+        questionText:
+          EN: |
+            <p>213. How old is your youngest child?</p>
+          FR: |-
+            <p>213a).  Quel &#226;ge a votre plus jeune enfant&#160;?</p>
+  - name: CGIN80.QM215
+    conditions:
+      - logic: lchild = 1
+        questionText:
+          EN: |
+            <p>215. What is the name of your child?</p>
+          FR: |-
+            <p>215b).  Quel est le nom de votre enfant&#160;?</p>
+      - logic: lchild > 1
+        questionText:
+          EN: |
+            <p>215. What is the name of your youngest child?</p>
+          FR: |-
+            <p>215a).  Quel est le nom de votre plus jeune enfant&#160;?</p>
+  - name: CGIN80.QM216
+    conditions:
+      - questionText:
+          EN: |
+            <p>216. When ~~QM215~~'s mother was pregnant with ~~QM215~~ did she have any antenatal check-ups?</p>
+          FR: |-
+            <p>216.  Quand la m&#232;re de ~~AM215~~ &#233;tait enceinte de ~~AM215~~, a-t-elle eu des examens pr&#233;natals&#160;?</p>
+  - name: CGIN80.QM217
+    conditions:
+      - questionText:
+          EN: |
+            <p>217. Were you ever present during any of those antenatal check-ups?</p>
+          FR: |-
+            <p>217.  Est-ce que vous &#233;tiez pr&#233;sent pendant l&#39;un de ces examens pr&#233;natals&#160;?</p>
+  - name: CGIN80.QM218
+    conditions:
+      - questionText:
+          EN: |
+            <p>218. Was ~~QM215~~ born in a hospital or health facility?</p>
+          FR: |-
+            <p>218.  Est-ce que ~~AM215~~ est n&#233; dans un h&#244;pital ou un &#233;tablissement de sant&#233;&#160;?</p>
+  - name: CGIN80.QM219
+    conditions:
+      - questionText:
+          EN: |
+            <p>219. Did you go with ~~QM215~~'s mother to the hospital or health facility where she gave birth to ~~QM215~~? </p>
+          FR: |-
+            <p>219.  &#202;tes-vous all&#233; avec la m&#232;re de ~~AM215~~ &#224; l&#39;hopital ou l&#39;&#233;tablissement de sant&#233; o&#249; elle a donn&#233; naissance &#224; ~~AM215~~ ?</p>
+  - name: CGIN80.QM301_INTRO
+    conditions:
+      - questionText:
+          EN: |
+            <p>301. Now I would like to talk about family planning - the various ways or methods that a couple can use to delay or avoid a pregnancy.</p>
+            <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
+          FR: |-
+            <p>301.  Je voudrais maintenant que nous parlions de planification familiale, c&#39;est-&#224;-dire les diff&#233;rents moyens ou m&#233;thodes qu&#39;un couple peut utiliser pour retarder ou &#233;viter une grossesse.</p>
+  - name: CGIN80.QM3N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">~~alphmeth~~</span></p>
+            <p><span class="instruction">PRESS NEXT TO CONTINUE</span></p>
+  - name: CGIN80.QM301
+    conditions:
+      - logic: curocc() in 1
+        questionText:
+          EN: |
+            <p>301.01 Have you ever heard of Female Sterilization?</p>
+            <p><span class="instruction">PROBE: </span>Women can have an operation to avoid having any more children.</p>
+          FR: |-
+            <p>301.01.  Avez-vous d&#233;j&#224; entendu parler de st&#233;rilisation f&#233;minine ?</p><p>INSISTEZ&#160;: Les femmes peuvent avoir une op&#233;ration pour ne plus avoir d&#39;enfants.</p>
+      - logic: curocc() in 2
+        questionText:
+          EN: |
+            <p>301.02 Have you ever heard of Male Sterilization?</p>
+            <p><span class="instruction">PROBE: </span>Men can have an operation to avoid having any more children.</p>
+          FR: |-
+            <p>301.02.  Avez-vous d&#233;j&#224; entendu parler de st&#233;rilisation masculine ?</p><p>INSISTEZ&#160;: Les hommes peuvent avoir une op&#233;ration pour ne plus avoir d&#39;enfants.</p>
+      - logic: curocc() in 3
+        questionText:
+          EN: |
+            <p>301.03 Have you ever heard of IUD?</p>
+            <p><span class="instruction">PROBE: </span>Women can have a loop or coil placed inside them by a doctor or a nurse which can prevent pregnancy for one or more years.</p>
+          FR: |-
+            <p>301.03.  Avez-vous d&#233;j&#224; entendu parler de DIU ?</p><p>INSISTEZ&#160;: Les femmes peuvent avoir un st&#233;rilet qu&#39;un m&#233;decin ou une infirmi&#232;re leur place dans l&#39;ut&#233;rus pour leur &#233;viter une grossesse pendant une ann&#233;e ou plus.</p>
+      - logic: curocc() in 4
+        questionText:
+          EN: |
+            <p>301.04 Have you ever heard of Injectables?</p>
+            <p><span class="instruction">PROBE: </span>Women can have an injection by a health provider that stops them from becoming pregnant for one or more months.</p>
+          FR: |-
+            <p>301.04.  Avez-vous d&#233;j&#224; entendu parler de injectables ?</p><p>INSISTEZ&#160;: Les femmes peuvent avoir une injection faite par du personnel de sant&#233; pour leur &#233;viter une grossesse pendant un mois ou plus.</p>
+      - logic: curocc() in 5
+        questionText:
+          EN: |
+            <p>301.05 Have you ever heard of Implants?</p>
+            <p><span class="instruction">PROBE: </span>Women can have one or more small rods placed in their upper arm by a doctor or nurse which can prevent pregnancy for one or more years.</p>
+          FR: |-
+            <p>301.05.  Avez-vous d&#233;j&#224; entendu parler de implants ?</p><p>INSISTEZ&#160;: Les femmes peuvent se faire ins&#233;rer par un m&#233;decin ou une infirmi&#232;re un b&#226;tonnet ou plus sous la peau du haut du bras pour leur &#233;viter une grossesse, pendant une ann&#233;e ou plus.</p>
+      - logic: curocc() in 6
+        questionText:
+          EN: |
+            <p>301.06 Have you ever heard of Pill?</p>
+            <p><span class="instruction">PROBE: </span>Women can take a pill every day to avoid becoming pregnant.</p>
+          FR: |-
+            <p>301.06.  Avez-vous d&#233;j&#224; entendu parler de pilule ?</p><p>INSISTEZ&#160;: Les femmes peuvent prendre une pilule chaque jour pour &#233;viter une grossesse.</p>
+      - logic: curocc() in 7
+        questionText:
+          EN: |
+            <p>301.07 Have you ever heard of Condom?</p>
+            <p><span class="instruction">PROBE: </span>Men can put a rubber sheath on their penis before sexual intercourse.</p>
+          FR: |-
+            <p>301.07.  Avez-vous d&#233;j&#224; entendu parler de condom ?</p><p>INSISTEZ&#160;: Les hommes peuvent mettre une capote en caoutchouc sur leur p&#233;nis avant les rapports sexuels.</p>
+      - logic: curocc() in 8
+        questionText:
+          EN: |
+            <p>301.08 Have you ever heard of Female Condom?</p>
+            <p><span class="instruction">PROBE: </span>Women can place a sheath in their vagina before sexual intercourse.</p>
+          FR: |-
+            <p>301.08.  Avez-vous d&#233;j&#224; entendu parler de condom f&#233;minin ?</p><p>INSISTEZ&#160;: Les femmes peuvent placer un fourreau dans leur vagin avant les rapports sexuels.</p>
+      - logic: curocc() in 9
+        questionText:
+          EN: |
+            <p>301.09 Have you ever heard of Emergency Contraception?</p>
+            <p><span class="instruction">PROBE: </span>As an emergency measure, within 3 days after they have unprotected sexual intercourse, women can take special pills to prevent pregnancy.</p>
+          FR: |-
+            <p>301.09.  Avez-vous d&#233;j&#224; entendu parler de contraception d&#39;urgence ?</p><p>INSISTEZ&#160;: Comme mesure d’urgence, les femmes peuvent prendre pendant 3 jours apr&#232;s des rapports sexuels non prot&#233;g&#233;s des pilules sp&#233;ciales qui les emp&#234;chent de tomber enceintes.</p>
+      - logic: curocc() in 10
+        questionText:
+          EN: |
+            <p>301.10 Have you ever heard of Standard Days Method?</p>
+            <p><span class="instruction">PROBE: </span>A woman uses a string of colored beads to know the days she can get pregnant. On the days she can get pregnant, she uses a condom or does not have sexual intercourse.</p>
+          FR: |-
+            <p>301.10.  Avez-vous d&#233;j&#224; entendu parler de m&#233;thode des jours fixes ?</p><p>INSISTEZ : Les femmes utilisent un collier de perles de couleur diff&#233;rente pour conna&#238;tre les jours o&#249; elles peuvent tomber enceintes. Durant ces jours o&#249; elles peuvent tomber enceintes, elles utilisent un condom ou elles s&#39;abstiennent de rapports sexuels.</p>
+      - logic: curocc() in 11
+        questionText:
+          EN: |
+            <p>301.11 Have you ever heard of Lactational Amenorrhea Method (LAM)?</p>
+            <p><span class="instruction">PROBE: </span>Up to 6 months after childbirth, before the menstrual period has returned, women use a method requiring frequent breastfeeding day and night.</p>
+          FR: |-
+            <p>301.11.  Avez-vous d&#233;j&#224; entendu parler de m&#233;thode de l&#39;am&#233;norrh&#233;e et de l&#39;allaitement maternel (MAMA) ?</p><p>INSISTEZ : Pendant 6 mois apr&#232;s la naissance d&#39;un enfant, avant que les r&#232;gles ne soient revenues, les femmes utilisent une m&#233;thode qui n&#233;cessite d&#39;allaiter fr&#233;quemment le jour et la nuit.</p>
+      - logic: curocc() in 12
+        questionText:
+          EN: |
+            <p>301.12 Have you ever heard of Rhythm Method?</p>
+            <p><span class="instruction">PROBE: </span>To avoid pregnancy, women do not have sexual intercourse on the days of the month they think they can get pregnant.</p>
+          FR: |-
+            <p>301.12.  Avez-vous d&#233;j&#224; entendu parler de m&#233;thode du rythme ?</p><p>INSISTEZ : Pour &#233;viter une grossesse, les femmes n&#39;ont pas de rapports sexuels les jours o&#249; elles pensent qu&#39;elles peuvent tomber enceintes.</p>
+      - logic: curocc() in 13
+        questionText:
+          EN: |
+            <p>301.13 Have you ever heard of Withdrawal?</p>
+            <p><span class="instruction">PROBE: </span>Men can be careful and pull out before climax.</p>
+          FR: |-
+            <p>301.13.  Avez-vous d&#233;j&#224; entendu parler de retrait ?</p><p>INSISTEZ&#160;: Les hommes peuvent faire attention et se retirer avant l&#39;&#233;jaculation.</p>
+      - logic: curocc() in 14:15
+        questionText:
+          EN: |
+            <p>301.14 Have you heard of any other ways or methods that women or men can use to avoid pregnancy?</p>
+          FR: |-
+            <p>301.14.  Avez-vous entendu parler d&#39;autres moyens ou m&#233;thodes qu&#39;une femme ou un homme peut utiliser pour &#233;viter une grossesse&#160;?</p>
+  - name: CGIN80.QM301OT
+    conditions:
+      - questionText:
+          EN: |
+            <p>301.14 Have you heard of any other ways or methods that women or men can use to avoid pregnancy?</p>
+            <p><span class="instruction">MARK THE APPROPRIATE RESPONSES</span></p>
+  - name: QM302_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>302. In the last 12 months have you:</p>
+          FR: |-
+            <p>302.  Au cours des 12 derniers mois, avez-vous :</p>
+  - name: CGIN80.QM302A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Heard about family planning on the radio?</p>
+          FR: |-
+            <p>302a).  Entendu &#224; la radio un message sur la planification familiale ?</p>
+  - name: CGIN80.QM302B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Seen anything about family planning on the television?</p>
+          FR: |-
+            <p>302b).  Vu &#224; la t&#233;l&#233;vision quelque chose sur la planification familiale ?</p>
+  - name: CGIN80.QM302C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Read about family planning in a newspaper or magazine?</p>
+          FR: |-
+            <p>302c).  Lu dans un journal ou un magazine quelque chose sur la planification familiale ?</p>
+  - name: CGIN80.QM302D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Received a voice or text message about family planning on a mobile phone?</p>
+          FR: |-
+            <p>302d).  Re&#231;u un message vocal ou un texte sur la planification familiale sur un t&#233;l&#233;phone portable ?</p>
+  - name: CGIN80.QM302E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Seen anything about family planning on social media such as Facebook, Twitter, or Instagram?</p>
+          FR: |-
+            <p>302e).  Vu quelque chose sur la planification familiale sur les media sociaux comme Facebook, Twitter, ou Instagram ?</p>
+  - name: CGIN80.QM302F
+    conditions:
+      - questionText:
+          EN: |
+            <p>f) Seen anything about family planning on a poster, leaflet or brochure?</p>
+          FR: |-
+            <p>302f).  Vu quelque chose sur la planification familiale sur un poster, un d&#233;pliant ou une brochure ?</p>
+  - name: CGIN80.QM302G
+    conditions:
+      - questionText:
+          EN: |
+            <p>g) Seen anything about family planning on an outdoor sign or billboard?</p>
+          FR: |-
+            <p>302g).  Avez-vous vu quelque chose sur la planification familiale sur une affiche ou un panneau d&#39;affichage &#224; l&#39;ext&#233;rieur ?</p>
+  - name: CGIN80.QM302H
+    conditions:
+      - questionText:
+          EN: |
+            <p>h) Heard anything about family planning at community meetings or events?</p>
+          FR: |-
+            <p>302h).  Entendu quelque chose sur la planification familiale au cours de r&#233;unions ou &#224; l&#39;occasion d&#39;&#233;v&#232;nements dans la communaut&#233; ?</p>
+  - name: CGIN80.QM303
+    conditions:
+      - questionText:
+          EN: |
+            <p>303. In the last few months, have you discussed family planning with a health worker or health professional?</p>
+          FR: |-
+            <p>303.  Au cours des derniers mois, avez-vous parl&#233; de planification familiale avec un agent de sant&#233; ou un professionnel de sant&#233; ?</p>
+  - name: CGIN80.QM304
+    conditions:
+      - questionText:
+          EN: |
+            <p>304. Now I would like to ask you about a woman's risk of pregnancy. From one menstrual period to the next, are there certain days when a woman is more likely to become pregnant when she has sexual relations?</p>
+          FR: |-
+            <p>304.  Je voudrais maintenant vous parler des risques de tomber enceintes. Entre la p&#233;riode des r&#232;gles et les r&#232;gles suivantes, est-ce qu&#39;il y a une p&#233;riode o&#249; les femmes ont plus de chances de tomber enceintes lorsqu’elles ont des relations sexuelles ?</p>
+  - name: CGIN80.QM305
+    conditions:
+      - questionText:
+          EN: |
+            <p>305. Is this time just before her period begins, during her period, right after her period has ended, or halfway between two periods?</p>
+          FR: |-
+            <p>305.  Est-ce que cette p&#233;riode se situe juste avant que les r&#232;gles ne commencent, pendant la p&#233;riode des r&#232;gles, juste apr&#232;s que les r&#232;gles soient termin&#233;es ou bien au milieu de deux p&#233;riodes de r&#232;gles&#160;?</p>
+  - name: CGIN80.QM306
+    conditions:
+      - questionText:
+          EN: |
+            <p>306. After the birth of a child, can a woman become pregnant before her menstrual period has returned?</p>
+          FR: |-
+            <p>306.  Apr&#232;s la naissance d&#39;un enfant, est-ce qu&#39;une femme peut tomber enceinte avant que ses r&#232;gles soient revenues ?</p>
+  - name: QM307_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>307. I will now read you some statements about contraception. Please tell me if you agree or disagree with each one.</p>
+          FR: |-
+            <p>307.  Je vais vous lire maintenant certaines d&#233;clarations sur la contraception. Dites-moi, s&#39;il vous plait, si vous &#234;tes d&#39;accord ou pas d&#39;accord avec chacune de ces d&#233;clarations ?</p>
+  - name: CGIN80.QM307A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Contraception is a woman's concern and a man should not have to worry about it.</p>
+          FR: |-
+            <p>307a).  La contraception est un probl&#232;me de femme et un homme ne doit pas s&#39;en pr&#233;occuper.</p>
+  - name: CGIN80.QM307B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Women who use contraception may become promiscuous.</p>
+          FR: |-
+            <p>307b).  Une femme qui utilise la contraception peut devenir une femme l&#233;g&#232;re.</p>
+  - name: CGIN80.QM401
+    conditions:
+      - questionText:
+          EN: |
+            <p>401. Are you currently married or living together with a woman as if married?</p>
+          FR: |-
+            <p>401.  &#202;tes-vous actuellement mari&#233; ou vivez-vous avec une femme comme si vous &#234;tiez mari&#233;&#160;?</p>
+  - name: CGIN80.QM402
+    conditions:
+      - questionText:
+          EN: |
+            <p>402. Have you ever been married or lived together with a woman as if married?</p>
+          FR: |-
+            <p>402.  Avez-vous d&#233;j&#224; &#233;t&#233; mari&#233; ou avez-vous v&#233;cu avec une femme comme si vous &#233;tiez mari&#233;&#160;?</p>
+  - name: CGIN80.QM403
+    conditions:
+      - questionText:
+          EN: |
+            <p>403. What is your marital status now: are you widowed, divorced, or separated?</p>
+          FR: |-
+            <p>403.  Quel est votre &#233;tat matrimonial actuel : &#234;tes-vous veuf, divorc&#233; ou s&#233;par&#233;&#160;?</p>
+  - name: CGIN80.QM404
+    conditions:
+      - questionText:
+          EN: |
+            <p>404. Is your ~~partner~~ living with you now or is she staying elsewhere?</p>
+          FR: |-
+            <p>404.  Est-ce que votre ~~PARTNER~~ vit actuellement avec vous ou vit-elle ailleurs&#160;?</p>
+  - name: CGIN80.QM405
+    conditions:
+      - questionText:
+          EN: |
+            <p>405. Do you have other wives or do you live with other women as if married?</p>
+          FR: |-
+            <p>405.  Avez-vous d&#39;autres &#233;pouses ou vivez-vous avec d&#39;autres femmes comme si vous &#234;tiez mari&#233; ?</p>
+  - name: CGIN80.QM406
+    conditions:
+      - questionText:
+          EN: |
+            <p>406. Altogether, how many wives or live-in partners do you have?</p>
+          FR: |-
+            <p>406.  En tout, combien d&#39;&#233;pouses ou de partenaires avec qui vous vivez comme si vous &#233;tiez mari&#233;&#160;avez-vous ?</p>
+  - name: CGIN80.QM407
+    conditions:
+      - logic: QM405 = 1 & curocc() in 1
+        questionText:
+          EN: |
+            <p>407. Please tell me the name of your first wife or woman you are living with as if married.</p>
+            <p><span class="instruction">RECORD THE PARTNER'S LINE NUMBER FROM THE HOUSEHOLD QUESTIONNAIRE FOR EACH WIFE AND LIVE-IN PARTNER.</span></p>
+            <p><span class="instruction">IF A WOMAN IS NOT LISTED IN THE HOUSEHOLD, RECORD '0'.</span></p>
+          FR: |-
+            <p>407.  Dites-mois, s&#39;il vous plait, le nom de votre premi&#232;re &#233;pouse ou femme avec qui vous vivez comme si vous &#233;tiez mari&#233;.</p><p><span class="instruction">INSCRIVEZ LE NOM ET LE NUM&#201;RO DE LIGNE DU TABLEAU M&#201;NAGE POUR LA PREMI&#200;RE &#201;POUSE OU CONJOINTE AVEC QUI IL VIT COMME MARI&#201;.</span></p><p><span class="instruction">SI UNE FEMME N&#39;EST PAS LIST&#201;E DANS LE M&#201;NAGE, INSCRIVEZ &#39;00&#39;.</span></p>
+      - logic: QM405 = 1 & curocc() in 2:5
+        questionText:
+          EN: |
+            <p>407. Please tell me the name of your next wife or woman you are living with as if married.</p>
+            <p><span class="instruction">RECORD THE PARTNER'S LINE NUMBER FROM THE HOUSEHOLD QUESTIONNAIRE FOR EACH WIFE AND LIVE-IN PARTNER.</span></p>
+            <p><span class="instruction">IF A WOMAN IS NOT LISTED IN THE HOUSEHOLD, RECORD '0'.</span></p>
+          FR: |-
+            <p>407.  Dites-mois, s&#39;il vous plait, le nom de votre suivante &#233;pouse ou femme avec qui vous vivez comme si vous &#233;tiez mari&#233;.</p><p><span class="instruction">INSCRIVEZ LE NOM ET LE NUM&#201;RO DE LIGNE DU TABLEAU M&#201;NAGE POUR LA SUIVANTE &#201;POUSE OU CONJOINTE AVEC QUI IL VIT COMME MARI&#201;.</span></p><p><span class="instruction">SI UNE FEMME N&#39;EST PAS LIST&#201;E DANS LE M&#201;NAGE, INSCRIVEZ &#39;00&#39;.</span></p>
+      - logic: QM405 <> 1
+        questionText:
+          EN: |
+            <p>407. Please tell me the name of (your wife/the woman you are living with as if married).</p>
+            <p><span class="instruction">RECORD THE LINE NUMBER FROM THE HOUSEHOLD QUESTIONNAIRE.</span></p>
+            <p><span class="instruction">IF SHE IS NOT LISTED IN THE HOUSEHOLD, RECORD '0'.</span></p>
+          FR: |-
+            <p>407.  Dites-mois, s&#39;il vous plait, le nom de ~~PARTNER~~.</p><p><span class="instruction">INSCRIVEZ LE NOM ET LE NUM&#201;RO DE LIGNE DU TABLEAU M&#201;NAGE.</span></p><p><span class="instruction">SI UNE FEMME N&#39;EST PAS LIST&#201;E DANS LE M&#201;NAGE, INSCRIVEZ &#39;00&#39;.</span></p>
+  - name: CGIN80.QM408
+    conditions:
+      - questionText:
+          EN: |
+            <p>408. How old was ~~partner~~ on her last birthday?</p>
+          FR: |-
+            <p>408.  Quel &#226;ge avait ~~PARTNER~~ &#224; son dernier anniversaire ?</p>
+  - name: CGIN80.QM410
+    conditions:
+      - questionText:
+          EN: |
+            <p>410. Have you been married or lived with a woman only once or more than once?</p>
+          FR: |-
+            <p>410.  Avez-vous &#233;t&#233; mari&#233; ou avez-vous v&#233;cu avec une femme une seule fois ou plus d&#39;une fois&#160;?</p>
+  - name: QM411_BLOCK
+    conditions:
+      - logic: marriages = 0
+        questionText:
+          EN: |
+            <p>411. In what month and year did you start living with your ~~partner~~?</p>
+          FR: |-
+            <p>411a).  En quel mois et quelle ann&#233;e avez-vous commenc&#233; &#224; vivre avec votre ~~PARTNER~~&#160;?</p>
+      - logic: marriages = 1
+        questionText:
+          EN: |
+            <p>411. Now I would like to ask a question about your first ~~partner~~. In what month and year did you start living with her?</p>
+          FR: |-
+            <p>411b).  Je voudrais maintenant vous parler de votre premi&#232;re (&#233;pouse/partenaire). En quel mois et quelle ann&#233;e avez-vous commenc&#233; &#224; vivre avec elle&#160;?</p>
+  - name: CGIN80.QM411M
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD MONTH</span></p>
+  - name: CGIN80.QM411Y
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD YEAR</span></p>
+  - name: CGIN80.QM412
+    conditions:
+      - questionText:
+          EN: |
+            <p>412. How old were you when you first started living with her?</p>
+          FR: |-
+            <p>412.  Quel &#226;ge aviez-vous quand vous avez commenc&#233; &#224; vivre avec elle pour la premi&#232;re fois&#160;?</p>
+  - name: CGIN80.QM413
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">413. CHECK FOR PRESENCE OF OTHERS. BEFORE CONTINUING, MAKE EVERY EFFORT TO ENSURE PRIVACY.</span></p>
+  - name: CGIN80.QM414
+    conditions:
+      - questionText:
+          EN: |
+            <p>414. I would like to ask some questions about sexual activity in order to gain a better understanding of some important life issues.  Let me assure you again that your answers are completely confidential and will not be told to anyone. If we should come to any question that you don't want to answer, just let me know and we will go to the next question. How old were you when you had sexual intercourse for the very first time?</p>
+          FR: |-
+            <p>414.  Je voudrais maintenant vous poser des questions sur votre activit&#233; sexuelle pour mieux comprendre certains aspects importants de la vie. Je voudrais vous assurer de nouveau que toutes vos r&#233;ponse sont absolument confidentielles et qu&#39;elles ne seront divulgu&#233;es &#224; personne. S&#39;il arrivait que je pose une question &#224; laquelle vous ne voulez pas r&#233;pondre, dites-le moi et je passerai &#224; la question suivante. Quel &#226;ge aviez-vous quand vous avez eu, pour la premi&#232;re fois, des rapports sexuels&#160;?</p>
+  - name: QM415_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>415. I would like to ask you about your recent sexual activity. When was the last time you had sexual intercourse?</p>
+          FR: |-
+            <p>415.  Je voudrais vous poser des questions sur votre activit&#233; sexuelle r&#233;cente. Quand avez-vous eu des rapports sexuels pour la derni&#232;re fois&#160;?</p>
+  - name: CGIN80.QM415N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">IF LESS THAN 12 MONTHS, ANSWER MUST BE RECORDED IN DAYS, WEEKS OR MONTHS</span></p>
+            <p><span class="instruction">IF 12 MONTHS (ONE YEAR) OR MORE, ANSWER MUST BE RECORDED IN YEARS.</span></p>
+  - name: CGIN80.QM415U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD UNITS</span></p>
+  - name: CGIN80.QM416
+    conditions:
+      - questionText:
+          EN: |
+            <p>416. The last time you had sexual intercourse, did you or your partner do something or use any method to delay or avoid a pregnancy?</p>
+          FR: |-
+            <p>416.  La derni&#232;re fois que vous avez eu des rapports sexuels, est-ce que vous ou votre partenaire avez fait quelque chose ou utilis&#233; une m&#233;thode pour retarder ou &#233;viter une grossesse ?</p>
+  - name: CGIN80.QM417
+    conditions:
+      - questionText:
+          EN: |
+            <p>417. Do you know of a place where you can obtain a method of family planning?</p>
+          FR: |-
+            <p>417.  Connaissez-vous un endroit o&#249; vous pouvez vous procurer une m&#233;thode de planification familiale ?</p>
+  - name: CGIN80.QM418
+    conditions:
+      - questionText:
+          EN: |
+            <p>418. What method did you or your partner use?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+          FR: |-
+            <p>418.  Quelle m&#233;thode avez-vous, ou votre partenaire, utilis&#233; ? </p><p><span class="instruction">ENREGISTREZ TOUT CE QUI EST MENTIONN&#201;.</span></p>
+  - name: CGIN80.QM419
+    conditions:
+      - questionText:
+          EN: |
+            <p>419. The last time you had sexual intercourse, was a condom used?</p>
+          FR: |-
+            <p>419.  La derni&#232;re fois que vous avez eu des rapports sexuels, est-ce qu&#39;un condom a &#233;t&#233; utilis&#233; ?</p>
+  - name: CGIN80.Z_M420
+    conditions:
+      - questionText:
+          EN: |
+            <p>420. What was the brand name of the condom used?</p>
+            <p><span class="instruction">IF BRAND NOT KNOWN, ASK TO SEE THE PACKAGE.</span></p>
+  - name: CGIN80.QM421
+    conditions:
+      - questionText:
+          EN: |
+            <p>421. From where did you obtain the condom the last time?</p>
+            <p><span class="instruction">PROBE TO IDENTIFY TYPE OF SOURCE.</span></p>
+            <p><span class="instruction">IF UNABLE TO DETERMINE IF PUBLIC, PRIVATE, OR NGO SECTOR, RECORD '96' AND WRITE THE NAME OF THE PLACE.</span></p>
+          FR: |-
+            <p>421.  O&#249; vous &#233;tiez-vous procur&#233; le condom la derni&#232;re fois ?</p><p><span class="instruction">INSISTEZ POUR D&#201;TERMINER LE TYPE D&#39;ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ PAS D&#201;TERMINER SI L&#39;ENDROIT EST DU SECTEUR PUBLIC OU PRIV&#201; OU SI C&#39;EST UNE ONG, ENREGISTREZ  &#39;96&#39; ET &#201;CRIVEZ LE NOM DE L&#39;ENDROIT.</span></p>
+  - name: CGIN80.QM422
+    conditions:
+      - questionText:
+          EN: |
+            <p>422. What was your relationship to this person with whom you had sexual intercourse?</p>
+            <p><span class="instruction">IF GIRLFRIEND: </span>Were you living together as if married?</p>
+            <p><span class="instruction">IF YES, RECORD '2'.</span></p>
+            <p><span class="instruction">IF NO, RECORD '3'.</span></p>
+          FR: |-
+            <p>422.  Quelle &#233;tait votre relation avec cette personne avec qui vous avez eu des rapports sexuels&#160;?</p><p>SI PETITE AMIE&#160;: Viviez-vous ensemble comme si vous &#233;tiez mari&#233;&#160;?</p><p><span class="instruction">SI OUI, ENCERCLEZ &#39;2&#39;.</span></p><p><span class="instruction">SI NON, ENCERCLEZ &#39;3&#39;.</span></p>
+  - name: CGIN80.QM423
+    conditions:
+      - questionText:
+          EN: |
+            <p>423. Apart from this person, have you had sexual intercourse with any other person in the last 12 months?</p>
+          FR: |-
+            <p>423.  &#192; part cette personne, avez-vous eu des rapports sexuels avec une autre personne au cours des 12 derniers mois&#160;?</p>
+  - name: CGIN80.QM424
+    conditions:
+      - questionText:
+          EN: |
+            <p>424. The last time you had sexual intercourse with this second person, was a condom used?</p>
+          FR: |-
+            <p>424.  La derni&#232;re fois que vous avez eu des rapports sexuels avec cette deuxi&#232;me personne, est-ce qu&#39;un condom a &#233;t&#233; utilis&#233; ?</p>
+  - name: CGIN80.QM425
+    conditions:
+      - questionText:
+          EN: |
+            <p>425. What was your relationship to this second person with whom you had sexual intercourse?</p>
+            <p><span class="instruction">IF GIRLFRIEND:</span> Were you living together as if married?</p>
+            <p><span class="instruction">IF YES, RECORD '2'.</span></p>
+            <p><span class="instruction">IF NO, RECORD '3'.</span></p>
+          FR: |-
+            <p>425.  Quelle &#233;tait votre relation avec cette seconde personne avec qui vous avez eu des rapports sexuels ?</p><p>SI PETITE AMIE: Viviez-vous ensemble comme si vous &#234;tiez mari&#233; ?</p><p><span class="instruction">SI OUI, ENREGISTREZ &#39;2&#39;.</span></p><p><span class="instruction">SI NON, ENREGISTREZ &#39;3&#39;.</span></p>
+  - name: CGIN80.QM426
+    conditions:
+      - questionText:
+          EN: |
+            <p>426. Apart from these two people, have you had sexual intercourse with any other person in the last 12 months?</p>
+          FR: |-
+            <p>426.  &#192; part ces deux personnes, avez-vous eu des rapports sexuels avec d&#39;autres personnes au cours des 12 derniers mois ?</p>
+  - name: CGIN80.QM427
+    conditions:
+      - questionText:
+          EN: |
+            <p>427. The last time you had sexual intercourse with this third person, was a condom used?</p>
+          FR: |-
+            <p>427.  La derni&#232;re fois que vous avez eu des rapports sexuels avec cette troisi&#232;me personne, est-ce qu&#39;un condom a &#233;t&#233; utilis&#233; ?</p>
+  - name: CGIN80.QM428
+    conditions:
+      - questionText:
+          EN: |
+            <p>428. What was your relationship to this third person with whom you had sexual intercourse?</p>
+            <p><span class="instruction">IF GIRLFRIEND:</span> Were you living together as if married?</p>
+            <p><span class="instruction">IF YES, RECORD '2'.</span></p>
+            <p><span class="instruction">IF NO, RECORD '3'.</span></p>
+          FR: |-
+            <p>428.  Quelle &#233;tait votre relation avec cette troisi&#232;me personne avec qui vous avez eu des rapports sexuels&#160;?</p><p>SI PETITE AMIE&#160;: Viviez-vous ensemble comme si vous &#233;tiez mari&#233;&#160;?</p><p><span class="instruction">SI OUI, ENCERCLEZ &#39;2&#39;.</span></p><p><span class="instruction">SI NON, ENCERCLEZ &#39;3&#39;.</span></p>
+  - name: CGIN80.QM429
+    conditions:
+      - questionText:
+          EN: |
+            <p>429. In total, with how many different people have you had sexual intercourse in your lifetime?</p>
+            <p><span class="instruction">IF NON-NUMERIC ANSWER, PROBE TO GET AN ESTIMATE.</span></p>
+            <p><span class="instruction">IF NUMBER OF PARTNERS IS 95 OR MORE, RECORD '95'.</span></p>
+          FR: |-
+            <p>429.  En tout, durant votre vie, avec combien de personnes diff&#233;rentes avez-vous eu des rapports sexuels&#160;?</p><p><span class="instruction">DANS LE CAS DE R&#201;PONSE NON NUM&#201;RIQUE, INSISTEZ POUR OBTENIR UNE ESTIMATION. SI LE NOMBRE DE FOIS EST 95 OU PLUS, INSCRIVEZ &#39;95&#39;.</span></p>
+  - name: CGIN80.QM504
+    conditions:
+      - questionText:
+          EN: |
+            <p>504. Is your ~~partner~~ currently pregnant?</p>
+          FR: |-
+            <p>504.  Est-ce que votre ~~PARTNER~~ est actuellement enceinte ?</p>
+  - name: CGIN80.QM505
+    conditions:
+      - questionText:
+          EN: |
+            <p>505. Now I have some questions about the future.  After the child you and your ~~partner~~ are expecting now, would you like to have another child, or would you prefer not have any more children?</p>
+          FR: |-
+            <p>505.  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Apr&#232;s l&#39;enfant que vous et votre ~~PARTNER~~ attendez maintenant, souhaiteriez-vous un autre enfant ou pr&#233;f&#233;reriez-vous ne plus avoir d&#39;enfants&#160;?</p>
+  - name: QM506_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>506. After the birth of the child you are expecting now, how long would you like to wait before the birth of another child?</p>
+          FR: |-
+            <p>506.  Apr&#232;s la naissance de l&#39;enfant que vous attendez, combien de temps voudriez-vous attendre avant la naissance d&#39;un autre enfant&#160;?</p>
+  - name: CGIN80.QM506N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF MONTHS OR YEARS.</span></p>
+  - name: CGIN80.QM506U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD UNITS.</span></p>
+  - name: CGIN80.QM507
+    conditions:
+      - logic: QM208 = 0
+        questionText:
+          EN: |
+            <p>507. Now I have some questions about the future. Would you like to have a child, or would you prefer not to have any children?</p>
+          FR: |-
+            <p>507b).  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Voudriez-vous avoir un enfant ou pr&#233;f&#233;reriez-vous ne pas avoir d&#39;enfant&#160;?</p>
+      - logic: QM208 > 0
+        questionText:
+          EN: |
+            <p>507. Now I have some questions about the future. Would you like to have another child, or would you prefer not to have any more children?</p>
+          FR: |-
+            <p>507a).  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Voudriez-vous avoir un autre enfant ou pr&#233;f&#233;reriez-vous ne plus avoir d&#39;enfant&#160;?</p>
+  - name: QM508_BLOCK
+    conditions:
+      - logic: QM208 = 0
+        questionText:
+          EN: |
+            <p>508. How long would you like to wait from now before the birth of a child?</p>
+          FR: |-
+            <p>508b).  Combien de temps voudriez-vous attendre &#224; partir de maintenant avant la naissance d&#39;un enfant&#160;?</p>
+      - logic: QM208 > 0
+        questionText:
+          EN: |
+            <p>508. How long would you like to wait from now before the birth of another child?</p>
+          FR: |-
+            <p>508a).  Combien de temps voudriez-vous attendre &#224; partir de maintenant avant la naissance d&#39;un autre enfant&#160;?</p>
+  - name: CGIN80.QM508N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF MONTHS OR YEARS.</span></p>
+  - name: CGIN80.QM508U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD UNITS.</span></p>
+  - name: CGIN80.QM509
+    conditions:
+      - questionText:
+          EN: |
+            <p>509. Are any of your wives or partners currently pregnant?</p>
+          FR: |-
+            <p>509.  Est-ce que l&#39;une de vos (&#233;pouse/partenaire)s est actuellement enceinte ?</p>
+  - name: CGIN80.QM510
+    conditions:
+      - questionText:
+          EN: |
+            <p>510. Now I have some questions about the future.  After the child you and your wife or partner are expecting now, would you like to have another child, or would you prefer not have any more children?</p>
+          FR: |-
+            <p>510.  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Apr&#232;s la naissance de l&#39;enfant que vous et votre (&#233;pouse/partenaire) attendez, voudriez-vous avoir un autre enfant ou pr&#233;f&#233;reriez-vous ne plus avoir d&#39;enfant&#160;?</p>
+  - name: QM511_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>511. After the birth of the child you are expecting now, how long would you like to wait before the birth of another child?</p>
+          FR: |-
+            <p>511.  Apr&#232;s la naissance de l&#39;enfant que vous attendez, combien de temps voudriez-vous attendre avant la naissance d&#39;un autre enfant&#160;?</p>
+  - name: CGIN80.QM511N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF MONTHS OR YEARS.</span></p>
+  - name: CGIN80.QM511U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD UNITS.</span></p>
+  - name: CGIN80.QM512
+    conditions:
+      - logic: QM208 = 0
+        questionText:
+          EN: |
+            <p>512. Now I have some questions about the future. Would you like to have a child, or would you prefer not to have any children?</p>
+          FR: |-
+            <p>512b).  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Voudriez-vous avoir un enfant ou pr&#233;f&#233;reriez-vous ne pas avoir d&#39;enfant&#160;?</p>
+      - logic: QM208 > 0
+        questionText:
+          EN: |
+            <p>512. Now I have some questions about the future. Would you like to have another child, or would you prefer not to have any more children?</p>
+          FR: |-
+            <p>512a).  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Voudriez-vous avoir un autre enfant ou pr&#233;f&#233;reriez-vous ne plus avoir d&#39;enfant&#160;?</p>
+  - name: QM513_BLOCK
+    conditions:
+      - logic: QM208 = 0
+        questionText:
+          EN: |
+            <p>513. How long would you like to wait from now before the birth of a child?</p>
+          FR: |-
+            <p>513b).  Combien de temps voudriez-vous attendre &#224; partir de maintenant avant la naissance d&#39;un enfant&#160;?</p>
+      - logic: QM208 > 0
+        questionText:
+          EN: |
+            <p>513. How long would you like to wait from now before the birth of another child?</p>
+          FR: |-
+            <p>513a).  Combien de temps voudriez-vous attendre &#224; partir de maintenant avant la naissance d&#39;un autre enfant&#160;?</p>
+  - name: CGIN80.QM513N
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF MONTHS OR YEARS.</span></p>
+  - name: CGIN80.QM513U
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD UNITS.</span></p>
+  - name: CGIN80.QM514
+    conditions:
+      - logic: LCHILD = 0
+        questionText:
+          EN: |
+            <p>514. If you could choose exactly the number of children to have in your whole life, how many would that be?</p>
+            <p><span class="instruction">PROBE FOR A NUMERIC RESPONSE.</span></p>
+          FR: |-
+            <p>514b).  Si vous pouviez choisir exactement le nombre d&#39;enfants &#224; avoir dans votre vie, combien en voudriez-vous&#160;?</p>
+      - logic: LCHILD > 0
+        questionText:
+          EN: |
+            <p>514. If you could go back to the time you did not have any children and could choose exactly the number of children to have in your whole life, how many would that be?</p>
+            <p><span class="instruction">PROBE FOR A NUMERIC RESPONSE.</span></p>
+          FR: |-
+            <p>514a).  Si vous pouviez revenir &#224; l&#39;&#233;poque o&#249; vous n&#39;aviez pas d&#39;enfant et que vous pouviez choisir exactement le nombre d&#39;enfants &#224; avoir dans votre vie, combien auriez-vous voulu en avoir&#160;?</p>
+  - name: QM515_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>515. How many of these children would you like to be boys, how many would you like to be girls and for how many would it not matter if it's a boy or a girl?</p>
+          FR: |-
+            <p>515.  Parmi ces enfants, combien souhaiteriez-vous de gar&#231;ons, combien souhaiteriez-vous de filles et pour combien d&#39;entre eux, le sexe n&#39;aurait-il pas d&#39;importance&#160;?</p>
+  - name: CGIN80.QM515A
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF BOYS</span></p>
+  - name: CGIN80.QM515B
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF GIRLS</span></p>
+  - name: CGIN80.QM515C
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD NUMBER OF EITHER SEX</span></p>
+  - name: CGIN80.QM601
+    conditions:
+      - questionText:
+          EN: |
+            <p>601. Have you done any work in the last 7 days?</p>
+          FR: |-
+            <p>601.  Avez-vous fait un travail quelconque au cours des 7 derniers jours&#160;?</p>
+  - name: CGIN80.QM602
+    conditions:
+      - questionText:
+          EN: |
+            <p>602. Although you did not work in the last 7 days, do you have any job or business from which you were absent for leave, illness, vacation, or any other such reason?</p>
+          FR: |-
+            <p>602.  Bien que vous n&#39;ayez pas travaill&#233; au cours des 7 derniers jours, est-ce que vous avez un travail ou une affaire dont vous avez d&#251; vous absenter pour cong&#233;, maladie, vacances ou pour une autre raison&#160;?</p>
+  - name: CGIN80.QM603
+    conditions:
+      - questionText:
+          EN: |
+            <p>603. Have you done any work in the last 12 months?</p>
+          FR: |-
+            <p>603.  Avez-vous fait un travail quelconque au cours des 12 derniers mois&#160;?</p>
+  - name: CGIN80.QM604
+    conditions:
+      - questionText:
+          EN: |
+            <p>604. What is your occupation? That is, what kind of work do you mainly do?</p>
+          FR: |-
+            <p>604.  Quelle est votre occupation ? C&#39;est-&#224;-dire quel genre de travail faites-vous principalement&#160;?</p>
+  - name: CGIN80.QM605
+    conditions:
+      - questionText:
+          EN: |
+            <p>605. Do you usually work throughout the year, or do you work seasonally, or only once in a while?</p>
+          FR: |-
+            <p>605.  Travaillez-vous habituellement toute l&#39;ann&#233;e, ou de mani&#232;re saisonni&#232;re ou travaillez-vous seulement de temps en temps&#160;?</p>
+  - name: CGIN80.QM606
+    conditions:
+      - questionText:
+          EN: |
+            <p>606. Are you paid in cash or kind for this work or are you not paid at all?</p>
+          FR: |-
+            <p>606.  &#202;tes-vous pay&#233; en argent ou en nature pour ce travail ou n&#39;&#234;tes-vous pas pay&#233; du tout&#160;?</p>
+  - name: CGIN80.QM609
+    conditions:
+      - questionText:
+          EN: |
+            <p>609. Who usually decides how the money you earn will be used: you, your ~~partner~~, or you and your ~~partner~~ jointly?</p>
+          FR: |-
+            <p>609.  Habituellement, qui d&#233;cide comment l&#39;argent que vous gagnez va &#234;tre utilis&#233;&#160;: c&#39;est vous, votre ~~PARTNER~~, ou conjointement vous et votre ~~PARTNER~~&#160;?</p>
+  - name: CGIN80.QM610
+    conditions:
+      - questionText:
+          EN: |
+            <p>610. Who usually makes decisions about health care for yourself: you, your ~~partner~~, you and your ~~partner~~ jointly, or someone else?</p>
+          FR: |-
+            <p>610.  Habituellement, qui prend les d&#233;cisions en ce qui concerne vos propres soins de sant&#233; : vous, votre ~~PARTNER~~, vous et votre ~~PARTNER~~ conjointement ou quelqu&#39;un d&#39;autre&#160;?</p>
+  - name: CGIN80.QM611
+    conditions:
+      - questionText:
+          EN: |
+            <p>611. Who usually makes decisions about making major HOUSEHOLD purchases?</p>
+          FR: |-
+            <p>611.  Qui prend habituellement les d&#233;cisions concernant les achats importants pour le m&#233;nage&#160;?</p>
+  - name: CGIN80.QM612
+    conditions:
+      - questionText:
+          EN: |
+            <p>612. Do you own this or any other house either alone or jointly with someone else?</p>
+          FR: |-
+            <p>612.  Est-ce que vous poss&#233;dez cette maison ou une autre maison seul ou conjointement avec quelqu&#39;un d&#39;autre&#160;?</p>
+  - name: CGIN80.QM613
+    conditions:
+      - questionText:
+          EN: |
+            <p>613. Do you have a title deed or other government recognized document for any house you own?</p>
+          FR: |-
+            <p>613.  Avez-vous un titre de propri&#233;t&#233; ou un autre document reconnu par le gouvernement pour une maison que vous poss&#233;dez ?</p>
+  - name: CGIN80.QM614
+    conditions:
+      - questionText:
+          EN: |
+            <p>614. Is your name on this document?</p>
+          FR: |-
+            <p>614.  Est-ce que votre nom figure sur ce document ?</p>
+  - name: CGIN80.QM615
+    conditions:
+      - questionText:
+          EN: |
+            <p>615. Do you own any agricultural or non-agricultural land either alone or jointly with someone else?</p>
+          FR: |-
+            <p>615.  Est-ce que vous poss&#233;dez de la terre agricole ou non agricole, seul ou conjointement avec quelqu&#39;un d&#39;autre&#160;?</p>
+  - name: CGIN80.QM616
+    conditions:
+      - questionText:
+          EN: |
+            <p>616. Do you have a title deed or other government recognized document for any land you own?</p>
+          FR: |-
+            <p>616.  Avez-vous un titre de propri&#233;t&#233; ou un autre document reconnu par le gouvernement pour des terres que vous poss&#233;dez ?</p>
+  - name: CGIN80.QM617
+    conditions:
+      - questionText:
+          EN: |
+            <p>617. Is your name on this document?</p>
+          FR: |-
+            <p>617.  Est-ce que votre nom figure sur ce document ?</p>
+  - name: CGIN80.QM617A
+    conditions:
+      - questionText:
+          EN: |
+            <p>617A. Do you have an account in a bank or other financial institution that you yourself use?</p>
+          FR: |-
+            <p>617A.  Avez-vous un compte dans une banque ou dans une autre institution financi&#232;re que vous pouvez utiliser vous-m&#234;me ?</p>
+  - name: CGIN80.QM617B
+    conditions:
+      - questionText:
+          EN: |
+            <p>617B. Did you yourself put money in or take money out of this account in the last 12 months?</p>
+          FR: |-
+            <p>617B.  Au cours des 12 derniers mois, avez-vous vous-m&#234;me d&#233;pos&#233; de l&#39;argent sur ce compte ou en avez-vous retir&#233; ?</p>
+  - name: CGIN80.QM617C
+    conditions:
+      - questionText:
+          EN: |
+            <p>617C. In the last 12 months, have you used a mobile phone to make financial transactions such as sending or receiving money, paying bills, purchasing goods or services, or receiving wages? </p>
+          FR: |-
+            <p>617C.  Au cours des 12 derniers mois, avez-vous utilis&#233; un t&#233;l&#233;phone portable pour effectuer des transactions financi&#232;res comme envoyer ou recevoir de l&#39;argent, payer des factures, acheter des biens ou des services ou recevoir un salaire ?</p>
+  - name: QM618_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>618. In your opinion, is a husband justified in hitting or beating his wife in the following situations:</p>
+          FR: |-
+            <p>618.  Selon vous, est-il justifi&#233; qu&#39;un mari frappe ou batte sa femme dans les situations suivantes&#160;:</p>
+  - name: CGIN80.QM618A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) If she goes out without telling him?</p>
+          FR: |-
+            <p>618a).  Si elle sort sans le lui dire&#160;?</p>
+  - name: CGIN80.QM618B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) If she neglects the children?</p>
+          FR: |-
+            <p>618b).  Si elle n&#233;glige les enfants&#160;?</p>
+  - name: CGIN80.QM618C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) If she argues with him?</p>
+          FR: |-
+            <p>618c).  Si elle argumente avec lui&#160;?</p>
+  - name: CGIN80.QM618D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) If she refuses to have sex with him?</p>
+          FR: |-
+            <p>618d).  Si elle refuse d&#39;avoir des rapports sexuels avec lui&#160;?</p>
+  - name: CGIN80.QM618E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) If she burns the food?</p>
+          FR: |-
+            <p>618e).  Si elle br&#251;le la nourriture&#160;?</p>
+  - name: CGIN80.QM619
+    conditions:
+      - questionText:
+          EN: |
+            <p>619. As far as you know did your father ever beat your mother?</p>
+          FR: |-
+            <p>619.  &#192; votre connaissance, est-ce qu&#39;il est arriv&#233; que votre p&#232;re batte votre m&#232;re ?</p>
+  - name: CGIN80.QM700
+    conditions:
+      - questionText:
+          EN: |
+            <p>700. Now I would like to talk about HIV and AIDS.</p>
+          FR: |-
+            <p>700.  Je voudrais maintenant parler avec vous du VIH et du sida.</p>
+  - name: CGIN80.QM701
+    conditions:
+      - questionText:
+          EN: |
+            <p>701. Have you ever heard of HIV or AIDS?</p>
+          FR: |-
+            <p>701.  Avez-vous d&#233;j&#224; entendu parler du VIH ou du sida ?</p>
+  - name: CGIN80.QM703
+    conditions:
+      - questionText:
+          EN: |
+            <p>703. HIV is the virus that can lead to AIDS. Can people reduce their chances of getting HIV by having just one uninfected sex partner who has no other sex partners?</p>
+          FR: |-
+            <p>703.  Le VIH est le virus qui cause le sida. Est-ce qu&#39;on peut r&#233;duire le risque de contracter le VIH en ayant juste un seul partenaire sexuel qui n&#39;est pas infect&#233; et qui n&#39;a aucun autre partenaire sexuel&#160;?</p>
+  - name: CGIN80.QM704
+    conditions:
+      - questionText:
+          EN: |
+            <p>704. Can people get HIV from mosquito bites?</p>
+          FR: |-
+            <p>704.  Est-ce qu&#39;on peut contracter le virus du sida par les piq&#251;res de moustiques&#160;?</p>
+  - name: CGIN80.QM705
+    conditions:
+      - questionText:
+          EN: |
+            <p>705. Can people reduce their chance of getting HIV by using a condom every time they have sex?</p>
+          FR: |-
+            <p>705.  Est-ce qu&#39;on peut r&#233;duire le risque de contracter le virus du sida en utilisant des condoms au cours de chaque rapport sexuel&#160;?</p>
+  - name: CGIN80.QM706
+    conditions:
+      - questionText:
+          EN: |
+            <p>706. Can people get HIV by sharing food with a person who has HIV?</p>
+          FR: |-
+            <p>706.  Est-ce qu&#39;on peut contracter le virus du sida en partageant la nourriture avec une personne qui a le sida&#160;?</p>
+  - name: CGIN80.QM707
+    conditions:
+      - questionText:
+          EN: |
+            <p>707. Is it possible for a healthy-looking person to have HIV?</p>
+          FR: |-
+            <p>707.  Est-il possible qu&#39;une personne paraissant en bonne sant&#233; ait, en fait, le virus du sida&#160;?</p>
+  - name: CGIN80.QM708
+    conditions:
+      - questionText:
+          EN: |
+            <p>708. Have you heard of ARVs, that is, antiretroviral medicines that treat HIV? </p>
+          FR: |-
+            <p>708.  Avez-vous entendu parler des TAR, c&#39; est-&#224;-dire  des m&#233;dicaments antir&#233;troviraux qui traitent le VIH ?</p>
+  - name: CGIN80.QM709
+    conditions:
+      - questionText:
+          EN: |
+            <p>709. Are there any special medicines that a doctor or a nurse can give to a woman infected with HIV to reduce the risk of transmission to the baby?</p>
+          FR: |-
+            <p>709.  Est-ce qu&#39;il y a des m&#233;dicaments sp&#233;ciaux qu&#39;un m&#233;decin ou une infirmi&#232;re peut donner &#224; une femme ayant contract&#233; le VIH pour r&#233;duire le risque de transmission au b&#233;b&#233; ?</p>
+  - name: CGIN80.QM710
+    conditions:
+      - questionText:
+          EN: |
+            <p>710. Have you heard of PrEP, a medicine taken daily that can prevent a person from getting HIV?</p>
+          FR: |-
+            <p>710.  Avez-vous entendu parler de la PrEP, c&#39;est-&#224;-dire un m&#233;dicament que l&#39;on prend tous les jours pour &#233;viter qu&#39;une personne ne contracte le VIH ?</p>
+  - name: CGIN80.QM711
+    conditions:
+      - questionText:
+          EN: |
+            <p>711. Do you approve of people who take a pill every day to prevent getting HIV?</p>
+          FR: |-
+            <p>711.  Est-ce que vous approuvez les gens qui prennent un comprim&#233; tous les jours pour &#233;viter de contracter le VIH ?</p>
+  - name: CGIN80.QM712
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">712. CHECK FOR PRESENCE OF OTHERS. BEFORE CONTINUING, MAKE EVERY EFFORT TO ENSURE PRIVACY.</span></p>
+          FR: |-
+            <p><span class="instruction">712.  V&#201;RIFIEZ LA PR&#201;SENCE D&#39;AUTRES PERSONNES. AVANT DE CONTINUER, FAITES TOUT VOTRE POSSIBLE POUR VOUS TROUVER EN PRIV&#201;.</span></p>
+  - name: CGIN80.QM713
+    conditions:
+      - questionText:
+          EN: |
+            <p>713. Have you ever been tested for HIV?</p>
+          FR: |-
+            <p>713.  Avez-vous d&#233;j&#224; fait un test du VIH ?</p>
+  - name: QM714_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>714. In what month and year was your most recent HIV test?</p>
+          FR: |-
+            <p>714.  De quel mois et de quelle ann&#233;e date votre test du VIH le plus r&#233;cent ?</p>
+  - name: CGIN80.QM714M
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD MONTH</span></p>
+  - name: CGIN80.QM714Y
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD YEAR</span></p>
+  - name: CGIN80.QM715
+    conditions:
+      - questionText:
+          EN: |
+            <p>715. Where was the test done?</p>
+            <p><span class="instruction">PROBE TO IDENTIFY THE TYPE OF SOURCE.</span></p>
+            <p><span class="instruction">IF UNABLE TO DETERMINE IF PUBLIC, PRIVATE, OR NGO SECTOR, RECORD '96' AND WRITE THE NAME OF THE PLACE.</span></p>
+          FR: |-
+            <p>715.  O&#249; le test a-t-il &#233;t&#233; fait&#160;?</p><p><span class="instruction">INSISTEZ POUR D&#201;TERMINER LE TYPE D&#39;ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ D&#201;TERMINER SI L&#39;ENDROIT EST DU SECTEUR PUBLIC, PRIV&#201;, OU UNE ONG, ENREGISTREZ &#39;96&#39; ET &#201;CRIVEZ LE NOM DE L&#39;ENDROIT.</span></p>
+  - name: CGIN80.QM716
+    conditions:
+      - questionText:
+          EN: |
+            <p>716. Did you get the results of the test?</p>
+          FR: |-
+            <p>716.  Avez-vous eu les r&#233;sultats du test ?</p>
+  - name: CGIN80.QM717
+    conditions:
+      - questionText:
+          EN: |
+            <p>717. What was the result of the test?</p>
+          FR: |-
+            <p>717.  Quel &#233;tait le r&#233;sultat du test ?</p>
+  - name: QM718_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>718. In what month and year did you receive your first HIV-positive test result?</p>
+          FR: |-
+            <p>718.  En quel mois et en quelle ann&#233;e avez-vous re&#231;u votre premier r&#233;sultat positif au test du VIH ?</p>
+  - name: CGIN80.QM718M
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD MONTH</span></p>
+  - name: CGIN80.QM718Y
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD YEAR</span></p>
+  - name: CGIN80.QM719
+    conditions:
+      - questionText:
+          EN: |
+            <p>719. Are you currently taking ARVs, that is antiretroviral medicines?</p>
+            <p>By currently, I mean that you may have missed some doses but you are still taking ARVs.</p>
+          FR: |-
+            <p>719.  Est-ce que vous prenez actuellement des TAR qui sont des m&#233;dicaments antir&#233;troviraux ?  </p><p>Par actuellement, je veux dire que vous avez peut-&#234;tre oubli&#233; certaines doses mais vous &#234;tes toujours en train de prendre des TAR .</p>
+  - name: CGIN80.QM720
+    conditions:
+      - questionText:
+          EN: |
+            <p>720. How many times have you been tested for HIV in your lifetime?</p>
+            <p><span class="instruction">IF NON-NUMERIC ANSWER, PROBE TO GET AN ESTIMATE, IF NUMBER OF TESTS IS 95 OR MORE, RECORD '95'.</span></p>
+          FR: |-
+            <p>720.  Combien de fois, dans votre vie, avez-vous fait un test du VIH ?</p><p><span class="instruction">DANS LE CAS D&#39;UNE R&#201;PONSE NON NUM&#201;RIQUE, INSISTEZ POUR OBTENIR UNE ESTIMATION, SI LE NOMBRE DE TESTS EST 95 OU PLUS, ENREGISTREZ &#39;95&#39;.</span></p>
+  - name: CGIN80.QM721
+    conditions:
+      - questionText:
+          EN: |
+            <p>721. Have you ever heard of test kits people can use to test themselves for HIV?</p>
+          FR: |-
+            <p>721.  Avez-vous entendu parler de kits de tests que les gens peuvent utiliser pour se tester eux-m&#234;mes pour le VIH ?</p>
+  - name: CGIN80.QM722
+    conditions:
+      - questionText:
+          EN: |
+            <p>722. Have you ever tested yourself for HIV using a self-test kit?</p>
+          FR: |-
+            <p>722.  Vous &#234;tes-vous test&#233; vous-m&#234;me en utilisant un kit de test ?</p>
+  - name: CGIN80.QM723
+    conditions:
+      - questionText:
+          EN: |
+            <p>723. Would you buy fresh vegetables from a shopkeeper or vendor if you knew that this person had HIV?</p>
+          FR: |-
+            <p>723.  Est-ce que vous ach&#232;teriez des l&#233;gumes frais &#224; un marchand ou &#224; un vendeur si vous saviez que cette personne a le VIH&#160;?</p>
+  - name: CGIN80.QM724
+    conditions:
+      - questionText:
+          EN: |
+            <p>724. Do you think children living with HIV should be allowed to attend school with children who do not have HIV?</p>
+          FR: |-
+            <p>724.  Pensez-vous que des enfants vivant avec le VIH devraient &#234;tre autoris&#233;s &#224; aller &#224; l&#39;&#233;cole avec des enfants qui n&#39;ont pas le VIH ?</p>
+  - name: CGIN80.QM726
+    conditions:
+      - questionText:
+          EN: |
+            <p>726. Now I would like to ask you a few questions about your experiences living with HIV.</p>
+            <p>Have you disclosed your HIV status to anyone other than me?</p>
+          FR: |-
+            <p>726.  Maintenant, je voudrais vous poser des questions sur votre vie en tant que personne vivant avec le VIH .</p><p>Avez-vous r&#233;v&#233;l&#233; &#224; quelqu&#39;un d&#39;autre que moi que vous avez le VIH  ?</p>
+  - name: CGIN80.QM727
+    conditions:
+      - questionText:
+          EN: |
+            <p>727. Do you agree or disagree with the following statement: I have felt ashamed because of my HIV status.</p>
+          FR: |-
+            <p>727.  &#202;tes-vous d&#39;accord ou non avec la d&#233;claration suivante: J&#39;ai eu honte parce que j&#39;ai le VIH.</p>
+  - name: QM728_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>728. Please tell me if the following things have happened to you, or if you think they have happened to you, because of your HIV status in the last 12 months:</p>
+          FR: |-
+            <p>728.  Dites-moi, s&#39;il vous plait, si au cours des 12 derniers mois, il vous est arriv&#233; les choses suivantes ou si vous pensez qu&#39;elles vous sont arriv&#233;es parce que vous avez le VIH :</p>
+  - name: CGIN80.QM728A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) People have talked badly about me because of my HIV status.</p>
+          FR: |-
+            <p>728a).  Les gens ont mal parl&#233; de moi parce que j&#39;ai le VIH.</p>
+  - name: CGIN80.QM728B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Someone else disclosed my HIV status without my permission.</p>
+          FR: |-
+            <p>728b).  Quelqu&#39;un a r&#233;v&#233;l&#233; que j&#39;avais le VIH sans ma permission.</p>
+  - name: CGIN80.QM728C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) I have been verbally insulted, harassed, or threatened because of my HIV status.</p>
+          FR: |-
+            <p>728c).  J&#39;ai &#233;t&#233; insult&#233;, harcel&#233; ou menac&#233; parce que j&#39;ai le VIH.</p>
+  - name: CGIN80.QM728D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Healthcare workers talked badly about me because of my HIV status.</p>
+          FR: |-
+            <p>728d).  Le personnel de sant&#233; a mal parl&#233; de moi parce que j&#39;ai le VIH.</p>
+  - name: CGIN80.QM728E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Healthcare workers yelled at me, scolded me, called me names, or verbally abused me in another way because of my HIV status.</p>
+          FR: |-
+            <p>728e).  Le personnel de sant&#233; a cri&#233; sur moi, m&#39;a grond&#233;, m&#39;a trait&#233; de tous les noms ou m&#39;a agress&#233; verbalement  parce que j&#39;ai le VIH.</p>
+  - name: CGIN80.QM729
+    conditions:
+      - logic: QM701 <> 1
+        questionText:
+          EN: |
+            <p>729. Have you heard about infections that can be transmitted through sexual contact?</p>
+          FR: |-
+            <p>729b).  Avez-vous entendu parler d&#39;infections qui peuvent se transmettre par contact sexuel&#160;?</p>
+      - logic: QM701 = 1
+        questionText:
+          EN: |
+            <p>729. Apart from HIV, have you heard about other infections that can be transmitted through sexual contact?</p>
+          FR: |-
+            <p>729a).  &#192; part le sida, avez-vous entendu parler d&#39;autres infections qui peuvent se transmettre par contact sexuel&#160;?</p>
+  - name: CGIN80.QM732
+    conditions:
+      - questionText:
+          EN: |
+            <p>732. Now I would like to ask you some questions about your health in the last 12 months.  During the last 12 months, have you had a disease which you got through sexual contact?</p>
+          FR: |-
+            <p>732.  J&#39;aimerais maintenant vous poser quelques questions sur votre sant&#233; au cours des 12 derniers mois. Durant les 12 derniers mois, avez-vous eu une maladie que vous avez contract&#233;e par contact sexuel&#160;?</p>
+  - name: CGIN80.QM733
+    conditions:
+      - questionText:
+          EN: |
+            <p>733. Sometimes men experience an abnormal discharge from their penis.  During the last 12 months, have you had an abnormal discharge from your penis?</p>
+          FR: |-
+            <p>733.  Il arrive parfois que les hommes aient un &#233;coulement du p&#233;nis qui n&#39;est pas normal. Au cours des 12 derniers mois, avez-vous eu un &#233;coulement anormal du p&#233;nis ?</p>
+  - name: CGIN80.QM734
+    conditions:
+      - questionText:
+          EN: |
+            <p>734. Sometimes men have a sore or ulcer on or near their penis.  During the last 12 months, have you had a sore or ulcer on or near your penis?</p>
+          FR: |-
+            <p>734.  Il arrive parfois que les hommes aient une plaie ou un ulc&#232;re sur leur p&#233;nis ou &#224; c&#244;t&#233;. Au cours des 12 derniers mois, avez-vous eu une plaie ou un ulc&#232;re sur votre p&#233;nis ou &#224; c&#244;t&#233; ?</p>
+  - name: CGIN80.QM735
+    conditions:
+      - questionText:
+          EN: |
+            <p>735. If a wife knows her husband has a disease that she can get during sexual intercourse, is she justified in asking that they use a condom when they have sex?</p>
+          FR: |-
+            <p>735.  Si une femme sait que son mari est atteint d&#39;une maladie qu&#39;elle peut contracter au cours de rapports sexuels, pensez-vous qu&#39;il est justifi&#233; qu&#39;elle lui demande qu&#39;ils utilisent un condom quand ils ont des rapports sexuels&#160;?</p>
+  - name: CGIN80.QM736
+    conditions:
+      - questionText:
+          EN: |
+            <p>736. Is a wife justified in refusing to have sex with her husband when she knows he has sex with other women?</p>
+          FR: |-
+            <p>736.  Est-ce que vous pensez qu&#39;il est justifi&#233; qu&#39;une femme refuse d&#39;avoir des rapports sexuels avec son mari quand elle sait qu&#39;il a des relations sexuelles avec d&#39;autres femmes&#160;?</p>
+  - name: CGIN80.QM801
+    conditions:
+      - questionText:
+          EN: |
+            <p>801. Some men are circumcised. Are you circumcised?</p>
+          FR: |-
+            <p>801.  Certains hommes sont circoncis. &#202;tes-vous circoncis&#160;?</p>
+  - name: CGIN80.QM802
+    conditions:
+      - questionText:
+          EN: |
+            <p>802. Some men are traditionally circumcised by a traditional practitioner, family member or friend. Are you traditionally circumcised?</p>
+          FR: |-
+            <p>802.  Certains hommes ont &#233;t&#233; traditionnellement circoncis par un praticien traditionnel, un membre de la famille ou un ami. Avez-vous &#233;t&#233; traditionnellement circoncis ?</p>
+  - name: CGIN80.QM803
+    conditions:
+      - questionText:
+          EN: |
+            <p>803. How old were you when you got traditionally circumcised?</p>
+          FR: |-
+            <p>803.  Quel &#226;ge aviez-vous quand vous avez &#233;t&#233; traditionnellement circoncis ?</p>
+  - name: CGIN80.QM804
+    conditions:
+      - questionText:
+          EN: |
+            <p>804. Some men are medically circumcised, that is, the foreskin is completely removed from the penis by a healthcare worker. Are you medically circumcised?</p>
+          FR: |-
+            <p>804.  Certains hommes ont &#233;t&#233; m&#233;dicalement circoncis, c&#39;est-&#224;-dire qu&#39;un prestataire de sant&#233; leur a enlev&#233; enti&#232;rement le pr&#233;puce du p&#233;nis. Avez-vous &#233;t&#233; m&#233;dicalement circoncis ?</p>
+  - name: CGIN80.QM805
+    conditions:
+      - questionText:
+          EN: |
+            <p>805. How old were you when you got medically circumcised?</p>
+          FR: |-
+            <p>805.  Quel &#226;ge aviez-vous quand vous avez &#233;t&#233; m&#233;dicalement circoncis ?</p>
+  - name: CGIN80.QM806
+    conditions:
+      - questionText:
+          EN: |
+            <p>806. Do you currently smoke tobacco every day, some days, or not at all?</p>
+          FR: |-
+            <p>806.  Fumez-vous actuellement du tabac tous les jours, certains jours ou pas du tout ?</p>
+  - name: CGIN80.QM807
+    conditions:
+      - questionText:
+          EN: |
+            <p>807. In the past, have you smoked tobacco every day?</p>
+          FR: |-
+            <p>807.  Dans le pass&#233;, est-ce que vous fumiez tous les jours ?</p>
+  - name: CGIN80.QM808
+    conditions:
+      - questionText:
+          EN: |
+            <p>808. In the past, have you ever smoked tobacco every day, some days, or not at all?</p>
+          FR: |-
+            <p>808.  Dans le pass&#233;, est-ce que vous fumiez tous les jours, certains jours ou est-ce que vous ne fumiez pas ?</p>
+  - name: QM809_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>809. On average, how many of the following products do you currently smoke each day? Also, let me know if you use the product, but not every day.</p>
+            <p><span class="instruction">IF THE RESPONDENT REPORTS USING THE PRODUCT, BUT NOT EVERY DAY, RECORD '888'.  IF THE PRODUCT IS NOT USED AT ALL, RECORD '000'.</span></p>
+          FR: |-
+            <p>809.  En moyenne, parmi les produits suivants, combien en fumez-vous actuellement par jour ? Dites-mois aussi si vous consommez ces produits, mais pas chaque jour.</p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201; D&#201;CLARE UTILISER UN PRODUIT, MAIS PAS TOUS LES JOURS, INSCRIVEZ &#39;888&#39;. SI LE PRODUIT N&#39;EST PAS UTILIS&#201; DU TOUT, INSCRIVEZ &#39;000&#39;.</span></p>
+  - name: CGIN80.QM809A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Manufactured cigarettes?</p>
+          FR: |-
+            <p>809a).  Des cigarettes fabriqu&#233;es commercialement ?</p>
+  - name: CGIN80.QM809B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Hand-rolled cigarettes?</p>
+          FR: |-
+            <p>809b).  Des cigarette roul&#233;es &#224; la main ?</p>
+  - name: CGIN80.QM809C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Kreteks?</p>
+          FR: |-
+            <p>809c).  Des Kreteks ?</p>
+  - name: CGIN80.QM809D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Pipes full of tobacco?</p>
+          FR: |-
+            <p>809d).  Des pipes remplies de tabac ?</p>
+  - name: CGIN80.QM809E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Cigars, cheroots, or cigarillos?</p>
+          FR: |-
+            <p>809e).  Des cigares, cheroots ou cigarillos ?</p>
+  - name: CGIN80.QM809F
+    conditions:
+      - questionText:
+          EN: |
+            <p>f) Number of water pipe sessions?</p>
+          FR: |-
+            <p>809f).  Nombre de s&#233;ances de pipe &#224; eau/narguil&#233; ?</p>
+  - name: CGIN80.QM809G
+    conditions:
+      - questionText:
+          EN: |
+            <p>g) Any others?</p>
+          FR: |-
+            <p>809g).  Autre chose ?</p>
+  - name: QM810_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>810. On average, how many of the following products do you currently smoke each week? Also, let me know if you use the product, but not every week.</p>
+            <p><span class="instruction">IF THE RESPONDENT REPORTS USING THE PRODUCT, BUT NOT EVERY WEEK, RECORD '888'.  IF THE PRODUCT IS NOT USED AT ALL, RECORD '000'.</span></p>
+          FR: |-
+            <p>810.  En moyenne, parmi les produits suivants, combien en fumez-vous actuellement par semaine ? Dites-mois aussi si vous consommez ces produits, mais pas chaque semaine.</p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201; D&#201;CLARE UTILISER UN PRODUIT, MAIS PAS CHAQUE SEMAINE, INSCRIVEZ &#39;888&#39;. SI LE PRODUIT N&#39;EST PAS UTILIS&#201; DU TOUT, INSCRIVEZ &#39;000&#39;.</span></p>
+  - name: CGIN80.QM810A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Manufactured cigarettes?</p>
+          FR: |-
+            <p>810a).  Des cigarettes fabriqu&#233;es commercialement ?</p>
+  - name: CGIN80.QM810B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Hand-rolled cigarettes?</p>
+          FR: |-
+            <p>810b).  Des cigarette roul&#233;es &#224; la main ?</p>
+  - name: CGIN80.QM810C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Kreteks?</p>
+          FR: |-
+            <p>810c).  Des Kreteks ?</p>
+  - name: CGIN80.QM810D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Pipes full of tobacco?</p>
+          FR: |-
+            <p>810d).  Des pipes &#224; tabac ?</p>
+  - name: CGIN80.QM810E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Cigars, cheroots, cigarillos?</p>
+          FR: |-
+            <p>810e).  Des cigares, cheroots ou cigarillos ?</p>
+  - name: CGIN80.QM810F
+    conditions:
+      - questionText:
+          EN: |
+            <p>f) Number of water pipe sessions?</p>
+          FR: |-
+            <p>810f).  Nombre de s&#233;ances de pipe &#224; eau/narguil&#233; ?</p>
+  - name: CGIN80.QM810G
+    conditions:
+      - questionText:
+          EN: |
+            <p>g) Any others?</p>
+          FR: |-
+            <p>810g).  Autre chose ?</p>
+  - name: CGIN80.QM811
+    conditions:
+      - questionText:
+          EN: |
+            <p>811. Do you currently use smokeless tobacco every day, some days, or not at all?</p>
+          FR: |-
+            <p>811.  Consommez-vous actuellement du tabac non-fum&#233; chaque jour, certains jours ou pas du tout ?</p>
+  - name: QM812_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>812. On average, how many times a day do you use the following products? Also, let me know if you use the product, but not every day.</p>
+            <p><span class="instruction">IF THE RESPONDENT REPORTS USING THE PRODUCT, BUT NOT EVERY DAY, RECORD '888'.  IF THE PRODUCT IS NOT USED AT ALL, RECORD '000'.</span></p>
+          FR: |-
+            <p>812.  En moyenne, combien de fois par jour utilisez-vous les produits suivants ? Dites-moi aussi si vous utilisez le produit, mais pas chaque jour.</p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201; D&#201;CLARE UTILISER UN PRODUIT, MAIS PAS TOUS LES JOURS, INSCRIVEZ &#39;888&#39;. SI LE PRODUIT N&#39;EST PAS UTILIS&#201; DU TOUT, INSCRIVEZ &#39;000&#39;.</span></p>
+  - name: CGIN80.QM812A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Snuff, by mouth?</p>
+          FR: |-
+            <p>812a).  Du tabac &#224; chiquer, dans la bouche ?</p>
+  - name: CGIN80.QM812B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Snuff, by nose?</p>
+          FR: |-
+            <p>812b).  Du tabac &#224; priser, &#224; inhaler par le nez ?</p>
+  - name: CGIN80.QM812C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Chewing tobacco?</p>
+          FR: |-
+            <p>812c).  Du tabac &#224; m&#226;cher ?</p>
+  - name: CGIN80.QM812D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Betel quid with tobacco?</p>
+          FR: |-
+            <p>812d).  Du Betel &#224; m&#226;cher ?</p>
+  - name: CGIN80.QM812E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Any others?</p>
+          FR: |-
+            <p>812e).  Autre chose ?</p>
+  - name: QM813_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>813. On average, how many times a week do you use the following products? Also, let me know if you use the product, but not every week.</p>
+            <p><span class="instruction">IF THE RESPONDENT REPORTS USING THE PRODUCT, BUT NOT EVERY WEEK, RECORD '888'.  IF THE PRODUCT IS NOT USED AT ALL, RECORD '000'.</span></p>
+          FR: |-
+            <p>813.  En moyenne, combien de fois par semaine  utilisez-vous les produits suivants ? Dites-mois aussi si vous utilisez ce produit, mais pas chaque semaine.</p><p><span class="instruction">SI L&#39;ENQU&#202;T&#201; D&#201;CLARE UTILISER UN PRODUIT , MAIS PAS TOUTES LES SEMAINES,  INSCRIVEZ &#39;888&#39;. SI LE PRODUIT N&#39;EST PAS UTILIS&#201; DU TOUT, INSCRIVEZ &#39;000&#39;.</span></p>
+  - name: CGIN80.QM813A
+    conditions:
+      - questionText:
+          EN: |
+            <p>a) Snuff, by mouth?</p>
+          FR: |-
+            <p>813a).  Du tabac &#224; chiquer, dans la bouche ?</p>
+  - name: CGIN80.QM813B
+    conditions:
+      - questionText:
+          EN: |
+            <p>b) Snuff, by nose?</p>
+          FR: |-
+            <p>813b).  Du tabac &#224; priser, &#224; inhaler par le nez ?</p>
+  - name: CGIN80.QM813C
+    conditions:
+      - questionText:
+          EN: |
+            <p>c) Chewing tobacco?</p>
+          FR: |-
+            <p>813c).  Du tabac &#224; m&#226;cher ?</p>
+  - name: CGIN80.QM813D
+    conditions:
+      - questionText:
+          EN: |
+            <p>d) Betel quid with tobacco?</p>
+          FR: |-
+            <p>813d).  Du Betel &#224; m&#226;cher ?</p>
+  - name: CGIN80.QM813E
+    conditions:
+      - questionText:
+          EN: |
+            <p>e) Any others?</p>
+          FR: |-
+            <p>813e).  Autre chose ?</p>
+  - name: CGIN80.QM814
+    conditions:
+      - questionText:
+          EN: |
+            <p>814. Now I would like to ask you some questions about drinking alcohol. Have you ever consumed any alcohol, such as beer, wine, spirits, or [ADD OTHER LOCAL EXAMPLES]?</p>
+          FR: |-
+            <p>814.  Je voudrais maintenant vous poser des questions sur la consommation d&#39;alcool. Est-ce que vous avez d&#233;j&#224; bu de l&#39;alcool, comme de la bi&#232;re, du vin, des liqueurs ou [AJOUTER D&#39;AUTRES EXEMPLES LOCAUX] ?</p>
+  - name: CGIN80.QM815
+    conditions:
+      - questionText:
+          EN: |
+            <p>815. During the last one month, on how many days did you have an alcoholic drink?</p>
+            <p><span class="instruction">IF NON-NUMERIC ANSWER, PROBE TO GET AN ESTIMATE.  IF RESPONDENT ANSWERS 'EVERY DAY' OR 'ALMOST EVERY DAY', CODE '95'.</span></p>
+          FR: |-
+            <p>815.  Au cours du dernier mois, quel est le nombre de jours pendant lesquels vous avez vu une boisson alcoolis&#233;e ?</p><p><span class="instruction">DANS LE CAS D&#39;UNE R&#201;PONSE NON NUM&#201;RIQUE, INSISTEZ POUR OBTENIR UNE ESTIMATION. SI L&#39;ENQU&#202;T&#201; R&#201;POND &#39;CHAQUE JOUR&#39; OU &#39;PRESQUE CHAQUE JOUR,&#39; ENTOUREZ CODE &#39;95&#39;.</span></p>
+  - name: CGIN80.QM816
+    conditions:
+      - questionText:
+          EN: |
+            <p>816. We count one drink of alcohol as one can or bottle of beer, one glass of wine, one shot of spirits, or one cup of [ADD OTHER LOCAL EXAMPLES]. In the last one month, on the days that you drank alcohol, how many drinks did you usually have per day?</p>
+            <p><span class="instruction">SHOW PICTURES OF SIZES OF STANDARD DRINKS.</span></p>
+          FR: |-
+            <p>816.  Nous consid&#233;rons qu&#39;une canette ou une bouteille de bi&#232;re, un verre de vin, un verre de liqueur ou un verre de [AJOUTER DES EXEMPLES LOCAUX] est un verre d&#39;alcool. Au cours du dernier mois, les jours o&#249; vous avez bu de l’alcool, combien de verres buviez-vous habituellement par jour ?</p><p><span class="instruction">MONTREZ LES PHOTOS DE VERRES STANDARD DES BOISSONS ALCOOLIS&#201;ES</span></p>
+  - name: CGIN80.QM817
+    conditions:
+      - questionText:
+          EN: |
+            <p>817. Are you covered by any health insurance?</p>
+          FR: |-
+            <p>817.  &#202;tes-vous couvert par une assurance m&#233;dicale&#160;?</p>
+  - name: CGIN80.QM818
+    conditions:
+      - questionText:
+          EN: |
+            <p>818. What type of health insurance are you covered by?</p>
+            <p><span class="instruction">RECORD ALL MENTIONED.</span></p>
+          FR: |-
+            <p>818.  Par quel type d&#39;assurance m&#233;dicale &#234;tes-vous couvert ?</p><p><span class="instruction">ENREGISTREZ TOUT CE QUI EST MENTIONN&#201;.</span></p>
+...

@@ -1782,30 +1782,30 @@ ZGC_14        -> ZGC_14        //Was daughter's genital area sewn closed|La zone
 ZGC_15        -> ZGC_15        //Who performed daughter's circumcision|Z_ui a procédé à l'excision de sa fille
 
 //Record (AWSECECD) - Early childhood development
-AWSECECD    -> WSECECD    //Early childhood development
-ACOLECD     -> COLECD     //Column number|Numéro de colonne
-AECDCA      -> ECDCA      //Child line number|Numéro de ligne l'enfant
-AECDCN      -> ECDCN      //Child name under 5
-AECD1       -> ECD1       //Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
-AECD2       -> ECD2       //Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
-AECD3       -> ECD3       //Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
-AECD4       -> ECD4       //Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
-AECD5       -> ECD5       //Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
-AECD6       -> ECD6       //Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
-AECD7       -> ECD7       //Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
-AECD8       -> ECD8       //Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
-AECD9       -> ECD9       //Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
-AECD10      -> ECD10      //Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
-AECD11      -> ECD11      //Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
-AECD12      -> ECD12      //Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
-AECD13      -> ECD13      //If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
-AECD14      -> ECD14      //Can child count 10 objects without mistakes
-AECD15      -> ECD15      //Can color or play with building blocks without asking for help or giving up
-AECD16      -> ECD16      //Does child ask about familiar people other than parents when not there
-AECD17      -> ECD17      //Does child offer to help someone who seems to need help
-AECD18      -> ECD18      //Does child get along well with other children
-AECD19      -> ECD19      //How often does child seem to be very sad or depressed
-AECD20      -> ECD20      //Compared with other children, how much does child kick, bite, or hit other children or adults
+AWSECECD    ->QWSECECD    //Early childhood development
+ACOLECD     ->QCOLECD     //Column number|Numéro de colonne
+AECDCA      ->QECDCA      //Child line number|Numéro de ligne l'enfant
+AECDCN      ->QECDCN      //Child name under 5
+AECD1       ->QECD1       //Can walk on an uneven surface|Jouets avec lesquels l'enfant joue: fait maison
+AECD2       ->QECD2       //Can jump with both feet leaving the ground|Jouets avec lesquels l'enfant joue: venant d'un magasin
+AECD3       ->QECD3       //Can dress: put on pants and a shirt, without help|Jouets avec lesquels l'enfant joue: objets ménagers
+AECD4       ->QECD4       //Can fasten and unfasten buttons without help|L'enfant peut-il identifier au moins 10 lettres de l'alphabet
+AECD5       ->QECD5       //Can say 10 or more words, like mama or ball|L'enfant peut-il lire au moins quatre mots populaires
+AECD6       ->QECD6       //Can speak using sentences of 3 or more words that go together|L'enfant peut-il reconnaître les nombres de 1 à 10
+AECD7       ->QECD7       //Can speak using sentences of 5 or more words that go together|L'enfant peut-il ramasser un petit objet avec deux doigts
+AECD8       ->QECD8       //Can correctly use any of the words: 'I', 'you', 'she', or 'he'|L'enfant est-il parfois malade de jouer
+AECD9       ->QECD9       //Can consistently name an object well known, if shown|L'enfant peut-il suivre les instructions pour faire les choses correctement
+AECD10      ->QECD10      //Can recognize at least 5 letters of the alphabet|L'enfant peut-il faire des choses indépendamment
+AECD11      ->QECD11      //Can child write (his/her) name|L'enfant s'entend-il bien avec les autres enfants
+AECD12      ->QECD12      //Can recognize all numbers from 1 to 5|Est-ce que l'enfant donne des coups de pied, mord ou frappe d'autres enfants
+AECD13      ->QECD13      //If asked to give you 3 objects, does child give the correct amount|L'enfant est-il facilement distrait
+AECD14      ->QECD14      //Can child count 10 objects without mistakes
+AECD15      ->QECD15      //Can color or play with building blocks without asking for help or giving up
+AECD16      ->QECD16      //Does child ask about familiar people other than parents when not there
+AECD17      ->QECD17      //Does child offer to help someone who seems to need help
+AECD18      ->QECD18      //Does child get along well with other children
+AECD19      ->QECD19      //How often does child seem to be very sad or depressed
+AECD20      ->QECD20      //Compared with other children, how much does child kick, bite, or hit other children or adults
 
 //Record (AWSECSBC) - Social behavior change communication - Malaria
 AWSECSBC    -> Z_WSECSBC    //Social behavior change communication - Malaria

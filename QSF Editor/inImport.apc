@@ -3,7 +3,8 @@
 //set the following variables according to your scenario
 
 //Full path to excel workbook file. Note the C language type escaping of the '\' character
-string excelFile = "C:\\CG81\\Questionnaires\\EDSC-III 2025_Femmes_QRE.xlsx";
+// string excelFile = "C:\\CG81\\Questionnaires\\EDSC-III 2025_Femmes_QRE.xlsx";
+string excelFile = "C:\\CG81\\Questionnaires\\EDSC-III 2025_Hommes_QRE.xlsx";
 //name of the sheet with translations within the excel workbook
 string transl = "translations_CSPro";
 //language name as written in the first row of the translations sheet

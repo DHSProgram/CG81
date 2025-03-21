@@ -73,8 +73,8 @@ preproc
     arrayhh(i) = 0;
     arraywm(i) = 0;
   enddo;
-  fnameHH = filename( KEHH80 );     { get the file name from the household dictionary }
-  fnameIN = filename( KEIN80 );     { get the file name from the individual dictionary }
+  fnameHH = filename( CGHH80 );     { get the file name from the household dictionary }
+  fnameIN = filename( CGIN80 );     { get the file name from the individual dictionary }
 
   { set the name for the HTML file }
   HTML_InitAlign();
@@ -94,10 +94,10 @@ preproc
   HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
 
   { go over each household }
-  open( KEHH80 );
+  open( CGHH80 );
   if !FileEmpty( fnameHH ) then    { it is important because some interviewers may not have household questionnaires }
     HTML_BeginTable( CellValues, zstring2, 5 );  // generates the HTML table script with the column headers
-    while loadcase( KEHH80 ) do
+    while loadcase( CGHH80 ) do
       if QHRESULT = 1 & partialcs( 1, QHCLUST, QHNUMBER, 0, fnameHH  ) then
         xresult = edit("9",QHRESULT) + tr("-Partial")
       elseif QHRESULT <> 1 then
@@ -113,27 +113,26 @@ preproc
       if QHRESULT = 1 then
 
         { height/weight and hemoglobin for women }
-        // short version just biomarkers for children !!!
-        if QHSHORT then
+        if QHELIGM then
           wmhw = 0;
         else
-          wmhw = count( KEHH80.QHSEC01 where QH09 );
+          wmhw = count( CGHH80.QHSEC01 where QH09 );
         endif;
 
         { height/weight and hemoglobin for men }
-        if QHSHORT then
+        if QHELIGM then
           mnhw = 0;
         else
-          mnhw = count( KEHH80.QHSEC01 where QH10 );
+          mnhw = count( CGHH80.QHSEC01 where QH10 );
         endif;
 
         { height/weight and hemoglobin for children }
-        chhw = count( KEHH80.QHSEC01 where QH11 );
+        chhw = count( CGHH80.QHSEC01 where QH11 );
 
         { children/women/men measured }
-        x = count(KEHH80.QBSEC01 where QB104 <> notappl) + 
-        count(KEHH80.QBSEC02 where QB205 <> notappl) + 
-        count(KEHH80.QBSEC03 where QB305 <> notappl); 
+        x = count(CGHH80.QBSEC01 where QB104 <> notappl) + 
+        count(CGHH80.QBSEC02 where QB205 <> notappl) + 
+        count(CGHH80.QBSEC03 where QB305 <> notappl); 
       endif;                    
           { populates the elements of a row based on household information }
       fillhh();
@@ -151,7 +150,7 @@ preproc
               QLINE = QH10;
               zstring1 = tr("M-") + strip(QH02);
             endif;
-            if loadcase( KEIN80, QHCLUST, QHNUMBER, QLINE ) then
+            if loadcase( CGIN80, QHCLUST, QHNUMBER, QLINE ) then
               { populate array of individuals to check at the end if all of them are linked to a household }
               do j = 1 while j <= 100 & arrayhh(j)
                 if arrayhh(j) = QHNUMBER & arraywm(j) = QLINE then
@@ -193,17 +192,17 @@ preproc
   { at the time of loading eligibles in the household roster loop           }
   { set up header and title for 2nd table for shared household interviews }
   if !FileEmpty( fnameIN ) then    { it is important because some interviewers may not have individual questionnaires }
-    close( KEIN80 );
-    open( KEIN80 );
-    if countcases ( KEIN80 where !loadcase(KEHH80, QCLUSTER, QNUMBER) ) then // check first to see if any interviewers from shared hh's before generating table titles/headers
+    close( CGIN80 );
+    open( CGIN80 );
+    if countcases ( CGIN80 where !loadcase(CGHH80, QCLUSTER, QNUMBER) ) then // check first to see if any interviewers from shared hh's before generating table titles/headers
       HTML_Paragraph("");
       zstring2 = tr("Individual Interviews collected from shared households");
       fillhdr();
-      close( KEIN80 );
-      open( KEIN80 );
+      close( CGIN80 );
+      open( CGIN80 );
       HTML_BeginTable( CellValues, zstring2, 4 );  // generates the HTML table script with the column headers
       prevhh = 0;
-      while loadcase( KEIN80 ) do
+      while loadcase( CGIN80 ) do
         found = 0;
         do j = 1 while j <= 100 & !found
           if arrayhh(j) = QNUMBER & arraywm(j) = QLINE then

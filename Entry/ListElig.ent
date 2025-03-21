@@ -11,8 +11,8 @@ CAPIFont2=-016 0000 0000 0000 0400 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 CAPIFont1Color=0
 CAPIFont2Color=16711680
 [External Dictionaries]
-File=..\Dicts\ccHH80.dcf
-File=..\Dicts\ccIN80.dcf
+File=..\Dicts\CGHH80.dcf
+File=..\Dicts\CGIN80.dcf
 [AppCode]
 File=.\listelig.apc
 Include=..\Library\HTMLFunctions.apc
@@ -24,5 +24,5 @@ File=.\listelig.qsf
 File=.\Cnull.fmf
 [Dictionary Types]
 Dict-Type=..\Dicts\Cnull.dcf,Input,.\Cnull.fmf
-Dict-Type=..\Dicts\ccHH80.dcf,External
-Dict-Type=..\Dicts\ccIN80.dcf,External
+Dict-Type=..\Dicts\CGHH80.dcf,External
+Dict-Type=..\Dicts\CGIN80.dcf,External

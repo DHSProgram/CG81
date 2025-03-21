@@ -1418,7 +1418,7 @@ language = FR
  7051 E Niveau et grade (classe) d'études du partenaire incohérents
  7250 W Soins pour enfant (prise en charge de l'enfant) fournie par le mari/partenaire ( %02d) mais la répondante n'a pas été mariée (Q701=%1d)
  8110 E Incohérence entre l'heure de début ( %02d: %02d) et la fin de l'interview ( %02d: %02d)
- 9000 E Frères et soeurs non cités en ordre:  Le nombre d'années depuis la naissance du/de la Frère/soeur (col.%02d) est =%02d, et le nombre d'années depuis la naissance du/de la Frère/soeur (col.%02d) est =%02d
+ 9000 E Frères et soeurs non cités en ordre:  Le nombre d'années depuis la naissance du/de %s (ordre %02d) est =%02d, et le nombre d'années depuis la naissance de %s (ordre %02d) est =%02d
  9001 W Plus de 30 ans entre le(la) plus âgé(e) ( %02d) et le(la) plus jeune des frères et soeurs ( %02d)
  9002 E Le nombre de naissances précédant la naissance de la répondante supérieur au nombre total de naissances de la mère
  9006 E Les injections administrées par le personnel de santé ne peuvent pas dépasser le nombre d'injections durant l'année dernière (zzQ1101=%02d)

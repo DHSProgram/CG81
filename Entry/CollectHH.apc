@@ -260,104 +260,12 @@
 
 { @@@ End Height/Weight and Hemoglobin testing for Children }
 
-
-PROC QCHL10
-  if $ <> 1 then
-    skip to QCHL12A
+PROC QH155
+  if $ = 6 then
+    getother( GetSymbol(), 0 );
+    enter FL_OTHERS
   endif;
 
-PROC QCHL14
-preproc
-  activity2 = (QCHL12A=1) + (QCHL12B=1) + (QCHL12C=1) + (QCHL12D=1) + (QCHL12E=1) + (QCHL12F=1) + (QCHL12G=1);
-  if !activity2 then
-    endgroup
-  endif;
-{ @@@ End of Child Labor Module }
-
-{ @@@ Begining of Child Discipline Module }
-PROC QCHL2A
-preproc
-  if demode() = add & !inAdvance() then
-    warning( tr("%s (line %02d) selected for the child labor module"), strip(QCHLNAME), QCHLINE );
-    SaveData();
-  endif;
-  
-PROC QCHL4
-preproc
-  activity1 = (QCHL2A=1) + (QCHL2B=1) + (QCHL2C=1) + (QCHL2D=1);
-  if !activity1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL5
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL6
-postproc  
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7A
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7B
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7C
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7D
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7E
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL8
-  if $ <> 1 then
-    skip to QCHL10
-  endif;
-  
-PROC QCHLINE
-preproc
-  numeric oldvch = visualvalue($);
-  chlabor = count( QHSEC01_ROSTER where QH07 in 5:17 & QH05 = 1 );
-  if !chlabor then
-    endgroup
-  elseif oldvch in notappl,0 | !QH07(oldvch) in 5:17 | !QH05(oldvch) = 1 then
-    xchild = random( 1, chlabor );
-    p = 0;
-    for i in QHSEC01_ROSTER do
-      if QH07 in 5:17 & QH05 = 1 then
-        p = p + 1;
-        if p = xchild then
-          $ = QH01;
-          break;
-        endif;
-      endif;
-    enddo;
-  endif;
-
-postproc
-  QCHLNAME = QH02($);
-  hisher = tr("her"); if QH04($) = 1 then hisher = tr("his") endif;
-  daysince = CDCode(QHINTY, QHINTM, QHINTD) - CDCode(survyear, 1, 1);
-  xday     = (daysince%7) + firstday;
-  if xday > 7 then xday = xday - 7 endif; 
-  dayalpha = DaysWeek(xday);
-  
 PROC QHNUMDV
 preproc
   numeric oldvdv = visualvalue($);
@@ -1193,6 +1101,103 @@ preproc
   endif;
 
 { @@@ Begining of Child Labor Module }
+PROC QCHL2A
+preproc
+  if demode() = add & !inAdvance() then
+    warning( tr("%s (line %02d) selected for the child labor module"), strip(QCHLNAME), QCHLINE );
+    SaveData();
+  endif;
+  
+PROC QCHL4
+preproc
+  activity1 = (QCHL2A=1) + (QCHL2B=1) + (QCHL2C=1) + (QCHL2D=1);
+  if !activity1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL5
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL6
+postproc  
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL7A
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL7B
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL7C
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL7D
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL7E
+  if $ = 1 then
+    skip to QCHL8
+  endif;
+  
+PROC QCHL8
+  if $ <> 1 then
+    skip to QCHL10
+  endif;
+  
+PROC QCHL10
+  if $ <> 1 then
+    skip to QCHL12A
+  endif;
+
+PROC QCHL14
+preproc
+  activity2 = (QCHL12A=1) + (QCHL12B=1) + (QCHL12C=1) + (QCHL12D=1) + (QCHL12E=1) + (QCHL12F=1) + (QCHL12G=1);
+  if !activity2 then
+    endgroup
+  endif;
+{ @@@ End of Child Labor Module }
+
+{ @@@ Begining of Child Discipline Module }
+PROC QCHLINE
+preproc
+  numeric oldvch = visualvalue($);
+  chlabor = count( QHSEC01_ROSTER where QH07 in 5:17 & QH05 = 1 );
+  if !chlabor then
+    endgroup
+  elseif oldvch in notappl,0 | !QH07(oldvch) in 5:17 | !QH05(oldvch) = 1 then
+    xchild = random( 1, chlabor );
+    p = 0;
+    for i in QHSEC01_ROSTER do
+      if QH07 in 5:17 & QH05 = 1 then
+        p = p + 1;
+        if p = xchild then
+          $ = QH01;
+          break;
+        endif;
+      endif;
+    enddo;
+  endif;
+
+postproc
+  QCHLNAME = QH02($);
+  hisher = tr("her"); if QH04($) = 1 then hisher = tr("his") endif;
+  daysince = CDCode(QHINTY, QHINTM, QHINTD) - CDCode(survyear, 1, 1);
+  xday     = (daysince%7) + firstday;
+  if xday > 7 then xday = xday - 7 endif; 
+  dayalpha = DaysWeek(xday);
+  
 PROC QCDI2
 preproc
   numeric oldvch = visualvalue($);
@@ -1543,21 +1548,9 @@ PROC QH148C
   if $ <> 1 then
     skip to QH148E;
   endif;
-PROC QH148DY
-  // check date is not after current date
-  if cmcode(QH148DM, $) > cmcode(smonth, syear) then
-    errmsg(215, QH148DM, $, smonth, syear);
-    reenter;
-  endif;
 PROC QH148E
   if $ <> 1 then
     endgroup;
-  endif;
-PROC QH148FY
-  // check date is not after current date
-  if cmcode(QH148FM, $) > cmcode(smonth, syear) then
-    errmsg(215, QH148FM, $, smonth, syear);
-    reenter;
   endif;
 PROC QH149
 preproc
@@ -1596,12 +1589,6 @@ PROC QH154
     enter FL_OTHERS
   endif;
 
-PROC QH155
-  if $ = 6 then
-    getother( GetSymbol(), 0 );
-    enter FL_OTHERS
-  endif;
-
 PROC QH156H
 preproc
   if visualvalue( $ ) = notappl then
@@ -1626,7 +1613,7 @@ postproc
 PROC QHLANGQ
 preproc
   SaveData();
-  $ = 2;
+  $ = 1;
   
 	
 { @@@ taking GPS coordinates for household }
@@ -1756,7 +1743,7 @@ postproc
 PROC QBSECOVER_FORM
 preproc
   xchild   = count( QHSEC01_ROSTER where QH11 <> 0 );
-  if !xchild & !QHWOMEN & !QHMEN then
+  if QHELIGM <> 1 | ( !xchild & !QHWOMEN & !QHMEN ) then // biomarkers only for male sub-sample !!!
     endgroup
   endif;
   if InEntry then

@@ -29,6 +29,12 @@
   FR ( "Yes" ) Oui
   FR ( "No" ) Non
   FR ("Select Language") Choisir la langue 
+  FR ( "Incomplete" ) Incomplet
+  FR ( "Partial" ) Partiel
+  FR ( "Complete" ) Complet
+  FR ( "Female" ) Femme
+  FR ( "Male" ) Homme
+  FR ( "Not Visited" ) Non visité
 
 Language=EN
 001 Cluster=%4d, not defined in sample file
@@ -112,10 +118,15 @@ Language=ES
 
 { common strings used by the application }
 
-  FR      ( "Individual interview is from" ) L'individuel est un membre de
-  FR      ( "Household interviewed by you" ) Un ménage fait par vous
-  FR      ( "Household interviewed by someone else (shared)" ) Un ménage fait par quelq'un autre (partagé)
-
+  FR ( "There is another session running or the computer crashed while running" ) Il y a une autre session en cours ou bien que l'ordinateur s'est plantÃ© en cours d'exÃ©cution
+  FR ( "Reset" ) Re-initialiser
+  FR ( "Yes" ) Oui
+  FR ( "No" ) Non
+  FR ( "Yes, remove" ) Oui, enlever
+  FR ("Select Language") Choisir la langue 
+  FR ( "Individual interview is from" ) L'individuel est un membre de
+  FR ( "Household interviewed by you" ) Un ménage fait par vous
+  FR ( "Household interviewed by someone else (shared)" ) Un ménage fait par quelq'un autre (partagé)
   FR ( "Sending data to supervisor</caption>" ) Envoi de données au superviseur</caption>
   FR ( "Transferring HH listing Data to supervisor" ) Transfert des données du listing des ménages au superviseur
   FR ( "Sharing HH Data with other interviewers" ) Partage des données HH avec d'autres enquêteurs
@@ -130,14 +141,38 @@ Language=ES
   FR ( "NEW HOUSEHOLD" ) NOUVEAU MÉNAGE
   FR ( "There is another session running or the computer crashed while running" ) Une autre session est en cours d'exécution ou l'ordinateur est tombé en panne lors de l'exécution
   FR ( "Reset" ) Réinitialiser
-  FR ( "Yes" ) Oui
-  FR ( "No" ) Non
   FR ( "Individual: Cluster" ) Individuel: Grappe
   FR ( "Interviewer" ) Enquêteur
   FR ( "Start a new individual" ) Commencer un nouveau questionnaire individuel
   FR ( "Revisit incomplete/partial individual" ) Revisiter interview individuelle incomplète/partielle
   FR ( "Modify complete individual interview" ) Modifier interview individuelle complète
   FR ( "Return to main menu" ) Revenir au menu principal
+  FR ( "Male" ) Homme
+  FR ( "Female" ) Femme
+  FR ( "Status" ) Etat
+  FR ( "Not Visited" ) Pas encore visité
+  FR ( "Partial" ) Partiel
+  FR ( "Select Household" ) Selectionner un menage
+  FR ( "Select Household for individual interview" ) Selectionner un menage pour l'enquete individuel
+  FR ( "Select Household for Biomarkers Entry" ) Selectionner un menage pour saisir les donnees biomarqueurs 
+  FR ("Select INDIVIDUAL for interview") Sélectionnez un individuel pour l'entretien
+  FR ( "HH" ) Menage
+  FR ( "Name" ) Nom
+  FR ( "Int." ) NumEnq
+  FR ( "Status" ) Statut
+  FR ( "Male/LS" ) Homme/LS
+  FR ("HIV") Adulte: VIH
+  FR  ("Vaccination/Covid") Enfants: Vaccination/Covid
+  FR ("Select whom you want to share HH data with") Choisir avec qui souhaitez vous partager des données ménages
+  FR ("Interviewer Names") Nom des enqueteurs
+  FR ("Individual interview is from")L’entretien individuel est de
+  FR ("Household interviewed by you")Ménage que vous avez interviewé
+  FR ("Household interviewed by someone else (shared)") Ménage interviewé par quelqu’un d’autre (partagé) 
+  FR ("Select the household that is to be split and press continue./n Otherwise press cancel to return to main menu")Choisir le menage à diviser et appuyez sur continuer./n Sinon, appuyez sur Annuler pour revenir au menu principal 
+  FR ("Choose option") Choisir une option
+  FR ( "Inconsistencies" )  Incohérences
+  
+  
 Language=FR
 001 Grappe =%02d non définie dans le fichier échantillon
 002 L'enquêteur (trice) %02d non délaré(e) dans le fichier des enquêteurs

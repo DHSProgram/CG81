@@ -24,7 +24,7 @@ preproc
   xcluster = tonumber( sysparm()[1:4] );   { cluster number }
   xhhnum   = tonumber( sysparm()[5:4] );   { household number }
   SetLanguage( GetLanguage() );
-  open( CCHH80 );
+  open( CGHH80 );
   
   { set the name for the HTML file }
   HTML_InitAlign();
@@ -34,10 +34,10 @@ preproc
   endif;
   setfile( HTMLFile, HTMLName, create );
 
-  AHCLUST  = xcluster;
-  AHNUMBER = xhhnum;
+  QHCLUST  = xcluster;
+  QHNUMBER = xhhnum;
   { list of individuals and children eligible for individual and height & weight }
-  if loadcase( CCHH80, AHCLUST, AHNUMBER ) then
+  if loadcase( CGHH80, QHCLUST, QHNUMBER ) then
     zstring1 = MakeText( tr("Eligible Individuals in Cluster: %04d Household: %04d"), xcluster, xhhnum );
     zstring2 = tr("Women/men eligible for individual interview");
     xstring3 = tr("Children eligible for biomarkers");
@@ -57,9 +57,9 @@ preproc
     HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
 	
 	{ first determine if there eligible individuals at all }
-	womelig = count( AHSEC01 where AH09 <> 0 );
-	manelig = count( AHSEC01 where AH10 <> 0 );
-	chielig = count( AHSEC01 where AH11 <> 0 );
+	womelig = count( QHSEC01 where QH09 <> 0 );
+	manelig = count( QHSEC01 where QH10 <> 0 );
+	chielig = count( QHSEC01 where QH11 <> 0 );
     { if appropriate generates the HTML table script with the column headers }
 	if chielig then
       HTML_BeginTable( CellValues, "", 8 );
@@ -70,33 +70,33 @@ preproc
 	endif;
 
     { initialize array of children's birth dates, ages and woman's pregnancy }
-    do i = 1 while i <= maxocc(AHSEC01)
+    do i = 1 while i <= maxocc(QHSEC01)
       icdob(i) = "";
 	  icage(i) = "";
 	  wpreg(i) = "";
     enddo;
 
-    for i in record AHSEC01 do
-      if AH09 <> 0 then 
-        ALINE = AH09;
-		if loadcase(ccIN80, AHCLUST,AHNUMBER,ALINE) then 
-          wpreg(ALINE) = GetValueLabel(A232);
-          icdob(ALINE) = edit("99",A110M) + "/" + edit("9999",A110Y);
-          icage(ALINE) = edit("99",A111);
-          for j in record AWSEC2B do
-            if A227 in 1:AHMEMBER then 
-              icdob(A227)  = edit("99",A220D) + "/" + edit("99",A220M) + "/" + edit("9999",A220Y);
-			  icage(A227) = edit("99",A225);
+    for i in record QHSEC01 do
+      if QH09 <> 0 then 
+        QLINE = QH09;
+		if loadcase(CGIN80, QHCLUST,QHNUMBER,QLINE) then 
+          wpreg(QLINE) = GetValueLabel(Q232);
+          icdob(QLINE) = edit("99",Q110M) + "/" + edit("9999",Q110Y);
+          icage(QLINE) = edit("99",Q111);
+          for j in record QWSEC2B do
+            if Q227 in 1:QHMEMBER then 
+              icdob(Q227)  = edit("99",Q220D) + "/" + edit("99",Q220M) + "/" + edit("9999",Q220Y);
+			  icage(Q227) = edit("99",Q225);
             endif;
           enddo;
         endif;
 	  endif;
-      if AH10 <> 0 then 
-        ALINE = AH10;
-		if loadcase(ccIN80, AHCLUST,AHNUMBER,ALINE) then 
-          wpreg(ALINE) = "";
-          icdob(ALINE) = edit("99",AM110M) + "/" + edit("9999",AM110Y);
-          icage(ALINE) = edit("99",AM111);
+      if QH10 <> 0 then 
+        QLINE = QH10;
+		if loadcase(CGIN80, QHCLUST,QHNUMBER,QLINE) then 
+          wpreg(QLINE) = "";
+          icdob(QLINE) = edit("99",QM110M) + "/" + edit("9999",QM110Y);
+          icage(QLINE) = edit("99",QM111);
         endif;
       endif;		
     enddo;
@@ -104,19 +104,19 @@ preproc
     { women/men eligible for individual interview }
     if womelig | manelig then
 	  HTML_Subtitle( zstring2, 8 );
-      for i in record AHSEC01 do
-        if AH09 <> 0 | AH10 <> 0 then
+      for i in record QHSEC01 do
+        if QH09 <> 0 | QH10 <> 0 then
           { populates the elements of a row based on household member information }
-          CellValues(1) = edit("99", AH01 );
-          CellValues(2) = GetValueLabel( AH04 );
-          CellValues(3) = edit("99", AH07 );
-          CellValues(4) = AH02;
+          CellValues(1) = edit("99", QH01 );
+          CellValues(2) = GetValueLabel( QH04 );
+          CellValues(3) = edit("99", QH07 );
+          CellValues(4) = QH02;
 		  if length(icage(i)) then
             CellValues(5) = icage(i);
 	      else		
             CellValues(5) = "BLANK";
           endif;
-          xstring4 = GetValueLabel( AH08 );
+          xstring4 = GetValueLabel( QH08 );
 		  do j = 1 while xstring4[j:1] <> " " enddo;
 		  xstring5 = xstring4[1:j-1]; 
           CellValues(6) = xstring5;
@@ -134,13 +134,13 @@ preproc
 	{ children eligible for biomarkers }
     if chielig then
 	  HTML_Subtitle( xstring3, 8 );
-      for i in record AHSEC01 do
-        if AH11 <> 0 then
+      for i in record QHSEC01 do
+        if QH11 <> 0 then
           { populates the elements of a row based on household member information }
-          CellValues(1) = edit("99", AH01 );
-          CellValues(2) = GetValueLabel( AH04 );
-          CellValues(3) = edit("99", AH07 );
-          CellValues(4) = AH02;
+          CellValues(1) = edit("99", QH01 );
+          CellValues(2) = GetValueLabel( QH04 );
+          CellValues(3) = edit("99", QH07 );
+          CellValues(4) = QH02;
 		  if length(icage(i)) then
             CellValues(5) = icage(i);
 	      else		
@@ -161,20 +161,20 @@ preproc
 	{ women eligible for biomarkers }
     if womelig then
       HTML_Subtitle( tr("Women eligible for biomarkers"), 8 );
-      for i in record AHSEC01 do
-        if AH09 <> 0 then
+      for i in record QHSEC01 do
+        if QH09 <> 0 then
           { populates the elements of a row based on household member information }
-          CellValues(1) = edit("99", AH01 );
-          CellValues(2) = GetValueLabel( AH04 );
-          CellValues(3) = edit("99", AH07 );
-          CellValues(4) = AH02;
+          CellValues(1) = edit("99", QH01 );
+          CellValues(2) = GetValueLabel( QH04 );
+          CellValues(3) = edit("99", QH07 );
+          CellValues(4) = QH02;
 		  if length(icage(i)) then
             CellValues(5) = icage(i);
 	      else		
             CellValues(5) = "BLANK";
           endif;
           zstring1 = tr("Never in union");
-          if AH08 <> 4 then zstring1 = tr("Other") endif;
+          if QH08 <> 4 then zstring1 = tr("Other") endif;
           CellValues(6) = zstring1;
 		  if length(wpreg(i)) then
             CellValues(7) = wpreg(i);
@@ -192,22 +192,22 @@ preproc
     endif;
 	
 	{ men eligible for biomarkers }
-    if count( ccHH80.AHSEC01 where AH10 <> 0 ) then
+    if count( CGHH80.QHSEC01 where QH10 <> 0 ) then
       HTML_Subtitle( tr("Men eligible for biomarkers"), 8 );
-      for i in record AHSEC01 do
-        if AH10 <> 0 then
+      for i in record QHSEC01 do
+        if QH10 <> 0 then
           { populates the elements of a row based on household member information }
-          CellValues(1) = edit("99", AH01 );
-          CellValues(2) = GetValueLabel( AH04 );
-          CellValues(3) = edit("99", AH07 );
-          CellValues(4) = AH02;
+          CellValues(1) = edit("99", QH01 );
+          CellValues(2) = GetValueLabel( QH04 );
+          CellValues(3) = edit("99", QH07 );
+          CellValues(4) = QH02;
 		  if length(icage(i)) then
             CellValues(5) = icage(i);
 	      else		
             CellValues(5) = "BLANK";
           endif;
           zstring1 = tr("Never in union");
-          if AH08 <> 4 then zstring1 = tr("Other") endif;
+          if QH08 <> 4 then zstring1 = tr("Other") endif;
           CellValues(6) = zstring1;
           CellValues(7) = "BLANK";
 		  if length(icdob(i)) then
@@ -227,7 +227,7 @@ preproc
     HTML_Paragraph( tr("The household selected was not found in this cluster") );
   endif;
   HTML_End();
-  close( CCHH80 );
+  close( CGHH80 );
   view( "file://" + pathname(application) + HTMLName );
   stop(1);
 

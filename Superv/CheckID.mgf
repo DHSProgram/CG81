@@ -162,6 +162,7 @@ Language = FR
   FR ( "Summary: (HH=%02d Complete=%02d Incomplete=%02d) (Indiv.=%d Complete:%02d Incomplete:%02d)") Sommaire: (Ménages=%02d Complets=%02d Incomplets=%02d) (Indiv=%d Complets:%02d Incomplets:%02d)
   FR ( "Households added not originally part of the sample design %d" ) Ménages ajoutés ne faisant pas originellement partie de l'échantillon %d
   FR ( "SUMMARY OF OUTSTANDING ISSUES THAT NEED TO BE RESOLVED" ) SOMMAIRE DES PROBLEMES RESTANTS ET QUI DOIVENT ETRE RESOLUS
+  FR ( "MESSAGES" ) MESSAGES
 
 50000 La langue à utiliser pour rapporter/lire/afficher les messages non trouvée. S'il vous plait contacter l'expert informaticien
 50001 Numéro d'erreur %d non trouvé dans le fichier des messages d'erreur

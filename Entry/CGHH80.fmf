@@ -2878,6 +2878,7 @@ Position=377,45,547,65
 Item=QCHLNAME,CGHH80
 UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
 Form=5
@@ -6994,13 +6995,6 @@ DisplayTogether=Yes
 Position=10
 Length=3
   
-[Block]
-Name=Z_B240_BLOCK
-Label=Time for third reading
-DisplayTogether=Yes
-Position=37
-Length=0
-  
 [EndGrid]
  
 [EndGroup]
@@ -8000,34 +7994,6 @@ Label=Date of measurement
 DisplayTogether=Yes
 Position=10
 Length=3
-  
-[Block]
-Name=AB324_BLOCK
-Label=Things done last 30 minutes
-DisplayTogether=Yes
-Position=30
-Length=0
-  
-[Block]
-Name=Z_B328_BLOCK
-Label=Time for second reading
-DisplayTogether=Yes
-Position=31
-Length=0
-  
-[Block]
-Name=Z_B337_BLOCK
-Label=Time for second reading
-DisplayTogether=Yes
-Position=32
-Length=0
-  
-[Block]
-Name=Z_B340_BLOCK
-Label=Time for third reading
-DisplayTogether=Yes
-Position=33
-Length=0
   
 [EndGrid]
  

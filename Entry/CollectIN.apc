@@ -16,13 +16,14 @@
   string asource;         { source of methods for calendar column 3 }
   string strnotes;        { for editnote at the end of the interview }
   string vaccstr;
+  string Sibling_names = "";
   
   string fname;           { String for data filenames }
   string pregstr;         { Pregnancy codes for the calendar }
   string methstr;         { Method codes for the calendar } 
   string alphalst;        { The alphabet }
   string Q307str;         { string of codes used in Q307 }
-  string am439str;        { string of codes for methods used in AM418 }
+  string am439str;        { string of codes for methods used in QM418 }
   string spec;            { String of special codes WXYZ used in checking alpha vars }
   string calw;            { Working calendar variable }
   string methname;        { method name }
@@ -90,10 +91,12 @@
   numeric goback222 = 0;        // manages when to go back to 222
   numeric indexpreg, indexpreg2, childecd;
   numeric twinnum;
+  numeric gl;
 
   valueset individuals, vs;
   valueset string vaccinations, foods, sources;
   valueset grades;
+  valueset MyValueSet;
 
   { used to move to a specific section in the questionnaire } 
   function toSection();
@@ -140,7 +143,7 @@
       elseif sec = 15 & totocc(QWSEC09_FORM)  then move to QWSEC09_FORM  advance 
       elseif sec = 16 & totocc(QWSEC10_FORM)  then move to QWSEC10_FORM  advance 
       elseif sec = 17 & totocc(QWSEC11_FORM)  then move to QWSEC11_FORM  advance 
-      elseif sec = 27 & totocc(ALANG_FORM)    then move to ALANG_FORM    advance 
+      elseif sec = 27 & totocc(QLANG_FORM)    then move to QLANG_FORM    advance 
 	  elseif sec = 28 then   // Cancel - do nothing
 	  else
 	    errmsg( 0005 );
@@ -148,30 +151,28 @@
     elseif QQTYPE = 1 then
       sec = accept( tr("Go to section:"),
         getlabel( QSECOVER  ), 
-        getlabel( AMSEC01   ), 
-        getlabel( AMSEC02   ), 
-        getlabel( AMSEC3A   ), 
-        getlabel( AMSEC3B   ), 
-        getlabel( AMSEC04   ), 
-        getlabel( AMSEC05   ), 
-        getlabel( AMSEC06   ), 
-        getlabel( AMSEC07   ), 
-        getlabel( AMSEC08   ), 
-        getlabel( AMSECGC   ), 
+        getlabel( QMSEC01   ), 
+        getlabel( QMSEC02   ), 
+        getlabel( QMSEC3A   ), 
+        getlabel( QMSEC3B   ), 
+        getlabel( QMSEC04   ), 
+        getlabel( QMSEC05   ), 
+        getlabel( QMSEC06   ), 
+        getlabel( QMSEC07   ), 
+        getlabel( QMSEC08   ), 
         tr("End of questionnaire"),
         tr("Cancel") );
       if     sec =  1 & totocc(QSECOVER_FORM) then move to QSECOVER_FORM advance
-      elseif sec =  2 & totocc(AMSEC01_FORM)  then move to AMSEC01_FORM  advance
-      elseif sec =  3 & totocc(AMSEC02_FORM)  then move to AMSEC02_FORM  advance
-      elseif sec =  4 & totocc(AMSEC3A_FORM)  then move to AMSEC3A_FORM  advance
-      elseif sec =  5 & totocc(AMSEC3B_FORM)  then move to AMSEC3B_FORM  advance
-      elseif sec =  6 & totocc(AMSEC04_FORM)  then move to AMSEC04_FORM  advance
-      elseif sec =  7 & totocc(AMSEC05_FORM)  then move to AMSEC05_FORM  advance
-      elseif sec =  8 & totocc(AMSEC06_FORM)  then move to AMSEC06_FORM  advance
-      elseif sec =  9 & totocc(AMSEC07_FORM)  then move to AMSEC07_FORM  advance
-      elseif sec = 10 & totocc(AMSEC08_FORM)  then move to AMSEC08_FORM  advance
-      elseif sec = 11 & totocc(AMSECGC_FORM)  then move to AMSECGC_FORM  advance
-      elseif sec = 12 & totocc(ALANG_FORM)    then move to ALANG_FORM    advance 
+      elseif sec =  2 & totocc(QMSEC01_FORM)  then move to QMSEC01_FORM  advance
+      elseif sec =  3 & totocc(QMSEC02_FORM)  then move to QMSEC02_FORM  advance
+      elseif sec =  4 & totocc(QMSEC3A_FORM)  then move to QMSEC3A_FORM  advance
+      elseif sec =  5 & totocc(QMSEC3B_FORM)  then move to QMSEC3B_FORM  advance
+      elseif sec =  6 & totocc(QMSEC04_FORM)  then move to QMSEC04_FORM  advance
+      elseif sec =  7 & totocc(QMSEC05_FORM)  then move to QMSEC05_FORM  advance
+      elseif sec =  8 & totocc(QMSEC06_FORM)  then move to QMSEC06_FORM  advance
+      elseif sec =  9 & totocc(QMSEC07_FORM)  then move to QMSEC07_FORM  advance
+      elseif sec = 10 & totocc(QMSEC08_FORM)  then move to QMSEC08_FORM  advance
+      elseif sec = 12 & totocc(QLANG_FORM)    then move to QLANG_FORM    advance 
 	  elseif sec = 13 then   // Cancel - do nothing
 	  else
 	    errmsg( 0005 );
@@ -423,9 +424,9 @@
   function relterms()              // relationship terms
     if Q701 = 1 then
       partner = tr("husband")
-	elseif AM401 = 1 then
+	elseif QM401 = 1 then
       partner = tr("wife")
-    elseif Q701 = 2 | AM401 = 2 then
+    elseif Q701 = 2 | QM401 = 2 then
       partner = tr("partner")
     else
       partner = tr("partner"); // just in case
@@ -1178,7 +1179,83 @@
     TobaccoUse = x;
   end;	
 
+  array string SiblingsList(20,8);
+  function sib_array();
+    do i = 1 while i <= maxsib
+	  if i > totocc(QMM01000) then
+	    break
+	  else 
+		SiblingsList(i,1) = maketext( "%2d", i);
+	    SiblingsList(i,2) = QMM01N(i);
+		recode visualvalue( QMM14(QMM01(i)) ) -> SiblingsList(i,3);
+								  1    -> tr("Male");
+								  2    -> tr("Female");
+								       -> "";
+		endrecode;
+		recode visualvalue( QMM15(QMM01(i)) ) -> SiblingsList(i,4);
+								  1    -> tr("Alive");
+								  2    -> tr("Dead");
+								       -> "";
+		endrecode;
+		if visualvalue(QMM15(QMM01(i))) = 1 then
+	      SiblingsList(i,5) = maketext( "%2d", visualvalue( QMM16(QMM01(i)) ) );
+		  SiblingsList(i,6) = "";
+	      SiblingsList(i,7) = "";
+		else
+	      SiblingsList(i,5) = "";
+	      SiblingsList(i,6) = maketext( "%2d", visualvalue( QMM17(QMM01(i)) ) );		
+	      SiblingsList(i,7) = maketext( "%2d", visualvalue( QMM18(QMM01(i)) ) );		
+        endif;
+		 SiblingsList(i,8) = maketext( "%2d", visualvalue( QMM01(i) ) );
+	 endif;
+	enddo;
+	sib_array = i-1;
+  end;
 
+  function  SiblingsShowWoman()
+	do i=1 while i<=QMM07
+		SiblingsList(i,1) = maketext( "%2d", i);
+		SiblingsList(i,2) = QMM01N(i); 
+		SiblingsList(i,3) = maketext( "%2d", visualvalue( QMM01(i) ) ); 
+	  enddo;
+	  
+	   i = showarray( tr("Maternal mortality: siblings"), SiblingsList,
+          title( tr("Line"), tr("Name"), tr("Ord") ) );
+  end;
+
+  function DeletSiblings()  
+          if accept("Are you sure you wish to delete the current Sibling ("+ QMM01N(curocc()) +")","No","Yes")=2 then
+                    delete( QWSIBL_ROSTER(curocc()) );
+                    {if !special( visualvalue(QMMMORE(curocc())) ) then
+                          delete( QWSIBL_ROSTER(inxd) ); 
+                    endif;}
+          endif;
+  end;
+
+function get_sib_names (setValues=notappl);
+    MyValueset.clear();
+	do varying i=1 while i <=count(QWSIBL_ROSTER where 1 in QMMMORE, QMM03, QMM04, QMM05, QMM06, QMM07)+1 //QMM07;
+		x=0;
+		string InN="";
+		do varying j=1 while j<curocc()
+			if i=QMM01(j)  then
+				x=1;
+				break;
+			endif;
+		enddo;
+		if i<curocc() then
+			InN=maketext("(%V):-",QMM01(i));
+		endif;
+		Sibling_names=Sibling_names+ InN+ strip( QMM01N(i))+", "; 
+		if setValues<>notappl then
+			if x=0   then
+				MyValueset.add(maketext("Numéro d'ordre"+ ": %v",i),i);
+			endif;
+		endif;
+	enddo; 
+
+  
+end;
 PROC CGIN80_FF
 preproc
 
@@ -1223,7 +1300,7 @@ preproc
   codet    = pregstr[3:1];
   methstr  = "123456789JKLMXY";             { !!! Codes for contraceptive methods in calendar }
   Q307str  = "ABCDEFGHIJKLMXY";             { !!! Codes for contraceptive methods in Q307    }
-  am439str = "ABCDEFGHIJKLMXY";             { !!! Codes for contraceptive methods in AM418   }
+  am439str = "ABCDEFGHIJKLMXY";             { !!! Codes for contraceptive methods in QM418   }
   asource  = "123456789ABCDEFX";            { !!!! source of method, calendar column 3 }
 
   methoth  = 14;                            { !!! Occurrence number of "other" method }
@@ -1297,11 +1374,11 @@ preproc
     setproperty(Q1023M,  "CaptureType", "ComboBox" );
     setproperty(Q1025M,  "CaptureType", "ComboBox" );
     setproperty(Q1029M,  "CaptureType", "ComboBox" );
-    setproperty(AM106M,  "CaptureType", "ComboBox" );
-    setproperty(AM110M,  "CaptureType", "ComboBox" );
-    setproperty(AM411M,  "CaptureType", "ComboBox" );
-    setproperty(AM714M,  "CaptureType", "ComboBox" );
-    setproperty(AM718M,  "CaptureType", "ComboBox" );
+    setproperty(QM106M,  "CaptureType", "ComboBox" );
+    setproperty(QM110M,  "CaptureType", "ComboBox" );
+    setproperty(QM411M,  "CaptureType", "ComboBox" );
+    setproperty(QM714M,  "CaptureType", "ComboBox" );
+    setproperty(QM718M,  "CaptureType", "ComboBox" );
   endif;
 
   { set font for value sets }
@@ -1600,7 +1677,7 @@ postproc
   dicdc = CDCode( QINTY, QINTM, QINTD );
   { *** skip to men's background characteristics if men's interview }
   if QQTYPE = 1 then
-    skip to AM101H
+    skip to QM101H
   endif;
 
 PROC Q101H
@@ -3961,18 +4038,6 @@ PROC Q418G
 preproc
   if copytwin(visualvalue($), QCOL41) then noinput endif;
 
-PROC Q418H
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Q418I
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
-PROC Q418J
-preproc
-  if copytwin(visualvalue($), QCOL41) then noinput endif;
-
 PROC Q420
 preproc
   if Q405 <> 1 then
@@ -5933,7 +5998,105 @@ postproc
   if foods_popupW then		// go back to intro and then move forward to the last field
 	move to Q643_FIX;
   endif;
+
+PROC QWSECECD_FORM
+preproc
+  { initialize variables used to count entries for different sections }
+  QESECECD = 0;
+  numeric fullcdc, livcdc, livcmc, livmoth;
+  { pregnancy outcomes applicable to the early child development section } 
+  childecd = 0;
+  livmoth = count(QWSEC2B where Q224 = 1 & Q226 = 1);
+  fullcdc = count(QWSEC2B where Q224 = 1 & Q226 = 1 & Q220CD <> 0);
+  if livmoth = fullcdc then    // full date of birth for all children living with mother 
+    do i = 1 while i <= totocc(QWSEC2B_ROSTER2)
+      if Q224(i) = 1 & Q226(i) = 1 & int((dicdc - Q220CD(i))/DaysMonth) in 24:59 then
+	    childecd = childecd + 1;
+        do j = i+1 while j <= totocc(QWSEC2B_ROSTER2)
+          if Q224(j) = 1 & Q226(j) = 1 & int((dicdc - Q220CD(j))/DaysMonth) in 24:59 then
+	        childecd = childecd + 1;
+		  endif;
+		enddo;
+		break;
+	  endif;
+	enddo;
+	indexpreg = i;
+  else
+    { count pregnancies based on CDC codes } 
+	do i = 1 while i <= totocc(QWSEC2B_ROSTER2)
+      if Q224(i) = 1 & Q226(i) = 1 & int((dicdc - Q220CD(i))/DaysMonth) in 24:59 then
+	    livcdc = livcdc + 1;               // assume remaining pregnancies occurred after this one
+        do j = i+1 while j <= totocc(QWSEC2B_ROSTER2)
+          if Q224(j) = 1 & Q226(j) = 1 & int((dicdc - Q220CD(j))/DaysMonth) in 24:59 then
+	        livcdc = livcdc + 1;
+		  endif;
+		enddo;
+		break;
+	  endif; 
+	enddo;
+    { count pregnancies based on CMC codes (use udc to be on the conservative side) } 
+	livcmc = 0;
+	do i = 1 while i <= totocc(QWSEC2B_ROSTER2)
+      if Q224(i) = 1 & Q226(i) = 1 & (di-ldc(i) in 24:59 | di-udc(i) in 24:59) then	  
+	    livcmc = livcmc + 1;               // assume remaining pregnancies occurred after this one
+        do j = i+1 while j <= totocc(QWSEC2B_ROSTER2)
+          if Q224(j) = 1 & Q226(j) = 1 & (di-ldc(j) in 24:59 | di-udc(j) in 24:59) then
+            livcmc = livcmc + 1;               
+          endif; 
+        enddo;
+		break;
+	  endif; 
+	enddo;
+	indexpreg2 = i;
+	childecd = livcdc;
+	if livcmc > livcdc then childecd = livcmc; indexpreg = indexpreg2 endif;
+  endif;  
+  if !childecd then 
+    endgroup
+  endif;
+  QESECECD = childecd;
+  do i = 1 while i <= 4
+    if i <= childecd then
+      QCOLECD(i) = i;
+    else
+      QCOLECD(i) = notappl;
+    endif;
+  enddo;
   
+PROC QCOLECD
+preproc
+  if curocc() > childecd then
+    endgroup
+  endif;
+
+PROC QECDCA
+preproc
+  numeric nextbirth = 0;
+  do i = Q212W while i > 0 by (-1)
+    if Q224(i) = 1 & Q226(i) = 1 &  
+      ( Q220CD(i) <> 0 & int((dicdc - Q220CD(i))/DaysMonth) in 24:59 | 	
+        Q220CD(i) = 0 & (di-ldc(i) in 24:59 | di-udc(i) in 24:59) ) then 
+	  nextbirth = nextbirth + 1;
+	  if nextbirth = QCOLECD then
+	    $ = i;
+		break;
+	  endif;
+    endif;	  
+  enddo;
+
+postproc
+  QECDCN = Q218($);
+  
+PROC QECD6
+  if $ <> 1 then
+    skip to QECD8
+  endif;	
+{ @@@ End early childhood development }
+
+{ @@@ Begin malaria knowledge and beliefs }
+{ @@@ End malaria knowledge and beliefs }
+
+{ @@@ Begin fistula module }
 PROC Q701
 preproc
   SaveData();
@@ -6511,11 +6674,11 @@ preproc
 postproc
   if ($ = 96 <=> Q814A <> 96) | ($ = missing <=> Q814A <> missing) then
     errmsg( 9994 )
-      select( tr("Ideal number of children by sex"), A814_BLOCK,
+      select( tr("Ideal number of children by sex"), Q814_BLOCK,
 	          tr("Ideal number of children" ), Q813 );
   elseif valid(Q814A) & valid(Q814B) & valid($) & $ < 96 & Q814A+Q814B+$ <> Q813 then
     errmsg( 6131 )
-      select( tr("Ideal number of children by sex"), A814_BLOCK,
+      select( tr("Ideal number of children by sex"), Q814_BLOCK,
 	          tr("Ideal number of children"), Q813 );
   endif;
 
@@ -7019,6 +7182,371 @@ PROC Q1115
     enter FL_OTHERS
   endif;
 
+PROC QMM00
+preproc
+  $ = 1;
+
+{ @@@ Begin Maternal Mortality Module for Women }
+
+gl=0;
+PROC QWSIBL_ROSTER 
+onfocus
+  if gl=0 then
+    gl = userbar( add button, tr("Delete Sibling"), DeletSiblings() ); // add userbar for pregnancies once we get to pregnacy history
+  endif;
+
+killfocus
+  if gl then
+    userbar(remove,gl);
+        gl = 0;
+  endif;
+  
+
+
+PROC QMM01N 
+preproc 
+	if curocc()=2 then
+		if strip($(1))="" and QMMMORE=notappl then
+			endgroup;
+		endif;
+	endif;
+
+ 
+postproc
+
+  if strip($) = "" then
+    warning( 9110 ) 
+    select( tr("Modify"), $, tr("Continue"), continue); 
+    skip to QMM03
+  endif;
+  if android then 
+    setocclabel(QWSIBL_ROSTER(curocc()),maketext("%d %s",curocc(),strip($)));
+  endif;
+
+PROC QMMMORE 
+
+postproc
+  if $ <> 1 & seek(QMM06 in 1,2) then // end listing since all probes completed !!!
+    endgroup;
+  endif;
+
+ 
+PROC QMM03
+preproc  
+	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+	 
+	
+onfocus
+	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
+		$=2;
+	endif;
+  get_sib_names();
+  // set to protected if was already asked and there is an entry in the following line 
+  // not sure if we want to do this or not
+  // if totocc(QWSIBL_ROSTER) > curocc() & length(strip( QMM01N(curocc()+1) )) then
+  //   protect($, true);
+  // endif;
+postproc
+  if $ = 1  then 
+    skip to next QMM01N;
+  endif;
+ 
+PROC QMM04
+preproc 
+	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+onfocus
+	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
+		$=2;
+	endif;
+
+
+postproc
+  if $ = 1  then 
+    skip to next QMM01N;
+  endif;
+PROC QMM05
+preproc
+	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+onfocus
+	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
+		$=2;
+	endif;
+postproc
+  if $ = 1  then 
+    skip to next QMM01N;
+  endif;
+
+PROC QMM06
+preproc
+	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+onfocus
+	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
+		$=2;
+	endif;
+postproc
+  if $ = 1 and QMM01N(1) = ""  then
+	reenter QMM01N(1);
+  elseif $=1 then
+    skip to next QMM01N;
+  else
+    endgroup;
+  endif;
+
+PROC QMM07
+onfocus
+  $ = count({QWSECM1} QWSIBL_ROSTER where QMMMORE in 1,2 and strip(QMM01N) <> "");
+PROC QMM08
+onfocus
+  get_sib_names(1);
+postproc
+  if $ <> 1 then
+	QMMMORE(QMM07)=notappl;
+	$=notappl;
+    reenter QMMMORE(QMM07);
+  endif;
+
+PROC QMM01
+preproc
+  if curocc() > QMM07 then
+    // !! final review of siblings list prior to going into table
+    if !totocc(QWSECMM_ROSTER) then
+     SiblingsShowWoman();  
+	  
+      warning("Is list of siblings complete and in the correct order?") select("No", QMM01N(QMM07), "Yes, continue to the Adult and Maternal Mortality table", continue)
+    endif;
+    endgroup;
+  endif;
+onfocus
+	// Sibling_names="";
+  get_sib_names(1);
+  setvalueset($, MyValueset);
+postproc
+  do i = curocc()-1 while i by (-1)
+    if QMM01 = QMM01(i) then
+      errmsg( 9120, QMM01, QMM01(i) ) select( tr("Order numbers"), QMM01 );
+  	endif;
+  enddo;
+PROC QMM11
+  if $ > QMM07 then
+    errmsg( 9002 ) select( tr("Siblings born before respondent"), $ );
+  endif;
+
+  SaveData();
+
+{ Maternal Mortality post-processing }
+	
+PROC QWSECM2_FORM
+preproc
+  { skip maternal mortality if there are no siblings }
+  if QMM07 = 0 then
+    endgroup
+  endif;
+
+  if !matmortid then
+    matmortid = userbar( add button, tr("Siblings"), SiblingsShowWoman() );
+  endif;
+
+
+PROC QWSECMM_ROSTER
+  err  = 0;
+  aold = 100;
+  iold = 0;
+  if QMM11 = 0 then
+    aold = Q111;
+  endif;
+  aoldest = aold;
+
+  for i in $ do
+    anew = aold;
+
+    if QMM15 = 1 then           { sibling is still alive }
+      if valid(QMM16) then      { sibling's age is valid }
+        anew = QMM16;
+      endif
+    elseif QMM15 = 2 then       { sibling has died }
+      if valid(QMM18) then      { age when they died }
+        anew = QMM18;
+        if valid(QMM17) then    { how many yrs ago did they die }
+          anew = anew + QMM17
+        endif;
+      elseif valid(QMM17) then  { # yrs ago when they died }
+        anew = QMM17            { Age would be at least this, probably more }
+      endif;
+    endif;
+
+    if anew > aold then
+      warning( 9000, QMM13N(i), i, anew, QMM13N(iold), iold, aold )
+	    select( maketext( tr("Status for") + " %s", QMM13N(i) ), QMM15(i),
+	            maketext( tr("Status for") + " %s", QMM13N(iold) ), QMM15(iold),
+				tr("Continue"), continue );
+      err  = 1;
+    elseif valid(QMM16) | valid(QMM17) & valid(QMM18) then
+      aold = anew;
+      iold = i;
+    endif;
+
+    if QMM11 = i then            { Check respondent against siblings }
+      if Q111 > aold then
+        warning( 9000, "Répondant", 0, Q111, QMM13N(iold), iold, aold )
+	      select( tr("Siblings born before respondent"), QMM11,
+	              maketext( tr("Status for") + " %s", QMM13N(iold) ), QMM15(iold),
+				  tr("Continue"), continue );
+        err  = 1;
+      else
+        aold = Q111;
+        anew = Q111;
+        // iold = 0;
+      endif;
+    endif;
+
+    if aoldest = 100 then
+      aoldest = aold;
+    endif;
+
+  enddo;
+
+  if QMM07 > 1 & (aoldest - aold) > 30 then
+    warning( 9001, aoldest, aold )
+	  select( tr("Status for first sibling"), QMM15(1), tr("Continue"), continue );
+  endif;
+  if err then
+    showroster( 2 );
+  endif;
+
+PROC QMM13
+preproc
+  do i = 1 while i <= maxsib
+    if i <= QMM07 then
+      QMM13(i)  = i;
+{     QMM13N(i) = QMM01N(i);  }
+ 	    do j = 1 while j <= maxsib { & i <> QMM01(j) }
+        if i = QMM01(j) then
+          QMM13N(i) = QMM01N(j);
+          break;
+        endif;
+      enddo;
+    else
+      QMM13(i) = notappl
+    endif;
+  enddo;
+  SaveData();
+
+  if curocc() > QMM07 then  { to run in-Batch }
+    endgroup
+  endif;
+PROC QMM13N
+  if android then 
+    setocclabel(QWSECMM_ROSTER(curocc()),maketext("%d %s",curocc(),strip($)));
+  endif;
+PROC QMM15
+  if $ = 2 then
+    skip to QMM17
+  elseif $ <> 1 then
+    skip to next QMM13
+  endif;
+
+PROC QMM16
+  skip to next QMM13;
+
+PROC QMM18
+  if !valid($) | $ < 12 | QMM14 <> 2 then
+    skip to QMM23
+  endif;
+
+PROC QMM19
+  if $ = 1 then
+    skip to QMM23
+  endif;
+
+PROC QMM20
+  if $ = 1 then
+    skip to next QMM13
+  endif;
+
+PROC QMM21
+  if $ <> 1 then
+    skip to QMM23
+  endif;
+
+PROC QMM23
+  if $ = 1 then
+    skip to next QMM13
+  endif;
+{ @@@ End Maternal Mortality for Women }
+
+PROC FI1
+  if $ = 1 then
+    skip to FI4
+  endif;	
+
+PROC FI2
+  if $ = 1 then
+    skip to FI4
+  endif;	
+  
+PROC FI3
+  endgroup;
+
+PROC FI4
+  x = count(QWSEC2B_ROSTER2 where Q223 = 1);  // counting live births
+  y = count(QWSEC2B_ROSTER2 where Q223 = 2);  // counting stillbirths
+  if $ = 1 & !x then
+    warning( 9200 )
+	  select( tr("Change this response"), $, tr("Begin reproduction"), Q201, tr("Continue"), continue );
+  elseif $ = 2 & !y then
+    warning( 9201 )
+	  select( tr("Change this response"), $, tr("Begin reproduction"), Q201, tr("Continue"), continue );
+  elseif $ = 3 then
+    skip to FI6
+  endif;	
+  
+PROC FI5
+onfocus
+  if FI4 in 1,2 then
+    textstr1 = GetValueLabel( FI4 );
+  else
+    textstr1 = GetValueLabel( FI6 );
+  endif;
+  
+postproc
+  skip to FI7;
+  
+PROC FI6
+  if $ = 8 then
+    skip to FI8
+  endif;	
+  { Get other answer }
+  if $ = 6 then
+    getother( GetSymbol(), 0 );
+    enter FL_OTHERS
+  endif;  
+
+PROC FI8
+  if $ = 1 then
+    skip to FI10
+  endif;	
+  
+PROC FI9
+  $ = SortAlpha( $ );
+  { Get other answer }
+  if pos( "X", $ ) then
+    getother( GetSymbol(), 0 );
+    enter FL_OTHERS
+  endif;
+  endgroup;
+
+PROC FI10
+  if $ in 0,5 then
+    errmsg( 9980 );
+    reenter
+  endif;	
+  { Get other answer }
+  if $ = 6 then
+    getother( GetSymbol(), 0 );
+    enter FL_OTHERS
+  endif;
+{ @@@ End fistula module }
+  
 PROC QWSEC2C_FORM
 preproc
   savedata();
@@ -7029,28 +7557,9 @@ preproc
     QCAL(2)[i:1] = QCAL2[i:1];
   enddo;
   
-PROC Q1116H
-preproc
-  if visualvalue( $ ) = notappl then
-    time = systime();
-    $ = int( time/10000 );
-  endif;
-
-PROC Q1116M
-preproc
-  if visualvalue( $ ) = notappl then
-    time = systime();
-    $ = int( time/100 ) % 100;
-  endif;
-  
-postproc  
-  skip to QLANGQ
-  
-{ @@@ Ends the entire women's questionnaire }
-
-{ @@@ Begin Men's Questionnaire }
-{
-PROC AM101H
+postproc
+  skip to QLANG_FORM;
+PROC QM101H
 preproc
   savedata();
 
@@ -7059,26 +7568,26 @@ preproc
     $ = QVHOUR( n );
   endif;
 
-PROC AM101M
+PROC QM101M
 preproc
   if InEntry then
     n = totocc( QVISITS_ROSTER );
     $ = QVMINUTE( n );
   endif;
 
-PROC AM102
+PROC QM102
   if $ <> 96 then
-    skip to AM104
+    skip to QM104
   endif;
 
-PROC AM103
+PROC QM103
   { Get Other Answer }
   if $ = 96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM104
+PROC QM104
   if valid($) & $ >= QH07(QLINE) then
     warning( 1040, QH07(QLINE) ) 
 	  select( tr("Time living in place of interview"), $, tr("Continue"), continue );
@@ -7088,53 +7597,53 @@ PROC AM104
 	  select( tr("Time living in place of interview"), $, tr("Continue"), continue );
   endif;
   if $ in 95,96 then
-    skip to AM110_BLOCK;
+    skip to QM110_BLOCK;
   elseif !$ in 0:4 then
-    skip to AM107
+    skip to QM107
   endif;
   
-PROC AM106Y
+PROC QM106Y
   di = cmcode(QINTM, QINTY);
-  if afterint(AM106M,$,QINTM,QINTY) then
-	errmsg( 89998 ) select( tr("Date moved here"), AM106_BLOCK );
+  if afterint(QM106M,$,QINTM,QINTY) then
+	errmsg( 89998 ) select( tr("Date moved here"), QM106_BLOCK );
   endif;
-  if validyr(AM106Y) then
-    temp = setub(AM106M, AM106Y, 9999);
-	if int((di-temp)/12) <> AM104 then
-	  warning( 1035, AM104 ) 
-	    select( tr("Date moved here"), AM106_BLOCK, 
-	            tr("Years living in place of residence"), AM104,
+  if validyr(QM106Y) then
+    temp = setub(QM106M, QM106Y, 9999);
+	if int((di-temp)/12) <> QM104 then
+	  warning( 1035, QM104 ) 
+	    select( tr("Date moved here"), QM106_BLOCK, 
+	            tr("Years living in place of residence"), QM104,
 				tr("Continue"), continue );
 	endif;
-    if AM104 = 0 & di = temp then	
-      warning( 1045, "AM104" ) 
+    if QM104 = 0 & di = temp then	
+      warning( 1045, "QM104" ) 
 	    select( tr("Time living in place of interview"), $, tr("Continue"), continue );
     endif;  
   endif;
 
-PROC AM109
+PROC QM109
   { Get Other Answer }
   if $ = 96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM111
+PROC QM111
   { Set up CMC for date of interview }
   di = cmcode( QINTM, QINTY );
   { Initial ranges for CMC date of birth }
-  if validyr(AM110Y) then
-    ldb = setlb( AM110M, AM110Y, 0 );
-    udb = setub( AM110M, AM110Y, 9999 );
+  if validyr(QM110Y) then
+    ldb = setlb( QM110M, QM110Y, 0 );
+    udb = setub( QM110M, QM110Y, 9999 );
   else
     ldb = di - 779;             { !!! modify based on upper age of eligible men }
     udb = di - 180;
   endif;
 
   { Check either year of birth or age given for all men }
-  if !validyr(AM110Y) & !valid($) then
-    errmsg( 21060, AM110M, AM110Y, $ ) 
-	  select( tr("Date of birth"), AM110_BLOCK, tr("Age"), $ );
+  if !validyr(QM110Y) & !valid($) then
+    errmsg( 21060, QM110M, QM110Y, $ ) 
+	  select( tr("Date of birth"), QM110_BLOCK, tr("Age"), $ );
   { Compare age of man with age in household to look for typos }
   elseif $ <> QH07(QLINE) & demode() = add & !inAdvance() then
     warning( 21061, $, QH07(QLINE) ) 
@@ -7146,16 +7655,16 @@ PROC AM111
     { Lower bound of CMC }
     t = ndjlba( ldb, udb, di, di, $ );
     if t < 0 then
-      errmsg( 21062, AM110M, AM110Y, $, QINTM, QINTY ) 
-	    select( tr("Date of birth"), AM110_BLOCK, tr("Age"), $ );
+      errmsg( 21062, QM110M, QM110Y, $, QINTM, QINTY ) 
+	    select( tr("Date of birth"), QM110_BLOCK, tr("Age"), $ );
     else
       ldb = t
     endif;
     { Upper bound of CMC }
     t = adjuba( ldb, udb, di, di, $ );
     if t < 0 then
-      errmsg( 21062, AM110M, AM110Y, $, QINTM, QINTY ) 
-	    select( tr("Date of birth"), AM110_BLOCK, tr("Age"), $ );
+      errmsg( 21062, QM110M, QM110Y, $, QINTM, QINTY ) 
+	    select( tr("Date of birth"), QM110_BLOCK, tr("Age"), $ );
     else
       udb = t
     endif;
@@ -7165,34 +7674,34 @@ PROC AM111
   agem = int( (di - ldb) / 12 );
 
   { checks duration of current residence against age }
-  if AM104 in 0:64 & AM104 > agem then
-    errmsg( 21030, AM104 ) 
-	  select( tr("Years living in place of residence"), AM104, 
+  if QM104 in 0:64 & QM104 > agem then
+    errmsg( 21030, QM104 ) 
+	  select( tr("Years living in place of residence"), QM104, 
 	          tr("Age"), $ );
   endif;
 
-PROC AM113
+PROC QM113
   if $ <> 1 then
-    skip to AM117
+    skip to QM117
   endif;
 
-PROC AM114
+PROC QM114
   { Check education in individual questionnaire agrees with education in hh }
   if $ <> QH17A(QLINE) & demode() = add & !inAdvance() then
     warning( 21080, $, QH17A(QLINE) ) 
 	  select( tr("Level of education"), $, tr("Continue"), continue );
   endif;
 
-PROC AM115
+PROC QM115
 onfocus
   grades.clear();
   grades.add(tr("Less than one year"), 0);
-  n = maxgrade(AM114);
+  n = maxgrade(QM114);
   do i = 1 while i <= n
     grades.add(maketext("Year %d", i), i);
     // change the above to match the terms used in the country
     // e.g. it might be "Year" that is used in most levels, but "Form" is used in secondary schooling
-    // if AM114 = 2 then
+    // if QM114 = 2 then
     //   grades.add(maketext("Form %d", i), i);
     // else
     //   grades.add(maketext("Year %d", i), i);
@@ -7201,9 +7710,9 @@ onfocus
   SetValueSet( $, grades );
 
 postproc
-  if !LevelYears( AM114, $ ) then
+  if !LevelYears( QM114, $ ) then
     errmsg( 21091 ) 
-	  select( tr("Level of education"), AM114, tr("Grade/year/form"), $ );
+	  select( tr("Level of education"), QM114, tr("Grade/year/form"), $ );
   endif;
 
   { Check education in individual questionnaire agrees with education in hh }
@@ -7212,121 +7721,121 @@ postproc
 	  select( tr("Grade/year/form"), $, tr("Continue"), continue );
   endif;
 
-PROC AM117
+PROC QM117
 preproc
-  if AM114 = 3 then
-    skip to AM119
+  if QM114 = 3 then
+    skip to QM119
   endif;
 
 postproc
   if $ in 1,5 then
-     skip to AM120
+     skip to QM120
   { Get Other Answer }
   elseif $ = 4 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM122
+PROC QM122
   if $ <> 1 then
-    skip to AM127
+    skip to QM127
   endif;
 
-PROC AM127
+PROC QM127
   if $ <> 1 then
-    skip to AM130
+    skip to QM130
   endif;
 
-PROC AM128
+PROC QM128
   if $ <> 1 then
-    skip to AM130
+    skip to QM130
   endif;
 
-PROC AM130
+PROC QM130
   { Get Other Answer }
   if $ = 96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM131
+PROC QM131
   { Get Other Answer }
   if $ = 96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM201
+PROC QM201
   if $ <> 1 then
-    skip to AM206
+    skip to QM206
   endif;
 
-PROC AM202
+PROC QM202
   if $ <> 1 then
-    skip to AM204
+    skip to QM204
   endif;
 
-PROC AM203B
+PROC QM203B
   { Check for at least one child living at home - otherwise 202 must be 2 }
-  if !AM203A & !$ then
-    errmsg( 22030 ) select( tr("Any children living at home"), AM202, 
-	                        tr("Number of children living at home"), AM203_BLOCK );
+  if !QM203A & !$ then
+    errmsg( 22030 ) select( tr("Any children living at home"), QM202, 
+	                        tr("Number of children living at home"), QM203_BLOCK );
   endif;
 
-PROC AM204
+PROC QM204
   if $ <> 1 then
-    skip to AM206
+    skip to QM206
   endif;
 
-PROC AM205B
+PROC QM205B
   { Check for at least one child living away from home - otherwise 204 must be 2 }
-  if !AM205A & !$ then
-    errmsg( 22030 ) select( tr("Any children living away"), AM204, 
-	                        tr("Number of children living away"), AM205_BLOCK );
+  if !QM205A & !$ then
+    errmsg( 22030 ) select( tr("Any children living away"), QM204, 
+	                        tr("Number of children living away"), QM205_BLOCK );
   endif;
 
-PROC AM206
+PROC QM206
   if $ <> 1 then
-    skip to AM208
+    skip to QM208
   endif;
 
-PROC AM207B
+PROC QM207B
   { Check for at least one child to have died - otherwise 206 must be 2 }
-  if !AM207A & !$ then
-    errmsg( 22030 ) select( tr("Any boys or girls who died"), AM206, 
-	                        tr("Number of boys or girls who died"), AM207_BLOCK );
+  if !QM207A & !$ then
+    errmsg( 22030 ) select( tr("Any boys or girls who died"), QM206, 
+	                        tr("Number of boys or girls who died"), QM207_BLOCK );
   endif;
 
-PROC AM208
+PROC QM208
 preproc
   { Count up total children ever born }
-  $ = NAtoZero(AM203A) + NAtoZero(AM203B) +
-      NAtoZero(AM205A) + NAtoZero(AM205B) +
-      NAtoZero(AM207A) + NAtoZero(AM207B);
+  $ = NAtoZero(QM203A) + NAtoZero(QM203B) +
+      NAtoZero(QM205A) + NAtoZero(QM205B) +
+      NAtoZero(QM207A) + NAtoZero(QM207B);
 
 postproc
-  if AM208 = 0 & AM201 = 1 then
-    errmsg( 22080 ) select( tr("Any children ever born"), AM201 );
+  if QM208 = 0 & QM201 = 1 then
+    errmsg( 22080 ) select( tr("Any children ever born"), QM201 );
   endif;
 
-  if AM208 = 0 then
+  if QM208 = 0 then
     endgroup
-  elseif AM208 = 1 then
-    skip to AM211
+  elseif QM208 = 1 then
+    skip to QM211
   endif;
 
-PROC AM211
+PROC QM211
   if valid($) & $ > agem then
     errmsg( 22130, $, agem ) 
-      select( tr("Age at birth of first child"), $, tr("Current age" ), AM111 );
+      select( tr("Age at birth of first child"), $, tr("Current age" ), QM111 );
   endif;
   SaveData();
 
-PROC AM213
+PROC QM213
 preproc
   { Count up living children }
-  lchild = NAtoZero(AM203A) + NAtoZero(AM203B) +
-           NAtoZero(AM205A) + NAtoZero(AM205B);
+  lchild = NAtoZero(QM203A) + NAtoZero(QM203B) +
+           NAtoZero(QM205A) + NAtoZero(QM205B);
   if !lchild then
     endgroup
   endif;
@@ -7335,45 +7844,45 @@ postproc
   if valid($) & $+int(minabm/12) > agem then
     warning( 22140, $, agem, int(minabm/12) )
 	  select( tr("Age of youngest child"), $,
-	          tr("Current age"), AM111,
+	          tr("Current age"), QM111,
 			  tr("Continue"), continue );
   endif;
   if !$ in 0:2 then
     endgroup
   endif;
 
-PROC AM215
+PROC QM215
   if !pos( $[1:1], alphalst ) then
     errmsg( 89991 ) select( tr("Name"), $ );
   endif;
 
-PROC AM216
+PROC QM216
   if $ <> 1 then
-    skip to AM218
+    skip to QM218
   endif;
 
-PROC AM218
+PROC QM218
   if $ <> 1 then
     endgroup
   endif;
 
-PROC AMSEC3A_FORM
+PROC QMSEC3A_FORM
 preproc
-  do i = 1 while i <= maxocc( AMSEC3A_GRP )
-    AM3N(i) = i
+  do i = 1 while i <= maxocc( QMSEC3A_GRP )
+    QM3N(i) = i
   enddo;
 
 { The logic used in QALLMETH should be replicated here if the spontaneous knowledge of method is used }
-{ If that is the case AMALLMETH is the variable to be used for men                                    }
+{ If that is the case QMALLMETH is the variable to be used for men                                    }
 
 PROC QM301_INTRO
   $ = "";
 
-PROC AM301
+PROC QM301
 preproc
-  numeric oldvalm = visualvalue( $(AM3N) );
-  if AM3N >= methoth then
-    if visualvalue($(AM3N)) in 1,2 then
+  numeric oldvalm = visualvalue( $(QM3N) );
+  if QM3N >= methoth then
+    if visualvalue($(QM3N)) in 1,2 then
       $ = oldvalm;
     else
       $ = 2
@@ -7382,23 +7891,23 @@ preproc
   endif;
 
 onfocus
-  methname = GetLabel( AM301, AM3N );
+  methname = GetLabel( QM301, QM3N );
 
-PROC AM301OT
+PROC QM301OT
   $ = SortAlpha( $ );
   { Get names of other methods }
   if pos( "Y", $ ) & length(strip($)) > 1 then
     errmsg( 3141 ) select( tr("Fix answers marked"), $ );
   endif;
   if pos( "A", $ ) then
-    AM301(methoth) = 1
+    QM301(methoth) = 1
   else
-    AM301(methoth) = 2
+    QM301(methoth) = 2
   endif;
   if pos( "B", $ ) then
-    AM301(methoth+1) = 1
+    QM301(methoth+1) = 1
   else
-    AM301(methoth+1) = 2
+    QM301(methoth+1) = 2
   endif;
   if pos( "A", $ ) then
     if demode() = add & !inAdvance() then
@@ -7415,53 +7924,53 @@ PROC AM301OT
     enter FL_OTHERS
   endif;
 
-PROC AM304
+PROC QM304
   if $ <> 1 then
-    skip to AM306;
+    skip to QM306;
   endif;
 
-PROC AM305
+PROC QM305
   { Get Other Answer }
   if $ = 6 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM307B
+PROC QM307B
   SaveData();
 
-PROC AM401
+PROC QM401
   wives = 0;                  { Initialized for later use }
   inunion = ( $ in 1,2 );
 
   if inunion then
-    skip to AM404
+    skip to QM404
   endif;
 
-PROC AM402
+PROC QM402
   if $ = 3 then
-    skip to AM413
+    skip to QM413
   endif;
 
-PROC AM403
-  skip to AM410;
+PROC QM403
+  skip to QM410;
 
-PROC AM404
+PROC QM404
 onfocus
   relterms();
   
-PROC AM405
+PROC QM405
   if $ <> 1 then
     wives = 1;
-    skip to AM407
+    skip to QM407
   endif;
 
-PROC AM406
+PROC QM406
   wives = $;
   { if missing assume one wife }
   if !valid($) then wives = 1 endif;
 
-PROC AM407
+PROC QM407
 preproc
   { skip out of loop after last wife/partner entered }
   if curocc() > wives then
@@ -7515,66 +8024,66 @@ postproc
     endif;
     { line number cannot be equal to any preceding line number }
     do n = curocc()-1 while n by (-1)
-      if AM407(n) = AM407 then
-        errmsg( 25065, AM407 )select( tr("Line number of wife/partner"), $ );
+      if QM407(n) = QM407 then
+        errmsg( 25065, QM407 )select( tr("Line number of wife/partner"), $ );
       endif;
     enddo;
   endif;
 
-PROC AM408
+PROC QM408
 onfocus
-  if AM407 in 1:QHMEMBER then
-    partner = strip(QH02(AM407))
+  if QM407 in 1:QHMEMBER then
+    partner = strip(QH02(QM407))
   else
     partner = tr("this wife or partner");
   endif;
 
 postproc
   { Check wife's age with age declared in the household }
-  if demode() = add & !inAdvance() & AM407 & valid(QH07(AM407)) & $ <> QH07(AM407) then
-    warning( 25068, QH07(AM407) )
+  if demode() = add & !inAdvance() & QM407 & valid(QH07(QM407)) & $ <> QH07(QM407) then
+    warning( 25068, QH07(QM407) )
 	  select( tr("Age of wife/partner"), $, tr("Continue"), continue );
   endif;
 
-PROC AM410
+PROC QM410
 preproc
   if wives > 1 then
-    skip to AM411_BLOCK
+    skip to QM411_BLOCK
   endif;
 
-PROC AM411_BLOCK
+PROC QM411_BLOCK
 onfocus
-  marriages = ( wives > 1 | AM410 = 1 );
+  marriages = ( wives > 1 | QM410 = 1 );
   relterms();
   
-PROC AM411Y
+PROC QM411Y
   numeric ageatm;
   { Check date of marriage before interview }
-  if afterint( AM411M, $, QINTM, QINTY ) then
-    errmsg( 9992 ) select( tr("Date of 1st union"), AM411_BLOCK );
+  if afterint( QM411M, $, QINTM, QINTY ) then
+    errmsg( 9992 ) select( tr("Date of 1st union"), QM411_BLOCK );
   { Compute CMC date of marriage }
   elseif validyr($) then
-    ldm = setlb( AM411M, $, 0 );
-    udm = setub( AM411M, $, 9999 );
+    ldm = setlb( QM411M, $, 0 );
+    udm = setub( QM411M, $, 9999 );
 	ageatm = int((ldm-udb)/12);
 	if ageatm < 10 then
 	  warning( 5140, ageatm )
-	    select( tr("Date of 1st union"), AM411_BLOCK, tr("Continue" ), continue );
+	    select( tr("Date of 1st union"), QM411_BLOCK, tr("Continue" ), continue );
 	elseif ageatm > agem then
 	  errmsg( 5141, ageatm, agem )
-	    select( tr("Date of 1st union"), AM411_BLOCK );
+	    select( tr("Date of 1st union"), QM411_BLOCK );
 	endif;
-    skip to AM413
+    skip to QM413
   endif;
 
-PROC AM412
+PROC QM412
   if valid($) then
     ldm = ldb+$*12;
     udm = udb+$*12+11;
     if ldm > di then
       if demode() = add & !inAdvance() then
-        warning( 25130, QINTM, QINTY, AM110M, AM110Y, agem, AM411M, AM411Y, AM412 )
-		  select( tr("Date of 1st union"), AM411_BLOCK, 
+        warning( 25130, QINTM, QINTY, QM110M, QM110Y, agem, QM411M, QM411Y, QM412 )
+		  select( tr("Date of 1st union"), QM411_BLOCK, 
 		          tr("Age at 1st union"), $, 
 				  tr("Continue"), continue );
       endif
@@ -7584,8 +8093,8 @@ PROC AM412
   else
     { No age and year at marriage given }
     if demode() = add & !inAdvance() then
-      warning( 25135, AM412, AM411M, AM411Y )
-	    select( tr("Date of 1st union"), AM411_BLOCK, 
+      warning( 25135, QM412, QM411M, QM411Y )
+	    select( tr("Date of 1st union"), QM411_BLOCK, 
 	            tr("Age at 1st union"), $, 
 			    tr("Continue"), continue );
     endif;
@@ -7594,23 +8103,23 @@ PROC AM412
     udm = di;
   endif;
 
-PROC AM413
+PROC QM413
 preproc
   { consistency of date of marriage is done here because age at marriage
     is not asked to all the respondents }
-  if demode() = add & !inAdvance() & AM411M <> notappl then  { if ever married }
+  if demode() = add & !inAdvance() & QM411M <> notappl then  { if ever married }
     if ldm > udm then
-      warning( 25121, int(minamm/12), AM110M, AM110Y, agem, AM411M, AM411Y, AM412 )
-  		select( tr("Date of 1st union"), AM411_BLOCK, 
-		        tr("Age at 1st union"), AM412,
-				tr("Current age"), AM111,
+      warning( 25121, int(minamm/12), QM110M, QM110Y, agem, QM411M, QM411Y, QM412 )
+  		select( tr("Date of 1st union"), QM411_BLOCK, 
+		        tr("Age at 1st union"), QM412,
+				tr("Current age"), QM111,
 			    tr("Continue"), continue );
 
     elseif ldm > di then
-      warning( 25120, AM411M, AM411Y, AM412, QINTM, QINTY, AM110M, AM110Y, agem )
-  		select( tr("Date of 1st union"), AM411_BLOCK, 
-		        tr("Age at 1st union"), AM412,
-				tr("Current age"), AM111,
+      warning( 25120, QM411M, QM411Y, QM412, QINTM, QINTY, QM110M, QM110Y, agem )
+  		select( tr("Date of 1st union"), QM411_BLOCK, 
+		        tr("Age at 1st union"), QM412,
+				tr("Current age"), QM111,
 			    tr("Continue"), continue );
     endif;
   endif;
@@ -7618,108 +8127,102 @@ preproc
 postproc
   $ = "";
 
-PROC AM414
+PROC QM414
   if $ = 0 then
-    if AM208 > 0 then           {have kids}
+    if QM208 > 0 then           {have kids}
       errmsg( 25150 ) select( tr("Age at first intercourse"), $ );
     elseif wives > 0 then
       if demode() = add & !inAdvance() then
-        warning( 25151, wives, AM401, AM402 )
+        warning( 25151, wives, QM401, QM402 )
 		  select( tr("Age at first intercourse"), $, 
-		          tr("Marital status"), AM401,
+		          tr("Marital status"), QM401,
 		          tr("Continue"), continue );
       endif;
     endif;
-  elseif $ = 95 & AM402 = 3 then
+  elseif $ = 95 & QM402 = 3 then
     errmsg( 25192 ) select( tr("Age at first intercourse"), $ );
   elseif valid($) & $ < 95 then
     if $ > agem then
-      warning( 25190, QINTM, QINTY, AM110M, AM110Y, AM111, $ )
+      warning( 25190, QINTM, QINTY, QM110M, QM110Y, QM111, $ )
 	    select( tr("Age at first intercourse"), $, 
- 		        tr("Current age"), AM111, 
+ 		        tr("Current age"), QM111, 
 		        tr("Continue"), continue );
     endif
   endif;
 
   { Set up ever married status for later use }
-  evermarr = ( AM401 in 1,2 | AM402 in 1,2 );
+  evermarr = ( QM401 in 1,2 | QM402 in 1,2 );
   if $ = 0 then
     endgroup;
   endif;
 
-PROC AM415N
+PROC QM415N
 onfocus
-  protect( AM415U, false );
+  protect( QM415U, false );
 
-PROC AM415U
+PROC QM415U
 preproc
-  if AM415N in 98,refused then
+  if QM415N in 98,refused then
     protect( $, true );
     $ = 9;
   endif;
 
 postproc
-  badspecial( $, AM415N, getsymbol() );
+  badspecial( $, QM415N, getsymbol() );
 
-  recode AM415U :: AM415N -> err;
+  recode QM415U :: QM415N -> err;
             3   :: >=12   -> 1;
             2   :: >=52   -> 1;
           <>1   :: 0      -> 1;
                 ::        -> 0;
   endrecode;
   if err then
-    errmsg( 9994 ) select( tr("Number"), AM415N, tr("Unit"), AM415U );
-  elseif AM415U = 4 & AM415N > agem then
-    errmsg( 25193, AM415U, AM415N, agem )
-	  select( tr("Time since last sex"), AM415_BLOCK, 
- 	          tr("Current age"), AM111, 
+    errmsg( 9994 ) select( tr("Number"), QM415N, tr("Unit"), QM415U );
+  elseif QM415U = 4 & QM415N > agem then
+    errmsg( 25193, QM415U, QM415N, agem )
+	  select( tr("Time since last sex"), QM415_BLOCK, 
+ 	          tr("Current age"), QM111, 
 		      tr("Continue"), continue );
   endif;
-  if AM415U in 4,9 then
-    skip to AM429
+  if QM415U in 4,9 then
+    skip to QM429
   endif;
 
-PROC AM416
+PROC QM416
   if $ = 1 then
-    skip to AM418
+    skip to QM418
   endif;
 
-PROC AM417
-  skip to AM419;
+PROC QM417
+  skip to QM419;
 
-PROC AM418
+PROC QM418
   $ = SortAlpha( $ );
   { !!! if ever use in contraceptive table make sure to check against that rather than knowledge
         In DHS-8 a one to one relationship between current use and contraceptive table          }
   y = length( strip($) );
   do x = 1 while x <= y
     meth = pos( $[x:1], am439str );
-    if AM301(meth) <> 1 then               { other methods should be known }
-      errmsg( 23142, GetLabel(AM418, $[x:1]) ) select( tr("Method used"), $ );
+    if QM301(meth) <> 1 then               { other methods should be known }
+      errmsg( 23142, GetLabel(QM418, $[x:1]) ) select( tr("Method used"), $ );
     endif;
   enddo;
   if poschar( "GH",$ ) then
-    skip to AM420;
+    skip to QM421;
   endif;	
 
-PROC AM419
-  if $ = 1 & AM301(7) <> 1 then
+PROC QM419
+  if $ = 1 & QM301(7) <> 1 then
     warning( 26280 ) 
 	  select( tr("Used condom during last intercourse"), $,
-	          tr("Knowledge of condom"), AM301(7),
+	          tr("Knowledge of condom"), QM301(7),
 			  tr("Continue"), continue );
   endif;
   if $ <> 1 then
-    skip to AM422
+    skip to QM422
   endif;
 
-PROC AM420
-  if $ = 96 then
-    getother(GetSymbol(), 0 );
-    enter FL_OTHERS
-  endif;
-
-PROC AM421
+PROC QM421
   majorgrp( $ );
   { Get other answer }
   if $ in 16,27,36,96 then
@@ -7727,80 +8230,80 @@ PROC AM421
     enter FL_OTHERS
   endif;
 
-PROC AM422
+PROC QM422
   if $ = 1 & !evermarr then
-    warning( 25240, AM401, AM402 )
+    warning( 25240, QM401, QM402 )
       select( tr("Relationship with last sex partner"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
-  elseif $ = 2 & AM402 = 3 then
-    warning( 25241, AM401, AM402 )
+  elseif $ = 2 & QM402 = 3 then
+    warning( 25241, QM401, QM402 )
       select( tr("Relationship with last sex partner"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
   elseif $ = 6 then
     getother( "Q730", 10 );      // use same question as for women
     enter FL_OTHERS
   endif;
 
-PROC AM423
+PROC QM423
   if $ <> 1 then
-    skip to AM429
+    skip to QM429
   endif;
 
-PROC AM425
+PROC QM425
   if $ = 1 & !evermarr then
-    warning( 25240, AM401, AM402 )
+    warning( 25240, QM401, QM402 )
       select( tr("Relationship with prior sex partner"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
-  elseif $ = 2 & AM402 = 3 then
-    warning( 25241, AM401, AM402 )
+  elseif $ = 2 & QM402 = 3 then
+    warning( 25241, QM401, QM402 )
       select( tr("Relationship with prior sex partner"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
   elseif $ = 6 then
     getother( "Q730", 11 );      // use same question as for women
     enter FL_OTHERS
   endif;
 
-PROC AM426
+PROC QM426
   if $ <> 1 then
-    skip to AM429
+    skip to QM429
   endif;
 
-PROC AM428
+PROC QM428
   if $ = 1 & !evermarr then
-    warning( 25240, AM401, AM402 )
+    warning( 25240, QM401, QM402 )
       select( tr("Relationship with third prior sex partner"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
-  elseif $ = 2 & AM402 = 3 then
-    warning( 25241, AM401, AM402 )
+  elseif $ = 2 & QM402 = 3 then
+    warning( 25241, QM401, QM402 )
       select( tr("Relationship with third prior sex partner"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
   elseif $ = 6 then
     getother( "Q730", 12 );      // use same question as for women
     enter FL_OTHERS
   endif;
 
-PROC AM429
-  sexp = 1 + (AM423 = 1) + (AM426 = 1);
+PROC QM429
+  sexp = 1 + (QM423 = 1) + (QM426 = 1);
   if valid($) & $ < sexp then
     warning( 25245, sexp )
       select( tr("Lifetime number of sex partners"), $, tr("Continue"), continue );
   endif;
   SaveData();
 
-PROC AM504
+PROC QM504
 preproc
   { not in union or man sterilized }
-  { Note that alpha variables stay in memory when backtracking, thus AM416 needs to be included! }
-  if !inunion | pos("B", AM418) then
-    skip to AM514
+  { Note that alpha variables stay in memory when backtracking, thus QM416 needs to be included! }
+  if !inunion | pos("B", QM418) then
+    skip to QM514
   elseif wives > 1 then
-    skip to AM509
+    skip to QM509
   endif;
   
 onfocus
@@ -7808,21 +8311,21 @@ onfocus
 
 postproc
   if $ <> 1 then
-    skip to AM507;
+    skip to QM507;
   endif;
 
-PROC AM505
+PROC QM505
 onfocus
   relterms();  
   
 postproc
   if $ <> 1 then
-    skip to AM514
+    skip to QM514
   endif;
 
-PROC AM506N
+PROC QM506N
 onfocus
-  protect( AM506U, false );
+  protect( QM506U, false );
 
 postproc
   { Check special answers }
@@ -7831,27 +8334,27 @@ postproc
     enter FL_OTHERS
   endif;
 
-PROC AM506U
+PROC QM506U
 preproc
-  if AM506N in 93:98 then
+  if QM506N in 93:98 then
     protect( $, true );
     $ = 9;
   endif;
 
 postproc
   { Check special answers }
-  badspecial( $, AM506N, getsymbol() );
+  badspecial( $, QM506N, getsymbol() );
 
-  skip to AM514;
+  skip to QM514;
 
-PROC AM507
+PROC QM507
   if $ <> 1 then
-    skip to AM514
+    skip to QM514
   endif;
 
-PROC AM508N
+PROC QM508N
 onfocus
-  protect( AM508U, false );
+  protect( QM508U, false );
 
 postproc
   if $ = 96 then
@@ -7859,32 +8362,32 @@ postproc
     enter FL_OTHERS
   endif;
 
-PROC AM508U
+PROC QM508U
 preproc
-  if AM508N in 93:98 then
+  if QM508N in 93:98 then
     protect( $, true );
     $ = 9;
   endif;
 
 postproc
   { Check special answers }
-  badspecial( $, AM508N, getsymbol() );
+  badspecial( $, QM508N, getsymbol() );
 
-  skip to AM514;
+  skip to QM514;
 
-PROC AM509
+PROC QM509
   if $ <> 1 then
-    skip to AM512
+    skip to QM512
   endif;
 
-PROC AM510
+PROC QM510
   if $ <> 1 then
-    skip to AM514
+    skip to QM514
   endif;
 
-PROC AM511N
+PROC QM511N
 onfocus
-  protect( AM511U, false );
+  protect( QM511U, false );
 
 postproc
   if $ = 96 then
@@ -7892,27 +8395,27 @@ postproc
     enter FL_OTHERS
   endif;
 
-PROC AM511U
+PROC QM511U
 preproc
-  if AM511N in 93:98 then
+  if QM511N in 93:98 then
     protect( $, true );
     $ = 9;
   endif;
 
 postproc
   { Check special answers }
-  badspecial( $, AM511N, getsymbol() );
+  badspecial( $, QM511N, getsymbol() );
 
-  skip to AM514;
+  skip to QM514;
 
-PROC AM512
+PROC QM512
   if $ <> 1 then
-    skip to AM514
+    skip to QM514
   endif;
 
-PROC AM513N
+PROC QM513N
 onfocus
-  protect( AM513U, false );
+  protect( QM513U, false );
 
 postproc
   if $ = 96 then
@@ -7920,21 +8423,21 @@ postproc
     enter FL_OTHERS
   endif;
 
-PROC AM513U
+PROC QM513U
 preproc
-  if AM513N in 93:98 then
+  if QM513N in 93:98 then
     protect( $, true );
     $ = 9;
   endif;
 
 postproc
   { Check special answers }
-  badspecial( $, AM513N, getsymbol() );
+  badspecial( $, QM513N, getsymbol() );
 
-PROC AM514
+PROC QM514
 onfocus
-  lchild = NAtoZero(AM203A) + NAtoZero(AM203B) +
-           NAtoZero(AM205A) + NAtoZero(AM205B);
+  lchild = NAtoZero(QM203A) + NAtoZero(QM203B) +
+           NAtoZero(QM205A) + NAtoZero(QM205B);
 
 postproc
   if $ = 96 then
@@ -7945,34 +8448,34 @@ postproc
     endgroup
   endif;
 
-PROC AM515B
+PROC QM515B
 preproc
-  if AM515A = 96 then
+  if QM515A = 96 then
     $ = 96;
     noinput
   endif;
 
 postproc
-  if ($ = 96 <=> AM515A <> 96) | ($ = missing <=> AM515A <> missing) then
-    errmsg( 9994 ) select( tr("Boys"), AM515A, tr("Girls"), $ );
+  if ($ = 96 <=> QM515A <> 96) | ($ = missing <=> QM515A <> missing) then
+    errmsg( 9994 ) select( tr("Boys"), QM515A, tr("Girls"), $ );
   endif;
 
-PROC AM515C
+PROC QM515C
 preproc
-  if AM515A = 96 then
+  if QM515A = 96 then
     $ = 96;
     noinput
   endif;
 
 postproc
-  if ($ = 96 <=> AM515A <> 96) | ($ = missing <=> AM515A <> missing) then
-    errmsg( 9994 ) select( tr("Boys"), AM515A, tr("Girls"), AM515B, 
-	                       tr("Either"), $, tr("Total"), AM514 );
-  elseif valid(AM515A) & valid(AM515B) & valid($) & $ < 96 &
-         AM515A+AM515B+$ <> AM514 then
+  if ($ = 96 <=> QM515A <> 96) | ($ = missing <=> QM515A <> missing) then
+    errmsg( 9994 ) select( tr("Boys"), QM515A, tr("Girls"), QM515B, 
+	                       tr("Either"), $, tr("Total"), QM514 );
+  elseif valid(QM515A) & valid(QM515B) & valid($) & $ < 96 &
+         QM515A+QM515B+$ <> QM514 then
     errmsg( 26131 )
-      select( tr("Ideal number of children by sex"), AM515_BLOCK,
-	          tr("Ideal number of children"), AM514 );
+      select( tr("Ideal number of children by sex"), QM515_BLOCK,
+	          tr("Ideal number of children"), QM514 );
   endif;
 
   if $ = 96 then
@@ -7981,35 +8484,35 @@ postproc
   endif;
   SaveData();
 
-PROC AM601
+PROC QM601
   if $ = 1 then
-    skip to AM604
+    skip to QM604
   endif;
 
-PROC AM602
+PROC QM602
   if $ = 1 then
-    skip to AM604
+    skip to QM604
   endif;
 
-PROC AM603
+PROC QM603
   if $ <> 1 then
-    skip to AM609;
+    skip to QM609;
   endif;
 
-PROC AM604
+PROC QM604
   { !!! it is possible that all textual occupation needs to recorded }
   if $ = 96 then
     getother( "Q908", 2 );   { !!! record others for occupation in the same question }
     enter FL_OTHERS
   endif;
 
-PROC AM609
+PROC QM609
 preproc
   { no wives or not earnings in cash }
   if !inunion then
-    skip to AM612;
-  elseif !AM606 in 1,2 then
-    skip to AM610
+    skip to QM612;
+  elseif !QM606 in 1,2 then
+    skip to QM610
   endif;
   
 onfocus
@@ -8017,9 +8520,9 @@ onfocus
 
 postproc
   if $ in 2,3 & !inunion then
-    warning( 27250, $, AM401 )
+    warning( 27250, $, QM401 )
       select( tr("Person deciding how earnings are used"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
   { Get Other answer }
   elseif $ = 6 then
@@ -8027,32 +8530,32 @@ postproc
     enter FL_OTHERS
   endif;
 
-PROC AM610
+PROC QM610
 onfocus
   relterms();
   
 postproc  
   if $ in 2,3 & !inunion then
-    warning( 27250, $, AM401 )
+    warning( 27250, $, QM401 )
       select( tr("Final say on health care"), $,
- 	          tr("Marital status"), AM401,
+ 	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
   endif;
 
-PROC AM611
+PROC QM611
   if $ in 2,3 & !inunion then
-    warning( 27250, $, AM401 )
+    warning( 27250, $, QM401 )
       select( tr("Final say on large purchases"), $,
-	          tr("Marital status"), AM401,
+	          tr("Marital status"), QM401,
 		      tr("Continue"), continue );
   endif;
 
-PROC AM612
+PROC QM612
 onfocus
   if evermarr then
-    setvalueset( $, AM612_VS1 );
+    setvalueset( $, QM612_VS1 );
   else // exclude the husband/partner options for never married
-    vs = AM612_VS1;
+    vs = QM612_VS1;
     vs.remove(2);
     vs.remove(4);
     setvalueset( $, vs );
@@ -8060,20 +8563,20 @@ onfocus
 
 postproc
   if $ = 6 then
-    skip to AM615
+    skip to QM615
   endif;
 
-PROC AM613
+PROC QM613
   if $ <> 1 then
-    skip to AM615
+    skip to QM615
   endif;
 
-PROC AM615
+PROC QM615
 onfocus
   if evermarr then
-    setvalueset( $, AM615_VS1 );
+    setvalueset( $, QM615_VS1 );
   else // exclude the husband/partner options for never married
-    vs = AM615_VS1;
+    vs = QM615_VS1;
     vs.remove(2);
     vs.remove(4);
     setvalueset( $, vs );
@@ -8081,231 +8584,231 @@ onfocus
 
 postproc
   if $ = 6 then
-    skip to AM617A
+    skip to QM617A
   endif;
 
-PROC AM616
+PROC QM616
   if $ <> 1 then
-    skip to AM617A
+    skip to QM617A
   endif;
 
-PROC AM617A
+PROC QM617A
   if $ <> 1 then
-    skip to AM617C
+    skip to QM617C
   endif;
 
-PROC AM619
+PROC QM619
   SaveData();
 
-PROC AM700
+PROC QM700
   $ = "";
 
-PROC AM701
+PROC QM701
   if $ <> 1 then
-    skip to AM729
+    skip to QM729
   endif;
 
-PROC AM703
+PROC QM703
 preproc
   if agem >= 25 then
-    skip to AM708
+    skip to QM708
   endif;
 
-PROC AM710
+PROC QM710
   if $ <> 1 then
-    skip to AM712;
+    skip to QM712;
   endif;
 
-PROC AM712
+PROC QM712
   $ = "";
 
-PROC AM713
+PROC QM713
   if $ <> 1 then
-    skip to AM721
+    skip to QM721
   endif;
 
-PROC AM714Y
-  if afterint(AM714M,$,QINTM,QINTY) then
-	errmsg( 89998 ) select( tr("Date most recent HIV test"), AM714_BLOCK );
+PROC QM714Y
+  if afterint(QM714M,$,QINTM,QINTY) then
+	errmsg( 89998 ) select( tr("Date most recent HIV test"), QM714_BLOCK );
   endif;
-  ldth = setlb( AM714M, AM714Y, 0 );
+  ldth = setlb( QM714M, QM714Y, 0 );
   if ldth < ldb then
-    errmsg( 11012, AM110M, AM110Y ) select( tr("Date most recent HIV test"), AM714_BLOCK );
+    errmsg( 11012, QM110M, QM110Y ) select( tr("Date most recent HIV test"), QM714_BLOCK );
   endif;
 
-PROC AM715
+PROC QM715
   majorgrp( $ );
   if $ in 16,27,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
 
-PROC AM716
+PROC QM716
   if $ <> 1 then
-    skip to AM720
+    skip to QM720
   endif;
 
-PROC AM717
+PROC QM717
   if $ <> 1 then
-    skip to AM720
+    skip to QM720
   endif;	
 
-PROC AM718M
+PROC QM718M
   if $ = 95 then
-    skip to AM719
+    skip to QM719
   endif;
 
-PROC AM718Y
-  if afterint(AM718M,$,QINTM,QINTY) then
-	errmsg( 89998 ) select( tr("Date tested positive"), AM718_BLOCK );
+PROC QM718Y
+  if afterint(QM718M,$,QINTM,QINTY) then
+	errmsg( 89998 ) select( tr("Date tested positive"), QM718_BLOCK );
   endif;
-  udth = setlb( AM718M, AM718Y, 9999 );
+  udth = setlb( QM718M, QM718Y, 9999 );
   if udth > ldth+1 then   // give one month to allow time to get results from last test
     errmsg( 11010 ) 
-	  select( tr("Date tested positive"), AM718_BLOCK,
-              tr("Date most recent HIV test"), AM714_BLOCK );	  
+	  select( tr("Date tested positive"), QM718_BLOCK,
+              tr("Date most recent HIV test"), QM714_BLOCK );	  
   endif;
   if udth < ldb then
-    errmsg( 11011, AM110M, AM110Y ) select( tr("Date tested positive"), AM718_BLOCK );
+    errmsg( 11011, QM110M, QM110Y ) select( tr("Date tested positive"), QM718_BLOCK );
   endif;
 
-PROC AM721
+PROC QM721
   if $ <> 1 then
-    skip to AM723
+    skip to QM723
   endif;
 
-PROC AM726
+PROC QM726
 preproc
-  if AM717 <> 1 then
-    skip to AM729
+  if QM717 <> 1 then
+    skip to QM729
   endif;
 
-PROC AM732
+PROC QM732
 preproc
-  if AM414 = 0 then
-    skip to AM735
-  elseif AM729 <> 1 then
-    skip to AM733
+  if QM414 = 0 then
+    skip to QM735
+  elseif QM729 <> 1 then
+    skip to QM733
   endif;
 
-PROC AM801
+PROC QM801
   if $ <> 1 then
-    skip to AM806
+    skip to QM806
   endif;
 
-PROC AM802
+PROC QM802
   if $ <> 1 then
-    skip to AM804
+    skip to QM804
   endif;
 
-PROC AM803
+PROC QM803
   if valid($) & $ < 95 & $ > agem then
     errmsg(11050, agem) select( tr("Age at traditional circumcision"), $);
   endif;  
 
-PROC AM804
-  if AM802 = 2 & $ = 2 then
-    errmsg(11055) select(tr("Circumcision"), AM801, tr("Traditional"), AM802, tr("Medical"), $ );
+PROC QM804
+  if QM802 = 2 & $ = 2 then
+    errmsg(11055) select(tr("Circumcision"), QM801, tr("Traditional"), QM802, tr("Medical"), $ );
   endif;	
-  if AM802 = 2 & $ = 8 | AM802 = 8 & $ = 2 then
-    warning(11056) select(tr("Circumcision"), AM801, tr("Traditional"), AM802, 
+  if QM802 = 2 & $ = 8 | QM802 = 8 & $ = 2 then
+    warning(11056) select(tr("Circumcision"), QM801, tr("Traditional"), QM802, 
 	                      tr("Medical"), $, tr("Continue"), continue );
   endif;	
   if $ <> 1 then
-    skip to AM806
+    skip to QM806
   endif;
   
-PROC AM805
+PROC QM805
   if valid($) & $ < 95 & $ > agem then
     errmsg(11050, agem) select( tr("Age at medical circumcision"), $);
   endif;  
 
-PROC AM806
+PROC QM806
   if $ = 1 then
-    skip to AM809_BLOCK
+    skip to QM809_BLOCK
   elseif $ <> 2 then
-    skip to AM808
+    skip to QM808
   endif;
 
-PROC AM807
-  skip to AM810_BLOCK;
+PROC QM807
+  skip to QM810_BLOCK;
 
-PROC AM808
-  skip to AM811;
+PROC QM808
+  skip to QM811;
 
-PROC AM809G
+PROC QM809G
   if $ in 1:300,888 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
-  temp = TobaccoUse(AM809A) + TobaccoUse(AM809B) + TobaccoUse(AM809C) + TobaccoUse(AM809D) +
-         TobaccoUse(AM809E) + TobaccoUse(AM809F) + TobaccoUse(AM809G);
+  temp = TobaccoUse(QM809A) + TobaccoUse(QM809B) + TobaccoUse(QM809C) + TobaccoUse(QM809D) +
+         TobaccoUse(QM809E) + TobaccoUse(QM809F) + TobaccoUse(QM809G);
   if !temp then
-    warning( 28120, "AM806", "AM809" ) 
-	       select( tr("Use"), AM806, tr("Times used"), AM809A, "Continue", continue );  
+    warning( 28120, "QM806", "AM809" ) 
+	       select( tr("Use"), QM806, tr("Times used"), QM809A, "Continue", continue );  
   endif;			 
-  skip to AM811;
+  skip to QM811;
 
-PROC AM810G
+PROC QM810G
   if $ in 1:300,888 then
-    getother( "AM809G", 1 );
+    getother( "QM809G", 1 );
     enter FL_OTHERS
   endif;
-  temp = TobaccoUse(AM810A) + TobaccoUse(AM810B) + TobaccoUse(AM810C) + TobaccoUse(AM810D) +
-         TobaccoUse(AM810E) + TobaccoUse(AM810F) + TobaccoUse(AM810G);
+  temp = TobaccoUse(QM810A) + TobaccoUse(QM810B) + TobaccoUse(QM810C) + TobaccoUse(QM810D) +
+         TobaccoUse(QM810E) + TobaccoUse(QM810F) + TobaccoUse(QM810G);
   if !temp then
-    warning( 28120, "AM806", "AM810" ) 
-	       select( tr("Use"), AM806, tr("Times used"), AM810A, "Continue", continue );  
+    warning( 28120, "QM806", "AM810" ) 
+	       select( tr("Use"), QM806, tr("Times used"), QM810A, "Continue", continue );  
   endif;			 
 
-PROC AM811
+PROC QM811
   if $ = 2 then
-    skip to AM813_BLOCK
+    skip to QM813_BLOCK
   elseif $ <> 1 then
-    skip to AM814
+    skip to QM814
   endif;
 
-PROC AM812E
+PROC QM812E
   if $ in 1:300,888 then
-    getother( "AM809G", 2 );
+    getother( "QM809G", 2 );
     enter FL_OTHERS
   endif;
-  temp = TobaccoUse(AM812A) + TobaccoUse(AM812B) + TobaccoUse(AM812C) + TobaccoUse(AM812D) +
-         TobaccoUse(AM812E);
+  temp = TobaccoUse(QM812A) + TobaccoUse(QM812B) + TobaccoUse(QM812C) + TobaccoUse(QM812D) +
+         TobaccoUse(QM812E);
   if !temp then
-    warning( 28120, "AM811", "AM812" ) 
-	       select( tr("Use"), AM811, tr("Times used"), AM812A, "Continue", continue );  
+    warning( 28120, "QM811", "AM812" ) 
+	       select( tr("Use"), QM811, tr("Times used"), QM812A, "Continue", continue );  
   endif;			 
-  skip to AM814;
+  skip to QM814;
 
-PROC AM813E
+PROC QM813E
   if $ in 1:300,888 then
-    getother( "AM809G", 3 );
+    getother( "QM809G", 3 );
     enter FL_OTHERS
   endif;
-  temp = TobaccoUse(AM813A) + TobaccoUse(AM813B) + TobaccoUse(AM813C) + TobaccoUse(AM813D) +
-         TobaccoUse(AM813E);
+  temp = TobaccoUse(QM813A) + TobaccoUse(QM813B) + TobaccoUse(QM813C) + TobaccoUse(QM813D) +
+         TobaccoUse(QM813E);
   if !temp then
-    warning( 28120, "AM811", "AM813" ) 
-	       select( tr("Use"), AM811, tr("Times used"), AM813A, "Continue", continue );  
+    warning( 28120, "QM811", "AM813" ) 
+	       select( tr("Use"), QM811, tr("Times used"), QM813A, "Continue", continue );  
   endif;			 
 
-PROC AM814
+PROC QM814
   if $ <> 1 then
-    skip to AM817
+    skip to QM817
   endif;
 
-PROC AM815
+PROC QM815
   if $ = 0 then
-    skip to AM817
+    skip to QM817
   endif;
 
-PROC AM817
+PROC QM817
   if $ <> 1 then
     endgroup
   endif;
 
-PROC AM818
+PROC QM818
   $ = SortAlpha( $ );
   { get other answer }
   if pos( "X", $ ) then
@@ -8314,85 +8817,45 @@ PROC AM818
   endif;
 
 { @@@ Begin Chronic Disease Module for Men }
-PROC AMCHD02
-  if $ <> 1 then
-    skip to AMCHD06
-  endif;
-
-PROC AMCHD07
-  if $ <> 1 then
-    skip to AMCHD11
-  endif;
-
-PROC AMCHD11
-  if $ <> 1 then
-    skip to AMCHD13
-  endif;
-
-PROC AMCHD13
-  if $ <> 1 then
-    skip to AMCHD15
-  endif;
-
-PROC AMCHD15
-  if $ <> 1 then
-    skip to AMCHD17A
-  endif;  
-
-PROC AMCHD19
+PROC Q1116H
 preproc
-  if AMCHD17A <> 1 & AMCHD17B <> 1 then
-    skip to AMCHD20
-  endif;
-
-PROC AMCHD20
-  if $ <> 1 then
-    skip to AMCHD22
-  endif;
-
-PROC AMCHD22
-  { Get other answer }
-  if $ = 1 then
-    getother( GetSymbol(), 0 );
-    enter FL_OTHERS
-  else
-    endgroup
-  endif;
-
-{ @@@ Begin Mental Health Module for Men }
-PROC AMMTH2
-preproc
-  numeric symptoms;
-  symptoms = (AMMTHGAD1 in 1:3) + (AMMTHGAD2 in 1:3) + (AMMTHGAD3 in 1:3) + (AMMTHGAD4 in 1:3) + 
-             (AMMTHGAD5 in 1:3) + (AMMTHGAD6 in 1:3) + (AMMTHGAD7 in 1:3) + 
-			 (AMMTHPHQ1 in 1:3) + (AMMTHPHQ2 in 1:3) + (AMMTHPHQ3 in 1:3) + (AMMTHPHQ4 in 1:3) + 
-			 (AMMTHPHQ5 in 1:3) + (AMMTHPHQ6 in 1:3) + (AMMTHPHQ7 in 1:3) + (AMMTHPHQ8 in 1:3) + 
-			 (AMMTHPHQ9 in 1:3); 
-  if !symptoms then			 
-    skip to AMMTH4A
-  endif;	
-  
-postproc  
-  if $ <> 1 then			 
-    skip to AMMTH4A
-  endif;	
+	if QQTYPE = 1 then
+	  skip to QM819H;
+	else
+	  if visualvalue( $ ) = notappl then
+		time = systime();
+		$ = int( time/10000 );
+	  endif;
+	endif;
 
 
-PROC AM819H
+PROC Q1116M
 preproc
   if visualvalue( $ ) = notappl then
     time = systime();
-    $ = int( time/10000 );
+    $ = int( time/100 ) % 100;
   endif;
 
-PROC AM819M
+postproc
+  skip to QLANGQ;
+PROC QM819H
+preproc
+
+  if visualvalue( $ ) = notappl then
+	time = systime();
+	$ = int( time/10000 );
+  endif;
+
+
+PROC QM819M
 preproc
   if visualvalue( $ ) = notappl then
     time = systime();
     $ = int( time/100 ) % 100;
   endif;
   { @@@ End Men's Questionnaire }
-  }
+
+
 PROC QLANGQ
 preproc
   savedata();
