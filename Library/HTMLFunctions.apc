@@ -14,7 +14,7 @@
   end;
 
   { function to write the the header of an HTML file }
-  function HTML_Header( array align(), string caption )
+  function HTML_Header( array align(), string caption, optional list string ext_scripts )
     numeric z;
     string ztemp;
     open( HTMLFile, create );
@@ -22,6 +22,13 @@
     FileWrite( HTMLFile, "<html>" );
     FileWrite( HTMLFile, "  <head>" );
     FileWrite( HTMLFile, '    <meta charset="utf-8">' );
+    FileWrite( HTMLFile, '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no">');
+    FileWrite( HTMLFile, '<script src="/action-invoker.js"></script>');
+    FileWrite( HTMLFile, '<script src="/external/jquery/jquery.min.js"></script>');
+    // add any external application specific scripts
+    do numeric ctr = 1 until ctr > ext_scripts.length()
+      FileWrite( HTMLFile, '<script src="' + ext_scripts(ctr) + '"></script>');
+    enddo;
     FileWrite( HTMLFile, "    <title> DHS Report </title>" );
 	if getos() = 10 then
       FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
@@ -41,10 +48,14 @@
   end;
 
   { function to write the the header of an HTML table }
-  function HTML_BeginTable( array string cells(), string caption, ncells )
+  function HTML_BeginTable( array string cells(), string caption, ncells, string str_id = "" )
     numeric z;
     open( HTMLFile, append );
-    FileWrite( HTMLFile, "    <table>" );
+    if length(str_id) then
+      FileWrite( HTMLFile, '    <table id = "%s">', str_id);
+    else
+      FileWrite( HTMLFile, "    <table>");
+    endif;
     FileWrite( HTMLFile, '      <caption style="font-weight:bold">' + caption + '</caption>' );
     FileWrite( HTMLFile, "      <thead>" );
     FileWrite( HTMLFile, "        <tr>" );

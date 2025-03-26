@@ -112,6 +112,7 @@
     reenter; // force reposition of labels - only works when called from a field
   end;
 
+
   { setup basic user bar }
   function userbase();
     userbar( clear );
@@ -119,12 +120,9 @@
     userbar( add button, ">",    do("NextField") );
     userbar( add button, ">>|",  do("AdvanceToEnd") );
     userbar( add button, tr("Note"), do("EditNote") );
-    userbar( add button, tr("Lang"), do("ChangeLanguage") );
-	userbar( add button, tr("Ver"),  GetPubDate(1));
+    userbar( add button, tr("View"), ViewQre("CGHH80"));
+    userbar( add button, tr("Ver"),  GetPubDate(1));
     userbar( add button, tr("Section"), toSection() );
-	if !android then // Response location only works for Windows
-	  userbar( add button, tr("Responses"), Responses( 0 ) );
-	endif;
   end;
 
   { set value sets based on language }

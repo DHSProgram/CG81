@@ -2,10 +2,10 @@
 fileType: Question Text
 version: CSPro 7.7
 languages:
-  - name: EN
-    label: English
   - name: FR
     label: French
+  - name: EN
+    label: English
 styles:
   - name: Normal
     className: normal

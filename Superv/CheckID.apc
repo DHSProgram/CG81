@@ -1,4 +1,4 @@
-PROC GLOBAL
+﻿PROC GLOBAL
 { CKID program master version - 1.0.0 of 4/06/2021 }
 
   FILE   fname;                        { write file with or without errors }
@@ -155,6 +155,51 @@ PROC GLOBAL
     endif;
   end;
 
+  function women_recs ();
+    // generates error message with label of each missing record for women
+    list string MisRec;
+
+    if soccurs(QWSEC01) <> 1  then MisRec.add(getlabel(QWSEC01)) ;endif;
+    if soccurs(QWSEC2A) <> 1  then MisRec.add(getlabel(QWSEC2A)) ;endif;
+    if soccurs(QWSEC2Y) <> 1  then MisRec.add(getlabel(QWSEC2Y)) ;endif;
+    if soccurs(QWSEC2D) <> 1  then MisRec.add(getlabel(QWSEC2D)) ;endif;
+    if soccurs(QWSEC3A) <> 1  then MisRec.add(getlabel(QWSEC3A)) ;endif;
+    if soccurs(QWSEC3B) <> 1  then MisRec.add(getlabel(QWSEC3B)) ;endif;
+    if soccurs(QWSEC6B) <> 1  then MisRec.add(getlabel(QWSEC6B)) ;endif;
+    if soccurs(QWSEC07) <> 1  then MisRec.add(getlabel(QWSEC07)) ;endif;
+    if soccurs(QWSEC08) <> 1  then MisRec.add(getlabel(QWSEC08)) ;endif;
+    if soccurs(QWSEC09) <> 1  then MisRec.add(getlabel(QWSEC09)) ;endif;
+    if soccurs(QWSEC10) <> 1  then MisRec.add(getlabel(QWSEC10)) ;endif;
+    if soccurs(QWSEC11) <> 1  then MisRec.add(getlabel(QWSEC11)) ;endif;
+    if soccurs(QWSECM2) <> 1  then MisRec.add(getlabel(QWSECM2)) ;endif;
+    do numeric r = 1 until r > MisRec.Length()
+      getmessage( 50203);
+      wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE, MisRec(r)) );
+    enddo;
+  end;
+  function men_recs ();
+    // generates error message with label of each missing record for men
+    list string MisRec;
+
+    if soccurs(QMSEC01) <> 1  then MisRec.add(getlabel(QMSEC01)) ;endif;
+    if soccurs(QMSEC02) <> 1  then MisRec.add(getlabel(QMSEC02)) ;endif;
+    if soccurs(QMSEC3A) <> 1  then MisRec.add(getlabel(QMSEC3A)) ;endif;
+    if soccurs(QMSEC3B) <> 1  then MisRec.add(getlabel(QMSEC3B)) ;endif;
+    if soccurs(QMSEC04) <> 1  then MisRec.add(getlabel(QMSEC04)) ;endif;
+    if soccurs(QMSEC05) <> 1  then MisRec.add(getlabel(QMSEC05)) ;endif;
+    if soccurs(QMSEC06) <> 1  then MisRec.add(getlabel(QMSEC06)) ;endif;
+    if soccurs(QMSEC07) <> 1  then MisRec.add(getlabel(QMSEC07)) ;endif;
+    if soccurs(QMSEC08) <> 1  then MisRec.add(getlabel(QMSEC08)) ;endif;
+    do numeric r = 1 until r > MisRec.Length()
+      getmessage( 50203);
+      wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE, MisRec(r)) );
+    enddo;
+  end;
+
+  function string HTML_Button (string str_CallBack, string str_Text);
+    HTML_Button = maketext('<button onclick="%s">%s</button>', encode(str_CallBack), encode(str_Text));
+  end;
+
 PROC FL_CNULL
 preproc
   if debug then
@@ -245,10 +290,15 @@ preproc
     CellValues(4) = tr("Result");
     CellValues(5) = tr("Visits");
     CellValues(6) = tr("Biomarkers");
+    CellValues(7) = tr("View");
+
     { specify columns that are left aligned, strings are left aligned }
     CellAlign(1) = 3;  // column 3 is household address/name 
     CellAlign(2) = 4;  // column 4 is result of the interview
-    HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
+    // !! adding application specific javascript to html output
+    list string js_scripts;
+    js_scripts.add("./checkid.js");
+    HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
   endif;
 
   { initialize transmittal sheet arrays to control duplicates }
@@ -262,7 +312,7 @@ preproc
     { load files based on first case }
     if ycluster = 0 then
       if !dosumrep then
-        HTML_BeginTable( CellValues, zstring2, 6 );  // generates the HTML table script with the column headers
+        HTML_BeginTable( CellValues, zstring2, 7, "Main" );  // generates the HTML table script with the column headers
       endif;
      { load supervisor control to make sure that total number of cases to be collected in cluster is assigned }
           { it also checks that cluster was already selected for remeasurement and data were colleted }
@@ -329,7 +379,7 @@ preproc
 
     sumreport(sumidx,1) = edit ("9999", QHNUMBER );
     sumreport(sumidx,2) = edit ("9999", QHINTNUM );
-    sumreport(sumidx,3) = "LS"[QHSHORT+1:1];
+    sumreport(sumidx,3) = "";
     sumreport(sumidx,4) = QHADDRESS;
     sumreport(sumidx,6) = yresult;
     if casepart then
@@ -348,7 +398,7 @@ preproc
       xhc    = xhc + 1;             { complete households }
 
       { number of records for household members }
-      x = count( QHSEC01X where QHLIVES = 1 | QHSLEPT = 1);
+      x = count( QHSEC01X where QHLIVES = 1 | QHSTAYED = 1);
       if x <> QHMEMBER then
         getmessage( 50050 );
         hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, x, QHMEMBER) )
@@ -380,6 +430,12 @@ preproc
         hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, noccurs( QHSEC03 ), NAToZero(QH138)) )
       endif;
 
+      {social transfers !!}
+      if soccurs( QHSEC03B ) <> 1 then
+        getmessage( 50100 );
+        hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, GetLabel(QHSEC03B)) )
+      endif;
+
       { household characteristics continuation record }
       if soccurs( QHSEC04 ) <> 1 then
         getmessage( 50100 );
@@ -388,41 +444,39 @@ preproc
 
       { check biomarkers }
 
-      { biomarker front page questionnaire }
-      chbio = count( CGHH80.QHSEC01 where QH11 <> 0 );
       if QHELIGM then
+        { biomarker front page questionnaire }
+        chbio = count( CGHH80.QHSEC01 where QH11 <> 0 );
         bioexist = QHWOMEN + count( CGHH80.QHSEC01 where QH10 > 0 & QH04 = 1 ) + chbio;                { !!! children + women + men}
-      endif;
-      if bioexist then measure = "Y" endif;
-      if bioexist <=> soccurs( QBSECOVER ) <> 1 then
-        // getmessage( 50100 );
-        // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, GetLabel(QBSECOVER)) )
-      endif;
-      { biomarkers for children }
-      xbiom = tr("child");            
-      xhw   = tr("height & weight");
-      xanem = tr("anemia");
-      for i in record QHSEC01 do
-        if QH11 <> 0 then
-          found = 0;
-          do j = 1 while j <= soccurs( QBSEC01 ) & !found
-            if QH11 = QB102(j) then
-              found = 1;
-              if QB104(j) = notappl | QB104(j) in 0:4 & (QB106(j) = notappl | QB108(j) = notappl) then      { height & weight }
-                getmessage( 50057 );
-                bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH11) );
-              endif;
-            endif;
-          enddo;
-          if !found then             { biomarker record missing for individual }
-            getmessage( 50056 );
-            bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH11) );
-            measure = "N";
-          endif;
+        if bioexist then measure = "Y" endif;
+        if bioexist <=> soccurs( QBSECOVER ) <> 1 then
+          // getmessage( 50100 );
+          // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, GetLabel(QBSECOVER)) )
         endif;
-      enddo;
+        { biomarkers for children }
+        xbiom = tr("child");            
+        xhw   = tr("height & weight");
+        xanem = tr("anemia");
+        for i in record QHSEC01 do
+          if QH11 <> 0 then
+            found = 0;
+            do j = 1 while j <= soccurs( QBSEC01 ) & !found
+              if QH11 = QB102(j) then
+                found = 1;
+                if QB104(j) = notappl | QB104(j) in 0:4 & (QB106(j) = notappl | QB108(j) = notappl) then      { height & weight }
+                  getmessage( 50057 );
+                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH11) );
+                endif;
+              endif;
+            enddo;
+            if !found then             { biomarker record missing for individual }
+              getmessage( 50056 );
+              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH11) );
+              measure = "N";
+            endif;
+          endif;
+        enddo;
 
-      if QHELIGM then
         { biomarkers for women }
         xbiom = tr("woman");
         xhw   = tr("height & weight");
@@ -566,8 +620,9 @@ preproc
     CellValues(4) = yresult;
     CellValues(5) = edit("9", QHVISITS);
     CellValues(6) = edit("99", bioexist) + "-" + edit("99", x);
+    CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), tr("View"));
     if !dosumrep then
-      HTML_OneRow( CellValues, 6 );   // generates the HTML script for a row with relevant household data
+      HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
     endif;
     
     sumreport(sumidx, 7) = edit("99", bioexist) + "/" + edit("99", x);
@@ -700,8 +755,9 @@ preproc
           CellValues(4) = yresult;
           CellValues(5) = edit("9", QVISITS);
           CellValues(6) = "BLANK";
+          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), tr("View"));
           if !dosumrep then
-            HTML_OneRow( CellValues, 6 );  // generates the HTML script for a row with relevant individual data
+            HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
           endif;
           
 
@@ -723,27 +779,8 @@ preproc
             xic  = xic + 1;             { complete individuals }
             xwc  = xwc + 1;             { complete individuals }
 
-            { mandatory records for complete women }
-            string records = "";
-            if soccurs(QWSEC01) <> 1  then records =                  getlabel(QWSEC01) endif;
-            if soccurs(QWSEC2A) <> 1  then records = records + ", " + getlabel(QWSEC2A) endif;
-            if soccurs(QWSEC2D) <> 1  then records = records + ", " + getlabel(QWSEC2D) endif;
-            if soccurs(QWSEC3A) <> 1  then records = records + ", " + getlabel(QWSEC3A) endif;
-            if soccurs(QWSEC3B) <> 1  then records = records + ", " + getlabel(QWSEC3B) endif;
-            if soccurs(QWSEC6B) <> 1  then records = records + ", " + getlabel(QWSEC6B) endif;
-            if soccurs(QWSEC07) <> 1  then records = records + ", " + getlabel(QWSEC07) endif;
-            if soccurs(QWSEC09) <> 1  then records = records + ", " + getlabel(QWSEC09) endif;
-            if soccurs(QWSEC08) <> 1  then records = records + ", " + getlabel(QWSEC08) endif;
-            if soccurs(QWSEC10) <> 1  then records = records + ", " + getlabel(QWSEC10) endif;
-            if soccurs(QWSEC11) <> 1  then records = records + ", " + getlabel(QWSEC11) endif;
-            if soccurs(QWSECCD) <> 1  then records = records + ", " + getlabel(QWSECCD) endif;
-            if soccurs(QWSECG1) <> 1  then records = records + ", " + getlabel(QWSECG1) endif;
-
-            
-            if length(records) > 0 then
-              getmessage( 50203 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE, records) );
-            endif;
+            { mandatory single records for complete women }
+            women_recs();
 
             { pregnancy history }
             if soccurs(QWSEC2B) <> Q212W then
@@ -757,17 +794,24 @@ preproc
               getmessage( 50205 );
               // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2C), 2) )
             endif;
+
+            { calendar }
+            if !soccurs(QWSEC2C) in 1:2 then      { !! adjust according to columns used in the calendar }
+              getmessage( 50205 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2C), 2) )
+            endif;
+
             { contraceptive use history }
             methuse = cmcode( Q313M, Q313Y );
             if Q314Y <> notappl then
               methuse = cmcode( Q314M, Q314Y );
             endif;
-            if Q307N <> notappl & methuse <= calbeg <=> soccurs(QWSEC3C) then
-              if methuse <> 9999 then
-                getmessage( 50204 );
-                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C), Q307N) );
-                ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C), Q307N) )
-              endif;
+            if Q307N <> notappl & methuse <= calbeg & soccurs(QWSEC3C) then
+              getmessage( 50204 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C), Q307N) )
+            elseif Q307N <> notappl & methuse > calbeg & !soccurs(QWSEC3C) then
+              getmessage( 50202 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C) ) )
             endif;
 
             { pregnancy and postnatal care }
@@ -783,44 +827,36 @@ preproc
             endif;
 
             { child health }
-            // todo check this msg
             if NAtoZero(QESEC6) <> soccurs(QWSEC6A) then
-              // getmessage( 50209 );
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC6A), QESEC6) )
+              getmessage( 50209 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC6A), QESEC6) )
             endif;
 
-            { domestic violence }
-            if QVIOLEN = 1 <=> soccurs(QWSECDV) <> 1 then
-              getmessage( 50217 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QHNUMDV, soccurs(QWSECDV)) )
-            endif;
-            
-            { female genital cutting in women's questionnaire }
-            if soccurs(QWSECG1) <> 1 then
-              getmessage( 50300 );
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) )
-            endif;
-            { female genital cutting daughters roster }
-            if GC01 <> 1 & GC02 <> 1 then
-              GCDAUGHT = 0;
-            endif;
-            if NAToZero(GCDAUGHT) <> soccurs(QWSECG2) then
-              getmessage( 50301 );
-              wme =  ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSECG2), GCDAUGHT) )
+            { maternal mortality }
+            siblings = NAToZero(QMM07);
+            if siblings <> soccurs(QWSECM1) | siblings <> soccurs(QWSECM3) then
+              getmessage( 50216 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, siblings, soccurs(QWSECM1), soccurs(QWSECM3)) )
             endif;
 
-            { early child development }
-            if NaToZero( QESECECD ) <>  noccurs(QWSECECD) then
+           { early child development }
+            if QESECECD <> soccurs(QWSECECD) then
               getmessage( 50310 );
               wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QESECECD, soccurs(QWSECECD)) )
             endif;
 
+            { fistula }
+            if soccurs(QWSECFIS) <> 1 then
+              getmessage( 50320 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSECFIS)) )
+            endif;
+
             { no men's records should exist in woman's questionnaire }
-            if soccurs(QMSEC01) | soccurs(QMSEC02) | soccurs(QMSEC3A) | soccurs(QMSEC3B) | 
-                           soccurs(QMSEC04) | soccurs(QMSEC05) | soccurs(QMSEC06) | soccurs(QMSEC07) | 
-                           soccurs(QMSEC08) | soccurs(QMSECGC) then
-              // getmessage( 50230 );
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
+            if soccurs(QMSEC01) | soccurs(QMSEC02)  | soccurs(QMSEC3A) | soccurs(QMSEC3B) | 
+                           soccurs(QMSEC04) | soccurs(QMSEC05)  | soccurs(QMSEC06) | soccurs(QMSEC07) | 
+                           soccurs(QMSEC08) then
+              getmessage( 50230 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
           { check for complete men }
@@ -829,33 +865,22 @@ preproc
             xmc  = xmc + 1;             { complete individuals }
             inc( xind(QQTYPE,2) );
 
-            string records = "";
-            if soccurs(QMSEC01) <> 1  then records =                  getlabel(QMSEC01) endif;
-            if soccurs(QMSEC02) <> 1  then records = records + ", " + getlabel(QMSEC02) endif;
-            if soccurs(QMSEC3A) <> 1  then records = records + ", " + getlabel(QMSEC3A) endif;
-            if soccurs(QMSEC3B) <> 1  then records = records + ", " + getlabel(QMSEC3B) endif;
-            if soccurs(QMSEC04) <> 1  then records = records + ", " + getlabel(QMSEC04) endif;
-            if soccurs(QMSEC05) <> 1  then records = records + ", " + getlabel(QMSEC05) endif;
-            if soccurs(QMSEC06) <> 1  then records = records + ", " + getlabel(QMSEC06) endif;
-            if soccurs(QMSEC07) <> 1  then records = records + ", " + getlabel(QMSEC07) endif;
-            if soccurs(QMSEC08) <> 1  then records = records + ", " + getlabel(QMSEC08) endif;
-            
-            if length(records) > 0 then
-              getmessage( 50203 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE, records) );
-            endif;
+            { mandatory single records for complete men }
+            men_recs();
 
             { no women's records should exist in a man's questionnaire }
-            if soccurs(QWSEC01)  | soccurs(QWSEC2A)  | soccurs(QWSEC2B) | soccurs(QWSEC2Y) |
-               soccurs(QWSEC2C)  | soccurs(QWSEC2D)  | soccurs(QWSEC3A) | soccurs(QWSEC3B) | 
-               soccurs(QWSEC3C)  | soccurs(QWSEC04)  | soccurs(QWSEC05) | soccurs(QWSEC6A) | 
-                           soccurs(QWSEC6B)  | soccurs(QWSEC07)  | soccurs(QWSEC08) | soccurs(QWSEC09) | 
-                           soccurs(QWSEC10)  | soccurs(QWSEC11)  |soccurs(QWSECCD)  |
-                            soccurs(QWSECG1) | soccurs(QWSECG2) |
-                           soccurs(QWSECECD) then
+            if soccurs(QWSEC01) | soccurs(QWSEC2A)  | soccurs(QWSEC2B)  | soccurs(QWSEC2Y)  |
+               soccurs(QWSEC2C) | soccurs(QWSEC2D)  | soccurs(QWSEC3A)  | soccurs(QWSEC3B)  | 
+               soccurs(QWSEC3C) | soccurs(QWSEC04)  | soccurs(QWSEC05)  | soccurs(QWSEC6A)  | 
+                           soccurs(QWSEC6B) | soccurs(QWSEC07)  | soccurs(QWSEC08)  | soccurs(QWSEC09)  | 
+                           soccurs(QWSEC10) | soccurs(QWSEC11)  | 
+                           soccurs(QWSECM1) | soccurs(QWSECM2)  | soccurs(QWSECM3)  | 
+                           soccurs(QWSECECD) | 
+                           soccurs(QWSECFIS) then
               getmessage( 50231 );
               wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
+
 
           { check for incomplete women/men }
           else
@@ -869,23 +894,24 @@ preproc
               xwi = xwi + 1;
             endif;
             { no women records should exist in an incomplete questionnaire }
-            if soccurs(QWSEC01)  | soccurs(QWSEC2A)  | soccurs(QWSEC2B) | soccurs(QWSEC2Y) |
-               soccurs(QWSEC2C)  | soccurs(QWSEC2D)  | soccurs(QWSEC3A) | soccurs(QWSEC3B) | 
-               soccurs(QWSEC3C)  | soccurs(QWSEC04)  | soccurs(QWSEC05) | soccurs(QWSEC6A) | 
-                           soccurs(QWSEC6B)  | soccurs(QWSEC07)  | soccurs(QWSEC08) | soccurs(QWSEC09) | 
-                           soccurs(QWSEC10)  | soccurs(QWSEC11)  |  
-                            soccurs(QWSECDV)  | soccurs(QWSECG1) | soccurs(QWSECG2) |
-                           soccurs(QWSECECD) then
-              // getmessage( 50232 );
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QRESULT, textsex) );
+            if soccurs(QWSEC01) | soccurs(QWSEC2A)  | soccurs(QWSEC2B)  | soccurs(QWSEC2Y)  |
+               soccurs(QWSEC2C) | soccurs(QWSEC2D)  | soccurs(QWSEC3A)  | soccurs(QWSEC3B)  | 
+               soccurs(QWSEC3C) | soccurs(QWSEC04)  | soccurs(QWSEC05)  | soccurs(QWSEC6A)  | 
+                           soccurs(QWSEC6B) | soccurs(QWSEC07)  | soccurs(QWSEC08)  | soccurs(QWSEC09)  | 
+                           soccurs(QWSEC10) | soccurs(QWSEC11)  | 
+                           soccurs(QWSECM1) | soccurs(QWSECM2)  | soccurs(QWSECM3)  | 
+                           soccurs(QWSECECD) | 
+                           soccurs(QWSECFIS) then
+              getmessage( 50231 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
             { no men records should exist in an incomplete questionnaire }
             if soccurs(QMSEC01) | soccurs(QMSEC02) | soccurs(QMSEC3A) | soccurs(QMSEC3B) | 
                            soccurs(QMSEC04) | soccurs(QMSEC05) | soccurs(QMSEC06) | soccurs(QMSEC07) | 
-                           soccurs(QMSEC08) | soccurs(QMSECGC) then
-              // getmessage( 50232 );
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QRESULT, textsex) );
+                           soccurs(QMSEC08) then
+              getmessage( 50232 );
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QRESULT, textsex) );
             endif;
           endif;
         else
@@ -908,8 +934,9 @@ preproc
           CellValues(4) = yresult;
           CellValues(5) = "BLANK";
           CellValues(6) = "BLANK";
+          CellValues(7) = "BLANK";
           if !dosumrep then
-            HTML_OneRow( CellValues, 6 );  // generates the HTML script for a row with relevant individual data
+            HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
           endif;
        endif;
       endif;
@@ -959,7 +986,7 @@ preproc
     zstring1 = MakeText( tr("Summary report for cluster: %s"), zcluster );
     zstring2 = tr("Interviews collected in cluster");
     CellValues(1) = tr("HH");
-    CellValues(2) = tr("RA");
+    CellValues(2) = tr("Int");
     CellValues(3) = tr("Type");
     CellValues(4) = tr("Address");
     CellValues(5) = tr("Head");
@@ -975,7 +1002,7 @@ preproc
     CellAlign(4) = 8;  // column 4 is result of the interview
     CellAlign(5) = 9;  // column 4 is result of the interview
     HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
-    HTML_BeginTable( CellValues, zstring2, 10 );  // generates the HTML table script with the column headers
+    HTML_BeginTable( CellValues, zstring2, 10, "Summary" );  // generates the HTML table script with the column headers
     do i = 1 until i > sumreport.length(1)
       if !length( sumreport(i,1) ) then // quit if no more households
         break;
@@ -1086,6 +1113,9 @@ preproc
       enddo;
     endif;
   endif;
+
+  HTML_Paragraph( HTML_Button("Return_Case_ID('')", tr("OK")));
+
   HTML_End();
 
   { rewrite supervisor control file if necessary }
@@ -1096,7 +1126,31 @@ preproc
   close( SAMPSEL );
   { instructions to create a file to decide if cluster is completed }
   FileReturn( e );
-  view( "file://" + pathname(application) + HTMLName );
+
+
+  // !! display form and handle requests to view questionnaires
+  // set up display options
+  string display_options = maketext('{ "width": %d, '
+                                    '  "height": %d, '
+                                                                    '  "resizable": %d }'
+                                                                    , int(tonumber(getproperty("MaxDisplayWidth")) * 0.9)
+                                                                    , int(tonumber(getproperty("MaxDisplayHeight")) * 0.9)
+                                                                    , true);
+   // loop until no qres selected by user 
+   while true do 
+     // show html dialog form
+     string caseid = CS.UI.showDialog(path := Path.Concat(Application, HTMLName), displayOptions := @object display_options);
+     caseid = replace(caseid, '"', ''); // remove quotes from string returned by HTML dialog
+     // check if a valid caseid was returned if so view the case otherwise quit
+     if loadcase(CGIN80, caseid) then
+       ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
+     elseif loadcase(CGHH80, caseid) then
+       ViewQre("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
+       loadcase(CGIN80, caseid);
+     else
+       break;
+     endif;
+   enddo;
   { totally quit application }
   stop(1);
 

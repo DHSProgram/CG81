@@ -209,12 +209,12 @@
     userbar( add button, ">",    do("NextField") );
     userbar( add button, ">>|",  do("AdvanceToEnd") );
     userbar( add button, tr("Note"), do("EditNote") );
-    userbar( add button, tr("Lang"), do("ChangeLanguage") );
-	userbar( add button, tr("Ver"),  GetPubDate(2) );
-	userbar( add button, tr("Section"), toSection() );
-	if !android then // Response location only works for Windows
-	  userbar( add button, tr("Responses"), Responses( 0 ) );
-	endif;
+    userbar( add button, tr("View"), ViewQre("CGIN80"));
+    userbar( add button, tr("Section"), toSection() );
+    userbar( add button, tr("Ver"),  GetPubDate(2) );
+    if !android then // Response location only works for Windows
+      userbar( add button, tr("Responses"), Responses( 0 ) );
+    endif;
   end;
 
   { set value sets based on language }
@@ -1256,6 +1256,7 @@ function get_sib_names (setValues=notappl);
 
   
 end;
+
 PROC CGIN80_FF
 preproc
 
@@ -1383,6 +1384,7 @@ preproc
 
   { set font for value sets }
   setfont( ALL, "Arial", 16, bold );
+
 
   { set up minimal user bar }
   userbase();

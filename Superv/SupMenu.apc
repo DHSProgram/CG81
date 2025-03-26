@@ -69,8 +69,8 @@ PROC GLOBAL
   array string intvwname(400);             {                       - name }
   array string caselist ( 5, 100 );
   numeric IFSS = 0;                       { If IFSS is being used }
-  numeric SyncCloud = 1;                  { If SyncCloud is being used }
-  numeric doFCT     = 1;                  { run FCT in field !!! }
+  numeric SyncCloud = 0;                  { If SyncCloud is being used }
+  numeric doFCT     = 0;                  { run FCT in field !!! }
 
   numeric minhhR    = 5;                  { minimum completed HOUSEHOLDs that must be in supervisor tablet to begin selection for reinterview !!! }
   numeric maxhhselR = 5;                  { maximum number of  HOUSEHOLDs that can be selected for reinteview by supervisor !!! }
@@ -1215,7 +1215,7 @@ PROC GLOBAL
         { review HOUSEHOLDs including incomplete }
         xcase  = edit("9999", WCLUSTER) + edit("9999",QHNUMBER);
         loadcase(CGHH80, xcase);
-        CGHH80.view();
+        viewQRE("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
         close( CGHH80 );
       endif;
     endif;
@@ -1237,7 +1237,7 @@ PROC GLOBAL
         if selcase(header, CGIN80, "", 15) include(QNUMBER, QLINE, QNAME, QRESULT, QINTNUM) where QNUMBER = hhtoget then
           xcase  = edit("9999", WCLUSTER) + edit("9999",QNUMBER) + edit("99",QLINE);
           loadcase(CGIN80, xcase);
-          CGIN80.view();
+          viewQRE("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
         endif;
         close( CGIN80 );
       endif;

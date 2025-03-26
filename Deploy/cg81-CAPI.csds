@@ -1,117 +1,135 @@
 {
-  "fileType": "Application Deployment Specification",
-  "version": "7.7",
-  "name": "CG81-CAPI",
-  "description": "Système CAPI EDS Congo 2025 ",
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "deployment", 
+  "name": "CG81-CAPI", 
+  "description": "SystÃ¨me CAPI EDS Congo 2025 ", 
   "files": [
     {
       "path": "..\\Entry\\CollectHH.ent"
-    },
+    }, 
     {
       "path": "..\\Entry\\CollectIN.ent"
-    },
+    }, 
     {
       "path": "..\\Entry\\DCMenu.ent"
-    },
+    }, 
     {
       "path": "..\\Entry\\DCMenu.pff"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Clusters.dat"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Clusters.dat.csidx"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Fieldworker.dat"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Interv.dat"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\INTERV.DAT.csidx"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\md5.dat"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\md5.dat.csidx"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Sampsel.DAT"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\SAMPSEL.DAT.csidx"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\SAMPSEL1000.DAT"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\snull.dat"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\snull.dat.csidx"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Superv1000.dat"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\SUPERV1000.DAT.csidx"
-    },
+    }, 
     {
       "path": "..\\PII\\Ref\\Supervxxxx.dat"
-    },
+    }, 
+    {
+      "path": "..\\Superv\\CheckID.ent"
+    }, 
     {
       "path": "..\\Superv\\SupMenu.ent"
-    },
+    }, 
     {
       "path": "..\\Superv\\SupMenu.pff"
     }
-  ],
+  ], 
   "dictionaries": [
     {
-      "path": "..\\Dicts\\CGHH80.dcf",
+      "path": "..\\Dicts\\CGHH80.dcf", 
       "uploadForSync": true
-    },
+    }, 
     {
-      "path": "..\\Dicts\\CGIN80.dcf",
+      "path": "..\\Dicts\\CGIN80.dcf", 
       "uploadForSync": true
-    },
+    }, 
     {
       "path": "..\\Dicts\\Clusters.dcf"
-    },
+    }, 
     {
       "path": "..\\Dicts\\CLUSTERS.dcf"
-    },
+    }, 
+    {
+      "path": "..\\dicts\\Cnull.dcf", 
+      "uploadForSync": true
+    }, 
     {
       "path": "..\\Dicts\\CONTSUP.dcf"
-    },
+    }, 
     {
       "path": "..\\Dicts\\EligIndv.dcf"
-    },
+    }, 
     {
       "path": "..\\Dicts\\HHForInt.dcf"
-    },
+    }, 
     {
       "path": "..\\Dicts\\HHFORINT.dcf"
-    },
+    }, 
     {
       "path": "..\\Dicts\\Interv.dcf"
-    },
+    }, 
     {
       "path": "..\\Dicts\\md5.dcf"
-    },
+    }, 
     {
-      "path": "..\\Dicts\\Menu.dcf",
+      "path": "..\\Dicts\\Menu.dcf", 
       "uploadForSync": true
-    },
+    }, 
     {
       "path": "..\\Dicts\\Others.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Remeasure.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\SampSel.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Transmit.dcf"
     }
-  ],
+  ], 
   "deployment": {
-    "type": "CSWeb",
-    "cswebUrl": "https:\/\/csweb.dhsprogram.com\/api",
-    "ftpUrl": "ftp:\/\/"
+    "type": "LocalFolder", 
+    "cswebUrl": "https://csweb.dhsprogram.com/api", 
+    "ftpUrl": "ftp://", 
+    "localFolderPath": "CG81"
   }
 }

@@ -718,3 +718,30 @@
     CheckHeight = zerr;	
   end;
 
+  function ViewQre (string str_Dict, optional string str_Frm, optional string str_Qsf);
+    // !! uses view function to show questionnaire in html
+    // !! requires the case be loaded in memory prior to calling 
+    // !! if called from data entry can omit 2nd and 3rd parameters 
+    // !! will default to main form file and main qsf file of application
+    string questionnaireViewInput;
+    if length(str_Frm) & length(str_Qsf) then
+      questionnaireViewInput =
+        maketext('{ "dictionary": %s, "forms": %s, "questionText": %s, "case": %s }',
+                 CS.Dictionary.getDictionary(name := str_Dict),
+                 CS.Application.getFormFile(path := str_Frm),
+                 CS.Application.getQuestionText(path := str_Qsf),
+                 CS.Data.getCase(name := str_Dict));
+    else
+      questionnaireViewInput =
+        maketext('{ "dictionary": %s, "forms": %s, "questionText": %s, "case": %s }',
+                 CS.Dictionary.getDictionary(name := str_Dict),
+                 CS.Application.getFormFile(),
+                 CS.Application.getQuestionText(),
+                 CS.Data.getCase(name := str_Dict));
+    endif;
+
+    // pass this input to the questionnaire view
+    CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
+               inputData := @object questionnaireViewInput);
+  end;
+
