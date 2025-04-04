@@ -179,7 +179,5 @@ preproc
   {GPS+}
   HTML_End();
   string htmlFileName=pathname(application) +  HTMLName;
-    view(htmlFileName, title := "Rapport dénombrement ménages", 
-                       width := 600, height := 400, 
-                       showCloseButton := true);
+    view(htmlFileName);
   stop(1);

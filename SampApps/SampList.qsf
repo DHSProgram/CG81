@@ -1,6 +1,6 @@
 ﻿---
 fileType: Question Text
-version: CSPro 7.7
+version: CSPro 8.0
 languages:
   - name: EN
     label: English
@@ -205,9 +205,9 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p>Il y a t-il un numero de telephone par lequel on peut joindre le menage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b></p><p><font color="#0000ff"><b>Veuillez saisir le numéro en utilisant le format yyzzxxxxxx&nbsp;</b></font><b style="color: rgb(0, 0, 255);">(total de 9 chiffres)&nbsp;</b><b style="color: rgb(0, 0, 255);">sans espaces ni caractères non numériques.</b></p><p><br></p><p></p>
+            <p>Il y a t-il un numero de telephone par lequel on peut joindre le menage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b></p><p><font color="#0000ff"><b>Veuillez saisir le numéro en utilisant le format yyzzxxxxx&nbsp;</b></font><b style="color: rgb(0, 0, 255);">(total de 9 chiffres)&nbsp;</b><b style="color: rgb(0, 0, 255);">sans espaces ni caractères non numériques.</b></p><p><br></p><p></p>
           FR: |
-            <p>Il y a t-il un numero de téléphone par lequel on peut joindre le ménage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b></p><p><b style="color: rgb(0, 0, 255);">Veuillez saisir le numéro en utilisant le format yyzzxxxxxx sans espaces ni caractères non numériques.</b></p><p><br></p><p></p>
+            <p>Il y a t-il un numero de téléphone par lequel on peut joindre le ménage?</p><p></p><p><b style="color: rgb(0, 0, 255);">(APPUYEZ SUR ENTREE SI LE NUMERO N'EST PAS DISPONIBLE)</b></p><p><b style="color: rgb(0, 0, 255);">Veuillez saisir le numéro en utilisant le format yyzzxxxxx sans espaces ni caractères non numériques.</b></p><p><br></p><p></p>
   - name: HHLISTING.LNOTES
     conditions:
       - questionText:

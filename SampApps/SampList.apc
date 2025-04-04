@@ -700,7 +700,6 @@ preproc
 postproc
   if !length( strip($) ) then
     errmsg( 60031 );
-	reenter;
   endif;
 
 
