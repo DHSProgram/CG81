@@ -5,7 +5,8 @@ Function setColor()
 end;
 
 function savePointsGeojson(clusterNumber)
-string result;
+file gjsonPointVector; 
+string PointVector, result;
 	forcase HHLISTING where LCLUSTER =clusterNumber do 
   	PointVector = maketext ("%v",LCLUSTER)+ ".geojson" ;	
 	 //using X,Y stored in rosters.

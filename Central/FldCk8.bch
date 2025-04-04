@@ -1,0 +1,20 @@
+﻿[CSPro Application]
+Version=CSPro 7.5
+Label=FLDCK8
+Name=FLDCK8
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\ccIN80.dcf
+File=.\FieldCk.dcf
+[AppCode]
+File=.\FldCk8.apc
+Include=..\Library\DPCollect.apc
+Include=..\Library\Anthrop.apc
+[Message]
+File=.\FldCk8.mgf
+[Order]
+File=.\FldCk8.ord
+[Dictionary Types]
+Dict-Type=.\FieldCk.dcf,Working
+Dict-Type=..\Dicts\ccHH80.dcf,Input,.\FldCk8.ord
+Dict-Type=..\Dicts\ccIN80.dcf,External

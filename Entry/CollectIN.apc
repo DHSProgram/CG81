@@ -1295,7 +1295,7 @@ preproc
   calbeg   = cmcode( 1,calbegy);            { first date of calendar }
   callen   = calend-calbeg+1;               { length of calendar }
 
-  pregstr  = "BPT";                         { Codes for Birth, Pregnancy and Termination }
+  pregstr  = "NGT";                         { Codes for Birth, Pregnancy and Termination }
   codeb    = pregstr[1:1];
   codep    = pregstr[2:1];
   codet    = pregstr[3:1];

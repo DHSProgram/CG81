@@ -1,0 +1,23 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=LSTCLUST
+Name=LSTCLUST
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\ccIN80.dcf
+File=..\Dicts\ContSup.dcf
+File=..\Dicts\CONTROL.dcf
+File=..\Dicts\Interv.dcf
+[AppCode]
+File=.\LstClust.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\LstClust.mgf
+[Order]
+File=.\LstClust.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\ccHH80.dcf,Input,.\LstClust.ord
+Dict-Type=..\Dicts\ccIN80.dcf,External
+Dict-Type=..\Dicts\ContSup.dcf,External
+Dict-Type=..\Dicts\CONTROL.dcf,External
+Dict-Type=..\Dicts\Interv.dcf,External

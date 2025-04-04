@@ -1,0 +1,21 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=HHEDIT
+Name=HHEDIT
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Transmit.dcf
+File=..\Dicts\FieldWKQuest.dcf
+File=..\Dicts\Clusters.dcf
+[AppCode]
+File=.\HHEdit8.apc
+Include=..\Library\DPCollect.apc
+[Message]
+File=.\TotEdit8.mgf
+[Order]
+File=.\HHEdit8.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\Transmit.dcf,External
+Dict-Type=..\Dicts\FieldWKQuest.dcf,External
+Dict-Type=..\Dicts\CGHH80.dcf,Input,.\HHEdit8.ord
+Dict-Type=..\Dicts\Clusters.dcf,External

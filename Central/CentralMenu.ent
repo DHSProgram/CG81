@@ -1,7 +1,7 @@
 ﻿[CSPro Application]
 Version=CSPro 7.7
-Label=Central Samp
-Name=CentSampMenu
+Label=Central Menu
+Name=CentralMenu
 AppType=DataEntry
 ShowEndCaseDialog=No
 CAPI=Yes
@@ -9,22 +9,17 @@ CAPI=Yes
 File=..\Dicts\Clusters.dcf
 File=..\Dicts\Interv.dcf
 File=..\Dicts\Control.dcf
-File=..\Dicts\HHListing.dcf
 [AppCode]
-File=.\CentSampMenu.apc
+File=.\CentralMenu.apc
 Include=..\Library\HTMLFunctions.apc
-Include=..\Library\SyncCSWeb.apc
 [Message]
-File=.\CentSampMenu.mgf
+File=.\CentralMenu.mgf
 [Help]
-File=.\CentSampMenu.qsf
+File=.\CentralMenu.qsf
 [Forms]
-File=.\Menu.fmf
-[Resources]
-Folder=..\Library\src\RessourcesFolder
+File=..\Entry\Menu.fmf
 [Dictionary Types]
+Dict-Type=..\Dicts\Menu.dcf,Input,..\Entry\Menu.fmf
 Dict-Type=..\Dicts\Clusters.dcf,External
 Dict-Type=..\Dicts\Interv.dcf,External
 Dict-Type=..\Dicts\Control.dcf,External
-Dict-Type=..\Dicts\Menu.dcf,Input,.\Menu.fmf
-Dict-Type=..\Dicts\HHListing.dcf,External

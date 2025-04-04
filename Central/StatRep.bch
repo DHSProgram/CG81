@@ -1,0 +1,19 @@
+﻿[CSPro Application]
+Version=CSPro 7.5
+Label=STATREP
+Name=STATREP
+AppType=Batch
+OperatorID=No
+ShowEndCaseDialog=No
+[External Dictionaries]
+File=..\Dicts\interv.dcf
+[AppCode]
+File=.\statrep.apc
+Include=..\Library\HTMLFunctions.apc
+[Message]
+File=.\statrep.mgf
+[Order]
+File=.\statrep.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\CONTROL.dcf,Input,.\statrep.ord
+Dict-Type=..\Dicts\interv.dcf,External

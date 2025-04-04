@@ -1,0 +1,4049 @@
+﻿PROC GLOBAL
+{ DHS-8 secondary editing application  Version 1.0.0 of 08/10/2020 }
+
+  { To store couples information to compare at postproc level 1            }
+  { Columns are: 1-Resp. line  2-Resp. marital status  3-husband/wife line }
+  array womhusb(20,3);
+  array manwife(20,3);
+
+  { Counts of error messages that are not displayed }
+  array kount(50);
+  
+  { Arrays to check duplicate HH line numbers in birth histories }
+  array persline(50);
+  array mothline(50);
+
+  { --- Event table variables ---------------------------------------------------------------}
+  { in DHS-8 duration of amenorrhea and abstinence were removed. Duration of breastfeeding   }
+  { was removed several phases before.  If those variables are included for the survey bring }
+  { logic from DHS-7 for arrays "duramen", "durabst", and "durbf and the corresponding flags } 
+  array type     (30);        { event type }
+  array norder   (30);        { event order }
+  array twincode (30);        { if a child is twin or not }
+  array surv     (30);        { child's survival status }
+  array sflag    (30);        { date flag }
+  array smonth   (30);        { if month for event was given }
+  array errflag  (30);        { event error flag }
+  array lcmc     (30);        { event lower CMC }
+  array ucmc     (30);        { event upper CMC }
+  array cmc      (30);        { event imputed CMC }
+  array interv   (30);        { interval to following event }
+  array cdelay   (30);        { delay for pregnancy between events }
+  array durmeth  (30);        { duration of contraception use }
+  array calrow   (30);        { birth row in the calendar }
+  array flagmeth (30);        { flag duration of contraception use }
+  array flagdth  (30);        { flag for age at death }
+  array deathl   (30);        { age at death lower limit }
+  array deathu   (30);        { age at death upper limit }
+  array lstdu    (30);        { age at death units for hot deck imputation }
+  array lstdn    (30);        { age at death number of units for hot deck imputation }
+  array pregdur  (30);        { used to check pregnancy duration in months in calendar }
+
+ { --- working variables ------------------------------------------------------------------------ }
+
+  numeric lper, lperflag, lsex, lsexflag, fsex, fsexflag, sexp, marrs;
+  numeric temp, calbeg, calend, calbegY, calendY, xrow, ycmc, callen, calint, caluse, currUser;
+  numeric ouse, fuse, luse, pregs5, chadj, colw, calcmc, usem, muse, preg, xuse, used;
+  numeric ismonth, isyear, isage, isday, flag, nEvents, LcmcB, LcmcM, UcmcB, UcmcM;
+  numeric b, e, i, j, k, m, mRow, n, t, v, x, y;
+  numeric ch, cy, cm, cd, dy, dm, dd, rp, rc, x1, x2, du, dn, di, xy, xm, xd, vd, vy, vm, rw, rh, eno;
+  numeric mind, minai, mindb, minaim, minabm, minam, min2m, minamm, minau, minaum;
+  numeric minas, minab, mincd, minpd, lmax, lmin, maxd, maxai, maxdb, maxaim, maxabm;
+  numeric maxelig, maxevent, maxmemb, LastSrc, MinAsx;
+  numeric LastVacD, LastVacM, LastVacY;
+  numeric stermeth, stermetm, methoth, currpreg, calpreg, xmeth;
+  numeric xho, xhc, xhi; { # HHs, # HHs completed, # HHs incomplete }
+  numeric xww, xwc, xwi, xmm, xmc, xmi, xht, xwt, cmcTerm, tryMatch;
+  numeric xusing;
+  numeric run1, doimp, dprev, ver100, ignoreY, emsample;
+  numeric yage, hwage, err, rok, fline_valid, mLine_valid, hwlcmc, hwucmc, hwsex, Totpreg, hwerr;
+  numeric ageDU, ageDN, ageD, dam, dab, head, ntwin, uMin, agew, agem;
+  numeric inUnion, EverUnion, nwives, dviol;
+  numeric gap, gap2, xgap, xDateMin, xDateMax, dMonths, jInterv;
+  numeric goodLink, found, xdeath, discont, condom;
+  numeric swrt, anew, aold, iold, aoldest, ETsuppress;
+  numeric prevCL, xmonth, xyear, xday; { previous cluster # }
+  numeric valf, valm, sickmem,deadmem, deadpar, chvulner, termin, PrvHHnum;
+  numeric preg35, birth59, birth23, currpregdur;
+  numeric cusmonth, cusflag, cuerrflag;
+  numeric WeeksMonth = 0.23;
+  
+  alpha(1)  onemeth;              { method as a character to use with calendar }
+  alpha(1)  asterisk, spaces;     { asterisks and spaces for printing purposes }
+
+  string  calmeth;              { codes for contraceptive methods in calendar }
+  string  pregstr;              { three characters for pregnancy status }
+  string  codeb, codep, codet;  { one character for births, pregnancies and terminations }
+  string  vstring, xstring;     { text vaccination names }
+  string  curmethw;             { current method in woman questionnaire }
+  string  curmethm;             { current method in man questionnaire }
+  string  calw;                 { working calendar column }
+  string  sdeath;               { to display age at death as a string }
+
+  { --------------------------------------------------------------------------- }
+  { Function to convert CMC to a calendar row }
+  function cmcrow( xcmc );
+    if !xcmc in calbeg:calend then
+      xrow = 0
+    else
+      xrow = calend-xcmc+1
+    endif;
+    cmcrow = xrow;
+  end;
+
+  { Function to convert a calendar row to CMC }
+  function rowcmc( yrow );
+    if !yrow in  1:callen then
+      ycmc = 0
+    else
+      ycmc = calend-yrow+1
+    endif;
+    rowcmc = ycmc;
+  end;
+
+  { Function to get a month from a CMC }
+  function cmc2m( xcmc );
+    cmc2m = (xcmc-1)%12+1;
+  end;
+
+  { Function to get a 4 digits year from a CMC }
+  function cmc2y( xcmc );
+    cmc2y = int( (xcmc-1)/12 ) + 1900;
+  end;
+
+  { convert the 3 components of a vaccination date into a variable to EDIT it later }
+  function vdate( vday, vmonth, vyear )
+    vdate = (vday*100+vmonth)*10000+vyear;
+  end;
+
+  { ------------------------------------------------------------------------ }
+  { check if vaccinations are given on the same date under below conditions. }
+  { These conditions suggest that there is a likely error in recording or    }
+  { entering the vaccination dates                                           }
+  function ckvdate( pd, pm, py, dptd, dptm, dpty )
+  { Note: the following table is being used to decide whether a message is needed }
+  { Day   Month   Year   Code  Result
+    diff  diff    diff    0    No message
+    same  diff    diff    1    No message
+    diff  same    diff    2    Give message
+    same  same    diff    3    Give message
+    diff  diff    same    4    No message
+    same  diff    same    5    Give message
+    diff  same    same    6    Give message
+    same  same    same    7    No message
+  }
+    n = (pd = dptd) + 2*(pm = dptm) + 4*(py = dpty);
+    ckvdate = ( n in 2,3,5,6 );
+  end
+
+  { function to convert sex related variables to number of days }
+  function sexdays( rvar )
+    { Recode into days ago }
+    recode rvar  -> x;
+         100:196 -> (rvar-100);
+         201:296 -> (rvar-200)*7;
+         301:396 -> int((rvar-300)*365/12);
+         401:496 -> int((rvar-400)*365.25);
+                 -> 9998;    
+	endrecode;
+    sexdays = x;
+  end;
+
+{ --------------------------------------------------------------------------- }
+{ --------------------------------------------------------------------------- }
+{ men's questionnaire }
+PROC CGIN80_FF
+preproc
+  { get language from calling menu }
+  SetLanguage( GetLanguage() );
+
+  { Initializing the application before the first questionnaire }
+  seed(101);            { Seed to start the random number generator }
+
+  { set application parameters }
+  minai    = 15;        { !!! Minimum age at interview - women         }
+  maxai    = 59;        { !!! Maximum age at interview - women         }
+  minab    = 144;       { !!! Minimum age at first birth - women       }
+  minam    = 120;       { !!! Minimum age at marriage - women          }
+  min2m    = 12;        { !!! Minimum interval between first and current marriage }
+  minas    = 240;       { !!! Minimum age at sterilization             }
+  {+MEN}
+  minaim   = 15;        { !!! Minimum age at interview - men           }
+  maxaim   = 59;        { !!! Maximum age at interview - men           }
+  minabm   = 180;       { !!! Minimum age in months at birth     - men }
+  minamm   = 180;       { !!! Minimum age in months at marriage  - men }
+  maxelig  = 20;        { !!! Maximum number of eligible men or women  }
+  {MEN+}
+  mincd    = 2;         { !!! Minimum conception delay after birth     }
+  maxevent = 30;        { !!! Maximum number of events                 }
+  maxmemb  = 50;        { !!! Maximum number of household members      }
+  run1     = 1;         { 1 if running secondary editing for the first time - 0 if no imputation   }
+  doimp    = 0;         { 1 if doing imputation - 0 if no imputation   }
+  dprev    = 0;         { 1 if doing DP review at end of fieldwork     }
+  ver100   = 1;         { 1 if 100% verification                       }
+  ignorey  = 0;         { 1 if ignoring year when age + year = interview year
+                          0 if using year when age + year = interview year  }
+  stermeth = 1;         { !!! occurrence for female sterilization in contraceptive table    }
+  stermetm = 2;         { !!! occurrence for male sterilization in contraceptive table      }
+  condom   = 7;         { !!! occurrence for male condom in contraceptive table             }
+  methoth  = 14;        { !!! occurrence for other methods in contraceptive table           }
+  emsample = 0;         { !!! Ever married sample - 0=No, 1=Yes       }
+  preg35   = 35; 
+  birth59  = 59;
+  birth23  = 23;
+
+  calendy  = 2025;                          { !!!! year when calendar ends }
+  calbegy  = 2020;                          { !!!! Year when calendar begins }
+  calend   = cmcode(12,calendy);              { last date of calendar    }
+  calbeg   = cmcode( 1,calbegy);              { first date of calendar   }
+  callen   = calend-calbeg+1;                 { length of calendar       }
+                        { Row where births since 201? begin in calendar  }
+  calmeth  = "123456789JKLMXY";     { !!! Codes for contraceptive methods in calendar }
+  curmethw = "ABCDEFGHIJKLMXY";     { !!! Codes for contraceptive methods in Q307     }
+  curmethm = "ABCDEFGHIJKLMXY";     { !!! Codes for contraceptive methods in QM418.  male condom replaced by ~ on purpose }
+  pregstr  = "NGT";                 { !!! Codes for Birth, Pregnancy and Termination  }
+  codeb    = pregstr[1:1];
+  codep    = pregstr[2:1];
+  codet    = pregstr[3:1];
+
+  prevCL   = notappl;           { previous cluster number }
+
+  { initialize hot deck to impute age at death }
+  do i = 1 while i <= maxevent
+    lstdu(i) = 2;               { Units set initially as months }
+    lstdn(i) = int((i-1)/10);   { Numbers within units as 0, 1, 2, 3 and 4 }
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+postproc 	{ of PROC CGIN80_FF }
+
+  if dprev then
+    errmsg( 90000, 0460, kount(28) );
+    errmsg( 90000, 2360, kount(1) );
+    errmsg( 90000, 2362, kount(12) );
+    errmsg( 90000, 2364, kount(13) );
+    errmsg( 90000, 2365, kount(14) );
+    errmsg( 90000, 2366, kount(15) );
+    errmsg( 90000, 2367, kount(16) );
+    errmsg( 90000, 2368, kount(17) );
+    errmsg( 90000, 2369, kount(18) );
+    errmsg( 90000, 4050, kount(2) );
+    errmsg( 90000, 5152, kount(5) );
+    errmsg( 90000, 5153, kount(6) );
+    errmsg( 90000, 5154, kount(7) );
+    errmsg( 90000, 5155, kount(8) );
+    errmsg( 90000, 5156, kount(9) );
+    errmsg( 90000, 5157, kount(10) );
+    errmsg( 90000, 5158, kount(11) );
+    errmsg( 90000, 5191, kount(24) );
+    errmsg( 90000, 5192, kount(25) );
+    errmsg( 90000, 5193, kount(26) );
+    errmsg( 90000, 5194, kount(27) );
+    errmsg( 90000, 9814, kount(19) );
+    errmsg( 90000, 9815, kount(20) );
+    errmsg( 90000, 9815, kount(21) );
+    errmsg( 90000, 9914, kount(31) );
+    errmsg( 90000, 9914, kount(32) );
+    errmsg( 90000, 9915, kount(33) );
+    errmsg( 90000, 9915, kount(34) );
+    errmsg( 90000, 9916, kount(35) );
+    errmsg( 90000, 9916, kount(36) );
+    errmsg( 90000, 9917, kount(37) );
+    errmsg( 90000, 9917, kount(38) );
+    {+MEN}
+    errmsg( 90000, 25153, kount(48) );
+    errmsg( 90000, 25158, kount(49) );
+    errmsg( 90000, 25191, kount(44) );
+    errmsg( 90000, 25192, kount(45) );
+    errmsg( 90000, 25193, kount(46) );
+    errmsg( 90000, 25194, kount(47) );
+    {MEN+}
+  endif;
+
+PROC INDIVIDUAL
+preproc
+
+  if PrvHHnum <> QNUMBER then
+    { initialize arrays to check duplicates between birth history and HH members and }
+    { to store the individual interview result to use when assigning HIV weights     }
+    do i = 1 while i <= maxmemb
+      persline(i) = 0;
+      mothline(i) = 0;
+    enddo;
+    PrvHHNum = QNUMBER;
+    if !loadcase( CGHH80, QCLUSTER, QNUMBER ) then
+      errmsg( 0004, QNUMBER );
+      clear( CGHH80 );
+    endif;
+  endif;
+
+  { Set up CMC for date of interview }
+  di = cmcode( QINTM, QINTY );
+  calint = calend - di + 1;
+
+  if YCLUSTER <> QCLUSTER then 
+    YCLUSTER = QCLUSTER; 
+    clear(CLUSTERS); 
+    if loadcase(CLUSTERS, YCLUSTER) then 
+      if YREGION <> QREGION then  
+        errmsg( 0015, QREGION,QREGION,YREGION,YREGIONN) 
+      endif; 
+      if YURBRUR <> QTYPE then  
+        errmsg( 0017, QTYPE,QTYPE,YURBRUR,GetLabel(QTYPE,YURBRUR)); 
+      endif; 
+    else 
+      errmsg( 0019, YCLUSTER ); 
+      YCLUSTER = notappl; 
+    endif; 
+  endif; 
+
+  if QQTYPE = 1 then
+    mindb = di - (maxaim+1)*12 + 1;     { Minimum date of birth - men }
+    maxdb = di - minaim*12;             { Maximum date of birth - men }
+    xmm   = xmm + 1;
+    if QRESULT = 1 then
+{ *** enable at imputation time
+      if QH06(QLINE) = 1 then
+        QWEIGHT = MLWEIGHT;             { Men's weight }
+      else
+        QWEIGHT = 0;
+      endif;
+*** }
+      xmc = xmc + 1
+    else
+      QWEIGHT = 0;
+      xmi = xmi + 1
+    endif;
+  else
+    mindb = di - (maxai+1)*12 + 1;      { Minimum date of birth - women }
+    maxdb = di - minai*12;              { Maximum date of birth - women }
+    xww   = xww + 1;
+    if QRESULT = 1 then
+{ *** enable at imputation time
+      if QH06(QLINE) = 1 then
+        QWEIGHT = WMWEIGHT;             { woman's weight }
+        if QLINE = QHNUMDV & DV01 = 1 then
+          dviol = count( QHSEC01_EDT where QH06 = 1 & QH09 <> 0 );
+          if dviol > 5 then dviol = 5 endif;
+          QDWEIGHT = DVWEIGHT(dviol);   { woman's domestic violence weight }
+        else
+          QDWEIGHT = 0;
+        endif;
+      else
+        QWEIGHT  = 0;
+        QDWEIGHT = 0;
+      endif;
+*** }
+      xwc = xwc + 1
+    else
+{ *** enable at imputation time
+      QWEIGHT  = 0;
+      QDWEIGHT = 0;
+*** }
+      xwi = xwi + 1
+    endif;
+  endif;
+
+  if doimp then
+    QINTC = di;
+    QINTCD = CDCode( QINTY, QINTM, QINTD );
+  endif;
+  Totpreg = 0;
+
+  { Verify that interviewer is registered in fieldworker questionnaire }
+  if !loadcase( FIELDWKQ, QINTNUM ) then
+    errmsg( 0025, tr("Interviewer"), QINTNUM );
+  endif;
+  { Verify that supervisor is registered in fieldworker questionnaire }
+  if !loadcase( FIELDWKQ, QSUPERV ) then
+    errmsg( 0025, tr("Supervisor"), QSUPERV );
+  endif;
+
+{ ----------------------------------------------------------------------- }
+{ respondent background questions }
+PROC QWSEC01_EDT
+
+  { Initialize event table }
+  do i = 1 while i <= maxevent
+    norder(i)  = default;     { Birth order of children }
+    twincode(i)= default;     { Twin code for children }
+    surv(i)    = default;     { Survival status for children }
+    deathl(i)  = default;     { Age at death of child - lower limit }
+    deathu(i)  = default;     { Age at death of child - upper limit }
+    sflag(i)   = default;     { Status code flag }
+    errflag(i) = default;     { Error flag }
+    durmeth(i) = default;     { Duration of method use before birth }
+    flagmeth(i)= 0;           { Flag for method use before birth }
+    flagdth(i) = 0;           { Flag for age at death of the child }
+    calrow(i)  = default;
+  enddo;
+
+  lperflag = 0;               { Flag for last period }
+  lsexflag = 0;               { Flag for last sex }
+  fsexflag = 0;               { Flag for age at first sex }
+  cusflag  = 0;               { Flag for date of current union }
+  inUnion = ( Q701 in 1,2 );
+
+{ --------------------------------------------------------------------------- }
+
+  { Date of birth of the woman }
+
+  { Check either year of birth or age given for all women }
+  if !validyr(Q110Y) & !valid(Q111) then
+    if run1 then errmsg( 1060, Q110M, Q110Y, Q111 ); endif;
+  { Compare age of woman with age in household to look for typos }
+  elseif valid(Q111) & !( (Q111 - QH07(QLINE)) in (-2):2 ) then
+    if run1 then errmsg( 1061, Q111, QH07(QLINE) ) endif;
+  endif;
+
+  { Set up event table entry for woman's date of birth }
+  nevents = 1;
+  ismonth = valid(Q110M);
+  isyear  = validyr(Q110Y);
+  isage   = valid(Q111);
+  if ismonth then
+    smonth(1) = Q110M;
+  else
+    smonth(1) = 0;
+  endif;
+  recode isyear :: ismonth :: isage -> flag;
+              1 ::       1 ::       -> 1;
+                ::       1 ::     1 -> 2;
+              1 ::         ::     1 -> 3;
+              1 ::         ::       -> 5;
+                ::         ::     1 -> 6;
+                ::       1 ::       -> 7;
+                ::         ::       -> 8;
+  endrecode;
+  if ignorey & flag = 3 & Q110Y + Q111 = QINTY then
+    flag = 4
+  endif;
+  sflag(1)   = flag;
+  errflag(1) = notappl;
+
+  { Initial ranges for CMC date of birth }
+  if validyr(Q110Y) & (flag <> 4 | !doimp) then
+    lcmcb = setlb( Q110M, Q110Y, 0 );
+    ucmcb = setub( Q110M, Q110Y, 9999 );
+    if lcmcb < mindb then
+      if ucmcb < mindb then
+        errmsg( 1063, Q110M, Q110Y, QINTM, QINTY, cmc2m(mindb), cmc2y(mindb), cmc2m(maxdb), cmc2y(maxdb) );
+        errflag(1) = default;
+        ucmcb = mindb;
+      endif;
+      lcmcb = mindb;
+    endif;
+    if ucmcb > maxdb then
+      if lcmcb > maxdb then
+        errmsg( 1063, Q110M, Q110Y, QINTM, QINTY, cmc2m(mindb), cmc2y(mindb), cmc2m(maxdb), cmc2y(maxdb) );
+        errflag(1) = default;
+        lcmcb = maxdb;
+      endif;
+      ucmcb = maxdb;
+    endif
+  else
+    lcmcb = mindb;
+    ucmcb = maxdb;
+  endif;
+
+  type(1) = 1;
+  interv(1) = 0;
+  cdelay(1) = 0;
+
+{ --------------------------------------------------------------------------- }
+
+  { Adjust ranges for CMC date of birth based on age }
+  if Q111 in minai:maxai then
+    t = ndjlba( lcmcb, ucmcb, di, di, Q111 );
+    if t < 0 then
+      errmsg( 1062, Q110M, Q110Y, lcmcb, ucmcb, Q111, QINTM, QINTY, di );
+      errflag(1) = default;
+    else
+      lcmcb = t;
+    endif;
+    t = adjuba( lcmcb, ucmcb, di, di, Q111 );
+    if t < 0 then
+      errmsg( 1062, Q110M, Q110Y, lcmcb, ucmcb, Q111, QINTM, QINTY, di );
+      errflag(1) = default;
+    else
+      ucmcb = t;
+    endif;
+    x = di - (Q111*12 + 11);
+    if lcmcb < x & x <= ucmcb then
+      lcmcb = x
+    endif
+  endif;
+
+{ --------------------------------------------------------------------------- }
+
+  { For month only without year, make adjustment }
+  if ismonth & !isyear then
+    x = int((lcmcb - 1)/12) * 12 + smonth(1);
+    if x < lcmcb then
+      x = x + 12
+    endif;
+    if x > ucmcb then
+      if run1 then
+        errmsg( 1064, smonth(1), lcmcb, ucmcb, cmc2m(lcmcb), cmc2y(lcmcb), cmc2m(ucmcb), cmc2y(ucmcb))
+      endif;
+    else
+      lcmcb = x
+    endif;
+    x = int((ucmcb - 1)/12) * 12 + smonth(1);
+    if x > ucmcb then
+      x = x - 12
+    endif;
+    if x < lcmcb then
+      if run1 then
+        errmsg( 1064, smonth(1), lcmcb, ucmcb, cmc2m(lcmcb), cmc2y(lcmcb), cmc2m(ucmcb), cmc2y(ucmcb) )
+      endif;
+    else
+      ucmcb = x
+    endif;
+  endif;
+
+  { check duration of current residence }
+  if Q104 = 96 & QH05(QLINE) = 1 then
+    errmsg( 1031, Q104, QH05(QLINE) )
+  endif;
+  agew = int( (di-lcmcb) / 12 );
+  if Q104 in 0:49 & Q104 > agew then
+    errmsg( 1030, Q104, Q110M, Q110Y, Q111 )
+  endif;
+  if validyr(Q106Y) & Q104 in 0:49 then
+    temp = setub(Q106M, Q106Y, 9999);
+	if int((di-temp)/12) > Q104 then
+	  warning( 1035, Q106M, Q106Y, Q104 )
+	endif;
+  endif;
+
+{ --------------------------------------------------------------------------- }
+
+  { Date of first marriage }
+  everUnion = ( Q701 in 1,2 | Q702 in 1,2 );
+  chadj = 1;                    { Adjustment for children in event table }
+  if everUnion then              
+    chadj = 2;                  // added to line number of child          
+    nevents = nevents + 1;
+    ismonth = valid(Q715M);
+    isyear  = validyr(Q715Y);
+    isage   = valid(Q716);
+    if ismonth then
+      smonth(2) = Q715M;
+    else
+      smonth(2) = 0;
+    endif;
+    recode isyear :: ismonth :: isage -> flag;
+                1 ::       1 ::       -> 1;
+                  ::       1 ::     1 -> 2;
+                1 ::         ::     1 -> 3;
+                1 ::         ::       -> 5;
+                  ::         ::     1 -> 6;
+                  ::       1 ::       -> 7;
+                  ::         ::       -> 8;
+    endrecode;
+    sflag(2)   = flag;
+    errflag(2) = notappl;
+    type(2)    = 2;
+    { No year of marriage given, check if age given }
+    if flag in 7,8 then
+      if run1 then errmsg( 5135, Q716, Q715M, Q715Y ) endif;
+    endif;
+
+    { Initial ranges for date  of marriage }
+    if validyr(Q715Y) then
+      lcmcm = setlb( Q715M, Q715Y, 0 );
+      ucmcm = setub( Q715M, Q715Y, 9999 );
+      if ucmcm > di then ucmcm = di endif;
+    else
+      lcmcm = lcmcb + minam;
+      ucmcm = di;
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of marriage based on age at marriage }
+    if valid(Q716) then
+
+      { Adjust functions used with dates upside down to allow   }
+      { adjustment of date of marriage based on age at marriage }
+      { rather than adjusting date of birth                     }
+      t = adjuba( di-ucmcm, di-lcmcm, di-ucmcb, di-lcmcb, Q716 );
+      if t < 0 then
+        errmsg( 5132, Q716, Q715M, Q715Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+        errflag(2) = default;
+      else
+        lcmcm = di-t;
+      endif;
+      t = ndjlba( di-ucmcm, di-lcmcm, di-ucmcb, di-lcmcb, Q716 );
+      if t < 0 then
+        errmsg( 5132, Q716, Q715M, Q715Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+        errflag(2) = default;
+      else
+        ucmcm = di-t;
+      endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of birth based on age at marriage }
+      if errflag(2) <> default then
+        t = ndjlba( lcmcb, ucmcb, lcmcm, ucmcm, Q716 );
+        if t < 0 then
+          errmsg( 5132, Q716, Q715M, Q715Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+          errflag(2) = default;
+        else
+          lcmcb = t;
+        endif;
+        t = adjuba( lcmcb, ucmcb, lcmcm, ucmcm, Q716 );
+        if t < 0 then
+          errmsg( 5132, Q716, Q715M, Q715Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+          errflag(2) = default;
+        else
+          ucmcb = t;
+        endif
+      endif
+
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if lcmcm > di then
+      errmsg( 5130, Q716, Q111, QINTM, QINTY, Q110M, Q110Y, Q715M, Q715Y );
+      errflag(2) = default;
+    elseif ucmcm > di then
+      ucmcm = di
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { For month only without year, make adjustment }
+    if ismonth & !isyear then
+      x = int((lcmcm - 1)/12) * 12 + smonth(2);
+      if x < lcmcm then
+        x = x + 12
+      endif;
+      if x > ucmcm then
+        errmsg( 5126, smonth(2), lcmcm, ucmcm, cmc2m(lcmcm), cmc2y(lcmcm), cmc2m(ucmcm), cmc2y(ucmcm) );
+      else
+        lcmcm = x
+      endif;
+      x = int((ucmcm - 1)/12) * 12 + smonth(2);
+      if x > ucmcm then
+        x = x - 12
+      endif;
+      if x < lcmcm then
+        errmsg( 5126, smonth(2), lcmcm, ucmcm, cmc2m(lcmcm), cmc2y(lcmcm), cmc2m(ucmcm), cmc2y(ucmcm) );
+      else
+        ucmcm = x
+      endif;
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Adjust for minimum age at marriage }
+    t = adjlbi( lcmcb, ucmcb, lcmcm, ucmcm, minam );
+    if t < 0 then
+      if run1 then errmsg( 5121, int(minam/12), Q110M, Q110Y, Q111, Q715M, Q715Y, Q716 ) endif;
+      errflag(2) = default;
+    else
+      lcmcm = t;
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if lcmcm > di then
+      errmsg( 5120, Q715M, Q715Y, Q716, QINTM, QINTY, Q110M, Q110Y, Q111 );
+      errflag(2) = default;
+    elseif ucmcm > di then
+      ucmcm = di
+    endif;
+
+    { Use age at first sex as lower bound for date of marriage if no info. }
+    if valid(Q722) & Q722 <> 0 & Q722 <= maxai then
+      t = adjlbi( lcmcb, ucmcb, lcmcm, ucmcm, Q722*12 );
+      if t < 0 then
+        if !ver100 then errmsg( 5193, Q722, Q715M,Q715Y, Q716, Q110M,Q110Y ) endif;
+        kount(26) = kount(26) + 1;
+        fsexflag = 6;
+      else
+        lcmcm = t
+      endif
+    endif;
+
+    lcmc(2) = lcmcm;
+    ucmc(2) = ucmcm;
+    interv(2) = minam;
+    cdelay(2) = 0;
+
+  endif;
+
+  { !!! next two instructions are necessary for DHS and MIS surveys }
+  lcmc(1) = lcmcb;   
+  ucmc(1) = ucmcb;
+  
+  { date of current marriage for women married more than once }  
+  if InUnion & Q714 = 2 then    
+    ismonth = valid(Q719M);
+    isyear  = validyr(Q719Y);
+    isage   = valid(Q720);
+    if ismonth then
+      cusmonth = Q719M;
+    else
+      cusmonth = 0;
+    endif;
+    recode isyear :: ismonth :: isage -> flag;
+                1 ::       1 ::       -> 1;
+                  ::       1 ::     1 -> 2;
+                1 ::         ::     1 -> 3;
+                1 ::         ::       -> 5;
+                  ::         ::     1 -> 6;
+                  ::       1 ::       -> 7;
+                  ::         ::       -> 8;
+    endrecode;
+    cusflag   = flag;
+    cuerrflag = notappl;
+    { No year of marriage given, check if age given }
+    if flag in 7,8 then
+      if run1 then errmsg( 5145, Q720, Q719M, Q719Y ) endif;
+    endif;
+
+    { Initial ranges for date  of marriage }
+    if validyr(Q719Y) then
+      lcmcm = setlb( Q719M, Q719Y, 0 );
+      ucmcm = setub( Q719M, Q719Y, 9999 );
+      if ucmcm > di then ucmcm = di endif;
+    else
+      lcmcm = lcmc(2) + min2m;
+      ucmcm = di;
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of marriage based on age at marriage }
+    if valid(Q720) then
+
+      { Adjust functions used with dates upside down to allow   }
+      { adjustment of date of marriage based on age at marriage }
+      { rather than adjusting date of birth                     }
+      t = adjuba( di-ucmcm, di-lcmcm, di-ucmcb, di-lcmcb, Q720 );
+      if t < 0 then
+        errmsg( 5142, Q720, Q719M, Q719Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+        cuerrflag = default;
+      else
+        lcmcm = di-t;
+      endif;
+      t = ndjlba( di-ucmcm, di-lcmcm, di-ucmcb, di-lcmcb, Q720 );
+      if t < 0 then
+        errmsg( 5142, Q720, Q719M, Q719Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+        cuerrflag = default;
+      else
+        ucmcm = di-t;
+      endif;
+
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if lcmcm > di then
+      errmsg( 5140, Q720, Q111, QINTM, QINTY, Q110M, Q110Y, Q719M, Q719Y );
+      cuerrflag = default;
+    elseif ucmcm > di then
+      ucmcm = di
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { For month only without year, make adjustment }
+    if ismonth & !isyear then
+      x = int((lcmcm - 1)/12) * 12 + cusmonth;
+      if x < lcmcm then
+        x = x + 12
+      endif;
+      if x > ucmcm then
+        errmsg( 5146, smonth(3), lcmcm, ucmcm, cmc2m(lcmcm), cmc2y(lcmcm), cmc2m(ucmcm), cmc2y(ucmcm) );
+      else
+        lcmcm = x
+      endif;
+      x = int((ucmcm - 1)/12) * 12 + smonth(3);
+      if x > ucmcm then
+        x = x - 12
+      endif;
+      if x < lcmcm then
+        errmsg( 5146, smonth(3), lcmcm, ucmcm, cmc2m(lcmcm), cmc2y(lcmcm), cmc2m(ucmcm), cmc2y(ucmcm) );
+      else
+        ucmcm = x
+      endif;
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Adjust for minimum age at marriage }
+    t = adjlbi( lcmcb, ucmcb, lcmcm, ucmcm, minam );
+    if t < 0 then
+      if run1 then errmsg( 5141, int(minam/12), Q110M, Q110Y, Q111, Q719M, Q719Y, Q720 ) endif;
+      cuerrflag = default;
+    else
+      lcmcm = t;
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if lcmcm > di then
+      errmsg( 5143, Q719M, Q719Y, Q720, QINTM, QINTY, Q110M, Q110Y, Q111 );
+      cuerrflag = default;
+    elseif ucmcm > di then
+      ucmcm = di
+    endif;
+
+    if lcmcm < lcmc(2) | ucmcm < ucmc(2) then
+      errmsg( 5144, Q715M, Q715Y, Q716, Q719M, Q719Y, Q720 );
+    endif;
+
+  endif;
+
+{ --------------------------------------------------------------------------- }
+
+  { Time of interview }
+  if QVISITS = 1 then
+    if valid(Q101H) & valid(Q1116H) then
+      if Q101H > Q1116H then
+        errmsg( 8110, Q101H, Q101M, Q1116H, Q1116M );
+      elseif Q101H = Q1116H then
+        if valid(Q101M) & valid(Q1116M) & Q101M > Q1116M then
+          errmsg( 8110, Q101H, Q101M, Q1116H, Q1116M );
+        endif
+      endif
+    endif
+  endif;
+
+  { Total pregnancy outcomes }
+  Totpreg = Q212W;
+
+  { Check to ensure that all children listed in HH are listed in pregnancy history }
+  for i in CGHH80.QHSEC01 do
+    if QH13 = QLINE & count(QWSEC2B_EDT where Q227 = i) <> 1 then
+      errmsg( 2185, i, strip(QH02(i)) )
+    endif;
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+{ pregnancy history }
+PROC QWSEC2B_EDT
+
+  for i in $ do
+    j = Q227;
+    if valid(j) & j <> 0 then
+      if persline(j) then
+        errmsg( 2200, i, persline(j), mothline(j) );
+      else
+        persline(j) = j;
+        mothline(j) = QLINE;
+      endif;
+    endif;
+  enddo;
+
+  { pregnancy history }
+  for i in $ do
+    nevents    = nevents + 1;
+    j          = nevents;
+    type(j)    = 3;
+    norder(j)  = i;
+    twincode(j)= 0;
+    surv(j)    = Q224;
+	if Q223 <> 1 then surv(j) = 3 endif; 
+    deathl(j)  = 0;
+    deathu(j)  = 0;
+    durmeth(j) = 0;
+    flagmeth(j)= 0;
+    smonth(j)  = 0;
+    calrow(j)  = 0;
+	pregdur(j) = Q221DUR;
+	minpd      = Q221DUR;  // minimum pregnancy duration
+	
+
+    isyear = 0; ismonth = 0; isage = 0; isday = 0;
+    if valid(Q220M) then
+      smonth(j) = Q220M;
+      ismonth = 1
+    endif;
+   { Initialize logical ranges for date of birth of child }
+    if validyr(Q220Y) then
+      isyear = 1;
+      lcmc(j) = setlb( Q220M, Q220Y, 0 );
+      ucmc(j) = setub( Q220M, Q220Y, 9999 );
+    else
+      lcmc(j) = mindb + minab;
+	  numeric preglow;
+      numeric insec4  = count(QWSEC04_EDT where Q404 = i);   { pregnancy in section 4, impute inside postnatal care }
+      numeric insec61 = count(QWSEC6A_EDT where Q603 = i);   { Birth in section 6.1, impute inside health section window }
+      numeric insec62 = ( soccurs(QWSEC6B) & Q635 = i );     { Birth in section 6.2, impute intside nutrition }
+      recode insec62 :: insec4 :: insec61 -> preglow;
+		        1    ::        ::         -> birth23;
+		             ::   1    ::         -> preg35;
+		             ::        ::     1   -> birth59;
+		             ::        ::         -> 0;
+      endrecode;
+	  if preglow then
+        lcmc(j) = di - preglow;
+      endif;
+      ucmc(j) = di;
+    endif;
+    isday = ( Q220D in 1:31 );
+    if valid(Q225) then
+      isage = 1;
+    endif;
+
+    recode isyear :: ismonth :: isday :: isage -> flag;
+                1 ::       1 ::     1 ::       -> 0;
+                1 ::       1 ::       ::       -> 1;
+                  ::       1 ::       ::     1 -> 2;
+                1 ::         ::       ::     1 -> 3;
+                1 ::         ::       ::       -> 5;
+                  ::         ::       ::     1 -> 6;
+                  ::       1 ::       ::       -> 7;
+                  ::         ::       ::       -> 8;
+    endrecode;
+    if ignorey & flag = 3 & Q220Y + Q225 = QINTY then
+      flag = 4;
+      lcmc(j) = mindb + minab;
+      ucmc(j) = di;
+    endif;
+    sflag(j)   = flag;
+    errflag(j) = notappl;
+
+{ --------------------------------------------------------------------------- }
+
+    do k = 1 while k <= noccurs(CGHH80.QBSEC01)	{ children's hgt/wgt sect in HH }
+      if QB102(k) = Q227 then
+        if Q220Y <> QB103Y(k) | Q220M <> QB103M(k) | Q220D <> QB103D(k) then
+          errmsg( 2212, i, Q227, Q220D, Q220M, Q220Y, QB103D(k), QB103M(k), QB103Y(k) )
+        endif;
+      endif;
+    enddo;
+
+    { Set up twin code variable coded as follows:
+      0 - Single birth
+      1 - 1st of multiple
+      2 - 2nd of multiple
+      3 - 3rd of multiple
+      etc.
+      This variable easier to use in controlling twins.
+    }
+
+    if Q215 = 1 then         { Single pregnancy }
+      twincode(j) = 0
+    elseif Q215L = 1 then     { First pregnancy }
+      twincode(j) = 1
+    else
+      twincode(j) = twincode(j-1) + 1
+    endif;
+
+    { Update twin code variable in case of two pairs of twins together      }
+    { Twincode is: 0-Single pregnancy, 1-1st of multiple, 2-2nd of multiple }
+    if Q215 in 2:5 & i > 2 & twincode(j-1) >= 2 then
+      if (Q220Y <> Q220Y(i-1) | Q220M <> Q220M(i-1)) then
+        twincode(j) = 1
+      endif
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of birth of child based on age of child }
+    if Q224 = 1 then
+      { Living children }
+      if valid(Q225) then
+        { Lower bound of CMC date of birth }
+        t = ndjlba( lcmc(j), ucmc(j), di, di, Q225 );
+        if t < 0 then
+          errmsg( 2171, i, strip(Q218), Q225, Q220M, Q220Y, QINTM, QINTY );
+          errflag(j) = default;
+        else
+          lcmc(j) = t;
+        endif;
+        { Upper bound of CMC date of birth }
+        t = adjuba( lcmc(j), ucmc(j), di, di, Q225 );
+        if t < 0 then
+          errmsg( 2171, i, strip(Q218), Q225, Q220M, Q220Y, QINTM, QINTY );
+          errflag(j) = default;
+        else
+          ucmc(j) = t;
+        endif;
+        x = di - (Q225*12 + 11);
+        if lcmc(j) < x & x <= ucmc(j) then
+          lcmc(j) = x
+        endif;
+        if age_day_check(Q220D, Q220M, Q220Y, QINTD, QINTM, QINTY, Q225) > 0 then
+          errmsg(2175, i, strip(Q218), Q225, Q220D, Q220M, Q220Y);
+        endif;
+      endif;
+
+    elseif Q224 = 2 then
+
+      { Children who have died }
+      agedu = Q228U;         { age at death - units }
+      agedn = Q228N;         { age at death - number }
+
+      { Check maximum and minimum values }
+      recode agedu -> maxd;
+                 1 -> 30;       { 0-30 days   }
+                 2 -> 23;       { 1-23 months }
+                 3 -> 40;       { 2-40 years  }
+                   -> 99;
+      endrecode;
+      mind = agedu-1;
+      if agedu = 9 then agedu = 0 endif;
+      if !agedn in mind:maxd then
+        if run1 then errmsg( 2191, i, strip(Q218), agedn, mind, maxd, agedu ) endif;
+        flagdth(i+chadj) = 6;
+      endif;
+
+      { Check age at death plausible considering date of birth }
+      recode agedu:: agedn   -> aged;
+                  :: missing -> 999;
+                  :: >= 97   -> 999;
+                1 ::         -> int(agedn/30);
+                2 ::         -> agedn;
+                3 ::         -> agedn*12;
+                  ::         -> 999;
+      endrecode;
+      if aged <> 999 then
+        if lcmc(j) + aged > di then
+          if run1 then errmsg( 2192, i, strip(Q218), Q228U, Q228N, Q220M, Q220Y, QINTM, QINTY ) endif;
+          errflag(j) = default;
+          flagdth(j) = 1;
+        elseif ucmc(j) + aged > di then
+          ucmc(j) = di - aged
+        endif;
+        { Now make age at death as late as possible for those with }
+        { age at death reported in years                           }
+        deathl(j) = aged;               { lower limit of age at death }
+        deathu(j) = aged;               { upper limit of age at death }
+        if agedu = 3 then               { Age at death reported in years }
+          deathu(j) = aged + 11;
+          if flagdth(j) = 0 & lcmc(j) + deathu(j) > di then
+            deathu(j) = di - lcmc(j)
+          endif;
+        endif
+      else
+        deathl(j) = 0;
+        deathu(j) = di - lcmc(j);
+      endif
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { For month only without year, make adjustment }
+    if ismonth & !isyear then
+      x = int((lcmc(j) - 1)/12) * 12 + smonth(j);
+      if x < lcmc(j) then
+        x = x + 12
+      endif;
+      if x > ucmc(j) then
+        if run1 then
+          errmsg( 2172, i, strip(Q218), smonth(j), lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)) )
+        endif;
+      else
+        lcmc(j) = x
+      endif;
+      x = int((ucmc(j) - 1)/12) * 12 + smonth(j);
+      if x > ucmc(j) then
+        x = x - 12
+      endif;
+      if x < lcmc(j) then
+        if run1 then
+          errmsg( 2172, i, strip(Q218), smonth(j), lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)) )
+        endif;
+      else
+        ucmc(j) = x
+      endif;
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Check first birth not before age at first sex }
+    if i = 1 then
+      if valid(Q722) & Q722 <> 0 & Q722 <= maxai then
+        t = adjlbi( lcmc(1), ucmc(1), lcmc(j), ucmc(j), Q722*12+pregdur(j) );
+        if t < 0 then
+          if !ver100 then errmsg( 5191, Q722, Q220M, Q220Y, Q110M, Q110Y )endif;
+          kount(24) = kount(24) + 1;
+          fsexflag = 3;
+          t = adjlbi( lcmc(1), ucmc(1), lcmc(j), ucmc(j), (Q722-1)*12+pregdur(j) );
+          if t < 0 then
+            fsexflag = 2
+          endif
+        else
+          lcmc(j) = t;
+        endif
+      { Check minimum birth interval after marriage }
+      elseif Q722 = 95 & everUnion then
+        t = adjlbi( lcmc(2), ucmc(2), lcmc(j), ucmc(j), pregdur(j) );
+        if t < 0 then
+          if !ver100 then errmsg( 5194, Q722, Q715M, Q715Y, Q220M, Q220Y, Q716 ) endif;
+          kount(27) = kount(27) + 1;
+          fsexflag = 5;
+        else
+          lcmc(j) = t;
+        endif
+      endif
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Set minimum intervals }
+    cdelay(j) = 0;
+    if twincode(j) > 1 then
+      interv(j) = 0;
+    else
+      if i = 1 then             { first birth }
+        if j = 3 then           { woman ever married }
+          interv(j) = 0
+        else                    { woman never married }
+          interv(j) = minab
+        endif
+      else                      { subsequent births }
+        interv(j) = pregdur(j); { minimum pregnancy duration }
+        cdelay(j) = mincd;      { minimum conception delay }
+      endif
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    if !special(Q227) & Q227 > 0 then
+      { check for duplicate household line number }
+      if count(QWSEC2B_EDT where Q227 = Q227(i) & Q215L <> Q215L(i)) then
+        errmsg( 2184, i, strip(Q218), Q227, strip(QH02(Q227)) );
+      endif;
+
+      { Check mother's line number agrees with line number of mother in household questionnaire }
+      if QH12(Q227) <> notappl & QH13(Q227) <> QLINE then
+        errmsg( 2182, i, strip(Q218), Q227, strip(QH02(Q227)), QH13(Q227), QLINE );
+      endif;
+
+      { Check sex of child against sex in household questionnaire }
+      if Q219 <> QH04(Q227) then
+        errmsg( 2141, i, strip(Q218), Q227, strip(QH02(Q227)), Q219, QH04(Q227) );
+      endif;
+
+      { Check age of child against age in household questionnaire }
+      if valid(Q225) & valid(QH07(Q227)) then
+        x = Q225 - QH07(Q227);
+        if !x in (-1):1 then
+          errmsg( 2173, i, strip(Q218), Q225, QH07(Q227), Q227, strip(QH02(Q227)) );
+        endif
+      endif;
+
+      { Check living status of child against status in household questionnaire }
+      if QH05(QLINE) = 1 & Q226 <> QH05(Q227) |
+         Q226 = 1 & QH05(QLINE) <> QH05(Q227) then
+        errmsg( 2183, i, strip(Q218), Q226, QH05(Q227), Q227, strip(QH02(Q227)), QH05(QLINE) );
+      endif;
+    endif;
+
+    { if mother is de jure and child lives with mother, child must have line number in HH }
+    if QH05(QLINE) = 1 & Q226 = 1 & Q227 = 0 then
+      errmsg( 2186, i, strip(Q218), Q227, QH05(QLINE), Q226 )
+    endif;
+
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+{ Calendar }
+
+PROC QWSEC2C_EDT
+{ Calendar variables :
+  QCAL      - calendar itself
+  calend    - end of calendar date in CMC
+  calbeg    - beginning of calendar date in CMC
+  callen    - length of calendar in rows
+  calint    - row for date of interview i.e. top row to use for this case
+  calrow(b) - row of calendar relating to birth b in birth history
+  calpreg   - pregnant in month of interview, according to calendar
+  caluse    - row of last use of any contraceptive method
+}
+
+{ -------------------------------------------------------------------------- }
+
+  { Check column 1 }
+  { -------------- }
+  ouse    = 0;                    { Use in open interval/last closed interval }
+  fuse    = 0;                    { First use of method in interval }
+  luse    = 0;                    { Last  use of method in interval }
+  pregs5  = 0;
+  b       = Totpreg + chadj;          { Index into event table for child }
+  termin  = 0;
+  colw    = 1;
+  calw    = QCAL(1);
+  do i = calint while i <= callen
+
+    { Check pregnancies in calendar matches pregnancies in pregnancy history }
+    if calw[i:1] in codeb,codet then
+      pregs5 = pregs5 + 1;
+      if twincode(b) then
+        pregs5 = pregs5 + twincode(b) - 1;
+      endif;
+      calcmc = rowcmc(i);
+      if type(b) = 3 & calcmc in lcmc(b):ucmc(b) then
+        calrow(b) = i;
+        lcmc(b) = calcmc;
+        ucmc(b) = calcmc;
+      else
+        errmsg( 9802, i, calcmc, cmc2m(calcmc), cmc2y(calcmc), b, type(b), lcmc(b),
+                      ucmc(b), cmc2m(lcmc(b)), cmc2y(lcmc(b)), cmc2m(ucmc(b)), cmc2y(ucmc(b)));
+        errflag(b) = default;
+      endif;
+
+      { Check gestation lengths of pregnancies in months }
+      do j = i+1 while j <= callen & calw[j:1] = codep enddo;
+	  numeric lenpreg = i + pregdur(b);
+      if j > lenpreg | j <= callen & j < lenpreg then
+        errmsg( 9803, i, j-i );
+        errflag(b) = default;
+      endif;
+
+      { Set duration of contraceptive use }
+      if luse then
+        luse = fuse - luse + 1
+      endif;
+      if b = Totpreg + chadj then
+        ouse = luse;
+      else
+        durmeth(b+1) = luse
+      endif;
+      luse = 0;
+      fuse = 0;
+
+      { Set same calrow for twins of pregnancy }
+      while twincode(b) > 1 do
+        calrow(b-1) = calrow(b);
+        b = b - 1;
+      enddo;
+      b = b - 1;
+
+    { Check pregnancy codes are either for current pregnancy, }
+    { or for pregnancies that are terminated }
+    elseif calw[i:1] = codep then
+      if i > 1 & !pos(calw[i-1:1],concat(" ",pregstr)) then
+        errmsg( 9818, i );
+      endif
+
+    { Get duration of contraceptive use }
+    elseif pos(calw[i:1],strip(calmeth)) then
+      if !luse then
+        luse = i;
+      endif;
+      fuse = i;
+
+    endif;
+  enddo;
+
+  { Check all births since January 201? are represented in calendar }
+  do b = Totpreg + chadj while b > chadj by (-1)
+    if lcmc(b) >= calbeg & calrow(b) = 0 then
+      errmsg( 9804, b-chadj, lcmc(b), ucmc(b), cmc2m(lcmc(b)), cmc2y(lcmc(b)), cmc2m(ucmc(b)), cmc2y(ucmc(b)) )
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Check column 2 }
+  { -------------- }
+  discont = 0;              { Number of discontinuations }
+  caluse = 0;               { Last use of contraception in calendar }
+  xusing = default;         { Whether using in month i-1 }
+  colw = 2;
+  calw = "";
+  if totocc( QWSEC2C_EDT ) >= 2 then
+    calw = QCAL(2);
+  endif;
+  do i = calint while i <= callen
+
+    { Checks for discontinuation of use, but col 2 blank }
+    used = pos(QCAL(1)[i:1],strip(calmeth));    { Whether using in month i }
+    if used & xusing <> used & xusing <> default then
+      discont = discont + 1;
+      if calw[i:1] = " " then
+        errmsg( 9805, colw, i, QCAL(1)[i:1], i-1, QCAL(1)[i-1:1] );
+      elseif i < callen & calw[i+1:1] <> " " then
+        if run1 then errmsg( 9806, calw[i:1], calw[i+1:1], i, i+1 ) endif;
+      endif;
+    endif;
+    xusing = used;
+    if used & !caluse then
+      caluse = i
+    endif;
+
+    { Checks for col 2 not blank, but no contraceptive method }
+    if calw[i:1] <> " " & !used then
+      errmsg( 9807, colw, i, calw[i:1] )
+    endif;
+
+    { Became pregnant while using }
+    if calw[i:1] = "1" &
+      ( i = calint | !QCAL(1)[i-1:1] in codep,codet ) then
+      errmsg( 9812, colw, calw[i:1], i );
+    endif;
+
+    { Stopped to become pregnant }
+    if QESEC4 & calw[i:1] = "2" then
+      if i > calint & !pos(QCAL(1)[i-1:1],concat("0",codep)) then
+        errmsg( 9813, colw, calw[i:1], i );
+      endif;
+      do j = i-1 while j & QCAL(1)[j:1] = "0" by (-1) enddo;
+      while j & QCAL(1)[j:1] = codep do j = j - 1 enddo;
+      if j & QCAL(1)[j:1] in codeb,codet then
+        do b = chadj + 1 while b < Totpreg+chadj
+          if QESEC4+chadj <= b & calrow(b) = j then
+            n = Totpreg-norder(b)+1;	
+            if n <= totocc(QWSEC04_EDT) & Q408(n) <> 1 then
+              if !ver100 then
+                errmsg( 4050, i, norder(b), n, Q408(n) );
+              endif;
+              kount(2) = kount(2) + 1;
+            endif;
+            break;
+          endif;
+        enddo;
+      endif;
+    endif;
+
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Check all pregnancies are within unions - ever married samples only }
+  if emsample then
+    do i = calint while i <= callen
+      if pos(QCAL(1)[i:1],pregstr) & calw[i:1] = "0" then
+        while i <= callen & pos(QCAL(1)[i:1],pregstr) do
+          i = i + 1;
+        enddo;
+        if calw[i-1:1] = "0" & i <= callen & calw[i:1] = "0" then
+          if run1 then errmsg( 9816, i-1 ) endif
+        endif
+      endif;
+    enddo;
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ reproduction cont. }
+PROC QWSEC2D_EDT
+
+  currpregdur = 0;
+  calw = QCAL(1);
+  { Date of conception }
+  currpreg = (Q232 = 1);
+  if currpreg then
+    nevents = nevents + 1;
+    errflag(nevents) = notappl;
+    smonth(nevents) = 0;
+	currpregdur = Q233N;
+	if Q233U = 1 then currpregdur = int(Q233N*WeeksMonth); endif;
+	if valid(Q233N) then
+      sflag(nevents) = 7;
+      lcmc (nevents) = di-currpregdur;
+      ucmc (nevents) = di-currpregdur;
+    else
+      sflag(nevents) = 8;
+      lcmc (nevents) = di - 9;
+      ucmc (nevents) = di;
+    endif;
+    norder(nevents) = Totpreg+1;
+    type  (nevents) = 4;
+    interv(nevents) = 0;
+    if Totpreg then
+      cdelay(nevents) = mincd   { minimum conception delay after last birth }
+    else
+      cdelay(nevents) = 0
+    endif;
+    durmeth(nevents) = ouse;
+    ouse = 0;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { Check to see if pregnant in month of interview in calendar }
+  calpreg = ( calw[calint:1] = codep );
+  if calpreg <=> !currpreg then
+    errmsg( 2270, Q232, calw[calint:1] );
+  endif;
+
+  { Check duration of current pregnancy agrees on questionnaire and calendar }
+  if currpreg then
+    do i = calint while i <= callen & calw[i:1] = codep enddo;
+    x = i-calint;
+    if currpregdur <> x then
+      errmsg( 2280, x, Q233U, Q233N );
+      if Q233N = missing then
+        lcmc(nevents) = di-x;
+        ucmc(nevents) = di-x;
+      endif
+    endif
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { Check response "before last pregnancy" given only when had one or more pregnancies }
+  if Q236N = 95 & Totpreg = 0 then
+    if !ver100 then errmsg( 2360, Q236U, Q236N, Totpreg ) endif;
+    kount(1) = kount(1) + 1;
+    lperflag = 4;
+  endif;
+
+  { Period not returned since pregnancy in the last 3 years }
+  if QESEC4 then
+    if Q476(1) = 2 & Q236N <> missing & Q236N < 94 |
+       Q476(1) = 1 & Q236N = 95 then
+      if !ver100 then errmsg( 2362, Q476(1), Q236U, Q236N ) endif;
+      kount(12) = kount(12) + 1;
+    endif;
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ Contraceptive Practice }
+PROC QWSEC3B_EDT
+
+  { Check current use and current pregnancy not both occurring }
+  curruser = (Q307N <> notappl);
+  if currpreg & curruser then
+    errmsg( 3143, Q232, strip(Q307) );
+  endif;
+
+  { Check current method with method use in table }
+  do x = 1 while x <= length( strip(Q307) )
+    xmeth = pos(Q307[x:1],strip(curmethw));
+    if Q301(xmeth) <> 1 then                     { methods should be known }
+      errmsg( 3142, GetLabel(Q307, Q307[x:1]) );
+    endif;
+  enddo;
+
+  { Check current method with method given in calendar }
+  if QCAL(1)[calint:1] <> codeb then
+    t = pos(QCAL(1)[calint:1],strip(calmeth));
+    m = pos(Q307[1:1],strip(curmethw));
+    if t <> m then
+      errmsg( 3131, strip(Q307), QCAL(1)[calint:1] );
+    endif;
+  endif;
+
+  { Numeric code for highest ranking method }
+  xmeth = pos(Q307[1:1], strip(curmethw));
+  if xmeth = methoth then
+    xmeth = 95
+  elseif xmeth = methoth+1 then
+    xmeth = 96
+  elseif xmeth = 0 then
+    xmeth = notappl
+  endif;
+  if xmeth <> Q307N then
+    errmsg( 3145, Q307N, xmeth );
+  endif;
+
+  { Check current use of a method agrees with calendar }
+  if (!curruser & caluse =  calint) |
+     ( curruser & caluse <> calint & (lcmc(Totpreg+chadj) <> di | !pos("A",Q307))) then
+    errmsg( 3130, Q303, strip(Q307), caluse );
+  elseif curruser then
+    x = Q307N;
+    if x = 95 then
+      x = methoth
+    elseif x = 96 then
+      x = methoth+1
+    endif;
+    if x <> pos(calw[calint:1],strip(calmeth)) then
+      errmsg( 3140, strip(Q307), calw[calint:1] );
+    endif
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { Date of start of use of contraceptive method }
+  if NAtoZero(Q307N) <> 0 then
+    nevents = nevents + 1;
+    sflag(nevents) = notappl;
+    errflag(nevents) = notappl;
+    smonth(nevents) = 0;
+    isyear = 0; ismonth = 0;
+    if valid(Q313M) then
+      smonth(nevents) = Q313M;
+      ismonth = 1
+    elseif valid(Q314M) then
+      smonth(nevents) = Q314M;
+      ismonth = 1
+    endif;
+    if validyr(Q313Y) then
+      isyear = 1;
+      lcmc(nevents) = setlb( Q313M, Q313Y, 0 );
+      ucmc(nevents) = setub( Q313M, Q313Y, 9999 );
+    elseif validyr(Q314Y) then
+      isyear = 1;
+      lcmc(nevents) = setlb( Q314M, Q314Y, 0 );
+      ucmc(nevents) = setub( Q314M, Q314Y, 9999 );
+    else
+      lcmc(nevents) = lcmc(nevents-1);
+      ucmc(nevents) = di;
+    endif;
+    interv(nevents) = 0;
+    { male sterilization can be upto 9 months before birth }
+    if Q307N = stermetm then interv(nevents) = (-pregdur(nevents-1)) endif;
+    cdelay(nevents) = 0;
+    type(nevents)   = 5;
+    surv(nevents)   = Q307N;             { Method currently being used }
+    recode isyear :: ismonth -> flag;
+                1 ::       1 -> 1;
+                1 ::         -> 5;
+                  ::       1 -> 7;
+                  ::         -> 8;
+    endrecode;
+    sflag(nevents) = flag;
+
+{ -------------------------------------------------------------------------- }
+
+    { For month only without year, make adjustment }
+    j = nevents;
+    if ismonth & !isyear then
+      x = int((lcmc(j) - 1)/12) * 12 + smonth(j);
+      if x < lcmc(j) then
+        x = x + 12
+      endif;
+      if x > ucmc(j) then
+        if run1 then
+          errmsg( 3217, smonth(j), lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                        cmc2m(ucmc(j)), cmc2y(ucmc(j)) );
+        endif;
+      else
+        lcmc(j) = x
+      endif;
+      x = int((ucmc(j) - 1)/12) * 12 + smonth(j);
+      if x > ucmc(j) then
+        x = x - 12
+      endif;
+      if x < lcmc(j) then
+        if run1 then
+          errmsg( 3217, smonth(j), lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                        cmc2m(ucmc(j)), cmc2y(ucmc(j)) );
+        endif;
+      else
+        ucmc(j) = x
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Set alpha method code from current method and find first date }
+    { used method in calendar                                       }
+    x = Q307N;
+    if x = 95 then
+      x = methoth
+    elseif x = 96 then
+      x = methoth + 1
+    endif;
+    onemeth = calmeth[x:1];
+    do i = calint while i <= callen & pos(calw[i:1], onemeth) enddo;
+    x = rowcmc(i) + 1;
+    y = x;
+    if i <= callen & calw[i:1] in codeb,codet then
+      y = x - 1
+    endif;
+
+    { Check date started current use of methods with calendar }
+    if ( i <= callen & (lcmc(nevents) > x | ucmc(nevents) < y) ) |
+       ( i >  callen &  lcmc(nevents) > calbeg ) then
+      errmsg( 3211, Q314M, Q314Y, lcmc(nevents), ucmc(nevents), x, y,
+                    cmc2m(x), cmc2y(x), cmc2m(y), cmc2y(y), i-1 );
+      errflag(nevents) = default;
+    elseif i <= callen then
+      if lcmc(nevents) < y then
+        lcmc(nevents) = y
+      endif;
+      if ucmc(nevents) > x then
+        ucmc(nevents) = x
+      endif
+    else
+      if ucmc(nevents) > calbeg then
+        ucmc(nevents) = calbeg
+      endif
+    endif;
+
+    if onemeth = edit("9",stermeth) | onemeth = edit("9",stermetm) then
+      { Look for prior use of same sterilization method, or  prior use }
+      { of female sterilization if currently using male sterilization  }
+      do i = i + 1 while i <= callen & !calw[i:1] in onemeth,edit("9",stermeth) enddo;
+      if i <= callen then
+        errmsg( 3212, i, rowcmc(i), cmc2m(rowcmc(i)), cmc2y(rowcmc(i)) );
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Check sterilization after date of marriage }
+    if everUnion & Q307N in stermeth,stermetm then
+      t = adjlbi( lcmc(2), ucmc(2), lcmc(nevents), ucmc(nevents), 0 );
+      if t < 0 then
+        if run1 then
+          errmsg( 3215, lcmc(nevents), ucmc(nevents), cmc2m(lcmc(nevents)), cmc2y(lcmc(nevents)),
+                        cmc2m(ucmc(nevents)), cmc2y(ucmc(nevents)), lcmc(2), ucmc(2),
+                        cmc2m(lcmc(2)), cmc2y(lcmc(2)), cmc2m(ucmc(2)), cmc2y(ucmc(2)) );
+        endif;
+        errflag(nevents) = default;
+      else
+        lcmc(nevents) = t;
+      endif
+    endif;
+
+    { Check minimum age at sterilization }
+    if Q307N in stermeth,stermetm then
+      minasx = minas;
+    else
+      minasx = minab;
+    endif;
+    t = adjlbi( lcmc(1), ucmc(1), lcmc(nevents), ucmc(nevents), minasx );
+    if t < 0 then
+      if run1 then
+        errmsg( 3216, lcmc(nevents), ucmc(nevents), cmc2m(lcmc(nevents)), cmc2y(lcmc(nevents)),
+                      cmc2m(ucmc(nevents)), cmc2y(ucmc(nevents)), int(minasx/12), lcmc(1), ucmc(1),
+                      cmc2m(lcmc(1)), cmc2y(lcmc(1)), cmc2m(ucmc(1)), cmc2y(ucmc(1)) );
+      endif;
+      errflag(nevents) = default;
+    else
+      lcmc(nevents) = t;
+    endif
+  endif;
+
+  { Check source of current method against method        }
+  { !!! include only methods that apply to this question }
+  { !!! Needs adapting to each country                   }
+  recode Q307N ::       Q330           -> err;
+               :: 98,missing,notappl   -> 0;
+             3 :: 11:14,21,23:24,26    -> 0;  { IUD }
+             4 :: 11:14,21:29          -> 0;  { injectables }
+             5 :: 11:14,21,23:24,26    -> 0;  { implants }
+             6 :: 11:19,21:29,31       -> 0;  { pill }
+             7 :: 11:19,21:29,31,33,96 -> 0;  { condom }
+             8 :: 11:19,21:29,31,33,96 -> 0;  { female condom }
+             9 :: 11:19,21:29,31       -> 0;  { emergency contraception }
+            10 :: 11:19,21:29,31,33,96 -> 0;  { standard days method }
+            95 :: 11:19,21:29          -> 0;  { other modern method }
+       3:10,95 ::                      -> 1;
+               ::                      -> 0;
+  endrecode;
+  if err then
+    if run1 then errmsg( 3280, Q330, strip(Q307) ) endif;
+  endif;
+
+{ --------------------------------------------------------------------------- }
+
+  { Check that all methods used in calendar are known methods in contraceptive table }
+  { To check on ever use against calendar change knowledge to ever use !! }
+  do i = calint while i <= callen
+    if pos( QCAL(1)[i:1], strip(calmeth) ) then
+      m = pos( QCAL(1)[i:1], strip(calmeth) );  //one to one correspondence between calendar and contraceptive table
+      if Q301(m) <> 1 then
+        errmsg( 9817, QCAL(1)[i:1], i, m, Q301(m) );
+      endif;
+      { advance until the beginning of use of the episode }
+      do j = i + 1 while j <= callen & QCAL(1)[i:1] = QCAL(1)[j:1]
+      enddo;
+      i = j - 1;
+    endif;
+  enddo;
+
+
+{ --------------------------------------------------------------------------- }
+{ pregnancy and postnatal care }
+PROC QWSEC04_EDT
+
+  for i in QWSEC04_EDT do
+    ch = Q404+chadj;                 { event table entry for child }
+
+    { Check for same information for twins }
+    if twincode(ch) > 1 then
+      if Q408 <> Q408(i+1)        then errmsg( 4140, i, i+1, "Q408" ,i, Q408 ,"Q408" ,i+1, Q408(i+1) ) endif;
+      if Q409 <> Q409(i+1)        then errmsg( 4140, i, i+1, "Q409", i, Q409, "Q409", i+1, Q409(i+1) ) endif;
+      if Q410 <> Q410(i+1)        then errmsg( 4142, i, i+1, "Q410", i, Q410, "Q410", i+1, Q410(i+1) ) endif;
+      if Q434 <> Q434(i+1) & run1 then errmsg( 4142, i, i+1, "Q434" ,i, Q434 ,"Q434" ,i+1, Q434(i+1) ) endif;
+      if Q435 <> Q435(i+1) & run1 then errmsg( 4140, i, i+1, "Q435" ,i, Q435 ,"Q435" ,i+1, Q435(i+1) ) endif;
+      if Q436 <> Q436(i+1) & run1 then errmsg( 4140, i, i+1, "Q436" ,i, Q436 ,"Q436" ,i+1, Q436(i+1) ) endif;
+    endif;
+
+    { Years ago last tetanus injection vs current age }
+    { For check on "Year of last tetanus injection vs age" -> see DHS5 errmsg 4219 }
+    if valid(Q425) & Q425 > agew then
+      if run1 then errmsg( 4220, i, Q425, Q110M, Q110Y, Q111 ) endif;
+    endif;
+
+    { Still breastfeeding child that is not last or twin of last }
+    if (Q404 <= Q212 - twincode(ch) - (twincode(ch) = 0)) & Q485 = 1 then
+      if !ver100 then errmsg( 4280, i, Q404, Q485 ) endif;
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    { Check time started feeding consistent with early deaths }
+    if Q482U = 2 & Q228U(Q404) = 1 &
+       Q228N(Q404) <> missing & Q228N(Q404) < 96 &
+       Q482N <> missing & Q482N > Q228N(Q404) then
+      if !ver100 then
+        errmsg( 4260, i, Q482U, Q482N, Q404, Q228U(Q404), Q228N(Q404) );
+      endif;
+      if flagdth(ch) <> 1 & flagdth(ch) <> 2 then flagdth(ch) = 4 endif;
+    endif;
+
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+{ Immunization and Health }
+PROC QWSEC05_EDT
+
+  { Vaccinations }
+  for i in QWSEC05_EDT do
+
+    ch = Q503+chadj;            { event table entry for child }
+    b  = lcmc(ch);              { lower bound of date of birth of child }
+    cy = int((b-1)/12)+1900;    { year of birth of child ! modified for 4 digit date }
+    cm = (b-1)%12+1;            { month of birth of child }
+    cd = Q220D(Q503);           { day of birth of child }
+    if !valid( cd ) then        { take day from biomarker section }
+      do j = 1 while j <= noccurs( CGHH80.QBSEC01 )
+        if QB102(j) = Q227(Q503) then   { found same child in H/W section }
+          cd = QB103D(j);               { day of birth of child }
+        endif;
+      enddo;
+    endif;
+    if !valid( cd ) then
+      cd = 0
+    endif;
+
+    { Date of death upper bound }
+    if Q224(Q503) = 2 then              { child died }
+      b = ucmc(ch)+deathu(ch);          { upper bound of date of death }
+      dy = int((b-1)/12)+1900;          { year of death of child ! modified for 4 digit date }
+      dm = (b-1)%12+1;                  { month of death of child }
+      { age at death reported in days }
+      if Q228U(Q503) = 1 & valid(Q228N(Q503)) then
+        dd = cd+Q228N(Q503);            { day of death of child }
+        while dd > 30 do                { if into next month, adjust }
+          dd = dd - 30;
+          dm = dm + 1;
+          if dm > 12 then
+            dm = 1;
+            dy = dy + 1
+          endif
+        enddo
+      else
+        dd = 31;                        { day of death of child }
+      endif
+    endif;
+
+    { Vaccination card exists }
+    if Q504 = 1 then
+
+      { Check if it has anything on it }
+      if D509B  = 0 & D509H  = 0 & 
+	     D509P0 = 0 & D509P1 = 0 & D509P2 = 0 & D509P3 = 0 & 
+         D509D1 = 0 & D509D2 = 0 & D509D3 = 0 & 
+         D509N1 = 0 & D509N2 = 0 & D509N3 = 0 &
+         D509R1 = 0 & D509R2 = 0 & D509R3 = 0 &
+         D509M1 = 0 & D509M2 = 0 &
+         D509V  = 0  then
+        if run1 then errmsg( 4476, i, Q504 ) endif;
+
+      else
+
+        lastvacy = 0; lastvacm = 0; lastvacd = 0;
+
+        { If vaccinations are recorded - check the dates }
+
+        do v = 1 while v <= 20
+
+          { Loop through all of the vaccinations }
+
+          { BCG | Hep B at birth | Pol 0 | DPT 1 | Pneumococcal 1 | rotavirus 1 | Measles 1 | Vit.A }
+          if v in 1,2,3,8,12,15,18,20 then
+            xy =  0; xm =  0; xd =  0;
+          elseif vd > 0 then
+            xy = vy; xm = vm; xd = vd; xstring = vstring;
+          endif;
+
+          if     v =  1 then vd = D509B ;  vm = M509B ;  vy = Y509B ;  vstring = "BCG"
+          elseif v =  2 then vd = D509H ;  vm = M509H ;  vy = Y509H ;  vstring = tr("Hep at birth")
+          elseif v =  3 then vd = D509P0;  vm = M509P0;  vy = Y509P0;  vstring = tr("Polio") + "0"
+          elseif v =  4 then vd = D509P1;  vm = M509P1;  vy = Y509P1;  vstring = tr("Polio") + "1"
+          elseif v =  5 then vd = D509P2;  vm = M509P2;  vy = Y509P2;  vstring = tr("Polio") + "2"
+          elseif v =  6 then vd = D509P3;  vm = M509P3;  vy = Y509P3;  vstring = tr("Polio") + "3"
+          elseif v =  8 then vd = D509D1;  vm = M509D1;  vy = Y509D1;  vstring = tr("DPT") + "1"
+          elseif v =  9 then vd = D509D2;  vm = M509D2;  vy = Y509D2;  vstring = tr("DPT") + "2"
+          elseif v = 10 then vd = D509D3;  vm = M509D3;  vy = Y509D3;  vstring = tr("DPT") + "3"
+          elseif v = 12 then vd = D509N1;  vm = M509N1;  vy = Y509N1;  vstring = tr("Pneumococ") + "1"
+          elseif v = 13 then vd = D509N2;  vm = M509N2;  vy = Y509N2;  vstring = tr("Pneumococ") + "2"
+          elseif v = 14 then vd = D509N3;  vm = M509N3;  vy = Y509N3;  vstring = tr("Pneumococ") + "3"
+          elseif v = 15 then vd = D509R1;  vm = M509R1;  vy = Y509R1;  vstring = tr("Rotavirus") + "1"
+          elseif v = 16 then vd = D509R2;  vm = M509R2;  vy = Y509R2;  vstring = tr("Rotavirus") + "2"
+          elseif v = 17 then vd = D509R3;  vm = M509R3;  vy = Y509R3;  vstring = tr("Rotavirus") + "3"
+          elseif v = 18 then vd = D509M1;  vm = M509M1;  vy = Y509M1;  vstring = tr("Measles") + "1"
+          elseif v = 19 then vd = D509M2;  vm = M509M2;  vy = Y509M2;  vstring = tr("Measles") + "2"
+          elseif v = 20 then vd = D509V;   vm = M509V;   vy = Y509V;   vstring = tr("Vitamin") + "A1"
+          endif;
+
+{ --------------------------------------------------------------------------- }
+
+          { check vaccination given before interview date }
+          if vy in 0,4444,6666 then vy = 9999 endif;
+          if validyr(vy) & (vy > QINTY | (vy = QINTY &
+             valid  (vm) & (vm > QINTM | (vm = QINTM &
+             valid  (vd) &  vd > QINTD )))) then
+            errmsg( 4471, i, vstring, vd, vm, vy, QINTD, QINTM, QINTY );
+            vd = 0; vm = 0; vy = 0;
+          endif;
+
+          { vaccination date should be after date of birth }
+          if vy < cy | (vy = cy & (vm < cm | (vm = cm & vd < cd))) then
+            errmsg( 4472, i, vstring, vd, vm, vy, cd, cm, cy );
+            vd = 0; vm = 0; vy = 0;
+          endif;
+
+          { vaccination should be given before age at death }
+          if Q224(Q503) = 2 then                     { child died }
+            if validyr(vy) & (vy > dy | (vy = dy &
+               valid  (vm) & (vm > dm | (vm = dm &
+               valid  (vd) &  vd > dd )))) then
+              errmsg( 4475, i, vstring, vd, vm, vy, dd, dm,dy );
+              if flagdth(ch) = 0 | flagdth(ch) > 4 then flagdth(ch) = 5 endif;
+            endif
+          endif;
+
+          { Get date of latest vaccination }
+          if validyr(vy) & vy > lastvacy then
+            lastvacy = vy;
+            if valid(vm) then
+              lastvacm = vm;
+              if valid(vd) then
+                lastvacd = vd;
+              else
+                lastvacd = 0;
+              endif
+            else
+              lastvacm = 0;
+              lastvacd = 0;
+            endif
+          endif;
+
+          { Check if vaccinations given in order }
+          if vd <> 0 & xd <> 0 then
+            if validyr(xy) & (vy < xy | (vy = xy &
+               valid  (xm) & (vm < xm | (vm = xm &
+               valid  (xd) &  vd < xd )))) then
+              errmsg( 4473, i, vstring, vd, vm, vy, xstring, xd, xm, xy );
+            endif
+          endif;
+
+        enddo;
+
+{ --------------------------------------------------------------------------- }
+
+        { Check if vaccinations were given on the same day }
+        { There are two ways that this may happen, depending on the country }
+        { 1) BCG & P1, P2 & D1, P3 & D2 }
+        { 2) BCG & Hep & P0, P1 & D1 & N1 & R1, P2 & D2 & N2 & R2, P3 & D3 & N3 & R3 <- current default !!! modify as needed }
+
+        if ckvdate( D509B,  M509B,  Y509B,  D509H,  M509H,  Y509H  ) |
+           ckvdate( D509B,  M509B,  Y509B,  D509P0, M509P0, Y509P0 ) |
+           ckvdate( D509P1, M509P1, Y509P1, D509D1, M509D1, Y509D1 ) |
+           ckvdate( D509P1, M509P1, Y509P1, D509N1, M509N1, Y509N1 ) |
+           ckvdate( D509P1, M509P1, Y509P1, D509R1, M509R1, Y509R1 ) |
+           ckvdate( D509P2, M509P2, Y509P2, D509D2, M509D2, Y509D2 ) |
+           ckvdate( D509P2, M509P2, Y509P2, D509N2, M509N2, Y509N2 ) |
+           ckvdate( D509P2, M509P2, Y509P2, D509R2, M509R2, Y509R2 ) |
+           ckvdate( D509P3, M509P3, Y509P3, D509D3, M509D3, Y509D3 ) |
+           ckvdate( D509P3, M509P3, Y509P3, D509N3, M509N3, Y509N3 ) |
+           ckvdate( D509P3, M509P3, Y509P3, D509R3, M509R3, Y509R3 ) then
+          if run1 then
+            errmsg( 4474,i, edit("99/99/9999",vdate(D509B ,M509B ,Y509B )),
+                            edit("99/99/9999",vdate(D509H ,M509H ,Y509H )),
+                            edit("99/99/9999",vdate(D509P0,M509P0,Y509P0)),
+                            edit("99/99/9999",vdate(D509P1,M509P1,Y509P1)),
+                            edit("99/99/9999",vdate(D509D1,M509D1,Y509D1)),
+                            edit("99/99/9999",vdate(D509N1,M509N1,Y509N1)),
+                            edit("99/99/9999",vdate(D509R1,M509R1,Y509R1)),
+                            edit("99/99/9999",vdate(D509P2,M509P2,Y509P2)),
+                            edit("99/99/9999",vdate(D509D2,M509D2,Y509D2)),
+                            edit("99/99/9999",vdate(D509N2,M509N2,Y509N2)),
+                            edit("99/99/9999",vdate(D509R2,M509R2,Y509R2)),
+                            edit("99/99/9999",vdate(D509P3,M509P3,Y509P3)),
+                            edit("99/99/9999",vdate(D509D3,M509D3,Y509D3)),
+                            edit("99/99/9999",vdate(D509N3,M509N3,Y509N3)),
+                            edit("99/99/9999",vdate(D509R3,M509R3,Y509R3)) )
+          endif;
+        endif;
+
+        if lastvacy > 0 then
+          x = setub( lastvacm, lastvacy, 9999 );
+          y = setlb( lastvacm, lastvacy, 0 );
+          if x in lcmc(ch):ucmc(ch) then
+            ucmc(ch) = x { adjust upper bound to avoid imputing after vaccination date }
+          endif;
+
+          if x - ucmc(ch) > deathu(ch) then
+            x = 0; { Do nothing - message already given above (hopefully!) }
+          elseif y - ucmc(ch) > deathl(ch) then
+            deathl(ch) = y - ucmc(ch)
+          endif;
+        endif
+
+      endif;
+
+      { Other vaccinations reported by mother, but no others marked 66 on form }
+      if Q512 <> 1 <=> ( D509B  = 66 | D509H  = 66 |
+                         D509P0 = 66 | D509P1 = 66 | D509P2 = 66 | D509P3 = 66 | 
+                         D509D1 = 66 | D509D2 = 66 | D509D3 = 66 | 
+                         D509N1 = 66 | D509N2 = 66 | D509N3 = 66 |
+                         D509R1 = 66 | D509R2 = 66 | D509R3 = 66 |
+                         D509M1 = 66 | D509M2 = 66 |
+                         D509V  = 66 ) then
+        if run1 then
+          errmsg( 4480, i ,Q512, edit("99/99/9999",vdate(D509B , M509B , Y509B )),   { bcg }
+                                 edit("99/99/9999",vdate(D509H , M509H , Y509H )),
+                                 edit("99/99/9999",vdate(D509P0, M509P0, Y509P0)),
+                                 edit("99/99/9999",vdate(D509P1, M509P1, Y509P1)),
+                                 edit("99/99/9999",vdate(D509P2, M509P2, Y509P2)),
+                                 edit("99/99/9999",vdate(D509P3, M509P3, Y509P3)),
+                                 edit("99/99/9999",vdate(D509D1, M509D1, Y509D1)),
+                                 edit("99/99/9999",vdate(D509D2, M509D2, Y509D2)),
+                                 edit("99/99/9999",vdate(D509D3, M509D3, Y509D3)),
+                                 edit("99/99/9999",vdate(D509N1, M509N1, Y509N1)),
+                                 edit("99/99/9999",vdate(D509N2, M509N2, Y509N2)),
+                                 edit("99/99/9999",vdate(D509N3, M509N3, Y509N3)),
+                                 edit("99/99/9999",vdate(D509R1, M509R1, Y509R1)),
+                                 edit("99/99/9999",vdate(D509R2, M509R2, Y509R2)),
+                                 edit("99/99/9999",vdate(D509R3, M509R3, Y509R3)),
+                                 edit("99/99/9999",vdate(D509M1, M509M1, Y509M1)),
+                                 edit("99/99/9999",vdate(D509M2, M509M2, Y509M2)),
+                                 edit("99/99/9999",vdate(D509V,  M509V,  Y509V )) ); { vitamin A }
+        endif;
+      endif;
+    endif;
+  enddo;
+  
+  
+
+{ --------------------------------------------------------------------------- }
+{ feeding practices for children and women }
+PROC QWSEC6B_EDT
+{
+  { check other foods recorded and assign Yes to the proper question }
+  { - For A637W }
+  if pos("A",A637W) then Q637A = 1 endif;
+  if pos("B",A637W) then Q637B = 1 endif;
+  if pos("C",A637W) then Q637C = 1 endif;
+  if pos("D",A637W) then Q637D = 1 endif;
+  if pos("E",A637W) then Q637E = 1 endif;
+  if pos("F",A637W) then Q637F = 1 endif;
+  if pos("G",A637W) then Q637G = 1 endif;
+  if pos("H",A637W) then Q637H = 1 endif;
+  if pos("I",A637W) then Q637I = 1 endif;
+  if pos("J",A637W) then Q637J = 1 endif;
+  if pos("K",A637W) then Q637K = 1 endif;
+  if pos("L",A637W) then Q637L = 1 endif;
+  if pos("M",A637W) then Q637M = 1 endif;
+  if pos("N",A637W) then Q637N = 1 endif;
+  if pos("O",A637W) then Q637O = 1 endif;
+  if pos("P",A637W) then Q637P = 1 endif;
+  if pos("Q",A637W) then Q637Q = 1 endif;
+  if pos("Z",A637W) then Q637R = 1 endif;
+  { - For Q639W }
+  if pos("A",Q639W) then Q637A = 1 endif;
+  if pos("B",Q639W) then Q637B = 1 endif;
+  if pos("C",Q639W) then Q637C = 1 endif;
+  if pos("D",Q639W) then Q637D = 1 endif;
+  if pos("E",Q639W) then Q637E = 1 endif;
+  if pos("F",Q639W) then Q637F = 1 endif;
+  if pos("G",Q639W) then Q637G = 1 endif;
+  if pos("H",Q639W) then Q637H = 1 endif;
+  if pos("I",Q639W) then Q637I = 1 endif;
+  if pos("J",Q639W) then Q637J = 1 endif;
+  if pos("K",Q639W) then Q637K = 1 endif;
+  if pos("L",Q639W) then Q637L = 1 endif;
+  if pos("M",Q639W) then Q637M = 1 endif;
+  if pos("N",Q639W) then Q637N = 1 endif;
+  if pos("O",Q639W) then Q637O = 1 endif;
+  if pos("P",Q639W) then Q637P = 1 endif;
+  if pos("Q",Q639W) then Q637Q = 1 endif;
+  if pos("R",Q639W) then Q637R = 1 endif;
+  { assign number of times collected yougurt as part of A637W or Q639W }
+  if pos("A",A637W) | pos("A",Q639W) then
+    Q637A = Q637AW;
+  endif;
+
+  { - For Q643W }
+  if pos("A",Q643W) then Q643A = 1 endif;
+  if pos("B",Q643W) then Q643B = 1 endif;
+  if pos("C",Q643W) then Q643C = 1 endif;
+  if pos("D",Q643W) then Q643D = 1 endif;
+  if pos("E",Q643W) then Q643E = 1 endif;
+  if pos("F",Q643W) then Q643F = 1 endif;
+  if pos("G",Q643W) then Q643G = 1 endif;
+  if pos("H",Q643W) then Q643H = 1 endif;
+  if pos("I",Q643W) then Q643I = 1 endif;
+  if pos("J",Q643W) then Q643J = 1 endif;
+  if pos("K",Q643W) then Q643K = 1 endif;
+  if pos("L",Q643W) then Q643L = 1 endif;
+  if pos("M",Q643W) then Q643M = 1 endif;
+  if pos("N",Q643W) then Q643N = 1 endif;
+  if pos("O",Q643W) then Q643O = 1 endif;
+  if pos("P",Q643W) then Q643P = 1 endif;
+  if pos("Q",Q643W) then Q643Q = 1 endif;
+  if pos("Z",Q643W) then Q643R = 1 endif;
+}  
+{ --------------------------------------------------------------------------- }
+{ Marriage and Sexual Activity }
+PROC QWSEC07_EDT
+  { Checking line number of husband }
+
+  { If line number of husband not collected in individual questionnaire,    }
+  { but is collected in household questionnaire, replace Q710 with variable }
+  { from household schedule and move code to household schedule section.    }
+
+  { Store respondent's line & marital status to check at level 1 postproc }
+  do i = 1 while i <= maxelig & womhusb(i,1) <> QLINE & womhusb(i,1) <> 0 enddo;
+  womhusb(i,1) = QLINE;
+  womhusb(i,2) = Q701;
+  womhusb(i,3) = Q710;
+
+  trymatch = inunion;
+  rw = QH03(QLINE);
+  if !special(Q710) & Q710 <> 0 then
+    trymatch = 0;
+    { Check if line number is out of range }
+    if Q710 > QHMEMBER then
+      errmsg( 5060, Q710, QHMEMBER );
+      trymatch = 1;
+    else
+      { Check partner is male }
+      if QH04(Q710) <> 1 then
+        errmsg( 5061, QH04(Q710), Q710 );
+        trymatch = 1;
+      endif;
+      { Check partner is at least age 15 }
+      if QH07(Q710) in 0:14 then
+        errmsg( 5062, QH07(Q710), Q710, 15 );
+        trymatch = 1;
+      endif;
+      rh = QH03(Q710);
+      recode rw :: rh                -> err;    { WIFE                  : HUSBAND             }
+              1 :: 2                 -> 0;      { Head                  : Spouse              }
+              2 :: 1                 -> 0;      { Spouse                : Head                }
+              3 :: 4                 -> 0;      { Son/Daughter          : Son/Daughter in:law }
+              4 :: 3                 -> 0;      { Son/Daughter in:law   : Son/Daughter        }
+              5 :: 9                 -> 0;      { grandchild            : Other relative      }
+              6 :: 6                 -> 0;      { Parent                : Parent              }
+              7 :: 7                 -> 0;      { Parent in:law         : Parent in:law       }
+              8 :: 9                 -> 0;      { Brother/Sister        : Other relative      }
+              9 :: 5,8:11,98         -> 0;      { Other relative        : check codes         }
+          10:11 :: 10:11             -> 0;      { Adopted/not related   : Adopted/not related }
+     98,missing :: 10,11,98,missing  -> 0;      { Unknown               : check codes         }
+                ::                   -> 1;      { Invalid relationships                       }
+      endrecode;
+      if err then     { Relationship not OK }
+        if run1 then errmsg( 5064, rw, Q710, rh ) endif;
+        trymatch = 1;
+      endif;
+
+      { Check husband's age with age declared in the household } 
+      if valid(QH07(Q710)) & Q902 <> QH07(Q710) then 
+        if run1 then errmsg( 5068, Q710, Q902, QH07(Q710) ) endif; 
+      endif;
+    endif
+  endif;
+
+  { Head/Spouse/Daughter/Daughter-in-law/Mother/Mother-in-law -- try and find husband }
+  if trymatch & rw in 1:4,6:7 then
+    for j in record QHSEC01 do
+      rh = QH03;
+      recode rw :: rh -> rok;
+              1 :: 2  -> 1;   { Head            - Spouse        }
+              2 :: 1  -> 1;   { Spouse          - Head          }
+              3 :: 4  -> 1;   { Daughter        - Son-in-law    }
+              4 :: 3  -> 1;   { Daughter-in-law - Son           }
+              6 :: 6  -> 1;   { Mother          - Father        }
+              7 :: 7  -> 1;   { Mother-in-law   - Father-in-law }
+                ::    -> 0;
+      endrecode;
+      { Found probable husband for woman }
+      { if male, relationship OK }
+      if QH04 = 1 & rok &
+         { not daughter or daughter-in-law }
+        ((rw <> 3 & rw <> 4) |
+         { only daughter with son-in-law anywhere in list }
+         (rw = 3 & (count( CGHH80.QHSEC01 where QH03 = 4 & QH04 = 1) = 1 |
+                   { daughter with son-in-law immediately before or after }
+                   j = QLINE-1 | j = QLINE+1)
+         ) |
+         { daughter-in-law with only one son anywhere in list }
+         (rw = 4 & (count( CGHH80.QHSEC01 where QH03 = 3 & QH04 = 1) = 1 |
+                   { daughter-in-law with son immediately before }
+                   j = QLINE-1)
+         )
+        ) then
+        { See if husband listed in wife's questionnaire }
+        if Q710 <> j then
+          errmsg( 5063, j, rh, QLINE, rw )
+        endif;
+      endif;
+    enddo;
+  endif;
+
+  { Wife rank number exceds number of wives }
+  if valid(Q712) & valid(Q713) & Q713 > Q712 then
+    if run1 then errmsg( 5100, Q713, Q712 ) endif
+  endif;
+
+  { Check age at first sex }
+  if Q722 <> missing & Q722 <> 0 & Q722 <= maxai then
+    if Q722 > agew then                       { Exceeds current age }
+      if run1 then errmsg( 5190, Q722, Q111, QINTM, QINTY, Q110M, Q110Y ) endif;
+      fsexflag = 1;
+    endif
+  elseif Q722 = 95 & !everUnion then             { First time when married }
+    if !ver100 then errmsg( 5192, Q722, Q702 ) endif;      { but never married }
+    kount(25) = kount(25) + 1;
+    fsexflag = 4;
+  endif;
+
+  if Q723U = 4 and Q232 in 1,8 then   { No sex in last year, but is or may be pregnant }
+    errmsg( 5200, Q723U, Q723N, Q232 )
+  endif;
+
+  { # of lifetime partners should be equal or higher than # of partners in last 12 months }
+  sexp = ( Q722 <> 0 ) + ( Q731 = 1 ) + ( Q734 = 1 ); 
+  if valid(Q737) & Q737 < sexp then
+    errmsg( 5245, sexp )
+  endif;
+  
+  { check that method used for last sex is known in contraceptive table }
+  do x = 1 while x <= length( strip(Q726) )
+    xmeth = pos(Q726[x:1],strip(curmethw));
+    if Q301(xmeth) <> 1 then                     { methods should be known }
+      errmsg( 3150, GetLabel(Q726, Q726[x:1]) );
+    endif;
+  enddo;
+
+  { Use of condom and knowledge in with contraceptive table  }
+  if ( Q727 = 1 | Q732 = 1 | Q735 = 1 ) & Q301(condom) <> 1 then
+    errmsg( 6280, Q727, Q732, Q735, Q301(condom) );
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ Fertility Preferences }
+PROC QWSEC08_EDT
+
+  { Check if response is less than 9 months for time to wait for future birth }
+  if Q805U = 1 & Q805N < 9 then
+    if run1 then errmsg( 6031, Q805U, Q805N ) endif;
+  { wants a child after marriage but currently in union }
+  elseif Q805N = 95 & Q701 = 1 then
+    if run1 then errmsg( 6032, Q805U, Q805N, Q701 ) endif
+  endif;
+
+  { check reasons for not planning to use a method soon }
+  if !ver100 then
+    { because not married, but currently married }
+    if pos("A", Q810) & Q701 = 1 then
+      errmsg( 6100, Q701, "Q810", strip(Q810) )
+    endif;
+    { because in menopause/hysterectomy, but not in menopause }
+    if pos("D", Q810) & Q236N <> 94 then
+      errmsg( 6104, "Q810", strip(Q810), Q236U, Q236N )
+    endif;
+    { because infecund, but didn't declared that "can't get pregnant" }
+    if pos("E", Q810) & Q804 <> 3 & Q805N <> 94 then
+      errmsg( 6105, "Q810", strip(Q810), Q804, Q805U, Q805N )
+    endif;
+    { because knows no method, but knows some method }
+    if pos("M", Q810) & count( QWSEC31_GRP where Q301 = 1 ) then
+      errmsg( 6101, "Q810", strip(Q810), count( QWSEC31_GRP where Q301 = 1 ) )
+    endif;
+    { because knows no source, but knows some source }
+    if pos("N", Q810) & Q331 <> 2 then
+      errmsg( 6111, "Q810", strip(Q810), Q331 );
+    endif;                                      { knows no source }
+  endif;
+
+
+  { ideal number of children }
+  if valid(Q814A) & valid(Q814B) & valid(Q814C) & Q814C < 96 &
+         Q814A+Q814B+Q814C <> Q813 then
+    errmsg( 6131, Q814A, Q814B, Q814C, Q813 );
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ Husband and Woman's Background, serve mainly as an anchor for imputation    }
+PROC QWSEC09_EDT
+  { decision on respondent earnings }
+  if Q919 in 2,3 & !inunion then
+    errmsg( 7250, "Q919", Q919, Q701 )
+  endif;
+  { decision on husband earnings }
+  if Q921 in 2:4 & !inunion then
+    errmsg( 7250, "Q921", Q921, Q701 )
+  endif;
+  { decision on respondent health care }
+  if Q922 in 2,3 & !inunion then
+    errmsg( 7250, "Q922", Q922, Q701 )
+  endif;
+  { decision on making major purchases }
+  if Q923 in 2,3 & !inunion then
+    errmsg( 7250, "Q923", Q923, Q701 )
+  endif;
+  { decision on visits to family }
+  if Q924 in 2,3 & !inunion then
+    errmsg( 7250, "Q924", Q924, Q701 )
+  endif;
+  { ownership of a house }
+  if Q925 in 2,4 & !inunion then
+    errmsg( 7250, "Q925", Q925, Q701 )
+  endif;
+  { ownership of land }
+  if Q928 in 2,4 & !inunion then
+    errmsg( 7250, "Q928", Q928, Q701 )
+  endif;
+  { presence of husband }
+  if Q931B in 1,2 & !inunion then
+    errmsg( 7250, "Q931B", Q931B, Q701 )
+  endif;
+
+  { Equalizing twins }
+  umin = 9999;
+  lmax = 0;
+  ntwin = 0;
+  do i = chadj+1 while i <= Totpreg+chadj
+    j = i + 1;
+    if special(twincode(j)) | twincode(j) <= 1 then
+      if umin < lmax then
+        errmsg( 9920, j-1, lmax, umin, cmc2m(lmax), cmc2y(lmax), cmc2m(umin), cmc2y(umin) )
+      else
+        do k = 1 while k <= ntwin
+          lcmc(j-k) = lmax;
+          ucmc(j-k) = umin;
+        enddo;
+      endif;
+      umin = 9999;
+      lmax = 0;
+      ntwin = 0;
+    endif;
+    if !special(twincode(j)) & twincode(j) >= 1 then
+      ntwin = ntwin + 1;
+      if lcmc(j) > lmax then lmax = lcmc(j) endif;
+      if ucmc(j) < umin then umin = ucmc(j) endif;
+    endif;
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+
+  { Date of interview event and open birth interval }
+  nevents = nevents + 1;
+  lcmc(nevents)    = di;
+  ucmc(nevents)    = di;
+  type(nevents)    = 6;
+  sflag(nevents)   = 1;
+  smonth(nevents)  = 0;
+  errflag(nevents) = notappl;
+
+  if currpreg then
+    interv(nevents) = mincd;
+    if currpregdur <> missing & currpregdur < mincd then interv(nevents) = currpregdur endif;
+  else
+    interv(nevents) = 0
+  endif;
+  cdelay (nevents) = 0;
+  durmeth(nevents) = ouse;      { Duration of use }
+
+{ --------------------------------------------------------------------------- }
+
+  if Totpreg then
+    { forward checking of date of first birth }
+    i = chadj + 1;
+    t = adjlbi( lcmc(1), ucmc(1), lcmc(i), ucmc(i), minab );
+    if t < 0 then
+      errmsg( 9902, 1, lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)), cmc2m(ucmc(1)),
+                    cmc2y(ucmc(1)), i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                    cmc2m(ucmc(i)), cmc2y(ucmc(i)), minab );
+      errflag(i) = default;
+    else
+      lcmc(i) = t;
+      { backward checking of date of first birth }
+      t = adjubi( lcmc(1), ucmc(1), lcmc(i), ucmc(i), minab );
+      if t < 0 then
+        errmsg( 9902, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                      cmc2y(ucmc(i)), 1, lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)),
+                      cmc2m(ucmc(1)), cmc2y(ucmc(1)), minab );
+        errflag(1) = default;
+      else
+        ucmc(1) = t;
+      endif;
+    endif;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { forward checking of minimum interval }
+  do i = 1 while i <= nevents - 1
+    j = i + 1;
+    t = adjlbi( lcmc(i), ucmc(i), lcmc(j), ucmc(j), interv(j)+cdelay(j) );
+    if t < 0 then
+      if type(i) = 2 & type(j) <> 6 then
+        if Q722 = 95 & fsexflag = 0 then
+          fsexflag = 5
+        endif
+      else
+        x1 = type(i);
+        x2 = type(j);
+        recode x1 :: x2 -> eno;
+                1 ::  2 -> 9901;    { Between birth and first union }
+                1 ::  3 -> 9902;    { Between birth and first child }
+                2 ::  3 -> 9903;    { Between union and first child }
+              1,2 ::    -> 9904;    { Between birth or union and other events }
+                3 ::  3 -> 9905;    { Between children }
+                3 ::    -> 9906;    { Between last child and later events }
+                  ::    -> 9907;    { Between other events }
+        endrecode;
+        if eno = 9905 then
+          errmsg( eno, norder(i), i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                       cmc2m(ucmc(i)), cmc2y(ucmc(i)), norder(j), j, lcmc(j), ucmc(j),
+                       cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)),
+                       interv(j)+cdelay(j) );
+        else
+          errmsg( eno, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                       cmc2y(ucmc(i)), j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                       cmc2m(ucmc(j)), cmc2y(ucmc(j)), interv(j)+cdelay(j) );
+        endif;
+        errflag(j) = default;
+      endif;
+    else
+      lcmc(j) = t;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { backward checking of minimum interval }
+  do i = nevents while i >= 2 by (-1)
+    j = i - 1;
+    t = adjubi( lcmc(j), ucmc(j), lcmc(i), ucmc(i), interv(i)+cdelay(i) );
+    if t < 0 then
+      if type(j) = 2 & type(i) <> 6 then
+        if Q722 = 95 & fsexflag = 0 then        { First sex when married }
+          fsexflag = 5
+        endif
+      else
+        x1 = type(j);
+        x2 = type(i);
+        recode x1 :: x2 -> eno;
+                1 ::  2 -> 9901;    { Between birth and first union }
+                1 ::  3 -> 9902;    { Between birth and first child }
+                2 ::  3 -> 9903;    { Between union and first child }
+              1,2 ::    -> 9904;    { Between birth or union and other events }
+                3 ::  3 -> 9905;    { Between children }
+                3 ::    -> 9906;    { Between last child and later events }
+                  ::    -> 9907;    { Between other events }
+        endrecode;
+        if eno = 9905 then
+          errmsg( eno, norder(i), i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                       cmc2m(ucmc(i)), cmc2y(ucmc(i)), norder(j), j, lcmc(j), ucmc(j),
+                       cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)),
+                       interv(i)+cdelay(i) );
+        else
+          errmsg( eno, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                       cmc2y(ucmc(i)), j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                       cmc2m(ucmc(j)), cmc2y(ucmc(j)), interv(i)+cdelay(i) );
+        endif;
+        errflag(j) = default;
+      endif;
+    else
+      ucmc(j) = t;
+    endif;
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+
+  { forward checking of duration of use of contraceptive method }
+  do k = nevents while type(k) > 4 by (-1) enddo;
+  do i = chadj + 1 while i < k
+    do j = i + 1 while twincode(j) <> default & twincode(j) > 1 enddo;
+    t = adjlbi( lcmc(i), ucmc(i), lcmc(j), ucmc(j), durmeth(j)+interv(j) );
+    if t < 0 then
+      if errflag(i) <> default | errflag(j) <> default then
+        if !ver100 then
+          errmsg( 9917, j-chadj, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                        cmc2m(ucmc(i)), cmc2y(ucmc(i)), j, lcmc(j), ucmc(j), cmc2m(lcmc(j)),
+                        cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)), durmeth(j), interv(j) );
+        endif;
+        kount(37) = kount(37) + 1;
+        flagmeth(j) = 2;
+        t = adjlbi( lcmc(i), ucmc(i), lcmc(j), ucmc(j), durmeth(j)+interv(j)-1 );
+        if t < 0 then
+          flagmeth(j) = 1
+        endif
+      endif
+    else
+      lcmc(j) = t;
+    endif;
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+
+  { backward checking of duration of use of contraceptive method }
+  do i = nevents while type(i) > 4 by (-1) enddo;
+  do i = i while i >= chadj + 2 by (-1)  { This is using letter i = letter i as initialization for the loop as i already has the value }
+    do k = i while twincode(k) <> default & twincode(k) > 1 enddo;
+    j = i - 1;
+    t = adjubi( lcmc(j), ucmc(j), lcmc(k), ucmc(k), durmeth(k)+interv(k) );
+    if t < 0 then
+      if (errflag(j) <> default | errflag(k) <> default) &
+         (flagmeth(k) <> 1 & flagmeth(k) <> 2) then
+        if !ver100 then
+          errmsg( 9917, k-chadj, j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                        cmc2m(ucmc(j)), cmc2y(ucmc(j)), k, lcmc(k), ucmc(k), cmc2m(lcmc(k)),
+                        cmc2y(lcmc(k)), cmc2m(ucmc(k)), cmc2y(ucmc(k)), durmeth(k), interv(k) );
+        endif;
+        kount(38) = kount(38) + 1;
+        flagmeth(k) = 2;
+        t = adjubi( lcmc(j), ucmc(j), lcmc(k), ucmc(k), durmeth(k)+interv(k)-1 );
+        if t < 0 then
+          flagmeth(k) = 1
+        endif
+      endif
+    else
+      ucmc(j) = t;
+    endif;
+  enddo;
+
+{ --------------------------------------------------------------------------- }
+
+  { checking time since last period with last pregnancy }
+  recode Q236U ::  Q236N  -> lper;
+              :: missing -> 0;
+              ::  97-98  -> 0;
+            9 ::     95  -> -1;
+            9 ::     96  -> -2;
+            9 ::     94  -> -3;
+            1 ::         -> int(Q236N/30);
+            2 ::         -> int(Q236N*WeeksMonth);
+            3 ::         -> Q236N;
+            4 ::         -> Q236N*12;
+              ::         -> 0;
+  endrecode;
+
+  if lper >= 0 then             { last period reported }
+    if Totpreg then
+      i = Totpreg+chadj;
+      t = adjubi( lcmc(i), ucmc(i), di, di, lper );
+      if t < 0 then
+        if lper <> 0 then
+          if !ver100 then
+            errmsg( 2364, Totpreg, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                          cmc2m(ucmc(i)), cmc2y(ucmc(i)), di, QINTM, QINTY, Q236U, Q236N )
+          endif;
+          kount(13) = kount(13) + 1;
+          lperflag = 1;
+          if QESEC4 & Q476(1) = 2 then
+            lperflag = 9
+          endif
+        endif
+      else
+        ucmc(i) = t;
+        if Q236U = 4 then
+          t = adjubi( lcmc(i), ucmc(i), di, di, lper+11 );
+        endif;
+        if t > 0 & QESEC4 & Q476(1) = 2 then
+          if !ver100 then errmsg( 2365, Q236U, Q236N, Q476(1) ) endif;
+          kount(14) = kount(14) + 1;
+          lperflag = 3
+        else
+          t = adjubi( lcmc(i), ucmc(i), di, di, lper );
+          if t < 0 then
+            if lper <> 0 then
+              if !ver100 then
+                errmsg( 2366, Totpreg, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                              cmc2m(ucmc(i)), cmc2y(ucmc(i)), di, QINTM, QINTY,
+                              0, Q236U, Q236N )
+              endif;
+              kount(15) = kount(15) + 1;
+              lperflag = 2
+            endif
+          else
+            ucmc(i) = t;
+          endif
+        endif
+      endif;
+    endif;
+    { Check period not during pregnancy }
+    if currpreg & lper < currpregdur & Q236N <> missing then
+      if !ver100 then errmsg( 2370, Q236U, Q236N, Q233N ) endif;
+      if lperflag = 0 then
+        lperflag = 7
+      endif
+    endif
+{ --------------------------------------------------------------------------- }
+  else                          { special responses to last period }
+    if Q236N = 96 then          { never menstruated }
+      if Q212W > 0 then         { but had a pregnancy }
+        if !ver100 then errmsg( 2369, Q236N, Q212 ) endif;
+        kount(18) = kount(18) + 1;
+        lperflag = 8
+      endif;
+      x = 0;
+      if QESEC4 & Q476(1) <> 2 then          { Period returned after birth }
+        if !ver100 then errmsg( 2367, Q236N ) endif;
+        kount(16) = kount(16) + 1;
+        lperflag = 6
+      endif;
+    else
+      if Q236N = 95 & QESEC4 & Q476(1) <> 2 then       { Before last birth }
+        if !ver100 then errmsg( 2368, Q236N, Q476(1) ) endif;
+        kount(17) = kount(17) + 1;
+        lperflag = 5
+      endif;
+    endif;
+  endif;
+
+{ --------------------------------------------------------------------------- }
+
+  { Sexual Intercourse }
+  { checking of time since last sex with open interval }
+  recode Q723U ::  Q723N  -> lsex;
+               :: missing -> 0;
+               ::  97-98  -> 0;
+{            9 ::    96   -> -1;   { code no longer used } }
+             0 ::         -> -1;
+             1 ::         -> int(Q723N/30);
+             2 ::         -> int(Q723N*WeeksMonth);
+             3 ::         -> Q723N;
+             4 ::         -> Q723N*12;
+               ::         -> 0;
+  endrecode;
+
+  if lsex >= 0 then                     { last sex reported }
+    if Totpreg then
+      i = Totpreg+chadj;
+      t = adjubi( lcmc(i), ucmc(i), di, di, lsex );
+      if t < 0 then
+        if lsex then
+          if !ver100 then
+            errmsg( 5153, Totpreg, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                          cmc2m(ucmc(i)), cmc2y(ucmc(i)), di, QINTM, QINTY, Q723U, Q723N )
+          endif;
+          kount(6) = kount(6) + 1;
+          lsexflag = 1;
+          if QESEC4 & Q478(1) = 2 then
+            lsexflag = 9
+          endif
+        endif
+      else
+        ucmc(i) = t;
+        if Q723U = 4 then
+          t = adjubi( lcmc(i), ucmc(i), di, di, lsex+11 );
+          if t < 0 & QESEC4 & Q478(1) = 2 then
+            lsexflag = 9
+          endif;
+        endif;
+        if t > 0 & QESEC4 & Q478(1) = 2 then
+          if !ver100 then errmsg( 5154, Q723U, Q723N ) endif;
+          kount(7) = kount(7) + 1;
+          lsexflag = 3
+        else
+          t = adjubi( lcmc(i), ucmc(i), di, di, lsex );
+          if t < 0 then
+            if lsex then
+              if !ver100 then
+                errmsg( 5155, 0, Q723U, Q723N, Totpreg, i, lcmc(i), ucmc(i),
+                              cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                              cmc2y(ucmc(i)), di, QINTM, QINTY )
+              endif;
+              kount(8) = kount(8) + 1;
+              lsexflag = 2
+            endif
+          else
+            ucmc(i) = t;
+          endif
+        endif
+      endif;
+    endif;
+    { Check last sex not longer ago than start of current pregnancy }
+    if currpreg & lsex > currpregdur then
+      if !ver100 then errmsg( 5157, Q723U, Q723N, Q233N) endif;
+      kount(10) = kount(10) + 1;
+      if lsexflag = 0 | lsexflag = 8 then
+        lsexflag = 7
+      endif
+    endif
+{ --------------------------------------------------------------------------- }
+  else                          { special responses to last sex }
+  { This code is no longer needed, but is left here in case code of 96 is reinstated in a country }
+    if Q723N = 96 then          { last sex before last birth }
+      if !Q208 then             { never given birth }
+        if !ver100 then errmsg( 5158, Q723U, Q723N, Q208 ) endif;
+        kount(11) = kount(11) + 1;
+        lsexflag = 4;
+      endif;
+      if currpreg then          { currently pregnant, so since birth }
+        if !ver100 then errmsg( 5152, Q723U, Q723N, Q232 ) endif;
+        kount(5) = kount(5) + 1;
+        lsexflag = 5
+      endif;
+      if QESEC4 & Q478(1) <> 2 then            { Sex resumed since last birth }
+        if !ver100 then errmsg( 5156, Q723U, Q723N, Q478(1) ) endif;
+        kount(9) = kount(9) + 1;
+        if lsexflag = 0 | lsexflag = 8 then
+          lsexflag = 6
+        endif
+      endif
+    endif
+  endif;
+
+  if Q722 = 0 then            	{ Never had sexual intercourse }
+    if Q208 | Q232 <> 2 then    { but has had children or is/possibly pregnant }
+      errmsg( 5150, Q722, Q208, Q232 );
+    endif;
+    if !Q702 in 3,missing then        { Ever in union }
+      if run1 then errmsg( 5151, Q722, Q701, Q702 ) endif
+    endif;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { Equalizing twins }
+  umin = 9999;
+  lmax = 0;
+  ntwin = 0;
+  do i = 1 while i <= Totpreg+chadj
+    j = i + 1;
+    if special(twincode(j)) | twincode(j) <= 1 then
+      if umin < lmax then
+        errmsg( 9920, j-1, lmax, umin, cmc2m(lmax), cmc2y(lmax), cmc2m(umin), cmc2y(umin) )
+      else
+        do k = 1 while k <= ntwin
+          lcmc(j-k) = lmax;
+          ucmc(j-k) = umin;
+        enddo;
+      endif;
+      umin = 9999;
+      lmax = 0;
+      ntwin = 0;
+    endif;
+    if !special(twincode(j)) & twincode(j) >= 1 then
+      ntwin = ntwin + 1;
+      if lcmc(j) > lmax then lmax = lcmc(j) endif;
+      if ucmc(j) < umin then umin = ucmc(j) endif;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Preparation for imputation }
+  if doimp then
+    do i = 1 while i <= nevents-1
+      if special(twincode(i)) | twincode(i) <= 1 then
+        do j = nevents while j > i by (-1)
+          if special(twincode(j)) | twincode(j) <= 1 then
+            jinterv = 0;
+            if j = i + 1 | (!special(twincode(j-1)) & i = j-twincode(j-1)) then
+              jinterv = interv(j) + cdelay(j);
+            endif;
+            gap=ucmc(i)+jinterv-lcmc(j);
+            if gap < 0 | lcmc(i) > lcmc(j) | ucmc(i) > ucmc(j) |
+            (j = i+1 & errflag(i) = default & errflag(i+1) = default) then
+              gap = 0
+            endif;
+            gap2 = int(gap/2);
+            xgap = 0;
+            if gap <> gap2*2 then xgap = 1 endif;
+            ucmc(i) = ucmc(i) - gap2;
+            lcmc(j) = lcmc(j) + gap2;
+            if xgap = 1 then
+              if ucmc(i) > lcmc(i) then
+                ucmc(i) = ucmc(i) - 1
+              else
+                if ucmc(j) > lcmc(j) then
+                  lcmc(j) = lcmc(j) + 1
+                else
+                  if !everUnion | i <> 2 | j <> 3 then
+                    errmsg( 9918, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                                  cmc2m(ucmc(i)), cmc2y(ucmc(i)), j, lcmc(j), ucmc(j),
+                                  cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)),
+                                  cmc2y(ucmc(j)), jinterv );
+                    errflag(i) = default
+                  endif
+                endif
+              endif
+            endif;
+          endif;
+        enddo;
+      else
+        lcmc(i) = lcmc(i-1);
+        ucmc(i) = ucmc(i-1);
+      endif;
+    enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Re-Adjust ranges for date of birth based on adjusted date/age at marriage }
+    if everUnion & errflag(2) <> default & valid(Q716) then
+      t = ndjlba( lcmc(1), ucmc(1), lcmc(2), ucmc(2), Q716 );
+      if t < 0 then
+        errmsg( 5134, Q716, Q715M, Q715Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+        errflag(2) = default;
+      else
+        lcmc(1) = t;
+      endif;
+      t = adjuba( lcmc(1), ucmc(1), lcmc(2), ucmc(2), Q716 );
+      if t < 0 then
+        errmsg( 5134, Q716, Q715M, Q715Y, QINTM, QINTY, Q111, Q110M, Q110Y );
+        errflag(2) = default;
+      else
+        ucmc(1) = t;
+      endif
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Imputation - Random }
+
+    { Impute date of birth of respondent }
+    if lcmc(1) > ucmc(1) then
+      errmsg( 9919, 1, lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)), cmc2m(ucmc(1)), cmc2y(ucmc(1)) );
+      cmc(1) = default
+    elseif lcmc(1) = ucmc(1) then
+      cmc(1) = lcmc(1)
+    else
+      cmc(1) = random(lcmc(1),ucmc(1))
+    endif;
+    { Fix imputed date if a month given }
+    if smonth(1) & (smonth(1) <> ((cmc(1) - 1) % 12) + 1) then
+      x = int((cmc(1) - 1) / 12) * 12 + smonth(1);
+      if x > ucmc(1) then x = x - 12 endif;
+      if x < lcmc(1) then x = x + 12 endif;
+      if x <= ucmc(1) then
+        cmc(1) = x
+      else
+        errmsg( 9921, 1, smonth(1), lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)),
+                      cmc2m(ucmc(1)), cmc2y(ucmc(1)), cmc(1), cmc2m(cmc(1)), cmc2y(cmc(1)) );
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Re-adjust date of marriage based on       }
+    { imputed date of birth and age at marriage }
+    if valid(Q716) then
+      { Adjust functions used with dates upside down to allow   }
+      { adjustment of date of marriage based on age at marriage }
+      { rather than adjusting date of birth                     }
+      t = adjuba( di-ucmc(2), di-lcmc(2), di-cmc(1), di-cmc(1), Q716 );
+      if t < 0 then
+        if errflag(2) <> default then
+          errmsg( 5133, Q716, Q715M, Q715Y, Q110M, Q110Y, QINTM, QINTY, Q111 );
+          errflag(2) = default;
+        endif
+      else
+        lcmc(2) = di-t;
+      endif;
+      t = ndjlba( di-ucmc(2), di-lcmc(2), di-cmc(1), di-cmc(1), Q716 );
+      if t < 0 then
+        if errflag(2) <> default then
+          errmsg( 5133, Q716, Q715M, Q715Y, Q110M, Q110Y, QINTM, QINTY, Q111 );
+          errflag(2) = default
+        endif
+      else
+        ucmc(2) = di-t
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Imputation - Random }
+
+    do i = 2 while i <= nevents
+      if lcmc(i) > ucmc(i) then
+        { Inconsistent date }
+        cmc(i) = default;
+        errmsg( 9919, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                      cmc2m(ucmc(i)), cmc2y(ucmc(i)) )
+      elseif lcmc(i) = ucmc(i) then
+        { Exact date }
+        cmc(i) = lcmc(i)
+      else
+        { Imputed date }
+        cmc(i) = random( lcmc(i), ucmc(i) );
+        if i > chadj & i <= Totpreg+chadj & twincode(i) >= 1 then
+          { Set same date for twins }
+          do j = i+1 while j <= Totpreg+chadj & twincode(j) > twincode(i)
+            lcmc(j) = cmc(i);
+            ucmc(j) = cmc(i);
+          enddo;
+        endif;
+      endif;
+
+      { Fix imputed date if a month given }
+      if smonth(i) & (smonth(i) <> ((cmc(i) - 1) % 12) + 1) then
+        x = int((cmc(i) - 1) / 12) * 12 + smonth(i);
+        if x > ucmc(i) then x = x - 12 endif;
+        if x < lcmc(i) then x = x + 12 endif;
+        if x <= ucmc(i) then
+          cmc(i) = x
+        else
+          errmsg( 9921, i, smonth(i), lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                        cmc2m(ucmc(i)), cmc2y(ucmc(i)), cmc(i), cmc2m(cmc(i)), cmc2y(cmc(i)) );
+        endif;
+      endif;
+
+{ -------------------------------------------------------------------------- }
+
+      { Impute age at death if needed, otherwise update hot deck }
+      if type(i) = 3 & Q224(norder(i)) = 2 then
+
+        { Hot Deck entries: }
+        { LSTDU: Only elements 1-10 are used, representing birth orders 1-9,10+ }
+        { LSTDN: Elements  1-10: duration in days   for birth orders 1-9,10+ }
+        {        Elements 11-20: duration in months for birth orders 1-9,10+ }
+        {        Elements 21-30: duration in years  for birth orders 1-9,10+ }
+
+        j = i;
+        if i > 10 then j = 10 endif;
+
+        if Q228U(norder(i)) = 9 | special(Q228U(norder(i))) then
+          du = lstdu(j);
+          dn = lstdn(10*(du-1)+j);
+          flagdth(i) = 8;
+        else
+          du = Q228U(norder(i));
+          if valid(Q228N(norder(i))) then
+            dn = Q228N(norder(i));
+          else
+            dn = lstdn(10*(du-1)+j);
+            flagdth(i) = 7
+          endif;
+          lstdu(j) = du;
+          lstdn(10*(du-1)+j) = dn;
+        endif;
+        recode du -> dmonths;
+                1 -> int(dn/30);
+                2 -> dn;
+                3 -> dn*12;
+                  -> dn;
+        endrecode;
+        if dmonths < deathl(i) | dmonths > deathu(i) then
+          if flagdth(i) = 7 | flagdth(i) = 8 |
+             (du = 3 & dmonths < deathl(i) & dmonths+11 >= deathl(i)) then
+            dmonths = deathl(i)
+          endif
+        endif;
+        deathl(i) = dmonths;
+        deathu(i) = dmonths;
+      endif;
+
+    enddo;
+
+{ -------------------------------------------------------------------------- }
+
+    Q110C = cmc(1);                        { CMC date of birth }
+    Q110F = sflag(1);                      { Flag for date of birth }
+    Q111C = int( (di-Q110C)/12 );          { Computed age of respondent }
+    if everUnion then
+      Q715C = cmc(2);                      { CMC date of first union }
+      Q715F = sflag(2);                    { Flag for date of first union }
+      Q716C = int( (cmc(2)-cmc(1))/12 );   { Computed age at first union }
+      if InUnion & Q714 = 2 then
+        Q719C = random(lcmcm,ucmcm);       { CMC date of current union }
+        Q719F = cusflag;                   { Flag for date of current union }
+        Q720C = int((Q719C-cmc(1))/12);    { Computed age at current union }
+      endif;
+    endif;
+    do i = 1 while i <= Totpreg
+      j = i + chadj;
+      Q220C(i) = cmc(j);                { CMC date of birth of child }
+      xmonth = (Q220C(i)-1) % 12 + 1;         { month of birth of child      }
+      xyear  = int( (Q220C(i)-1)/12 ) + 1900; { year  of birth of child      }
+      xday   = Q220D(i);
+      if !Q220D(i) in 1:31 then
+        if i > 1 & Q220C(i) = Q220C(i-1) then      // check if twin pregnancy 
+          xday = Q220DI(i-1);    // copy date from prior twin 
+        else 
+          xday = ImputeDay( QINTY, QINTM, QINTD, xyear, xmonth );
+        endif; 
+      endif;
+      Q220DI(i) = xday;
+      Q220CD(i) = CDCode( xyear, xmonth, xday );
+      Q220F(i) = sflag(j);              { Flag for date of birth of child }
+      if Q224(i) = 2 then
+        Q228C(i) = deathl(j);           { Imputed age at death }
+        Q228F(i) = flagdth(j);          { Flag for age at death }
+      endif;
+    enddo;
+    if type(nevents-1) = 4 then
+      Q233C = cmc(nevents-1);           { CMC date of conception of pregnancy }
+      Q233F = sflag(nevents-1);         { Flag for duration of pregnancy }
+    endif;
+    Q236F = lperflag;                   { Flag for last period reporting }
+    if type(nevents-1) = 5 then
+      Q314C = cmc(nevents-1);           { CMC date of sterilization }
+      Q314F = sflag(nevents-1);         { Flag for date of sterilization }
+    endif;
+    Q722F = fsexflag;                   { Flag for first sex reporting }
+    Q723F = lsexflag;                   { Flag for last sex reporting }
+
+  endif;      { end of imputation if no errors }
+
+{ -------------------------------------------------------------------------- }
+
+  { Check for errors and display event table }
+  e = ( !doimp & !ver100 & (lsexflag | lperflag | fsexflag) );
+  do i = 1 while i <= nevents
+    ETsuppress = ( !run1 & type(i) = 5 );
+    if !ETsuppress & ( errflag(i) = default |
+       !doimp & !ver100 & (flagmeth(i) | flagdth(i)) ) then
+      e = 1
+    endif;
+  enddo;
+
+  if e then
+    write( " " );
+    write( "Cluster %04d   Household %04d     Woman's Line %02d", QCLUSTER, QNUMBER, QLINE );
+    write( " " );
+    write( "                         Minimum       Maximum         Con Meth   Age   ");
+    write( "Ix  T Ord  M  S  F  E   Date    CMC   CMC   Date   Int cep Dur f death f");
+
+    do i = 1 while i <= nevents
+      if type(i) = 3 & surv(i) = 2 then
+        xdeath = Q228U(norder(i))*100;
+        if Q228N(norder(i)) = missing then
+          xdeath = xdeath+99
+        else
+          xdeath = xdeath+Q228N(norder(i))
+        endif;
+        sdeath = edit("ZZ999",xdeath);
+      else
+        xdeath = notappl;
+        sdeath = "     ";
+      endif;
+      xdatemin = ((lcmc(i)-1)%12 + 1)*10000 + int((lcmc(i)-1)/12)+1900;
+      xdatemax = ((ucmc(i)-1)%12 + 1)*10000 + int((ucmc(i)-1)/12)+1900;
+      if errflag(i) = default then
+        asterisk = "*"
+      else
+        asterisk = " ";
+      endif;
+      if type(i) = 3 then
+        write( "%2d%3d%4d%3d%3d%3d%3s%8d%6d%6d%8d%5d%3d%5d%3d%5s%3d",
+                i, type(i), norder(i),   twincode(i), surv(i),    sflag(i),
+                asterisk,   xdatemin,    lcmc(i),     ucmc(i),    xdatemax,
+                interv(i),  cdelay(i),   durmeth(i), flagmeth(i),
+                sdeath,     flagdth(i) );
+      elseif type(i) = 5 then
+        write( "%2d%3d%7s%3d%3d%3s%8d%6d%6d%8d%5d",
+                i, type(i), spaces,      surv(i),     sflag(i),    asterisk,    xdatemin,    lcmc(i),
+                ucmc(i),    xdatemax,    interv(i) );
+      else
+        write( "%2d%3d%10s%3d%3s%8d%6d%6d%8d%5d",
+                i, type(i), spaces,      sflag(i),    asterisk,    xdatemin,    lcmc(i),
+                ucmc(i),    xdatemax,    interv(i) );
+      endif;
+
+    enddo;
+
+    lper = Q236U*100;                   { Last period }
+    if Q236N = missing then
+      lper = lper+99
+    else
+      lper = lper+Q236N
+    endif;
+    lsex = Q723U*100;                   { Last sex }
+    if Q723N = missing then
+      lsex = lsex+99
+    else
+      lsex = lsex+Q723N
+    endif;
+    fsex = Q722;                        { First sex }
+    write( " " );
+    write( "Last period %03d    Last sex %03d       Age at first sex  %02d",
+           lper, lsex, fsex );
+    write( "Flag        %3d             %3d                        %3d",
+           lperflag, lsexflag, fsexflag );
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ Maternal Mortality }
+PROC QWSECM3_EDT
+  swrt = 0;
+  aold = 100;
+  iold = 0;
+  if QMM11 = 0 then
+    aold = Q111;
+  endif;
+  aoldest = aold;
+
+  for i in $ do
+    anew = aold;
+
+    if QMM15 = 1 then           { sibling is still alive }
+      if valid(QMM16) then      { sibling's age is valid }
+        anew = QMM16;
+      endif
+    elseif QMM15 = 2 then       { sibling has died }
+      if valid(QMM18) then      { age when they died }
+        anew = QMM18;
+        if valid(QMM17) then    { how many yrs ago did they die }
+          anew = anew + QMM17
+        endif;
+      elseif valid(QMM17) then	{ # yrs ago when they died }
+        anew = QMM17            { Age would be at least this, probably more }
+      endif;
+    endif;
+
+    if anew > aold then
+      errmsg( 9000, i, anew, iold, aold );
+      swrt = 1;
+    elseif valid(QMM16) | valid(QMM17) & valid(QMM18) then
+      aold = anew;
+      iold = i;
+    endif;
+
+    if QMM11 = i then            { Check respondent against siblings }
+      if Q111 > aold then
+        errmsg( 9000, 0, Q111, iold, aold );
+        swrt = 1;
+      else
+        aold = Q111;
+        anew = Q111;
+        iold = 0;
+      endif;
+    endif;
+
+    if aoldest = 100 then
+      aoldest = aold;
+    endif;
+
+  enddo;
+
+  if QMM07 > 0 and (aoldest - aold) > 30 then
+    errmsg( 9001, aoldest, aold )
+  endif;
+
+  if swrt then
+    write( "" );
+    write( "    Maternal mortality      QMM07=%02d.  QMM11=%01d", QMM07, QMM11 );
+    write( "" );
+    write( "    QMM13 QMM14 QMM15 QMM16 QMM17 QMM18 QMM19 QMM20 QMM21 QMM22" );
+    for j in $ do
+      write("       %02d  %3d   %3d     %02d    %02d    %02d  %3d   %3d   %3d     %02d",
+                  QMM13, QMM14, QMM15, QMM16, QMM17, QMM18, QMM19, QMM20, QMM21, QMM22 );
+    enddo;
+    write( "" );
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ domestic violence }
+PROC QMSEC01_EDT
+  { Initialize event table }
+  do i = 1 while i <= maxevent
+    norder(i)  = default;     { Birth order of children }
+    surv(i)    = default;     { Survival status for children }
+    deathl(i)  = default;     { Age at death of child - lower limit }
+    deathu(i)  = default;     { Age at death of child - upper limit }
+    sflag(i)   = default;     { Status code flag }
+    errflag(i) = default;     { Error flag }
+    durmeth(i) = default;     { Duration of method use before birth }
+    flagmeth(i)= 0;           { Flag for method use before birth }
+    flagdth(i) = 0;           { Flag for age at death of the child }
+  enddo;
+  lsexflag = 0;               { Flag for last sex }
+  fsexflag = 0;               { Flag for age at first sex }
+  inunion  = ( QM401 in 1,2 );
+
+{ -------------------------------------------------------------------------- }
+
+  { Date of birth of the man }
+
+  { Check either year of birth or age given for all men }
+  if !validyr(QM110Y) & !valid(QM111) then
+    if run1 then errmsg( 21060, QM110M, QM110Y, QM111 ); endif;
+  { Compare age of man with age in household to look for typos }
+  elseif valid(QM111) & !( QM111 - QH07(QLINE) in (-2):2 ) then
+    if run1 then errmsg( 21061, QM111, QH07(QLINE) ) endif;
+  endif;
+
+  { Set up event table entry for date of birth of man }
+  nevents = 1;
+  ismonth = valid(QM110M);
+  isyear  = validyr(QM110Y);
+  isage   = valid(QM111);
+  if ismonth then
+    smonth(1) = QM110M;
+  else
+    smonth(1) = 0;
+  endif;
+  recode isyear :: ismonth :: isage -> flag;
+              1 ::       1 ::       -> 1;
+                ::       1 ::     1 -> 2;
+              1 ::         ::     1 -> 3;
+              1 ::         ::       -> 5;
+                ::         ::     1 -> 6;
+                ::       1 ::       -> 7;
+                ::         ::       -> 8;
+  endrecode;
+  if ignorey & flag = 3 & QM110Y + QM111 = QINTY then
+    flag = 4
+  endif;
+  sflag(1)   = flag;
+  errflag(1) = notappl;
+
+  { Initial ranges for CMC date of birth }
+  if validyr(QM110Y) & ( flag <> 4 | !doimp ) then
+    lcmcb = setlb( QM110M, QM110Y, 0 );
+    ucmcb = setub( QM110M, QM110Y, 9999 );
+    if lcmcb < mindb then
+      if ucmcb < mindb then
+        errmsg( 21063, QM110M, QM110Y, QINTM, QINTY, cmc2m(mindb),
+                       cmc2y(mindb), cmc2m(maxdb), cmc2y(maxdb) );
+        errflag(1) = default;
+        ucmcb = mindb;
+      endif;
+      lcmcb = mindb;
+    endif;
+    if ucmcb > maxdb then
+      if lcmcb > maxdb then
+        errmsg( 21063, QM110M, QM110Y, QINTM, QINTY,
+                       cmc2m(mindb), cmc2y(mindb), cmc2m(maxdb), cmc2y(maxdb) );
+        errflag(1) = default;
+        lcmcb = maxdb;
+      endif;
+      ucmcb = maxdb;
+    endif
+  else
+    lcmcb = mindb;
+    ucmcb = maxdb;
+  endif;
+
+  type(1) = 1;
+  interv(1) = 0;
+  cdelay(1) = 0;
+
+{ -------------------------------------------------------------------------- }
+
+  { Adjust ranges for CMC date of birth based on age }
+  if QM111 in minaim:maxaim then
+    t = ndjlba( lcmcb, ucmcb, di, di, QM111 );
+    if t < 0 then
+      errmsg( 21062, QM110M, QM110Y, lcmcb, ucmcb, QM111, QINTM, QINTY, di );
+      errflag(1) = default;
+    else
+      lcmcb = t;
+    endif;
+    t = adjuba( lcmcb, ucmcb, di, di, QM111 );
+    if t < 0 then
+      errmsg( 21062, QM110M, QM110Y, lcmcb, ucmcb, QM111, QINTM, QINTY, di );
+      errflag(1) = default;
+    else
+      ucmcb = t;
+    endif;
+    x = di - (QM111*12 + 11);
+    if lcmcb < x & x <= ucmcb then
+      lcmcb = x
+    endif
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { For month only without year, make adjustment }
+  if ismonth & !isyear then
+    x = int( (lcmcb - 1)/12 ) * 12 + smonth(1);
+    if x < lcmcb then
+      x = x + 12
+    endif;
+    if x > ucmcb then
+      if run1 then errmsg( 21064, smonth(1), lcmcb, ucmcb, cmc2m(lcmcb), cmc2y(lcmcb), cmc2m(ucmcb), cmc2y(ucmcb) ) endif;
+    else
+      lcmcb = x
+    endif;
+    x = int( (ucmcb - 1)/12 ) * 12 + smonth(1);
+    if x > ucmcb then
+      x = x - 12
+    endif;
+    if x < lcmcb then
+      if run1 then errmsg( 21064, smonth(1), lcmcb, ucmcb, cmc2m(lcmcb), cmc2y(lcmcb), cmc2m(ucmcb), cmc2y(ucmcb) ) endif;
+    else
+      ucmcb = x
+    endif;
+  endif;
+
+  { check Duration of current residence }
+  if QM104 = 96 & QH05(QLINE) = 1 then
+    errmsg( 21031, QM104, QH05(QLINE) )
+  endif;
+  agem = int( (di-lcmcb) / 12 );
+  if QM104 in 0:49 & QM104 > agem then
+    errmsg( 21030, QM104, QM110M, QM110Y, QM111 )
+  endif;
+  if validyr(QM106Y) & QM104 in 0:49 then
+    temp = setub(QM106M, QM106Y, 9999);
+	if int((di-temp)/12) > QM104 then
+	  warning( 1035, QM106M, QM106Y, QM104 )
+	endif;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { Date of marriage }
+  everUnion = ( QM401 in 1,2 | QM402 in 1,2 );
+  chadj = 1;                     { Adjustment for children in event table }
+  if everUnion then              { added to line number of child          }
+    chadj = 2;
+    nevents = nevents + 1;
+    ismonth = valid(QM411M);
+    isyear  = validyr(QM411Y);
+    isage   = valid(QM412);
+    if ismonth then
+      smonth(2) = QM411M;
+    else
+      smonth(2) = 0;
+    endif;
+    recode isyear :: ismonth :: isage -> flag;
+             1    ::    1    ::       -> 1;
+                  ::    1    ::   1   -> 2;
+             1    ::         ::   1   -> 3;
+             1    ::         ::       -> 5;
+                  ::         ::   1   -> 6;
+                  ::    1    ::       -> 7;
+                  ::         ::       -> 8;
+    endrecode;
+    sflag(2)   = flag;
+    errflag(2) = notappl;
+    type(2)    = 2;
+    { No year of marriage given, check if age given }
+    if flag in 7,8 then
+      if run1 then errmsg( 25135, QM412, QM411M, QM411Y ) endif;
+    endif;
+
+    { Initial ranges for date of marriage }
+    if validyr(QM411Y) then
+      lcmcm = setlb( QM411M, QM411Y, 0 );
+      ucmcm = setub( QM411M, QM411Y,9999 );
+      if ucmcm > di then ucmcm = di endif;
+    else
+      lcmcm = lcmcb + minamm;
+      ucmcm = di;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of marriage based on age at marriage }
+    if valid(QM412) then
+
+      { Adjust functions used with dates upside down to allow   }
+      { adjustment of date of marriage based on age at marriage }
+      { rather than adjusting date of birth                     }
+      t = adjuba( di-ucmcm, di-lcmcm, di-ucmcb, di-lcmcb, QM412 );
+      if t < 0 then
+        errmsg( 25132, QM412, QM411M, QM411Y, QINTM, QINTY, QM111, QM110M, QM110Y );
+        errflag(2) = default;
+      else
+        lcmcm = di-t;
+      endif;
+      t = ndjlba( di-ucmcm, di-lcmcm, di-ucmcb, di-lcmcb, QM412 );
+      if t < 0 then
+        errmsg( 25132, QM412, QM411M, QM411Y, QINTM, QINTY, QM111, QM110M, QM110Y );
+        errflag(2) = default;
+      else
+        ucmcm = di-t;
+      endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of birth based on age at marriage }
+      if errflag(2) <> default then
+        t = ndjlba( lcmcb, ucmcb, lcmcm, ucmcm, QM412 );
+        if t < 0 then
+          errmsg( 25131, QM412, QM411M, QM411Y, QM110M, QM110Y, QINTM, QINTY, QM111 );
+          errflag(2) = default;
+        else
+          lcmcb = t;
+        endif;
+        t = adjuba( lcmcb, ucmcb, lcmcm, ucmcm, QM412 );
+        if t < 0 then
+          errmsg( 25131, QM412, QM411M, QM411Y, QM110M, QM110Y, QINTM, QINTY, QM111 );
+          errflag(2) = default;
+        else
+          ucmcb = t;
+        endif
+      endif
+
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if lcmcm > di then
+      errmsg( 25130, QM412, QM111, QINTM, QINTY, QM110M, QM110Y, QM411M, QM411Y );
+      errflag(2) = default;
+    elseif ucmcm > di then
+      ucmcm = di
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { For month only without year, make adjustment }
+    if ismonth & !isyear then
+      x = int( (lcmcm - 1)/12 ) * 12 + smonth(2);
+      if x < lcmcm then
+        x = x + 12
+      endif;
+      if x > ucmcm then
+        errmsg( 25126, smonth(2), lcmcm, ucmcm, cmc2m(lcmcm), cmc2y(lcmcm), cmc2m(ucmcm), cmc2y(ucmcm) );
+      else
+        lcmcm = x
+      endif;
+      x = int( (ucmcm - 1)/12 ) * 12 + smonth(2);
+      if x > ucmcm then
+        x = x - 12
+      endif;
+      if x < lcmcm then
+        errmsg( 25126, smonth(2), lcmcm, ucmcm, cmc2m(lcmcm), cmc2y(lcmcm), cmc2m(ucmcm), cmc2y(ucmcm) );
+      else
+        ucmcm = x
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Adjust for minimum age at marriage }
+    t = adjlbi( lcmcb, ucmcb, lcmcm, ucmcm, minamm );
+    if t < 0 then
+      if run1 then errmsg( 25121, int(minamm/12), QM110M, QM110Y, QM111, QM411M, QM411Y, QM412 ) endif;
+      errflag(2) = default;
+    else
+      lcmcm = t;
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if lcmcm > di then
+      errmsg( 25120, QM411M, QM411Y, QM412, QINTM, QINTY, QM110M, QM110Y, QM111 );
+      errflag(2) = default;
+    elseif ucmcm > di then
+      ucmcm = di
+    endif;
+
+    { Use age at first sex as lower bound for date of marriage if no info. }
+    if valid(QM414) & QM414 <> 0 & QM414 <= maxaim then
+      t = adjlbi( lcmcb, ucmcb, lcmcm, ucmcm, QM414*12 );
+      if t < 0 then
+        if !ver100 then errmsg( 25193, QM411M, QM411Y, QM412, QM110M, QM110Y, QM414 ) endif;
+        kount(46) = kount(46) + 1;
+        fsexflag = 6;
+      else
+        lcmcm = t
+      endif
+    endif;
+
+    lcmc(2) = lcmcm;
+    ucmc(2) = ucmcm;
+    interv(2) = minamm;
+    cdelay(2) = 0;
+
+  endif;
+
+  lcmc(1) = lcmcb;
+  ucmc(1) = ucmcb;
+
+{ -------------------------------------------------------------------------- }
+
+  { Time of interview }
+  if QVISITS = 1 then
+    if valid(QM101H) & valid(QM819H) then
+      if QM101H > QM819H then
+        errmsg( 28110, QM101H, QM101M, QM819H, QM819M );
+      elseif QM101H = QM819H then
+        if valid(QM101M) & valid(QM819M) & QM101M > QM819M then
+          errmsg( 28110, QM101H, QM101M, QM819H, QM819M );
+        endif
+      endif
+    endif
+  endif;
+
+  { Children ever born }
+  Totpreg = QM208;
+  minpd   = 7;     // minimum pregnacy duration for men
+
+{ -------------------------------------------------------------------------- }
+
+PROC QMSEC02_EDT
+
+  { children }
+  if Totpreg then                      { if at least one child }
+    nevents    = nevents + 1;
+    j          = nevents;
+    type(j)    = 3;
+    norder(j)  = 1;
+    durmeth(j) = 0;
+    flagmeth(j)= 0;
+
+    { Initialize }
+    lcmc(j) = lcmc(1) + minabm;
+    ucmc(j) = di;
+    sflag(j) = 8;
+    errflag(j) = notappl;
+
+{ -------------------------------------------------------------------------- }
+
+    { Check age at first birth consistent with other information -- possibly including date of last birth }
+    if valid(QM211) & QM211 <= maxaim then
+      t = adjuba( di-ucmc(j), di-lcmc(j), di-ucmc(1), di-lcmc(1), QM211 );
+      if t < 0 then
+        if run1 then
+          errmsg( 25180, QM211, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)),
+                         cmc2y(ucmc(j)), lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)),
+                         cmc2m(ucmc(1)), cmc2y(ucmc(1)), di, QINTM, QINTY )
+        endif;
+        errflag(j) = default;
+      else
+        lcmc(j) = di-t;
+        t = ndjlba( di-ucmc(j), di-lcmc(j), di-ucmc(1), di-lcmc(1), QM211 );
+        if t < 0 then
+          if run1 then
+            errmsg( 25180, QM211, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)),
+                           cmc2y(ucmc(j)), lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)),
+                           cmc2m(ucmc(1)), cmc2y(ucmc(1)), di, QINTM, QINTY )
+          endif;
+          errflag(j) = default;
+        else
+          ucmc(j) = di-t;
+        endif;
+      endif;
+    endif;
+
+    { Check first birth not before age at first sex }
+    if valid(QM414) & QM414 <> 0 & QM414 <= maxaim then
+      t = adjlbi( lcmc(1), ucmc(1), lcmc(j), ucmc(j), QM414*12+minpd );
+      if t < 0 then
+        if !ver100 then errmsg( 25191, QM414, QM211, QM110M, QM110Y ) endif;
+        kount(44) = kount(44) + 1;
+        fsexflag = 3;
+        t = adjlbi( lcmc(1), ucmc(1), lcmc(j), ucmc(j), (QM414-1)*12+minpd );
+        if t < 0 then
+          fsexflag = 2
+        endif
+      else
+        lcmc(j) = t;
+      endif
+    { Check minimum birth interval after marriage }
+    elseif QM414 = 95 & everUnion then                                  { !!! first sex when married }
+      t = adjlbi( lcmc(2), ucmc(2), lcmc(j), ucmc(j), minpd );
+      if t < 0 then
+        if !ver100 then errmsg( 25194, QM414, QM211, QM411M, QM411Y, QM412 ) endif;
+        kount(47) = kount(47) + 1;
+        fsexflag = 5;
+      else
+        lcmc(j) = t;
+      endif
+    endif;
+  endif;        { end Totpreg }
+
+  { Check age of youngest child consistent with father's age }
+  if valid(QM213) & QM213+int(minabm/12) > agem then
+    if !ver100 then errmsg( 22140, QM213, agem, int(minabm/12) ) endif;
+  endif;
+
+  { Date of conception of current pregnancy }
+  currpreg = ( QM504 = 1 | QM509 = 1 );
+  if currpreg then
+    nevents = nevents + 1;
+    errflag(nevents) = notappl;
+    smonth(nevents) = 0;
+    sflag(nevents) = 8;
+    lcmc (nevents) = di - 9;
+    ucmc (nevents) = di;
+    norder(nevents) = Totpreg+1;
+    type  (nevents) = 4;
+    interv(nevents) = 0;
+    if Totpreg then
+      cdelay(nevents) = mincd   { minimum conception delay after last birth }
+    else
+      cdelay(nevents) = 0
+    endif;
+    durmeth(nevents) = 0;
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ marriage and sexual activity }
+PROC QMSEC04_EDT
+
+  { check number of wives }
+  if inunion & QM405 = 2 then
+    nwives = 1
+  else
+    nwives = NAtoZero(QM406);
+  endif;
+  if nwives <> count(QMSEC04_GRP000) then
+    errmsg( 25050, nwives, count(QMSEC04_GRP000) );
+  endif;
+
+  rh = QH03(QLINE);
+  for i in QMSEC04_GRP000 do
+
+    { Checking line number of wife/partner }
+    { Store respondent's line & marital status to check at level 1 postproc }
+    do j = 1 while j <= maxelig &
+      ( manwife(j,1) <> 0 &
+      ( manwife(j,1) <> QLINE | (manwife(j,3) <> 0 & manwife(j,3) <> QM407) ) )
+    enddo;
+    manwife(j,1) = QLINE;
+    manwife(j,2) = QM401;
+    manwife(j,3) = NAtoZero(QM407);
+
+    trymatch = inunion;
+    { Check if line number is out of range }
+    if !special(QM407) & QM407 <> 0 then
+      trymatch = 0;
+      if QM407 > QHMEMBER then
+        errmsg( 25060, QM407, i, QHMEMBER );
+        trymatch = 1;
+      else
+        { Check partner is female }
+        if QH04(QM407) <> 2 then
+          errmsg( 25061, QH04(QM407), i, QM407 );
+          trymatch = 1;
+        endif;
+        { Check partner is at least age 12 }
+        if !special(QH07(QM407)) & QH07(QM407) < 12 then
+          errmsg( 25062, QH07(QM407), i, QM407 );
+          trymatch = 1;
+        endif;
+        { Check relationship of respondent to partner }
+        rw = QH03(QM407);
+        recode rh :: rw -> err;       { HUSBAND             - WIFE           }
+                1 ::  2 -> 0;         { Head                - Spouse         }
+                2 ::  1 -> 0;         { Spouse              - Head           }
+                3 ::  4 -> 0;         { Son/daughter        - Son/Daughter-in-law}
+                4 ::  3 -> 0;         { Son/Daughter-in-law - Son/Daughter   }
+                4 :: 10 -> 0;         { Son/Daughter-in-law - Step-Daughter  }
+                5 ::  9 -> 0;         { Grandchild          - Other Relative }
+                6 ::  6 -> 0;         { Father              - Mother         }
+                7 ::  7 -> 0;         { Father-in-law       - Mother-in-law  }
+                8 ::  9 -> 0;         { Brother             - Other Relative }
+                9 ::  5 -> 0;         { Other Relative      - Grandchild     }
+                9 ::  8 -> 0;         { Other Relative      - Sister         }
+                9 :: 11 -> 0;         { Other Relative      - Other Relative }
+               10 ::  4 -> 0;         { Adopted             - Daughter-in-law}
+            10,11 :: 11 -> 0;         { Adopted/Not Related - Not Related    }
+		       11 :: 10 -> 0;         { Not related         - Adopted        }
+       missing,98 :: 98,missing -> 0; { Unknown             - Unknown        }
+                  ::    -> 1;         { All others are incorrect             }
+        endrecode;
+        if err then
+          if run1 then errmsg( 25064, i, QM407, rh, rw ) endif;
+          trymatch = 1;
+        endif;
+        { Check wife's age with age declared in the household }
+        if valid(QH07(QM407)) & QM408 <> QH07(QM407) then
+          if run1 then errmsg( 25068, QM407, QM408, QH07(QM407) ) endif;
+        endif;
+      endif;
+    endif;
+  enddo;
+
+  { Head/Spouse/Son/Son-in-law/Father/Father-in-law -- try and find wife }
+  if trymatch & rh in 1:4,6:7 then
+    for j in record QHSEC01 do
+      rw = QH03;
+      recode rh :: rw -> rok;
+              1 :: 2  -> 1;   { Head          - Spouse          }
+              2 :: 1  -> 1;   { Spouse        - Head            }
+              3 :: 4  -> 1;   { Son           - Daughter-in-law }
+              4 :: 3  -> 1;   { Son-in-law    - Daughter        }
+              6 :: 6  -> 1;   { Father        - Mother          }
+              7 :: 7  -> 1;   { Father-in-law - Mother-in-law   }
+                ::    -> 0;
+      endrecode;
+      { Found probable wife for man }
+      { if female, relationship OK }
+      if QH04 = 2 & rok &
+         { not son or son-in-law }
+        ((rh <> 3 & rh <> 4) |
+         { only son with daughter-in-law anywhere in list }
+         (rh = 3 & (count( CGHH80.QHSEC01 where QH03 = 4 & QH06 = 2) = 1 |
+                   { son with daughter-in-law immediately after }
+                   j = QLINE+1)
+         ) |
+         { son-in-law with only one daughter anywhere in list }
+         (rh = 4 & (count( CGHH80.QHSEC01 where QH03 = 3 & QH06 = 2) = 1 |
+                   { son-in-law with daughter immediately before or after }
+                   j = QLINE-1 | j = QLINE+1)
+         )
+        ) then
+        { See if wife listed in husband's questionnaire }
+        if !count(QMSEC04_GRP000 where QM407 = j) then
+          errmsg( 25063, j, rw, QLINE, rh )
+        endif;
+      endif;
+    enddo;
+  endif;
+
+  { Check age at first sex }
+  if QM414 <> missing & QM414 <> 0 & QM414 <= maxaim then
+    if QM414 > agem then                { Exceeds current age }
+      if run1 then errmsg( 25190, QM414, QM111, QINTM, QINTY, QM110M, QM110Y ) endif;
+      fsexflag = 1;
+    endif
+  elseif QM414 = 95 & !everUnion then             { First time when married }
+    if !ver100 then errmsg( 25192, QM414, QM402 ) endif;     { but never married }
+    kount(45) = kount(45) + 1;
+    fsexflag = 4;
+  endif;
+
+  { no sex in the last year but wife pregnant/DK }
+  if QM415U = 4 & ( QM504 in 1,8 | QM509 in 1,8 ) then
+    errmsg( 25200, QM415U, QM415N, QM504, QM509 )
+  endif;
+
+  { Check current methods are known }
+  do x = 1 while x <= length( strip(QM418) )
+    xmeth = pos( QM418[x:1], curmethm );
+    if QM301(xmeth) <> 1 then                     { methods should be known }
+      errmsg( 23142, GetLabel(QM418, QM418[x:1]) );
+    endif;
+  enddo;
+
+  { # of lifetime partners should be equal or higher than # of partners in last 12 months }  { added October 14, 2011 from data entry - Claudia }
+  sexp = (QM414 <> 0) + (QM423 = 1) + (QM426 = 1);
+  if valid(QM429) & QM429 < sexp then
+    errmsg( 25245, sexp )
+  endif;
+
+  { condom use and knowledge in contraceptive table }
+  if (QM419 = 1 | QM424 = 1 | QM427 = 1) & QM301(condom) <> 1 then
+    errmsg( 26280, QM419, QM424, QM427, QM301(condom) );
+  endif;
+
+{ --------------------------------------------------------------------------- }
+{ fertility preferences }
+PROC QMSEC05_EDT
+
+  { check ideal number of children }
+  if valid(QM515A) & valid(QM515B) & valid(QM515C) & QM515C < 96 &
+         QM515A+QM515B+QM515C <> QM514 then
+    errmsg(26131,QM515A,QM515B,QM515C,QM514);
+  endif;
+
+
+{ --------------------------------------------------------------------------- }
+{ employment and gender roles, serve mainly as an anchor for imputation       }
+PROC QMSEC06_EDT
+  { decision on respondent's earnings }
+  if QM609 in 2,3 & !inunion then
+    errmsg( 27250, "QM609", QM609, QM401 )
+  endif;
+  { decision on respondent's health care }
+  if QM610 in 2,3 & !inunion then
+    errmsg( 27250, "QM610", QM610, QM401 )
+  endif;
+  { decision on making major purchases }
+  if QM611 in 2,3 & !inunion then
+    errmsg( 27250, "QM611", QM611, QM401 )
+  endif;
+  { ownership of a house }
+  if QM612 in 2,4 & !inunion then
+    errmsg( 27250, "QM612", QM612, QM401 )
+  endif;
+  { ownership of land }
+  if QM615 in 2,4 & !inunion then
+    errmsg( 27250, "QM615", QM615, QM401 )
+  endif;
+
+  { Date of interview event and open birth interval }
+  nevents = nevents + 1;
+  lcmc(nevents)   = di;
+  ucmc(nevents)   = di;
+  type(nevents)   = 6;
+  sflag(nevents)  = 1;
+  smonth(nevents) = 0;
+  errflag(nevents)= notappl;
+  interv(nevents) = 0;
+  cdelay(nevents) = 0;
+  durmeth(nevents) = 0;
+
+{ -------------------------------------------------------------------------- }
+
+  if Totpreg then
+    { forward checking of date of first birth }
+    i = chadj + 1;
+    t = adjlbi( lcmc(1), ucmc(1), lcmc(i), ucmc(i), minabm );
+    if t < 0 then
+      errmsg( 29902, 1, lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)), cmc2m(ucmc(1)),
+                     cmc2y(ucmc(1)), i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                     cmc2m(ucmc(i)), cmc2y(ucmc(i)), minabm );
+      errflag(i) = default;
+    else
+      lcmc(i) = t;
+      { backward checking of date of first birth }
+      t = adjubi( lcmc(1), ucmc(1), lcmc(i), ucmc(i), minabm );
+      if t < 0 then
+        errmsg( 29902, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                       cmc2y(ucmc(i)), 1, lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)),
+                       cmc2m(ucmc(1)), cmc2y(ucmc(1)), minabm );
+        errflag(1) = default;
+      else
+        ucmc(1) = t;
+      endif;
+    endif;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { forward checking of minimum interval }
+  do i = 1 while i <= nevents - 1
+    j = i + 1;
+    t = adjlbi( lcmc(i), ucmc(i), lcmc(j), ucmc(j), interv(j)+cdelay(j) );
+    if t < 0 then
+      if type(i) = 2 & type(j) <> 6 then
+        if QM414 = 95 & fsexflag = 0 then
+          fsexflag = 5
+        endif
+      else
+        x1 = type(i);
+        x2 = type(j);
+        recode x1 :: x2 -> eno;
+                1 ::  2 -> 29901;    { Between birth and first union }
+                1 ::  3 -> 29902;    { Between birth and first child }
+                2 ::  3 -> 29903;    { Between union and first child }
+              1,2 ::    -> 29904;    { Between birth or union and other events }
+                3 ::  3 -> 29905;    { Between children }
+                3 ::    -> 29906;    { Between last child and later events }
+                  ::    -> 29907;    { Between other events }
+        endrecode;
+        if eno = 29905 then
+          errmsg( eno, norder(i), i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                       cmc2y(ucmc(i)), norder(j), j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                       cmc2m(ucmc(j)), cmc2y(ucmc(j)), interv(j)+cdelay(j) );
+        else
+          errmsg( eno, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)), cmc2y(ucmc(i)),
+                       j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)),
+                       interv(j)+cdelay(j) );
+        endif;
+        errflag(j) = default;
+      endif;
+    else
+      lcmc(j) = t;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { backward checking of minimum interval }
+  do i = nevents while i >= 2 by (-1)
+    j = i - 1;
+    t = adjubi( lcmc(j), ucmc(j), lcmc(i), ucmc(i), interv(i)+cdelay(i) );
+    if t < 0 then
+      if type(j) = 2 & type(i) <> 6 then
+        if QM414 = 95 & fsexflag = 0 then        { First sex when married }
+          fsexflag = 5
+        endif
+      else
+        x1 = type(j);
+        x2 = type(i);
+        recode x1 :: x2 -> eno;
+                1 ::  2 -> 29901;    { Between birth and first union }
+                1 ::  3 -> 29902;    { Between birth and first child }
+                2 ::  3 -> 29903;    { Between union and first child }
+              1,2 ::    -> 29904;    { Between birth or union and other events }
+                3 ::  3 -> 29905;    { Between children }
+                3 ::    -> 29906;    { Between last child and later events }
+                  ::    -> 29907;    { Between other events }
+        endrecode;
+        if eno = 29905 then
+          errmsg( eno, norder(i), i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                       cmc2y(ucmc(i)), norder(j), j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                       cmc2m(ucmc(j)), cmc2y(ucmc(j)), interv(i)+cdelay(i) );
+        else
+          errmsg( eno, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)), cmc2y(ucmc(i)),
+                       j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)), cmc2m(ucmc(j)), cmc2y(ucmc(j)),
+                       interv(i)+cdelay(i) );
+        endif;
+        errflag(j) = default;
+      endif;
+    else
+      ucmc(j) = t;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Sexual Intercourse }
+  { checking of time since last sex with open interval }
+  recode QM415U :: QM415N  -> lsex;
+                :: missing -> 0;
+                ::  97:98  -> 0;
+{             9 ::     96  -> -1;}{Not used}
+              0 ::         -> -1;
+              1 ::         -> int(QM415N/30);
+              2 ::         -> int(QM415N*WeeksMonth);
+              3 ::         -> QM415N;
+              4 ::         -> QM415N*12;
+                ::         -> 0;
+  endrecode;
+
+  if lsex >= 0 then                     { last sex reported }
+    if Totpreg then
+      i = Totpreg+chadj;
+      t = adjubi( lcmc(i), ucmc(i), di, di, lsex );
+      if t < 0 then
+        if lsex then
+          if !ver100 then
+            errmsg( 25153, Totpreg, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                           cmc2y(ucmc(i)), di, QINTM, QINTY, QM415U, QM415N )
+          endif;
+          kount(48) = kount(48) + 1;
+          lsexflag = 1;
+        endif
+      else
+        ucmc(i) = t;
+        if QM415U = 4 then
+          t = adjubi( lcmc(i), ucmc(i), di, di, lsex+11 );
+        endif;
+      endif;
+    endif;
+{ -------------------------------------------------------------------------- }
+  else                          { special responses to last sex }
+    { This code is no longer needed, but is left here in case the code is used in a country }
+    if QM415N = 96 then         { last sex before last birth }
+      if !QM208 then            { never given birth }
+        if !ver100 then errmsg( 25158, QM415U, QM415N, QM208 ) endif;
+        kount(49) = kount(49) + 1;
+        lsexflag = 4
+      endif;
+    endif
+  endif;
+
+  if QM414 = 0 then     { Never had sexual intercourse }
+    if QM208 | QM504 in 1,8 | QM509 in 1,8 then   { but had children, or a partner is or maybe pregnant }
+      errmsg( 25150, QM414, QM208, QM504, QM509 );
+    endif;
+    if !QM402 in 3,missing then        { Ever in union }
+      if run1 then errmsg( 25151, QM414, QM401, QM402 ) endif;
+    endif;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { Preparation for imputation }
+  if doimp then
+    do i = 1 while i <= nevents-1
+      do j = nevents while j > i by (-1)
+        jinterv = 0;
+        if j = i + 1 then
+          jinterv = interv(j) + cdelay(j);
+        endif;
+        gap=ucmc(i)+jinterv-lcmc(j);
+        if gap < 0 | lcmc(i) > lcmc(j) | ucmc(i) > ucmc(j) |
+        (j = i+1 & errflag(i) = default & errflag(i+1) = default) then
+          gap = 0
+        endif;
+        gap2 = int(gap/2);
+        xgap = 0;
+        if gap <> gap2*2 then xgap = 1 endif;
+        ucmc(i) = ucmc(i) - gap2;
+        lcmc(j) = lcmc(j) + gap2;
+        if xgap = 1 then
+          if ucmc(i) > lcmc(i) then
+            ucmc(i) = ucmc(i) - 1
+          else
+            if ucmc(j) > lcmc(j) then
+              lcmc(j) = lcmc(j) + 1
+            else
+              if !everUnion | i <> 2 | j <> 3 then
+                errmsg( 29918, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)),
+                               cmc2y(ucmc(i)), j, lcmc(j), ucmc(j), cmc2m(lcmc(j)), cmc2y(lcmc(j)),
+                               cmc2m(ucmc(j)),cmc2y(ucmc(j)), jinterv );
+                errflag(i) = default
+              endif
+            endif
+          endif
+        endif;
+      enddo;
+    enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Re-Adjust ranges for date of birth based on adjusted date/age at marriage }
+    if everUnion & errflag(2) <> default & valid(QM412) then
+      t = ndjlba( lcmc(1), ucmc(1), lcmc(2), ucmc(2), QM412 );
+      if t < 0 then
+        errmsg( 25134, QM412, QM411M, QM411Y, QINTM, QINTY, QM111, QM110M, QM110Y );
+        errflag(2) = default;
+      else
+        lcmc(1) = t;
+      endif;
+      t = adjuba( lcmc(1), ucmc(1), lcmc(2), ucmc(2), QM412 );
+      if t < 0 then
+        errmsg( 25134, QM412, QM411M, QM411Y, QINTM, QINTY, QM111, QM110M, QM110Y );
+        errflag(2) = default;
+      else
+        ucmc(1) = t;
+      endif
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Imputation - Random }
+
+    { Impute date of birth of respondent }
+    if lcmc(1) > ucmc(1) then
+      errmsg( 29919, 1, lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)), cmc2m(ucmc(1)), cmc2y(ucmc(1)) );
+      cmc(1) = default
+    elseif lcmc(1) = ucmc(1) then
+      cmc(1) = lcmc(1)
+    else
+      cmc(1) = random(lcmc(1),ucmc(1))
+    endif;
+    { Fix imputed date if a month given }
+    if smonth(1) & (smonth(1) <> ((cmc(1) - 1) % 12) + 1) then
+      x = int( (cmc(1) - 1) / 12 ) * 12 + smonth(1);
+      if x > ucmc(1) then x = x - 12 endif;
+      if x < lcmc(1) then x = x + 12 endif;
+      if x <= ucmc(1) then
+        cmc(1) = x
+      else
+        errmsg( 29921, 1, smonth(1), lcmc(1), ucmc(1), cmc2m(lcmc(1)), cmc2y(lcmc(1)), cmc2m(ucmc(1)),
+                       cmc2y(ucmc(1)), cmc(1), cmc2m(cmc(1)), cmc2y(cmc(1)) );
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Re-adjust date of marriage based on       }
+    { imputed date of birth and age at marriage }
+    if valid(QM412) then
+      { Adjust functions used with dates upside down to allow   }
+      { adjustment of date of marriage based on age at marriage }
+      { rather than adjusting date of birth                     }
+      t = adjuba( di-ucmc(2), di-lcmc(2), di-cmc(1), di-cmc(1), QM412 );
+      if t < 0 then
+        if errflag(2) <> default then
+          errmsg( 25133, QM412, QM411M, QM411Y, QM110M, QM110Y, QINTM, QINTY, QM111 );
+          errflag(2) = default;
+        endif
+      else
+        lcmc(2) = di-t;
+      endif;
+      t = ndjlba( di-ucmc(2), di-lcmc(2), di-cmc(1), di-cmc(1), QM412 );
+      if t < 0 then
+        if errflag(2) <> default then
+          errmsg( 25133, QM412, QM411M, QM411Y, QM110M, QM110Y, QINTM, QINTY, QM111 );
+          errflag(2) = default
+        endif
+      else
+        ucmc(2) = di-t
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Imputation - Random }
+
+    do i = 2 while i <= nevents
+      if lcmc(i) > ucmc(i) then
+        { Inconsistent date }
+        cmc(i) = default;
+        errmsg( 29919, i, lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)), cmc2m(ucmc(i)), cmc2y(ucmc(i)) );
+      elseif lcmc(i) = ucmc(i) then
+        { Exact date }
+        cmc(i) = lcmc(i)
+      else
+        { Imputed date }
+        cmc(i) = random(lcmc(i),ucmc(i));
+      endif;
+
+      { Fix imputed date if a month given }
+      if smonth(i) & (smonth(i) <> ((cmc(i) - 1) % 12) + 1) then
+        x = int( (cmc(i) - 1) / 12 ) * 12 + smonth(i);
+        if x > ucmc(i) then x = x - 12 endif;
+        if x < lcmc(i) then x = x + 12 endif;
+        if x <= ucmc(i) then
+          cmc(i) = x
+        else
+          errmsg( 29921, i, smonth(i), lcmc(i), ucmc(i), cmc2m(lcmc(i)), cmc2y(lcmc(i)),
+                         cmc2m(ucmc(i)), cmc2y(ucmc(i)), cmc(i), cmc2m(cmc(i)), cmc2y(cmc(i)) );
+        endif;
+      endif;
+    enddo;
+
+{ -------------------------------------------------------------------------- }
+
+    QM110C = cmc(1);                    { CMC date of birth }
+    QM110F = sflag(1);                  { Flag for date of birth }
+    QM111C = int((di-QM110C)/12);       { Computed age of respondent }
+    if everUnion then
+      QM411C = cmc(2);                  { CMC date of first union }
+      QM411F = sflag(2);                { Flag for date of first union }
+      QM412C = int((cmc(2)-cmc(1))/12); { Computed age at first union }
+    endif;
+    x = Totpreg; if x > 2 then x = 2 endif;
+    do i = 1 while i <= x
+      j = i + chadj;
+    { **** Use these if first birth date collected
+      if i = 1 then
+        QM211C = cmc(j);                { CMC date of birth of first child }
+        QM211F = sflag(j);              { Flag for date of birth of first child }
+      endif;
+     **** }
+    enddo;
+    QM414F = fsexflag;                   { Flag for first sex reporting }
+    QM415F = lsexflag;                   { Flag for last sex reporting }
+
+  endif;      { end of imputation if no errors }
+
+{ -------------------------------------------------------------------------- }
+
+  { Check for errors and display event table }
+  e = 0; { was (!doimp & run1); }
+  do i = 1 while i <= nevents
+    if errflag(i) = default |
+       !doimp & (flagmeth(i) | flagdth(i)) then
+      e = 1
+    endif;
+  enddo;
+  if e then
+    write( " " );
+    write( "Cluster %04d     Household %04d     Man's Line %02d", QCLUSTER, QNUMBER, QLINE );
+    write( " " );
+    write( "                         Minimum       Maximum         Con Meth   Age   ");
+    write( "Ix  T Ord  M  S  F  E   Date    CMC   CMC   Date   Int cep Dur f death f");
+    do i = 1 while i <= nevents
+      xdatemin = ( (lcmc(i)-1)%12 + 1 )*10000 + int( (lcmc(i)-1)/12 )+1900;
+      xdatemax = ( (ucmc(i)-1)%12 + 1 )*10000 + int( (ucmc(i)-1)/12 )+1900;
+      if errflag(i) = default then
+        asterisk = "*"
+      else
+        asterisk = " ";
+      endif;
+      if type(i) = 3 then
+        write( "%2d%3d%4d%3d%3d%3d%3s%8d%6d%6d%8d%5d%3d%5d%3d%5s%3d",
+                i, type(i), norder(i),   twincode(i), surv(i),    sflag(i),
+                asterisk,   xdatemin,    lcmc(i),     ucmc(i),    xdatemax,
+                interv(i),  cdelay(i),   durmeth(i), flagmeth(i),
+                sdeath,     flagdth(i) );
+      elseif type(i) = 5 then
+        write( "%2d%3d%7s%3d%3d%3s%8d%6d%6d%8d%5d",
+                i, type(i), spaces,      surv(i),     sflag(i),    asterisk,    xdatemin,    lcmc(i),
+                ucmc(i),    xdatemax,    interv(i) );
+      else
+        write( "%2d%3d%10s%3d%3s%8d%6d%6d%8d%5d",
+                i, type(i), spaces,      sflag(i),    asterisk,    xdatemin,    lcmc(i),
+                ucmc(i),    xdatemax,    interv(i) );
+      endif;
+    enddo;
+    lsex = QM415U*100;                  { Last sex }
+    if QM415N = missing then
+      lsex = lsex+99
+    else
+      lsex = lsex+QM415N
+    endif;
+    fsex = QM414;                       { First sex }
+    write( " " );
+    write( "                   Last sex %03d       Age at first sex  %02d",
+           lsex, fsex );
+    write( "                            %3d                        %3d",
+           lsexflag, fsexflag );
+  endif;
+

@@ -7,7 +7,7 @@ PROC GLOBAL
   string   AppName;                        { Application name }
   string   wrkprj, {wrkpii,} backup;         { directories }
   string   wrkref,wrkpii,work;                   { contains reference data for clusters, sample, teams }
-  string   central, entry, SampData, utility;
+  string   central, entry, SampData, MapData, utility;
   string   xfilenum, executable;
   string   opid;                           { operator ID }
   string   fname;                          { filenames for various files }
@@ -463,6 +463,83 @@ PROC GLOBAL
       DirCreate(thisfile);
     endif;
   end;
+
+  function savePointsGeojson(clusterNumber)
+    file gjsonPointVector; 
+    string PointVector, result;
+    setfile(HHLISTING, SampData + "\L" + xfilenum + ".dat", update );
+    forcase HHLISTING where LCLUSTER =clusterNumber do 
+      PointVector = maketext ("\CARTO%v",LCLUSTER)+ ".geojson" ;	
+      //using X,Y stored in rosters.
+      gjsonPointVector.open(MapData+PointVector,create);
+      numeric long, lat;
+      gjsonPointVector.write('{ "type": "FeatureCollection",');
+      gjsonPointVector.write('"features": [');
+       //each point in the roster
+      for i in HHLISTING.RECORD2 do
+        long = LLONGITUDE;
+        lat  = LLATITUDE;
+        if long <> notappl & lat <> notappl then
+          string text2Display =  maketext("(%v),%v/%v/%v",i, LCLUSTER, strip (LNAME), strip (LADDRESS));
+          string resultTemp= maketext ('{ "type": "Feature","geometry": {"type": "Point", "coordinates": [%v,%v,%v]},"properties": {"title": "%v","Nom": "%s","description": "%s", "popupContent": "%v","style": {"weight": 2,"color": "#999","opacity": 1,"fillColor": "#B0DE5C","fillOpacity": 0.8}}},', long, lat, 0,LCLUSTER,strip (LNAME),strip (LADDRESS), text2Display{, setColor()}); //setColor() for choosing dynamic display of colors
+          result = result+resultTemp;       
+        endif;
+      enddo;
+      if length(result) then
+        result = result[1:length(result) - 1];
+      endif;
+      gjsonPointVector.write("%s",result);
+      gjsonPointVector.write(']');
+      gjsonPointVector.write('}');
+      close(gjsonPointVector);
+    endfor;
+    close(HHLISTING);
+end;
+
+function savePointsKML(clusterNumber);
+  // generates kml file from HHLISTING data
+  FILE kmlfile;
+  string fnkmlfile = pathconcat(MapData,concat("CARTO",edit("9999",clusterNumber),".kml"));
+  setfile(HHLISTING, SampData + "\L" + xfilenum + ".dat", update );
+  Setfile(kmlfile,fnkmlfile,create);
+  numeric wlong, wlat;
+  Filewrite(kmlfile,'<?xml version="1.0" encoding="UTF-8"?>');
+  Filewrite(kmlfile,'<kml xmlns="http://earth.google.com/kml/2.0">');
+  Filewrite(kmlfile,'<Document>');
+  forcase HHLISTING where LCLUSTER =clusterNumber do 
+    //each point
+    for i in HHLISTING.RECORD2 do
+      errmsg("i=%d, LLATITUDE=%d", i, LLATITUDE);
+      wlong = LLONGITUDE;
+      wlat  = LLATITUDE;
+      string weipc =  maketext("%03d/%04d/%02d", LCLUSTER, LSTRUCT, LHOUSEH);
+      if wlong <> notappl & wlat <> notappl then
+        FileWrite(kmlfile,'<Placemark>');
+        FileWrite(kmlfile,'<Description>');
+        FileWrite(kmlfile, weipc + " " + strip(LADDRESS));
+        FileWrite(kmlfile,'</Description>');
+        FileWrite(kmlfile, '<name>');
+        FileWrite(kmlfile, weipc + " " + strip(LNAME));
+        FileWrite(kmlfile, '</name>');
+        FileWrite(kmlfile, '<styleUrl>#placemark-red </styleUrl>');//#
+        FileWrite(kmlfile,'<Point>');
+        FileWrite(kmlfile,"<coordinates>%5.6f,%5.6f,%5.6f. </coordinates>", wlong, wlat, 0);
+        FileWrite(kmlfile,'</Point>');
+        FileWrite(kmlfile,"</Placemark>");
+      endif;
+    enddo;
+  endfor;
+  filewrite(kmlfile,'</Document>');
+  filewrite(kmlfile,'</kml>'); 
+  close(kmlfile);
+  close(HHLISTING);
+  view(fnkmlfile);
+end;
+
+function export_GPS(clusterNumber);
+  savePointsGeojson(clusterNumber);
+  savePointsKML    (clusterNumber);
+end;
 PROC FL_MENU
 PreProc
 
@@ -487,10 +564,12 @@ PreProc
   utility  = wrkprj + "\Utility";       { directory where auxiliary utilities are stored }
   wrkref   = wrkpii + "\Ref";           { reference directory for clusters, sample and teams files  }
   SampData = wrkpii + "\Arrived";      { store household listing files }
+  MapData  = wrkpii + "\MapData";      { store household listing files }
   work     = wrkpii + "\Work";          { working directory }
   backup = "E:\SAMPDATA";                                 { drive and directory to backup data }
 
   chkdir(SampData);
+  chkdir(MapData);
 
 PostProc
   stop(1);
@@ -604,6 +683,14 @@ postproc
   xfilenum = xcluster + xenumerat;
 
 PROC WFINAL
+onfocus
+  WNUMBER  = notappl;
+  WADDRESS = " ";
+  WCORRECT = notappl;
+  $ = " ";
+  noinput;
+
+postproc
   heading = tr("Central Office Menu, Cluster:") + " " + xcluster;
   if getlanguage() = "EN" then
     action = accept( heading,
@@ -631,8 +718,8 @@ PROC WFINAL
                 { 8} "8 Sauvegarder les données                                    ",
                 { 9} "9 Connecter au serveur                                       ",
                 {10} "S Créer un fichier échantillon de ménages à sélectionner pour l’enquête ",
-                {11} "T Module Cartographie dynamique                              ",
-				{12} "X Quitter (Esc)                                              " );
+                {11} "C Exporter les coordonnées GPS aux formats KML et GeoJson",
+				{11} "X Quitter (Esc)                                              " );
   endif;
   
   if !action | action = 12 then stop(1) endif;
@@ -701,7 +788,7 @@ PROC WFINAL
     SelectHH();
     runpff();
     reenter WFINAL;
-elseif action = 11 then                  { Mapping feature }
-   pickMenu();   
-	 reenter WFINAL;
+  elseif action = 11 then
+    export_GPS(WCLUSTER);
+    reenter WFINAL;
   endif;

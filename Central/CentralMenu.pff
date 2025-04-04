@@ -1,0 +1,25 @@
+﻿[Run Information]
+Version=CSPro 7.7
+AppType=Entry
+
+[DataEntryInit]
+OperatorID=DHS
+StartMode=Add
+FullScreen=Yes
+
+[Files]
+Application=.\CentralMenu.ent
+InputData=|type=None
+CommonStore=.\CentralMenu.db
+
+[ExternalFiles]
+CLUSTERS=..\PII\Ref\clusters.dat
+CONTROL=..\PII\Ref\Control.dat
+INTERV=..\PII\Ref\Interv.dat
+
+[UserFiles]
+ClosedClust=
+fromckid=
+HTMLFile=
+NewClust=
+piffile=
