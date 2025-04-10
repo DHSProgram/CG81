@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.5
+Version=CSPro 8.0
 Name=CLUSTERS_FF
 Label=Clusters
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -13,7 +13,7 @@ File=..\Dicts\Clusters.dcf
 Name=FORM001
 Label=Cluster variables
 Level=1
-Size=819,599
+Size=819,557
   
 Item=YURBRUR
 Item=YSTATE
@@ -26,6 +26,7 @@ Item=YCITY
 Item=YCITYN
 Item=YTOTHH
 Item=YCLUSTER
+Item=YSTRATA
   
 Box=78,203,788,482,Thick
 Box=265,203,266,479,Raised
@@ -63,7 +64,6 @@ Required=Yes
 Name=CLSTREC_FORM
 Label=Cluster variables
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
@@ -71,6 +71,7 @@ Name=YCLUSTER
 Position=482,114,539,134
 Item=YCLUSTER,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -83,6 +84,7 @@ Name=YURBRUR
 Position=354,159,369,179
 Item=YURBRUR,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -95,6 +97,7 @@ Name=YREGION
 Position=298,255,369,275
 Item=YREGION,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -107,6 +110,7 @@ Name=YREGIONN
 Position=406,255,757,275
 Item=YREGIONN,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -115,6 +119,7 @@ Name=YSTATE
 Position=298,308,369,328
 Item=YSTATE,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -127,6 +132,7 @@ Name=YSTATEN
 Position=406,308,757,328
 Item=YSTATEN,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -135,6 +141,7 @@ Name=YDISTRICT
 Position=298,354,369,374
 Item=YDISTRICT,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -147,6 +154,7 @@ Name=YDISTRICTN
 Position=406,354,757,374
 Item=YDISTRICTN,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -155,6 +163,7 @@ Name=YCITY
 Position=298,414,369,434
 Item=YCITY,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -167,6 +176,7 @@ Name=YCITYN
 Position=406,414,757,434
 Item=YCITYN,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -175,11 +185,26 @@ Name=YTOTHH
 Position=298,512,369,532
 Item=YTOTHH,CLUSTERS
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
 Position=110,515,280,531
 Text=Total households in cluster
+ 
+  
+[Field]
+Name=YSTRATA
+Position=294,454,323,474
+Item=YSTRATA,CLUSTERS
+UseEnterKey=Yes
+FieldLabelType=DictionaryLabel
+DataCaptureType=TextBox
+Form=1
+  
+[Text]
+Position=110,457,148,473
+Text=Strata
  
 [EndGroup]
   

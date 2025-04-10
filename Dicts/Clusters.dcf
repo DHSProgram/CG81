@@ -1,112 +1,287 @@
-﻿[Dictionary]
-Version=CSPro 7.5
-Label=Clusters included in the sample|Segmentos incluidos en la muestra
-Name=CLUSTERS
-RecordTypeStart=0
-RecordTypeLen=0
-Positions=Relative
-ZeroFill=No
-DecimalChar=No
-SecurityOptions=E38400514504322B25C5E34B473D1CE2FB3A0319F62986AF148B6323E829D02F
-
-[Languages]
-EN=English
-ES=Español
-
-[Level]
-Label=Cluster level|Nivel segmento
-Name=CLUST_LEVEL
-
-[IdItems]
-
-[Item]
-Label=Cluster number|Numero de segmento
-Name=YCLUSTER
-Start=1
-Len=4
-ZeroFill=Yes
-
-[Record]
-Label=Cluster variables|Variables del segmento
-Name=CLSTREC
-RecordTypeValue=''
-RecordLen=130
-
-[Item]
-Label=Urban/rural|Urbano/rural
-Name=YURBRUR
-Start=5
-Len=1
-
-[ValueSet]
-Label=Urban/rural|Urbano/rural
-Name=YURBRUR_VS1
-Value=1;Urban|Urbano
-Value=2;Rural|Rural
-
-[Item]
-Label=Region code|Codigo de region
-Name=YREGION
-Start=6
-Len=5
-
-[ValueSet]
-Label=Region code|Codigo de region
-Name=YREGION_VS1
-Value=1;Region 1|Region 1
-Value=2;Region 2|Region 2
-Value=3;Region 3|Region 3
-Value=4;Region 4|Region 4
-Value=5;Region 5|Region 5
-
-[Item]
-Label=Region name|Nombre de la region
-Name=YREGIONN
-Start=11
-Len=25
-DataType=Alpha
-
-[Item]
-Label=BASE LOCALITY code|Codigo de departamento
-Name=YSTATE
-Start=36
-Len=5
-
-[Item]
-Label=BASE LOCALITY name|Nombre de departamento
-Name=YSTATEN
-Start=41
-Len=25
-DataType=Alpha
-
-[Item]
-Label=District code|Codigo de distrito
-Name=YDISTRICT
-Start=66
-Len=5
-
-[Item]
-Label=District name|Nombre de distrito
-Name=YDISTRICTN
-Start=71
-Len=25
-DataType=Alpha
-
-[Item]
-Label=City/municipality code|Codigo de municipio
-Name=YCITY
-Start=96
-Len=5
-
-[Item]
-Label=City/municipality name|Nombre de municipio
-Name=YCITYN
-Start=101
-Len=25
-DataType=Alpha
-
-[Item]
-Label=Total HH in cluster (used for sampling purposes)
-Name=YTOTHH
-Start=126
-Len=5
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "CLUSTERS", 
+  "languages": [
+    {
+      "name": "EN", 
+      "label": "English"
+    }, 
+    {
+      "name": "ES", 
+      "label": "Español"
+    }
+  ], 
+  "labels": [
+    {
+      "text": "Clusters included in the sample", 
+      "language": "EN"
+    }, 
+    {
+      "text": "Segmentos incluidos en la muestra", 
+      "language": "ES"
+    }
+  ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "e38400514504322b25c5e34b473d1ce2fb3a0319f62986af148b6323e829d02f"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 0, 
+    "length": 0
+  }, 
+  "defaults": {
+    "decimalMark": false, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "CLUST_LEVEL", 
+      "labels": [
+        {
+          "text": "Cluster level", 
+          "language": "EN"
+        }, 
+        {
+          "text": "Nivel segmento", 
+          "language": "ES"
+        }
+      ], 
+      "ids": {
+        "items": [
+          {
+            "name": "YCLUSTER", 
+            "labels": [
+              {
+                "text": "Cluster number", 
+                "language": "EN"
+              }, 
+              {
+                "text": "Numero de segmento", 
+                "language": "ES"
+              }
+            ], 
+            "contentType": "numeric", 
+            "start": 1, 
+            "length": 4, 
+            "zeroFill": true
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "CLSTREC", 
+          "labels": [
+            {
+              "text": "Cluster variables", 
+              "language": "EN"
+            }, 
+            {
+              "text": "Variables del segmento", 
+              "language": "ES"
+            }
+          ], 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "YURBRUR", 
+              "labels": [
+                {
+                  "text": "Urban/rural", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Urbano/rural", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "YURBRUR_VS1", 
+                  "labels": [
+                    {
+                      "text": "Urban/rural", 
+                      "language": "EN"
+                    }, 
+                    {
+                      "text": "Urbano/rural", 
+                      "language": "ES"
+                    }
+                  ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Urban", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Urbano", 
+                          "language": "ES"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Rural" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "YREGION", 
+              "labels": [
+                {
+                  "text": "Region code", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Codigo de region", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "YREGIONN", 
+              "labels": [
+                {
+                  "text": "Region name", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Nombre de la region", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "alpha", 
+              "length": 25
+            }, 
+            {
+              "name": "YSTATE", 
+              "labels": [
+                {
+                  "text": "BASE LOCALITY code", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Codigo de departamento", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "YSTATEN", 
+              "labels": [
+                {
+                  "text": "BASE LOCALITY name", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Nombre de departamento", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "alpha", 
+              "length": 25
+            }, 
+            {
+              "name": "YDISTRICT", 
+              "labels": [
+                {
+                  "text": "District code", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Codigo de distrito", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "YDISTRICTN", 
+              "labels": [
+                {
+                  "text": "District name", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Nombre de distrito", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "alpha", 
+              "length": 25
+            }, 
+            {
+              "name": "YCITY", 
+              "labels": [
+                {
+                  "text": "City/municipality code", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Codigo de municipio", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "YCITYN", 
+              "labels": [
+                {
+                  "text": "City/municipality name", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Nombre de municipio", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "alpha", 
+              "length": 25
+            }, 
+            {
+              "name": "YTOTHH", 
+              "labels": [ { "text": "Total HH in cluster (used for sampling purposes)" } ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "YSTRATA", 
+              "labels": [ { "text": "Strata" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
