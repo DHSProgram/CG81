@@ -743,7 +743,7 @@
 
     // pass this input to the questionnaire view
     CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
-               inputData := @object questionnaireViewInput;
+               inputData := @object questionnaireViewInput);
   #endif
 			   
   end;
