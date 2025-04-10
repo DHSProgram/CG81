@@ -1,6 +1,6 @@
 ﻿---
 fileType: Question Text
-version: CSPro 7.7
+version: CSPro 8.0
 languages:
   - name: EN
     label: English
@@ -82,9 +82,9 @@ questions:
             <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press the Enter key and Select an option from the list to be displayed&#160;</span></p>
             <p>&#160;</p>
           FR: |
-            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU FOR HH LISITING SYSTEM&#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~, Enumerator ~~WINTNUM~~-~~INAME~~&#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Appuyez sur une touche pour afficher le menu et en sélectionnez une option&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU FOR HH LISITING SYSTEM&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~, Enumerator ~~WINTNUM~~-~~INAME~~&nbsp;</span></p><p style="text-align:center;"><b style="text-align: start;"><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">D</span><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">É</span><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">PARTEMENT</span></b><span style="text-align: start; font-size: 21px;"><span style="font-size: 18px;"><b>:</b>&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 18px;">~~WREGIONN~~</span><span style="font-weight: bold; font-size: 18px;">&nbsp;</span></span><span style="-webkit-text-stroke-color: rgb(0, 0, 0); white-space-collapse: preserve; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; -webkit-text-fill-color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0);"><b>COMMUNE/DISTRICT</b></span><span style="text-align: start; font-size: 21px;"><span style="font-size: 18px;"><b>:&nbsp;</b></span><span style="color: rgb(255, 0, 0); font-size: 18px;">~~WSTATEN~~</span><span style="font-weight: bold; font-size: 18px;">&nbsp;</span></span><span style="-webkit-text-stroke-color: rgb(0, 0, 0); white-space-collapse: preserve; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; -webkit-text-fill-color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0);"><b>LOCALITÉ</b></span><span style="text-align: start; font-size: 21px;"><span style="font-size: 18px;"><b>:&nbsp;</b></span><span style="color: rgb(255, 0, 0); font-size: 18px;">~~WDISTRICTN~~&nbsp;</span></span><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;"></span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Appuyez sur une touche pour afficher le menu et en sélectionnez une option&nbsp;</span></p>
         helpText:
           EN: |
             
