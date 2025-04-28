@@ -51,8 +51,8 @@ DataType=Numeric
 [ValueSet]
 Label=Auxiliary to display options|Auxiliar pour afficher les options
 Name=LAUXILIAR_VS1
-Value=1;Add a structure or a household|Ajouter une structure ou un ménage
-Value=2;Insert/delete structures or households|Insérer/supprimer des structures ou des ménages
+Value=1;Add a structure or a household|Ajouter une parcelle ou un ménage
+Value=2;Insert/delete structures or households|Insérer/supprimer des parcelles ou des ménages
 Value=9;Exit (cancel)|Sortir (annuler)
 
 [Item]
@@ -151,7 +151,7 @@ Name=RECORD2
 RecordTypeValue='2'
 Required=No
 MaxRecords=500
-RecordLen=201
+RecordLen=221
 
 [Item]
 Label=Introduction|Introduction
@@ -163,23 +163,23 @@ DataType=Alpha
 [ValueSet]
 Label=Introduction|Introduction
 Name=LINTRO_VS1
-Value=1;Add new structure|Ajouter une nouvelle structure
-Value=2;Add a household to previous structure|Ajouter un ménage dans la structure actuelle
+Value=1;Add new structure|Ajouter une nouvelle parcelle
+Value=2;Add a household to previous structure|Ajouter un ménage dans la parcelle actuelle
 Value=3;Delete current entry|Supprimer l'entrée courante
-Value=4;Insert a structure|Insérer une structure
-Value=5;Insert a household to previous structure|Insérer un ménage à une structure précédante
+Value=4;Insert a structure|Insérer une parcelle
+Value=5;Insert a household to previous parcelle|Insérer un ménage à une parcelle précédante
 Value=8;No more changes/temporary stop HH listing|Plus de changements/ Arrêt temporaire de listing
 Value=9;Finalize listing for cluster|Finaliser le dénombrement de la grappe
 
 [Item]
-Label=Is this a true household|Type de structure
+Label=Is this a true household|Type de ménage
 Name=LTRUEHH
 Start=11
 Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Is this a true household|Type de structure
+Label=Is this a true household|Type de ménage
 Name=LTRUEHH_VS1
 Value=1;Household|Ménage
 Value=2;Other|Autre
@@ -192,44 +192,60 @@ Len=5
 DataType=Numeric
 
 [Item]
-Label=Structure number|Numero Structure
+Label=Structure number|Numero parcelle
 Name=LSTRUCT
 Start=17
 Len=3
 DataType=Numeric
 
 [Item]
-Label=Household within structure|Menage a l'interieure structure
+Label=Household within structure|Menage a l'interieure parcelle
 Name=LHOUSEH
 Start=20
 Len=3
 DataType=Numeric
 
 [Item]
-Label=Name of household head|Prenom et Nom du chef de menage
+Label=Name of head of household
 Name=LNAME
 Start=23
-Len=30
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Family name of head of household
+Name=LNAME2
+Start=23
+Len=25
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=First name of head of household
+Name=LNAME1
+Start=48
+Len=25
+ItemType=SubItem
 DataType=Alpha
 
 [Item]
 Label=Household address|Adresse du menage
 Name=LADDRESS
-Start=53
+Start=73
 Len=50
 DataType=Alpha
 
 [Item]
 Label=Observations/Occupancy status|Observations/Occupation
 Name=LNOTES
-Start=103
+Start=123
 Len=50
 DataType=Alpha
 
 [Item]
 Label=More households|Menage supplementaire
 Name=LMORE
-Start=153
+Start=173
 Len=1
 DataType=Numeric
 
@@ -242,7 +258,7 @@ Value=2;No|Non
 [Item]
 Label=Household selected for the final sample|Menage selectionne pour l'echantillon final
 Name=LSELECT
-Start=154
+Start=174
 Len=1
 DataType=Numeric
 
@@ -255,7 +271,7 @@ Value=1;Yes|Oui
 [Item]
 Label=Introduction to capture GPS coordinates|Introduction pour GPS coordinateurs
 Name=LINTGPS
-Start=155
+Start=175
 Len=1
 DataType=Numeric
 
@@ -270,7 +286,7 @@ Value=9;Replace existing HH coordinates|Remplacer les coordonnées existantes
 [Item]
 Label=Latitude in degrees|Latitude en degrees
 Name=LLATITUDE
-Start=156
+Start=176
 Len=10
 DataType=Numeric
 Decimal=6
@@ -279,7 +295,7 @@ DecimalChar=Yes
 [Item]
 Label=Pole north-south for latitude
 Name=LLATPOLE
-Start=166
+Start=186
 Len=1
 DataType=Alpha
 
@@ -292,7 +308,7 @@ Value='S';South
 [Item]
 Label=Longitude in degrees|Longitude en degrees
 Name=LLONGITUDE
-Start=167
+Start=187
 Len=10
 DataType=Numeric
 Decimal=6
@@ -301,7 +317,7 @@ DecimalChar=Yes
 [Item]
 Label=East-west longitude
 Name=LLNGPOLE
-Start=177
+Start=197
 Len=1
 DataType=Alpha
 
@@ -314,40 +330,27 @@ Value='W';West
 [Item]
 Label=Altitude in meters
 Name=LALTITUDE
-Start=178
+Start=198
 Len=5
 DataType=Numeric
 
 [Item]
-Label=Type of structure|Utilisation structure
+Label=Type of structure|Utilisation parcelle
 Name=LSTRUCTT
-Start=183
+Start=203
 Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Type of structure|Utilisation structure
+Label=Type of structure|Utilisation parcelle
 Name=LSTRUCTT_VS1
-Value=1;Mainly residential                             |Usage résidentiel principalement
-Value=2;School/university                              |Etablissement scolaire/universitaire
-Value=3;Health facility                                |Formation sanitaire
-Value=4;Shop/Commerce                                  |Boutique/Commerce
-Value=5;Market                                         |Marché
-Value=6;Church/Temple                                  |Eglise/Temple
-Value=7;Mosq                                           |Mosquée
-Value=8;Community home                                 |Foyer/Maison communautaire
-Value=9;Structure for lodging (Inn/Hotel)              |Etablissement d’hébergement (Auberge/Hôtel)
-Value=10;Other administrative building (to be specified)|Autre bâtiment administratif (à préciser)
-Value=11;Empty                                          |Vide
-Value=12;Under construction                             |En construction
-Value=96;Other (to be specified)                        |Autre (à préciser)
-
-
+Value=1;Parcelle habitée|Parcelle habitée
+Value=2;Parcelle non habité|Parcelle non habité
 
 [Item]
 Label=Type of structure|Type de structure
 Name=LSTYPE
-Start=185
+Start=205
 Len=1
 DataType=Numeric
 
@@ -362,21 +365,21 @@ Value=4;Compound/Sare                            |Concession/Saré
 [Item]
 Label=Household size|Taille menage
 Name=LSIZE
-Start=186
+Start=206
 Len=2
 DataType=Numeric
 
 [Item]
 Label=LCONTACT|Numero de telephone 1
 Name=LPHONE1
-Start=188
+Start=208
 Len=10
 DataType=Alpha
 
 [Item]
 Label=Occupation status|Occupation
 Name=LOCCUP
-Start=198
+Start=218
 Len=1
 DataType=Numeric
 
@@ -389,6 +392,6 @@ Value=2;Not occupied|Pas occupé
 [Item]
 Label=Satellites/quality of GPS
 Name=LACCURACY
-Start=199
+Start=219
 Len=3
 DataType=Numeric

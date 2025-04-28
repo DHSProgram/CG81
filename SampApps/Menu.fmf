@@ -12,7 +12,7 @@ File=..\Dicts\Menu.dcf
 [Form]
 Name=WFSEC01
 Label=WFSEC01
-QuestionTextHeight=117
+QuestionTextHeight=334
 Level=1
 Size=932,295
   
@@ -32,8 +32,8 @@ Box=13,129,903,236,Etched
   
 [Text]
 Name=FT000000
-Position=88,21,639,44
-Text=Troisième Enquête Démographique et de Santé au Congo 
+Position=88,21,633,44
+Text=Troisième Enquête Démographique et de Santé au Congo
 Form=1
 Font=-019 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Tahoma
  
@@ -236,7 +236,7 @@ Position=371,252,384,270
 Item=WFINAL,MENU_DICT
 Verify=No
 UpperCase=Yes
-DataCaptureType=TextBox
+DataCaptureType=RadioButton
 Form=1
   
 [EndGroup]

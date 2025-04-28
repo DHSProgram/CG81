@@ -53,7 +53,7 @@ preproc
 
   while loadcase( HHLISTING ) do
     for i in RECORD2 do
-//+      if !LINTRO in "8","9" then
+      if !LINTRO in "8","9" then
         { populates the elements of a row based on household information }
         CellValues(1) = edit("999", i);
         CellValues(2) = edit("999", LSTRUCT);
@@ -84,11 +84,11 @@ preproc
           CellValues(8) = maketext("%4.6f-%4.6f", LLATITUDE, LLONGITUDE);
           CellValues(9) = edit("99", LACCURACY);
         else
-          CellValues(7) = tr("Not read");
-          CellValues(8) = "BLANK";
+          CellValues(8) = tr("Not read");
+          CellValues(9) = "BLANK";
         endif;
-        HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
-//+      endif;  if !LINTRO in "8","9" then
+        HTML_OneRow( CellValues, 9 );   // generates the HTML script for a row with relevant household data
+      endif; // if !LINTRO in "8","9" then
     enddo;
     HTML_EndTable();
     { heading for report with FileWrite command }

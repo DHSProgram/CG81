@@ -14,7 +14,7 @@ Name=FORM000
 Label=HHListing questionnaire
 QuestionTextHeight=448
 Level=1
-Size=1950,1381
+Size=1961,1381
   
 Item=LCLUSTER
 Item=LINTNUM
@@ -53,6 +53,7 @@ Max=1
 Name=LCLUSTER
 Position=66,31,123,51
 Item=LCLUSTER,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
@@ -67,6 +68,7 @@ Text=Grappe
 Name=LINTNUM
 Position=226,31,283,51
 Item=LINTNUM,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
@@ -81,7 +83,9 @@ Text=Enumérator
 Name=LREGION
 Position=379,32,730,52
 Item=LREGION,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
 Form=1
   
@@ -94,7 +98,9 @@ Text=Province
 Name=LSTATE
 Position=870,33,1221,53
 Item=LSTATE,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
 Form=1
   
@@ -107,7 +113,9 @@ Text=Ville/Territoire
 Name=LDISTRICT
 Position=11,85,362,105
 Item=LDISTRICT,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
 Form=1
   
@@ -120,7 +128,9 @@ Text=Commune/Secteur
 Name=LCITY
 Position=383,85,734,105
 Item=LCITY,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
 Form=1
   
@@ -133,6 +143,7 @@ Text=Quartier/Village
 Name=LSEGNUM
 Position=800,85,829,105
 Item=LSEGNUM,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
 Form=1
@@ -146,6 +157,7 @@ Text=Num. Segment
 Name=LSEGHH
 Position=873,85,930,105
 Item=LSEGHH,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
 Form=1
@@ -159,6 +171,7 @@ Text=Ménages
 Name=LDATEFIN
 Position=957,85,1070,105
 Item=LDATEFIN,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
 Form=1
@@ -172,6 +185,7 @@ Text=Fermée
 Name=LAUXILIAR
 Position=1111,85,1126,105
 Item=LAUXILIAR,HHLISTING
+UseEnterKey=Yes
 DataCaptureType=RadioButton
 Form=1
   
@@ -188,7 +202,7 @@ Required=No
 Type=Record
 TypeName=RECORD2
 Max=500
-DisplaySize=3,28,1928,1356
+DisplaySize=6,28,1936,1356
 Orientation=Horizontal
 FieldRowHeight=53
 HeadingRowHeight=40
@@ -2710,6 +2724,7 @@ HorizontalAlignment=Center
 Name=LINTRO
 Position=6,0,21,20
 Item=LINTRO,HHLISTING
+UseEnterKey=Yes
 UpperCase=Yes
 DataCaptureType=RadioButton
   
@@ -2731,6 +2746,7 @@ HorizontalAlignment=Center
 Name=LADDRESS
 Position=0,0,701,20
 Item=LADDRESS,HHLISTING
+UseEnterKey=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
   
@@ -2794,6 +2810,7 @@ HorizontalAlignment=Center
 Name=LINTGPS
 Position=68,0,83,20
 Item=LINTGPS,HHLISTING
+UseEnterKey=Yes
 DataCaptureType=RadioButton
   
 [Text]
@@ -2814,6 +2831,7 @@ HorizontalAlignment=Center
 Name=LALTITUDE
 Position=73,0,144,20
 Item=LALTITUDE,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
@@ -2826,6 +2844,7 @@ Text=LALTITUDE
 Name=LLATITUDE
 Position=3,24,144,44
 Item=LLATITUDE,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
   
@@ -2837,7 +2856,9 @@ Text=LLATITUDE
 Name=LLATPOLE
 Position=129,48,144,68
 Item=LLATPOLE,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
   
 [Text]
@@ -2848,6 +2869,7 @@ Text=LLATPOLE
 Name=LLONGITUDE
 Position=3,72,144,92
 Item=LLONGITUDE,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
   
@@ -2859,7 +2881,9 @@ Text=LLONGITUDE
 Name=LLNGPOLE
 Position=129,96,144,116
 Item=LLNGPOLE,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
   
 [Text]
@@ -2880,11 +2904,56 @@ HorizontalAlignment=Center
 Name=LTRUEHH
 Position=7,0,22,20
 Item=LTRUEHH,HHLISTING
+UseEnterKey=Yes
 DataCaptureType=RadioButton
   
 [Text]
 Text=Vrai Mén
 HorizontalAlignment=Center
+ 
+[EndColumn]
+  
+[Column]
+Width=359
+  
+[HeaderText]
+Position=248,32,359,88
+Text=Family name of head of household
+ 
+[Field]
+Name=LNAME2
+Position=0,0,351,20
+Item=LNAME2,HHLISTING
+UseEnterKey=Yes
+UpperCase=Yes
+FieldLabelType=DictionaryLabel
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=Family name of head of household
+ 
+[EndColumn]
+  
+[Column]
+Width=359
+  
+[HeaderText]
+Position=264,32,359,88
+Text=First name of head of household
+ 
+[Field]
+Name=LNAME1
+Position=0,0,351,20
+Item=LNAME1,HHLISTING
+UseEnterKey=Yes
+UpperCase=Yes
+FieldLabelType=DictionaryLabel
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=First name of head of household
  
 [EndColumn]
   
@@ -2900,6 +2969,7 @@ HorizontalAlignment=Center
 Name=LNUMBER
 Position=0,0,71,20
 Item=LNUMBER,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
@@ -2922,6 +2992,7 @@ HorizontalAlignment=Center
 Name=LSTRUCT
 Position=0,1,43,21
 Item=LSTRUCT,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
   
@@ -2933,32 +3004,13 @@ Text=LSTRUCT
 Name=LHOUSEH
 Position=46,1,89,21
 Item=LHOUSEH,HHLISTING
+UseEnterKey=Yes
 Protected=Yes
 DataCaptureType=TextBox
   
 [Text]
 Position=0,0,56,16
 Text=LHOUSE
- 
-[EndColumn]
-  
-[Column]
-Width=429
-  
-[HeaderText]
-Position=188,64,241,88
-Text=YNAME
-HorizontalAlignment=Center
- 
-[Field]
-Name=LNAME
-Position=0,0,421,20
-Item=LNAME,HHLISTING
-UpperCase=Yes
-DataCaptureType=TextBox
-  
-[Text]
-Text=YNAME
  
 [EndColumn]
   
@@ -2973,6 +3025,8 @@ Text=LPHONE1
 Name=LPHONE1
 Position=0,0,141,20
 Item=LPHONE1,HHLISTING
+UseEnterKey=Yes
+UpperCase=Yes
 DataCaptureType=TextBox
   
 [Text]
@@ -3009,6 +3063,7 @@ HorizontalAlignment=Center
 Name=LNOTES
 Position=0,0,350,108
 Item=LNOTES,HHLISTING
+UseEnterKey=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
 AllowMultiLine=Yes

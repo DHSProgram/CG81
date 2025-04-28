@@ -43,6 +43,7 @@ PROC GLOBAL
   array intvwsex(300);                  {                       - sex  }
   array string intvwname(300);          {                       - name }
   valueset fieldworkers;
+  valueset codes;
 
   function ReadIfssLog( string logFileName )
     FILE logfile;
@@ -195,7 +196,7 @@ PROC GLOBAL
     FileWrite( piffile, "Listing="     + SampData + "\L" + xfilenum + ".lst" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "Clusters="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "Clusters="    + wrkref + "\LClusters.csdb" );
     FileWrite( piffile, "GPS_DCT="     + sampData + "\H" + xfilenum + ".dat" );
     FileWrite( piffile, "SEGMENT_DCT=" + sampData + "\S" + xfilenum + ".dat" );
 //+    FileWrite( piffile, "QCListing=" + sampData + "\C" + xfilenum + ".dat" );
@@ -225,7 +226,7 @@ PROC GLOBAL
     FileWrite( piffile, "Listing="     + SampData + "\LI" + xfilenum + ".lst" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "Clusters="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "Clusters="    + wrkref + "\LClusters.csdb" );
     FileWrite( piffile, "Interv=" + wrkref + "\Interv.dat" );
 
     FileWrite( piffile, "[Parameters]" );
@@ -274,7 +275,7 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="  + Entry + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "Clusters="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "Clusters="    + wrkref + "\LClusters.csdb" );
     FileWrite( piffile, "HHLISTING="   + SampData + "\L" + xfilenum + ".dat" );
     FileWrite( piffile, "INTERV"     + sampData + "\G" + xfilenum + ".dat" );
     FileWrite( piffile, "SEGMENT_DCT=" + sampData + "\S" + xfilenum + ".dat" );
@@ -460,14 +461,6 @@ PreProc
     utility   = "c:\CD81L\Utility";    { all utilities used by the system }
     upgrades  = wrkprj + "\Upgrades";   { place where upgrades for interviewers are stored by IFSS }
   endif;
-  { Check that there are not two concurrent sessions of CSPro loaded at the same time }
-  if !SameSession then
-    if MoreThanOne then
-      errmsg( 150 );
-      x = accept( tr("Reset"), tr("Yes"), tr("No") );
-      if x = 2 then stop(1) endif;
-    endif;
-  endif;        
   SaveSetting( "Justone", "1" );
 
 PostProc
@@ -547,7 +540,7 @@ postproc
     if SyncData_CSW() then
       savesetting("LastUpLoad", edit("99999999",( sysdate("YYYYMMDD") )));
       // restart Supervisor Menu to check for updates !!!
-      AppName = "../SUPMENU";
+      AppName = "./SampMenu";
       runpffS();
     endif;
   endif;
@@ -561,32 +554,17 @@ PROC WFINAL
 onfocus
   WNUMBER  = notappl;
   SaveSetting( "SampSession", "0" );
-  // lines below added so menu comes up automatically
-  $ = " ";
-  noinput;
-postproc
-  { set up string to display version numbers at top of menu } 
-  heading = tr("Cluster") + ": " + xcluster + " " + tr("Enumerator") + ": " + edit("9999",WINTNUM) + "-" + IntName + maketext(" Ver:%s ", sysver);
-  if getlanguage() = "EN" then
-    action = accept( heading,
-                     "1 Register household listing in cluster ",
-                     "2 Implement cluster segmentation        ",
-                     "3 Report of households listed in cluster",
-                     "--#--******--#--******---#--******--#--",
-                     "5 Change cluster number",
-                     "6 Transfer data to central office",
-                     "E Exit system (Esc)" );
-  elseif getlanguage() = "FR" then
-    action = accept( heading,
-                     "1 Enregister la liste de ménage dans la grappe",
-                     "2 Faire une segmentation de la grappe  ",
-                     "3 Afficher les ménages dénombrés dans la grappe",
-                     "-----******-----******------******--------",
-                     "5 Changer le numéro de grappe",
-                     "6 Transfer les données au bureau central",
-                     "S Sortir du système (Esc)" );
-  endif;
+  codes.clear();
+  codes.add("1 Enregister la liste de ménage dans la grappe",1);
+  codes.add("2 Faire une segmentation de la grappe  ",2);
+  codes.add("3 Afficher les ménages dénombrés dans la grappe",3);
+  codes.add("5 Changer le numéro de grappe",5);
+  codes.add("6 Transfer les données au bureau central",6);
+  codes.add("S Sortir du système",7 );
+  setvalueset($, codes);
 
+postproc
+  action = $;
   if !action | action = 7 then
     SaveSetting( "Justone", "0" );
     SaveSetting( "SampSession", "0" );

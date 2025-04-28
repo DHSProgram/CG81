@@ -66,14 +66,12 @@ ZeroFill=Yes
 [ValueSet]
 Label=Cluster number|Numero de segmento
 Name=WCLUSTER_VS1
-Value=1:999;Valid clusters|Segmentos validos
 
 [Item]
 Label=Select an option|Seleccionar una opcion
 Name=WFINAL
 Start=20
 Len=1
-DataType=Alpha
 
 [Item]
 Label=Urban/rural|Urbano/rural|Urbain/rural

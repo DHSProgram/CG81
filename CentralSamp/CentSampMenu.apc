@@ -509,7 +509,7 @@ function savePointsKML(clusterNumber);
   forcase HHLISTING where LCLUSTER =clusterNumber do 
     //each point
     for i in HHLISTING.RECORD2 do
-      errmsg("i=%d, LLATITUDE=%d", i, LLATITUDE);
+      // errmsg("i=%d, LLATITUDE=%d", i, LLATITUDE);
       wlong = LLONGITUDE;
       wlat  = LLATITUDE;
       string weipc =  maketext("%03d/%04d/%02d", LCLUSTER, LSTRUCT, LHOUSEH);

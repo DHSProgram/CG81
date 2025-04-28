@@ -198,3 +198,4 @@ Language = FR
 60080 E Le format du numéro de téléphone est incorrect.Le format attendu est yyzzxxxxxx sans espaces ni caractères non numériques. N'incluez pas le code du pays
 61000 E Il n'y a pas de coordonnées GPS valides pour grappe %04d
 61005 W Le type de structure enregistré par les agents dans le dénombrement %s:%d est différent de celui enregistré dans la vérification QC : %s (%1d)
+89991 E Seuls les caractères alphabétiques A à Z peuvent être saisis dans ce champ, caractère non alphabétique [%1s] trouvé

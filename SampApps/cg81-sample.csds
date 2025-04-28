@@ -5,10 +5,10 @@
   "description": "",
   "files": [
     {
-      "path": "..\\PII\\Ref\\Clusters.dat"
+      "path": "..\\PII\\Ref\\LCLUSTERS.csdb"
     },
     {
-      "path": "..\\PII\\Ref\\Interv.dat"
+      "path": "..\\PII\\Ref\\LINTERV.csdb"
     },
     {
       "path": ".\\ListHH.ent"
@@ -34,7 +34,8 @@
   ],
   "dictionaries": [
     {
-      "path": "..\\Dicts\\Clusters.dcf"
+      "path": "..\\Dicts\\Clusters.dcf",
+      "uploadForSync": true
     },
     {
       "path": "..\\dicts\\Cnull.dcf"
@@ -46,15 +47,14 @@
       "path": "..\\Dicts\\HHListing.dcf"
     },
     {
-      "path": "..\\Dicts\\Interv.dcf"
-    },
-    {
-      "path": "..\\Dicts\\Menu.dcf",
+      "path": "..\\Dicts\\Interv.dcf",
       "uploadForSync": true
     },
     {
-      "path": "..\\Dicts\\SAMPINF.dcf",
-      "uploadForSync": true
+      "path": "..\\Dicts\\Menu.dcf"
+    },
+    {
+      "path": "..\\Dicts\\SAMPINF.dcf"
     },
     {
       "path": "..\\Dicts\\Segment.dcf"

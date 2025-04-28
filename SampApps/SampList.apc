@@ -23,6 +23,7 @@ PROC GLOBAL
   alpha(1)   type;
   numeric qccheck; // flag to control whether qc listing (qccheck=1) or original listing (qccheck=0)
   numeric listidx; // index for qc comparison file !!!
+  numeric waccuracy;
 
   valueset string modvs;  // modify valuesets fo LINTRO
   valueset modGPSvs;  // modify valuesets for LINTGPS
@@ -302,10 +303,18 @@ end
     showarray( tr("Households listed"), hhlist, i,
         title( tr("Seq.No"), tr("Structure"), tr("HH in Struct"), tr("Is HH"), tr("Name of Head")));
   end;
-
-
-
-
+  
+  function string check_alpha (string alpharesp);
+    string alphalst = "- ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    { Check that response is alphabetic}
+    check_alpha = "";
+    do numeric chr = 1 until chr > length(alpharesp)
+      if !pos(alpharesp[chr:1], alphalst) then
+        check_alpha = alpharesp[chr:1];
+        break;
+      endif;
+    enddo;
+  end;
 
 PROC HHLISTING_FF
 preproc
@@ -592,7 +601,12 @@ preproc
     noinput;
   endif;
 PROC LINTGPS
+preproc
+  if LSTRUCTT <> 1 then
+    skip to LTRUEHH
+  endif;	
 onfocus
+
   modGPSvs = LINTGPS_VS1;
   // remove the 1st value if is 1st line or is a structure
   if LINTRO = "1" | curocc() = 1 then
@@ -604,6 +618,11 @@ onfocus
   endif;
   modGPSvs.sort(by code);
   setvalueset( $, modGPSvs );
+  if LINTRO = "2" & curocc () > 1 then   // set accuracy of previous measurement for display if multiple households !!
+    waccuracy = LACCURACY(curocc()-1);
+  endif;
+  
+  
 postproc
   n = curocc();
   { consistency rules }
@@ -650,10 +669,41 @@ postproc
   endif;
 
 PROC LTRUEHH
+preproc
+   if LSTRUCTT <> 1 then
+     $ = 2;
+     noinput;
+   endif;
 postproc
   if $ <> 1 then
     skip to LSTRUCT
   endif;
+
+PROC LNAME2
+preproc
+  if LTRUEHH <> 1 then
+    skip to LNOTES
+  endif;
+
+
+postproc
+  if !length( strip($) ) then
+    errmsg( 60031 );
+    reenter;
+  elseif length(check_alpha($)) then
+    errmsg( 89991, check_alpha($) );
+    reenter;
+  endif;
+
+PROC LNAME1
+  if !length( strip($) ) then
+    errmsg( 60031 );
+    reenter;
+  elseif length(check_alpha($)) then
+    errmsg( 89991, check_alpha($) );
+    reenter;
+  endif;
+
 
 PROC LNUMBER
 preproc
@@ -690,19 +740,6 @@ preproc
   endif;
 onfocus
 weipc =  maketext("EDSIII: %04d / %03d/ %02d", LCLUSTER, LSTRUCT, visualvalue($));
-
-PROC LNAME
-preproc
-  if LTRUEHH <> 1 then
-    skip to LNOTES
-  endif;
-
-postproc
-  if !length( strip($) ) then
-    errmsg( 60031 );
-  endif;
-
-
 
 PROC LPHONE1
 preproc
@@ -788,7 +825,7 @@ preproc
     endif;
    	GALTITUDE  = gps( altitude );
     GSATELLIT = gps( satellites );	  { no. of satellites, at least 3-4 is recommended }
-    GACCURACY = gps( accuracy );	    { precision level, 1 is the best possible and 50 the least accurate }
+    GACCURACY = low(50,gps( accuracy ));	    { precision level, 1 is the best possible and 50 the least accurate }
   else
     errmsg( 60052 );
     reenter GINTRO;

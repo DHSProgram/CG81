@@ -1,92 +1,28 @@
-{
-  "software": "CSPro", 
-  "version": 8.0, 
-  "fileType": "application", 
-  "type": "entry", 
-  "name": "SAMPMENU", 
-  "label": "SAMPMENU", 
-  "dictionaries": [
-    {
-      "type": "input", 
-      "path": "../Dicts/Menu.dcf", 
-      "parent": "Menu.fmf"
-    }, 
-    {
-      "type": "external", 
-      "path": "../Dicts/Clusters.dcf"
-    }, 
-    {
-      "type": "external", 
-      "path": "../Dicts/Interv.dcf"
-    }, 
-    {
-      "type": "external", 
-      "path": "../Dicts/HHListing.dcf"
-    }
-  ], 
-  "forms": [
-    "Menu.fmf"
-  ], 
-  "questionText": [
-    "SampMenu.qsf"
-  ], 
-  "code": [
-    {
-      "type": "main", 
-      "path": "SampMenu.apc"
-    }, 
-    {
-      "type": "external", 
-      "path": "../Library/SyncCSWeb.apc"
-    }
-  ], 
-  "messages": [
-    "SampMenu.mgf"
-  ], 
-  "logicSettings": {
-    "version": 2.0, 
-    "caseSensitive": {
-      "symbols": false
-    }, 
-    "actionInvoker": {
-      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
-      "convertResultsForLogic": true
-    }
-  }, 
-  "properties": {
-    "askOperatorId": false, 
-    "autoAdvanceOnSelection": false, 
-    "caseTree": "off", 
-    "centerForms": false, 
-    "createListing": true, 
-    "createLog": true, 
-    "decimalMark": "dot", 
-    "displayCodesAlongsideLabels": false, 
-    "notes": {
-      "delete": "all", 
-      "edit": "all"
-    }, 
-    "partialSave": {
-      "operatorEnabled": false
-    }, 
-    "showEndCaseMessage": false, 
-    "showOnlyDiscreteValuesInComboBoxes": false, 
-    "showFieldLabels": true, 
-    "showErrorMessageNumbers": true, 
-    "showQuestionText": true, 
-    "showRefusals": true, 
-    "verify": {
-      "frequency": 1, 
-      "start": 1
-    }, 
-    "htmlDialogs": true, 
-    "paradata": {
-      "collection": "none", 
-      "recordCoordinates": false, 
-      "recordInitialPropertyValues": false, 
-      "recordIteratorLoadCases": false, 
-      "recordValues": false
-    }, 
-    "useHtmlComponentsInsteadOfNativeVersions": false
-  }
-}
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=SAMPMENU
+Name=SAMPMENU
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+CAPI=Yes
+CaseTree=Never
+AutoAdvanceOnSelection=Yes
+DisplayCodesAlongsideLabels=Yes
+ComboBoxShowOnlyDiscreteValues=Yes
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\Interv.dcf
+[AppCode]
+File=.\SampMenu.apc
+Include=..\Library\SyncCSWeb.apc
+[Message]
+File=.\SampMenu.mgf
+[Help]
+File=.\SampMenu.qsf
+[Forms]
+File=.\Menu.fmf
+[Dictionary Types]
+Dict-Type=..\Dicts\Menu.dcf,Input,.\Menu.fmf
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\Interv.dcf,External

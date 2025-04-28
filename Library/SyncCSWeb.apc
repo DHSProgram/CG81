@@ -4,13 +4,20 @@ string CSWebSurvey = "/CG81/";
 
   {Global CSWeb sync function to be used by the enumerator listing applications}
  function SyncData_CSW() {GV: I modified previous functions from Gaylord to include the sync of all files}
-   exit;
- string Arrived = wrkPIIL + "\Arrived";
-  numeric DataOK = 0;
+   pff thisapp;
+   thisapp.load("./sampmenu.pff");
+   string interv_fname = thisapp.getproperty("INTERV");
+   string Arrived = wrkPIIL + "\Arrived";
+   numeric DataOK = 0;
     //errmsg( 500 );
 	
     if SyncConnect( CSWeb, CSWebURL, CG81User, CG81PIN ) then
-      DataOK =  SyncFile( PUT, wrkPIIL + "\SampData" + "\?" + "*.*", CSWebSurvey + "SampData" );
+      DataOK =  SyncFile( PUT, wrkPIIL + "\SampData" + "\?" + edit("9999", WCLUSTER) + "*.DAT", CSWebSurvey + "SampData" );
+      // get any changes to ref files
+      setfile(INTERV, interv_fname, update);
+      SyncData(GET, INTERV);
+      SyncData(GET, CLUSTERS);
+      close(INTERV);
       syncdisconnect();
     endif;
     if DataOK then 
@@ -21,7 +28,6 @@ string CSWebSurvey = "/CG81/";
     SyncData_CSW = DataOK;
   end; 
   function GetData_CSW ();
-   exit;
     numeric DataOK = 0;
     if SyncConnect ( CSWeb, CSWebURL, CG81User, CG81PIN ) then   {commented out post data collection }
       if SyncFile( GET, CSWebSurvey + "SampData/*.*",      wrkPIIL + "/Arrived" ) then

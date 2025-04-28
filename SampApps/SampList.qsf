@@ -1,6 +1,6 @@
 ﻿---
 fileType: Question Text
-version: CSPro 8.0
+version: CSPro 7.7
 languages:
   - name: EN
     label: English
@@ -45,7 +45,7 @@ questions:
             <p>&#160;</p>
           FR: |
             <p><span style="font-weight: bold; text-decoration: underline; font-size: 18px; color: rgb(0, 0, 0);"><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW62661812 BCX8" style="color: rgb(0, 0, 255); white-space-collapse: preserve; background-color: rgb(255, 255, 255); -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !important;">Troisième Enquête Démographique et de Santé au Congo</span><span class="EOP SCXW62661812 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="color: rgb(0, 0, 255); font-weight: 400; white-space-collapse: preserve; background-color: rgb(255, 255, 255); -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span><span data-contrast="auto" xml:lang="FR-FR" lang="FR-FR" class="TextRun SCXW62661812 BCX8" style="color: rgb(0, 0, 255); white-space-collapse: preserve; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !important;">(EDS-III-Congo 2025)</span><span class="EOP SCXW62661812 BCX8" data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}" style="color: rgb(0, 0, 255); font-weight: 400; white-space-collapse: preserve; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-size: 15pt; line-height: 24.8208px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif;">&nbsp;</span></span></p><p><span style="font-size: 18px; font-weight: bold; text-decoration-line: underline;">Ménages dénombrés dans la Grappe&nbsp;</span></p><span style="font-size: 18px;">
-            </span><p><span style="font-size: 18px; font-weight: bold;">Grappe: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LCLUSTER~~</span><span style="font-size: 18px; font-weight: bold;"> Enumérator: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LINTNUM~~</span><span style="font-size: 18px; font-weight: bold;">&nbsp;</span></p><p><b><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">D</span><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">É</span><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">PARTEMENT</span></b><span style="font-size: 21px; color: rgb(0, 0, 0);"><span style="font-size: 18px; font-family: Arial;"><b>:</b> </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LREGION~~</span><span style="font-weight: bold; font-size: 18px;">&nbsp;</span></span><span style="font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-stroke-color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0); white-space-collapse: preserve;"><b>COMMUNE/DISTRICT</b></span><span style="font-size: 21px;"><span style="font-size: 18px; font-family: Arial;"><b>: </b></span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSTATE~~</span><span style="font-weight: bold; font-size: 18px;">&nbsp;</span></span><span style="font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-stroke-color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0); white-space-collapse: preserve;"><b>LOCALITÉ</b></span><span style="font-size: 21px;"><span style="font-size: 18px; font-family: Arial;"><b>: </b></span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LDISTRICT~~&nbsp;</span></span></p><span style="font-size: 18px;">
+            </span><p><span style="font-size: 18px; font-weight: bold;">Grappe: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LCLUSTER~~</span><span style="font-size: 18px; font-weight: bold;"> Enumérator: </span><span style="font-size: 18px; color: rgb(255, 0, 0);">~~LINTNUM~~</span><span style="font-size: 18px; font-weight: bold;">&nbsp;</span></p><p><b><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">D</span><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">É</span><span class="NormalTextRun SCXW62162586 BCX8" style="-webkit-user-drag: none; -webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; user-select: text; font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; white-space-collapse: preserve; background-color: rgb(255, 255, 255);">PARTEMENT</span></b><span style="font-size: 21px; color: rgb(0, 0, 0);"><span style="font-size: 18px; font-family: Arial;"><b>:</b> </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LREGION~~</span><span style="font-weight: bold; font-size: 18px;">&nbsp;</span></span><span style="font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-stroke-color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0); white-space-collapse: preserve;"><b>COMMUNE/DISTRICT</b></span><span style="font-size: 21px;"><span style="font-size: 18px; font-family: Arial;"><b>: </b></span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSTATE~~</span><span style="font-weight: bold; font-size: 18px;">&nbsp;</span></span><span style="font-family: Arial; font-size: 17.3333px; font-variant-ligatures: none; text-align: justify; -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-stroke-color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0); white-space-collapse: preserve;"><b>LOCALITÉ</b></span><span style="font-size: 21px;"><span style="font-size: 18px; font-family: Arial;"><b>: </b></span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LDISTRICT~~</span></span></p><p><b style="text-align: center;"><span style="font-size: 16px;">N° RGPH-5 DE LA ZD:&nbsp;</span></b><font color="#ff0000" style="text-align: center;"><span style="font-size: 16px;">~~YIDZD~~</span></font><span style="font-size: 21px;"><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">&nbsp;</span></span></p><span style="font-size: 18px;">
             </span><p><span style="font-weight:bold;font-size:21px;color:#000000;"><span style="font-size: 18px;">Num. Segment: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSEGNUM~~</span><span style="font-size: 18px;"> Ménages: </span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LSEGHH~~</span><span style="font-size: 18px;"> Fermée:</span><span style="font-weight: normal; color: rgb(255, 0, 0); font-size: 18px;">~~LDATEFIN~~</span><span style="font-size: 18px;"> &nbsp;</span></span></p><span style="font-size: 18px;">
             </span><p><br></p>
         helpText:
@@ -91,7 +91,7 @@ questions:
           FR: |
             <p><span style="font-weight: bold; font-size: 18px; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><span style="font-size: 18px;">
             </span><p><span style="font-weight: bold; font-size: 18px; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 18px;">
-            </span><p><span style="font-size: 18px; color: rgb(0, 0, 0);">Entrez l’adresse du structure&nbsp; &nbsp;</span></p>
+            </span><p><span style="text-align: center;">Adresse / Description de la parcelle</span></p><p class="MsoNormal" align="center" style="text-align:center"><span lang="FR"><span style="color:red"><o:p></o:p></span></span></p><p class="MsoNormal" align="center" style="text-align:center"><span lang="FR" style="background:yellow;mso-highlight:yellow;mso-ansi-language:FR"><span style="color:red"><o:p></o:p></span></span></p>
             <p>&nbsp;</p>
         helpText:
           EN: |
@@ -104,16 +104,18 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
-            <p>&#160;</p>
-            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
-            <p><span style="font-size:21px;color:#000000;">Usage of the structure&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&nbsp;</span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p>
+            <p class="MsoNormal" align="center" style="text-align: left;"><span class="fontstyle01"><span lang="FR">Statut
+            d’occupation de la parcelle<o:p></o:p></span></span></p><p class="MsoNormal" align="center" style="text-align:center"><span class="fontstyle01"><span lang="FR"><o:p></o:p></span></span></p>
           ES: |
             
           FR: |
             <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
             </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
-            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Utilisation de la structure&nbsp;</span></p>
+            </span><p class="MsoNormal" align="center" style="text-align: left;"><span class="fontstyle01"><span lang="FR">Statut
+            d’occupation de la parcelle<o:p></o:p></span></span></p>
         helpText:
           EN: |
             
@@ -125,16 +127,16 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&#160;</span></p>
-            <p>&#160;</p>
-            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
-            <p><span style="font-size:21px;color:#000000;">Type of structure&#160;</span></p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~weipc~~&nbsp;</span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p>
+            <p class="MsoNormal" align="center" style="text-align: left;"><span class="fontstyle01"><span lang="FR">Type de bâtiment<o:p></o:p></span></span></p>
           ES: |
             
           FR: |
             <p><span style="font-weight: bold; font-size: 16px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><span style="font-size: 16px;">
             </span><p><span style="font-size: 16px;">&nbsp;</span><span style="color: rgb(255, 0, 0); font-size: 16px; font-weight: bold;">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><span style="font-size: 16px;">
-            </span><p><span style="font-size: 16px; color: rgb(0, 0, 0);">Type de structure&nbsp;</span></p>
+            </span><p class="MsoNormal" align="center" style="text-align: left;"><span class="fontstyle01"><span lang="FR">Type de bâtiment<o:p></o:p></span></span></p>
         helpText:
           EN: |
             
@@ -144,7 +146,8 @@ questions:
             
   - name: HHLISTING.LINTGPS
     conditions:
-      - questionText:
+      - logic: LINTRO <> "2"
+        questionText:
           EN: |
             <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">Entry ~~wocc~~ ~~weipc~~&#160;</span></p>
             <p><span style="font-weight:bold;font-size:21px;color:#ff0000;">~~LADDRESS~~- ~~LNAME~~&#160;</span></p>
@@ -162,6 +165,12 @@ questions:
             
           FR: |
             
+      - logic: LINTRO = "2"
+        questionText:
+          EN: |
+            <p><span style="font-weight: bold; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><p><span style="font-weight: bold; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><p><span style="color: rgb(0, 0, 255); font-size: 18px;">Précision de la mesure précédente en metres: ~~waccuracy~~</span><span style="font-weight: bold; font-size: 18px;"></span></p><p><span style="font-weight: bold; font-size: 18px;">Sélectionnez une option en fonction de l'action à faire : 1-Pour copier les coordonnées du ménage précédent. 2-Pour prendre les coordonnées GPS du maintenant. 3-Pour ne prendre pas les coordonnées maintenant. 9-Option utilisée pour remplacer les coordonnées d'un ménage qui les possède déjà&nbsp;</span></p><p></p>
+          FR: |
+            <p><span style="font-weight: bold; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><p><span style="font-weight: bold; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><p><font color="#0000ff"><span style="font-size: 18px;">Précision de la mesure précédente en metres: ~~waccuracy~~</span></font></p><p><span style="font-weight: bold; font-size: 18px;">Sélectionnez une option en fonction de l'action à faire : 1-Pour copier les coordonnées du ménage précédent. 2-Pour prendre les coordonnées GPS du maintenant. 3-Pour ne prendre pas les coordonnées maintenant. 9-Option utilisée pour remplacer les coordonnées d'un ménage qui les possède déjà&nbsp;</span></p><p></p>
   - name: HHLISTING.LTRUEHH
     conditions:
       - questionText:
@@ -181,7 +190,7 @@ questions:
             
           FR: |
             
-  - name: HHLISTING.LNAME
+  - name: HHLISTING.LNAME2
     conditions:
       - questionText:
           EN: |
@@ -201,6 +210,13 @@ questions:
             
           FR: |
             
+  - name: HHLISTING.LNAME1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight: bold; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><p><span style="font-weight: bold; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><p>Entrez le prenom du chef de ménage&nbsp;</p><p></p>
+          FR: |
+            <p><span style="font-weight: bold; color: rgb(255, 0, 0);">Entry ~~wocc~~ ~~weipc~~&nbsp;</span></p><p><span style="font-weight: bold; color: rgb(255, 0, 0);">~~LADDRESS~~- ~~LNAME~~&nbsp;</span></p><p>Entrez le prenom du chef de ménage&nbsp;</p><p></p>
   - name: HHLISTING.LPHONE1
     conditions:
       - questionText:
