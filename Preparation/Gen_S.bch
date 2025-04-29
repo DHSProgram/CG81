@@ -1,0 +1,20 @@
+﻿[CSPro Application]
+Version=CSPro 7.5
+Label=GEN_S
+Name=GEN_S
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Clusters.dcf
+File=..\Dicts\HHForInt.dcf
+File=..\Dicts\SampSel.dcf
+[AppCode]
+File=.\Gen_S.apc
+[Message]
+File=.\Gen_S.mgf
+[Order]
+File=.\Gen_S.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\Cnull.dcf,Input,.\Gen_S.ord
+Dict-Type=..\Dicts\Clusters.dcf,External
+Dict-Type=..\Dicts\HHForInt.dcf,External
+Dict-Type=..\Dicts\SampSel.dcf,External
