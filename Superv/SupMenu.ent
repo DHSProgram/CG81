@@ -6,6 +6,7 @@ AppType=DataEntry
 OperatorID=No
 ShowEndCaseDialog=No
 CAPI=Yes
+AutoAdvanceOnSelection=Yes
 [External Dictionaries]
 File=..\Dicts\CLUSTERS.dcf
 File=..\Dicts\Interv.dcf

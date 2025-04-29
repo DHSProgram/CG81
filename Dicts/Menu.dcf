@@ -31,7 +31,7 @@ DataType=Alpha
 Label=Household variables|Variables de hogar
 Name=WSEC01
 RecordTypeValue='1'
-RecordLen=201
+RecordLen=202
 
 [Item]
 Label=Introduction|Introduccion
@@ -63,83 +63,80 @@ Len=4
 DataType=Numeric
 ZeroFill=Yes
 
-[ValueSet]
-Label=Cluster number|Numero de segmento
-Name=WCLUSTER_VS1
-
 [Item]
 Label=Select an option|Seleccionar una opcion
 Name=WFINAL
 Start=20
-Len=1
+Len=2
+DataType=Numeric
 
 [Item]
 Label=Urban/rural|Urbano/rural|Urbain/rural
 Name=WURBRUR
-Start=21
+Start=22
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Region code|Codigo de region|Code Province
 Name=WREGION
-Start=27
+Start=28
 Len=5
 DataType=Numeric
 
 [Item]
 Label=Region name|Nombre de la region|Province
 Name=WREGIONN
-Start=32
+Start=33
 Len=25
 DataType=Alpha
 
 [Item]
 Label=Base locality code|Codigo de departamento|Code Ville/Territoire
 Name=WSTATE
-Start=57
+Start=58
 Len=5
 DataType=Numeric
 
 [Item]
 Label=Base locality name|Nombre del departamento|Nom Ville/Territoire
 Name=WSTATEN
-Start=62
+Start=63
 Len=25
 DataType=Alpha
 
 [Item]
 Label=District code|Codigo de distrito|Code District
 Name=WDISTRICT
-Start=87
+Start=88
 Len=5
 DataType=Numeric
 
 [Item]
 Label=District name|Nombre del distrito|Nom Distric
 Name=WDISTRICTN
-Start=92
+Start=93
 Len=25
 DataType=Alpha
 
 [Item]
 Label=Locality code|Codigo de municipio|Code Localite
 Name=WCITY
-Start=117
+Start=118
 Len=5
 DataType=Numeric
 
 [Item]
 Label=Locality name|Nombre del municipio|Nom de localite
 Name=WCITYN
-Start=122
+Start=123
 Len=25
 DataType=Alpha
 
 [Item]
 Label=Household number|Numero de hogar
 Name=WNUMBER
-Start=147
+Start=148
 Len=4
 DataType=Numeric
 ZeroFill=Yes
@@ -147,14 +144,14 @@ ZeroFill=Yes
 [Item]
 Label=Household address|Direccion del hogar
 Name=WADDRESS
-Start=151
+Start=152
 Len=50
 DataType=Alpha
 
 [Item]
 Label=Is the correct household|Es el hogar correcto
 Name=WCORRECT
-Start=201
+Start=202
 Len=1
 DataType=Numeric
 

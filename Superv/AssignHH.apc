@@ -5,6 +5,7 @@ PROC GLOBAL
   { !!! it is also necessary to remove them from this application and in SelCase in DCMenu.app }
   
   string  textstr, oldvar;
+  numeric debug =    0;// sets debugging on
 
   numeric i, n, xteam, oldval, advancend, x;
   valueset fieldworkers;
@@ -25,6 +26,7 @@ PROC GLOBAL
 
   { function to populate value sets with proper interviewers }
   function populate()
+    set trace;
     fieldworkers.clear();
     fieldworkers.add( tr("Not to be assigned yet"), 0 );
     { loops over interviewers file }
@@ -89,6 +91,12 @@ PROC GLOBAL
 
 PROC SAMPSEL_FF
 preproc
+  if debug then
+    // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
+    trace(on, ".\debug.apc", clear);
+//  trace(on);
+    set trace;
+  endif;
 
   xteam = tonumber( sysparm()[1:2] );    { fieldwork team }
   advancend = 0;                       { to control option when advancing to end }

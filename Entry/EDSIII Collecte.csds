@@ -1,0 +1,99 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "EDSIII 2025 Collecte de données CAPI",
+  "description": "",
+  "files": [
+    {
+      "path": "..\\Superv\\CheckID.ent"
+    },
+    {
+      "path": "..\\Superv\\CHECKID.pff"
+    },
+    {
+      "path": "..\\Superv\\SupMenu.ent"
+    },
+    {
+      "path": "..\\Superv\\SupMenu.pff"
+    },
+    {
+      "path": "..\\Superv\\TEntry.ent"
+    },
+    {
+      "path": ".\\CollectHH.ent"
+    },
+    {
+      "path": ".\\CollectIN.ent"
+    },
+    {
+      "path": ".\\DCMenu.ent"
+    },
+    {
+      "path": ".\\DCMenu.pff"
+    },
+    {
+      "path": ".\\ListElig.ent"
+    },
+    {
+      "path": ".\\ListNotes.ent"
+    },
+    {
+      "path": ".\\LstQuest.ent"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": "..\\Dicts\\CGHH80.dcf"
+    },
+    {
+      "path": "..\\Dicts\\CGIN80.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Clusters.dcf"
+    },
+    {
+      "path": "..\\Dicts\\CLUSTERS.dcf"
+    },
+    {
+      "path": "..\\dicts\\Cnull.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\Cnull.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\CONTSUP.dcf"
+    },
+    {
+      "path": "..\\Dicts\\EligIndv.dcf"
+    },
+    {
+      "path": "..\\Dicts\\HHForInt.dcf"
+    },
+    {
+      "path": "..\\Dicts\\HHFORINT.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Interv.dcf"
+    },
+    {
+      "path": "..\\Dicts\\md5.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Menu.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Others.dcf"
+    },
+    {
+      "path": "..\\Dicts\\TRANSMIT.dcf",
+      "uploadForSync": true
+    }
+  ],
+  "deployment": {
+    "type": "CSWeb",
+    "cswebUrl": "https:\/\/csweb.dhsprogram.com\/api",
+    "ftpUrl": "ftp:\/\/"
+  }
+}

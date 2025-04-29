@@ -1137,6 +1137,7 @@ preproc
                                                                     , int(tonumber(getproperty("MaxDisplayHeight")) * 0.9)
                                                                     , true);
    // loop until no qres selected by user 
+   #if exists(QHCSPRO8)
    while true do 
      // show html dialog form
      string caseid = CS.UI.showDialog(path := Path.Concat(Application, HTMLName), displayOptions := @object display_options);
@@ -1151,6 +1152,7 @@ preproc
        break;
      endif;
    enddo;
+   #endif
   { totally quit application }
   stop(1);
 

@@ -232,7 +232,7 @@ Text=Village/Quartier
   
 [Field]
 Name=WFINAL
-Position=371,252,384,270
+Position=371,252,396,270
 Item=WFINAL,MENU_DICT
 Verify=No
 UpperCase=Yes

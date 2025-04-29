@@ -46,6 +46,7 @@
   array interrole(20);                     { role of interviewers assigned to a supervisor }
   array string intername(20);              { interviewer's name assigned to supervisor }
   valueset fieldworkers;
+  valueset codes;
   
   array intvwcode(400);                    { to store interviewers - code }
   array intvwrole(400);                    {                       - role }
@@ -149,12 +150,12 @@
     FileWrite( piffile, "[ExternalFiles]" );
     if questype = 1 then
       FileWrite( piffile, ccode + "IN" + pcode + "="   + data   + "\I" + xfilenum + ".DAT" );
-      FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".DAT" );
-      FileWrite( piffile, "INTERV=" + wrkref + "\Interv.dat" );
+      FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".csdb" );
+      FileWrite( piffile, "INTERV=" + wrkref + "\Interv.csdb" );
     elseif questype = 2 then
       FileWrite( piffile, "CG" + "HH" + pcode + "="   + work   + "\ALLHH.DAT" );
     endif;
-    FileWrite( piffile, "CLUSTERS=" + wrkref   + "\CLUSTERS.DAT" );
+    FileWrite( piffile, "CLUSTERS=" + wrkref   + "\CLUSTERS.csdb" );
     FileWrite( piffile, "OTHERS="   + data     + "\O" + xfilenum + ".DAT" );
 
     FileWrite( piffile, "[Parameters]" );
@@ -488,7 +489,7 @@
       { External Files section }
       FileWrite( piffile, " " );
       FileWrite( piffile, "[ExternalFiles]" );
-      FileWrite( piffile, "HHFORINT=" + work + "\S" + edit("9999",WCLUSTER) + ".DAT" );
+      FileWrite( piffile, "HHFORINT=" + work + "\S" + edit("9999",WCLUSTER) + ".csdb" );
 
       { Parameters section }
       FileWrite( piffile, " " );
@@ -523,7 +524,7 @@
       FileWrite( piffile, "[ExternalFiles]" );
       FileWrite( piffile, ccode + "HH" + pcode + "=" + data + "\H" + xfilenum + ".DAT" );
       FileWrite( piffile, ccode + "IN" + pcode + "=" + data + "\I" + xfilenum + ".DAT" );
-      FileWrite( piffile, "CLUSTERS=" + wrkref   + "\CLUSTERS.DAT" );
+      FileWrite( piffile, "CLUSTERS=" + wrkref   + "\CLUSTERS.csdb" );
 
       FileWrite( piffile, "[Parameters]" );
       { parameters are: cluster and HOUSEHOLD number (may include others for sub-samples) }
@@ -789,7 +790,7 @@
     function SetAssignFile()
       x = 1;
       { file name for HOUSEHOLDs assigned to interviewers is only known after the cluster is entered.  It is set here }
-      fname = work + "\S" + edit("9999",WCLUSTER) + ".DAT";
+      fname = work + "\S" + edit("9999",WCLUSTER) + ".csdb";
       if !FileExist( fname ) then
         errmsg( 095, fname, WCLUSTER );
         x = 0;
@@ -873,7 +874,7 @@
     function getonehh( task )
       trace("fname=%s", FileName(ELIGINDV));
       numeric cancelled, y = 1, newHH;
-      fname = work + "\S" + xcluster + ".DAT";
+      fname = work + "\S" + xcluster + ".csdb";
       if !FileExist( fname ) then
         errmsg( 095, fname, WCLUSTER );
         ifok = 0;
@@ -1216,7 +1217,7 @@
 
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "OTHERS="   + data     + "\FO" + xintnum + ".DAT" );
-    FileWrite( piffile, "INTERV="   + wrkref     + "\Interv.dat");
+    FileWrite( piffile, "INTERV="   + wrkref     + "\Interv.csdb");
 
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
@@ -1408,8 +1409,8 @@ PreProc
   if SameSession = 1 then
     { clean any files from old phases !!! }
     { do this with care !!! }
-    CleanFiles("8");
-    CleanFiles("9");
+    // CleanFiles("8");
+    // CleanFiles("9");
   endif;
 
 PostProc
@@ -1593,57 +1594,41 @@ onfocus
         transuper();
       endif;
     endif;
-    $ = " ";
-    noinput;
-
-
-  
-postproc
-    if loadsetting("DCSession") = "4" then
-      skip to WINDIV
-    endif;
-    versiontxt = maketext(" Ver:%s ", sysver); 
-    heading = "Cluster " + xcluster + " " + intname + "("+ edit("9999", WINTNUM) + ")" + " ["+ getbluetoothname() + "] " " Sup " + edit("9999", WSUPER) + versiontxt;
     if debug then
       heading = heading + " debug mode enabled !!"
     endif;
-    if getlanguage() = "EN" then
-      action = accept( heading,
-                 { 1}  "1 HOUSEHOLD Interview",
-                 { 2}  "2 List eligible INDIVIDUALs/biomarkers",
-                 { 3}  "3 Enter biomarker data",
-                 { 4}  "4 INDIVIDUAL Interview",
-                 { 5}  "--------------------------------------",
-                 { 6}  "5 List questionnaires in cluster",
-                 { 7}  "6 List cluster notes",
-                 { 8}  "7 Data exchange/other utilities",
-                 // { 9}  "8 Change language",
-                 { 9}  "--------------------------------------",
-                 {10}  "--------------------------------------",
-                 {11}  "C Change cluster number",
-                 {12}  "E Exit system (Esc)") ;
-    elseif getlanguage() = "FR" then
-        action = accept( heading,
-                 { 1}  "1 Menu des questionnaires Ménages",
-                 { 2}  "2 Afficher les individus/biomarqueurs éligibles",
-                 { 3}  "3 Entrer les données des biomarqueurs",
-                 { 4}  "4 Menu des individus éligibles",
-                 { 5}  "--------------------------------------",
-                 { 6}  "5 Afficher la liste des questionnaires de la grappe",
-                 { 7}  "6 Afficher les notes sur la grappe",
-                 { 8}  "[[ 7 Transfert de données/autres utilitaires ]]",
-                 { 9}  "8 Changer la langue",
-                 {10}  "9 Menu Quiz  ",
-                 {11}  "C Changer de numéro de grappe",
-                 {12}  "E Quitter le système (Esc)");
+
+   codes.clear();
+   { 1} codes.add("1 Menu des questionnaires Ménages",01);
+   { 2} codes.add("2 Afficher les individus/biomarqueurs éligibles",02);
+   { 3} codes.add("3 Entrer les données des biomarqueurs",03);
+   { 4} codes.add("4 Menu des individus éligibles",04);
+   { 5} codes.add("--------------------------------------",00);
+   { 6} codes.add("5 Afficher la liste des questionnaires de la grappe",06);
+   { 7} codes.add("6 Afficher les notes sur la grappe",07);
+   { 8} codes.add("[[ 7 Transfert de données/autres utilitaires ]]",08);
+   { 9} codes.add("8 Changer la langue",09);
+   {10} codes.add("9 Menu Quiz",10);
+   {11} codes.add("C Changer de numéro de grappe",11);
+   {12} codes.add("E Quitter le système", 12);
+  setvalueset($, codes);
+   
+  
+postproc
+    
+    if loadsetting("DCSession") = "4" then
+      skip to WINDIV
     endif;
+    action = $;
     { instructions to complete executions of menu options }
-    if !action | action = 12 then
+    if action = 12 then
       SaveSetting( "DCSession", "1" );
       stop(1)
     endif;
     { change cluster number }
-    if action = 11 then
+    if !action then
+      reenter;
+    elseif action = 11 then
       reenter WCLUSTER
 
     { all options to deal with HOUSEHOLDs manipulation and where women may be found }

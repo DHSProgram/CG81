@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.5
+Version=CSPro 7.7
 Name=FL_MENU
 Label=Menu
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -143,7 +143,6 @@ Required=Yes
 Name=WSEC01
 Label=WSEC01
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
@@ -152,6 +151,7 @@ Position=142,82,155,100
 Item=WINTRO,MENU_DICT
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -198,6 +198,7 @@ Name=WURBRUR
 Position=105,141,178,159
 Item=WURBRUR,MENU_DICT
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -210,6 +211,7 @@ Name=WREGIONN
 Position=433,144,734,162
 Item=WREGIONN,MENU_DICT
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -222,6 +224,7 @@ Name=WSTATEN
 Position=61,171,362,189
 Item=WSTATEN,MENU_DICT
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -234,6 +237,7 @@ Name=WDISTRICTN
 Position=433,173,734,191
 Item=WDISTRICTN,MENU_DICT
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -246,6 +250,7 @@ Name=WCITYN
 Position=135,201,436,219
 Item=WCITYN,MENU_DICT
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -255,7 +260,7 @@ Text=City/municipality
   
 [Field]
 Name=WFINAL
-Position=370,252,383,270
+Position=370,252,395,270
 Item=WFINAL,MENU_DICT
 Verify=No
 UpperCase=Yes
@@ -270,6 +275,7 @@ Item=WNUMBER,MENU_DICT
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -280,6 +286,7 @@ Item=WADDRESS,MENU_DICT
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
   
@@ -303,7 +310,6 @@ Required=Yes
 Name=WSEC02
 Label=WSEC02
 Form=2
-LogicControl=No
 Max=1
   
 [Field]
@@ -311,6 +317,7 @@ Name=WCLUSTER000
 Position=123,143,172,161
 Item=WCLUSTER,MENU_DICT
 Mirror=Yes
+DataCaptureType=TextBox
 Form=2
   
   
@@ -319,6 +326,7 @@ Name=WNUMBER000
 Position=248,143,297,161
 Item=WNUMBER,MENU_DICT
 Mirror=Yes
+DataCaptureType=TextBox
 Form=2
   
   
@@ -328,6 +336,7 @@ Position=415,143,428,161
 Item=WFINAL2,MENU_DICT
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=2
   
   
@@ -338,6 +347,7 @@ Item=WINDIV,MENU_DICT
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=2
   
   
@@ -348,6 +358,7 @@ Item=WNAME,MENU_DICT
 Protected=Yes
 Verify=No
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=2
   
 [Text]

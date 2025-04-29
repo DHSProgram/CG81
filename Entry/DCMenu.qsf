@@ -1,126 +1,292 @@
-﻿[CAPI QUESTIONS]
-Version=CSPro 6.3
-
-[LANGUAGES]
-EN=English
-FR=Français
-FU=Fufulde
-PI=Pidgin
-
-[QUESTION]
-Field=MENU_DICT.WCLUSTER
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Enter the cluster number on which you wish to work
-EN=\par }
-ES={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;}
-ES=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Ingrese el numero del segmento en el cual va a trabajar
-ES=\par
-ES=\par }
-
-[QUESTION]
-Field=MENU_DICT.WCORRECT
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Is this household "%WADDRESS%" the correct household?\f1\fs24
-EN=\par \f0\fs22 If no or not sure, select option 2 and return to the mainmenu
-EN=\par }
-ES={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;}
-ES=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Es el hogar que se encuentra localizado en la direccion "%WADDRESS%" el correcto?\f1\fs24
-ES=\par \f0\fs22 Si no o no esta segura, seleccione la opcion 2 y regresara al menu principal
-ES=\par
-ES=\par }
-
-[QUESTION]
-Field=MENU_DICT.WCORRECT2
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Is "%WNAME%" the correct person?
-EN=\par }
-ES={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;}
-ES=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 "%WNAME%" es la persona correcta?
-ES=\par
-ES=\par }
-
-[QUESTION]
-Field=MENU_DICT.WFINAL
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;\red255\green0\blue255;}
-EN={\*\generator Msftedit 5.41.21.2510;}\vieCMINd4\uc1\pard\qc\cf1\lang1033\f0\fs22 MENU FOR INTERVIEWER %WINTNUM%-%IntName%\par
-EN=Cluster: %WCLUSTER%, Supervisor %WSUPER%-%SupName%\par
-EN=\cf2 Press Any key and Select an option from the list to be displayed\par
-EN=}
-ES={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;\red255\green0\blue255;}
-ES={\*\generator Msftedit 5.41.21.2510;}\vieCMINd4\uc1\pard\qc\cf1\lang1033\f0\fs22 MENU PARA LA ENTREVISTADORA %WINTNUM%-%IntName%\par
-ES=Segmento: %WCLUSTER%, Supervisora: %WSUPER%-%SupName%\par
-ES=\cf2 Presione cualquier tecla y luego una opcion del menu que se desplegara\par
-ES=\pard\cf1\par
-ES=}
-
-[QUESTION]
-Field=MENU_DICT.WFINAL2
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;\red255\green0\blue0;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 INDIVIDUAL MENU
-EN=\par Select an option from the menu for eligible women and men \cf2 (press any key to display the menu)
-EN=\par }
-ES={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;\red255\green0\blue0;}
-ES=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 MENU INDIVIDUAL
-ES=\par Seleccione una opcion del menu para mujeres y hombres elegibles \cf2 (presione una tecla para desplegar el menu)
-ES=\par \cf1
-ES=\par }
-
-[QUESTION]
-Field=MENU_DICT.WINTNUM
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Select your name from the list displayed in the window.
-EN=\par }
-ES={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;}
-ES=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Seleccione su nombre de la lista desplegada en la pantalla.
-ES=\par
-ES=\par }
-
-[QUESTION]
-Field=MENU_DICT.WINTRO
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red255\green0\blue255;\red0\green0\blue255;\red0\green0\blue0;}
-EN={\*\generator Msftedit 5.41.21.2510;}\vieCMINd4\uc1\pard\qc\cf1\lang1033\f0\fs24 Welcome to the\par
-EN=\cf2 Demographic & Health Survey\par
-EN=\cf1 Interviewer's Menu\cf3\par
-EN=\fs16 Press any key to continue\f1\par
-EN=}
-ES={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
-ES={\colortbl ;\red255\green0\blue255;\red0\green0\blue255;\red0\green0\blue0;}
-ES={\*\generator Msftedit 5.41.21.2510;}\vieCMINd4\uc1\pard\qc\cf1\lang1033\f0\fs24 Bienvenido a la\par
-ES=\cf2 Encuesta de Demografia y Salud\par
-ES=\cf1 Menu para Entrevistadoras\cf3\par
-ES=\fs16 Presione una tecla para continuar\f1\par
-ES=\pard\cf1\f0\fs24\par
-ES=}
-
-[QUESTION]
-Field=MENU_DICT.WPREF
-EN={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Select the prefecture in which you are working
-EN=\par }
-
-[QUESTION]
-Field=MENU_DICT.WSUPER
-EN={\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue255;\red255\green0\blue255;}
-EN=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Select the name of the supervisor you are assigned to.\cf2\fs28
-EN=\par }
-ES={\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
-ES={\colortbl ;\red0\green0\blue255;\red255\green0\blue255;}
-ES=\vieCMINd4\uc1\pard\cf1\lang1033\f0\fs22 Seleccione el nombre del supervisor al cual ha sido assignada.\cf2\fs28
-ES=\par \fs24
-ES=\par }
-
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+  - name: FR
+    label: Français
+  - name: FU
+    label: Fufulde
+  - name: PI
+    label: Pidgin
+  - name: ES
+    label: ""
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: MENU_DICT.WINTRO
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Welcome to the&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Demographic &amp; Health Survey&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Interviewer&apos;s Menu&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:10px;color:#000000;font-family:'Arial', sans-serif;">Press any key to continue&#160;</span></p>
+            
+          ES: |
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Bienvenido a la&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Encuesta de Demografia y Salud&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Menu para Entrevistadoras&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:10px;color:#000000;font-family:'Arial', sans-serif;">Presione una tecla para continuar&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WSUPER
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select the name of the supervisor you are assigned to.&#160;</span></p>
+            
+          ES: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Seleccione el nombre del supervisor al cual ha sido assignada.&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WINTNUM
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select your name from the list displayed in the window.&#160;</span></p>
+            
+          ES: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Seleccione su nombre de la lista desplegada en la pantalla.&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WCLUSTER
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Enter the cluster number on which you wish to work&#160;</span></p>
+            
+          ES: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Ingrese el numero del segmento en el cual va a trabajar&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WFINAL
+    conditions:
+      - questionText:
+          EN: |
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU FOR INTERVIEWER ~~WINTNUM~~-~~IntName~~&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~, Supervisor ~~WSUPER~~-~~SupName~~&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press Any key and Select an option from the list to be displayed&#160;</span></p>
+            
+          ES: |
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU PARA LA ENTREVISTADORA ~~WINTNUM~~-~~IntName~~&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Segmento: ~~WCLUSTER~~, Supervisora: ~~WSUPER~~-~~SupName~~&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Presione cualquier tecla y luego una opcion del menu que se desplegara&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU ENQUETEUR</b></span></font></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">~~WINTNUM~~-~~IntName~~&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 14px;">Superviseur ~~WSUPER~~-~~SupName~~</span></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">Grappe: ~~WCLUSTER~~, ~~WSTATEN~~, ~~WDISTRICTN~~, ~~WCITYN~~</span></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;">~~heading~~</span></font></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;"><br></span></p><p></p>
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WCORRECT
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Is this household &quot;~~WADDRESS~~&quot; the correct household?&#160;</span></p>
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">If no or not sure, select option 2 and return to the mainmenu&#160;</span></p>
+            
+          ES: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Es el hogar que se encuentra localizado en la direccion &quot;~~WADDRESS~~&quot; el correcto?&#160;</span></p>
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Si no o no esta segura, seleccione la opcion 2 y regresara al menu principal&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WFINAL2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">INDIVIDUAL MENU&#160;</span></p>
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select an option from the menu for eligible women and men <span style="color:#ff0000;">(press any key to display the menu)&#160;</span></span></p>
+            
+          ES: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU INDIVIDUAL&#160;</span></p>
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Seleccione una opcion del menu para mujeres y hombres elegibles <span style="color:#ff0000;">(presione una tecla para desplegar el menu)&#160;</span></span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WCORRECT2
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Is &quot;~~WNAME~~&quot; the correct person?&#160;</span></p>
+            
+          ES: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">&quot;~~WNAME~~&quot; es la persona correcta?&#160;</span></p>
+            <p>&#160;</p>
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+  - name: MENU_DICT.WPREF
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select the prefecture in which you are working&#160;</span></p>
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+        helpText:
+          EN: |
+            
+          ES: |
+            
+          FR: |
+            
+          FU: |
+            
+          PI: |
+            
+...

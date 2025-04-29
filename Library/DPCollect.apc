@@ -724,6 +724,7 @@
     // !! if called from data entry can omit 2nd and 3rd parameters 
     // !! will default to main form file and main qsf file of application
     string questionnaireViewInput;
+    #if exists(QHCSPRO8)
     if length(str_Frm) & length(str_Qsf) then
       questionnaireViewInput =
         maketext('{ "dictionary": %s, "forms": %s, "questionText": %s, "case": %s }',
@@ -743,6 +744,6 @@
     // pass this input to the questionnaire view
     CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
                inputData := @object questionnaireViewInput);
-			   
+    #endif
   end;
 

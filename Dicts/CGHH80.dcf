@@ -40,7 +40,7 @@ ZeroFill=Yes
 Label=Household identification
 Name=QHSECOVER
 RecordTypeValue='H00'
-RecordLen=268
+RecordLen=269
 
 [Item]
 Label=Region|Région
@@ -740,6 +740,13 @@ Label=Accuracy (between 1-50) 1-the best 50-the weakest
 Name=GHACCURACY
 Start=267
 Len=2
+DataType=Numeric
+
+[Item]
+Label=CSPro version flag
+Name=QHCSPRO7
+Start=269
+Len=1
 DataType=Numeric
 
 [Record]
