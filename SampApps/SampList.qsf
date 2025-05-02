@@ -144,6 +144,13 @@ questions:
             
           FR: |
             
+  - name: HHLISTING.LINFRAS
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-weight: bold; font-size: 21px; color: rgb(255, 0, 0);">~~weipc~~&nbsp;</span></p><p>&nbsp;<span style="color: rgb(255, 0, 0); font-size: 21px; font-weight: bold;">~~LADDRESS~~-&nbsp;</span></p><p><span style="color: rgb(255, 0, 0); font-size: 21px; font-weight: bold;"><br></span></p><p>Type d'infrastructure</p><p></p>
+          FR: |
+            Type d'infrastructure<p></p>
   - name: HHLISTING.LINTGPS
     conditions:
       - logic: LINTRO <> "2"

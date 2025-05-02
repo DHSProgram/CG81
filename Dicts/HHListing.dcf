@@ -51,7 +51,7 @@ DataType=Numeric
 [ValueSet]
 Label=Auxiliary to display options|Auxiliar pour afficher les options
 Name=LAUXILIAR_VS1
-Value=1;Add a structure or a household|Ajouter une parcelle ou un ménage
+Value=1;Add a structure or a household|Ajouter une parcelle, un ménage ou un infrastructure
 Value=2;Insert/delete structures or households|Insérer/supprimer des parcelles ou des ménages
 Value=9;Exit (cancel)|Sortir (annuler)
 
@@ -151,7 +151,7 @@ Name=RECORD2
 RecordTypeValue='2'
 Required=No
 MaxRecords=500
-RecordLen=221
+RecordLen=222
 
 [Item]
 Label=Introduction|Introduction
@@ -163,7 +163,7 @@ DataType=Alpha
 [ValueSet]
 Label=Introduction|Introduction
 Name=LINTRO_VS1
-Value=1;Add new structure|Ajouter une nouvelle parcelle
+Value=1;Add new structure|Ajouter une nouvelle parcelle/infrastructure
 Value=2;Add a household to previous structure|Ajouter un ménage dans la parcelle actuelle
 Value=3;Delete current entry|Supprimer l'entrée courante
 Value=4;Insert a structure|Insérer une parcelle
@@ -346,6 +346,7 @@ Label=Type of structure|Utilisation parcelle
 Name=LSTRUCTT_VS1
 Value=1;Parcelle habitée|Parcelle habitée
 Value=2;Parcelle non habité|Parcelle non habité
+Value=3;Infrastructure
 
 [Item]
 Label=Type of structure|Type de structure
@@ -395,3 +396,22 @@ Name=LACCURACY
 Start=219
 Len=3
 DataType=Numeric
+
+[Item]
+Label=Type of infrastructure
+Name=LINFRAS
+Start=222
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Type of infrastructure
+Name=LINFRAS_VS1
+Value=1;Infrastructure Scolaire
+Value=2;Infrastructure Sanitaire
+Value=3;Administration publique
+Value=4;Banque
+Value=5;Marché
+Value=6;Station de pompage
+Value=7;Eglise
+Value=8;Hôtel/Auberge/Motel

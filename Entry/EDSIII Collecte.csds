@@ -5,6 +5,18 @@
   "description": "",
   "files": [
     {
+      "path": "..\\PII\\Ref\\clusters.csdb"
+    },
+    {
+      "path": "..\\PII\\Ref\\interv.csdb"
+    },
+    {
+      "path": "..\\PII\\Ref\\SAMPSEL.csdb"
+    },
+    {
+      "path": "..\\Superv\\assignhh.ent"
+    },
+    {
       "path": "..\\Superv\\CheckID.ent"
     },
     {
@@ -55,12 +67,10 @@
       "path": "..\\Dicts\\CLUSTERS.dcf"
     },
     {
-      "path": "..\\dicts\\Cnull.dcf",
-      "uploadForSync": true
+      "path": "..\\dicts\\Cnull.dcf"
     },
     {
-      "path": "..\\Dicts\\Cnull.dcf",
-      "uploadForSync": true
+      "path": "..\\Dicts\\Cnull.dcf"
     },
     {
       "path": "..\\Dicts\\CONTSUP.dcf"
@@ -87,8 +97,16 @@
       "path": "..\\Dicts\\Others.dcf"
     },
     {
-      "path": "..\\Dicts\\TRANSMIT.dcf",
-      "uploadForSync": true
+      "path": "..\\Dicts\\Remeasure.dcf"
+    },
+    {
+      "path": "..\\Dicts\\SampSel.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Transmit.dcf"
+    },
+    {
+      "path": "..\\Dicts\\TRANSMIT.dcf"
     }
   ],
   "deployment": {

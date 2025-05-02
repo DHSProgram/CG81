@@ -47,7 +47,99 @@ questions:
           EN: |
             <p><span class="instruction">VISIT ~~QHVLINE~~, ENTER 1 TO START INTERVIEW OR RECORD THE RESULT OF THE INTERVIEW.</span></p>
           FR: |
-            <p><span style="font-family: Arial, sans-serif; font-size: 24px;"><font color="#0000ff" style="">VISITE&nbsp;</font><font color="#ff0000" style="">~~QHVLINE~~</font></span></p><p><span style="font-family: Arial, sans-serif; font-size: 24px;"><font color="#0000ff" style="">ENTRER 1 POUR DEMMARRER L'INTERVIEW OU ENREGISTRER LE RESULTAT DE L'INTERVIEW.&nbsp;</font></span><p></p></p>
+            <p style="text-align: left;"><b><span style="font-size: 14px;">TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO&nbsp;</span><span style="font-size: 14px;">EDSC-III&nbsp;&nbsp;</span></b></p><p style="text-align: left;"><b><span style="font-size: 14px;">QUESTIONNAIRE MÉNAGE</span></b></p><div style="text-align: left;"><br></div><table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="418" style="width: 313.8pt; border: none;">
+             <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-width: 1pt; border-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NOM
+              DU DÉPARTEMENT</span><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top-width: 1pt; border-right-width: 1pt; border-bottom-width: 1pt; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>~~YREGIONN~~&nbsp;</b></span></p>
+              </td>
+             </tr>
+             <tr style="mso-yfti-irow:1;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NOM
+              DE COMMUNE/DISTRICT</span><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>~~YSTATEN~~&nbsp;</b></span></p>
+              </td>
+             </tr>
+             <tr style="mso-yfti-irow:2;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NOM
+              ARRONDISSEMENT/COMMUNAUTÉ</span><span style="font-size:8.0pt;font-family:
+              &quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>~~YDISTRICTN~~&nbsp;</b></span></p>
+              </td>
+             </tr>
+             <tr style="mso-yfti-irow:3;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NOM
+              DU QUARTIER/VILLAGE</span><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>~~YCITYN~~&nbsp;</b></span></p>
+              </td>
+             </tr>
+             <tr style="mso-yfti-irow:4;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NOM
+              DU CHEF DE MÉNAGE</span><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>~~VNAME~~&nbsp;</b></span></p>
+              </td>
+             </tr>
+             <tr style="mso-yfti-irow:5;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NUMÉRO
+              DE PARCELLE</span><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>&nbsp;</b></span></p>
+              </td>
+             </tr>
+             <tr style="mso-yfti-irow:6;mso-yfti-lastrow:yes;height:11.25pt">
+              <td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><b><span style="font-size: 8pt; font-family: Arial, sans-serif;">NUMÉRO
+              DE GRAPPE</span><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+              </td>
+              <td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;">
+              <p class="MsoNormal" align="center" style="margin-bottom:0in;text-align:center;
+              line-height:normal"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;
+              mso-fareast-font-family:&quot;Times New Roman&quot;"><b>~~YCLUSTER~~&nbsp;</b></span></p>
+              </td>
+             </tr><tr><td width="209" nowrap="" style="width: 156.9pt; border-right-width: 1pt; border-bottom-width: 1pt; border-left-width: 1pt; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;"><span style="font-size: 12px;"><b>MÉNAGE SÉLECTIONNÉ POUR L'ENQUÊTE HOMME ? (1=OUI, 2=NON)</b></span></td><td width="209" valign="top" style="width: 156.9pt; border-top: none; border-left: none; border-bottom-width: 1pt; border-bottom-color: windowtext; border-right-width: 1pt; border-right-color: windowtext; background: rgb(173, 173, 173); padding: 0in 5.4pt; height: 11.25pt;"><span style="font-size: 12px;">~~QHELIGM~~</span></td></tr>
+            </tbody></table><p><span style="font-family: Arial, sans-serif; font-size: 24px;"><font color="#0000ff" style="">VISITE&nbsp;</font><font color="#ff0000" style="">~~QHVLINE~~</font></span></p><p><span style="font-family: Arial, sans-serif; font-size: 24px;"><font color="#0000ff" style="">ENTRER 1 POUR DEMMARRER L'INTERVIEW OU ENREGISTRER LE RESULTAT DE L'INTERVIEW.&nbsp;</font></span></p><p></p><p></p>
   - name: CGHH80.QHCONSENT
     conditions:
       - questionText:
@@ -59,6 +151,20 @@ questions:
             <p>May I begin the interview now?</p>
           FR: |
             <p>Bonjour. Je m'appelle _______________________________________. Je travaille pour l'Institut National de la Statistique. En collaboration avec le Ministère de la Santé et de la Population, nous effectuons une enquête nationale sur la santé et sur d'autres sujets partout en République du Congo. Les informations que nous collectons aideront à améliorer les services de santé. Votre ménage a été sélectionné pour cette enquête. Nous voudrions vous poser quelques questions sur votre ménage. Les questions prennent habituellement entre 15 et 20 minutes. Toutes les informations que vous nous donnerez sont strictement confidentielles et elles ne seront transmises à personne d'autres que les membres de l'équipe d'enquête. Vous n'êtes pas obligé de participer à cette enquête, mais nous espérons que vous accepterez de répondre à nos questions car votre opinion est très importante. S'il arrivait que je pose une question à laquelle vous ne voulez pas répondre, dites-le moi et je passerai à la question suivante ou vous pouvez également interrompre l'interview à n'importe quel moment. Si vous souhaitez plus d'informations sur l'enquête, vous pouvez contacter les personnes figurant sur cette carte.&nbsp;</p><p><br></p><p><font color="#0000ff">DONNEZ LA CARTE AVEC LES INFORMATIONS POUR CONTACTER CES PERSONNES</font></p><p><br></p><p>Avez-vous des questions à me poser ?</p><p>Puis-je commencer l'interview maintenant ?</p>
+  - name: CGHH80.QHLASTN
+    conditions:
+      - logic: curocc() in 1
+        questionText:
+          EN: |
+            <p><span class="instruction">RECORD THE LAST NAME OF THE HEAD OF THE HOUSEHOLD.</span></p>
+          FR: |
+            <p>S'il vous plait, donnez-moi les noms et prénoms des personnes qui vivent habituellement dans votre ménage et des visiteurs qui ont passé la nuit dernière ici, en commençant par le chef de ménage.</p><p><span style="color: rgb(0, 0, 255);">ENREGISTREZ LE NOM ET LE PRÉNOM DU CHEF DE MENAGE</span></p><p><span class="instruction">NOTEZ LE NOM DU CHEF DE MENAGE</span></p><p></p>
+      - logic: curocc() in 2:50
+        questionText:
+          EN: |
+            <p><span class="instruction">RECORD THE LAST NAME OF HOUSEHOLD MEMBER.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">NOTEZ LE PRÉNOM DU MEMBRE DE MENAGE</span><p></p>
   - name: CGHH80.QHFIRSTN
     conditions:
       - logic: curocc() in 1
@@ -74,18 +180,6 @@ questions:
             <p><span class="instruction">RECORD FIRST NAME OF HOUSEHOLD MEMBER.</span></p>
           FR: |
             <span style="color: rgb(0, 0, 255);">NOTEZ LE PRÉNOM DU MEMBRE DE MENAGE</span><p></p>
-  - name: CGHH80.QHLASTN
-    conditions:
-      - logic: curocc() in 1
-        questionText:
-          EN: |
-            <p><span class="instruction">RECORD THE LAST NAME OF THE HEAD OF THE HOUSEHOLD.</span></p>
-          FR: |
-            <p><b>2. S'il vous plait, donnez-moi les noms des personnes qui vivent habituellement dans votre ménage et des visiteurs qui ont passé la nuit dernière ici, en c</b>ommençant par le chef de ménage.</p><p><span class="instruction">NOTEZ LE PRÉNOM DU CHEF DE MENAGE</span></p><p></p>
-      - logic: curocc() in 2:50
-        questionText:
-          EN: |
-            <p><span class="instruction">RECORD THE LAST NAME OF HOUSEHOLD MEMBER.</span></p>
   - name: CGHH80.QHRELAT
     conditions:
       - logic: curocc() in 1
@@ -335,6 +429,146 @@ questions:
             <p>Has ~~QH02~~'s birth ever been registered with the civil authority?</p>
           FR: |
             <p>20.  ~~QH02~~ a-t-il/elle un acte de naissance&nbsp;?</p><p><span class="instruction">SI NON, INSISTEZ :</span></p><p>La naissance de ~~QH02~~ a-t-elle été declarée à l'état civil&nbsp;?</p>
+  - name: CGHH80.QH26
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Est-ce que ~~QH02~~ porte des lunettes ou des lentilles de contact pour voir ?<p></p>
+          FR: |
+            Est-ce que ~~QH02~~ porte des lunettes ou des lentilles de contact pour voir ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Est-ce que vous portez des lunettes ou des lentilles de contact pour voir ?<p></p>
+          FR: |
+            Est-ce que vous portez des lunettes ou des lentilles de contact pour voir ?<p></p>
+  - name: CGHH80.QH27
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour voir même quand il/elle porte des lunettes ou des lentilles de contact. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas voir du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour voir même quand il/elle porte des lunettes ou des lentilles de contact. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas voir du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si vous avez des difficultés pour voir même quand vous portez des lunettes ou des lentilles de contact. Diriez-vous que vous n'avez aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas voir du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si vous avez des difficultés pour voir même quand vous portez des lunettes ou des lentilles de contact. Diriez-vous que vous n'avez aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas voir du tout ?<p></p>
+  - name: CGHH80.QH28
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour voir. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas voir du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour voir. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas voir du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si vous avez des difficultés pour voir. Diriez-vous que vous n'avez aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas voir du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si vous avez des difficultés pour voir. Diriez-vous que vous n'avez aucune difficulté pour voir, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas voir du tout ?<p></p>
+  - name: CGHH80.QH29
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Est-ce que ~~QH02~~ porte un appareil auditif?<p></p>
+          FR: |
+            Est-ce que ~~QH02~~ porte un appareil auditif?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Est-ce que vous portez un appareil auditif?<p></p>
+          FR: |
+            Est-ce que vous portez un appareil auditif?<p></p>
+  - name: CGHH80.QH30
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Est-ce que ~~QH02~~ porte des lunettes ou des lentilles de contact pour voir ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour entendre même quand il/elle porte un appareil auditif. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas entendre du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si vous avez des difficultés pour entendre même quand vous portez un appareil auditif. Diriez-vous que vous n'avez aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas entendre du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si vous avez des difficultés pour entendre même quand vous portez un appareil auditif. Diriez-vous que vous n'avez aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas entendre du tout ?<p></p>
+  - name: CGHH80.QH31
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour entendre. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas entendre du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour entendre. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas entendre du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si vous avez des difficultés pour entendre. Diriez-vous que vous n'avez aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas entendre du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si vous avez des difficultés pour entendre. Diriez-vous que vous n'avez aucune difficulté pour entendre, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas entendre du tout ?<p></p>
+  - name: CGHH80.QH32
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour communiquer dans sa langue habituelle. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour comprendre ou être compris, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas communiquer du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour communiquer dans sa langue habituelle. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour comprendre ou être compris, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas communiquer du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Est-ce que vous portez des lunettes ou des lentilles de contact pour voir ?<p></p>
+          FR: |
+            Est-ce que vous portez des lunettes ou des lentilles de contact pour voir ?<p></p>
+  - name: CGHH80.QH33
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour se rappeler ou se concentrer. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se rappeler ou se concentrer, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se rappeler ou se concentrer du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour se rappeler ou se concentrer. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se rappeler ou se concentrer, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se rappeler ou se concentrer du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour marcher ou monter des marches. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas marcher ou monter des marches du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour marcher ou monter des marches. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas marcher ou monter des marches du tout ?<p></p>
+  - name: CGHH80.QH34
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour marcher ou monter des marches. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas marcher ou monter des marches du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour marcher ou monter des marches. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas marcher ou monter des marches du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour se laver ou s'habiller. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se laver ou s'habiller, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se laver ou s'habiller du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour se laver ou s'habiller. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se laver ou s'habiller, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se laver ou s'habiller du tout ?<p></p>
+  - name: CGHH80.QH35
+    conditions:
+      - logic: QH01 <> QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour se laver ou s'habiller. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se laver ou s'habiller, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se laver ou s'habiller du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si ~~QH02~~ a des difficultés pour se laver ou s'habiller. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se laver ou s'habiller, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se laver ou s'habiller du tout ?<p></p>
+      - logic: QH01 = QHRESP
+        questionText:
+          EN: |
+            Je voudrais savoir si vous avez des difficultés pour vous laver ou vous habiller. Diriez-vous que vous n'avez aucune difficulté pour vous laver ou vous habiller, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas vous laver ou vous habiller du tout ?<p></p>
+          FR: |
+            Je voudrais savoir si vous avez des difficultés pour vous laver ou vous habiller. Diriez-vous que vous n'avez aucune difficulté pour vous laver ou vous habiller, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas vous laver ou vous habiller du tout ?<p></p>
   - name: CGHH80.QCHL2A
     conditions:
       - questionText:
@@ -554,27 +788,20 @@ questions:
           FR: |
             <p>Depuis ~~dayalpha~~ dernier, combien d’heures à peu près, ~~QCHLNAME~~ a-t-~~hisher~~ travaillé sur cette activité ?</p>
             <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
-  - name: CGHH80.QCDI3
-    conditions:
-      - questionText:
-          EN: |
-            <p>Adults use certain ways to teach children the right behaviour or to address a behaviour problem. I will read various methods that are used. Please tell me if you or any other adult in this household has used this method with ~~QCDINAME~~ in the past month.</p>
-          FR: |
-            Les adultes utilisent certains moyens pour apprendre aux enfants à bien se comporter ou pour traiter des problèmes de comportement. Je vais vous lire une liste de méthodes qui sont utilisées et j’aimerais que vous me disiez&nbsp; si vous avez ou n'importe quel autre membre de votre ménage a utilisé une de ces méthodes avec ~~QCDINAME~~ au cours du mois dernier<p></p>
   - name: CGHH80.QCDI3A
     conditions:
       - logic: xsex <> 1
         questionText:
           EN: |
-            <p>Took away privileges, forbade something ~~QCDINAME~~ liked or did not allow her to leave the house.</p>
+            <p>Adults use certain ways to teach children the right behaviour or to address a behaviour problem. I will read various methods that are used. Please tell me if you or any other adult in this household has used this method with ~~QCDINAME~~ in the past month.</p><p>Took away privileges, forbade something ~~QCDINAME~~ liked or did not allow her to leave the house.</p>
           FR: |
-            Retirer des privilèges, interdire quelque chose que ~~QCDINAME~~ aime faire ou ne pas lui permettre de quitter la maison<p></p>
+            <p>Les adultes utilisent certains moyens pour apprendre aux enfants à bien se comporter ou pour traiter des problèmes de comportement. Je vais vous lire une liste de méthodes qui sont utilisées et j’aimerais que vous me disiez&nbsp; si vous avez ou n'importe quel autre membre de votre ménage a utilisé une de ces méthodes avec ~~QCDINAME~~ au cours du mois dernier.</p><p>Retirer des privilèges, interdire quelque chose que ~~QCDINAME~~ aime faire ou ne pas lui permettre de quitter la maison</p><p></p><p></p>
       - logic: xsex = 1
         questionText:
           EN: |
-            <p>Took away privileges, forbade something ~~QCDINAME~~ liked or did not allow him to leave the house.</p>
+            <p>Adults use certain ways to teach children the right behaviour or to address a behaviour problem. I will read various methods that are used. Please tell me if you or any other adult in this household has used this method with ~~QCDINAME~~ in the past month.</p><p>Took away privileges, forbade something ~~QCDINAME~~ liked or did not allow him to leave the house.</p>
           FR: |
-            Retirer des privilèges, interdire quelque chose que ~~QCDINAME~~ aime faire ou ne pas lui permettre de quitter la maison<p></p>
+            <p>Les adultes utilisent certains moyens pour apprendre aux enfants à bien se comporter ou pour traiter des problèmes de comportement. Je vais vous lire une liste de méthodes qui sont utilisées et j’aimerais que vous me disiez&nbsp; si vous avez ou n'importe quel autre membre de votre ménage a utilisé une de ces méthodes avec ~~QCDINAME~~ au cours du mois dernier.</p><p>Retirer des privilèges, interdire quelque chose que ~~QCDINAME~~ aime faire ou ne pas lui permettre de quitter la maison</p><p><p></p></p>
   - name: CGHH80.QCDI3B
     conditions:
       - questionText:
@@ -816,7 +1043,7 @@ questions:
           EN: |
             <p>Has your pit latrine ever been emptied?</p>
           FR: |
-            <p>114b).  Est-ce que votre fosse a d&#233;j&#224; &#233;t&#233; vid&#233;e ?</p>
+            <p>114b).  Est-ce que votre fosse d'aisance a déjà été vidée ?</p>
       - logic: faciltype = 3
         questionText:
           EN: |
@@ -836,7 +1063,7 @@ questions:
           EN: |
             <p>The last time the pit latrine was emptied, was it emptied by a service provider?</p>
           FR: |
-            <p>115b).  La derni&#232;re fois que votre fosse a &#233;t&#233; vid&#233;e, est-ce que cela a &#233;t&#233; fait par un professionnel ?</p>
+            <p>115b).  La dernière fois que votre fosse d'aisance a été vidée, est-ce que cela a été fait par un professionnel ?</p>
       - logic: faciltype = 3
         questionText:
           EN: |
@@ -977,9 +1204,9 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p>Chickens or other poultry?</p>
+            <p>Chickens, duck, pigeon, turkey, guinea fowl?</p>
           FR: |
-            <p>129f).  Poulets ou autre volaille ?</p>
+            <p>129f).  Poulets, canard, pigeon, dinde, pintade ?</p>
   - name: CGHH80.QH129G
     conditions:
       - questionText:
@@ -1167,9 +1394,9 @@ questions:
     conditions:
       - questionText:
           EN: |
-            133e). Une charrette tirée par un animal&nbsp;?<p></p>
+            133e). Un tricycle ?<p></p>
           FR: |
-            <p>133e).  Une charrette tir&#233;e par un animal&#160;?</p>
+            <p>133e).  Un tricycle ?</p>
   - name: CGHH80.QH133F
     conditions:
       - questionText:
@@ -1340,7 +1567,7 @@ questions:
           EN: |
             <p>J'aimerais vous poser des questions sur les multiples programmes d'aide économique extérieure dont peuvent bénéficier les ménages. Par aide extérieure, j'entends le soutien apporté par le gouvernement ou par des organisations non gouvernementales telles que des organisations religieuses, caritatives ou communautaires. Cela exclut le soutien apporté par la famille, par d'autres personnes proches, par des amis ou des voisins.</p><p>Connaissez-vous le Projet Filets Sociaux Lisungi?</p><p></p><p></p>
           FR: |
-            <p>J'aimerais vous poser des questions sur les multiples programmes d'aide économique extérieure dont peuvent bénéficier les ménages. Par aide extérieure, j'entends le soutien apporté par le gouvernement ou par des organisations non gouvernementales telles que des organisations religieuses, caritatives ou communautaires. Cela exclut le soutien apporté par la famille, par d'autres personnes proches, par des amis ou des voisins.</p><p>Connaissez-vous le Projet Filets Sociaux Lisungi?<p></p></p>
+            <p>J'aimerais vous poser des questions sur les multiples programmes d'aide économique extérieure dont peuvent bénéficier les ménages. Par aide extérieure, j'entends le soutien apporté par le gouvernement ou par des organisations non gouvernementales telles que des organisations religieuses, caritatives ou communautaires. Cela exclut le soutien apporté par la famille, par d'autres personnes proches, par des amis ou des voisins.</p><p>Connaissez-vous le Projet de Protection Sociale et d'Inclusion Productive des Jeunes PSIPJ&nbsp; ou Projet Filets Sociaux Lisungi?</p><p></p><p></p>
   - name: CGHH80.QH148C
     conditions:
       - questionText:
@@ -2081,6 +2308,13 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER FOR ACCEPTANCE OF MALARIA MEDICINE.</span></p>
+  - name: CGHH80.QCDI3
+    conditions:
+      - questionText:
+          EN: |
+            <p>Adults use certain ways to teach children the right behaviour or to address a behaviour problem. I will read various methods that are used. Please tell me if you or any other adult in this household has used this method with ~~QCDINAME~~ in the past month.</p>
+          FR: |
+            Les adultes utilisent certains moyens pour apprendre aux enfants à bien se comporter ou pour traiter des problèmes de comportement. Je vais vous lire une liste de méthodes qui sont utilisées et j’aimerais que vous me disiez&nbsp; si vous avez ou n'importe quel autre membre de votre ménage a utilisé une de ces méthodes avec ~~QCDINAME~~ au cours du mois dernier<p></p>
   - name: CGHH80.QH132Q
     conditions:
       - questionText:

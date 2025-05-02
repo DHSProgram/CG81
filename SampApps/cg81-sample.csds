@@ -61,7 +61,7 @@
     }
   ],
   "deployment": {
-    "type": "LocalFolder",
+    "type": "CSWeb",
     "cswebUrl": "https:\/\/csweb.dhsprogram.com\/api",
     "ftpUrl": "ftp:\/\/",
     "localFolderPath": "..\\Deploy\\CG81-Listing"

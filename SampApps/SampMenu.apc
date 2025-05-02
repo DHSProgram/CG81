@@ -515,7 +515,7 @@ onfocus
   $ = tonumber( loadsetting("Cluster") );
 
 postproc
-  if !loadcase( CLUSTERS, $ ) then
+  if !loadcase( CLUSTERS, $ ) | ! $ in 1:500 then
     errmsg( 001, WCLUSTER );
     reenter;
   endif;

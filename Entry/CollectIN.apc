@@ -1709,7 +1709,7 @@ PROC Q103
   endif;
   
 PROC Q104
-  if valid($) & $ >= QH07(QLINE) then
+  if $ in 0:49 & $ >= QH07(QLINE) then
     warning( 1040, QH07(QLINE) ) 
 	  select( tr("Time living in place of interview"), $, tr("Continue"), continue );
   endif;  
@@ -2979,6 +2979,8 @@ postproc
     skip to Q312
   elseif Q307N in 3,5:96 then       { IUD, implants, pill, c/condom, f/condom, emergency, SDM, LAM, rhythm, withdrawal, others }
     skip to Q314_BLOCK;
+  elseif Q307N = 7 then
+    skip to Q311;
   endif;
 
 PROC Q308
@@ -2988,7 +2990,9 @@ PROC Q308
 
 PROC Q309
   skip to Q314_BLOCK;
-
+PROC Q311
+  skip to Q314_BLOCK;
+ 
 PROC Q312
   majorgrp( $ );
   if $ in 16,26,36,96 then
@@ -3715,7 +3719,7 @@ onfocus
 
 postproc
   majorgrp( $ );
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
@@ -3752,7 +3756,7 @@ onfocus
 
 postproc
   majorgrp( $ );
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
@@ -3961,15 +3965,15 @@ postproc
   majorgrp_a( $ );
   $ = SortAlpha( $ );
   { Get other answer }
-  if pos( "F", $ ) then
+  if pos( "G", $ ) then
     getother( GetSymbol(), 10*curocc()+1 );
     enter FL_OTHERS
   endif;
-  if pos( "I", $ ) then
+  if pos( "K", $ ) then
     getother( GetSymbol(), 10*curocc()+2 );
     enter FL_OTHERS
   endif;
-  if pos( "L", $ ) then
+  if pos( "N", $ ) then
     getother( GetSymbol(), 10*curocc()+3 );
     enter FL_OTHERS
   endif;
@@ -4087,11 +4091,11 @@ postproc
     getother( GetSymbol(), 10*curocc()+1 );
     enter FL_OTHERS
   endif;
-  if pos( "M", $ ) then
+  if pos( "L", $ ) then
     getother( GetSymbol(), 10*curocc()+2 );
     enter FL_OTHERS
   endif;
-  if pos( "P", $ ) then
+  if pos( "O", $ ) then
     getother( GetSymbol(), 10*curocc()+3 );
     enter FL_OTHERS
   endif;
@@ -5084,27 +5088,6 @@ PROC Y509IPV2
  vcheck  ( D509IPV2, M509IPV2, $ );
   vckbirth( D509IPV2, M509IPV2, $, Q503 );
 
-PROC D509M1
-onfocus
-  if visualvalue(Q512) = notappl then
-    vs = D509B_VS1;
-	vs.remove(66);
-    setvalueset( $, vs );
-  else  
-    setvalueset( $, D509B_VS1 );
-  endif;
-
-postproc
-  if $ in 0,44,66 then
-    M509M1 = $;
-    Y509M1 = $*100+$;
-    advance to D509FJ
-  endif;
-
-PROC Y509M1
-  vcheck  ( D509M1, M509M1, $ );
-  vckbirth( D509M1, M509M1, $, Q503 );
-
 PROC D509FJ
 onfocus
   if visualvalue(Q512) = notappl then
@@ -5125,6 +5108,27 @@ postproc
 PROC Y509FJ
  vcheck  ( D509FJ, M509FJ, $ );
  vckbirth( D509FJ, M509FJ, $, Q503 );
+
+PROC D509M1
+onfocus
+  if visualvalue(Q512) = notappl then
+    vs = D509B_VS1;
+	vs.remove(66);
+    setvalueset( $, vs );
+  else  
+    setvalueset( $, D509B_VS1 );
+  endif;
+
+postproc
+  if $ in 0,44,66 then
+    M509M1 = $;
+    Y509M1 = $*100+$;
+    advance to D509FJ
+  endif;
+
+PROC Y509M1
+  vcheck  ( D509M1, M509M1, $ );
+  vckbirth( D509M1, M509M1, $, Q503 );
 
 PROC D509M2
 onfocus
@@ -5309,7 +5313,7 @@ PROC Q527
 PROC Q529
   majorgrp( $ );
   { Get other answer }
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), curocc() );
     enter FL_OTHERS
   endif;
@@ -5444,11 +5448,11 @@ PROC Q612
     getother( GetSymbol(), 10*curocc()+1 );
     enter FL_OTHERS
   endif;
-  if pos( "M", $ ) then
+  if pos( "L", $ ) then
     getother( GetSymbol(), 10*curocc()+2 );
     enter FL_OTHERS
   endif;
-  if pos( "P", $ ) then
+  if pos( "O", $ ) then
     getother( GetSymbol(), 10*curocc()+3 );
     enter FL_OTHERS
   endif;
@@ -5534,11 +5538,11 @@ PROC Q626
     getother( GetSymbol(), 10*curocc()+1 );
     enter FL_OTHERS
   endif;
-  if pos( "M", $ ) then
+  if pos( "L", $ ) then
     getother( GetSymbol(), 10*curocc()+2 );
     enter FL_OTHERS
   endif;
-  if pos( "P", $ ) then
+  if pos( "O", $ ) then
     getother( GetSymbol(), 10*curocc()+3 );
     enter FL_OTHERS
   endif;
@@ -6448,7 +6452,7 @@ PROC Q728
 PROC Q729
   majorgrp( $ );
   { Get other answer }
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
@@ -6689,6 +6693,9 @@ postproc
     enter FL_OTHERS
   endif;
 
+PROC Q816
+preproc
+  ask if 1 in Q815A, Q815B, Q815C, Q815D, Q815E, Q815F, Q815G, Q815H, Q815I;
 PROC Q818
 preproc
   { skip if not in union }
@@ -6753,21 +6760,7 @@ PROC Q904
 PROC Q905
 onfocus
   textstr1 = GetValueLabel(Q904);
-
-  grades.clear();
-  grades.add(tr("Less than one year"), 0);
-  n = maxgrade(Q904);
-  do i = 1 while i <= n
-    grades.add(maketext("Year %d", i), i);
-    // change the above to match the terms used in the country
-    // e.g. it might be "Year" that is used in most levels, but "Form" is used in secondary schooling
-    // if Q114 = 2 then
-    //   grades.add(maketext("Form %d", i), i);
-    // else
-    //   grades.add(maketext("Year %d", i), i);
-    // endif;
-  enddo;
-  SetValueSet( $, grades );
+  setvalueset(Q905, maketext("Q905_VS%1d", Q904));
 
 postproc
   { Verify the maximum grade for the level }
@@ -6964,8 +6957,10 @@ PROC Q931B
   endif;
 
 PROC Q932E
-  SaveData();
+  
 
+PROC Q932I
+SaveData();
 PROC Q1000
   $ = "";
 
@@ -7012,7 +7007,7 @@ PROC Q1015
 
 PROC Q1016
   majorgrp( $ );
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
@@ -7065,7 +7060,7 @@ PROC Q1025Y
 
 PROC Q1026
   majorgrp( $ );
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
@@ -7926,6 +7921,9 @@ PROC QM301OT
     enter FL_OTHERS
   endif;
 
+PROC QM303B
+preproc
+  ask if 1 in QM302A, QM302B, QM302C, QM302D, QM302E, QM302F, QM302G, QM302H, QM302I;
 PROC QM304
   if $ <> 1 then
     skip to QM306;
@@ -8210,7 +8208,7 @@ PROC QM418
     endif;
   enddo;
   if poschar( "GH",$ ) then
-    skip to QM421;
+    skip to QM420;
   endif;	
 
 PROC QM419
@@ -8227,7 +8225,7 @@ PROC QM419
 PROC QM421
   majorgrp( $ );
   { Get other answer }
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
@@ -8640,7 +8638,7 @@ PROC QM714Y
 
 PROC QM715
   majorgrp( $ );
-  if $ in 16,27,36,96 then
+  if $ in 16,26,36,96 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;

@@ -930,11 +930,10 @@ DataType=Numeric
 [ValueSet]
 Label=Highest educational level
 Name=Q114_VS1
-Value=0;Maternelle/pré-scolaire
 Value=1;Primaire
-Value=2;Secondaire 1er cycle
-Value=3;Secondaire 2ème cycle
-Value=4;Supérieur
+Value=2;Secondaire/secondaire technique 1er cycle
+Value=3;Secondaire/secondaire technique 2nd cycle
+Value=4;Supérieur/supérieur technique/professionnel
 
 [Item]
 Label=Highest grade/form/year at that level|Plus haute Classe/Année à ce niveau
@@ -957,18 +956,18 @@ Value=6;CM2
 [ValueSet]
 Label=Highest grade completed
 Name=Q115_VS2
-Value=0;MOINS D'1 AN.
-Value=1;Sixième
-Value=2;cinquième
-Value=3;Quatrième
-Value=4;Troisième
+Value=0;Moins d'1 an
+Value=1;6ième
+Value=2;5ième
+Value=3;4ième
+Value=4;3ième
 
 [ValueSet]
 Label=Highest grade completed
 Name=Q115_VS3
-Value=0;MOINS D'1 AN.
-Value=1;Seconde
-Value=2;Première
+Value=0;Moins d'1 an
+Value=1;2nde
+Value=2;1ière
 Value=3;Terminale
 
 [ValueSet]
@@ -979,7 +978,7 @@ Value=1;1ère année
 Value=2;2ème année
 Value=3;3ème année
 Value=4;4ème année
-Value=5;5ème année+
+Value=5;5ème année ou plus
 
 [Item]
 Label=Sentence read|Phrase lue
@@ -1145,7 +1144,7 @@ Value=1;Oubanguiens
 Value=2;Sangha
 Value=3;Mekee/makaa
 Value=4;Fang
-Value=5;Kotya
+Value=5;Kota
 Value=6;Mbosi
 Value=7;Téké
 Value=8;Kongo
@@ -2354,7 +2353,7 @@ Label=Contraceptive Practice
 Name=QWSEC3B
 RecordTypeValue='W3B'
 Required=No
-RecordLen=76
+RecordLen=78
 
 [Item]
 Label=Currently using any method|Utilisation actuelle d'une méthode
@@ -2455,9 +2454,30 @@ Value=2;Injection faite par prestataire  de santé
 Value=8;Ne sait pas
 
 [Item]
+Label=Brand name of condoms reported|Nom de marque des condoms utilisé
+Name=Q311
+Start=34
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Brand name of condoms reported|Marque du condom utilisé lors du dernier rapport sexuel
+Name=Q311_VS1
+Link=181799456
+Value=1;Ami 3
+Value=2;Ida
+Value=3;Ok
+Value=4;Dkt
+Value=5;Durex
+Value=6;Fitone
+Value=7;Domino
+Value=96;Autre
+Value=98;Ne sait pas
+
+[Item]
 Label=Where sterilization took place|Où a eu lieu la stérilisation
 Name=Q312
-Start=34
+Start=36
 Len=2
 DataType=Numeric
 
@@ -2465,9 +2485,10 @@ DataType=Numeric
 Label=Where sterilization took place|Où a eu lieu la stérilisation
 Name=Q312_VS1
 Value=10;--SECTEUR PUBLIC--
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé intégré
-Value=13;Poste de santé
+Value=11;Hôpital général
+Value=12;Hôpital de base/Hôp. de référence intégré
+Value=13;Centre de santé intégré
+Value=14;Poste de santé
 Value=16;Autre secteur secteur public
 Value=20;--SECTEUR MEDICAL PRIVÉE--
 Value=21;Hôpital privé
@@ -2484,14 +2505,14 @@ Value=98;Ne sait pas
 [Item]
 Label=Date sterilization was performed
 Name=Q313
-Start=36
+Start=38
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Month sterilization was performed|Mois de la stérilisation a été effectuée
 Name=Q313M
-Start=36
+Start=38
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -2515,7 +2536,7 @@ Value=12;Décembre
 [Item]
 Label=Year sterilization was performed|Année de la stérilisation a été effectuée
 Name=Q313Y
-Start=38
+Start=40
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -2528,14 +2549,14 @@ Value=1985:2030
 [Item]
 Label=Time started using current method
 Name=Q314
-Start=42
+Start=44
 Len=6
 DataType=Alpha
 
 [Item]
 Label=Month started using current method|Mois début utilisation de la méthode actuelle
 Name=Q314M
-Start=42
+Start=44
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -2559,7 +2580,7 @@ Value=12;Décembre
 [Item]
 Label=Year started using current method|Année début utilisation de la méthode actuelle
 Name=Q314Y
-Start=44
+Start=46
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -2572,7 +2593,7 @@ Value=1985:2030
 [Item]
 Label=Used emergency contraception in past 12 months|A Utilisé une contraception d'urgence au cours des 12 derniers mois
 Name=Q318
-Start=48
+Start=50
 Len=1
 DataType=Numeric
 
@@ -2585,7 +2606,7 @@ Value=2;Non
 [Item]
 Label=Ever used a contraceptive method|A déjà utilisé une méthode contraceptive
 Name=Q320
-Start=49
+Start=51
 Len=1
 DataType=Numeric
 
@@ -2598,7 +2619,7 @@ Value=2;Non
 [Item]
 Label=Current contraceptive method (filter)|Méthode contraceptive actuelle (filtre)
 Name=Q321
-Start=50
+Start=52
 Len=2
 DataType=Numeric
 
@@ -2626,7 +2647,7 @@ Value=96;Autre méthode traditionnelle|AUTRE MÉTHODE TRADITIONNELLE
 [Item]
 Label=Source for current method when started|Source au début de l’utilisation de la méthode actuelle
 Name=Q322
-Start=52
+Start=54
 Len=2
 DataType=Numeric
 
@@ -2635,9 +2656,11 @@ Label=Source for current method when started|Source au début de l’utilisation
 Name=Q322_VS1
 Link=126161968
 Value=10;---SECTEUR PUBLIC---
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé intégré
-Value=13;Poste de santé
+Value=11;Hôpital général
+Value=12;Hôpital de base/Hôp. de référence
+Value=13;Centre de santé intégré
+Value=14;Poste de santé
+Value=15;Agent de santé communautaire/agent de terrain
 Value=16;Autre secteur public
 Value=20;---SECTEUR MÉDICAL PRIVÉ---
 Value=21;Hôpital privé
@@ -2645,8 +2668,7 @@ Value=22;Clinique/polyclinique privée
 Value=23;Médecin/cabinet médical
 Value=24;Pharmacie
 Value=25;Association Congolaise De bien-être Familiale
-Value=26;Agent de santé communautaire/ agent de terrain
-Value=27;Autre secteur médical privé
+Value=26;Autre secteur médical privé
 Value=30;---SECTEUR MÉDICAL ONG---
 Value=31;Hôpital ONG
 Value=32;Clinique ONG
@@ -2661,7 +2683,7 @@ Value=96;AUTRE
 [Item]
 Label=Told about side effects|Informé des effets secondaires
 Name=Q323
-Start=54
+Start=56
 Len=1
 DataType=Numeric
 
@@ -2674,7 +2696,7 @@ Value=2;Non
 [Item]
 Label=Told about side effects when sterilized|Informé des effets secondaires lors de la stérilisation
 Name=Q324
-Start=55
+Start=57
 Len=1
 DataType=Numeric
 
@@ -2687,7 +2709,7 @@ Value=2;Non
 [Item]
 Label=Told how to deal with side effects|Informé comment gérer les effets secondaires
 Name=Q325
-Start=56
+Start=58
 Len=1
 DataType=Numeric
 
@@ -2700,7 +2722,7 @@ Value=2;Non
 [Item]
 Label=Told about other FP methods|Informé sur d'autres méthodes de PF
 Name=Q326
-Start=57
+Start=59
 Len=1
 DataType=Numeric
 
@@ -2713,7 +2735,7 @@ Value=2;Non
 [Item]
 Label=Current contraceptive method (filter)|Méthode contraceptive actuelle (filtre)
 Name=Q327
-Start=58
+Start=60
 Len=2
 DataType=Numeric
 
@@ -2734,7 +2756,7 @@ Value=95;Autre méthode moderne|AUTRE MÉTHODE MODERNE
 [Item]
 Label=Could switch method if wanted/needed to|Pourrait changer de méthode si souhaite/nécessaire
 Name=Q328
-Start=60
+Start=62
 Len=1
 DataType=Numeric
 
@@ -2747,7 +2769,7 @@ Value=2;Non
 [Item]
 Label=Current contraceptive method (filter)|Méthode contraceptive actuelle (filtre)
 Name=Q329
-Start=61
+Start=63
 Len=2
 DataType=Numeric
 
@@ -2759,7 +2781,7 @@ Link=126148864
 [Item]
 Label=Last source of FP|Dernière source de PF
 Name=Q330
-Start=63
+Start=65
 Len=2
 DataType=Numeric
 
@@ -2771,7 +2793,7 @@ Link=126161968
 [Item]
 Label=Know source for FP|Connaît source de PF
 Name=Q331
-Start=65
+Start=67
 Len=1
 DataType=Numeric
 
@@ -2784,7 +2806,7 @@ Value=2;Non
 [Item]
 Label=Visited by FP worker in last 12 months|Visité par un agent de santé au cours des 12 derniers mois
 Name=Q332
-Start=66
+Start=68
 Len=1
 DataType=Numeric
 
@@ -2797,7 +2819,7 @@ Value=2;Non
 [Item]
 Label=Fieldworker talked about FP|Agent de santé a parlé de PF
 Name=Q333
-Start=67
+Start=69
 Len=1
 DataType=Numeric
 
@@ -2810,7 +2832,7 @@ Value=2;Non
 [Item]
 Label=Visited health facility in last 12 months|A visité un établissement de santé au cours des 12 derniers mois
 Name=Q334
-Start=68
+Start=70
 Len=1
 DataType=Numeric
 
@@ -2823,7 +2845,7 @@ Value=2;Non
 [Item]
 Label=At health facility, told of FP|Au centre de santé, informé sur les méthodes de PF
 Name=Q335
-Start=69
+Start=71
 Len=1
 DataType=Numeric
 
@@ -2836,7 +2858,7 @@ Value=2;Non
 [Item]
 Label=Current contraceptive method (major method)|Méthode contraceptive actuelle (méthode principale)
 Name=Q307N
-Start=70
+Start=72
 Len=2
 DataType=Numeric
 
@@ -2862,14 +2884,14 @@ Value=96;Autre méthode traditionnelle
 [Item]
 Label=Date started using current method (CMC)
 Name=Q314C
-Start=72
+Start=74
 Len=4
 DataType=Numeric
 
 [Item]
 Label=Date flag for Q314C
 Name=Q314F
-Start=76
+Start=78
 Len=1
 DataType=Numeric
 
@@ -3497,19 +3519,20 @@ Value='1            ';---HOME---
 Value='A            ';Sa maison
 Value='B            ';Autre maison
 Value='2            ';---PUBLIC SECTOR---
-Value='C            ';Hôpital du gouvernement
-Value='D            ';Centre de santé intégré
-Value='E            ';Poste de santé
-Value='F            ';Autre secteur public
+Value='C            ';Hôpital général      nt
+Value='D            ';Hôpital de base/Hôp. de référenceré
+Value='E            ';Centre de santé intégré
+Value='F            ';Poste de santé
+Value='G            ';Autre secteur public
 Value='2            ';---SECTEUR MÉDICAL PRIVÉ---
-Value='G            ';Hôpital privé
-Value='H            ';Clinique/polyclinique privée
-Value='I            ';Médecin/cabinet médical
-Value='J            ';Autre secteur médical privé
+Value='H            ';Hôpital privé
+Value='I            ';Clinique/polyclinique privée
+Value='J            ';Médecin/cabinet médical
+Value='K            ';Autre secteur médical privé
 Value='3            ';---SECTEUR MÉDICAL ONG---
-Value='K            ';Hôpital ONG
-Value='L            ';Clinique ONG
-Value='M            ';Autre secteur médical ONG
+Value='L            ';Hôpital ONG
+Value='M            ';Clinique ONG
+Value='N            ';Autre secteur médical ONG
 Value='X            ';AUTRE
 
 [Item]
@@ -3762,25 +3785,26 @@ DataType=Alpha
 Label=Where iron tablets or syrup were obtained|Lieu d’obtention des comprimés ou du sirop de fer
 Name=Q427_VS1
 Value='1                   ';---SECTEUR PUBLIC---
-Value='A                   ';Hôpital du gouvernement
-Value='B                   ';Centre de santé intégré
-Value='C                   ';Poste de santé
-Value='D                   ';Autre secteur public
+Value='A                   ';Hôpital général
+Value='B                   ';Hôpital de base/Hôp. de référence
+Value='C                   ';Centre de santé intégré
+Value='D                   ';Poste de santé
+Value='E                   ';Agent de santé communautaire/agent de terrain
+Value='F                   ';Autre secteur public
 Value='2                   ';---SECTEUR MÉDICAL PRIVÉ---
-Value='E                   ';Hôpital privé
-Value='F                   ';Clinique/polyclinique privée
-Value='G                   ';Médecin/cabinet médical
-Value='H                   ';Pharmacie
-Value='I                   ';Association Congolaise De bien-être Familiale
-Value='J                   ';Agent de santé communautaire/ agent de terrain
-Value='K                   ';Autre secteur médical privé
+Value='G                   ';Hôpital privé
+Value='H                   ';Clinique/polyclinique privée
+Value='I                   ';Médecin/cabinet médical
+Value='J                   ';Pharmacie
+Value='K                   ';Association Congolaise De bien-être Familiale
+Value='L                   ';Autre secteur médical privé
 Value='3                   ';---SECTEUR MÉDICAL ONG---
-Value='L                   ';Hôpital ONG
-Value='M                   ';Clinique ONG
-Value='N                   ';Autre secteur médical ONG
+Value='M                   ';Hôpital ONG
+Value='N                   ';Clinique ONG
+Value='O                   ';Autre secteur médical ONG
 Value='4                   ';---AUTRE SOURCE---
-Value='O                   ';Vendeur ambulant/ pharmacie par terre
-Value='P                   ';Boutique/marché
+Value='P                   ';Vendeur ambulant/ pharmacie par terre
+Value='Q                   ';Boutique/marché
 Value='X                   ';AUTRE
 
 [Item]
@@ -3885,9 +3909,10 @@ Value=10;---MAISON---
 Value=11;Sa maison
 Value=12;Autre maison
 Value=20;---SECTEUR PUBLIC---
-Value=21;Hôpital du gouvernement
-Value=22;Centre de santé intégré
-Value=23;Poste de santé
+Value=21;Hôpital général
+Value=22;Hôpital de base/Hôp. de référence
+Value=23;Centre de santé intégré
+Value=24;Poste de santé
 Value=26;Autre secteur public
 Value=30;---SECTEUR MÉDICAL PRIVÉ---
 Value=31;Hôpital privé
@@ -4286,9 +4311,10 @@ Value=10;---MAISON---
 Value=11;Sa maison
 Value=12;Autre maison
 Value=20;---SECTEUR PUBLIC---
-Value=21;Hôpital du gouvernement
-Value=22;Centre de santé du gouvernement
-Value=23;Poste de santé du gouvernement
+Value=21;Hôpital général
+Value=22;Hôpital de base/Hôp. de référence
+Value=23;Centre de santé intégré
+Value=24;Poste de santé
 Value=26;Autre secteur public
 Value=30;---SECTEUR MÉDICAL PRIVÉ---
 Value=31;Hôpital privé
@@ -6192,9 +6218,11 @@ DataType=Numeric
 Label=Where child received most vaccines|Source au début de l’utilisation de la méthode actuelle
 Name=Q529_VS1
 Value=10;---SECTEUR PUBLIC---
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé intégré
-Value=13;Poste de santé
+Value=11;Hôpital général
+Value=12;Hôpital de base/Hôp. de référence
+Value=13;Centre de santé intégré
+Value=14;Poste de santé
+Value=15;Agent de santé communautaire/agent de terrain
 Value=16;Autre secteur public
 Value=20;---SECTEUR MÉDICAL PRIVÉ---
 Value=21;Hôpital privé
@@ -6202,8 +6230,7 @@ Value=22;Clinique/polyclinique privée
 Value=23;Médecin/cabinet médical
 Value=24;Pharmacie
 Value=25;Association Congolaise De bien-être Familiale
-Value=26;Agent de santé communautaire/ agent de terrain
-Value=27;Autre secteur médical privé
+Value=26;Autre secteur médical privé
 Value=30;---SECTEUR MÉDICAL ONG---
 Value=31;Hôpital ONG
 Value=32;Clinique ONG
@@ -6424,25 +6451,26 @@ Label=Where sought treatment|Lieu de conseils/traitement
 Name=Q612_VS1
 Link=257043744
 Value='1                    ';---SECTEUR PUBLIC---
-Value='A                    ';Hôpital du gouvernement
-Value='B                    ';Centre de santé intégré
-Value='C                    ';Poste de santé
-Value='D                    ';Autre secteur public
+Value='A                    ';Hôpital général
+Value='B                    ';Hôpital de base/Hôp. de référence
+Value='C                    ';Centre de santé intégré
+Value='D                    ';Poste de santé
+Value='E                    ';Agent de santé communautaire/agent de terrain
+Value='F                    ';Autre secteur public
 Value='2                    ';---SECTEUR MÉDICAL PRIVÉ---
-Value='E                    ';Hôpital privé
-Value='F                    ';Clinique/polyclinique privée
-Value='G                    ';Médecin/cabinet médical
-Value='H                    ';Pharmacie
-Value='I                    ';Association Congolaise De bien-être Familiale
-Value='J                    ';Agent de santé communautaire/ agent de terrain
-Value='K                    ';Autre secteur médical privé
+Value='G                    ';Hôpital privé
+Value='H                    ';Clinique/polyclinique privée
+Value='I                    ';Médecin/cabinet médical
+Value='J                    ';Pharmacie
+Value='K                    ';Association Congolaise De bien-être Familiale
+Value='L                    ';Autre secteur médical privé
 Value='3                    ';---SECTEUR MÉDICAL ONG---
-Value='L                    ';Hôpital ONG
-Value='M                    ';Clinique ONG
-Value='N                    ';Autre secteur médical ONG
+Value='M                    ';Hôpital ONG
+Value='N                    ';Clinique ONG
+Value='O                    ';Autre secteur médical ONG
 Value='4                    ';---AUTRE SOURCE---
-Value='O                    ';Vendeur ambulant/ pharmacie par terre
-Value='P                    ';Boutique/marché
+Value='P                    ';Vendeur ambulant/ pharmacie par terre
+Value='Q                    ';Boutique/marché
 Value='X                    ';AUTRE
 
 [Item]
@@ -8577,13 +8605,9 @@ Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Brand name of condoms used in last sex|Marque du condom utilisé lors du dernier rapport sexuel
+Label=Brand name of condoms used in last sex
 Name=Q728_VS1
-Value=1;Marque A
-Value=2;Marque B
-Value=3;Marque C
-Value=96;Autre
-Value=98;Ne sait pas
+Link=181799456
 
 [Item]
 Label=Source for condoms|Source des condoms
@@ -8596,10 +8620,10 @@ DataType=Numeric
 Label=Source for condoms|Source des condoms
 Name=Q729_VS1
 Value=10;---PUBLIC SECTOR---
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé du gouvernement
-Value=13;Clinique planification familiale
-Value=14;Clinique mobile
+Value=11;Hôpital général
+Value=12;Hôpital de base/Hôp. de référence
+Value=13;Centre de santé intégré
+Value=14;Poste de santé
 Value=15;Agent de santé communautaire/agent de terrain
 Value=16;Autre secteur public
 Value=20;---PRIVATE MEDICAL SECTOR---
@@ -8608,8 +8632,7 @@ Value=22;Clinique privée
 Value=23;Pharmacie
 Value=24;Médecin privé
 Value=25;Clinique mobile
-Value=26;Agent de santé communautaire/agent de terrain
-Value=27;Autre secteur médical privé
+Value=26;Autre secteur médical privé
 Value=30;---NGO MEDICAL SECTOR---
 Value=31;Hôpital ONG
 Value=32;Clinique ONG
@@ -8883,7 +8906,7 @@ Label=Fertility Preferences
 Name=QWSEC08
 RecordTypeValue='W08'
 Required=No
-RecordLen=65
+RecordLen=66
 
 [Item]
 Label=Desire future child|Désir d'avoir un enfant  dans le  futur
@@ -9168,16 +9191,35 @@ Value=1;Oui
 Value=2;Non
 
 [Item]
-Label=COUNTRY SPECIFIC QUESTIONS ABOUT FP MESSAGING
-Name=Q816
+Label=Heard FP from friends, neighbours last 12 months|12 derniers mois:avait parlé sur la PF avec amis/voisins/parents
+Name=Q815I
 Start=61
 Len=1
 DataType=Numeric
 
+[ValueSet]
+Label=Heard FP from friends, neighbours last 12 months|12 derniers mois:avait parlé sur la PF avec amis/voisins/parents
+Name=Q815I_VS1
+Value=1;Oui
+Value=2;Non
+
+[Item]
+Label=Heard messages from Association pour le Bien-être Familial|Heard messages from Association pour le Bien-être Familial
+Name=Q816
+Start=62
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Heard messages from Association pour le Bien-être Familial|Heard messages from Association pour le Bien-être Familial
+Name=Q816_VS1
+Value=1;Oui
+Value=2;Non
+
 [Item]
 Label=Decision maker for using contraception|Prise de décision pour l'utilisation de la contraception
 Name=Q818
-Start=62
+Start=63
 Len=1
 DataType=Numeric
 
@@ -9193,7 +9235,7 @@ Value=6;Autre
 [Item]
 Label=How important respondent's opinion is to husband's opinion|Quelle est l'importance de l'opinion de l’enquêtée par rapport à l'opinion du mari/partenaire
 Name=Q819
-Start=63
+Start=64
 Len=1
 DataType=Numeric
 
@@ -9207,7 +9249,7 @@ Value=3;Compte moins
 [Item]
 Label=Respondent pressured to become pregnant|Faire pression sur l’enquêtée pour tomber enceinte
 Name=Q820
-Start=64
+Start=65
 Len=1
 DataType=Numeric
 
@@ -9220,7 +9262,7 @@ Value=2;Non
 [Item]
 Label=Partner's preferred number of children same as respondent|Nombre d'enfants préféré par le partenaire par rapport à l'enquétée
 Name=Q822
-Start=65
+Start=66
 Len=1
 DataType=Numeric
 
@@ -9237,7 +9279,7 @@ Label=Husband's and Woman's Background
 Name=QWSEC09
 RecordTypeValue='W09'
 Required=No
-RecordLen=58
+RecordLen=62
 
 [Item]
 Label=Partner's age|Age du mari/partenaire
@@ -9276,8 +9318,9 @@ DataType=Numeric
 Label=Partner's level of education|Plus haut niveau d'étude du mari/partenaire
 Name=Q904_VS1
 Value=1;Primaire
-Value=2;Secondaire
-Value=3;Supérieur
+Value=2;Secondaire/secondaire technique 1er cycle
+Value=3;Secondaire/secondaire technique 2nd cycle
+Value=4;Supérieur/supérieur technique/professionnel
 Value=8;Ne sait pas
 
 [Item]
@@ -9793,6 +9836,62 @@ Value=1;Oui
 Value=2;Non
 Value=8;Ne sait pas
 
+[Item]
+Label=Justifies domestic violence: Wife unfaithful|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932F
+Start=59
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife unfaithful|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932F_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
+Label=Justifies domestic violence: Wife disrespects his family|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932G
+Start=60
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife disrespects his family|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932G_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
+Label=Justifies domestic violence: Wife talks about marriage to others|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932H
+Start=61
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife talks about marriage to others|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932H_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
+Label=Justifies domestic violence: Wife spends money without permission|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932I
+Start=62
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife spends money without permission|Justifie la violence domestique: la femme brûle de la nourriture
+Name=Q932I_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
 [Record]
 Label=HIV/AIDS
 Name=QWSEC10
@@ -10168,9 +10267,10 @@ Label=Place of HIV test|Lieu du test VIH
 Name=Q1026_VS1
 Link=1301257
 Value=10;---PUBLIC SECTOR---
-Value=11;Hôpital du gouvernem
-Value=12;Centre de santé intégré
-Value=13;Laboratoire national
+Value=11;Hôpital général
+Value=12;Hôpital de base/Hôp. de référence
+Value=13;Centre de santé intégré
+Value=14;Laboratoire national
 Value=14;Poste de santé
 Value=16;Autre secteur Public
 Value=20;---PRIVATE MEDICAL SECTOR---
@@ -10178,7 +10278,7 @@ Value=21;Hôpital privé
 Value=22;Clinique/polyclinique privée
 Value=23;Médecin/cabinet médical privé
 Value=24;Pharmacie
-Value=24;Laboratoire national
+Value=25;Laboratoire privé
 Value=26;Autre secteur médical privé
 Value=30;---NGO MEDICAL SECTOR---
 Value=31;Hôpital ONG
@@ -11658,10 +11758,42 @@ Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Highest grade/form/year at that level|Plus haute Classe/Année à ce niveau
+Label=Highest grade completed
 Name=QM115_VS1
-Value=0;Moins d'une année
-Value=1:8
+Value=0;MOINS D'1 AN.
+Value=1;CP1
+Value=2;CP2
+Value=3;CE1
+Value=4;CE2
+Value=5;CM1
+Value=6;CM2
+
+[ValueSet]
+Label=Highest grade completed
+Name=QM115_VS2
+Value=0;Moins d'1 an
+Value=1;6ième
+Value=2;5ième
+Value=3;4ième
+Value=4;3ième
+
+[ValueSet]
+Label=Highest grade completed
+Name=QM115_VS3
+Value=0;Moins d'1 an
+Value=1;2nde
+Value=2;1ière
+Value=3;Terminale
+
+[ValueSet]
+Label=Highest grade completed
+Name=QM115_VS4
+Value=0;MOINS D'1 AN.
+Value=1;1ère année
+Value=2;2ème année
+Value=3;3ème année
+Value=4;4ème année
+Value=5;5ème année ou plus
 
 [Item]
 Label=Sentence read|Phrase lue
@@ -12199,7 +12331,7 @@ Label=[Men] Contraceptive Practice
 Name=QMSEC3B
 RecordTypeValue='M3B'
 Required=No
-RecordLen=27
+RecordLen=29
 
 [Item]
 Label=Heard about FP: on the radio last 12 months|12 derniers mois: entendu parler de PF à la radio
@@ -12306,9 +12438,35 @@ Value=1;Oui
 Value=2;Non
 
 [Item]
+Label=Heard FP from friends, neighbours last 12 months|12 derniers mois:avait parlé sur la PF avec amis/voisins/parents
+Name=QM302I
+Start=22
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Heard FP from friends, neighbours last 12 months|12 derniers mois:avait parlé sur la PF avec amis/voisins/parents
+Name=QM302I_VS1
+Value=1;Oui
+Value=2;Non
+
+[Item]
+Label=Heard messages from Association pour le Bien-être Familial|Heard messages from Association pour le Bien-être Familial
+Name=QM303B
+Start=23
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Heard messages from Association pour le Bien-être Familial|Heard messages from Association pour le Bien-être Familial
+Name=QM303B_VS1
+Value=1;Oui
+Value=2;Non
+
+[Item]
 Label=Discussed family planning with a health worker or health professional|Discuté de la planification familiale avec un agent de santé ou un professionnel de la santé
 Name=QM303
-Start=22
+Start=24
 Len=1
 DataType=Numeric
 
@@ -12321,7 +12479,7 @@ Value=2;Non
 [Item]
 Label=Increased chance of woman getting pregnant on certain days|Y a-t-il une période où les femmes ont plus de chances de tomber enceintes
 Name=QM304
-Start=23
+Start=25
 Len=1
 DataType=Numeric
 
@@ -12335,7 +12493,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Days when increased chance of getting pregnant|Période à laquelle la femme a plus de chances de tomber enceintes
 Name=QM305
-Start=24
+Start=26
 Len=1
 DataType=Numeric
 
@@ -12352,7 +12510,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Can woman get pregnant after birth and before period returns|Une femme peut-elle tomber enceinte après la naissance et avant le retour des règles
 Name=QM306
-Start=25
+Start=27
 Len=1
 DataType=Numeric
 
@@ -12366,7 +12524,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Contraception is woman's business, man should not worry|La contraception est un problème des femmes, l'homme ne doit pas s'en occuper
 Name=QM307A
-Start=26
+Start=28
 Len=1
 DataType=Numeric
 
@@ -12380,7 +12538,7 @@ Value=8;Ne sait pas
 [Item]
 Label=Women use contraception may become promiscuous|Une femme qui utilise la contraception peut devenir une femme légère
 Name=QM307B
-Start=27
+Start=29
 Len=1
 DataType=Numeric
 
@@ -12396,7 +12554,7 @@ Label=[Men] Marriage and Sexual Activity
 Name=QMSEC04
 RecordTypeValue='M04'
 Required=No
-RecordLen=93
+RecordLen=95
 
 [Item]
 Label=Currently in union|Actuellement en union
@@ -12713,44 +12871,33 @@ Value=1;Oui
 Value=2;Non
 
 [Item]
+Label=Brand name of condoms reported|Nom de marque des condoms utilisé
+Name=QM420
+Start=74
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Brand name of condoms reported|Marque du condom utilisé lors du dernier rapport sexuel
+Name=QM420_VS1
+Link=181799456
+
+[Item]
 Label=Place obtained condom last time|Lieu d’obtention du condom la dernière fois
 Name=QM421
-Start=74
+Start=76
 Len=2
 DataType=Numeric
 
 [ValueSet]
 Label=Place obtained condom last time|Lieu d’obtention du condom la dernière fois
 Name=QM421_VS1
-Value=10;---SECTEUR PUBLIC---
-Value=11;Hôpital du gouvernement
-Value=12;Centre de santé intégré
-Value=13;Poste de santé
-Value=16;Autre secteur public
-Value=20;---SECTEUR MÉDICAL PRIVÉ---
-Value=21;Hôpital privé
-Value=22;Clinique/polyclinique privée
-Value=23;Médecin/cabinet médical
-Value=24;Pharmacie
-Value=25;Association Congolaise De bien-être Familiale
-Value=26;Agent de santé communautaire/ agent de terrain
-Value=27;Autre secteur médical privé
-Value=30;---SECTEUR MÉDICAL ONG---
-Value=31;Hôpital ONG
-Value=32;Clinique ONG
-Value=36;Autre secteur médical ONG
-Value=40;---AUTRE SOURCE---
-Value=41;Vendeur ambulant/ pharmacie par terre
-Value=42;Boutique/marché
-Value=43;Bar/boîte de nuit/hôtel
-Value=44;Amis/parents
-Value=96;AUTRE
-Value=98;Ne sait pas
+Link=126161968
 
 [Item]
 Label=Relationship with last partner|Lien avec la dernière partenaire
 Name=QM422
-Start=76
+Start=78
 Len=1
 DataType=Numeric
 
@@ -12767,7 +12914,7 @@ Value=6;Autre
 [Item]
 Label=Sexual intercourse with any other person in last 12 months|Rapports sexuels avec une autre personne au cours des 12 derniers mois
 Name=QM423
-Start=77
+Start=79
 Len=1
 DataType=Numeric
 
@@ -12780,7 +12927,7 @@ Value=2;Non
 [Item]
 Label=Condom used with second partner|Condom utilisé avec la deuxième personne
 Name=QM424
-Start=78
+Start=80
 Len=1
 DataType=Numeric
 
@@ -12793,7 +12940,7 @@ Value=2;Non
 [Item]
 Label=Relationship with second partner|Lien avec la deuxième personne
 Name=QM425
-Start=79
+Start=81
 Len=1
 DataType=Numeric
 
@@ -12810,7 +12957,7 @@ Value=6;Autre
 [Item]
 Label=Sexual intercourse with any other person|Rapports sexuels avec d'autres personnes au cours des 12 derniers mois
 Name=QM426
-Start=80
+Start=82
 Len=1
 DataType=Numeric
 
@@ -12823,7 +12970,7 @@ Value=2;Non
 [Item]
 Label=Condom used with third partner|Condom utilisé avec la troisième personne
 Name=QM427
-Start=81
+Start=83
 Len=1
 DataType=Numeric
 
@@ -12836,7 +12983,7 @@ Value=2;Non
 [Item]
 Label=Relationship with third partner|Lien avec le troisième personne
 Name=QM428
-Start=82
+Start=84
 Len=1
 DataType=Numeric
 
@@ -12853,7 +13000,7 @@ Value=6;Autre
 [Item]
 Label=Number of lifetime sexual partners|Nombre de partenaires sexuels dans votre vie
 Name=QM429
-Start=83
+Start=85
 Len=2
 DataType=Numeric
 
@@ -12867,14 +13014,14 @@ Value=98;Ne sait pas
 [Item]
 Label=Date of first union (CMC)
 Name=QM411C
-Start=85
+Start=87
 Len=4
 DataType=Numeric
 
 [Item]
 Label=Date flag for QM411C
 Name=QM411F
-Start=89
+Start=91
 Len=1
 DataType=Numeric
 
@@ -12891,14 +13038,14 @@ Value=8;None - all imp
 [Item]
 Label=Age at first union (calculated)
 Name=QM412C
-Start=90
+Start=92
 Len=2
 DataType=Numeric
 
 [Item]
 Label=Flag for QM414
 Name=QM414F
-Start=92
+Start=94
 Len=1
 DataType=Numeric
 
@@ -12916,7 +13063,7 @@ Value=6;After marriage
 [Item]
 Label=Flag for QM415
 Name=QM415F
-Start=93
+Start=95
 Len=1
 DataType=Numeric
 
@@ -13243,7 +13390,7 @@ Label=[Men] Employment and Gender Roles
 Name=QMSEC06
 RecordTypeValue='M06'
 Required=No
-RecordLen=40
+RecordLen=44
 
 [Item]
 Label=Currently working|Travaille actuellement
@@ -13573,9 +13720,65 @@ Value=2;Non
 Value=8;Ne sait pas
 
 [Item]
+Label=Justifies domestic violence: Wife unfaithful|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618F
+Start=40
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife unfaithful|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618F_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
+Label=Justifies domestic violence: Wife disrespects his family|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618G
+Start=41
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife disrespects his family|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618G_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
+Label=Justifies domestic violence: Wife talks about marriage to others|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618H
+Start=42
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife talks about marriage to others|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618H_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
+Label=Justifies domestic violence: Wife spends money without permission|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618I
+Start=43
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Justifies domestic violence: Wife spends money without permission|Justifie la violence domestique: la femme brûle de la nourriture
+Name=QM618I_VS1
+Value=1;Oui
+Value=2;Non
+Value=8;Ne sait pas
+
+[Item]
 Label=Respondent's father beat mother|Son père a-t-il déjà battu sa mère
 Name=QM619
-Start=40
+Start=44
 Len=1
 DataType=Numeric
 

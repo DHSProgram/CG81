@@ -1279,6 +1279,8 @@ language = FR
  1030 E Le temps vécu par le répondant sur le lieu de résidence actuel (Q104=%02d) dépasse son âge actuel
  1031 W La répondante est une visiteuse, mais elle est une résidente habituelle dans le tableau du ménage ( %1d)
  1035 W Date d'emménagement au lieu de résidence actuelle incohérente avec le nombre d'années vécues dans le lieu actuel Q104=%d
+ 1040 W Vérifier si le répondant a toujours vécu au même endroit, car cet âge est supérieur ou égal à celui du ménage (QH07 = %02d). Remplacer par le code 95 (toujours) si nécessaire.
+ 1045 W Vérifier si le répondant est un visiteur, car la durée de résidence au même endroit est de 0 an et les dates d'entretien et de déménagement sont identiques. Remplacer par le code 96 (visiteur) si nécessaire.
  1060 E Ni la date de naissance ni l'âge spécifiés: %02d/%04d %02d
  1061 W Âge du répondant et âge dans le ménage différents: %02d %02d
  1062 E Date de naissance et âge incohérents: dob =%02d/%04d age = %02d entretien =%02d/%04d

@@ -97,7 +97,7 @@ Name=AHFORM01X
 Label=Names of household members
 QuestionTextHeight=139
 Level=1
-Size=974,747
+Size=938,747
   
 Item=QHSEC1X_ROSTER
 Item=QHMEMBER
@@ -121,7 +121,7 @@ Name=AHFORM01
 Label=Household schedule
 QuestionTextHeight=135
 Level=1
-Size=1569,703
+Size=988,703
   
 Item=QHSEC01_ROSTER
 Item=QHWOMEN
@@ -209,7 +209,6 @@ Item=QCDI3J
 Item=QCDI3K
 Item=QCDI4
 Item=QCDINAME
-Item=QCDI3
   
 Box=34,91,380,462,Etched
   
@@ -1026,308 +1025,308 @@ Required=No
 Type=Record
 TypeName=QHSEC01X
 Max=50
-DisplaySize=6,33,949,659
+DisplaySize=6,33,913,367
 Orientation=Horizontal
-FieldRowHeight=29
+FieldRowHeight=31
 HeadingRowHeight=0
 FreeMovement=No
  
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=1
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=2
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=3
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=4
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=5
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=6
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=7
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=8
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=9
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=10
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=11
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=12
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=13
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=14
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=15
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=16
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=17
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=18
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=19
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=20
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=21
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=22
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=23
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=24
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=25
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=26
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=27
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=28
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=29
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=30
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=31
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=32
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=33
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=34
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=35
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=36
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=37
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=38
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=39
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=40
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=41
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=42
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=43
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=44
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=45
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=46
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=47
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=48
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=49
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
   
 [Text]
-Position=0,0,22,29
+Position=0,0,22,31
 Text=50
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
@@ -1361,12 +1360,34 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 [EndColumn]
   
 [Column]
-Width=351
+Width=177
   
 [HeaderText]
-Position=128,0,223,24
-Text=Prenom, Nom
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+Position=70,0,107,24
+Text=Nom
+HorizontalAlignment=Center
+ 
+[Field]
+Name=QHLASTN
+Position=0,0,169,20
+Item=QHLASTN,CGHH80
+UseEnterKey=Yes
+UpperCase=Yes
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+  
+[Text]
+Text=Nom
+HorizontalAlignment=Center
+ 
+[EndColumn]
+  
+[Column]
+Width=177
+  
+[HeaderText]
+Position=59,0,117,24
+Text=Prenom
 HorizontalAlignment=Center
  
 [Field]
@@ -1374,27 +1395,13 @@ Name=QHFIRSTN
 Position=0,0,169,20
 Item=QHFIRSTN,CGHH80
 UseEnterKey=Yes
-Verify=No
 UpperCase=Yes
+UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
   
 [Text]
-Position=0,0,59,16
-Text=QHNAME
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=QHLASTN
-Position=174,1,343,21
-Item=QHLASTN,CGHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=TextBox
-  
-[Text]
-Text=QHLAST1
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+Text=Prenom
+HorizontalAlignment=Center
  
 [EndColumn]
   
@@ -1641,7 +1648,7 @@ Required=No
 Type=Record
 TypeName=QHSEC01
 Max=50
-DisplaySize=4,51,1544,640
+DisplaySize=4,51,963,640
 Orientation=Horizontal
 FieldRowHeight=28
 HeadingRowHeight=24
@@ -2471,6 +2478,206 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH26
+ 
+[Field]
+Name=QH26
+Position=18,0,33,20
+Item=QH26,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH26
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH27
+ 
+[Field]
+Name=QH27
+Position=18,0,33,20
+Item=QH27,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH27
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH28
+ 
+[Field]
+Name=QH28
+Position=18,0,33,20
+Item=QH28,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH28
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH29
+ 
+[Field]
+Name=QH29
+Position=18,0,33,20
+Item=QH29,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH29
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH30
+ 
+[Field]
+Name=QH30
+Position=18,0,33,20
+Item=QH30,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH30
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH31
+ 
+[Field]
+Name=QH31
+Position=18,0,33,20
+Item=QH31,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH31
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH32
+ 
+[Field]
+Name=QH32
+Position=18,0,33,20
+Item=QH32,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH32
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH33
+ 
+[Field]
+Name=QH33
+Position=18,0,33,20
+Item=QH33,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH33
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH34
+ 
+[Field]
+Name=QH34
+Position=18,0,33,20
+Item=QH34,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH34
+ 
+[EndColumn]
+  
+[Column]
+Width=41
+  
+[HeaderText]
+Position=0,0,41,24
+Text=QH35
+ 
+[Field]
+Name=QH35
+Position=18,0,33,20
+Item=QH35,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QH35
+ 
+[EndColumn]
+  
 [EndGrid]
  
   
@@ -2509,6 +2716,32 @@ Name=QHSECCL_FORM
 Label=Child Labor
 Form=5
 Max=1
+  
+[Field]
+Name=QCHLINE
+Position=339,45,368,65
+Item=QCHLINE,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+DataCaptureType=TextBox
+Form=5
+  
+  
+[Field]
+Name=QCHLNAME
+Position=377,45,547,65
+Item=QCHLNAME,CGHH80
+UseEnterKey=Yes
+Protected=Yes
+UpperCase=Yes
+UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
+Form=5
+  
+[Text]
+Position=444,21,473,37
+Text=Nom
+ 
   
 [Field]
 Name=QCHL2A
@@ -2861,44 +3094,18 @@ Form=5
 Position=240,431,290,447
 Text=QCHL14
  
-  
-[Field]
-Name=QCHLINE
-Position=339,45,368,65
-Item=QCHLINE,CGHH80
-UseEnterKey=Yes
-Protected=Yes
-DataCaptureType=TextBox
-Form=5
-  
-  
-[Field]
-Name=QCHLNAME
-Position=377,45,547,65
-Item=QCHLNAME,CGHH80
-UseEnterKey=Yes
-Protected=Yes
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=5
-  
-[Text]
-Position=444,21,473,37
-Text=Nom
- 
 [Block]
 Name=QHCL7_BLOCK
 Label=CL7 Block
 DisplayTogether=Yes
-Position=7
+Position=9
 Length=6
   
 [Block]
 Name=QHCL12_BLOCK
 Label=CL 12 Block
 DisplayTogether=Yes
-Position=18
+Position=20
 Length=7
   
 [EndGroup]
@@ -2938,22 +3145,6 @@ Form=6
 [Text]
 Position=145,59,174,75
 Text=Nom
- 
-  
-[Field]
-Name=QCDI3
-Position=92,98,110,118
-Item=QCDI3,CGHH80
-UseEnterKey=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=6
-  
-[Text]
-Position=47,101,86,117
-Text=QCDI3
  
   
 [Field]
@@ -6270,7 +6461,6 @@ Name=QB205
 Position=0,0,85,20
 Item=QB205,CGHH80
 UseEnterKey=Yes
-HideInCaseTree=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox
@@ -6326,7 +6516,6 @@ Name=QB207
 Position=14,0,85,20
 Item=QB207,CGHH80
 UseEnterKey=Yes
-HideInCaseTree=Yes
 Verify=No
 UpperCase=Yes
 DataCaptureType=ComboBox

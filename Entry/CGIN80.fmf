@@ -331,6 +331,7 @@ Item=Q313Y
 Item=Q314M
 Item=Q314Y
 Item=QCAL1002
+Item=Q311
   
 Box=18,44,311,266,Etched
 Box=342,44,614,266,Etched
@@ -722,7 +723,7 @@ Name=AWFORM08
 Label=Fertility Preferences
 QuestionTextHeight=130
 Level=1
-Size=659,492
+Size=659,545
   
 Item=Q803
 Item=Q804
@@ -746,9 +747,11 @@ Item=Q818
 Item=Q819
 Item=Q820
 Item=Q822
+Item=Q815I
+Item=Q816
   
 Box=37,40,224,228,Etched
-Box=38,239,224,467,Etched
+Box=42,238,228,520,Etched
 Box=237,40,634,228,Etched
 Box=236,240,428,466,Etched
   
@@ -773,7 +776,7 @@ Name=AWFORM09
 Label=Husband background and woman's work
 QuestionTextHeight=204
 Level=1
-Size=742,416
+Size=840,416
   
 Item=Q902
 Item=Q903
@@ -814,6 +817,10 @@ Item=Q932E
 Item=Q930C
 Item=Q930A
 Item=Q930B
+Item=Q932F
+Item=Q932G
+Item=Q932H
+Item=Q932I
   
 Box=17,39,172,391,Etched
 Box=193,40,365,388,Etched
@@ -1193,7 +1200,7 @@ Name=AMFORM3B
 Label=Contraceptive Practice (continuation for Men)
 QuestionTextHeight=83
 Level=1
-Size=391,564
+Size=383,517
   
 Item=QM302A
 Item=QM302B
@@ -1209,6 +1216,8 @@ Item=QM305
 Item=QM306
 Item=QM307A
 Item=QM307B
+Item=QM302I
+Item=QM303B
   
 Box=46,53,286,492,Etched
   
@@ -1263,6 +1272,7 @@ Item=QM427
 Item=QM428
 Item=QM429
 Item=QM413
+Item=QM420
   
 Box=27,56,220,467,Etched
 Box=231,56,454,464,Etched
@@ -1321,7 +1331,7 @@ Name=AMFORM06
 Label=Employment and Gender Roles (Men)
 QuestionTextHeight=108
 Level=1
-Size=490,485
+Size=490,581
   
 Item=QM601
 Item=QM602
@@ -1347,6 +1357,10 @@ Item=QM619
 Item=QM617A
 Item=QM617B
 Item=QM617C
+Item=QM618G
+Item=QM618H
+Item=QM618I
+Item=QM618F
   
 Box=44,51,194,382,Etched
 Box=229,52,404,556,Etched
@@ -1362,6 +1376,13 @@ Font=-019 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0034 Arial
 [Text]
 Name=TEXT057
 Text=
+Form=31
+ 
+  
+[Text]
+Name=TEXT28
+Position=290,505,294,521
+Text=I
 Form=31
  
 [EndForm]
@@ -3892,6 +3913,20 @@ Text=Q309
  
   
 [Field]
+Name=Q311
+Position=541,63,568,83
+Item=Q311,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=8
+  
+[Text]
+Position=367,67,398,83
+Text=Q311
+ 
+  
+[Field]
 Name=Q312
 Position=543,101,570,121
 Item=Q312,CGIN80
@@ -3967,14 +4002,14 @@ Form=8
 Name=Q313_BLOCK
 Label=Date started using sterilization
 DisplayTogether=Yes
-Position=7
+Position=8
 Length=2
   
 [Block]
 Name=Q314_BLOCK
 Label=Date started using current method
 DisplayTogether=Yes
-Position=10
+Position=11
 Length=2
   
 [EndGroup]
@@ -11519,6 +11554,33 @@ Text=H
  
   
 [Field]
+Name=Q815I
+Position=185,448,199,468
+Item=Q815I,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=17
+  
+[Text]
+Position=104,446,108,462
+Text=I
+ 
+  
+[Field]
+Name=Q816
+Position=185,488,199,508
+Item=Q816,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+Form=17
+  
+[Text]
+Position=97,491,128,507
+Text=Q816
+ 
+  
+[Field]
 Name=Q818
 Position=388,266,402,286
 Item=Q818,CGIN80
@@ -11594,7 +11656,7 @@ Name=Q815_BLOCK
 Label=Family planning advertisement
 DisplayTogether=Yes
 Position=12
-Length=8
+Length=9
   
 [EndGroup]
   
@@ -12168,7 +12230,7 @@ Text=D
   
 [Field]
 Name=Q932E
-Position=703,246,717,266
+Position=703,247,717,267
 Item=Q932E,CGIN80
 UseEnterKey=Yes
 Verify=No
@@ -12179,6 +12241,58 @@ Form=18
 [Text]
 Position=633,245,641,261
 Text=E
+ 
+  
+[Field]
+Name=Q932F
+Position=703,268,717,288
+Item=Q932F,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=18
+  
+[Text]
+Position=633,270,641,286
+Text=F
+ 
+  
+[Field]
+Name=Q932G
+Position=703,290,717,310
+Item=Q932G,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=18
+  
+[Text]
+Position=631,292,641,308
+Text=G
+ 
+  
+[Field]
+Name=Q932H
+Position=703,310,717,330
+Item=Q932H,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=18
+  
+[Text]
+Position=632,312,641,328
+Text=H
+ 
+  
+[Field]
+Name=Q932I
+Position=703,331,717,351
+Item=Q932I,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=18
+  
+[Text]
+Position=637,333,641,349
+Text=I
  
 [Block]
 Name=Q931_BLOCK
@@ -12192,7 +12306,7 @@ Name=Q932_BLOCK
 Label=Justification for women mistreatment
 DisplayTogether=Yes
 Position=35
-Length=5
+Length=9
   
 [EndGroup]
   
@@ -15267,8 +15381,35 @@ Text=H
  
   
 [Field]
+Name=QM302I
+Position=245,270,259,290
+Item=QM302I,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=28
+  
+[Text]
+Position=112,270,116,286
+Text=I
+ 
+  
+[Field]
+Name=QM303B
+Position=247,296,261,316
+Item=QM303B,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=28
+  
+[Text]
+Position=69,300,120,316
+Text=QM303B
+ 
+  
+[Field]
 Name=QM303
-Position=246,271,260,291
+Position=248,326,262,346
 Item=QM303,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -15276,13 +15417,13 @@ DataCaptureType=RadioButton
 Form=28
   
 [Text]
-Position=71,272,113,288
+Position=73,327,115,343
 Text=QM303
  
   
 [Field]
 Name=QM304
-Position=246,295,260,315
+Position=248,350,262,370
 Item=QM304,CGIN80
 UseEnterKey=Yes
 Verify=No
@@ -15292,13 +15433,13 @@ DataCaptureType=RadioButton
 Form=28
   
 [Text]
-Position=71,298,113,314
+Position=73,353,115,369
 Text=QM304
  
   
 [Field]
 Name=QM305
-Position=246,322,260,342
+Position=248,377,262,397
 Item=QM305,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -15306,13 +15447,13 @@ DataCaptureType=RadioButton
 Form=28
   
 [Text]
-Position=70,324,112,340
+Position=72,379,114,395
 Text=QM305
  
   
 [Field]
 Name=QM306
-Position=246,350,260,370
+Position=248,405,262,425
 Item=QM306,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -15321,14 +15462,14 @@ DataCaptureType=RadioButton
 Form=28
   
 [Text]
-Position=70,352,112,368
+Position=72,407,114,423
 Text=QM306
  
   
   
 [Field]
 Name=QM307A
-Position=245,385,259,405
+Position=247,440,261,460
 Item=QM307A,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -15337,13 +15478,13 @@ DataCaptureType=RadioButton
 Form=28
   
 [Text]
-Position=70,388,121,404
+Position=72,443,123,459
 Text=QM307A
  
   
 [Field]
 Name=QM307B
-Position=245,409,259,429
+Position=247,464,261,484
 Item=QM307B,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -15351,7 +15492,7 @@ DataCaptureType=RadioButton
 Form=28
   
 [Text]
-Position=111,413,120,429
+Position=113,468,122,484
 Text=B
  
 [Block]
@@ -15359,13 +15500,13 @@ Name=QM302_BLOCK
 Label=Family planning advertisement
 DisplayTogether=Yes
 Position=0
-Length=8
+Length=9
   
 [Block]
 Name=QM307_BLOCK
 Label=Statements on contraception
 DisplayTogether=Yes
-Position=13
+Position=15
 Length=2
   
 [EndGroup]
@@ -15709,6 +15850,20 @@ Form=29
 [Text]
 Position=241,361,283,377
 Text=QM419
+ 
+  
+[Field]
+Name=QM420
+Position=626,69,653,89
+Item=QM420,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=29
+  
+[Text]
+Position=486,68,528,84
+Text=QM420
  
   
 [Field]
@@ -16457,7 +16612,7 @@ Text=D
   
 [Field]
 Name=QM618E
-Position=366,430,380,450
+Position=370,529,384,549
 Item=QM618E,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -16465,13 +16620,61 @@ DataCaptureType=RadioButton
 Form=31
   
 [Text]
-Position=283,399,291,415
+Position=287,398,295,414
 Text=E
  
   
 [Field]
+Name=QM618F
+Position=366,425,380,445
+Item=QM618F,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=31
+  
+  
+[Field]
+Name=QM618G
+Position=368,453,382,473
+Item=QM618G,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=31
+  
+[Text]
+Position=286,428,294,444
+Text=F
+ 
+  
+[Field]
+Name=QM618H
+Position=368,477,382,497
+Item=QM618H,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=31
+  
+[Text]
+Position=285,453,295,469
+Text=G
+ 
+  
+[Field]
+Name=QM618I
+Position=368,502,382,522
+Item=QM618I,CGIN80
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+Form=31
+  
+[Text]
+Position=286,478,295,494
+Text=H
+ 
+  
+[Field]
 Name=QM619
-Position=366,429,380,449
+Position=370,528,384,548
 Item=QM619,CGIN80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
@@ -16479,7 +16682,7 @@ DataCaptureType=RadioButton
 Form=31
   
 [Text]
-Position=241,432,283,448
+Position=245,531,287,547
 Text=QM619
  
 [Block]
@@ -16487,7 +16690,7 @@ Name=QM618_BLOCK
 Label=Husband justified to beat wife
 DisplayTogether=Yes
 Position=18
-Length=5
+Length=9
   
 [EndGroup]
   

@@ -2799,6 +2799,25 @@ HorizontalAlignment=Center
 [EndColumn]
   
 [Column]
+Width=103
+  
+[HeaderText]
+Position=0,48,103,88
+Text=Type d'infrastructure
+ 
+[Field]
+Name=LINFRAS
+Position=41,0,56,20
+Item=LINFRAS,HHLISTING
+UseEnterKey=Yes
+DataCaptureType=RadioButton
+  
+[Text]
+Text=Type d'infrastructure
+ 
+[EndColumn]
+  
+[Column]
 Width=92
   
 [HeaderText]

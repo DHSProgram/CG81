@@ -881,7 +881,7 @@ Name=QHSEC01
 RecordTypeValue='H01'
 Required=No
 MaxRecords=50
-RecordLen=66
+RecordLen=76
 
 [Item]
 Label=Line number of member|Numéro de ligne du membre
@@ -977,7 +977,7 @@ DataType=Numeric
 [ValueSet]
 Label=Marital status|Etat matrimonial
 Name=QH08_VS1
-Value=1;Married or living together|Marié ou vivant ensemble
+Value=1;Married or living together|Marié ou en union libre
 Value=2;Divorced/separated|Divorcé /Séparé
 Value=3;Widowed|Veuf/Veuve
 Value=4;Never-married and never lived together|Jamais marié et n'a jamais vécu avec quelqu'un
@@ -1271,15 +1271,169 @@ DataType=Numeric
 [ValueSet]
 Label=Birth certificate/registered|A un certificat de naissance/Naissance déclarée
 Name=QH20_VS1
-Value=1;Has certificate|A un certificat
-Value=2;Registered|Enregistré
+Value=1;Has certificate|A un acte
+Value=2;Registered|Déclarée
 Value=3;Neither|Ni l'un/Ni l'autre
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Wear glasses or contact lenses|Portez des lunettes ou des lentilles de contact
+Name=QH26
+Start=63
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Wear glasses or contact lenses|Portez des lunettes ou des lentilles de contact
+Name=QH26_VS1
+Value=1;Yes|Oui|Si
+Value=2;No|Non|No
+
+[Item]
+Label=Have difficulty seeing even when wearing glasses or contact lenses|Avoir de la difficulté à voir même en portant des lunettes ou des lentilles de contact
+Name=QH27
+Start=64
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty seeing even when wearing glasses or contact lenses|Avoir de la difficulté à voir même en portant des lunettes ou des lentilles de contact
+Name=QH27_VS1
+Value=1;No difficulty seeing|Aucune difficulté pour voir
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficultés
+Value=4;Cannot see at all|Ne peut pas voir du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Have difficulty seeing (don't wear glasses)|Avoir de la difficulté à voir (ne pas porter de lunettes)
+Name=QH28
+Start=65
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty seeing (don't wear glasses)|Avoir de la difficulté à voir (ne pas porter de lunettes)
+Name=QH28_VS1
+Value=1;No difficulty seeing|Aucune difficulté pour voir
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficultés
+Value=4;Cannot see at all|Ne peut pas voir du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Wear a hearing aid|Portez un appareil auditif
+Name=QH29
+Start=66
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Wear a hearing aid|Portez un appareil auditif
+Name=QH29_VS1
+Value=1;Yes|Oui|Si
+Value=2;No|Non|No
+
+[Item]
+Label=Have difficulty hearing even when using a hearing aid|Avoir de la difficulté à entendre même en utilisant un appareil auditif
+Name=QH30
+Start=67
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty hearing even when using a hearing aid|Avoir de la difficulté à entendre même en utilisant un appareil auditif
+Name=QH30_VS1
+Value=1;No difficulty hearing|Aucune difficulté pour entendre
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficulté
+Value=4;Cannot hear at all|Ne peut pas entendre du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Have difficulty hearing (don't wear hearing aid)|Avoir de la difficulté à entendre (ne pas porter d'appareil auditif)
+Name=QH31
+Start=68
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty hearing (don't wear hearing aid)|Avoir de la difficulté à entendre (ne pas porter d'appareil auditif)
+Name=QH31_VS1
+Value=1;No difficulty hearing|Aucune difficulté pour entendre
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficulté
+Value=4;Cannot hear at all|Ne peut pas entendre du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Have difficulty communicating using usual language|Avoir de la difficulté à communiquer en utilisant la langue habituelle
+Name=QH32
+Start=69
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty communicating using usual language|Avoir de la difficulté à communiquer en utilisant la langue habituelle
+Name=QH32_VS1
+Value=1;No difficulty communicating|Aucune difficulté pour communiquer
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficultés
+Value=4;Cannot communicate at all|Ne peut pas communiquer du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Have difficulty remembering or concentrating|Avoir de la difficulté à se souvenir ou à se concentrer
+Name=QH33
+Start=70
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty remembering or concentrating|Avoir de la difficulté à se souvenir ou à se concentrer
+Name=QH33_VS1
+Value=1;No difficulty remembering/concentrating|Aucune difficulté pour se rappeler ou pour se concentrer
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficultés
+Value=4;Cannot remember/concentrate at all|Ne peut pas se rappeler/se concentrer du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Have difficulty walking or climbing steps|Avoir de la difficulté à marcher ou à monter des marches
+Name=QH34
+Start=71
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty walking or climbing steps|Avoir de la difficulté à marcher ou à monter des marches
+Name=QH34_VS1
+Value=1;No difficulty walking or climbing|Aucune difficulté pour marcher ou grimper
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficultés
+Value=4;Cannot walk or climb at all|Ne peut pas marcher ou grimper du tout
+Value=8;Don't know|Ne sait pas|No sabe
+
+[Item]
+Label=Have difficulty washing all over or dressing|Avoir de la difficulté à se laver ou à s'habiller
+Name=QH35
+Start=72
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Have difficulty washing all over or dressing|Avoir de la difficulté à se laver ou à s'habiller
+Name=QH35_VS1
+Value=1;No difficulty washing or dressing|Aucune difficulté pour se laver ou s'habiller
+Value=2;Some difficulty|Quelques difficultés
+Value=3;A lot of difficulty|Beaucoup de difficultés
+Value=4;Cannot wash or dress at all|Ne peut pas se laver ou s'habiller du tout
 Value=8;Don't know|Ne sait pas|No sabe
 
 [Item]
 Label=Age corrected from individual questionnaire|Âge corrigé du questionnaire individuel
 Name=ML07I
-Start=63
+Start=73
 Len=2
 DataType=Numeric
 
@@ -1293,7 +1447,7 @@ Value=98;Don't know|Ne sait pas|No sabe
 [Item]
 Label=Flag for age correction
 Name=ML07F
-Start=65
+Start=75
 Len=1
 DataType=Numeric
 
@@ -1313,7 +1467,7 @@ Value=8;None - all imp
 [Item]
 Label=Pregnancy status from individual questionnaire|Statut de la grossesse à partir du questionnaire individuel
 Name=MLPREG
-Start=66
+Start=76
 Len=1
 DataType=Numeric
 
@@ -1917,8 +2071,8 @@ Value=51;Rainwater|Eau de pluie
 Value=61;Tanker truck|Camion citerne
 Value=71;Cart with small tank|Charette avec petite citerne/Tonneau
 Value=81;Surface water (river/dam/lake/pond/stream/canal/irrigation channel)|Eau de surface (rivière/barrage/lac/mare/fleuve/canal/canal d'irrigation)
-Value=91;Bottled water|Eau en bouteille
-Value=92;Sachet|Eau en sachet
+Value=91;Bottled water|Eau minérale en bouteille
+Value=92;Sachet|Eau en sachet industriel
 Value=96;Other|Autre
 
 [Item]
@@ -2316,15 +2470,15 @@ Value=1;Electricity|Électricité
 Value=2;Solar lantern|Lanterne solaire
 Value=3;Rechargeable flashlight, torch, or lantern|Lampe de poche, torche ou lanterne rechargeable
 Value=4;Battery powered flashlight, torch or lantern|Lampe de poche, torche ou lanterne à piles
-Value=5;Biogas lamp|Lampe biogaz
-Value=6;Gasoline lamp|Lampe essence
-Value=7;Kerosene or paraffin lamp|Lampe kérosène ou paraffine
+Value=5;Lampe à gaz
+Value=6;Lampe à pétrole
+Value=7;Boîte avec meche et petrole/gazoil
 Value=8;Charcoal|Charbon de bois
 Value=9;Wood|Bois
 Value=10;Straw/shrubs/grass|Paille/branchages/herbes
 Value=11;Agricultural crop|Produits agricoles
 Value=12;Animal dung/waste|Bouse d'animal/déchets
-Value=13;Oil lamp|Lampe à huile
+Value=13;Oil lamp|Lampe à huile/boîte avec meche et huile
 Value=14;Candle|Bougie
 Value=95;No lighting in household|Pas d'éclairage dans le ménage
 Value=96;Other|Autre
@@ -3138,19 +3292,10 @@ DataType=Numeric
 [ValueSet]
 Label=Reception de l'aide Projet Lisungi: Unité|Date de reception de l'aide project Lisungi: Mois
 Name=QH148DU_VS1
-Value=1;January|Janvier
-Value=2;February|Février
-Value=3;March|Mars
-Value=4;April|Avril
-Value=5;May|Mai
-Value=6;June|Juin
-Value=7;July|Juillet
-Value=8;August|Août
-Value=9;September|Septembre
-Value=0;October|Octobre
-Value=1;November|Novembre
-Value=2;December|Décembre
-Value=8;Don’t know month|Ne sait pas mois
+Link=154664784
+Value=1;Mois
+Value=2;Année
+Value=9;Réponse speciale
 
 [Item]
 Label=Reception de l'aide: Projet Lisungi Nombre|Date de reception de l'aide project Lisungi: Année
@@ -3163,7 +3308,8 @@ DataType=Numeric
 [ValueSet]
 Label=Reception de l'aide: Projet Lisungi Nombre|Date de reception de l'aide project Lisungi: Année
 Name=QH148DN_VS1
-Value=70;Année|Année
+Link=154662432
+Value=0:30
 
 [Item]
 Label=A reçu une aide a reçu une aide grâce à un programme d'aide économique extérieure autre que le Projet Lisungi
@@ -3195,21 +3341,9 @@ ItemType=SubItem
 DataType=Numeric
 
 [ValueSet]
-Label=Reception de l'aide grâce à l'autre programme: Unité|Date de reception de l'aide project Lisungi: Mois
+Label=Reception de l'aide grâce à l'autre programme: Unité
 Name=QH148FU_VS1
-Value=1;January|Janvier
-Value=2;February|Février
-Value=3;March|Mars
-Value=4;April|Avril
-Value=5;May|Mai
-Value=6;June|Juin
-Value=7;July|Juillet
-Value=8;August|Août
-Value=9;September|Septembre
-Value=0;October|Octobre
-Value=1;November|Novembre
-Value=2;December|Décembre
-Value=8;Don’t know month|Ne sait pas mois
+Link=154664784
 
 [Item]
 Label=Reception de l'aide grâce à l'autre programme: Nombre|Date de reception de l'aide project Lisungi: Année
@@ -3220,9 +3354,9 @@ ItemType=SubItem
 DataType=Numeric
 
 [ValueSet]
-Label=Reception de l'aide grâce à l'autre programme: Nombre|Date de reception de l'aide project Lisungi: Année
+Label=Reception de l'aide grâce à l'autre programme: Nombre
 Name=QH148FN_VS1
-Value=70;Année|Année
+Link=154662432
 
 [Record]
 Label=Additional household characteristics
@@ -3286,7 +3420,7 @@ Label=Main floor material|Matériau principal du sol
 Name=QH152_VS1
 Value=10;---NATURAL FLOOR---|---MATÉRIAU NATUREL---
 Value=11;Earth/sand|Terre/sable
-Value=12;Dung|Bouse
+Value=12;Dung|Argile
 Value=20;---RUDIMENTARY FLOOR---|---MATÉRIAU RUDIMENTAIRE---
 Value=21;Wood planks|Planches en bois
 Value=22;Palm/bamboo|Palmes/bambou

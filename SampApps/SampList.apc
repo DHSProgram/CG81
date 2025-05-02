@@ -164,6 +164,7 @@ end
       endif;
       LINTRO(i)     = LINTRO(i+1);
       LSTRUCTT(i)   = visualvalue( LSTRUCTT(i+1) );
+      LINFRAS(i)   = visualvalue( LINFRAS(i+1) );
       LTRUEHH(i)    = visualvalue( LTRUEHH(i+1) );
       LSTYPE(i)    = visualvalue( LSTYPE(i+1) );
       LNUMBER(i)    = visualvalue( LNUMBER(i+1) );
@@ -186,6 +187,7 @@ end
     enddo;
     LINTRO(i)     = " ";
     LSTRUCTT(i)   = notappl;
+    LINFRAS(i)   = notappl;
     LTRUEHH(i)    = notappl;
     LSTYPE(i)     = notappl;
     LNUMBER(i)    = notappl;
@@ -212,6 +214,7 @@ end
     do i = nentry while i >= xrow by -1
       LINTRO(i+1)     = LINTRO(i);
       LSTRUCTT(i+1)   = visualvalue( LSTRUCTT(i) );
+      LINFRAS(i+1)   = visualvalue( LINFRAS(i) );
       LTRUEHH(i+1)    = visualvalue( LTRUEHH(i) );
       LSTYPE(i+1)     = visualvalue( LSTYPE(i) );
       LNUMBER(i+1)    = visualvalue( LNUMBER(i) );
@@ -600,6 +603,10 @@ preproc
     $ = $(n-1);
     noinput;
   endif;
+PROC LINFRAS
+preproc
+  ask if LSTRUCTT = 3;
+
 PROC LINTGPS
 preproc
   if LSTRUCTT <> 1 then

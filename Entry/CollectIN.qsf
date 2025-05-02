@@ -892,6 +892,13 @@ questions:
             <p>309. The last time you received your injectable, did you inject DMPA-SC/Sayana Press yourself or did a health care provider do it for you?</p>
           FR: |
             <p>309.  La derni&#232;re fois que vous avez re&#231;u votre injectable, est-ce que vous vous &#234;tes inject&#233; vous-m&#234;me DMPA-SC/Sayana Press ou c&#39;est un prestataire de sant&#233; qui l&#39;a fait pour vous ?</p>
+  - name: CGIN80.Q311
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quelle est la marque de condom que vous utilisez actuellement ?</p><p><span style="color: rgb(0, 0, 255);">SI LA MARQUE N'EST PAS CONNUE, DEMANDEZ À VOIR LA BOITE.</span></p><p></p>
+          FR: |
+            <p>Quelle est la marque de condom que vous utilisez actuellement ?</p><p><span style="color: rgb(0, 0, 255);">SI LA MARQUE N'EST PAS CONNUE, DEMANDEZ À VOIR LA BOITE.</span></p><p></p>
   - name: CGIN80.Q312
     conditions:
       - questionText:
@@ -2532,34 +2539,6 @@ questions:
             <span style="color: rgb(0, 0, 255);">﻿VACCIN ANTIROUGEOLEUX (VAR) 1</span><p></p>
           FR: |
             <p><span class="instruction">﻿VACCIN ANTIROUGEOLEUX (VAR) 1</span></p>
-  - name: CGIN80.D509M1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">MEASLES 1 DAY</span></p>
-          FR: |
-            <p><span class="instruction">﻿JOUR</span></p>
-  - name: CGIN80.M509M1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">MEASLES 1 MONTH</span></p>
-          FR: |
-            <p><span class="instruction">﻿MOIS</span></p>
-  - name: CGIN80.Y509M1
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">MEASLES 1 YEAR</span></p>
-          FR: |
-            <p><span class="instruction">﻿ANNEE</span></p>
-  - name: Q509FJ_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">VACCIN CONTRE LA FIÈVRE JAUNE (VAA)&nbsp;</span><p></p>
-          FR: |
-            <span class="instruction">VACCIN CONTRE LA FIÈVRE JAUNE (VAA)&nbsp;</span><p></p>
   - name: CGIN80.D509FJ
     conditions:
       - questionText:
@@ -2579,6 +2558,34 @@ questions:
       - questionText:
           EN: |
             <span style="color: rgb(0, 0, 255);">YELLOW FEVER&nbsp; YEAR</span><p></p>
+          FR: |
+            <p><span class="instruction">﻿ANNEE</span></p>
+  - name: Q509FJ_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">VACCIN CONTRE LA FIÈVRE JAUNE (VAA)&nbsp;</span><p></p>
+          FR: |
+            <span class="instruction">VACCIN CONTRE LA FIÈVRE JAUNE (VAA)&nbsp;</span><p></p>
+  - name: CGIN80.D509M1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">MEASLES 1 DAY</span></p>
+          FR: |
+            <p><span class="instruction">﻿JOUR</span></p>
+  - name: CGIN80.M509M1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">MEASLES 1 MONTH</span></p>
+          FR: |
+            <p><span class="instruction">﻿MOIS</span></p>
+  - name: CGIN80.Y509M1
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">MEASLES 1 YEAR</span></p>
           FR: |
             <p><span class="instruction">﻿ANNEE</span></p>
   - name: Q509M2_BLOCK
@@ -4082,7 +4089,7 @@ questions:
             <p>728. What is the brand name of the condom used?</p>
             <p><span class="instruction">IF BRAND NOT KNOWN, ASK TO SEE THE PACKAGE.</span></p>
           FR: |
-            <p>728.  Quel est le nom de la marque du condom utilis&#233; ?</p><p><span class="instruction">SI LA MARQUE N&#39;EST PAS CONNUE, DEMANDEZ &#192; VOIR LA BOITE.</span></p>
+            <p>728.  Quel est le nom de la marque du préservatif utilisé ?</p><p><span class="instruction">SI LA MARQUE N'EST PAS CONNUE, DEMANDEZ À VOIR LA BOITE.</span></p><p><span class="instruction"><br></span></p>
   - name: CGIN80.Q729
     conditions:
       - questionText:
@@ -4206,7 +4213,7 @@ questions:
           EN: |
             <p>804. Now I have some questions about the future. Would you like to have another child, or would you prefer not to have any more children?</p>
           FR: |
-            <p>804a).  Je voudrais maintenant vous poser des questions sur l&#39;avenir. Voudriez-vous avoir un autre enfant ou pr&#233;f&#233;reriez-vous ne pas plus avoir d&#39;enfant&#160;?</p>
+            <p>804a).  Je voudrais maintenant vous poser des questions sur l'avenir. Voudriez-vous avoir un autre enfant ou préféreriez-vous ne pas avoir d'enfant&nbsp;?</p>
   - name: Q805_BLOCK
     conditions:
       - logic: Q232 <> 1 & Q208 > 0
@@ -4214,7 +4221,7 @@ questions:
           EN: |
             <p>805. How long would you like to wait from now before the birth of another child?</p>
           FR: |
-            <p>805a).  Combien de temps voudriez-vous attendre &#224; partir de maintenant avant la naissanceun autre enfant&#160;?</p>
+            <p>805a).  Combien de temps voudriez-vous attendre à partir de maintenant avant la naissance d'un autre enfant&nbsp;?</p>
       - logic: Q232 <> 1 & Q208 = 0
         questionText:
           EN: |
@@ -4389,6 +4396,20 @@ questions:
             <p>h) Heard anything about family planning at community meetings or events?</p>
           FR: |
             <p>815h).  Avez-vous entendu quelque chose sur la planification familiale lors d&#39;une r&#233;union ou &#224; l&#39;occasion d&#39;&#233;v&#232;nements dans la communaut&#233; ?</p>
+  - name: CGIN80.Q815I
+    conditions:
+      - questionText:
+          EN: |
+            Avez-vous parlé de la planification familiale avec vos amis, voisins, ou vos parents ?<p></p>
+          FR: |
+            Avez-vous parlé de la planification familiale avec vos amis, voisins, ou vos parents ?<p></p>
+  - name: CGIN80.Q816
+    conditions:
+      - questionText:
+          EN: |
+            Les messages que vous avez entendus, vus , lus, ou reçus étaient-ils des messages de l'Association pour le Bien-être Familial ?&nbsp;<p></p>
+          FR: |
+            Les messages que vous avez entendus, vus , lus, ou reçus étaient-ils des messages de l'Association pour le Bien-être Familial ?&nbsp;<p></p>
   - name: CGIN80.Q818
     conditions:
       - questionText:
@@ -4536,7 +4557,7 @@ questions:
           EN: |
             <p>920. Would you say that the money that you earn is more than what your ~~partner~~ earns, less than what he earns, or about the same?</p>
           FR: |
-            <p>920.  Est-ce que vous pensez-vous que vous gagnez plus que votre ~~PARTNER~~, moins ou &#224; peu pr&#233;s la m&#234;me chose&#160;?</p>
+            <p>920.  Diriez-vous que vous gagnez plus que votre que votre ~~partner~~, moins ou à peu prés la même chose ?</p>
   - name: CGIN80.Q921
     conditions:
       - questionText:
@@ -4699,6 +4720,34 @@ questions:
             <p>e) If she burns the food?</p>
           FR: |
             <p>932e).  Si elle br&#251;le la nourriture&#160;?</p>
+  - name: CGIN80.Q932F
+    conditions:
+      - questionText:
+          EN: |
+            f)&nbsp;Si elle est infidèle ?&nbsp;<p></p>
+          FR: |
+            f)&nbsp;Si elle est infidèle ?&nbsp;<p></p>
+  - name: CGIN80.Q932G
+    conditions:
+      - questionText:
+          EN: |
+            g) Si elle manque de respect à la famille de son mari ?&nbsp;<p></p>
+          FR: |
+            g) Si elle manque de respect à la famille de son mari ?&nbsp;<p></p>
+  - name: CGIN80.Q932H
+    conditions:
+      - questionText:
+          EN: |
+            h)&nbsp;Si elle étale les réalités du couple à n'importe qui?<p></p>
+          FR: |
+            h)&nbsp;Si elle étale les réalités du couple à n'importe qui?<p></p>
+  - name: CGIN80.Q932I
+    conditions:
+      - questionText:
+          EN: |
+            i) Si elle dépense l'argent du ménage sans autorisation du mari ?&nbsp;<p></p>
+          FR: |
+            i) Si elle dépense l'argent du ménage sans autorisation du mari ?&nbsp;<p></p>
   - name: CGIN80.Q1000
     conditions:
       - questionText:
@@ -5158,7 +5207,7 @@ questions:
           EN: |
             <p>1110. Now I would like to ask you some questions about drinking alcohol. Have you ever consumed any alcohol, such as beer, wine, spirits, or [ADD OTHER LOCAL EXAMPLES]?</p>
           FR: |
-            <p>1110.  Je voudrais maintenant vous poser des questions sur la consommation d&#39;alcool. Est-ce que vous avez d&#233;j&#224; bu de l&#39;alcool, comme de la bi&#232;re, du vin, des liqueurs ou [AJOUTER D&#39;AUTRES EXEMPLES LOCAUX] ?</p>
+            <p>1110. Je voudrais maintenant vous poser des questions sur la consommation d'alcool.&nbsp;</p><p>Est-ce que vous avez déjà bu de l'alcool, comme de la bière, du vin, des liqueurs ou Buganda, Lotoko,&nbsp; Ngoloma, Tombet ,Molengue, Lunguila, Ntsamba, Tcham-Tcham?</p>
   - name: CGIN80.Q1111
     conditions:
       - questionText:
@@ -5174,7 +5223,7 @@ questions:
             <p>1112. We count one drink of alcohol as one can or bottle of beer, one glass of wine, one shot of spirits, or one cup of [ADD OTHER LOCAL EXAMPLES]. In the last one month, on the days that you drank alcohol, how many drinks did you usually have per day?</p>
             <p><span class="instruction">SHOW PICTURES OF SIZES OF STANDARD DRINKS.</span></p>
           FR: |
-            <p>1112.  Nous consid&#233;rons qu&#39;une canette ou une bouteille de bi&#232;re, un verre de vin, un verre de liqueur ou un verre de [AJOUTER DES EXEMPLES LOCAUX] est un verre d&#39;alcool. Au cours du dernier mois, les jours o&#249; vous avez bu de l’alcool, combien de verres buviez-vous habituellement par jour ?</p><p><span class="instruction">MONTREZ LES PHOTOS DE VERRES STANDARD DES BOISSONS ALCOOLIS&#201;ES.</span></p>
+            <p>1112. Nous considérons qu'une canette ou une bouteille de bière, un verre de vin, un verre de liqueur ou un verre de Buganda, Lotoko, Ngoloma, Tombet, Molengue, Lunguila, Ntsamba ou Tcham-Tcham est un verre d'alcool.&nbsp;</p><p>Au cours du dernier mois, les jours où vous avez bu de l’alcool, combien de verres buviez-vous habituellement par jour ?</p><p><span style="color: rgb(0, 0, 255);">MONTREZ LES PHOTOS DE VERRES STANDARD DES BOISSONS ALCOOLISÉES.</span></p>
   - name: Q1113_BLOCK
     conditions:
       - questionText:
@@ -5967,6 +6016,20 @@ questions:
             <p>h) Heard anything about family planning at community meetings or events?</p>
           FR: |
             <p>302h).  Entendu quelque chose sur la planification familiale au cours de r&#233;unions ou &#224; l&#39;occasion d&#39;&#233;v&#232;nements dans la communaut&#233; ?</p>
+  - name: CGIN80.QM302I
+    conditions:
+      - questionText:
+          EN: |
+            Avez-vous parlé de la planification familiale avec vos amis, voisins, ou vos parents ?<p></p>
+          FR: |
+            Avez-vous parlé de la planification familiale avec vos amis, voisins, ou vos parents ?<p></p>
+  - name: CGIN80.QM303B
+    conditions:
+      - questionText:
+          EN: |
+            Les messages que vous avez entendus, vus , lus, ou reçus étaient-ils des messages de l'Association pour le Bien-être Familial ?&nbsp;<p></p>
+          FR: |
+            Les messages que vous avez entendus, vus , lus, ou reçus étaient-ils des messages de l'Association pour le Bien-être Familial ?&nbsp;<p></p>
   - name: CGIN80.QM303
     conditions:
       - questionText:
@@ -6198,6 +6261,13 @@ questions:
             <p>419. The last time you had sexual intercourse, was a condom used?</p>
           FR: |
             <p>419.La dernière fois que vous avez eu des rapports sexuels, est-ce qu'un préservatif masculin ou féminin a été utilisé ?</p>
+  - name: CGIN80.QM420
+    conditions:
+      - questionText:
+          EN: |
+            <p>Quelle était la marque du condom utilisé ?</p><p><font color="#0000ff">SI LA MARQUE N'EST PAS CONNUE, DEMANDEZ À VOIR L'EMBALLAGE.</font></p><p></p>
+          FR: |
+            <p>Quelle était la marque du condom utilisé ?</p><p><font color="#0000ff">SI LA MARQUE N'EST PAS CONNUE, DEMANDEZ À VOIR L'EMBALLAGE.</font></p><p></p>
   - name: CGIN80.QM421
     conditions:
       - questionText:
@@ -6640,6 +6710,34 @@ questions:
             <p>e) If she burns the food?</p>
           FR: |
             <p>618e).  Si elle br&#251;le la nourriture&#160;?</p>
+  - name: CGIN80.QM618F
+    conditions:
+      - questionText:
+          EN: |
+            f)&nbsp;Si elle est infidèle ?&nbsp;<p></p>
+          FR: |
+            f)&nbsp;Si elle est infidèle ?&nbsp;<p></p>
+  - name: CGIN80.QM618G
+    conditions:
+      - questionText:
+          EN: |
+            g) Si elle manque de respect à la famille de son mari ?&nbsp;<p></p>
+          FR: |
+            g) Si elle manque de respect à la famille de son mari ?&nbsp;<p></p>
+  - name: CGIN80.QM618H
+    conditions:
+      - questionText:
+          EN: |
+            h)&nbsp;Si elle étale les réalités du couple à n'importe qui?<p></p>
+          FR: |
+            h)&nbsp;Si elle étale les réalités du couple à n'importe qui?<p></p>
+  - name: CGIN80.QM618I
+    conditions:
+      - questionText:
+          EN: |
+            i) Si elle dépense l'argent du ménage sans autorisation du mari ?&nbsp;<p></p>
+          FR: |
+            i) Si elle dépense l'argent du ménage sans autorisation du mari ?&nbsp;<p></p>
   - name: CGIN80.QM619
     conditions:
       - questionText:
@@ -6810,7 +6908,7 @@ questions:
             <p>719. Are you currently taking ARVs, that is antiretroviral medicines?</p>
             <p>By currently, I mean that you may have missed some doses but you are still taking ARVs.</p>
           FR: |
-            <p>719.  Est-ce que vous prenez actuellement des TAR qui sont des m&#233;dicaments antir&#233;troviraux ?  </p><p>Par actuellement, je veux dire que vous avez peut-&#234;tre oubli&#233; certaines doses mais vous &#234;tes toujours en train de prendre des TAR .</p>
+            <p>719.  Est-ce que vous prenez actuellement des ARV qui sont des médicaments antirétroviraux ?  </p><p>Par actuellement, je veux dire que vous avez peut-être oublié certaines doses mais vous êtes toujours en train de prendre des ARV .</p>
   - name: CGIN80.QM720
     conditions:
       - questionText:
@@ -7222,7 +7320,7 @@ questions:
           EN: |
             <p>814. Now I would like to ask you some questions about drinking alcohol. Have you ever consumed any alcohol, such as beer, wine, spirits, or [ADD OTHER LOCAL EXAMPLES]?</p>
           FR: |
-            <p>814.  Je voudrais maintenant vous poser des questions sur la consommation d&#39;alcool. Est-ce que vous avez d&#233;j&#224; bu de l&#39;alcool, comme de la bi&#232;re, du vin, des liqueurs ou [AJOUTER D&#39;AUTRES EXEMPLES LOCAUX] ?</p>
+            <p>814. Je voudrais maintenant vous poser des questions sur la consommation d'alcool.&nbsp;</p><p>Est-ce que vous avez déjà bu de l'alcool, comme de la bière, du vin, des liqueurs ou Buganda, Lotoko,&nbsp; Ngoloma, Tombet ,Molengue, Lunguila, Ntsamba, Tcham-Tcham?</p>
   - name: CGIN80.QM815
     conditions:
       - questionText:
@@ -7238,7 +7336,7 @@ questions:
             <p>816. We count one drink of alcohol as one can or bottle of beer, one glass of wine, one shot of spirits, or one cup of [ADD OTHER LOCAL EXAMPLES]. In the last one month, on the days that you drank alcohol, how many drinks did you usually have per day?</p>
             <p><span class="instruction">SHOW PICTURES OF SIZES OF STANDARD DRINKS.</span></p>
           FR: |
-            <p>816.  Nous consid&#233;rons qu&#39;une canette ou une bouteille de bi&#232;re, un verre de vin, un verre de liqueur ou un verre de [AJOUTER DES EXEMPLES LOCAUX] est un verre d&#39;alcool. Au cours du dernier mois, les jours o&#249; vous avez bu de l’alcool, combien de verres buviez-vous habituellement par jour ?</p><p><span class="instruction">MONTREZ LES PHOTOS DE VERRES STANDARD DES BOISSONS ALCOOLIS&#201;ES</span></p>
+            <p>816. Nous considérons qu'une canette ou une bouteille de bière, un verre de vin, un verre de liqueur ou un verre de Buganda, Lotoko, Ngoloma, Tombet, Molengue, Lunguila, Ntsamba ou Tcham-Tcham est un verre d'alcool.&nbsp;</p><p>Au cours du dernier mois, les jours où vous avez bu de l’alcool, combien de verres buviez-vous habituellement par jour ?</p><p><span style="color: rgb(0, 0, 255);">MONTREZ LES PHOTOS DE VERRES STANDARD DES BOISSONS ALCOOLISÉES.</span></p>
   - name: CGIN80.QM817
     conditions:
       - questionText:

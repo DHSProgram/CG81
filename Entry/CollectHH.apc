@@ -709,7 +709,7 @@ postproc
     errmsg( 0031 ) select( tr("Relation"), $ );
   { Spouse should be second line of household }
   elseif $ = 2 & curocc() <> 2 then
-    errmsg( 0033 ) select( tr("Relation"), $, tr("Continue"), continue );
+    // errmsg( 0033 ) select( tr("Relation"), $, tr("Continue"), continue );
   endif;
 
 PROC QHSEX
@@ -1083,8 +1083,30 @@ PROC QH19B
 PROC QH20
 preproc
   if !QH07 in 0:4 then
-    skip to next QH01;
+    skip to QH26;
   endif;
+
+PROC QH26
+preproc
+  if QH07 in 0:4 then
+    skip to next QH01
+  endif;
+
+postproc
+  if $ <> 1 then
+    skip to QH28
+  endif;
+
+PROC QH27
+  skip to QH29;
+
+PROC QH29
+  if $ <> 1 then
+    skip to QH31
+  endif;
+
+PROC QH30
+  skip to QH32;
 
 PROC QHWOMEN
 preproc
@@ -1110,42 +1132,6 @@ PROC QCHL4
 preproc
   activity1 = (QCHL2A=1) + (QCHL2B=1) + (QCHL2C=1) + (QCHL2D=1);
   if !activity1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL5
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL6
-postproc  
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7A
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7B
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7C
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7D
-  if $ = 1 then
-    skip to QCHL8
-  endif;
-  
-PROC QCHL7E
-  if $ = 1 then
     skip to QCHL8
   endif;
   
@@ -1180,55 +1166,16 @@ preproc
     for i in QHSEC01_ROSTER do
       if QH07 in 5:17 & QH05 = 1 then
         p = p + 1;
-        if p = xchild then
-          $ = QH01;
-          break;
-        endif;
       endif;
     enddo;
   endif;
-
-postproc
-  QCHLNAME = QH02($);
-  hisher = tr("her"); if QH04($) = 1 then hisher = tr("his") endif;
-  daysince = CDCode(QHINTY, QHINTM, QHINTD) - CDCode(survyear, 1, 1);
-  xday     = (daysince%7) + firstday;
-  if xday > 7 then xday = xday - 7 endif; 
-  dayalpha = DaysWeek(xday);
-  
-PROC QCDI2
-preproc
-  numeric oldvch = visualvalue($);
-  chdis = count( QHSEC01_ROSTER where QH07 in 1:14 & QH05 = 1 );
-  if !chdis then
-    endgroup
-  elseif oldvch in notappl,0 | !QH07(oldvch) in 1:14 | !QH05(oldvch) = 1 then
-    xchild = random( 1, chdis );
-    p = 0;
-    for i in QHSEC01_ROSTER do
-      if QH07 in 1:14 & QH05 = 1 then
-        p = p + 1;
-        if p = xchild then
-          $ = QH01;
-          break;
-        endif;
-      endif;
-    enddo;
+  if $ in 11:13 then
+    skip to QH106
+  elseif $ in 14:81,96 then
+    skip to QH103
   endif;
-
-postproc
-  QCDINAME = QH02(QCDI2);
-  xsex     = QH04(QCDI2);
-  
-PROC QCDI3A
-preproc
-  if demode() = add & !inAdvance() then
-    warning( tr("%s (line %02d) selected for child discipline module"), strip(QCDINAME), QCDI2 );
-    SaveData();
-  endif;
-{ @@@ End of Child Discipline Module }
-
 PROC QH101
+
 preproc
   SaveData();
 
@@ -1243,7 +1190,6 @@ postproc
   elseif $ in 14:81,96 then
     skip to QH103
   endif;
-
 PROC QH102
   majorgrp($);
   if $ = 96 then
@@ -1546,10 +1492,41 @@ PROC QH148C
   if $ <> 1 then
     skip to QH148E;
   endif;
+
+PROC QH148DN
+onfocus
+  protect( QH148DU, false );
+
+PROC QH148DU
+preproc
+  if QH148DN in 90:98 then
+    protect( $, true );
+    $ = 9;
+  endif;
+
+postproc
+  { Check special answers }
+  badspecial( $, QH148DN, getsymbol() );
+
 PROC QH148E
   if $ <> 1 then
     endgroup;
   endif;
+
+PROC QH148FN
+onfocus
+  protect( QH148FU, false );
+
+PROC QH148FU
+preproc
+  if QH148FN in 90:98 then
+    protect( $, true );
+    $ = 9;
+  endif;
+
+postproc
+  { Check special answers }
+  badspecial( $, QH148DN, getsymbol() );
 PROC QH149
 preproc
   SaveData();
