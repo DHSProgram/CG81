@@ -1174,6 +1174,38 @@ preproc
   elseif $ in 14:81,96 then
     skip to QH103
   endif;
+
+PROC QCDI2
+preproc
+  numeric oldvch = visualvalue($);
+  chdis = count( QHSEC01_ROSTER where QH07 in 1:14 & QH05 = 1 );
+  if !chdis then
+    endgroup
+  elseif oldvch in notappl,0 | !QH07(oldvch) in 1:14 | !QH05(oldvch) = 1 then
+    xchild = random( 1, chdis );
+    p = 0;
+    for i in QHSEC01_ROSTER do
+      if QH07 in 1:14 & QH05 = 1 then
+        p = p + 1;
+        if p = xchild then
+          $ = QH01;
+          break;
+        endif;
+      endif;
+    enddo;
+  endif;
+
+postproc
+  QCDINAME = QH02(QCDI2);
+  xsex     = QH04(QCDI2);
+  
+PROC QCDI3A
+preproc
+  if demode() = add & !inAdvance() then
+    warning( tr("%s (line %02d) selected for child discipline module"), strip(QCDINAME), QCDI2 );
+    SaveData();
+  endif;
+{ @@@ End of Child Discipline Module }
 PROC QH101
 
 preproc
