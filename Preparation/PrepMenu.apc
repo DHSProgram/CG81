@@ -137,7 +137,7 @@
 
     FileWrite( piffile, "[Files]" );
     FileWrite( piffile, "Application=" + prepare + "\" + AppName + ".ent" );
-    FileWrite( piffile, "InputData="   + wrkref  + "\Sampsel.dat" );
+    FileWrite( piffile, "InputData="   + wrkref  + "\Sampsel.csdb" );
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "Clusters=" + wrkref + "\Clusters.dat" );
 
@@ -212,7 +212,7 @@
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "Clusters=" + wrkref + "\Clusters.dat" );
     FileWrite( piffile, "INTERV="   + wrkref + "\Interv.dat" );
-    FileWrite( piffile, "Sampsel="  + wrkref + "\Sampsel.dat" );
+    FileWrite( piffile, "Sampsel="  + wrkref + "\Sampsel.csdb" );
     FileWrite( piffile, "FIELDWKQ=" + wrkref + "\Fieldwork.dat" );
 
     FileWrite( piffile, "[Parameters]" );
@@ -233,7 +233,7 @@ PreProc
   opid="Anyone";                         { this could be an ID set on each machine }
 
   { work project }
-  wrkprj = "C:\CC81";                 { !!! adjusted to survey }
+  wrkprj = "..\";                 { !!! adjusted to survey }
   wrkpii = wrkprj + "\Pii";                    { subdirecory to store data with PII }
   { set up minimal user bar }
   userbase();
@@ -257,7 +257,6 @@ PostProc
 
 PROC WFINAL
 postproc
-  if GetLanguage() = "EN" then
     action = accept( "Menu for Preparation of Auxiliary Data Files for CAPI Surveys",
                { 1} "1 Enter Clusters Included in the Sample",
                { 2} "2 Modify Clusters Included in the Sample",
@@ -276,26 +275,6 @@ postproc
                {15} "-------------------------------------",
                {16} "R Generate reports for Survey supporting files",
                {17} "Q Exit system" );
-  elseif GetLanguage() = "ES" then
-    action = accept( "Menu para la Preparacion de Archivos Auxiliares para Encuestas CAPI",
-               { 1} "1 Ingresar Segmentos de la muestra",
-               { 2} "2 Modificar Segmentos de la muestra",
-               { 3} "-------------------------------------",
-               { 4} "4 Ingresar personal de campo para CAPI",
-               { 5} "5 Modificar personal de campo para CAPI",
-               { 6} "-------------------------------------",
-               { 7} "7 Ingresar Hogares seleccionados para la muestra",
-               { 8} "8 Modificar Hogares seleccionados para la muestra",
-               { 9} "-------------------------------------",
-               {10} "A Ingresar personal de campo para CAPI",
-               {11} "M Modificar personal de campo para CAPI",
-               {12} "-------------------------------------",
-               {13} "C Generar/Inicializar archivo de control para oficina central",
-               {14} "S Generar/Inicializar archivo de control para supervisoras",
-               {15} "-------------------------------------",
-               {16} "R Generar reportes de los archivos auxiliares",
-               {17} "Q Salir del sistema" );
-  endif;
   if !action | action = 17 then
     { clean files not needed }
     FileDelete( wrkref + "\*.lst" );

@@ -224,3 +224,11 @@
     FileCopy(outTxt, inTxt);
     FileDelete(outTxt);
   end;
+  function string getver (string filepath);
+    // get version from version.txt file
+    FILE version;
+    list string version_txt;
+    setfile(version, filepath, update);
+    FileRead(version, version_txt);
+    getver = version_txt(1);
+  end;

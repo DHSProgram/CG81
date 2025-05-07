@@ -1166,15 +1166,22 @@ preproc
     for i in QHSEC01_ROSTER do
       if QH07 in 5:17 & QH05 = 1 then
         p = p + 1;
+        if p = xchild then
+          $ = QH01;
+          break;
+        endif;
       endif;
     enddo;
   endif;
-  if $ in 11:13 then
-    skip to QH106
-  elseif $ in 14:81,96 then
-    skip to QH103
-  endif;
 
+postproc
+  QCHLNAME = QH02($);
+  hisher = tr("her"); if QH04($) = 1 then hisher = tr("his") endif;
+  daysince = CDCode(QHINTY, QHINTM, QHINTD) - CDCode(survyear, 1, 1);
+  xday     = (daysince%7) + firstday;
+  if xday > 7 then xday = xday - 7 endif; 
+  dayalpha = DaysWeek(xday);
+  
 PROC QCDI2
 preproc
   numeric oldvch = visualvalue($);

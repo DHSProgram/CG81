@@ -42,16 +42,14 @@ questions:
             <p style="text-align:center;"><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Demographic &amp; Health Survey&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Interviewer&apos;s Menu&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:10px;color:#000000;font-family:'Arial', sans-serif;">Press any key to continue&#160;</span></p>
-            
           ES: |
             <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Bienvenido a la&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Encuesta de Demografia y Salud&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Menu para Entrevistadoras&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:10px;color:#000000;font-family:'Arial', sans-serif;">Presione una tecla para continuar&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
-            
+            <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU ENQUETEUR</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif" color="#0000ff"><span style="font-size: 14px;"><b>Appuyez sur n'importe quelle touche pour continuer</b></span></font></p><p></p>
           FU: |
             
           PI: |
@@ -72,13 +70,11 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select the name of the supervisor you are assigned to.&#160;</span></p>
-            
           ES: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Seleccione el nombre del supervisor al cual ha sido assignada.&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
-            
+            <font color="#0000ff">Sélectionnez le nom du chef de votre équipe</font><p></p>
           FU: |
             
           PI: |
@@ -99,13 +95,11 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select your name from the list displayed in the window.&#160;</span></p>
-            
           ES: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Seleccione su nombre de la lista desplegada en la pantalla.&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
-            
+            <span style="color: rgb(0, 0, 255);">Sélectionnez votre nom dans la liste affichée</span><p></p>
           FU: |
             
           PI: |
@@ -126,13 +120,11 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Enter the cluster number on which you wish to work&#160;</span></p>
-            
           ES: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Ingrese el numero del segmento en el cual va a trabajar&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
-            
+            <span style="color: rgb(0, 0, 255);">Entrez le numéro de la grappe dans lequelle vous souhaitez travailler</span><p></p>
           FU: |
             
           PI: |
@@ -155,13 +147,11 @@ questions:
             <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU FOR INTERVIEWER ~~WINTNUM~~-~~IntName~~&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~, Supervisor ~~WSUPER~~-~~SupName~~&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press Any key and Select an option from the list to be displayed&#160;</span></p>
-            
           ES: |
             <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU PARA LA ENTREVISTADORA ~~WINTNUM~~-~~IntName~~&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Segmento: ~~WCLUSTER~~, Supervisora: ~~WSUPER~~-~~SupName~~&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Presione cualquier tecla y luego una opcion del menu que se desplegara&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
             <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU ENQUETEUR</b></span></font></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">~~WINTNUM~~-~~IntName~~&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 14px;">Superviseur ~~WSUPER~~-~~SupName~~</span></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">Grappe: ~~WCLUSTER~~, ~~WSTATEN~~, ~~WDISTRICTN~~, ~~WCITYN~~</span></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;">~~heading~~</span></font></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;"><br></span></p><p></p>
           FU: |
@@ -185,12 +175,10 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Is this household &quot;~~WADDRESS~~&quot; the correct household?&#160;</span></p>
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">If no or not sure, select option 2 and return to the mainmenu&#160;</span></p>
-            
           ES: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Es el hogar que se encuentra localizado en la direccion &quot;~~WADDRESS~~&quot; el correcto?&#160;</span></p>
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Si no o no esta segura, seleccione la opcion 2 y regresara al menu principal&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
             
           FU: |
@@ -214,12 +202,10 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">INDIVIDUAL MENU&#160;</span></p>
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select an option from the menu for eligible women and men <span style="color:#ff0000;">(press any key to display the menu)&#160;</span></span></p>
-            
           ES: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MENU INDIVIDUAL&#160;</span></p>
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Seleccione una opcion del menu para mujeres y hombres elegibles <span style="color:#ff0000;">(presione una tecla para desplegar el menu)&#160;</span></span></p>
             <p>&#160;</p>
-            
           FR: |
             
           FU: |
@@ -242,11 +228,9 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Is &quot;~~WNAME~~&quot; the correct person?&#160;</span></p>
-            
           ES: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">&quot;~~WNAME~~&quot; es la persona correcta?&#160;</span></p>
             <p>&#160;</p>
-            
           FR: |
             
           FU: |
@@ -269,7 +253,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select the prefecture in which you are working&#160;</span></p>
-            
           ES: |
             
           FR: |

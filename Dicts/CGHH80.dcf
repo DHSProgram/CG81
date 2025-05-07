@@ -744,7 +744,7 @@ DataType=Numeric
 
 [Item]
 Label=CSPro version flag
-Name=QHCSPRO7
+Name=QHCSPRO8
 Start=269
 Len=1
 DataType=Numeric

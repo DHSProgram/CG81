@@ -157,5 +157,8 @@ language = FR
 110 Enfants pas encore sélectionnés pour la remesure. Utilisez l'option 1 «Sélectionner les enfants pour la remesure».
 115 Données de biomarqueurs transférées. Mais aucune donnée sur le ménage existe dans la machine du superviseur pour la grappe
 118 Il n'y a pas de fichier de données sur les ménages. Il peut être possible de générer un rapport en utilisant l'option 7 <<Fermer/Enumérer la grappe>>
-120 Pas de connexion Internet : veuillez vous assurer que vous êtes connecté à l'Internet
+200 Pas de connexion Internet : veuillez vous assurer que vous êtes connecté à l'Internet
+501 Les données ont été envoyées au bureau central
+502 Certaines données n'ont PAS été envoyées correctement au bureau central, veuillez les renvoyer
 999 Message=%08d
+

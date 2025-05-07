@@ -1,12 +1,18 @@
 ﻿{ common strings used by the application }
-  FR ( "No." ) No.
+  FR ( "Seq.No" ) No.
   FR ( "Name" ) Nom
   FR ( "Structure" ) Structure
-  FR ( "Male" ) Homme
+  FR ( "Male" ) Enq.Homme
   FR ( "Int" ) Enq
+  FR ( "Select Household to assign. Select the red X button to finish selection and return to the main menu") Sélectionnez le ménage à affecter. Sélectionnez le bouton rouge « X » pour terminer la sélection et revenir au menu principal
+  FR ( "Select interviewer to be assigned to household %02d %s, currently assigned to interviewer code %04d" ) Sélectionnez l'intervieweur à affecter le ménage %02d %s, actuellement affecté au l’agent %04d
+  FR ( "Select interviewer to be assigned to household %02d %s" ) Sélectionnez l'intervieweur à affecter le ménage %02d %s
+  FR ( "Result" ) Résultat
   FR ( "Not to be assigned yet" ) Pas encore à affecter
   FR ( "Advance to end" ) Aller à la fin
   FR ( "and lives at address" ) et habite à l'adresse
+  FR ("Yes") Oui
+  FR ("No") Non
   
 language = EN
 005 This option is not permitted
@@ -27,4 +33,4 @@ language = FR
 010 Seuls les ménages non précédemment sélectionnés pour enquête homme peuvent être modifiés
 015 Numéro de ménage existe déjà pour la grappe, selectionnez de nouveau option
 020 Un ménage non sélectionné pour enquête homme est affecté à un enquêteur
-025 Le ménage était au préalable affecté à l'enquêteur %d, maintenant l'affectation a changé et il est affecté à %d
+025 025 L'agent %04d a été initialement attribué à ce ménage, vous avez maintenant changé l'affectation en agent %04d. \nSoyez prudent lorsque vous réattribuez des ménages, car si l'agent initial a commencé une interview dans ce ménage, cela peut créer des cas en double.\nVeuillez confirmer que vous souhaitez réaffecter ce ménage

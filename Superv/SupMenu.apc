@@ -42,7 +42,7 @@ PROC GLOBAL
   numeric  hhdups, indups, biodups, totintvw, hhind, codebiomarker, SameSession;
   numeric  CurrDate, TransDate;
   numeric hhtoget;
-  config   CSWebURL, CSWebUser, CSWebPIN, CSWebSurvey;
+  config CG81WebU, CG81User, CG81PIN;
   config  SyncCloudID_cc81, SyncCloudPIN_cc81;   { to handle access to SyncCloud }
   list string ListUpgrades, IntUpgrades;
   list string dirstocheck;
@@ -77,6 +77,7 @@ PROC GLOBAL
   numeric maxhhselR = 5;                  { maximum number of  HOUSEHOLDs that can be selected for reinteview by supervisor !!! }
 
   numeric c_to_check = 8040;              { cluster number to check to know if contsup needs to be reloaded see commments below !!! }
+  string CSWebSurvey = "/CG81/";
 
 
   function ReadIfssLog( string logFileName )
@@ -735,6 +736,39 @@ PROC GLOBAL
       ExecSystem( TheCommand, normal, wait );
     endif;
   end;
+  { make supervisor machine available as server for interviewers to retrieve HOUSEHOLD assignment }
+  function sync_int()
+    if isAndroid | useCSBT  then
+      SyncServer( Bluetooth );
+    else
+      fpath = utility + "\btclientPC";
+      setfile( piffile, fpath + "\transfer.xml", create );
+      { XML construction for transferring upgrades }
+      FileWrite( piffile, '<?xml version="1.0" encoding="utf-8" ?>' );
+      FileWrite( piffile, "<transfer>" );
+      FileWrite( piffile, "<caption>" + tr("Sending HOUSEHOLDs Assigned") + "</caption>" );
+      { restrict sending HH assignemnets to individuals in the same team excluding supervisor & biomarkers }
+      do i = 1 while interview(i)
+        if SupCode <> interview(i) & interrole(i) <> 3 then
+          FileWrite( piffile, '<to name="' + intername(i) + '" id="' + edit("9999",interview(i)) + '" />' );
+        endif;
+      enddo;
+      { encryption key, auto send parameter and timeout in seconds after which polling for devices is terminated }
+      FileWrite( piffile, "<key>1111111111111111</key>" );
+      FileWrite( piffile, "<autosend>false</autosend>" );
+      FileWrite( piffile, "<timeout>120</timeout>" );
+      { construct send the file }
+      fname = work + "\S" + xcluster + ".csdb";
+      if FileExist(fname) then
+        FileWrite( piffile, '<file source="' + fname + '" destdir="' + btwork + '" />' );        { actual file name }
+        FileWrite( piffile, '<file source="' + fname + '.CSIDX" destdir="' + btwork + '" />' );    { index file }
+      endif;
+      FileWrite( piffile, "</transfer>" );
+      close( piffile );
+      TheCommand = fpath + "\btclientPC.exe ";
+      ExecSystem( TheCommand, normal, wait );
+    endif;
+  end;
   { interviewer transfer data to supervisor using bluetooth, will return true if successful }
   function getquest( xint )
     set trace(on);
@@ -745,7 +779,7 @@ PROC GLOBAL
       fname = data + "\?" + xfilenum + "*.*";
       FileCopy( fname, temp );    
     else
-      recvdata(xint);
+      sync_int();
     endif;
     ifok = 0;
     { check if either a HOUSEHOLD or a woman's file arrived at the supervisor machine }
@@ -769,7 +803,7 @@ PROC GLOBAL
         errmsg( 019, xfilenum );
       endif;
     else
-      errmsg( 017, WCLUSTER, xint );
+      // errmsg( 017, WCLUSTER, xint );
     endif;
     getquest = ifok;
   end;
@@ -858,16 +892,24 @@ PROC GLOBAL
   { function to send data to central office using CSWeb FTP }
   function SendData_CSW()
     numeric DataOK = 0;
-    errmsg( 500 );
-    if SyncConnect( CSWeb, CSWebURL, CSWebUser, CSWebPIN ) then
-      if SyncFile( PUT, final + "\?" + xcluster + "*.*", CSWebSurvey + "Final" ) then
-             SyncFile( PUT, final + "\?" + xcluster + "*.cslog", CSWebSurvey + "Final" );  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
-             SyncFile( PUT, wrkref + "\Superv" + xsuperv + "*.dat", CSWebSurvey + "Final" );  
-             SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
-             SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
-             SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
-             SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
-         SyncFile( PUT, Receive + "\?" + xcluster + "????.*", CSWebSurvey + "Receive" );  {testing to see if was working or not }
+    if !connection()  then
+      // errmsg( 200 );
+      SendData_CSW = DataOK;
+      exit;
+    endif;
+    if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
+      if SyncFile( PUT, final + "\?" + xcluster + "*.", CSWebSurvey + "Final" ) then
+         SyncFile( PUT, final + "\?" + xcluster + "*.cslog", CSWebSurvey + "Final" );  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
+         SyncFile( PUT, wrkref + "\Superv" + xsuperv + "*.csdb", CSWebSurvey + "Final" );  
+         SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
+         SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
+         SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
+         SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
+         SyncFile( PUT, Receive + "\?" + xcluster + "????.DAT", CSWebSurvey + "Receive" );
+         SyncFile( PUT, Receive + "\?" + xcluster + "????.DAT.sts", CSWebSurvey + "Receive" );
+        // get the latest versions of the application files from the server 
+         syncapp();
+         DataOK = 1;
       endif;
       syncdisconnect();
     endif;
@@ -876,6 +918,7 @@ PROC GLOBAL
     else
       errmsg( 502 );
     endif;
+    SendData_CSW = DataOK;
   end;
   function string extract_UpgrNum (string str_path)
     string str_fname = path.GetFileName(str_path);
@@ -938,30 +981,6 @@ PROC GLOBAL
     setfile(SyncLog, synclogfile, create);
     FileWrite(SyncLog, maketext("%04d,%d,%s,%s,%s,%s", tonumber( loadsetting("Supervisor")), sysdate("YYYYMMDD"), edit("99:99:99",systime()), sysver,lastfct, diagnostics("version_detailed")));
     SyncLog.close();
-  end;
-  function SendData_SyncCloud()
-    GenSyncLog(); // generate sync log file for upload !!!
-    set trace;
-    SystemApp Sync_App;
-    Sync_App.clear();
-    if !connection() then
-      errmsg( 200 );
-      exit;
-    endif;
-    if isandroid then
-      Sync_App.SetArgument("projectid", SyncCloudID_cc81);
-      Sync_App.SetArgument("username", "S"+xsuperv );
-      Sync_App.SetArgument("password", SyncCloudPIN_cc81);
-      Sync_App.SetArgument("textlog", IFSSlogFile); 
-      x = Sync_App.exec("com.dec.syncclient");
-    else
-      Sync_App.SetArgument("ProjectId=", SyncCloudID_cc81);
-      Sync_App.SetArgument("Username=", "S"+xsuperv );
-      Sync_App.SetArgument("Password=", SyncCloudPIN_cc81);
-      Sync_App.SetArgument("log=", IFSSlogFile);
-      // x = Sync_App.exec(utility + "\SyncCloud\ScClient.exe");
-    endif;
-    SendData_SyncCloud = x; // save result
   end;
   {Concat all closed clusters data}
   function concatall(string wdir);
@@ -1039,7 +1058,7 @@ PROC GLOBAL
   function getint ();
     numeric ifound = 0;
     // asks user to select an interviewer and sets internal variables 
-    ifound = showarray( tr("Select fieldworker "), TeamShare, title(tr("Code"), tr("Name"), tr("Role")) );
+    ifound = showarray( tr("Select fieldworker you want to get data from"), TeamShare, title(tr("Code"), tr("Name"), tr("Role")) );
     if ifound then
       xfilenum = xcluster + TeamShare(ifound,1);
       intcode  = tonumber(TeamShare(ifound,1));
@@ -1097,39 +1116,6 @@ PROC GLOBAL
     endif; // isandroid
   end;
 
-  { make supervisor machine available as server for interviewers to retrieve HOUSEHOLD assignment }
-  function sendassign()
-    if isAndroid | useCSBT  then
-      SyncServer( Bluetooth );
-    else
-      fpath = utility + "\btclientPC";
-      setfile( piffile, fpath + "\transfer.xml", create );
-      { XML construction for transferring upgrades }
-      FileWrite( piffile, '<?xml version="1.0" encoding="utf-8" ?>' );
-      FileWrite( piffile, "<transfer>" );
-      FileWrite( piffile, "<caption>" + tr("Sending HOUSEHOLDs Assigned") + "</caption>" );
-      { restrict sending HH assignemnets to individuals in the same team excluding supervisor & biomarkers }
-      do i = 1 while interview(i)
-        if SupCode <> interview(i) & interrole(i) <> 3 then
-          FileWrite( piffile, '<to name="' + intername(i) + '" id="' + edit("9999",interview(i)) + '" />' );
-        endif;
-      enddo;
-      { encryption key, auto send parameter and timeout in seconds after which polling for devices is terminated }
-      FileWrite( piffile, "<key>1111111111111111</key>" );
-      FileWrite( piffile, "<autosend>false</autosend>" );
-      FileWrite( piffile, "<timeout>120</timeout>" );
-      { construct send the file }
-      fname = work + "\S" + xcluster + ".DAT";
-      if FileExist(fname) then
-        FileWrite( piffile, '<file source="' + fname + '" destdir="' + btwork + '" />' );        { actual file name }
-        FileWrite( piffile, '<file source="' + fname + '.CSIDX" destdir="' + btwork + '" />' );    { index file }
-      endif;
-      FileWrite( piffile, "</transfer>" );
-      close( piffile );
-      TheCommand = fpath + "\btclientPC.exe ";
-      ExecSystem( TheCommand, normal, wait );
-    endif;
-  end;
 
   { change file setting for HOUSEHOLD assignment for a cluster }
   function SetEligFile(newfile)
@@ -1348,7 +1334,7 @@ PROC GLOBAL
     function SetAssignFile()
       x = 1;
       { file name for HOUSEHOLDs assigned to interviewers is only known after the cluster is entered.  It is set here }
-      fname = work + "\S" + edit("9999",WCLUSTER) + ".DAT";
+      fname = work + "\S" + edit("9999",WCLUSTER) + ".csdb";
       if !FileExist( fname ) then
         errmsg( 095, fname, WCLUSTER );
         x = 0;
@@ -1410,7 +1396,7 @@ PROC GLOBAL
     close( CGHH80 );
 
     // check for reinterviews not yet begun
-    setfile(CONTSUP, wrkref + "\SUPERV" + edit("9999",SupCode) + ".DAT", update);
+    setfile(CONTSUP, wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb", update);
     SSAMPLE = WCLUSTER;
     x = loadcase( CONTSUP, SSAMPLE );
     
@@ -1457,7 +1443,7 @@ PROC GLOBAL
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".csdb" );
     FileWrite( piffile, "CGHH80=" + final + "\V" + xcluster + edit("9999",SupCode) + ".DAT" );
-    FileWrite( piffile, "CONTSUP="  + wrkref + "\SUPERV" + edit("9999",SupCode) + ".DAT" );
+    FileWrite( piffile, "CONTSUP="  + wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb" );
     FileWrite( piffile, "ELIGINDV=" + work + "\eligibles.dat");
     FileWrite( piffile, "[Parameters]" );
     { parameters are: cluster and HOUSEHOLD number (may include others for sub-samples) }
@@ -1517,7 +1503,6 @@ PROC GLOBAL
 
 PROC FL_MENU
 PreProc
-  setlanguage("EN");
   if debug then
     // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
     trace(on, ".\debug.app", clear);
@@ -1541,10 +1526,9 @@ PreProc
   userbase();
   userbar( show );
   { set the language at the start of the program, defaulting to English }
-  setlanguage(loadsetting("Language", "EN"));
+  setlanguage("FR");
   setvaluesets( "_" + getlanguage() );
   SameSession = tonumber(loadsetting("SupSession"));
-  sysver      = loadsetting("Version", "0");
 
   entry     = wrkprj + "\Entry";      { data entry programs }
   superv    = wrkprj + "\Superv";     { supervisor programs }
@@ -1765,7 +1749,7 @@ postproc
 
   { 1-Control file for supervisor }
   // check CONTSUP file exists and copy if not found
-  fname = wrkref + "\Superv" + xsuperv + ".dat";
+  fname = wrkref + "\Superv" + xsuperv + ".csdb";
   if !FileExist(fname) then
     FileCopy( wrkref + "\SupervXXXX.dat", fname );
   endif;
@@ -1811,10 +1795,10 @@ postproc
   numeric LastUpLoad = tonumber(loadsetting("LastUpLoad",0));
   if LastUpload < sysdate("YYYYMMDD") then
     CopySampSel();
-    if SendData_SyncCloud() then
+    if SendData_CSW() then
       savesetting("LastUpLoad", edit("99999999",( sysdate("YYYYMMDD") )));
       // restart Supervisor Menu to check for updates !!!
-      AppName = "../SUPMENU";
+      AppName = "./SUPMENU";
       runpffS();
     endif;
   endif;
@@ -1844,7 +1828,7 @@ onfocus
         FCT(temp);
         runpffS();
       else
-        SendData_SyncCloud();
+        SendData_CSW();
       endif;
     endif;
   elseif samesession = 5 then          // aditional steps after executing WrkElig for HOUSEHOLDs 
@@ -1855,17 +1839,20 @@ onfocus
   elseif samesession = 7 then          // !!! returning after running FCT
         display("Field summaries run");
     FileCopy(superv + "\output.xml", superv + "\output" + xsuperv + ".xml");// version for upload to server to check !!!
-    SendData_SyncCloud();
+    SendData_CSW();
   endif;
   
 
+  // get system version 
+  sysver = getver( wrkref + "/version.txt" );
   { set up string to display version numbers at top of menu } 
     versiontxt = maketext(" Ver:%s ", sysver); // version = date + hour + minutes
     heading = maketext("Supervisor %4d: %s: Cluster %s [%s] " , WSUPER, getbluetoothname(), xcluster , versiontxt) ;
     codes.clear();
     codes.add( "1 Affecter les ménages pour une grappe",01);
-    codes.add( "2 Envoyer l'affectation des ménages aux enquêteurs/trices",02);
-    codes.add( "3 Recevoir les données de l’enquêteur(trice)/Biomarqueur",03);
+//     codes.add( "2 Envoyer l'affectation des ménages aux enquêteurs/trices",02);
+//     codes.add( "3 Recevoir les données de l’enquêteur(trice)/Biomarqueur",03);
+    codes.add( "3 Synchroniser les données avec un enquêteur/trice",03);
     codes.add( "4 Lister les données de l’enquêteur(trice)/Biomarqueur",04);
     codes.add( "5 Revoir Questionnaires ménages",05);
     codes.add( "6 Revoir Questionnaires individuels",06);
@@ -1877,7 +1864,6 @@ onfocus
     codes.add( "I ---Menu re-interview---",12);
     codes.add( "C Changer de numéro de grappe",13);
     codes.add( "D ---Autre------",14);
-    codes.add( "L Changer la langue",15);
     codes.add( "E Quitter le système",16);
     setvalueset($, codes);
 postproc 
@@ -1899,10 +1885,11 @@ postproc
       AssignHH();
       RunPFFS();
   elseif action = 2 then  { transfer file with HOUSEHOLDs assigned to interviewers }
-      if isAndroid | useCSBT  then
-        getint();
-      endif;
-      sendassign();
+    reenter;
+      // if isAndroid | useCSBT  then
+      //   getint();
+      // endif;
+      // sync_int();
   elseif action = 3 then        { get questionnaires from interviewer/biomarker }
     { check if data was previously sent but with wrong interviewer number }
     if getint() then
@@ -1961,16 +1948,15 @@ postproc
       option =  accept("Select Action", 
                 "1. Report cluster status", 
                 "2. Summary report",
-                "3: Close Cluster",
-                "4: Close Cluster without running FCT",
                 "9: Cancel"
                 );
     elseif getlanguage() = "FR" then
-      option =  accept("Select Action", 
-                "1. Report cluster status", 
-                "2: Close Cluster",
-                "9: Cancel"
+      option =  accept("Selectionnez l'option", 
+                " 1. Rapport de l'état du cluster ", 
+                " 2. Fermer la grappe",
+                " 9. Annuler "
                 );
+
     endif;
     if option in 1:4 then
       if anyfiles(1) then         { check if hh files has been transferred to supervisor }
@@ -1997,8 +1983,8 @@ postproc
       endif; // anyfiles
     endif;  // option in 1,2
   elseif action = 8 then        { create file to transfer to central office }
-    SendData_SyncCloud();
-    AppName = "../SUPMENU";
+    SendData_CSW();
+    AppName = "./SUPMENU";
     runpffS();
   elseif action = 9 then        { list cluster notes }
     if anyfiles(1) then          { check if hh files has been transferred to supervisor }
@@ -2093,11 +2079,25 @@ postproc
     //   endif;
     endif;
   elseif action = 12 then      { re-interview menu !!! }
-    option = accept ("Re-interview menu",
+    if getlanguage() = "EN" then
+    option = accept 
+                (
+                "Re-interview menu",
                 "1. Select HOUSEHOLDs for re-interview",
                 "2  Re-interview HOUSEHOLDs",
                 "3. List HOUSEHOLDs for reinterview",
-                "9. Main Menu");
+                "9. Main Menu"
+                );
+  elseif getlanguage() = "FR" then
+    option = accept 
+                (
+                " Menu de réentretien ",
+                " 1. Sélectionnez les ménages pour un réentretien ",
+                " 2  Lançez un réentretien",
+                " 3. Listez les ménages pour réentretien",
+                " 9. Menu principal "
+                );
+  endif;
      if option = 1 then
        // select HOUSEHOLDs
        if check_reint() then
@@ -2209,16 +2209,6 @@ postproc
     else
       reenter;
     endif;
-  elseif action = 15 then
-    x =  accept(tr("Select Language"), 
-           "English",
-           "Français");
-    recode x -> x;
-           1 -> setlanguage("EN");
-           2 -> setlanguage("FR");
-    endrecode;
-    savesetting("Language", getlanguage());
-    reenter;
   else
     skip to WNUMBER;
   endif;

@@ -2386,10 +2386,10 @@ Item=QH17B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
-DataCaptureType=ComboBox
+DataCaptureType=RadioButton
   
 [Text]
-Position=0,0,44,16
+Position=0,0,46,16
 Text=QH17B
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
@@ -2447,9 +2447,10 @@ Item=QH19B,CGHH80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
-DataCaptureType=ComboBox
+DataCaptureType=RadioButton
   
 [Text]
+Position=0,0,46,16
 Text=QH19B
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  

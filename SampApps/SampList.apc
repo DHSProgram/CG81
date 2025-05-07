@@ -178,7 +178,6 @@ end
       LLATPOLE(i)   = LLATPOLE(i+1);
       LLONGITUDE(i) = visualvalue( LLONGITUDE(i+1) );
       LLNGPOLE(i)   = LLNGPOLE(i+1);
-      LALTITUDE(i)  = visualvalue( LALTITUDE(i+1) );
       LPHONE1(i)    = LPHONE1(i+1);
 
       LACCURACY     = visualvalue( LACCURACY     (i+1) ); 
@@ -201,7 +200,6 @@ end
     LLATPOLE(i)   = " ";
     LLONGITUDE(i) = notappl;
     LLNGPOLE(i)   = " ";
-    LALTITUDE(i)  = notappl;
     LPHONE1(i)  = " ";
 
     LACCURACY(i)  = notappl;
@@ -228,7 +226,6 @@ end
       LLATPOLE(i+1)   = LLATPOLE(i);
       LLONGITUDE(i+1) = visualvalue( LLONGITUDE(i) );
       LLNGPOLE(i+1)   = LLNGPOLE(i);
-      LALTITUDE(i+1)  = visualvalue( LALTITUDE(i) );
       LPHONE1(i+1)    = LPHONE1(i);
 
       LACCURACY(i+1)  = visualvalue( LACCURACY     (i) ); 
@@ -248,7 +245,6 @@ end
     LLATPOLE(i+1)   = " ";
     LLONGITUDE(i+1) = notappl;
     LLNGPOLE(i+1)   = " ";
-    LALTITUDE(i+1)  = notappl;
     LPHONE1(i+1)  = " ";
 
     LACCURACY(i+1)  = notappl;
@@ -265,7 +261,7 @@ end
   end;
  
 {+GPS}
-  { function to calculate average for latitude, longitude and altitude }
+  { function to calculate average for latitude, longitude }
   function averageGPS();
     set trace(on);
     numeric valgps = 0, templat = 0, templon = 0, tempalt = 0, tempaccu = 0;
@@ -276,7 +272,6 @@ end
         valgps  = valgps + 1;
         templat = templat + GLATITUDE;
         templon = templon + GLONGITUDE;
-        tempalt = tempalt + GALTITUDE;
         tempaccu= tempaccu + GACCURACY;
       endif;
     enddo;
@@ -285,7 +280,6 @@ end
       LLATPOLE   = GLATPOLE(1);
       LLONGITUDE = templon / valgps;
       LLNGPOLE   = GLNGPOLE(1);
-      LALTITUDE  = tempalt / valgps;
       LACCURACY  = tempaccu / valgps;
     endif;
     averageGps = valgps;
@@ -609,7 +603,7 @@ preproc
 
 PROC LINTGPS
 preproc
-  if LSTRUCTT <> 1 then
+  if LSTRUCTT = 2 then
     skip to LTRUEHH
   endif;	
 onfocus
@@ -661,7 +655,6 @@ postproc
     LLATPOLE   = LLATPOLE(n-1);
     LLONGITUDE = LLONGITUDE(n-1);
     LLNGPOLE   = LLNGPOLE(n-1);
-    LALTITUDE  = LALTITUDE(n-1);
   { capture coordinates from GPS unit }
   elseif $ = 2 then
     enter GPS_FF;
@@ -751,7 +744,7 @@ weipc =  maketext("EDSIII: %04d / %03d/ %02d", LCLUSTER, LSTRUCT, visualvalue($)
 PROC LPHONE1
 preproc
   if LTRUEHH <> 1 then
-    skip to next LINTRO
+    skip to LNOTES;
   endif;
 
 postproc
@@ -830,7 +823,6 @@ preproc
     if gps( longitude ) < 0 then	{ negative = west }
       GLNGPOLE = "W";
     endif;
-   	GALTITUDE  = gps( altitude );
     GSATELLIT = gps( satellites );	  { no. of satellites, at least 3-4 is recommended }
     GACCURACY = low(50,gps( accuracy ));	    { precision level, 1 is the best possible and 50 the least accurate }
   else

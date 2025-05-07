@@ -1152,6 +1152,8 @@ preproc
        break;
      endif;
    enddo;
+   #else
+     view(HTMLName);
    #endif
   { totally quit application }
   stop(1);

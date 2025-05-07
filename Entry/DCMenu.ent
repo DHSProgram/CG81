@@ -6,9 +6,11 @@ AppType=DataEntry
 OperatorID=No
 ShowEndCaseDialog=No
 CAPI=Yes
+CaseTree=Never
 CenterForms=Yes
 AutoAdvanceOnSelection=Yes
 DisplayCodesAlongsideLabels=Yes
+ComboBoxShowOnlyDiscreteValues=Yes
 [External Dictionaries]
 File=..\Dicts\Clusters.dcf
 File=..\Dicts\Interv.dcf

@@ -802,21 +802,49 @@
       endif;
       SetAssignFile = x;
     end;
+    function SendFiles ();
+        fname = data + "\?" + xfilenum + "*.DAT"; // main data files
+        SyncFile( PUT, fname, temp );
+        fname = data + "\?" + xfilenum + "*.cslog"; // paradata
+        SyncFile( PUT, fname, temp );
+        fname = data + "\?" + xfilenum + "*.csnot"; // notes
+        SyncFile( PUT, fname, temp );
+        fname = data + "\?" + xfilenum + "*dat.sts"; // partial
+        SyncFile( PUT, fname, temp );
+        fname = data + "\?" + xfilenum + "*DAT.sts"; // partial
+        SyncFile( PUT, fname, temp );
+        // get backup pictures 
+        do numeric pic = 1 until pic > 3
+          fname = pictures + "\P" + xcluster + "????????" + "_" + edit("99",pic) + ".jpg"; // get up to 4 previous pictures !!
+          SyncFile( PUT, fname, pictures );
+        enddo;
+        // get FW interview data files
+        fname = data + "\F*" + edit("9999", WINTNUM) + ".DAT";
+        SyncFile( PUT, fname, receive );
+        // get FW quiz data files
+        fname = data + "\Q*" + edit("9999", WINTNUM) + ".DAT";
+        SyncFile( PUT, fname, receive );
+    end;
     { receiving HOUSEHOLD assignment from supervisor }
-    function rcvhhassign()
+    function sync_sup()
       close( HHFORINT );
       if isAndroid | useCSBT then
         btserver = edit("9999", WSUPER);
         if SyncConnect( Bluetooth, btserver ) then
           // get the assignment file
-          fname = work + "\S" + xcluster + ".dat";
+          fname = work + "\S" + xcluster + ".csdb";
           FileDelete( fname );
           SyncFile( GET, fname, work );
+          // send interview files
+          SendFiles();
           // now get any new upgrades 
-          fname = upgrades + "/" + upgrname + "*.zip";
-          SyncFile( GET, fname, upgrades );
+         // get the latest versions of the application files from the server 
+          syncapp();
+          // fname = upgrades + "/" + upgrname + "*.zip";
+          // SyncFile( GET, fname, upgrades );
           SyncDisconnect();
           ApplyUpgr();
+
         endif;        
       else
         fpath = utility + "\btserverPC";
@@ -1238,7 +1266,7 @@
     endif;
     if SyncConnect( Bluetooth, btserver ) then
       // get the assignment file
-      fname = work + "\S" + xcluster + ".dat";
+      fname = work + "\S" + xcluster + ".csdb";
       FileDelete( fname );
       SyncFile( GET, fname, work );
       // get the data files for that interviewer
@@ -1339,7 +1367,7 @@ PreProc
     userbase();
     userbar( show );
     { set the language at the start of the program, defaulting to English }
-    setlanguage(loadsetting("Language", "EN"));
+    setlanguage("FR");
     setvaluesets( "_" + getlanguage() );
     SameSession = tonumber(loadsetting("DCSession"));
     sysver      = loadsetting("Version", "0");
@@ -1594,6 +1622,7 @@ onfocus
         transuper();
       endif;
     endif;
+    heading = maketext("Ver[%s]", getver( wrkref + "/version.txt" ));
     if debug then
       heading = heading + " debug mode enabled !!"
     endif;
@@ -1675,125 +1704,104 @@ postproc
 
     { menu to transfer/share and fix data and to obtain updates }
     elseif action = 8 then
-      if getlanguage() = "EN" then
-        heading = "Transfer and utilities: Cluster " + xcluster + " Interviewer " + edit("9999", WINTNUM);
+        heading = "Transfer des données et outils. Grappe: " + xcluster + " Enq. " + edit("9999", WINTNUM);
         option  = accept( heading,
-                  {  1} "1 Receive HH assignment from supervisor",
-                  {  2} "2 Transfer cluster data to supervisor",
-                  {  3} "3 Share HH data with other interviewers",
-                  {  4} "4 Receive HH data from other interviewer",
-                  {  5} "5 Receive system updates from supervisor",
-                  {  6} "6 Modify IDs/delete INDIVIDUALs",
-                  {  7} "7 Fix interviewer code/result in a HOUSEHOLD",
-                  {  8} "8 Get restore data from supervisor tablet",
-                  {  9} "9 Split a HOUSEHOLD",
-                  { 10} "C Clear shared HOUSEHOLDs data",
-                  { 11} "R Reset Index Files",
-                  { 11} "F Clean data file",
-                  { 12} "X Return to main menu" );
-      else
-        heading = "Transfer and utilities: Cluster " + xcluster + " Interviewer " + edit("9999", WINTNUM);
-        option  = accept( heading,
-                  {  0} "1 Recevoir du contrôleur (leuse) l'affectation des ménages",
-                  {  2} "2 Transférer les données de grappe au contrôleur (leuse)",
-                  {  3} "3 Partager les données de ménage avec d'autres enquêteurs",
-                  {  4} "4 Recevoir les données de ménage des autres enquêteurs",
-                  {  5} "5 Recevoir du contrôleur (leuse) les mises à jour du système",
-                  {  6} "6 Modifier les IDs/Supprimer des questionnaires",
-                  {  7} "7 Corriger code enquêteur/Résultat dans un ménage",
-                  {  8} "8 Get restore data from supervisor tablet",
-                  {  9} "9 Split a HOUSEHOLD",
-                  { 10} "C Clear shared HOUSEHOLDs data",
-                  { 11} "R Reset Index Files",
-                  { 12} "X Retourner au menu principal" );
-      endif;
+                  {  1} "1 Synchroniser avec superviseur/contrôleur",
+                  {  2} "3 Partager les données de ménage avec d'autres enquêteurs",
+                  {  3} "4 Recevoir les données de ménage des autres enquêteurs",
+                  {  4} "6 Modifier les IDs/Supprimer des questionnaires",
+                  {  5} "7 [[Autres options]]",
+                  {  6} "X Retourner au menu principal" );
 
-      { tranfer data to supervisor }
-      if option = 2 then
-        if IntCode = WSUPER then       { transfer within supervisor machine }
-          transuper();
-          errmsg( 0081 );
-        else                           { transfer from other interviewers }
-          transfer();
-        endif;
-
+      { return to main menu }
+      if option = 6 then
+        reenter;
+      elseif option = 1 then
+        { sync with supervisor }
+        sync_sup();
       { transfer HOUSEHOLD data to another interviewer }
-      elseif option = 3 then
+      elseif option = 2 then
         sendhhdat();
-
       { receive HOUSEHOLD data from another interviewer }
-      elseif option = 4 then
+      elseif option = 3 then
         receivehh();
+      elseif option = 4 then
+        RunDataRepair( "csentry:CG81/Entry/" + "Android.xml", "English" )
 
       { fix identifiers (cluster, HOUSEHOLD, interviewers) or delete women  }
-      elseif option = 6 then
-          RunDataRepair( "csentry:cc81/Entry/" + "Android.xml", "English" )
-
-      { get and apply system updates from supervisor }
       elseif option = 5 then
-        receiveupgr()
-      { get HOUSEHOLD assignment for cluster form supervisor }
-      elseif option = 1 then
-        rcvhhassign();
+        heading = "Autres options. Grappe: " + xcluster + " Enq. " + edit("9999", WINTNUM);
+        numeric suboption  = accept( heading,
+                  {1} "1 Corriger code enquêteur/Résultat dans un ménage",
+                  {2} "2 Récupérer les données de restauration de la tablette du superviseur ",
+                  {3} "3 Diviser un MÉNAGE ",
+                  {4} "4 Effacer les données des ménages partagés ",
+                  {5} "5 Réinitialiser les fichiers d'index ",
+                  {6} "X Retourner au menu principal" );
 
-      { fix the result of a HOUSEHOLD assigned to interviewer }
-      elseif option = 7 then
-        if setalready | SetAssignFile() then
-          AppName = "FIxResult";
-          if selcase( HHFORINT, "") include( VNUMBER, VNAME, VINTCODE, VRESULT )  where VINTCODE <> notappl then
-            FIxResult();
-            close( HHFORINT );
-            SaveSetting( "DCSession", "1" );
-            runpffS();
+
+        if suboption = 6 then
+          reenter;
+        { fix the result of a HOUSEHOLD assigned to interviewer }
+        elseif suboption = 1 then
+          if setalready | SetAssignFile() then
+            AppName = "FIxResult";
+            if selcase( HHFORINT, "") include( VNUMBER, VNAME, VINTCODE, VRESULT )  where VINTCODE <> notappl then
+              FIxResult();
+              close( HHFORINT );
+              SaveSetting( "DCSession", "1" );
+              runpffS();
+            endif;
+          endif;
+        // restore data from supervisor tablet
+        elseif suboption = 2 then
+          restore();
+        // split household
+        elseif suboption = 3 then
+          getonehh(5);
+          // clear shared data from work folder
+          // used to fix issues with duplicated cases
+        elseif suboption = 4 then 
+          x = errmsg("Are you sure you wish to remove shared HOUSEHOLD data from the interviewer tablet ?\n To access INDIVIDUAL interviews from already shared HOUSEHOLDs you will need to receive shared data again ") select ("No", continue, "Yes, remove", continue);
+          if x = 2 then
+            FileDelete(work + "\H" + xcluster + "????.DAT");
+            FileDelete(work + "\H" + xcluster + "????.DAT.sts");
+            FileDelete(work + "\H" + xcluster + "????.DAT.csidx");
+            errmsg("Shared data removed");
+          endif;
+        // clear indexes and allhh* files 
+        elseif suboption = 5 then 
+          fname = data + "\H" + xfilenum + ".DAT";
+          if !FileEXist(fname) | FileEmpty(fname) then
+            errmsg("File for interviewer %04d not present on tablet", intcode);
+          else
+            x = errmsg("PLease confirm you wish to clean interviewer files for interviewer %04d", intcode) 
+            select ("Yes, clean", continue, "No, do not clean", continue);
+            if x = 1 then
+              fixdata(fname, 1);
+              errmsg("Files for interviewer %04d cleaned", intcode);
+            endif;
+          endif;
+          FileDelete(work + "\ALLHH.*");
+          FileDelete(work + "\ALLHH.*.*");
+          CleanIndex(work);
+          CleanIndex(data);
+        elseif suboption = 6 then 
+      // clean data file by removing corrupted lines with blanks in id and record fields
+          fname = data + "\H" + xfilenum + ".DAT";
+          errmsg("fname=%s", fname);
+          if !FileEXist(fname) | FileEmpty(fname) then
+            errmsg("File %s not present on tablet", fname);
+          else
+            x = errmsg("PLease confirm you wish to clean files") 
+            select ("Yes, clean", continue, "No, do not clean", continue);
+            if x = 1 then
+              backupf(); // back up file before removing blanks
+              remblanks(fname, 1);
+              errmsg("Files for interviewer %04d cleaned", intcode);
+            endif;
           endif;
         endif;
-      elseif option = 8 then
-        restore();
-      elseif option = 9 then
-        getonehh(5);
-      elseif option = 10 then 
-    // clear shared data from work folder
-    // used to fix issues with duplicated cases
-        x = errmsg("Are you sure you wish to remove shared HOUSEHOLD data from the interviewer tablet ?\n To access INDIVIDUAL interviews from already shared HOUSEHOLDs you will need to receive shared data again ") select ("No", continue, "Yes, remove", continue);
-        if x = 2 then
-          FileDelete(work + "\H" + xcluster + "????.DAT");
-          FileDelete(work + "\H" + xcluster + "????.DAT.sts");
-          FileDelete(work + "\H" + xcluster + "????.DAT.csidx");
-          errmsg("Shared data removed");
-        endif;
-      elseif option = 11 then 
-    // clear indexes and allhh* files 
-        fname = data + "\H" + xfilenum + ".DAT";
-        if !FileEXist(fname) | FileEmpty(fname) then
-          errmsg("File for interviewer %04d not present on tablet", intcode);
-        else
-          x = errmsg("PLease confirm you wish to clean interviewer files for interviewer %04d", intcode) 
-          select ("Yes, clean", continue, "No, do not clean", continue);
-          if x = 1 then
-            fixdata(fname, 1);
-            errmsg("Files for interviewer %04d cleaned", intcode);
-          endif;
-        endif;
-        FileDelete(work + "\ALLHH.*");
-        FileDelete(work + "\ALLHH.*.*");
-        CleanIndex(work);
-        CleanIndex(data);
-      elseif option = 12 then 
-    // clean data file by removing corrupted lines with blanks in id and record fields
-        fname = data + "\H" + xfilenum + ".DAT";
-        errmsg("fname=%s", fname);
-        if !FileEXist(fname) | FileEmpty(fname) then
-          errmsg("File %s not present on tablet", fname);
-        else
-          x = errmsg("PLease confirm you wish to clean files") 
-          select ("Yes, clean", continue, "No, do not clean", continue);
-          if x = 1 then
-            backupf(); // back up file before removing blanks
-            remblanks(fname, 1);
-            errmsg("Files for interviewer %04d cleaned", intcode);
-          endif;
-        endif;
-      endif;
     // elseif action = 9 then // change language
     //     x =  accept(tr("Select Language"), 
     //            "English",
@@ -1843,6 +1851,7 @@ postproc
     //     runpffS();
     //   endif;
     endif;
+  endif;
 
     reenter;
 

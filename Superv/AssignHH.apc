@@ -40,13 +40,9 @@ PROC GLOBAL
 
   function showhhlist ();
     string strtitle;
-    if getos() = 20 then
-      strtitle = "Select Household to assign. Press 'Select' without first selecting a household to return to main menu ";
-    else
-      strtitle = "Select Household to assign. Select the red 'X' button to finish selection and return to the main menu";
-    endif;
+    strtitle =tr(  "Select Household to assign. Select the red X button to finish selection and return to the main menu" );
     showhhlist = show(strtitle,  SAMREC2000,  XNUMBER, XADDRESS,  XNAME, XMALE, XRESULT, XINTCODE, 
-     title( tr("Seq.No"), tr("Address"), tr("Name"),  tr("Male/L-S"), tr("Result"), tr("RA") ) where XNUMBER <> notappl );
+     title( tr("Seq.No"), tr("Address"), tr("Name"),  tr("Male"), tr("Result"), tr("Int") ) where XNUMBER <> notappl );
   end;
 
   function initcont ();
@@ -83,7 +79,7 @@ PROC GLOBAL
       SREMLINE(i) = 0;
     enddo;
     if writecase( CONTSUP ) then
-      errmsg( 100, SSAMPLE )
+      // errmsg( 100, SSAMPLE )
     else
       errmsg( 101, SSAMPLE )
     endif;
@@ -158,14 +154,14 @@ PROC SAMREC2000
     if widx then
       oldval  = XINTCODE(widx);
       if oldval then
-        textstr = maketext("Select interviewer to be assigned to household %02d %s, currently assigned to interviewer code %04d", XNUMBER(widx), strip( XNAME(widx) ), oldval);
+        textstr = maketext(tr( "Select interviewer to be assigned to household %02d %s, currently assigned to interviewer code %04d" ), XNUMBER(widx), strip( XNAME(widx) ), oldval);
       else
-        textstr = maketext("Select interviewer to be assigned to household %02d %s", XNUMBER(widx), strip( XNAME(widx) ));
+        textstr = maketext(tr( "Select interviewer to be assigned to household %02d %s" ), XNUMBER(widx), strip( XNAME(widx) ));
       endif;
       XINTCODE(widx) = fieldworkers.show(textstr);
       if oldval <> XINTCODE(widx) then
         if oldval <> 0 then
-          x = errmsg( 025, oldval, XINTCODE(widx), XINTCODE(widx) ) select ("Yes", continue, "No", continue);
+          x = errmsg( 025, oldval, XINTCODE(widx), XINTCODE(widx) ) select (tr( "Yes" ), continue,tr(  "No" ), continue);
           if x = 1 then
             XINTDATE(widx) = sysdate( "MMDDYYYY" );
           else

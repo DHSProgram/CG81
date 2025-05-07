@@ -18,6 +18,8 @@ string CSWebSurvey = "/CG81/";
       SyncData(GET, INTERV);
       SyncData(GET, CLUSTERS);
       close(INTERV);
+      // get the latest versions of the application files from the server 
+       syncapp();
       syncdisconnect();
     endif;
     if DataOK then 

@@ -1,0 +1,133 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "deployment", 
+  "name": "EDSC-III CAPI local", 
+  "description": "", 
+  "files": [
+    {
+      "path": "..\\Entry\\CollectHH.ent"
+    }, 
+    {
+      "path": "..\\Entry\\CollectIN.ent"
+    }, 
+    {
+      "path": "..\\Entry\\DCMenu.ent"
+    }, 
+    {
+      "path": "..\\Entry\\DCMenu.pff"
+    }, 
+    {
+      "path": "..\\Entry\\ListElig.ent"
+    }, 
+    {
+      "path": "..\\Entry\\ListNotes.ent"
+    }, 
+    {
+      "path": "..\\Entry\\LstQuest.ent"
+    }, 
+    {
+      "path": "..\\PII\\Ref\\Clusters.csdb"
+    }, 
+    {
+      "path": "..\\PII\\Ref\\INTERV.csdb"
+    }, 
+    {
+      "path": "..\\PII\\Ref\\SAMPSEL.csdb"
+    }, 
+    {
+      "path": "..\\PII\\Ref\\version.txt"
+    }, 
+    {
+      "path": "..\\Superv\\assignhh.ent"
+    }, 
+    {
+      "path": "..\\Superv\\CheckID.ent"
+    }, 
+    {
+      "path": "..\\Superv\\CheckID.mgf"
+    }, 
+    {
+      "path": "..\\Superv\\SelectHH.ent"
+    }, 
+    {
+      "path": "..\\Superv\\SupMenu.ent"
+    }, 
+    {
+      "path": "..\\Superv\\SupMenu.pff"
+    }, 
+    {
+      "path": "..\\Superv\\TEntry.ent"
+    }
+  ], 
+  "dictionaries": [
+    {
+      "path": "..\\Dicts\\CGHH80.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\CGIN80.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Clusters.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\CLUSTERS.dcf"
+    }, 
+    {
+      "path": "..\\dicts\\Cnull.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Cnull.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\CONTSUP.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\EligIndv.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\HHForInt.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\HHFORINT.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\HHListing.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Interv.dcf", 
+      "uploadForSync": true
+    }, 
+    {
+      "path": "..\\Dicts\\md5.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Menu.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Others.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Remeasure.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\SampSel.dcf", 
+      "uploadForSync": true
+    }, 
+    {
+      "path": "..\\Dicts\\Segment.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\Transmit.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\TRANSMIT.dcf"
+    }
+  ], 
+  "deployment": {
+    "type": "LocalFolder", 
+    "cswebUrl": "https://eds.ins-congo.app/api/", 
+    "ftpUrl": "ftp://", 
+    "localFolderPath": "CG81-DHS"
+  }
+}

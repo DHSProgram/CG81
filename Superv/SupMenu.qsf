@@ -32,11 +32,12 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Welcome to the&#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Demographic &amp; Health Survey&#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Supervisor&apos;s Menu&#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:10px;color:#000000;font-family:'Arial', sans-serif;">Press any key to continue&#160;</span></p>
-            
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Welcome to the&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Demographic &amp; Health Survey&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:16px;color:#ff00ff;font-family:'Arial', sans-serif;">Supervisor's Menu&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:10px;color:#000000;font-family:'Arial', sans-serif;">Press any key to continue&nbsp;</span></p>
+          FR: |
+            <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU SUPERVISEUR</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif" color="#0000ff"><span style="font-size: 14px;"><b>Appuyez sur n'importe quelle touche pour continuer</b></span></font></p><p></p>
         helpText:
           EN: |
             
@@ -45,7 +46,8 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select your name from the list displayed in the window&#160;</span></p>
-            
+          FR: |
+            <font color="#0000ff">Sélectionnez votre nom dans la liste affichée</font><p></p>
         helpText:
           EN: |
             
@@ -54,7 +56,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select the name of the interviewer you will be working with this time&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -63,7 +64,8 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Enter the cluster number on which you wish to work&#160;</span></p>
-            
+          FR: |
+            <font color="#0000ff">Entrez le numéro de la grappe dans lequelle vous souhaitez travailler</font><p></p>
         helpText:
           EN: |
             
@@ -74,7 +76,6 @@ questions:
             <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">SUPERVISOR MENU &#160;</span></p>
             <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~   Supervisor:~~WSUPER~~-~~SupName~~&#160;</span></p>
             <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press the ENTER key and Select an option from the list to be displayed&#160;</span></p>
-            
           FR: |
             <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU SUPERVISEUR</b></span></font></p><p style="text-align: center;"><span style="font-family: Arial, sans-serif; font-size: 14px;">-~~SupName~~ (~~WSUPER~~)</span></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">Grappe: ~~WCLUSTER~~, ~~WSTATEN~~, ~~WDISTRICTN~~, ~~WCITYN~~</span></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;">~~heading~~</span></font></p><div><font face="Arial, sans-serif"><span style="font-size: 14px;"><br></span></font></div><p></p>
         helpText:
@@ -86,7 +87,6 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Is this household &quot;~~WADDRESS~~&quot; the correct household?&#160;</span></p>
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">If no or not sure, select option 2 and return to the main menu&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -96,7 +96,6 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">INDIVIDUAL MENU&#160;</span></p>
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select an option from the menu for eligible women and men <span style="color:#ff0000;">(press any key to display the menu)&#160;</span></span></p>
-            
         helpText:
           EN: |
             
@@ -105,7 +104,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Is &quot;~~WNAME~~&quot; the correct person?&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -114,7 +112,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Select the prefecture in which you are working&#160;</span></p>
-            
         helpText:
           EN: |
             

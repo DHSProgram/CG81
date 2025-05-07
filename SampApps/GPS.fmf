@@ -62,7 +62,7 @@ Required=Yes
 Type=Record
 TypeName=GPSSEC
 Max=4
-DisplaySize=46,96,892,396
+DisplaySize=46,96,877,344
 Orientation=Vertical
 ColumnWidth=0
 StubColumnWidth=123
@@ -211,27 +211,6 @@ DataCaptureType=TextBox
   
 [Text]
 Text=Est-Ouest
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=66,4,123,28
-Text=Altitude
- 
-[Field]
-Name=GALTITUDE
-Position=42,0,113,20
-Item=GALTITUDE,GPS_DCT
-Protected=Yes
-UpperCase=Yes
-DataCaptureType=TextBox
-  
-[Text]
-Position=0,0,66,16
-Text=Altitude
  
 [EndColumn]
   
