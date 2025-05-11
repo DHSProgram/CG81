@@ -12,6 +12,14 @@ h2 {
  color: #000000;
  border-bottom: 1px solid ;
 }
+h5 {
+ font-family: "Courier New";
+ font-size: 14px;
+ font-weight: bold;
+ color: #000000;
+ border-bottom: 1px solid ;
+ text-align: right; 
+}
 h1, h5, th { text-align: left; }
 table { font-family: Segoe UI; box-shadow: 08px 08px 5px #888; border: thin ridge grey; }
 th { background: #0046c3; color: #fff; max-width: 200px; padding: 1px 1px; }

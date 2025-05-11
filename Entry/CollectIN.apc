@@ -74,9 +74,9 @@
   numeric relprev, anyviol, nhhold;
   numeric DaysMonth = 30.4375, WeeksMonth = 0.23;
   numeric idx, durpreg;
-  numeric drinks_popup   = 0;	// used in handling A636
-  numeric foods_popup    = 0;	// used in handling A637
-  numeric foods_popupW   = 0;	// used in handling A643 for foods
+  numeric drinks_popup   = 0;	// used in handling Q636
+  numeric foods_popup    = 0;	// used in handling Q637
+  numeric foods_popupW   = 0;	// used in handling Q643 for foods
   numeric other_drinks   = 0;   // toggle for "other" drinks for children
   numeric other_foods    = 0;   // toggle for "other" foods for children
   numeric other_foodsW   = 0;   // toggle for "other" foods for women
@@ -1072,37 +1072,35 @@
     endif;
   end;
 
-  { function to handle the drinks popup for A636 }
+  { function to handle the drinks popup for Q636 }
   function drinkgroups()
     foodfield = getsymbol();
 	drinks_popup = 1;
 	move to Q636Z;
   end;
 
-  { function to handle the foods popup for A637 }
+  { function to handle the foods popup for Q637 }
   function foodgroups()
     foodfield = getsymbol();
 	foods_popup = 1;
 	move to Q637Z;
   end;
   
-  { function to handle the food and drinks popup for A643 }
+  { function to handle the food and drinks popup for Q643 }
   function foodgroupsW()
     foodfield = getsymbol();
 	foods_popupW = 1;
 	move to Q643Z;
   end;
 
-  { function to display the relevant food and drinks popup for A636, A637, or A643 }
+  { function to display the relevant food and drinks popup for Q636, Q637, or Q643 }
   function fooddrinks()
     foodfield = getsymbol();
-    if accept(tr("Display food or drink categories"),tr("Yes"),tr("No")) = 1 then
-      if     pos("A636",foodfield) & length(foodfield) = 5 & foodfield[5:1] in "A":"X" then drinkgroups()
-      elseif pos("A637",foodfield) & length(foodfield) = 5 & foodfield[5:1] in "A":"X" then foodgroups()
-      elseif pos("A643",foodfield) & length(foodfield) = 5 & foodfield[5:1] in "A":"X" then foodgroupsW()
-	  else   display(tr("No food or drink categories exist for this question"))
-	  endif;
-	endif;
+    if     pos("Q636",foodfield) & length(foodfield) = 5 & foodfield[5:1] in "A":"X" then drinkgroups()
+    elseif pos("Q637",foodfield) & length(foodfield) = 5 & foodfield[5:1] in "A":"X" then foodgroups()
+    elseif pos("Q643",foodfield) & length(foodfield) = 5 & foodfield[5:1] in "A":"X" then foodgroupsW()
+        else   display(tr("No food or drink categories exist for this question"))
+    endif;
   end;
 
   array string vacc_array(20,3);
@@ -1831,7 +1829,7 @@ postproc
 
 PROC Q117
 preproc
-  if Q114 = 3 then
+  if Q114 = 4 then
     skip to Q119
   endif;
 
@@ -1842,11 +1840,6 @@ postproc
   elseif $ = 4 then
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
-  endif;
-
-PROC Q122
-  if $ <> 1 then
-    skip to Q127
   endif;
 
 PROC Q127
@@ -2975,14 +2968,12 @@ postproc
     Q307N = 96;
   endif;
 
-  if Q307N in stermeth,stermetm then  { Female or male sterilization }
-    skip to Q312
-  elseif Q307N in 3,5:96 then       { IUD, implants, pill, c/condom, f/condom, emergency, SDM, LAM, rhythm, withdrawal, others }
-    skip to Q314_BLOCK;
-  elseif Q307N = 7 then
-    skip to Q311;
-  endif;
-
+when Q307N;
+   stermeth, stermetm -> skip to Q312;
+                    7 -> skip to Q311;
+           3,5,6,8:96 -> skip to Q314M;
+                      -> ; // continue to next field
+endwhen;
 PROC Q308
   if $ <> 1 then
     skip to Q314_BLOCK;
@@ -4004,7 +3995,7 @@ postproc
   
   recode $ :: Q416N -> err;
          1 :: 3:45  -> 0;     { weeks }
-	     2 :: 1:9   -> 0;     { months }
+         2 :: 1:9   -> 0;     { months }
          9 :: 98    -> 0;
            ::       -> 1;
   endrecode;
@@ -8931,7 +8922,7 @@ preproc
   string gpstitle;
   capturecoor = ( visualvalue(GILATITUDE) = notappl );
   if GIINTRO = 1 & GIAUX <> 2 & !xmodcent then 
-    gpstitle = tr("GPS device acquiring GPS satellites. Please wait to complete its capture");
+    gpstitle = tr("GPS device acquiring GPS satellites..., Please wait for 10 seconds to complete the capture");
     if gps(read, 25, gpstitle ) then
       GILATITUDE  = gps(latitude);
       GILATPOLE   = "N";
@@ -8941,14 +8932,11 @@ preproc
       GILONGITUDE = gps(longitude);
       GILNGPOLE  = "E";
       if gps(longitude) < 0 then	{ negative = west }
-        GILNGPOLE = "W";
-      endif;
-      GIALTITUDE = gps(altitude);
-      if special(visualvalue(GIALTITUDE)) then 
-        GIALTITUDE = 0; 
+        GILNGPOLE = "O";
       endif;
       GISATELLIT = gps(satellites);	  { no. of satellites, at least 3-4 is recommended }
-      GIACCURACY = gps(accuracy);	  { precision level, 1 is the best possible and 50 the least accurate }
+      GIACCURACY = low (50, gps(accuracy); )	  { precision level, 1 is the best possible and 50 the least accurate }
+      warning(60058, visualvalue(LLATITUDE), LLATPOLE, visualvalue(LLONGITUDE),LLNGPOLE );
     else
       errmsg( 60050 );
       if !capturecoor then 

@@ -6,7 +6,7 @@ PROC GLOBAL
   FILE      justone;                       { file handler to make sure that there are no concurrent sessions }
   FILE      TrackUpg;                      { file handler to track upgrades coming from CSWeb server }
   FILE      SyncLog;                      { file to log connections to server and  }
-  numeric debug =    1;// sets debugging on
+  numeric debug =    0;// sets debugging on
 
   string TheCommand, fname, fname2, newupgrades;
   string FilesToZip;
@@ -27,6 +27,7 @@ PROC GLOBAL
   string IFSSlogFile;
   string clustfname;                      { keeps clusters filename after dictionary closed }
   string btserver = "";
+  string  quest;
         
   alpha(3) xfile;                         { upgrade file number to be transferred to interviewers }
   alpha(4) xintnum;                       { Interviewer }
@@ -900,7 +901,7 @@ PROC GLOBAL
     if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
       if SyncFile( PUT, final + "\?" + xcluster + "*.", CSWebSurvey + "Final" ) then
          SyncFile( PUT, final + "\?" + xcluster + "*.cslog", CSWebSurvey + "Final" );  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
-         SyncFile( PUT, wrkref + "\Superv" + xsuperv + "*.csdb", CSWebSurvey + "Final" );  
+         // SyncFile( PUT, wrkref + "\Superv" + xsuperv + "*.csdb", CSWebSurvey + "Final" );  
          SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
          SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
          SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
@@ -1551,6 +1552,7 @@ PreProc
   temp      = wrkpii + "\Temp";       { to store working data files }
   work      = wrkpii + "\Work";       { working area to store concatenated HOUSEHOLDs }
   piisafe   = wrkpii + "\PIISafe";        { folder for data files with PII data stripped }
+  quest    = wrkprj + "/Questionnaires" ; { folder for pdf qres}
 
   btwork    = "\Work\";                             { last portion of directory where file with assigned HOUSEHOLDs will be copied to interviewer's machine }
   btdata    = "\Data\";                             { last portion of directory where file with remeasurements will be copied to health specialist's machine }
@@ -1864,6 +1866,7 @@ onfocus
     codes.add( "I ---Menu re-interview---",12);
     codes.add( "C Changer de numéro de grappe",13);
     codes.add( "D ---Autre------",14);
+    codes.add( "Q Questionnaires Pratique",15);
     codes.add( "E Quitter le système",16);
     setvalueset($, codes);
 postproc 
@@ -1952,7 +1955,7 @@ postproc
                 );
     elseif getlanguage() = "FR" then
       option =  accept("Selectionnez l'option", 
-                " 1. Rapport de l'état du cluster ", 
+                " 1. Rapport de l'état de travail de la grappe", 
                 " 2. Fermer la grappe",
                 " 9. Annuler "
                 );
@@ -2209,6 +2212,9 @@ postproc
     else
       reenter;
     endif;
+  elseif action = 15 then      { show PDF qres }
+    ShowQrePDf(quest);
+    reenter;
   else
     skip to WNUMBER;
   endif;

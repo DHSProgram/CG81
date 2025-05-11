@@ -203,7 +203,7 @@
 PROC FL_CNULL
 preproc
   if debug then
-    // errmsg(  "WARNING: DEBUG MODE ENQBLED!" );
+    // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
     trace(on, ".\debug.app", clear);
 //  trace(on);
     set trace;
@@ -367,11 +367,11 @@ preproc
 
     xind.clear();
     if QHRESULT <> 1 then
-      yresult = edit("9",QHRESULT) + tr("-Incomplete")
+      yresult = tr("Incomplete") + " " +  edit("(9)",QHRESULT) 
     elseif casepart then
-      yresult = edit("9",QHRESULT) + tr("-Partial")
+      yresult = tr("Partial")+ " " +  edit("(9)",QHRESULT)
     else
-      yresult = edit("9",QHRESULT) + tr("-Complete")
+      yresult = tr("Complete")+ " " +  edit("(9)",QHRESULT)
     endif;
     
     //!!! process summmary report data 
@@ -741,11 +741,11 @@ preproc
             casepart = 1;
           endif;
           if QRESULT <> 1 then
-            yresult = edit("9",QRESULT) + tr("-Incomplete")
+            yresult = tr("Incomplete") + " " +  edit("(9)",QRESULT) 
           elseif casepart then
-            yresult = edit("9",QRESULT) + tr("-Partial")
+            yresult = tr("Partial")+ " " +  edit("(9)",QRESULT)
           else
-            yresult = edit("9",QRESULT) + tr("-Complete")
+            yresult = tr("Complete")+ " " +  edit("(9)",QRESULT)
           endif;
           { print individual line for report }
           { populates the elements of a row based on individual information }
@@ -855,7 +855,7 @@ preproc
             if soccurs(QMSEC01) | soccurs(QMSEC02)  | soccurs(QMSEC3A) | soccurs(QMSEC3B) | 
                            soccurs(QMSEC04) | soccurs(QMSEC05)  | soccurs(QMSEC06) | soccurs(QMSEC07) | 
                            soccurs(QMSEC08) then
-              getmessage( 50230 );
+              // getmessage( 50230 );
               wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
@@ -877,7 +877,7 @@ preproc
                            soccurs(QWSECM1) | soccurs(QWSECM2)  | soccurs(QWSECM3)  | 
                            soccurs(QWSECECD) | 
                            soccurs(QWSECFIS) then
-              getmessage( 50231 );
+              // getmessage( 50231 );
               wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
@@ -1053,7 +1053,7 @@ preproc
       endif;
     else
       if chktot then
-        getmessage( 50150 );
+        // getmessage( 50150 );
         e = ListErrMsg.add( maketext(AlphaMSG, xht, SHTOTAL, hogregis) )
       endif;
     endif;

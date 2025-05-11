@@ -86,7 +86,7 @@ preproc
 
   { initialize the report headings }
   zstring1 = MakeText( tr("Status for cluster: %s Interviewer %s"), xcluster, xintnum );
-  zstring2 = tr("Household and Individual Interviews collected from assigned households");
+  zstring2 = tr("Interviews collected in cluster");
   fillhdr();
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 2;  // column 2 is household address/name 

@@ -231,4 +231,24 @@
     setfile(version, filepath, update);
     FileRead(version, version_txt);
     getver = version_txt(1);
+    close(version);
+  end;
+  function DisplayFile (string FileToDisplay);
+    if FileExist(FileToDisplay) then
+      view(FileToDisplay)
+    else
+      errmsg("Fichier pas disponible a ce moment");
+    endif;
+  end;
+  function ShowQrePDf (string DispPath);
+    numeric x =  accept(tr("Questionnaire"), 
+           "Ménage",
+           "Femme",
+           "Biomarqueur"
+           );
+    when x;
+         1 -> DisplayFile(DispPath + "/Menage.pdf");
+         2 -> DisplayFile(DispPath + "/Femme.pdf");
+         3 -> DisplayFile(DispPath + "/Biomarqeur.pdf");
+    endwhen;
   end;

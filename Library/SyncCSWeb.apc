@@ -1,9 +1,12 @@
-﻿config CSWebURL, CG81User, CG81PIN;
+﻿config CG81WebU, CG81User, CG81PIN;
 string wrkPIIL = "..\PII"; 
 string CSWebSurvey = "/CG81/";
 
   {Global CSWeb sync function to be used by the enumerator listing applications}
  function SyncData_CSW() {GV: I modified previous functions from Gaylord to include the sync of all files}
+   if !connection() then
+     exit;
+   endif;
    pff thisapp;
    thisapp.load("./sampmenu.pff");
    string interv_fname = thisapp.getproperty("INTERV");
@@ -11,15 +14,10 @@ string CSWebSurvey = "/CG81/";
    numeric DataOK = 0;
     //errmsg( 500 );
 	
-    if SyncConnect( CSWeb, CSWebURL, CG81User, CG81PIN ) then
+    if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
       DataOK =  SyncFile( PUT, wrkPIIL + "\SampData" + "\?" + edit("9999", WCLUSTER) + "*.DAT", CSWebSurvey + "SampData" );
-      // get any changes to ref files
-      setfile(INTERV, interv_fname, update);
-      SyncData(GET, INTERV);
-      SyncData(GET, CLUSTERS);
-      close(INTERV);
-      // get the latest versions of the application files from the server 
-       syncapp();
+      // get any updates
+      SyncApp();
       syncdisconnect();
     endif;
     if DataOK then 
@@ -31,14 +29,14 @@ string CSWebSurvey = "/CG81/";
   end; 
   function GetData_CSW ();
     numeric DataOK = 0;
-    if SyncConnect ( CSWeb, CSWebURL, CG81User, CG81PIN ) then   {commented out post data collection }
+    if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
       if SyncFile( GET, CSWebSurvey + "SampData/*.*",      wrkPIIL + "/Arrived" ) then
         DataOK = 1;
         // SyncFile( GET, CSWebSurvey + "Logs/SyncLog*.txt", wrkPIIL + "/Work" ); 
         SyncDisconnect();
-        errmsg( 300, CSWebURL );
+        errmsg( 300, CG81WebU );
       else
-        errmsg( 301, CSWebURL );
+        errmsg( 301, CG81WebU );
       endif;
     endif;
     GetData_CSW = DataOK;

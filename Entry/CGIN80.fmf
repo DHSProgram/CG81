@@ -6481,12 +6481,12 @@ Text=Q480
 Width=29
   
 [HeaderText]
-Position=69,5,108,29
-Text=Q482
+Position=60,5,108,29
+Text=Q482N
  
 [Field]
 Name=Q482N
-Position=86,1,113,21
+Position=234,0,261,20
 Item=Q482N,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -6495,9 +6495,18 @@ DataCaptureType=ComboBox
 [Text]
 Text=Q482N
  
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=60,4,108,28
+Text=Q482U
+ 
 [Field]
 Name=Q482U
-Position=117,0,131,20
+Position=247,0,261,20
 Item=Q482U,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -6663,7 +6672,7 @@ Length=3
 Name=Q482_BLOCK
 Label=Time when child was put to breast
 DisplayTogether=Yes
-Position=105
+Position=103
 Length=2
   
 [EndGrid]
@@ -6704,7 +6713,7 @@ Max=6
 DisplaySize=59,62,932,1345
 Orientation=Vertical
 ColumnWidth=269
-StubColumnWidth=78
+StubColumnWidth=105
 HeadingRowHeight=24
 FreeMovement=No
  
@@ -6752,7 +6761,7 @@ Width=10
 Width=35
   
 [HeaderText]
-Position=19,0,78,35
+Position=46,0,105,35
 Text=QCOL51
  
 [Field]
@@ -6774,7 +6783,7 @@ Text=QCOL51
 Width=52
   
 [HeaderText]
-Position=39,14,78,38
+Position=66,14,105,38
 Text=Q503
 VerticalAlignment=Middle
  
@@ -6811,7 +6820,7 @@ Text=Q503
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q504
  
 [Field]
@@ -6831,7 +6840,7 @@ Text=Q504
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q505
  
 [Field]
@@ -6851,7 +6860,7 @@ Text=Q505
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q507
  
 [Field]
@@ -6871,7 +6880,7 @@ Text=Q507
 Width=28
   
 [HeaderText]
-Position=39,0,78,28
+Position=66,0,105,28
 Text=Q508
  
 [Field]
@@ -6913,7 +6922,7 @@ Text=Q508Y
 Width=28
   
 [HeaderText]
-Position=31,0,78,28
+Position=58,0,105,28
 Text=D509B
  
 [Field]
@@ -6955,7 +6964,7 @@ Text=Y509B
 Width=28
   
 [HeaderText]
-Position=31,0,78,28
+Position=58,0,105,28
 Text=D509H
  
 [Field]
@@ -6997,7 +7006,7 @@ Text=Y509H
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509P0
  
 [Field]
@@ -7039,7 +7048,7 @@ Text=Y509P0
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509D1
  
 [Field]
@@ -7081,7 +7090,7 @@ Text=Y509D1
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509R1
  
 [Field]
@@ -7123,7 +7132,7 @@ Text=Y509R1
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509N1
  
 [Field]
@@ -7165,7 +7174,7 @@ Text=Y509N1
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509P1
  
 [Field]
@@ -7207,7 +7216,7 @@ Text=Y509P1
 Width=28
   
 [HeaderText]
-Position=24,4,78,28
+Position=51,4,105,28
 Text=D509D2
  
 [Field]
@@ -7249,7 +7258,7 @@ Text=Y509D2
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509R2
  
 [Field]
@@ -7291,7 +7300,7 @@ Text=Y509R2
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509N2
  
 [Field]
@@ -7333,7 +7342,7 @@ Text=Y509N2
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509P2
  
 [Field]
@@ -7375,7 +7384,7 @@ Text=Y509P2
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509D3
  
 [Field]
@@ -7417,7 +7426,7 @@ Text=Y509D3
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509R3
  
 [Field]
@@ -7459,7 +7468,7 @@ Text=Y509R3
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509N3
  
 [Field]
@@ -7501,7 +7510,7 @@ Text=Y509N3
 Width=28
   
 [HeaderText]
-Position=24,0,78,28
+Position=51,0,105,28
 Text=D509P3
  
 [Field]
@@ -7543,7 +7552,7 @@ Text=Y509P3
 Width=28
   
 [HeaderText]
-Position=0,0,78,28
+Position=27,0,105,28
 Text=Q509 OPV1
  
 [Field]
@@ -7586,7 +7595,7 @@ Text=Y509IPV1
 Width=34
   
 [HeaderText]
-Position=35,0,78,34
+Position=62,0,105,34
 Text=OPV2
  
 [Field]
@@ -7629,55 +7638,12 @@ Text=Y509IPV2
 Width=28
   
 [HeaderText]
-Position=20,0,78,28
-Text=Q509FJ
- 
-[Field]
-Name=D509FJ
-Position=75,0,102,20
-Item=D509FJ,CGIN80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-  
-[Text]
-Position=0,0,49,16
-Text=D509FJ
- 
-[Field]
-Name=M509FJ
-Position=111,0,138,20
-Item=M509FJ,CGIN80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=M509FJ
- 
-[Field]
-Name=Y509FJ
-Position=143,0,196,20
-Item=Y509FJ,CGIN80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=Y509FJ
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=22,0,78,28
+Position=49,4,105,28
 Text=D509M1
  
 [Field]
 Name=D509M1
-Position=75,0,102,20
+Position=234,0,261,20
 Item=D509M1,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -7686,9 +7652,18 @@ DataCaptureType=ComboBox
 [Text]
 Text=D509M1
  
+[EndColumn]
+  
+[Column]
+Width=104
+  
+[HeaderText]
+Position=47,80,105,104
+Text=M509M1
+ 
 [Field]
 Name=M509M1
-Position=110,0,137,20
+Position=234,0,261,20
 Item=M509M1,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -7697,9 +7672,18 @@ DataCaptureType=ComboBox
 [Text]
 Text=M509M1
  
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=50,4,105,28
+Text=Y509M1
+ 
 [Field]
 Name=Y509M1
-Position=143,0,196,20
+Position=208,0,261,20
 Item=Y509M1,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
@@ -7714,7 +7698,68 @@ Text=Y509M1
 Width=28
   
 [HeaderText]
-Position=22,0,78,28
+Position=52,4,105,28
+Text=D509FJ
+ 
+[Field]
+Name=D509FJ
+Position=234,0,261,20
+Item=D509FJ,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+  
+[Text]
+Position=0,0,49,16
+Text=D509FJ
+ 
+[EndColumn]
+  
+[Column]
+Width=120
+  
+[HeaderText]
+Position=50,96,105,120
+Text=M509FJ
+ 
+[Field]
+Name=M509FJ
+Position=234,0,261,20
+Item=M509FJ,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=M509FJ
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=53,4,105,28
+Text=Y509FJ
+ 
+[Field]
+Name=Y509FJ
+Position=208,0,261,20
+Item=Y509FJ,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=Y509FJ
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=49,0,105,28
 Text=D509M2
  
 [Field]
@@ -7756,7 +7801,7 @@ Text=Y509M2
 Width=28
   
 [HeaderText]
-Position=31,0,78,28
+Position=58,0,105,28
 Text=D509V
  
 [Field]
@@ -7798,7 +7843,7 @@ Text=Y509V1
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q510
  
 [Field]
@@ -7818,7 +7863,7 @@ Text=Q510
 Width=52
   
 [HeaderText]
-Position=39,28,78,52
+Position=66,28,105,52
 Text=Q512
  
 [Field]
@@ -7851,7 +7896,7 @@ Text=Q512W
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q513
  
 [Field]
@@ -7871,7 +7916,7 @@ Text=Q513
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q514
  
 [Field]
@@ -7891,7 +7936,7 @@ Text=Q514
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q515
  
 [Field]
@@ -7911,7 +7956,7 @@ Text=Q515
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q516
  
 [Field]
@@ -7931,7 +7976,7 @@ Text=Q516
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q517
  
 [Field]
@@ -7951,7 +7996,7 @@ Text=Q517
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q518
  
 [Field]
@@ -7971,7 +8016,7 @@ Text=Q518
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q519
  
 [Field]
@@ -7991,7 +8036,7 @@ Text=Q519
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q520
  
 [Field]
@@ -8011,7 +8056,7 @@ Text=Q520
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q521
  
 [Field]
@@ -8031,7 +8076,7 @@ Text=Q521
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q522
  
 [Field]
@@ -8051,7 +8096,7 @@ Text=Q522
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q523
  
 [Field]
@@ -8071,7 +8116,7 @@ Text=Q523
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q524
  
 [Field]
@@ -8091,7 +8136,7 @@ Text=Q524
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q525
  
 [Field]
@@ -8111,7 +8156,7 @@ Text=Q525
 Width=28
   
 [HeaderText]
-Position=39,4,78,28
+Position=66,4,105,28
 Text=Q526
  
 [Field]
@@ -8131,7 +8176,7 @@ Text=Q526
 Width=28
   
 [HeaderText]
-Position=39,0,78,28
+Position=66,0,105,28
 Text=Q527
  
 [Field]
@@ -8151,7 +8196,7 @@ Text=Q527
 Width=28
   
 [HeaderText]
-Position=39,0,78,28
+Position=66,0,105,28
 Text=Q528
  
 [Field]
@@ -8171,7 +8216,7 @@ Text=Q528
 Width=28
   
 [HeaderText]
-Position=30,4,78,28
+Position=57,4,105,28
 Text=Q528A
  
 [Field]
@@ -8191,7 +8236,7 @@ Text=Q528A
 Width=28
   
 [HeaderText]
-Position=39,0,78,28
+Position=66,0,105,28
 Text=Q529
  
 [Field]
@@ -11572,7 +11617,7 @@ Position=185,488,199,508
 Item=Q816,CGIN80
 UseEnterKey=Yes
 FieldLabelType=DictionaryName
-DataCaptureType=TextBox
+DataCaptureType=RadioButton
 Form=17
   
 [Text]

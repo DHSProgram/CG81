@@ -25,13 +25,14 @@ language = ES
   FR ( "W-" ) F-
   FR ( "M-" ) H-
   FR ( "Not visited" ) Non visité
-  FR ( "Status for cluster: %s" ) État de la grappe : %s
+  FR ( "Status for cluster: %s Interviewer %s" ) État de la grappe : %s Enq.  %s
   FR ( "Interviews collected in cluster" ) Entretiens collectés dans la grappe
   FR ( "HH" ) MG
+  FR ( "Name" ) Nom
   FR ( "Address/Name" ) Address/Nom
   FR ( "Result" ) Résultat
   FR ( "Visits" ) Visites
-  FR ( "Biomarkers" ) Biomarkers
+  FR ( "Biomarkers" ) Biomarqeurs
   FR ( "There are no households for the cluster in this machine" ) Il n'y a pas de menage pour la grappe dans cette tablette
   FR ( "Individual %02d in household %04d is part of a household that belongs to another interviewer" ) L'individu %02d du ménage %04d fait partie d'un ménage appartenant à un autre enquêteur
 010 Individual %02d duplicado en hogar %d

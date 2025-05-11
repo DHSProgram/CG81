@@ -1965,7 +1965,7 @@ questions:
           EN: |
             <p>483. In the first 2 days after delivery, was ~~Q407~~ given anything other than breast milk to eat or drink &ndash; anything at all like water, infant formula, or [INSERT COMMON DRINKS AND FOODS THAT MAY BE GIVEN TO NEWBORN INFANTS]?</p>
           FR: |
-            <p>483.  Dans les 2 premiers jours apr&#232;s l&#39;accouchement, a t-on donn&#233; &#224; ~~Q407~~ autre chose que le lait maternel pour boire ou manger-quelque chose comme de l&#39;eau, une pr&#233;paration pour nourrisson ou [INS&#201;RER BOISSONS ET ALIMENTS COURANTS QUI PEUVENT &#202;TRE DONN&#201;S AUX NOUVEAU-N&#201;S] ?</p>
+            <p>483.  Dans les 2 premiers jours après l'accouchement, a t-on donné à ~~Q407~~ autre chose que le lait maternel pour boire ou manger-quelque chose comme de l'eau, lait artificiel, vin de palme, ou écorce d'arbre?</p>
   - name: CGIN80.Q485
     conditions:
       - questionText:

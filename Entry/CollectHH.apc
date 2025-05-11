@@ -1069,16 +1069,10 @@ PROC QH19A
   endif;
 
 PROC QH19B
-  { Verify the maximum grade for the level }
-  if !LevelYears( QH19A, $ ) then
-    errmsg( 0090 )
-	  select( tr("Level of education"), QH19A, tr("Grade/year/form"), $ );
-  else
-    if QH17A > QH19A | (QH17A = QH19A & valid(QH17B) & QH17B > QH19B) then
-      errmsg( 0161, QH17A, QH17B, QH19A, QH19B )
-        select( tr("Level attended"), QH17A, tr("Level current"), QH19A );
-    endif
-  endif;
+  { select correct value set based on QH17A level }
+onfocus
+    setvalueset(QH19B, maketext("QH19B_VS%1d", QH19A));
+
 
 PROC QH20
 preproc
@@ -1695,7 +1689,7 @@ preproc
   string gpstitle;
   capturecoor = ( visualvalue(GHLATITUDE) = notappl );
   if GHINTRO = 1 & GHAUX <> 2 & !xmodcent then 
-    gpstitle = tr("GPS device acquiring GPS satellites. Please wait to complete its capture");
+    gpstitle = tr("GPS device acquiring GPS satellites..., Please wait for 10 seconds to complete the capture");
     if gps(read, 25, gpstitle ) then
       GHLATITUDE  = gps(latitude);
       GHLATPOLE   = "N";
@@ -1707,12 +1701,9 @@ preproc
       if gps(longitude) < 0 then	{ negative = west }
         GHLNGPOLE = "W";
       endif;
-      GHALTITUDE = gps(altitude);
-      if special(visualvalue(GHALTITUDE)) then 
-        GHALTITUDE = 0; 
-      endif;
       GHSATELLIT = gps(satellites);	  { no. of satellites, at least 3-4 is recommended }
-      GHACCURACY = gps(accuracy);	  { precision level, 1 is the best possible and 50 the least accurate }
+      GHACCURACY = low(50, gps(accuracy) );	  { precision level, 1 is the best possible and 50 the least accurate }
+      warning(60058, visualvalue(LLATITUDE), LLATPOLE, visualvalue(LLONGITUDE),LLNGPOLE );
     else
       warning( 60050 ) select( tr("Continue"), continue);
       if !capturecoor then 

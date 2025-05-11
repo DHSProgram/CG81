@@ -164,7 +164,7 @@ questions:
           EN: |
             <p><span class="instruction">RECORD THE LAST NAME OF HOUSEHOLD MEMBER.</span></p>
           FR: |
-            <span style="color: rgb(0, 0, 255);">NOTEZ LE PRÉNOM DU MEMBRE DE MENAGE</span><p></p>
+            <span style="color: rgb(0, 0, 255);">NOTEZ LE NOM DU MEMBRE DE MENAGE</span><p></p>
   - name: CGHH80.QHFIRSTN
     conditions:
       - logic: curocc() in 1
@@ -524,9 +524,9 @@ questions:
       - logic: QH01 = QHRESP
         questionText:
           EN: |
-            Est-ce que vous portez des lunettes ou des lentilles de contact pour voir ?<p></p>
+            Je voudrais savoir si vous avez des difficultés pour communiquer dans votre langue habituelle. Diriez-vous que vous n'avez aucune difficulté pour comprendre ou être compris, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas communiquer du tout ?<p></p>
           FR: |
-            Est-ce que vous portez des lunettes ou des lentilles de contact pour voir ?<p></p>
+            Je voudrais savoir si vous avez des difficultés pour communiquer dans votre langue habituelle. Diriez-vous que vous n'avez aucune difficulté pour comprendre ou être compris, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas communiquer du tout ?<p></p>
   - name: CGHH80.QH33
     conditions:
       - logic: QH01 <> QHRESP
@@ -538,9 +538,9 @@ questions:
       - logic: QH01 = QHRESP
         questionText:
           EN: |
-            Je voudrais savoir si ~~QH02~~ a des difficultés pour marcher ou monter des marches. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas marcher ou monter des marches du tout ?<p></p>
+            Je voudrais savoir si vous avez des difficultés pour vous rappeler ou vous concentrer. Diriez-vous que vous n'avez aucune difficulté pour vous rappeler ou vous concentrer, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas vous rappeler ou vous concentrer du tout ?<p></p>
           FR: |
-            Je voudrais savoir si ~~QH02~~ a des difficultés pour marcher ou monter des marches. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas marcher ou monter des marches du tout ?<p></p>
+            Je voudrais savoir si vous avez des difficultés pour vous rappeler ou vous concentrer. Diriez-vous que vous n'avez aucune difficulté pour vous rappeler ou vous concentrer, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas vous rappeler ou vous concentrer du tout ?<p></p>
   - name: CGHH80.QH34
     conditions:
       - logic: QH01 <> QHRESP
@@ -552,9 +552,9 @@ questions:
       - logic: QH01 = QHRESP
         questionText:
           EN: |
-            Je voudrais savoir si ~~QH02~~ a des difficultés pour se laver ou s'habiller. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se laver ou s'habiller, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se laver ou s'habiller du tout ?<p></p>
+            Je voudrais savoir si vous avez des difficultés pour marcher ou monter des marches. Diriez-vous que vous n'avez aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas marcher ou monter des marches du tout ?<p></p>
           FR: |
-            Je voudrais savoir si ~~QH02~~ a des difficultés pour se laver ou s'habiller. Diriez-vous que ~~QH02~~ n'a aucune difficulté pour se laver ou s'habiller, quelques difficultés, beaucoup de difficulté ou qu'il/elle ne peut pas se laver ou s'habiller du tout ?<p></p>
+            Je voudrais savoir si vous avez des difficultés pour marcher ou monter des marches. Diriez-vous que vous n'avez aucune difficulté pour marcher ou monter des marches, quelques difficultés, beaucoup de difficulté ou que vous ne pouvez pas marcher ou monter des marches du tout ?<p></p>
   - name: CGHH80.QH35
     conditions:
       - logic: QH01 <> QHRESP
@@ -607,8 +607,8 @@ questions:
             <p>Since last ~~dayalpha~~ about how many hours did ~~QCHLNAME~~ engage in these activities, in total?</p>
             <p><span class="instruction">IF LESS THAN ONE HOUR, RECORD '0'.</span></p>
           FR: |
-            <p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ a-t-~~hisher~~ été engagé(e) dans n’importe quelle autre activité en échange de paiement en espèces ou en nature, même pour une seule heure ?</p>
-            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER « 0 ».</span></p>
+            <p>Depuis ~~dayalpha~~ dernier, a peu près combien d’heures au total ~~QCHLNAME~~&nbsp;a-t-il/elle travaillé sur (cette&nbsp; activité/ces activités) ?</p>
+            <p><span class="instruction">SI MOINS D'UNE HEURE, ENREGISTRER «&nbsp;0&nbsp;».</span></p>
       - logic: activity1 = 1
         questionText:
           EN: |
@@ -1507,7 +1507,7 @@ questions:
           EN: |
             <p>Did you get the net through a [LOCAL NAME OF MASS DISTRIBUTION CAMPAIGN], during an antenatal care visit, or during an immunization visit?</p>
           FR: |
-            <p>143.  Avez-vous obtenu la moustiquaire &#224; l&#39;occasion [NOM LOCAL D&#39;UNE CAMPAGNE DE DISTRIBUTION DE MASSE], durant une visite pr&#233;natale ou au cours d&#39;une visite pour une vaccination ?</p>
+            <p>143.&nbsp;Avez-vous obtenu la moustiquaire à l'occasion de la campagne nationale de distribution de masse des moustiquaires, durant une visite prénatale ou au cours d'une visite pour une vaccination ?</p>
   - name: CGHH80.QH144
     conditions:
       - questionText:

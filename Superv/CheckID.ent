@@ -1,33 +1,108 @@
-﻿[CSPro Application]
-Version=CSPro 7.7
-Label=CheckID
-Name=CheckID
-AppType=DataEntry
-OperatorID=No
-ShowEndCaseDialog=No
-CAPI=Yes
-[External Dictionaries]
-File=..\Dicts\CONTSUP.dcf
-File=..\Dicts\CGHH80.dcf
-File=..\Dicts\CGIN80.dcf
-File=..\Dicts\SampSel.dcf
-File=..\Dicts\Transmit.dcf
-File=..\Dicts\Remeasure.dcf
-[AppCode]
-File=.\CheckID.apc
-Include=..\Library\DPCollect.apc
-Include=..\Library\HTMLFunctions.apc
-[Message]
-File=.\CheckID.mgf
-[Help]
-File=.\CheckID.qsf
-[Forms]
-File=..\Entry\Cnull.fmf
-[Dictionary Types]
-Dict-Type=..\dicts\Cnull.dcf,Input,..\Entry\Cnull.fmf
-Dict-Type=..\Dicts\CONTSUP.dcf,External
-Dict-Type=..\Dicts\CGHH80.dcf,External
-Dict-Type=..\Dicts\CGIN80.dcf,External
-Dict-Type=..\Dicts\SampSel.dcf,External
-Dict-Type=..\Dicts\Transmit.dcf,External
-Dict-Type=..\Dicts\Remeasure.dcf,External
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "CHECKID", 
+  "label": "CheckID", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../dicts/Cnull.dcf", 
+      "parent": "../Entry/Cnull.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CONTSUP.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGHH80.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGIN80.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/SampSel.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Transmit.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Remeasure.dcf"
+    }
+  ], 
+  "forms": [
+    "../Entry/Cnull.fmf"
+  ], 
+  "questionText": [
+    "CheckID.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "CheckID.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/DPCollect.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/HTMLFunctions.apc"
+    }
+  ], 
+  "messages": [
+    "CheckID.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "alwaysAllow", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": false, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "mobileOnly", 
+    "centerForms": false, 
+    "createListing": true, 
+    "createLog": true, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": false, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": false
+    }, 
+    "showEndCaseMessage": false, 
+    "showOnlyDiscreteValuesInComboBoxes": false, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": true, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "none", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

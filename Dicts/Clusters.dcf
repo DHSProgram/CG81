@@ -31,7 +31,7 @@ ZeroFill=Yes
 Label=Cluster variables|Variables del segmento
 Name=CLSTREC
 RecordTypeValue=''
-RecordLen=139
+RecordLen=143
 
 [Item]
 Label=Urban/rural|Urbano/rural
@@ -123,4 +123,18 @@ Label=N° RGPH-5 DE LA ZD
 Name=YIDZD
 Start=131
 Len=9
+DataType=Numeric
+
+[Item]
+Label=Equipe carto
+Name=YEQCART
+Start=140
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Equipe EDS
+Name=YEQEDS
+Start=142
+Len=2
 DataType=Numeric

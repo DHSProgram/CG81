@@ -47,6 +47,40 @@ Start=8
 Len=4
 DataType=Numeric
 
+[ValueSet]
+Label=Supervisor code
+Name=WSUPER_VS1
+Value=1;Equipe 1
+Value=2;Equipe 2
+Value=3;Equipe 3
+Value=4;Equipe 4
+Value=5;Equipe 5
+Value=6;Equipe 6
+Value=7;Equipe 7
+Value=8;Equipe 8
+Value=9;Equipe 9
+Value=10;Equipe 10
+Value=11;Equipe 11
+Value=12;Equipe 12
+Value=13;Equipe 13
+Value=14;Equipe 14
+Value=15;Equipe 15
+Value=16;Equipe 16
+Value=17;Equipe 17
+Value=18;Equipe 18
+Value=19;Equipe 19
+Value=20;Equipe 20
+Value=21;Equipe 21
+Value=22;Equipe 22
+Value=23;Equipe 23
+Value=24;Equipe 24
+Value=25;Equipe 25
+Value=26;Equipe 26
+Value=27;Equipe 27
+Value=28;Equipe 28
+Value=29;Equipe 29
+Value=30;Equipe 30
+
 [Item]
 Label=Interviewer code|Codigo de entrevistadora(a)
 Name=WINTNUM

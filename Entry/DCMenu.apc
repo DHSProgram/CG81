@@ -4,6 +4,7 @@
   FILE   justone;                       { file handler to make sure that there are no concurrent sessions }
   FILE   TrackUpg;                      { file handler to track upgrades coming from CSWeb server }
   numeric debug = 0;
+  numeric training = 1;                 { flag to indicate training mode !!}
   string  TheCommand, newupgrades;
   string  CSPro;                         { CSPro executables directory }
   string  AppName;                       { application name }
@@ -13,6 +14,7 @@
   string  temp;                        { directory where data collected by supervisor (acting as interviewer) is transferred to his/her machine }
   string  btsup, btwork, btsamp;           { directories used by the client/server applications to send/receive data via bluetooth }
   string  fpath, fname, work, dicts, entry, utility, wrkref, upgrades, SampData, SampApps, images, receive, pilotdata, audiodata, quizdata;
+  string  quest;
   string  chkfile;
   string  heading;
   string  xparaux;
@@ -336,7 +338,8 @@
         endif;
         for i in record QHSEC01 do
         { eligible INDIVIDUALs according to interviewer's sex.  3 is used by supervisor menu as they can see both INDIVIDUALs }
-         if QH09 & xintsex = 2 | QH10 & xintsex = 1 | ( QH09 | QH10 ) & xintsex = 3 then
+        { training flag set to 1 allows any gender to do any interview  }
+         if QH09 & xintsex = 2 | QH10 & xintsex = 1 | ( QH09 | QH10 ) & ( xintsex = 3 | training ) then
           // if QH09 | QH10 then    
             if QH09 then
               key_HH = edit("9999",QHCLUST) + edit("9999",QHNUMBER) + edit("99",QH09);
@@ -839,7 +842,11 @@
           SendFiles();
           // now get any new upgrades 
          // get the latest versions of the application files from the server 
-          syncapp();
+          SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
+          SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
+          SyncFile(GET, wrkprj + "/Dicts/*.dcf", wrkprj + "/Dicts");
+          SyncFile(GET, wrkref + "/version.txt", wrkref);
+          // syncapp();
           // fname = upgrades + "/" + upgrname + "*.zip";
           // SyncFile( GET, fname, upgrades );
           SyncDisconnect();
@@ -1374,23 +1381,28 @@ PreProc
 
     
     { set main directories }
-    entry    = wrkprj + "\Entry";     { data entry programs }
-    dicts    = wrkprj + "\Dicts";     { dictionaries }
-    utility  = wrkprj + "\Utility";   { all utilities used by the system }
-    upgrades = wrkprj + "\Upgrades";  { upgrades sent by supervisors are stored here }
-    wrkref   = wrkpii + "\Ref";       { reference directory for clusters, sample and teams files  }
-    data     = wrkpii + "\Data" ;     { where data is stored }
-    images   = wrkprj + "\Images";     { images  }
-    temp     = wrkpii + "\Temp" ;     { used for several purposes but specially to store temporary data }
-    work     = wrkpii + "\Work" ;     { working area to store concatenated HOUSEHOLDs }
-    receive  = wrkpii + "\Receive" ;     {receive folder on supervisor - just used to copy files }
-    superv   = wrkprj + "\Superv";     { supervisor programs }
-    pictures = wrkpii + "\Pictures";  { working area to store pictures taken by applications }
-    quizdata = wrkprj + "\Quiz" ;     { data for quiz}
+    entry    = wrkprj + "/Entry";     { data entry programs }
+    dicts    = wrkprj + "/Dicts";     { dictionaries }
+    utility  = wrkprj + "/Utility";   { all utilities used by the system }
+    upgrades = wrkprj + "/Upgrades";  { upgrades sent by supervisors are stored here }
+    wrkref   = wrkpii + "/Ref";       { reference directory for clusters, sample and teams files  }
+    data     = wrkpii + "/Data" ;     { where data is stored }
+    images   = wrkprj + "/Images";     { images  }
+    temp     = wrkpii + "/Temp" ;     { used for several purposes but specially to store temporary data }
+    work     = wrkpii + "/Work" ;     { working area to store concatenated HOUSEHOLDs }
+    receive  = wrkpii + "/Receive" ;     {receive folder on supervisor - just used to copy files }
+    superv   = wrkprj + "/Superv";     { supervisor programs }
+    pictures = wrkpii + "/Pictures";  { working area to store pictures taken by applications }
+    quizdata = wrkprj + "/Quiz" ;     { data for quiz}
+    quest    = wrkprj + "/Questionnaires" ;
     { set directories to transfer data using bluetooth }
-    btwork   = "\Pii\Work\";          { last portion of directory where HH data will be transferred to other interviewers when sharing HOUSEHOLDs }
-    btsup    = "\Pii\Temp\";          { last portion of directory where all files will be transferred to supervisors }
-    btsamp   = "\Pii\SampData\";      { last portion of directory where HH listing for sampling selection will be stored in supervisor machines }
+    if isAndroid then
+      btwork   = work + "/";          { last portion of directory where HH data will be transferred to other interviewers when sharing HOUSEHOLDs }
+    else
+      btwork   = "/Pii/Work/";          { last portion of directory where HH data will be transferred to other interviewers when sharing HOUSEHOLDs }
+    endif;
+    btsup    = "/Pii/Temp/";          { last portion of directory where all files will be transferred to supervisors }
+    btsamp   = "/Pii/SampData/";      { last portion of directory where HH listing for sampling selection will be stored in supervisor machines }
 
     ChkDir( temp );    
     { check presence of mandatory directories }
@@ -1636,8 +1648,7 @@ onfocus
    { 6} codes.add("5 Afficher la liste des questionnaires de la grappe",06);
    { 7} codes.add("6 Afficher les notes sur la grappe",07);
    { 8} codes.add("[[ 7 Transfert de données/autres utilitaires ]]",08);
-   { 9} codes.add("8 Changer la langue",09);
-   {10} codes.add("9 Menu Quiz",10);
+   {10} codes.add("10 Questionnaires Pratique",10);
    {11} codes.add("C Changer de numéro de grappe",11);
    {12} codes.add("E Quitter le système", 12);
   setvalueset($, codes);
@@ -1802,56 +1813,11 @@ postproc
             endif;
           endif;
         endif;
-    // elseif action = 9 then // change language
-    //     x =  accept(tr("Select Language"), 
-    //            "English",
-    //            "Français");
-    //     recode x -> x;
-    //            1 -> setlanguage("EN");
-    //            2 -> setlanguage("FR");
-    //     endrecode;
-    //     savesetting("Language", getlanguage());
-    //     reenter;
-    elseif action = 9 then // fieldworker interview
-      // fname = data + "\F" + xintnum + ".DAT" ;
-      // partial  = FileExist(fname) & !FileEmpty(fname);
-      // AppName = "FIELDWKQUEST";
-      // if partial then
-      //   FieldWkQuest(0,0,1)
-      // else
-      //   FieldWkQuest(1,0,0)
-      // endif;
-      // SaveSetting( "DCSession", "2" );
-      // runpffS();
-      reenter;
-    elseif action = 10 then // quiz menu
-    //   if getlanguage() = "EN" then
-    //     heading = "Test Menu";
-    //     option  = accept( heading,
-    //               {  1} "1 Take/Review a Test",
-    //               // {  2} "2 Receive updated quiz from supervisor",
-    //               {  4} "X Return to main menu" );
-    //   else
-    //     heading = "Menu Quiz";
-    //     option  = accept( heading,
-    //               {  1} "1 Faire un quiz",
-    //               // {  2} "2 Recevoir du contrôleur (leuse) les donnnées du quiz",
-    //               {  4} "X Retourner au menu principal" );
-    //   endif;
-    //   if option = 1 then
-    //     fname = data + "\Q" + xintnum + ".DAT" ;
-    //     partial  = FileExist(fname) & !FileEmpty(fname);
-    //     AppName = "QuizApp";
-    //     if partial then
-    //       QuizApp(0,0,1)
-    //     else
-    //       QuizApp(1,0,0)
-    //     endif;
-    //     SaveSetting( "DCSession", "1" );
-    //     runpffS();
-    //   endif;
-    endif;
   endif;
+elseif action = 10 then // view practice questionnaires
+    ShowQrePDf(quest);
+    reenter;
+endif;
 
     reenter;
 

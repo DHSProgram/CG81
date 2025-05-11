@@ -993,6 +993,7 @@ Language = FR
   FR ( "Do you want to take another picture of the document" ) Voulez-vous prendre une autre photo du document 
   FR ( "Yes" ) Oui
   FR ( "No" ) Non
+  FR ( "Foods and drinks" ) Aliments et boissons
   FR ( "Foods not included in options" ) des aliments non inclus dans la liste des options
   FR ( "Yes, delete the pregnancy of %s in %s %d" ) Oui, supprimez la grossesse de %s en %s %d
   FR ( "No, make no change" ) Non, ne changer rien
@@ -1072,7 +1073,9 @@ Language = FR
   FR ( "Years living in place of residence" ) Années vécu au lieu de résidence
   FR ( "Single or multiple pregnancy" ) Grossesse simple ou multiple
   FR ( "Prior pregnancy outcome" ) Résultat antérieur de la grossesse
-  FR ( "Prior pregnancy outcome" ) Résultat antérieur de la grossesse
+  FR ( "STILLBIRTH" ) MORT NÉ
+  FR ( "MISCARRIAGE" ) FAUSSE COUCHE
+  FR ( "ABORTION" ) AVORTEMENT
   FR ( "Date of end of pregnancy" ) Date de fin de grossesse
   FR ( "Date of prior pregnancy" ) Date de la grossesse antérieure
   FR ( "Child alive" ) Enfant vivant
@@ -1360,7 +1363,7 @@ language = FR
  3212 W Utilisation de la stérilisation dans le calendrier à la ligne %02d
  3270 E Méthode actuelle à la question Q307 = %1s doit être la même dans cette question
  4030 E Le numéro de ligne de l'enfant dans la colonne %1d est incorrect: attendu %02d
- 4160 E Le Moment de la première visite prénatale incorrect
+ 4160 E Le Moment de la première visite prénatale incorrect, attendu 3 jusqu'au 45 semaines ou 1 jusqu'au 9 mois
  4211 W Mois sans période %02d incohérent avec l'intervalle: interview = %02d/%04d ddn = %02d/%04d
  4212 W Durée de l'aménorrhée entre les grossesses %02d dd incohérente ddn= %02d/%04d ddn= %02d/%04d
  4220 W Années depuis l'injection supérieure à l'âge: âge %02d
@@ -1519,6 +1522,7 @@ language = FR
 29998 E Codes donnés pour la variable alpha non acceptables
 60045 E Le dongle/port de GPS n'a pas été trouvé, S'il vous plait enlever et réinsérer le dongle/port de GPS et essayer encore
 60050 E Le signal GPS n'a pas été acquis, S'il vous plait réinsérer le dongle/port de GPS et aller dans un endroit approprié et essayer encore
+60058 E Lecture GPS effectuée avec succès: %3.6f %1s %3.6f %1s 
 80004 E Ménage %d introuvable dans le fichier où les ménages sont affectés aux enquêteurs
 80005 E À partir de ce point, le ménage numéro %d fera partie des ménages qui vous sont attribués (affectés)
 80006 E Le ménage %d n'existe pas dans la grappe %d
