@@ -25,6 +25,7 @@ Item=WREGIONN
 Item=WSTATEN
 Item=WDISTRICTN
 Item=WCITYN
+Item=WSUPER
   
 Box=18,13,878,53,Thick
 Box=17,64,907,123,Etched
@@ -143,6 +144,18 @@ Form=1
 [Text]
 Position=31,84,107,100
 Text=Introduction
+ 
+  
+[Field]
+Name=WSUPER
+Position=217,86,266,104
+Item=WSUPER,MENU_DICT
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=168,83,204,99
+Text=Team
  
   
 [Field]

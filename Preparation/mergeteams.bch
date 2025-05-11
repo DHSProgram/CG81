@@ -1,0 +1,16 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=MERGETEAMS
+Name=MERGETEAMS
+AppType=Batch
+[External Dictionaries]
+File=.\equipe_grappe.dcf
+[AppCode]
+File=.\mergeteams.apc
+[Message]
+File=.\mergeteams.mgf
+[Order]
+File=.\mergeteams.ord
+[Dictionary Types]
+Dict-Type=.\equipe_grappe.dcf,External
+Dict-Type=..\Dicts\Clusters.dcf,Input,.\mergeteams.ord

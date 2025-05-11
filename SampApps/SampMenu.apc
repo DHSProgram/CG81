@@ -489,12 +489,18 @@ PreProc
   { check for any upgrades }
   ApplyUpgr();
 PROC WINTRO
-
+PROC WSUPER
+onfocus
+    $ = tonumber( loadsetting("Supervisor") );
+postproc
+    SaveSetting( "Supervisor", edit("9999",$) );
 PROC WINTNUM
 onfocus
   fieldworkers.clear();
   do j = 1 while j <= totintvw
-    fieldworkers.add( intvwname(j), intvwcode(j) );
+    if intvwteam(j) = WSUPER then
+      fieldworkers.add( intvwname(j), intvwcode(j) );
+    endif;
   enddo;
   SetValueSet( $, fieldworkers );
 
@@ -513,6 +519,15 @@ postproc
 PROC WCLUSTER
 onfocus
   $ = tonumber( loadsetting("Cluster") );
+  numeric oldval = visualvalue($);
+  if visualvalue($) in notappl,default | visualvalue(WFINAL) in 4,5 then
+    if selcase("Selectionnez le numèro ZD", CLUSTERS, "", 4) include(YIDZD, YCLUSTER, YREGIONN, YSTATEN, YDISTRICTN ) where YEQCART = tonumber(IntTeam) then
+      $ = YCLUSTER; 
+    else
+      $ = oldval;
+    endif;
+  endif;
+  noinput;
 
 postproc
   if !loadcase( CLUSTERS, $ ) | ! $ in 1:500 then
@@ -558,7 +573,8 @@ onfocus
   codes.add("1 Enregister la liste de ménage dans la grappe",1);
   codes.add("2 Faire une segmentation de la grappe  ",2);
   codes.add("3 Afficher les ménages dénombrés dans la grappe",3);
-  codes.add("5 Changer le numéro de grappe",5);
+  codes.add("4 Changer le numéro de grappe",4);
+  codes.add("5 Changer le numéro de l'agent",5);
   codes.add("6 Transfer les données au bureau central",6);
   codes.add("S Sortir du système",7 );
   setvalueset($, codes);
@@ -594,8 +610,11 @@ postproc
     endif;
 
   { change cluster number }
+  elseif action = 4 then
+    reenter WCLUSTER;
+  { change team number }
   elseif action = 5 then
-    reenter WCLUSTER
+    reenter WINTNUM;
   elseif action = 6 then          { transfer data to central office }
       SyncData_CSW();
     { check for any upgrades }

@@ -1,0 +1,38 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Equipe Grappe Dictionary
+Name=EQUIPE_GRAPPE_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=71B80DDE81C0750EC07272DF8B915A7A935A6BDC077E962A35E3A04EF069D4EE
+
+[Level]
+Label=Equipe Grappe Level
+Name=EQUIPE_GRAPPE_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Xgrappe
+Name=XGRAPPE
+Start=1
+Len=9
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Equipe Grappe Record
+Name=EQUIPE_GRAPPE_REC
+RecordTypeValue=''
+RecordLen=11
+
+[Item]
+Label=Xequipe
+Name=XEQUIPE
+Start=10
+Len=2
+DataType=Numeric
+ZeroFill=Yes
