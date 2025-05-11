@@ -6,10 +6,28 @@
   "description": "", 
   "files": [
     {
+      "path": "..\\Dicts\\CGHH80.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\CGIN80.dcf"
+    }, 
+    {
+      "path": "..\\Entry\\CGHH80.fmf"
+    }, 
+    {
+      "path": "..\\Entry\\CGIN80.fmf"
+    }, 
+    {
       "path": "..\\Entry\\CollectHH.ent"
     }, 
     {
+      "path": "..\\Entry\\CollectHH.qsf"
+    }, 
+    {
       "path": "..\\Entry\\CollectIN.ent"
+    }, 
+    {
+      "path": "..\\Entry\\CollectIN.qsf"
     }, 
     {
       "path": "..\\Entry\\DCMenu.ent"
@@ -25,6 +43,9 @@
     }, 
     {
       "path": "..\\Entry\\LstQuest.ent"
+    }, 
+    {
+      "path": "..\\Entry\\TablesStyle.css"
     }, 
     {
       "path": "..\\PII\\Ref\\Clusters.csdb"
@@ -57,6 +78,9 @@
       "path": "..\\Superv\\SupMenu.pff"
     }, 
     {
+      "path": "..\\Superv\\TablesStyle.css"
+    }, 
+    {
       "path": "..\\Superv\\TEntry.ent"
     }
   ], 
@@ -71,7 +95,8 @@
       "path": "..\\Dicts\\Clusters.dcf"
     }, 
     {
-      "path": "..\\Dicts\\CLUSTERS.dcf"
+      "path": "..\\Dicts\\CLUSTERS.dcf", 
+      "uploadForSync": true
     }, 
     {
       "path": "..\\dicts\\Cnull.dcf"
@@ -128,6 +153,7 @@
     "type": "LocalFolder", 
     "cswebUrl": "https://eds.ins-congo.app/api/", 
     "ftpUrl": "ftp://", 
+    "localFilePath": "CG81-DHS.zip", 
     "localFolderPath": "CG81-DHS"
   }
 }
