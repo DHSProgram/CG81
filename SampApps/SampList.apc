@@ -571,13 +571,24 @@ postproc
 PROC LADDRESS
 preproc
   n = curocc();
-  if n > 1 & LINTRO = "2" & length( strip($) ) = 0 then
+  string oldval;
+  numeric samestruct = ( n > 1 & LINTRO = "2");
+  if samestruct & length( strip($) ) = 0 then
     $ = $(n-1)
   endif;
 
+  if samestruct then // !! don't allow changes to address if pulled from previous hh
+    oldval = $;
+    noinput;
+  endif;
+
 postproc
-  if !length( strip($) ) then
+  if length( strip($) )  < 3 then
     errmsg( 60030 );
+    reenter;
+  elseif samestruct & $ <> oldval then
+    errmsg( 60037 );
+    $ = oldval;
     reenter;
   endif;
 
@@ -687,7 +698,7 @@ preproc
 
 
 postproc
-  if !length( strip($) ) then
+  if length( strip($) )  < 3 then
     errmsg( 60031 );
     reenter;
   elseif length(check_alpha($)) then
@@ -696,7 +707,7 @@ postproc
   endif;
 
 PROC LNAME1
-  if !length( strip($) ) then
+  if length( strip($) )  < 3 then
     errmsg( 60031 );
     reenter;
   elseif length(check_alpha($)) then
@@ -748,7 +759,7 @@ preproc
   endif;
 
 postproc
-  if length(strip(LPHONE1)) & length(strip(LPHONE1)) <> 9 then
+  if length(strip($)) & !regexmatch($, "(0[4-6]|22)[0-9]{7}") then
     errmsg( 60080 );
     reenter;
   endif;

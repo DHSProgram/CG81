@@ -177,9 +177,10 @@ Language = FR
 60026 E Une structure/ménage ne peut pas inséré après de la dernière entrée, ils peuvent àªtre ajoutés
 60027 E Il n'est pas possible de supprimer cette entrée
 60028 E Ménage %d structure %d-%d supprimés de la liste avec succès
-60030 E L'adresse du ménage est obligatoire
-60031 W Le nom du chef du ménage a été laissé vide
+60030 E L'adresse du ménage est obligatoire et doit comporter au moins 3 chiffres 
+60031 W Le nom du chef du ménage doit comporter au moins 3 chiffres
 60035 W Le nombre de ménage dans le fichier de l'échantillion %d est très different du nombre de ménages dénombrés %d
+60037 E Les modifications a l'addresse ne sont pas autorisées pour plusieurs ménages dans une parcelle, utilisez plutôt le champ pour les observations SVP. 
 60040 E Les coordonées de GPS ne peuvent pas être copiées pour le premier ménage
 60041 E Les coordonées de GPS du ménage précédent n'existe pas. Option non valide
 60042 E Les coordonées de GPS ne sont pas prises, veuillez essayer encore une fois ou plus tard
@@ -195,7 +196,7 @@ Language = FR
 60064 W Le segment tiré peut être changé s'il y des modificationas à  faire
 60065 E Le dénombrement de ménages pour la grappe %04d est déjà  commencé, une segmentation n'est plus autorisée
 60070 W Le dénombrement de ménages pour la grappe est fermé avec succès
-60080 E Le format du numéro de téléphone est incorrect.Le format attendu est yyzzxxxxxx sans espaces ni caractères non numériques. N'incluez pas le code du pays
+60080 E Le format du numéro de téléphone est incorrect.Le format attendu est [04/5/6 ou 22, xxx xxxx] sans espaces ni caractères non numériques. N'incluez pas le code du pays
 61000 E Il n'y a pas de coordonnées GPS valides pour grappe %04d
 61005 W Le type de structure enregistré par les agents dans le dénombrement %s:%d est différent de celui enregistré dans la vérification QC : %s (%1d)
 89991 E Seuls les caractères alphabétiques A à Z peuvent être saisis dans ce champ, caractère non alphabétique [%1s] trouvé
