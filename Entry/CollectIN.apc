@@ -209,7 +209,6 @@
     userbar( add button, ">",    do("NextField") );
     userbar( add button, ">>|",  do("AdvanceToEnd") );
     userbar( add button, tr("Note"), do("EditNote") );
-    userbar( add button, tr("View"), ViewQre("CGIN80"));
     userbar( add button, tr("Section"), toSection() );
     userbar( add button, tr("Ver"),  GetPubDate(2) );
     if !android then // Response location only works for Windows
@@ -6753,14 +6752,6 @@ onfocus
   textstr1 = GetValueLabel(Q904);
   setvalueset(Q905, maketext("Q905_VS%1d", Q904));
 
-postproc
-  { Verify the maximum grade for the level }
-  if !LevelYears( Q904, $ ) then
-    errmsg( 7051 ) 
-	  select( tr("Partner's level of education"), Q904, 
-	          tr("Partner's grade/year/form"), $ );
-  endif;
-
 PROC Q906
 onfocus
   relterms();  
@@ -7422,6 +7413,19 @@ preproc
   if curocc() > QMM07 then  { to run in-Batch }
     endgroup
   endif;
+onfocus
+  numeric ys1, ys2;
+  numeric ncol = curocc();
+  if ncol > 1 then
+    if QMM16(ncol-1) <> notappl then
+      ys1 = QMM16(ncol-1);
+    else
+      ys1 = QMM17(ncol-1) + QMM18(ncol-1);
+    endif;
+    textstr1 = maketext ( "Frère/soeur precedant %s, années depuis naissance =%d", QMM13N(ncol-1), ys1 );
+  else
+    textstr1 = "";
+  endif;
 PROC QMM13N
   if android then 
     setocclabel(QWSECMM_ROSTER(curocc()),maketext("%d %s",curocc(),strip($)));
@@ -7434,9 +7438,11 @@ PROC QMM15
   endif;
 
 PROC QMM16
+  
   skip to next QMM13;
 
 PROC QMM18
+  textstr1 = maketext ( "Années depuis naissance = %d", $ );
   if !valid($) | $ < 12 | QMM14 <> 2 then
     skip to QMM23
   endif;
@@ -7931,9 +7937,10 @@ PROC QM307B
   SaveData();
 
 PROC QM401
+postproc
   wives = 0;                  { Initialized for later use }
   inunion = ( $ in 1,2 );
-
+  relterms();
   if inunion then
     skip to QM404
   endif;
@@ -8935,8 +8942,8 @@ preproc
         GILNGPOLE = "O";
       endif;
       GISATELLIT = gps(satellites);	  { no. of satellites, at least 3-4 is recommended }
-      GIACCURACY = low (50, gps(accuracy); )	  { precision level, 1 is the best possible and 50 the least accurate }
-      warning(60058, visualvalue(LLATITUDE), LLATPOLE, visualvalue(LLONGITUDE),LLNGPOLE );
+      GIACCURACY = low (50, gps(accuracy));  { precision level, 1 is the best possible and 50 the least accurate }
+      warning(60058, visualvalue(GILATITUDE), GILATPOLE, visualvalue(GILONGITUDE),GILNGPOLE );
     else
       errmsg( 60050 );
       if !capturecoor then 

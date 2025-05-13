@@ -135,6 +135,7 @@ language = ES
 50505 Hogar=%04d individual=%02d no se encuentra como elegible en ningun hogar. Lo recolecto la entrevistadora=%04d
 
 Language = FR
+  FR ( "Status Messages" ) 
   FR ("Household: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%") Ménages: Total=%02d Complète=%02d Incomplèt=%02d Taux de réponse: %02d%
   FR ("Women: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%") Femmes: Total=%02d Complèt=%02d Incomplèt=%02d Taux de réponse: %02d%
   FR ("Men: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%") Hommes: Total=%02d Complèt=%02d Incomplèt=%02d Taux de réponse: %02d%
@@ -151,8 +152,11 @@ Language = FR
   FR ( "woman" ) femme
   FR ( "HIV" ) VIH
   FR ( "man" ) homme
-  FR ( "W-" ) F-
-  FR ( "M-" ) H-
+  FR ( "Line" ) Ligne
+  FR ( "View" ) Voir
+  FR ( "C" ) E
+  FR ( "W" ) F
+  FR ( "M" ) H
   FR ( "MALARIA" ) PALUDISME
   FR ( "Not visited" ) Non visité(e)
   FR ( "Confirm that household %d is accepted" ) SVP confirmez que le ménage %d est accepté
@@ -161,8 +165,8 @@ Language = FR
   FR ( "Status for cluster: %s" ) Status de la Grappe: %s
   FR ( "Interviews collected in cluster" ) Entretiens collectés dans cette Grappe
   FR ( "HH/Line" ) MG/Ligne
-  FR ( "Interviewer" ) Enquêteur/trice
-  FR ( "Address/Name" ) Adresse/Nom
+  FR ( "Interviewer" ) Enq.
+  FR ( "Name" ) Nom
   FR ( "Result" ) Résultat
   FR ( "Visits" ) Visites
   FR ( "Biomarkers" ) Biomarqueurs

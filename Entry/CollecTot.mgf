@@ -879,7 +879,10 @@ Language = FR
   FR ( "father" ) père
   FR ( "mother" ) mère
   FR ( "Wife" ) Epouse
+  FR ( "wife" ) epouse
   FR ( "Husband" ) Epoux
+  FR ( "husband" ) epoux
+  FR ( "partner" ) partenaire
   FR ( "Son" ) Fils
   FR ( "Daughter" ) Fille
   FR ( "Daughter-in-law" ) Belle-fille
@@ -893,6 +896,7 @@ Language = FR
   FR ( "Births" ) Naissances
   FR ( "Siblings" ) Frères/Sœurs
   FR ( "Events" ) Evénements
+  FR ( "Calendar" ) Calendrier
   FR ( "Monday" ) Lundi
   FR ( "Tuesday" ) Mardi
   FR ( "Wednesday" ) Mercredi

@@ -120,7 +120,6 @@
     userbar( add button, ">",    do("NextField") );
     userbar( add button, ">>|",  do("AdvanceToEnd") );
     userbar( add button, tr("Note"), do("EditNote") );
-    userbar( add button, tr("View"), ViewQre("CGHH80"));
     userbar( add button, tr("Ver"),  GetPubDate(1));
     userbar( add button, tr("Section"), toSection() );
   end;
@@ -1703,7 +1702,7 @@ preproc
       endif;
       GHSATELLIT = gps(satellites);	  { no. of satellites, at least 3-4 is recommended }
       GHACCURACY = low(50, gps(accuracy) );	  { precision level, 1 is the best possible and 50 the least accurate }
-      warning(60058, visualvalue(LLATITUDE), LLATPOLE, visualvalue(LLONGITUDE),LLNGPOLE );
+      warning(60058, visualvalue(GILATITUDE), GILATPOLE, visualvalue(GILONGITUDE),GILNGPOLE );
     else
       warning( 60050 ) select( tr("Continue"), continue);
       if !capturecoor then 

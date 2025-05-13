@@ -6,7 +6,7 @@ PROC GLOBAL
   FILE      justone;                       { file handler to make sure that there are no concurrent sessions }
   FILE      TrackUpg;                      { file handler to track upgrades coming from CSWeb server }
   FILE      SyncLog;                      { file to log connections to server and  }
-  numeric debug =    0;// sets debugging on
+  numeric debug =    1;// sets debugging on
 
   string TheCommand, fname, fname2, newupgrades;
   string FilesToZip;
@@ -282,11 +282,7 @@ PROC GLOBAL
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
     FileWrite( piffile, "Parameter=" + xcluster + edit("9",chktotals) + edit("9", dosumrep ));
-    if whatdata in 2,3,5 then // !!! special purpose to resize pictures only
-      FileWrite( piffile, "Pictures=" + pictures);
-      FileWrite( piffile, "Final=" + final);
-    endif;
-    if whatdata in 2, 3 then // !!! flag to indicate closing cluster
+    if whatdata = 3 then // !!! flag to indicate closing cluster
       FileWrite( piffile, "Closing=" + "Y");
     endif;
     FileWrite( piffile, "ViewListing=OnError" );
@@ -893,7 +889,7 @@ PROC GLOBAL
   { function to send data to central office using CSWeb FTP }
   function SendData_CSW()
     numeric DataOK = 0;
-    if !connection()  then
+    if !connection() | debug then
       // errmsg( 200 );
       SendData_CSW = DataOK;
       exit;
@@ -1947,21 +1943,13 @@ postproc
     hhtoget = 0;
     review_ind();
   elseif action = 7 then       { close or list a cluster }
-    if getlanguage() = "EN" then
-      option =  accept("Select Action", 
-                "1. Report cluster status", 
-                "2. Summary report",
-                "9: Cancel"
-                );
-    elseif getlanguage() = "FR" then
       option =  accept("Selectionnez l'option", 
                 " 1. Rapport de l'état de travail de la grappe", 
                 " 2. Fermer la grappe",
                 " 9. Annuler "
                 );
 
-    endif;
-    if option in 1:4 then
+    if option in 1:2 then
       if anyfiles(1) then         { check if hh files has been transferred to supervisor }
         { check for duplicated HOUSEHOLDs, individuals and biomarkers }
         collapse();
@@ -1971,14 +1959,10 @@ postproc
           reenter WFINAL;
         endif;
         AppName = "CHECKID";
-        if option = 2 then // do summary report
-          CheckID( 2, 1);
-        else
-          CheckID( 2 ); // close cluster/full report
-        endif;
+        CheckID( option + 1 ); // close cluster/full report
         close( fromckid );
-        if option in 3,4 then
-          SaveSetting( "SupSession", edit("9", option) );
+        if option = 2 then
+          SaveSetting( "SupSession", edit("9", 3) ); // closing cluster !!
         endif;
         RunPFFS();
       else

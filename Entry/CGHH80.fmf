@@ -398,7 +398,6 @@ Item=GHAUX
 Item=GHINTRO
 Item=GHLATITUDE
 Item=GHLONGITUDE
-Item=GHALTITUDE
 Item=GHACCURACY
 Item=QHFINISH
   
@@ -4975,20 +4974,6 @@ Form=11
 [Text]
 Position=154,244,289,260
 Text=Longitude in degrees
- 
-  
-[Field]
-Name=GHALTITUDE
-Position=462,265,533,285
-Item=GHALTITUDE,CGHH80
-UseEnterKey=Yes
-Protected=Yes
-DataCaptureType=TextBox
-Form=11
-  
-[Text]
-Position=154,269,266,285
-Text=Altitude in meters
  
   
 [Field]

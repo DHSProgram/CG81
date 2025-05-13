@@ -3,7 +3,19 @@
 
   FILE   fname;                        { write file with or without errors }
   FILE   ReadMSG;                      { file used to read the error messages }
-  numeric debug =    0;// sets debugging on
+  numeric debug =    1;// sets debugging on
+
+  // set constants for utf characters for display
+  string utf_tick_icon    =  "&#x2705;";
+  string utf_x_icon       =  "&#x10102;";
+  string utf_view_icon    =  "&#x1f50e;";
+  // string utf_child_icon   =  "&#129490;&#x1F3FE;";
+  string utf_child_icon   =  "&#129490";
+  string utf_man_icon     =  "&#x1F6B9;";
+  string utf_woman_icon   =  "&#x1F6BA;";
+  string utf_biom_icon    =  "&#x2696;";
+  string utf_qre_icon     =  "&#x1F4D3;";
+  string utf_hh_icon      =  "&#x1f46a;";
 
   string blanks;
   string yresult, zcluster;
@@ -27,7 +39,6 @@
 
   array string sumreport(50,10);         { array for summary report}
   numeric sumidx = 0;
-  numeric dosumrep;                    { flag to control if summary or full report }
 
   array xind (2,4);                     { !!! table to keep track of individual interviews for the summmary report }
   
@@ -38,7 +49,9 @@
   numeric xht, xhc, xhi, xit, xic, xii, xwc, xwi, xmc, xmi, chbio, wmbio, mnbio, casefound, centoff;
   numeric hogregis, chktot, rwrthha, xlen, siblings, hhOK, newhh, bioexist;
   numeric tbcodeshiv, tbcodesmal, ors, ipos, calbeg, methuse;
+  numeric status;
   numeric closing;
+  numeric biomselect;
 
   { create a file to know if cluster has structural errors }
   function FileReturn( errors )
@@ -106,6 +119,7 @@
           e = errmsg( 50001, error );
     endif;
     close( ReadMSG );
+    GetMessage = errorno;
   end;
 
   function isComplete ();
@@ -196,15 +210,33 @@
     enddo;
   end;
 
-  function string HTML_Button (string str_CallBack, string str_Text);
-    HTML_Button = maketext('<button onclick="%s">%s</button>', encode(str_CallBack), encode(str_Text));
+  function string HTML_Button (string utf_CallBack, string utf_Text);
+    HTML_Button = maketext('<button onclick="%s">%s</button>', encode(utf_CallBack), utf_Text);
+  end;
+
+  function string ShowStatus ( statusflag );
+    if statusflag = 1 then
+      ShowStatus = utf_tick_icon;
+    else
+      ShowStatus = utf_x_icon;;
+    endif;
+  end;
+  function PrintBio (pline, string pstring, string presult, pstatus);
+    CellValues(1) = "BLANK";
+    CellValues(2) = edit("99", pline);
+    CellValues(3) = "BLANK";
+    CellValues(4) = pstring[1:30];
+    CellValues(5) = presult;
+    CellValues(6) = "BLANK";
+    CellValues(7) = ShowStatus(pstatus);
+    HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
   end;
 
 PROC FL_CNULL
 preproc
   if debug then
     // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
-    trace(on, ".\debug.app", clear);
+    trace(on, ".\debug.apc", clear);
 //  trace(on);
     set trace;
   endif;
@@ -230,11 +262,10 @@ preproc
 
   zcluster = sysparm()[1:4];                { cluster number }
   chktot   = tonumber( sysparm()[5:1] );    { if checking totals }
-  dosumrep = tonumber( sysparm()[6:1] );   { summary report  }
   pictures = sysparm("Pictures");
   final    = sysparm("Final");
-  final    = sysparm("Final");
   closing  = ( sysparm("Closing") = "Y" );
+
  
   // !!! run resize picture logic here based on presence of pictures parameter
   if length(strip(pictures)) then
@@ -281,25 +312,22 @@ preproc
   setfile( HTMLFile, HTMLname, create );
 
   { initialize the report headings }
-  if !dosumrep then
-    zstring1 = MakeText( tr("Status for cluster: %s"), zcluster );
-    zstring2 = tr("Interviews collected in cluster");
-    CellValues(1) = tr("HH/Line");
-    CellValues(2) = tr("Interviewer");
-    CellValues(3) = tr("Address/Name");
-    CellValues(4) = tr("Result");
-    CellValues(5) = tr("Visits");
-    CellValues(6) = tr("Biomarkers");
-    CellValues(7) = tr("View");
+  zstring1 = MakeText( tr("Status for cluster: %s"), zcluster );
+  CellValues(1) = tr("HH");
+  CellValues(2) = tr("Line");
+  CellValues(3) = tr("Interviewer");
+  CellValues(4) = tr("Name");
+  CellValues(5) = tr("Result");
+  CellValues(6) = tr("Visits");
+  CellValues(7) = tr("Status");
 
-    { specify columns that are left aligned, strings are left aligned }
-    CellAlign(1) = 3;  // column 3 is household address/name 
-    CellAlign(2) = 4;  // column 4 is result of the interview
-    // !! adding application specific javascript to html output
-    list string js_scripts;
-    js_scripts.add("./checkid.js");
-    HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
-  endif;
+  { specify columns that are left aligned, strings are left aligned }
+  CellAlign(1) = 4;  // column 3 is household address/name 
+  CellAlign(2) = 5;  // column 4 is result of the interview
+  // !! adding application specific javascript to html output
+  list string js_scripts;
+  js_scripts.add("./checkid.js");
+  HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
 
   { initialize transmittal sheet arrays to control duplicates }
   do j = 1 while j <= 200
@@ -308,12 +336,12 @@ preproc
   enddo;
   { loops over every household }
   while loadcase( CGHH80 ) do
+    biomselect = (QHELIGM = 1); // !! selection for biomarkers
+    status = 0;
     trace("hh=%d", QHNUMBER);
     { load files based on first case }
     if ycluster = 0 then
-      if !dosumrep then
-        HTML_BeginTable( CellValues, zstring2, 7, "Main" );  // generates the HTML table script with the column headers
-      endif;
+      HTML_BeginTable( CellValues, zstring2, 7, "Main" );  // generates the HTML table script with the column headers
      { load supervisor control to make sure that total number of cases to be collected in cluster is assigned }
           { it also checks that cluster was already selected for remeasurement and data were colleted }
       SSAMPLE = QHCLUST;
@@ -367,11 +395,12 @@ preproc
 
     xind.clear();
     if QHRESULT <> 1 then
-      yresult = tr("Incomplete") + " " +  edit("(9)",QHRESULT) 
+      yresult = tr("Incomplete") + " " +  edit("(9)",QHRESULT);
     elseif casepart then
-      yresult = tr("Partial")+ " " +  edit("(9)",QHRESULT)
+      yresult = tr("Partial")+ " " +  edit("(9)",QHRESULT);
     else
-      yresult = tr("Complete")+ " " +  edit("(9)",QHRESULT)
+      yresult = tr("Complete")+ " " +  edit("(9)",QHRESULT);
+      status = 1;
     endif;
     
     //!!! process summmary report data 
@@ -391,8 +420,8 @@ preproc
     measure = " ";
     if casepart & QHRESULT = 1 then
       { no structure checked for partial cases }
-      getmessage( 50055 );
-      hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
+      // getmessage( 50055 );
+      // hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
       xhi    = xhi + 1;             { partial households counted as incomplete }
     elseif QHRESULT = 1 then
       xhc    = xhc + 1;             { complete households }
@@ -442,90 +471,6 @@ preproc
         hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, GetLabel(QHSEC04)) )
       endif;
 
-      { check biomarkers }
-
-      if QHELIGM then
-        { biomarker front page questionnaire }
-        chbio = count( CGHH80.QHSEC01 where QH11 <> 0 );
-        bioexist = QHWOMEN + count( CGHH80.QHSEC01 where QH10 > 0 & QH04 = 1 ) + chbio;                { !!! children + women + men}
-        if bioexist then measure = "Y" endif;
-        if bioexist <=> soccurs( QBSECOVER ) <> 1 then
-          // getmessage( 50100 );
-          // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, GetLabel(QBSECOVER)) )
-        endif;
-        { biomarkers for children }
-        xbiom = tr("child");            
-        xhw   = tr("height & weight");
-        xanem = tr("anemia");
-        for i in record QHSEC01 do
-          if QH11 <> 0 then
-            found = 0;
-            do j = 1 while j <= soccurs( QBSEC01 ) & !found
-              if QH11 = QB102(j) then
-                found = 1;
-                if QB104(j) = notappl | QB104(j) in 0:4 & (QB106(j) = notappl | QB108(j) = notappl) then      { height & weight }
-                  getmessage( 50057 );
-                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH11) );
-                endif;
-              endif;
-            enddo;
-            if !found then             { biomarker record missing for individual }
-              getmessage( 50056 );
-              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH11) );
-              measure = "N";
-            endif;
-          endif;
-        enddo;
-
-        { biomarkers for women }
-        xbiom = tr("woman");
-        xhw   = tr("height & weight");
-        xanem = tr("anemia");
-        xhiv  = tr("HIV");
-        for i in record QHSEC01 do
-          if QH09 <> 0 then
-            found = 0;
-            do j = 1 while j <= soccurs( QBSEC02 ) & !found
-              if QH09 = QB202(j) then
-                found = 1;
-                if QB205(j) = notappl | QB207(j) = notappl then  { height & weight }
-                  getmessage( 50057 );
-                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH09) );
-                endif;
-              endif;
-            enddo;
-            if !found then             { biomarker record missing for individual }
-              getmessage( 50056 );
-              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH09) );
-              measure = "N";
-            endif;
-          endif;
-        enddo;
-        { biomarkers for men }
-        xbiom = tr("man");
-        xhw   = tr("height & weight");
-        xanem = tr("anemia");
-        xhiv  = tr("HIV");
-        for i in record QHSEC01 do
-          if QH10 <> 0 then
-            found = 0;
-            do j = 1 while j <= soccurs( QBSEC03 ) & !found
-              if QH10 = QB302(j) then
-                found = 1;
-                if QB305(j) = notappl | QB307(j) = notappl then  { height & weight }
-                  getmessage( 50057 );
-                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH10) );
-                endif;
-              endif;
-            enddo;
-            if !found then             { biomarker record missing for individual }
-              getmessage( 50056 );
-              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH10) );
-              measure = "N";
-            endif;
-          endif;
-        enddo;
-      endif; 
     else
       xhi = xhi + 1;                 { incomplete households }
       // if soccurs(QHSEC01X)  | soccurs(QHSEC01) | soccurs(QHSEC02) | soccurs(QHSEC03) |
@@ -599,31 +544,27 @@ preproc
 
     { print line for the household in the report }
     if soccurs( QHSEC01X ) then
-      xstring = strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1));
+      xstring = utf_hh_icon + " " + strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1));
     else
-      xstring = QHADDRESS;
+      xstring = utf_hh_icon + " " + QHADDRESS;
     endif;
-
-    sumreport(sumidx,5) = xstring;
 
     { children/women/men biomarkers available }
     if QHELIGM = 1 then
       x = count(CGHH80.QBSEC01 where QB104 <> notappl) + 
-            count(CGHH80.QBSEC02 where QB205 <> notappl) + 
-                count(CGHH80.QBSEC03 where QB305 <> notappl); 
+          count(CGHH80.QBSEC02 where QB205 <> notappl) + 
+          count(CGHH80.QBSEC03 where QB305 <> notappl); 
     endif;
     // bioexist = bioexist - count(CGHH80.QBSEC01 where QB106 <> notappl); // not all eligible children are measured
         { populates the elements of a row based on household information }
     CellValues(1) = edit("9999", QHNUMBER);
-    CellValues(2) = edit("9999", QHINTNUM);
-    CellValues(3) = xstring[1:30];
-    CellValues(4) = yresult;
-    CellValues(5) = edit("9", QHVISITS);
-    CellValues(6) = edit("99", bioexist) + "-" + edit("99", x);
-    CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), tr("View"));
-    if !dosumrep then
-      HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
-    endif;
+    CellValues(2) = "BLANK";
+    CellValues(3) = edit("9999", QHINTNUM);
+    CellValues(4) = xstring[1:60];
+    CellValues(5) = yresult;
+    CellValues(6) = edit("9", QHVISITS);
+    CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon) + " " + ShowStatus(status);
+    HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
     
     sumreport(sumidx, 7) = edit("99", bioexist) + "/" + edit("99", x);
     if bioexist > x then
@@ -697,7 +638,116 @@ preproc
         endif;
       endif;
     endif;                   { endif if slot found and HH accepted }
+    
+      { check biomarkers }
+      trace("%d,%d, %d", casepart, QHRESULT, biomselect);
+      if !ispartial(CGHH80) & QHRESULT = 1 & biomselect then
+        { biomarker front page questionnaire }
+        chbio = count( CGHH80.QHSEC01 where QH11 <> 0 );
+        bioexist = QHWOMEN + count( CGHH80.QHSEC01 where QH10 > 0 & QH04 = 1 ) + chbio;                { !!! children + women + men}
+        if bioexist then measure = "Y" endif;
+        if bioexist <=> soccurs( QBSECOVER ) <> 1 then
+          // getmessage( 50100 );
+          // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, GetLabel(QBSECOVER)) )
+        endif;
+        { biomarkers for children }
+        xbiom = tr("child");            
+        xhw   = tr("height & weight");
+        xanem = tr("anemia");
+        for i in record QHSEC01 do
+          if QH11 <> 0 then
+            xstring = maketext("%s %s %s", utf_child_icon, utf_biom_icon, strip(QH02));
+            yresult = tr("Not visited");
+            status = 0;
+            found = 0;
+            do j = 1 while j <= soccurs( QBSEC01 ) & !found
+              if QH11 = QB102(j) then
+                found = 1;
+                if QB104(j) = notappl | QB104(j) in 0:4 & (QB106(j) = notappl | QB108(j) = notappl) then      { height & weight }
+                  bioe = getmessage( 50057 );
+                  // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH11) );
+                else
+                  yresult = tr("Complete");
+                  status = 1;
+                endif;
+              endif;
+            enddo;
+            if !found then             { biomarker record missing for individual }
+              bioe = getmessage( 50056 );
+              // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH11) );
+              bioe = 1;
+              measure = "N";
+            endif;
+            // output to report
+            PrintBio(i, xstring, yresult, status);
+          endif;
+        enddo;
 
+        { biomarkers for women }
+        xbiom = tr("woman");
+        xhw   = tr("height & weight");
+        xanem = tr("anemia");
+        xhiv  = tr("HIV");
+        for i in record QHSEC01 do
+          if QH09 <> 0 then
+            xstring = maketext("%1s %1s %s", utf_woman_icon, utf_biom_icon, strip(QH02));
+            yresult = tr("Not visited");
+            status = 0;
+            found = 0;
+            do j = 1 while j <= soccurs( QBSEC02 ) & !found
+              if QH09 = QB202(j) then
+                found = 1;
+                if QB205(j) = notappl | QB207(j) = notappl then  { height & weight }
+                  bioe = getmessage( 50057 );
+                  // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH09) );
+                else
+                  yresult = tr("Complete");
+                  status = 1;
+                endif;
+              endif;
+            enddo;
+            if !found then             { biomarker record missing for individual }
+              bioe = getmessage( 50056 );
+              // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH09) );
+              measure = "N";
+            endif;
+            // output to report
+            PrintBio(i, xstring, yresult, status);
+          endif;
+        enddo;
+        { biomarkers for men }
+        xbiom = tr("man");
+        xhw   = tr("height & weight");
+        xanem = tr("anemia");
+        xhiv  = tr("HIV");
+        for i in record QHSEC01 do
+          if QH10 <> 0 then
+            found = 0;
+            xstring = maketext("%1s %1s %s", utf_man_icon, utf_biom_icon, strip(QH02));
+            yresult = tr("Not visited");
+            status = 0;
+            do j = 1 while j <= soccurs( QBSEC03 ) & !found
+              if QH10 = QB302(j) then
+                found = 1;
+                if QB305(j) = notappl | QB307(j) = notappl then  { height & weight }
+                  bioe = getmessage( 50057 );
+                  // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH10) );
+                else
+                  yresult = tr("Complete");
+                  status = 1;
+                endif;
+              endif;
+            enddo;
+            if !found then             { biomarker record missing for individual }
+              bioe = getmessage( 50056 );
+              // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH10) );
+              measure = "N";
+            endif;
+            // output to report
+            PrintBio(i, xstring, yresult, status);
+          endif;
+        enddo;
+      endif; 
     if hhe | bioe then e = 1 endif;
 
     if QHRESULT <> 1 | casepart then next endif;  { skip women and go to next household }
@@ -707,13 +757,14 @@ preproc
     wme = 0;    { to make sure that there are no structural errors for women }
     // initialize array used to track interviews at individual level for this household
     for i in record QHSEC01 do
+      status = 0;
       if QH04 = 2 then
         QLINE     = QH09;
-        xstring = tr("W-") + strip(QH02);  
+        xstring = maketext("%1s %1s %s", utf_woman_icon, utf_qre_icon, strip(QH02));
         textsex = tr("woman");
       else
         QLINE     = QH10;
-        xstring = tr("M-") + strip(QH02);
+        xstring = maketext("%1s %1s %s", utf_man_icon, utf_qre_icon, strip(QH02));
         textsex = tr("man");
       endif;
       if QH09 | QH10 then
@@ -745,21 +796,19 @@ preproc
           elseif casepart then
             yresult = tr("Partial")+ " " +  edit("(9)",QRESULT)
           else
-            yresult = tr("Complete")+ " " +  edit("(9)",QRESULT)
+            yresult = tr("Complete")+ " " +  edit("(9)",QRESULT);
+            status = 1;
           endif;
           { print individual line for report }
           { populates the elements of a row based on individual information }
-          CellValues(1) = edit("  99", QLINE);
-          CellValues(2) = edit("9999", QINTNUM);
-          CellValues(3) = xstring;
-          CellValues(4) = yresult;
-          CellValues(5) = edit("9", QVISITS);
-          CellValues(6) = "BLANK";
-          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), tr("View"));
-          if !dosumrep then
-            HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
-          endif;
-          
+          CellValues(1) = "BLANK";
+          CellValues(2) = edit("  99", QLINE);
+          CellValues(3) = edit("9999", QINTNUM);
+          CellValues(4) = xstring;
+          CellValues(5) = yresult;
+          CellValues(6) = edit("9", QVISITS);
+          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon) + " " + ShowStatus(status);
+          HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data 
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
             getmessage( 50200 );
@@ -856,7 +905,7 @@ preproc
                            soccurs(QMSEC04) | soccurs(QMSEC05)  | soccurs(QMSEC06) | soccurs(QMSEC07) | 
                            soccurs(QMSEC08) then
               // getmessage( 50230 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
+              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
           { check for complete men }
@@ -878,7 +927,7 @@ preproc
                            soccurs(QWSECECD) | 
                            soccurs(QWSECFIS) then
               // getmessage( 50231 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
+              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
 
@@ -915,8 +964,8 @@ preproc
             endif;
           endif;
         else
-          getmessage( 50220 );
-          wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE) );
+          // getmessage( 50220 );
+          // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE) );
           xii  = xii + 1;
           if QH09 then
             inc( xind(2,4) );
@@ -928,16 +977,14 @@ preproc
           { print line for woman that hasn't been visited }
           yresult = tr("Not visited");
           { populates the elements of a row for an individual that hasn't been visited }
-          CellValues(1) = edit("  99", QLINE);
-          CellValues(2) = "BLANK";
-          CellValues(3) = xstring;
-          CellValues(4) = yresult;
-          CellValues(5) = "BLANK";
+          CellValues(1) = "BLANK";
+          CellValues(2) = edit("  99", QLINE);
+          CellValues(3) = "BLANK";
+          CellValues(4) = xstring;
+          CellValues(5) = yresult;
           CellValues(6) = "BLANK";
-          CellValues(7) = "BLANK";
-          if !dosumrep then
-            HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
-          endif;
+          CellValues(7) = ShowStatus(status);
+          HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
        endif;
       endif;
     enddo;
@@ -949,8 +996,8 @@ preproc
         SACCEPTI(j) = 1;
         fwrt = 1;
       elseif SACCEPTI(j) & wme then      { an error in any of the individuals was introduced }
-        getmessage( 50211 );
-        wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
+        // getmessage( 50211 );
+        // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
         SACCEPTI(j) = 0;
         SACCEPTF(j) = 0;
         fwrt = 1;
@@ -981,42 +1028,13 @@ preproc
     endif;
   enddo;                              { end loop over all households }
 
-  { *** do summmary report *** }
-  if dosumrep then
-    zstring1 = MakeText( tr("Summary report for cluster: %s"), zcluster );
-    zstring2 = tr("Interviews collected in cluster");
-    CellValues(1) = tr("HH");
-    CellValues(2) = tr("Int");
-    CellValues(3) = tr("Type");
-    CellValues(4) = tr("Address");
-    CellValues(5) = tr("Head");
-    CellValues(6) = tr("HH Result");
-    CellValues(7) = tr("Biomarkers");
-    CellValues(8) = tr("Women");
-    CellValues(9) = tr("Men");
-    CellValues(10) = tr("Status");
-    { specify columns that are left aligned, strings are left aligned }
-    CellAlign(1) = 4;  // column 3 is household address/name 
-    CellAlign(2) = 6;  // column 4 is result of the interview
-    CellAlign(3) = 7;  // column 4 is result of the interview
-    CellAlign(4) = 8;  // column 4 is result of the interview
-    CellAlign(5) = 9;  // column 4 is result of the interview
-    HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
-    HTML_BeginTable( CellValues, zstring2, 10, "Summary" );  // generates the HTML table script with the column headers
-    do i = 1 until i > sumreport.length(1)
-      if !length( sumreport(i,1) ) then // quit if no more households
-        break;
-      endif;
-      do j = 1 until j > 10 
-        Cellvalues(j) = sumreport(i,j);
-      enddo;
-      HTML_OneRow( CellValues, 10 );   // generates the HTML script for a row with relevant household data
-    enddo;
-    HTML_EndTable();
-    HTML_Paragraph( " " );
+  if ycluster then
+        HTML_EndTable();
   endif;
 
 { summary of the run }
+  HTML_Paragraph( " " );
+  HTML_Paragraph( " " );
   zstring2 = MakeText( tr("Household: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xht, xhc, xhi, int( (xhc/xht * 100 )+ 0.5));
   HTML_Subtitle( zstring2, 6 );          
   zstring2 = MakeText( tr("Women: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xwc + xwi, xwc, xwi, int( (xwc/(xwc+xwi)* 100 )+ 0.5));
@@ -1027,10 +1045,6 @@ preproc
     zstring2 = MakeText( tr("Households added not originally part of the sample design %d"), newhh );
     HTML_Subtitle( zstring2, 6 );          
   endif;
-  if ycluster then
-        HTML_EndTable();
-  endif;
-
 
   if chktot then   { totals checked when collapsing all data or when closing a cluster }
 
@@ -1040,8 +1054,10 @@ preproc
     hogregis = i-1;
     if xht >= SHTOTAL & hogregis = xht then
       if e then
-        getmessage( 50151 );
-        e = ListErrMsg.add( maketext(AlphaMSG, xht) );
+        if closing then
+          getmessage( 50151 );
+          e = ListErrMsg.add( maketext(AlphaMSG, xht) );
+        endif;
       else
         SHCOMP   = xhc;
         SHINCOMP = xhi;
@@ -1053,8 +1069,8 @@ preproc
       endif;
     else
       if chktot then
-        // getmessage( 50150 );
-        e = ListErrMsg.add( maketext(AlphaMSG, xht, SHTOTAL, hogregis) )
+        getmessage( 50150 );
+        // e = ListErrMsg.add( maketext(AlphaMSG, xht, SHTOTAL, hogregis) )
       endif;
     endif;
 
@@ -1103,16 +1119,16 @@ preproc
         enddo;
     
   endif;            { endif to check totals }
-  if !dosumrep then
+  // if closing then
     if ListErrMsg.length() then
       { heading for report with FileWrite command }
       HTML_Paragraph( " " );
-      HTML_ParagraphS( tr("STATUS MESSAGES") );
+      HTML_ParagraphS( tr("Status Messages") );
       do i = 1 while i <= ListErrMsg.length()
       HTML_Paragraph( ListErrMsg(i) );
       enddo;
     endif;
-  endif;
+  // endif;
 
   HTML_Paragraph( HTML_Button("Return_Case_ID('')", tr("OK")));
 
