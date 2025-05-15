@@ -19,18 +19,18 @@ Name=LEVEL1
 Label=File name
 Name=FILE_NAME
 Start=1
-Len=80
+Len=120
 DataType=Alpha
 
 [Record]
 Label=Transfer record
 Name=MD5_LOG
 RecordTypeValue=''
-RecordLen=130
+RecordLen=170
 
 [Item]
 Label=Transfer log
 Name=MD5CODE
-Start=81
+Start=121
 Len=50
 DataType=Alpha

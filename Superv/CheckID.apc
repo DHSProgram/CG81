@@ -3,7 +3,7 @@
 
   FILE   fname;                        { write file with or without errors }
   FILE   ReadMSG;                      { file used to read the error messages }
-  numeric debug =    1;// sets debugging on
+  numeric debug =    0;// sets debugging on
 
   // set constants for utf characters for display
   string utf_tick_icon    =  "&#x2705;";
@@ -11,11 +11,13 @@
   string utf_view_icon    =  "&#x1f50e;";
   // string utf_child_icon   =  "&#129490;&#x1F3FE;";
   string utf_child_icon   =  "&#129490";
-  string utf_man_icon     =  "&#x1F6B9;";
-  string utf_woman_icon   =  "&#x1F6BA;";
+  string utf_man_icon     =  "&#x1f6b9;";
+  string utf_woman_icon   =  "&#x1f6ba;";
   string utf_biom_icon    =  "&#x2696;";
-  string utf_qre_icon     =  "&#x1F4D3;";
-  string utf_hh_icon      =  "&#x1f46a;";
+  // string utf_qre_icon     =  "&#x1F4D3;";
+  string utf_qre_icon     =  "&#x1F4CB;";
+  // string utf_hh_icon      =  "&#x1f46a;";
+  string utf_hh_icon      =  "&#x1f3e0;";
 
   string blanks;
   string yresult, zcluster;
@@ -210,8 +212,10 @@
     enddo;
   end;
 
-  function string HTML_Button (string utf_CallBack, string utf_Text);
-    HTML_Button = maketext('<button onclick="%s">%s</button>', encode(utf_CallBack), utf_Text);
+  function string HTML_Button (string str_CallBack, string str_Text);
+    if str_callback = "Return_Case_ID('')" then
+      HTML_Button = maketext('<button onclick="%s">%s</button>', encode(str_CallBack), str_Text);
+    endif;
   end;
 
   function string ShowStatus ( statusflag );
@@ -807,7 +811,7 @@ preproc
           CellValues(4) = xstring;
           CellValues(5) = yresult;
           CellValues(6) = edit("9", QVISITS);
-          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon) + " " + ShowStatus(status);
+          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
           HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data 
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
@@ -1032,19 +1036,53 @@ preproc
         HTML_EndTable();
   endif;
 
+  { initialize the report headings }
+  HTML_Paragraph( " " );
+  HTML_Paragraph( " " );
+  zstring2 = MakeText( tr("Totals"), zcluster );
+  CellValues(1) = tr("Questionnaire");
+  CellValues(2) = tr("Total");
+  CellValues(3) = tr("Complete");
+  CellValues(4) = tr("Incomplete");
+  CellValues(5) = tr("Response rate");
+  HTML_BeginTable( CellValues, zstring2, 5, "Summary" );  // generates the HTML table script with the column headers
+
 { summary of the run }
   HTML_Paragraph( " " );
   HTML_Paragraph( " " );
-  zstring2 = MakeText( tr("Household: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xht, xhc, xhi, int( (xhc/xht * 100 )+ 0.5));
-  HTML_Subtitle( zstring2, 6 );          
-  zstring2 = MakeText( tr("Women: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xwc + xwi, xwc, xwi, int( (xwc/(xwc+xwi)* 100 )+ 0.5));
-  HTML_Subtitle( zstring2, 6 );          
-  zstring2 = MakeText( tr("Men: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xmc + xmi, xmc, xmi, int( (xmc/(xmc+xmi)* 100 )+ 0.5));
-  HTML_Subtitle( zstring2, 6 );          
-  if newhh then
-    zstring2 = MakeText( tr("Households added not originally part of the sample design %d"), newhh );
-    HTML_Subtitle( zstring2, 6 );          
-  endif;
+  // households
+  CellValues(1) = tr("Household");
+  CellValues(2) = edit("99", xht);
+  CellValues(3) = edit("99", xhc);
+  CellValues(4) = edit("99", xhi);
+  CellValues(5) = maketext("%3.1f%", xhc/xht * 100);
+  HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+  // women
+  CellValues(1) = tr("Women");
+  CellValues(2) = edit("99", xwc+xwi);
+  CellValues(3) = edit("99", xwc);
+  CellValues(4) = edit("99", xwi);
+  CellValues(5) = maketext("%3.1f%", xwc/(xwc+xwi) * 100);
+  HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+  // men
+  CellValues(1) = tr("Men");
+  CellValues(2) = edit("99", xmc+xmi);
+  CellValues(3) = edit("99", xmc);
+  CellValues(4) = edit("99", xmi);
+  CellValues(5) = maketext("%3.1f%", xmc/(xmc+xmi) * 100);
+  HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+  HTML_EndTable();
+
+  // zstring2 = MakeText( tr("Household: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xht, xhc, xhi, int( (xhc/xht * 100 )+ 0.5));
+  // HTML_Subtitle( zstring2, 6 );          
+  // zstring2 = MakeText( tr("Women: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xwc + xwi, xwc, xwi, int( (xwc/(xwc+xwi)* 100 )+ 0.5));
+  // HTML_Subtitle( zstring2, 6 );          
+  // zstring2 = MakeText( tr("Men: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%"), xmc + xmi, xmc, xmi, int( (xmc/(xmc+xmi)* 100 )+ 0.5));
+  // HTML_Subtitle( zstring2, 6 );          
+  // if newhh then
+  //   zstring2 = MakeText( tr("Households added not originally part of the sample design %d"), newhh );
+  //   HTML_Subtitle( zstring2, 6 );          
+  // endif;
 
   if chktot then   { totals checked when collapsing all data or when closing a cluster }
 
@@ -1163,7 +1201,6 @@ preproc
        ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
      elseif loadcase(CGHH80, caseid) then
        ViewQre("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
-       loadcase(CGIN80, caseid);
      else
        break;
      endif;

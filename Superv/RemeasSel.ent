@@ -1,30 +1,108 @@
-﻿[CSPro Application]
-Version=CSPro 7.7
-Label=RemeasSel
-Name=RemeasSel
-AppType=DataEntry
-CAPI=Yes
-[External Dictionaries]
-File=..\Dicts\ccHH80.dcf
-File=..\Dicts\ContSup.dcf
-File=..\Dicts\Remeasure.dcf
-File=..\Dicts\SampSel.dcf
-File=..\Dicts\ccIN80.dcf
-[AppCode]
-File=.\RemeasSel.apc
-Include=..\Library\DPCollect.apc
-Include=..\Library\Anthrop.apc
-Include=..\Library\HTMLFunctions.apc
-[Message]
-File=.\RemeasSel.mgf
-[Help]
-File=.\RemeasSel.qsf
-[Forms]
-File=.\Cnull.fmf
-[Dictionary Types]
-Dict-Type=..\Dicts\ccHH80.dcf,External
-Dict-Type=..\Dicts\ContSup.dcf,External
-Dict-Type=..\Dicts\Remeasure.dcf,External
-Dict-Type=..\dicts\Cnull.dcf,Input,.\Cnull.fmf
-Dict-Type=..\Dicts\SampSel.dcf,External
-Dict-Type=..\Dicts\ccIN80.dcf,External
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "REMEASSEL", 
+  "label": "RemeasSel", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../dicts/Cnull.dcf", 
+      "parent": "Cnull.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGHH80.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/ContSup.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Remeasure.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/SampSel.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGIN80.dcf"
+    }
+  ], 
+  "forms": [
+    "Cnull.fmf"
+  ], 
+  "questionText": [
+    "RemeasSel.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "RemeasSel.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/DPCollect.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/Anthrop.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/HTMLFunctions.apc"
+    }
+  ], 
+  "messages": [
+    "RemeasSel.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": true, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "mobileOnly", 
+    "centerForms": false, 
+    "createListing": true, 
+    "createLog": true, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": false, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": false
+    }, 
+    "showEndCaseMessage": true, 
+    "showOnlyDiscreteValuesInComboBoxes": false, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": true, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "none", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

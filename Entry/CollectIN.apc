@@ -211,6 +211,7 @@
     userbar( add button, tr("Note"), do("EditNote") );
     userbar( add button, tr("Section"), toSection() );
     userbar( add button, tr("Ver"),  GetPubDate(2) );
+    userbar( add button, tr("View"),  viewQRE("CGIN80"));
     if !android then // Response location only works for Windows
       userbar( add button, tr("Responses"), Responses( 0 ) );
     endif;
@@ -378,7 +379,7 @@
     numeric sr = 0;
     if rtype = 1 then   // pregnancy history
 	  npregs = ph_array();
-      sr = showarray( tr("Pregnancy history")+" ("+tr("expecting")+" "+edit("9",visualvalue(Q212W))+" "+tr("pregnancy outcomes")+")",
+      sr = showarray( tr("Pregnancy history"),
  	      preghist, npregs, 
           title( tr("Line"), tr("Name"), tr("Initial Outcome"), tr("Final Outcome"), tr("Sex"), tr("Date"), tr("Alive"), tr("Age"), tr("Live Mother") ) );
     
@@ -2277,8 +2278,8 @@ PROC Q220Y
      ($ = $(i) & valid(Q220M(i)) & Q220M < Q220M(i)) |
      ($ = $(i) & valid(Q220M(i)) & Q220M = Q220M(i) & valid(Q220D(i)) & Q220D < Q220D(i))
     ) then
-    if errmsg( 2152 ) select( tr( "Date of delivery" ), Q220_BLOCK,
-                              tr( "Date of prior delivery" ), Q220_BLOCK(i),
+    if errmsg( 2152 ) select( tr( "Date of pregnancy" ), Q220_BLOCK,
+      tr( "Date of prior pregnancy" ), Q220_BLOCK(i),
                               tr( "Move pregnancy" ), continue ) = 3 then
       numeric newocc = select_preg( curocc() );
       move_preg( curocc(), newocc );

@@ -25,7 +25,8 @@ Include=..\Library\HTMLFunctions.apc
 Include=..\Library\DPCollect.apc
 Include=..\Library\MenuFunctions.apc
 [Message]
-File=.\DCMenu.mgf
+File=..\Superv\SupMenu.mgf
+Include=.\DCMenu.mgf
 [Help]
 File=.\DCMenu.qsf
 [Forms]
