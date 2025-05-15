@@ -399,13 +399,13 @@ questions:
           EN: |
             <p>215. Think back to your first pregnancy. Was that a single pregnancy, twins, or triplets?</p>
           FR: |
-            <p>215-1.  Rappelez-vous de votre premi&#232;re grossesse. Est-ce que c&#39;&#233;tait une grossesse simple, des jumeaux ou tripl&#233;s ?</p>
+            <p>215-~~Q215L~~.  Rappelez-vous de votre première grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
             <p>215. Think back to your next pregnancy. Was that a single pregnancy, twins, or triplets?</p>
           FR: |
-            <p>215-2.  Rappelez-vous de votre suivante grossesse. Est-ce que c&#39;&#233;tait une grossesse simple, des jumeaux ou tripl&#233;s ?</p>
+            <p>215-~~Q215L~~.  Rappelez-vous de votre suivante grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
   - name: CGIN80.Q216
     conditions:
       - logic: Q215 = 1
@@ -413,26 +413,26 @@ questions:
           EN: |
             <p>216. Was the baby born alive, born dead, or did you have a miscarriage or abortion?</p>
           FR: |
-            <p>216-1.  Est-ce que le b&#233;b&#233; est n&#233; vivant, mort-n&#233; ou avez-vous eu une fausse-couche ou un avortement ?</p>
+            <p>216-~~Q215L~~.  Est-ce que le bébé est né vivant, mort-né ou avez-vous eu une fausse-couche ou un avortement ?</p>
       - logic: twinnum = 1
         questionText:
           EN: |
             <p>216. Was the first baby in this pregnancy born alive or born dead?</p>
           FR: |
-            <p>216-2.  Est-ce que le premier b&#233;b&#233; de cette grossesse est n&#233; vivant ou mort ?</p>
+            <p>216-~~Q215L~~.  Est-ce que le premier bébé de cette grossesse est né vivant ou mort ?</p>
       - logic: twinnum > 1
         questionText:
           EN: |
             <p>216. Was the next baby in this pregnancy born alive or born dead?</p>
           FR: |
-            <p>216-3.  Est-ce que le prochain b&#233;b&#233; de cette grossesse est n&#233; vivant ou mort ?</p>
+            <p>216-~~Q215L~~.  Est-ce que le prochain bébé de cette grossesse est né vivant ou mort ?</p>
   - name: CGIN80.Q217
     conditions:
       - questionText:
           EN: |
             <p>217. Did the baby cry, move, or breathe?</p>
           FR: |
-            <p>217.  Est-ce que le b&#233;b&#233; a cri&#233;, a boug&#233; ou respir&#233; ?</p>
+            <p>217-~~Q215L~~.  Est-ce que le bébé a crié, a bougé ou respiré ?</p>
   - name: CGIN80.Q218
     conditions:
       - questionText:
@@ -440,14 +440,14 @@ questions:
             <p>218. What name was given to the baby?</p>
             <p><span class="instruction">RECORD NAME.</span></p>
           FR: |
-            <p>218.  Quel nom a &#233;t&#233; donn&#233; au b&#233;b&#233; ? </p><p><span class="instruction">INSCRIVEZ LE NOM.</span></p>
+            <p>218-~~Q215L~~.  Quel nom a été donné au bébé ?</p><p><span class="instruction">INSCRIVEZ LE NOM.</span></p>
   - name: CGIN80.Q219
     conditions:
       - questionText:
           EN: |
             <p>219. Is ~~Q218~~ a boy or a girl?</p>
           FR: |
-            <p>219.  ~~Q218(curocc())~~ est-il un gar&#231;on ou une fille&#160;?</p>
+            <p>219-~~Q215L~~.  ~~Q218(curocc())~~ est-il un garçon ou une fille&nbsp;?</p>
   - name: Q220_BLOCK
     conditions:
       - logic: pregtype = 0
@@ -455,13 +455,13 @@ questions:
           EN: |
             <p>220. On what day, month, and year did this pregnancy end?</p>
           FR: |
-            <p>220-2.  Quel jour, quel mois et en quelle ann&#233;e, cette grossesse s&#39;est-elle termin&#233;e ?</p>
+            <p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année, cette grossesse s'est-elle terminée ?</p>
       - logic: pregtype = 1
         questionText:
           EN: |
             <p>220. On what day, month, and year was ~~Q218~~ born?</p>
           FR: |
-            <p>220-1.  Quel jour, quel mois et en quelle ann&#233;e ~~Q218(curocc())~~ est-il/elle n&#233;(e) ?</p>
+            <p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année ~~Q218(curocc())~~ est-il/elle né(e) ?</p>
   - name: CGIN80.Q220D
     conditions:
       - questionText:
@@ -489,7 +489,7 @@ questions:
           EN: |
             <p>221. How long did this pregnancy last in weeks or months?</p>
           FR: |
-            <p>221.  Combien de semaines ou de mois cette grossesse a-t-elle dur&#233;e ?</p>
+            <p>221-~~Q215L~~.  Combien de semaines ou de mois cette grossesse a-t-elle durée ?</p>
   - name: CGIN80.Q221N
     conditions:
       - questionText:
@@ -511,7 +511,7 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
-            <p>222-1.  Avez-vous eu une grossesse qui s&#39;est termin&#233;e depuis la derni&#232;re grossesse que vous avez mentionn&#233;e ?</p>
+            <p>222-1.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
@@ -525,7 +525,7 @@ questions:
             <p>222A. Have you had any pregnancies that ended since the last pregnancy mentioned?</p>
             <p><span class="instruction">IF YES, RECORD PREGNANCY OUTCOMES IN TABLE.</span></p>
           FR: |
-            <p>222A.  Avez-vous eu une grossesse qui s'est terminée depuis la dernière grossesse que vous avez mentionnée ?</p><p><span style="color: rgb(0, 0, 255);">DANS L’AFFIRMATIVE, INSCRIVEZ L’ISSUE DE LA GROSSESSE DANS LE TABLEAU.</span></p>
+            <p>222A-~~Q215L~~.  Avez-vous eu une grossesse qui s'est terminée depuis la dernière grossesse que vous avez mentionnée ?</p><p><span style="color: rgb(0, 0, 255);">DANS L’AFFIRMATIVE, INSCRIVEZ L’ISSUE DE LA GROSSESSE DANS LE TABLEAU.</span></p>
   - name: CGIN80.Q222B
     conditions:
       - questionText:
@@ -541,7 +541,7 @@ questions:
           EN: |
             <p>224. Is ~~Q218(QPLINE)~~ still alive?</p>
           FR: |
-            <p>224.  ~~Q218(curocc())~~ est-il/elle encore en vie&#160;?</p>
+            <p>224-~~QPLINE~~.  ~~Q218(curocc())~~ est-il/elle encore en vie&nbsp;?</p>
   - name: CGIN80.Q225
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -550,21 +550,21 @@ questions:
             <p>225. How old was ~~Q218(QPLINE)~~ at his last birthday?</p>
             <p><span class="instruction">RECORD AGE IN COMPLETED YEARS.</span></p>
           FR: |
-            <p>225-1.  Quel &#226;ge avait ~~Q218(curocc())~~ &#224; son dernier anniversaire&#160;?</p><p><span class="instruction">INSCRIVEZ L&#39;&#194;GE EN ANN&#201;E R&#201;VOLUE.</span></p>
+            <p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
       - logic: Q219(QPLINE) = 2
         questionText:
           EN: |
             <p>225. How old was ~~Q218(QPLINE)~~ at her last birthday?</p>
             <p><span class="instruction">RECORD AGE IN COMPLETED YEARS.</span></p>
           FR: |
-            <p>225-2.  Quel &#226;ge avait ~~Q218(curocc())~~ &#224; son dernier anniversaire&#160;?</p><p><span class="instruction">INSCRIVEZ L&#39;&#194;GE EN ANN&#201;E R&#201;VOLUE.</span></p>
+            <p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
   - name: CGIN80.Q226
     conditions:
       - questionText:
           EN: |
             <p>226. Is ~~Q218(QPLINE)~~ living with you?</p>
           FR: |
-            <p>226.  ~~Q218(curocc())~~ vit-il/elle avec vous&#160;?</p>
+            <p>226-~~QPLINE~~.  ~~Q218(curocc())~~ vit-il/elle avec vous&nbsp;?</p>
   - name: CGIN80.Q227
     conditions:
       - questionText:
@@ -572,7 +572,7 @@ questions:
             <p><span class="instruction">227. RECORD HOUSEHOLD LINE NUMBER OF CHILD (~~Q218(QPLINE)~~)</span></p>
             <p><span class="instruction">RECORD '0' IF CHILD NOT LISTED IN HOUSEHOLD.</span></p>
           FR: |
-            <p><font color="#0000ff">227. ENREGISTRER LE NUMÉRO DE LIGNE DU MÉNAGE DE L’ENFANT (~~Q218(QPLINE)~~)</font></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ « 0 » SI L’ENFANT N’EST PAS INSCRIT DANS LE MÉNAGE.</span></p><p></p>
+            <p><font color="#0000ff">227-~~QPLINE~~</font><span style="color: rgb(0, 0, 255);">. ENREGISTRER LE NUMÉRO DE LIGNE DU MÉNAGE DE L’ENFANT (~~Q218(QPLINE)~~)</span></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ « 0 » SI L’ENFANT N’EST PAS INSCRIT DANS LE MÉNAGE.</span></p><p></p>
   - name: Q228_BLOCK
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -580,13 +580,13 @@ questions:
           EN: |
             <p>228. How old was ~~Q218(QPLINE)~~ when he died?</p>
           FR: |
-            <p>228a1.  Quel &#226;ge avait ~~Q218(curocc())~~ quand il est d&#233;c&#233;d&#233; ?</p>
+            <p>228a-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand il est décédé ?</p>
       - logic: Q219(QPLINE) = 2
         questionText:
           EN: |
             <p>228. How old was ~~Q218(QPLINE)~~ when she died?</p>
           FR: |
-            <p>228b1.  Quel &#226;ge avait ~~Q218(curocc())~~ quand elle est d&#233;c&#233;d&#233; ?</p>
+            <p>228b-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand elle est décédé ?</p>
   - name: CGIN80.Q228N
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -1114,7 +1114,7 @@ questions:
             <p><span class="instruction">PROBE TO IDENTIFY THE TYPE OF SOURCE.</span></p>
             <p><span class="instruction">IF UNABLE TO DETERMINE IF PUBLIC, PRIVATE, OR NGO SECTOR, RECORD '96' AND WRITE THE NAME OF THE PLACE.</span></p>
           FR: |
-            <p>330.  O&#249; avez-vous obtenu ~~ALPHMETH~~ ~~ALPHMETH~~ la derni&#232;re fois&#160;?</p><p><span class="instruction">INSISTEZ POUR D&#201;TERMINER LE TYPE D&#39;ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ D&#201;TERMINER SI L&#39;ENDROIT EST DU SECTEUR PUBLIC, PRIV&#201;, OU UNE ONG, ENREGISTREZ &#39;96&#39; ET &#201;CRIVEZ LE NOM DE L&#39;ENDROIT.</span></p>
+            <p>330.  Où avez-vous obtenu ~~ALPHMETH~~ la dernière fois&nbsp;?</p><p><span class="instruction">INSISTEZ POUR DÉTERMINER LE TYPE D'ENDROIT.</span></p><p><span class="instruction">SI VOUS NE POUVEZ DÉTERMINER SI L'ENDROIT EST DU SECTEUR PUBLIC, PRIVÉ, OU UNE ONG, ENREGISTREZ '96' ET ÉCRIVEZ LE NOM DE L'ENDROIT.</span></p>
   - name: CGIN80.Q331
     conditions:
       - questionText:

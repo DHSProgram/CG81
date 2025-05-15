@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.7
+Version=CSPro 8.0
 Name=FL_CGHH80
 Label=Household CAPI
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0178 0003 0002 0001 0034 Arial
@@ -505,7 +505,7 @@ Name=FORM008
 Label=Weight, Height and Hemoglobin Measurement for Women
 QuestionTextHeight=118
 Level=1
-Size=1047,1126
+Size=1048,1126
   
 Item=QBSEC02_ROSTER
   
@@ -1377,6 +1377,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=Nom
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [EndColumn]
@@ -1400,6 +1401,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=Prenom
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 HorizontalAlignment=Center
  
 [EndColumn]
@@ -2495,6 +2497,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH26
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2515,6 +2518,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH27
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2535,6 +2539,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH28
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2555,6 +2560,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH29
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2575,6 +2581,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH30
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2595,6 +2602,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH31
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2615,6 +2623,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH32
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2635,6 +2644,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH33
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2655,6 +2665,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH34
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -2675,6 +2686,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH35
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -4486,6 +4498,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH143
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -4507,6 +4520,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH144
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -4618,6 +4632,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QH147
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5270,7 +5285,7 @@ Required=No
 Type=Record
 TypeName=QBSEC01
 Max=20
-DisplaySize=1,43,869,1203
+DisplaySize=1,43,869,1139
 Orientation=Vertical
 ColumnWidth=80
 StubColumnWidth=69
@@ -5476,6 +5491,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QCAUXIL
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5550,6 +5566,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,51,20
 Text=QB104
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5588,6 +5605,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,319,16
 Text=Weight in kilograms - working field for re-entering
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5608,6 +5626,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB107
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5644,6 +5663,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,327,16
 Text=Height in centimeters - working field for re-entering
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5665,6 +5685,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB109D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB109M
@@ -5676,6 +5697,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB109M
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB109Y
@@ -5687,6 +5709,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB109Y
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5732,6 +5755,7 @@ DataCaptureType=TextBox
 [Text]
 Position=0,0,51,20
 Text=QB112
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5739,7 +5763,7 @@ Text=QB112
 Width=28
   
 [HeaderText]
-Position=22,4,69,28
+Position=22,0,69,28
 Text=QB113
  
 [Field]
@@ -5752,6 +5776,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB113
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5773,6 +5798,7 @@ DataCaptureType=RadioButton
 [Text]
 Position=23,96,69,120
 Text=QB114
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 VerticalAlignment=Top
  
 [EndColumn]
@@ -5795,6 +5821,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB115
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5815,6 +5842,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB116
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5882,43 +5910,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB121
- 
-[EndColumn]
-  
-[Column]
-Width=64
-  
-[HeaderText]
-Position=21,0,69,64
-Text=QB123
-VerticalAlignment=Top
- 
-[Field]
-Name=QB123
-Position=15,0,72,20
-Item=QB123,CGHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-DataCaptureType=ComboBox
-  
-[Text]
-Text=QB123
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=QB123W
-Position=15,24,72,44
-Item=QB123W,CGHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
-FieldLabelType=DictionaryLabel
-DataCaptureType=ComboBox
-  
-[Text]
-Position=0,0,339,16
-Text=Hemoglobin level (g/dl) - working field for re-entering
  
 [EndColumn]
   
@@ -5939,6 +5931,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB124
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -5960,6 +5953,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125A
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125B
@@ -5971,6 +5965,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125B
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125C
@@ -5982,6 +5977,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125C
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125D
@@ -5993,6 +5989,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125E
@@ -6004,6 +6001,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125E
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125F
@@ -6015,6 +6013,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125F
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125G
@@ -6026,6 +6025,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125G
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB125H
@@ -6037,6 +6037,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB125H
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6057,6 +6058,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB127
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6077,6 +6079,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB128
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6097,6 +6100,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB131
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6117,6 +6121,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB132
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6139,6 +6144,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,77,20
 Text=QB135D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB135M
@@ -6151,6 +6157,7 @@ DataCaptureType=RadioButton
 [Text]
 Position=0,0,79,20
 Text=QB135M
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB135Y
@@ -6163,6 +6170,7 @@ DataCaptureType=RadioButton
 [Text]
 Position=0,0,76,20
 Text=QB135Y
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6184,14 +6192,14 @@ Length=3
 Name=QB125_BLOCK
 Label=Malaria symptoms
 DisplayTogether=Yes
-Position=29
+Position=27
 Length=8
   
 [Block]
 Name=QB135_BLOCK
 Label=Date measurement for malaria
 DisplayTogether=Yes
-Position=42
+Position=40
 Length=3
   
 [EndGrid]
@@ -6213,7 +6221,7 @@ Required=No
 Type=Record
 TypeName=QBSEC02
 Max=20
-DisplaySize=24,45,1022,1101
+DisplaySize=25,45,1023,1101
 Orientation=Vertical
 ColumnWidth=93
 StubColumnWidth=113
@@ -6345,6 +6353,7 @@ DataCaptureType=TextBox
 [Text]
 Position=0,0,53,16
 Text=QBCOL2
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6368,6 +6377,7 @@ DataCaptureType=TextBox
 [Text]
 Position=0,0,42,16
 Text=QB202
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6390,6 +6400,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QWAUXIL
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6411,6 +6422,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB203
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6432,6 +6444,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB204
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6453,6 +6466,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB205
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB205W
@@ -6467,6 +6481,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,323,16
 Text=Weight in kilograms - working field for re-entering
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6487,6 +6502,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB206
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6508,6 +6524,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB207
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB207W
@@ -6522,6 +6539,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,327,16
 Text=Height in centimeters - working field for re-entering
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6543,6 +6561,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB211D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB211M
@@ -6554,6 +6573,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB211M
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB211Y
@@ -6565,6 +6585,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB211Y
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6585,6 +6606,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB208
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6606,6 +6628,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB209
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6626,6 +6649,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB210
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6648,6 +6672,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB214
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6667,6 +6692,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB215
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6687,6 +6713,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB216
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6707,6 +6734,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB217
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6727,6 +6755,49 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB219
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,4,113,28
+Text=QB220
+ 
+[Field]
+Name=QB220
+Position=29,0,86,20
+Item=QB220,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=TextBox
+  
+[Text]
+Text=QB220
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[EndColumn]
+  
+[Column]
+Width=28
+  
+[HeaderText]
+Position=65,0,113,28
+Text=QB221
+ 
+[Field]
+Name=QB221
+Position=57,0,86,20
+Item=QB221,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+  
+[Text]
+Text=QB221
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6749,46 +6820,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB222
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=65,4,113,28
-Text=QB220
- 
-[Field]
-Name=QB220
-Position=29,0,86,20
-Item=QB220,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-  
-[Text]
-Text=QB220
- 
-[EndColumn]
-  
-[Column]
-Width=28
-  
-[HeaderText]
-Position=65,0,113,28
-Text=QB221
- 
-[Field]
-Name=QB221
-Position=57,0,86,20
-Item=QB221,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-  
-[Text]
-Text=QB221
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6811,6 +6843,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB223
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 VerticalAlignment=Middle
  
 [EndColumn]
@@ -6834,28 +6867,27 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB226
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
 [Column]
-Width=33
+Width=28
   
 [HeaderText]
-Position=57,0,113,33
+Position=65,4,113,28
 Text=QB227
-VerticalAlignment=Middle
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB227
 Position=29,0,86,20
 Item=QB227,CGHH80
-UseEnterKey=Yes
-Verify=No
-UpperCase=Yes
 DataCaptureType=TextBox
   
 [Text]
 Text=QB227
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6876,6 +6908,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB228
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6883,19 +6916,19 @@ Text=QB228
 Width=28
   
 [HeaderText]
-Position=65,4,113,28
+Position=65,0,113,28
 Text=QB229
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB229
 Position=29,0,86,20
 Item=QB229,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
 DataCaptureType=TextBox
   
 [Text]
 Text=QB229
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6916,6 +6949,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB231
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6925,17 +6959,17 @@ Width=28
 [HeaderText]
 Position=65,4,113,28
 Text=QB232
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB232
 Position=29,0,86,20
 Item=QB232,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
 DataCaptureType=TextBox
   
 [Text]
 Text=QB232
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6956,6 +6990,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB234
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6976,6 +7011,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB235
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -6996,6 +7032,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB237
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7016,6 +7053,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB238
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7037,6 +7075,7 @@ DataCaptureType=CheckBox
 [Text]
 Position=0,0,42,16
 Text=QB239
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7060,6 +7099,7 @@ DataCaptureType=RadioButton
 [Text]
 Position=0,0,76,20
 Text=QB240
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7080,6 +7120,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB241
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7100,6 +7141,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB242
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7120,6 +7162,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB241A
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7140,6 +7183,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB242A
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7160,6 +7204,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB244
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7344,6 +7389,7 @@ DataCaptureType=TextBox
 [Text]
 Position=0,0,53,16
 Text=QBCOL3
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7367,6 +7413,7 @@ DataCaptureType=TextBox
 [Text]
 Position=0,0,42,16
 Text=QB302
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7389,6 +7436,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QMAUXIL
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7410,6 +7458,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB303
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7431,6 +7480,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB304
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7452,6 +7502,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB305
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB305W
@@ -7466,6 +7517,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,319,16
 Text=Weight in kilograms - working field for re-entering
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7486,6 +7538,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB306
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7508,6 +7561,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,42,16
 Text=QB307
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB307W
@@ -7522,6 +7576,7 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,327,16
 Text=Height in centimeters - working field for re-entering
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7543,6 +7598,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB311D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB311M
@@ -7554,6 +7610,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB311M
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [Field]
 Name=QB311Y
@@ -7565,6 +7622,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB311Y
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7585,6 +7643,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB308
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7606,6 +7665,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB309
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7626,6 +7686,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB310
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7648,6 +7709,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB314
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7667,6 +7729,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB315
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7687,6 +7750,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB316
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7707,6 +7771,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB317
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7727,6 +7792,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB319
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7747,6 +7813,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB320
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7767,6 +7834,7 @@ DataCaptureType=ComboBox
   
 [Text]
 Text=QB321
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7789,6 +7857,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB322
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7812,6 +7881,7 @@ DataCaptureType=TextBox
 [Text]
 Position=0,0,52,16
 Text=QB323
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7834,6 +7904,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB326
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7856,6 +7927,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB327
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7876,6 +7948,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB328
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7896,6 +7969,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB329
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7916,6 +7990,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB331
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7936,6 +8011,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB332
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7956,6 +8032,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB334
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7976,6 +8053,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB335
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -7996,6 +8074,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB337
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8016,6 +8095,7 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB338
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8037,6 +8117,7 @@ DataCaptureType=CheckBox
 [Text]
 Position=0,0,42,16
 Text=QB339
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8060,6 +8141,7 @@ DataCaptureType=RadioButton
 [Text]
 Position=0,0,59,16
 Text=QB340
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8080,6 +8162,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB341
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8100,6 +8183,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB342
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8120,6 +8204,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB341A
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8140,6 +8225,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB342A
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   
@@ -8160,6 +8246,7 @@ DataCaptureType=RadioButton
   
 [Text]
 Text=QB344
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
   

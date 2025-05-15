@@ -257,12 +257,7 @@
 
 { @@@ End Height/Weight and Hemoglobin testing for Children }
 
-PROC QH155
-  if $ = 6 then
-    getother( GetSymbol(), 0 );
-    enter FL_OTHERS
-  endif;
-
+  
 PROC QHNUMDV
 preproc
   numeric oldvdv = visualvalue($);
@@ -661,6 +656,21 @@ preproc
   $ = curocc();
   SaveData();
 
+PROC QHLASTN
+  { Check that response is alphabetic and starts in the first column }
+  if !pos( $[1:1], strip(alphalst) ) then
+    errmsg( 89991 ) select( tr("Last name"), $ );
+  endif;
+  
+  { store household head name to use in dictionary postproc }
+  if curocc() = 1 then
+    yname = strip(QHFIRSTN) + " " + strip($);
+  endif;
+
+  if android then
+    setocclabel(QHSEC1X_ROSTER(curocc()),strip(QHFIRSTN) + " " + strip($));
+  endif;
+
 PROC QHFIRSTN
 preproc
   { gets household head name from households assignment file }
@@ -679,21 +689,6 @@ postproc
   { Check that response is alphabetic and starts in the first column }
   if !pos( $[1:1], strip(alphalst) ) then
     errmsg( 89991 ) select( tr("Name"), $ );
-  endif;
-
-PROC QHLASTN
-  { Check that response is alphabetic and starts in the first column }
-  if !pos( $[1:1], strip(alphalst) ) then
-    errmsg( 89991 ) select( tr("Last name"), $ );
-  endif;
-  
-  { store household head name to use in dictionary postproc }
-  if curocc() = 1 then
-    yname = strip(QHFIRSTN) + " " + strip($);
-  endif;
-
-  if android then
-    setocclabel(QHSEC1X_ROSTER(curocc()),strip(QHFIRSTN) + " " + strip($));
   endif;
 
 PROC QHRELAT
@@ -837,16 +832,19 @@ postproc
 
 PROC QH07A
   if $ = 1 then
+    $ = notappl;
     reenter QHMORE( totocc(QHSEC1X_ROSTER) );
   endif;
 
 PROC QH07B
   if $ = 1 then
+    $ = notappl;
     reenter QHMORE( totocc(QHSEC1X_ROSTER) );
   endif;
 
 PROC QH07C
   if $ = 1 then
+    $ = notappl;
     reenter QHMORE( totocc(QHSEC1X_ROSTER) );
   endif;
 
@@ -1114,6 +1112,34 @@ preproc
   endif;
 
 { @@@ Begining of Child Labor Module }
+PROC QCHLINE
+preproc
+  numeric oldvch = visualvalue($);
+  chlabor = count( QHSEC01_ROSTER where QH07 in 5:17 & QH05 = 1 );
+  if !chlabor then
+    endgroup
+  elseif oldvch in notappl,0 | !QH07(oldvch) in 5:17 | !QH05(oldvch) = 1 then
+    xchild = random( 1, chlabor );
+    p = 0;
+    for i in QHSEC01_ROSTER do
+      if QH07 in 5:17 & QH05 = 1 then
+        p = p + 1;
+        if p = xchild then
+          $ = QH01;
+          break;
+        endif;
+      endif;
+    enddo;
+  endif;
+
+postproc
+  QCHLNAME = QH02($);
+  hisher = tr("her"); if QH04($) = 1 then hisher = tr("his") endif;
+  daysince = CDCode(QHINTY, QHINTM, QHINTD) - CDCode(survyear, 1, 1);
+  xday     = (daysince%7) + firstday;
+  if xday > 7 then xday = xday - 7 endif; 
+  dayalpha = DaysWeek(xday);
+  
 PROC QCHL2A
 preproc
   if demode() = add & !inAdvance() then
@@ -1147,34 +1173,6 @@ preproc
 { @@@ End of Child Labor Module }
 
 { @@@ Begining of Child Discipline Module }
-PROC QCHLINE
-preproc
-  numeric oldvch = visualvalue($);
-  chlabor = count( QHSEC01_ROSTER where QH07 in 5:17 & QH05 = 1 );
-  if !chlabor then
-    endgroup
-  elseif oldvch in notappl,0 | !QH07(oldvch) in 5:17 | !QH05(oldvch) = 1 then
-    xchild = random( 1, chlabor );
-    p = 0;
-    for i in QHSEC01_ROSTER do
-      if QH07 in 5:17 & QH05 = 1 then
-        p = p + 1;
-        if p = xchild then
-          $ = QH01;
-          break;
-        endif;
-      endif;
-    enddo;
-  endif;
-
-postproc
-  QCHLNAME = QH02($);
-  hisher = tr("her"); if QH04($) = 1 then hisher = tr("his") endif;
-  daysince = CDCode(QHINTY, QHINTM, QHINTD) - CDCode(survyear, 1, 1);
-  xday     = (daysince%7) + firstday;
-  if xday > 7 then xday = xday - 7 endif; 
-  dayalpha = DaysWeek(xday);
-  
 PROC QCDI2
 preproc
   numeric oldvch = visualvalue($);
@@ -2078,28 +2076,6 @@ PROC QB121
     skip to QB135D
   endif;	
 
-PROC QB123
-onfocus
-  set attributes( $ ) native;
-
-postproc
-  if QB120 <> 1 & !$ in 99.3:99.8,missing then
-    errmsg( 0470, QB120, QB123 )
-      select( tr("Consent"), QB120, tr("Hemoglobin"), $ );
-  endif;
-  { check implausible hemoglobin levels }
-  if $ in 0.0:1.99,25.6:98.0 then
-    warning( 0473, $ ) select( tr("Hemoglobin"), $, tr("Continue"), continue );
-  endif;
-  if !$ in 99.0:99.8 then
-    set attributes( $ ) hidden;
-  endif;
-
-PROC QB123W
-  if QB123 <> $ then
-    errmsg( 0474 ) select( tr("Hemoglobin"), QB123 ); 
-  endif;
-  
 PROC QB124
 preproc
   ask if QB120 = 1;
@@ -2113,16 +2089,14 @@ PROC QB127
 preproc
   if 1 in QB125A, QB125B, QB125C, QB125D, QB125E, 
           QB125F, QB125G, QB125H then 
-    skip to QB124
+    skip to QB128
   endif;
 
 postproc
-  if QB123 < 8 then
-    skip to QB124
-  endif;	
+  skip to QB135D;
 
 PROC QB128
-  if $ = 1 then
+  if $ <> 1 then
     skip to QB131
   endif;	
 

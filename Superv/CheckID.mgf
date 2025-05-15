@@ -135,7 +135,7 @@ language = ES
 50505 Hogar=%04d individual=%02d no se encuentra como elegible en ningun hogar. Lo recolecto la entrevistadora=%04d
 
 Language = FR
-  FR ( "Status Messages" ) 
+  FR ( "Status Messages" ) Messages
   FR ("Household: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%") Ménages: Total=%02d Complète=%02d Incomplèt=%02d Taux de réponse: %02d%
   FR ("Women: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%") Femmes: Total=%02d Complèt=%02d Incomplèt=%02d Taux de réponse: %02d%
   FR ("Men: Total=%02d Complete=%02d Incomplete=%02d Response rate: %02d%") Hommes: Total=%02d Complèt=%02d Incomplèt=%02d Taux de réponse: %02d%

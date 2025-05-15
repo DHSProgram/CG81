@@ -19,6 +19,17 @@
   FR ( "Sending assignment and household do team leader" ) Envoi de l'affectation ainsi que des ménages au chef d'équipe
   FR ( "Sending Upgrades" ) Envoi de la mise à jour
   FR ( "Sending Children for Remeasurement" ) Envoi de la liste des enfants pour la remesure
+  FR    ("Duplicate cases report") Rapport sur les cas en double
+  FR    ("Duplicated cases") Cas dupliqués
+  FR    ("Please resolve the duplicated cases listed above before continuing") Veuillez résoudre les cas en double répertoriés ci-dessus avant de continuer
+  FR    ("Household") Ménage
+  FR    ("Line") Ligne
+  FR    ("Interviewer") Code d'enq.
+  FR    ("Result") Résultat
+  FR    ("Status") Status
+
+
+
   
 { common strings used by the application }
   ES ( "Do you want to register transmittal sheets for HIV or Malaria?" ) Desea registrar hojas de transmision para VIH o Malaria?

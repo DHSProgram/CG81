@@ -342,7 +342,7 @@ PROC GLOBAL
   end;
 
   { constructs PFF file to assign HOUSEHOLDs to interviewers in the cluster }
-  function AssignHH(split = 0)
+  function AssignHH(splithh = 0)
     InitPFF();
     FileWrite( piffile, "StartMode=MODIFY;" + edit("9999",WCLUSTER) );
     FileWrite( piffile, "Lock=CaseListing" );
@@ -361,7 +361,7 @@ PROC GLOBAL
 
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + edit("99",steam) + edit("9", split) );
+    FileWrite( piffile, "Parameter=" + edit("99",steam) + edit("9", splithh) );
     FileWrite( piffile, "OnExit=.\SupMenu.pff" );
     close( piffile );
   end;
@@ -663,32 +663,7 @@ PROC GLOBAL
     FileConcat( final + "\N" + xcluster + ".CSNOT",
                receive + "\?" + xcluster + "????.DAT.csnot" );
   end;
-  function FileChanged (string filetocheck);
-    // uses md5 checksum to determine if a file has changed
-    // return values: 0: not changed 1: changed 2: new file
-    // requires MD5 file to have been opened prior to calling the function
-    numeric md5res = 0;
-    string file_path = strip(filetocheck);
-    string MD5_Value = diagnostics("md5",file_path); // generate md5 hash for the file
-    if FileExist(filetocheck) then // check file exists first !!!
-      open(MD5);
-      FILE_NAME = path.GetFileName(file_path); // get file name for lookup
-      found = loadcase(MD5,FILE_NAME);        // look up file in md5 database
-      if !found then  // new file
-        md5res = 2;
-      elseif MD5CODE <> MD5_Value then  // existing file but changed
-        md5res = 1;
-      else                             // existing file, not changed
-        md5res = 0;
-      endif;
-      if md5res then // if changed/new we update the MD5 database
-        MD5CODE= MD5_Value ;
-        writecase(MD5);
-      endif;
-      close(MD5);
-    endif;
-    FileChanged = md5res;
-  end;
+
   { receive data from interviewer using bluetooth }
   function recvdata (xint);
     set trace(on);
@@ -1502,7 +1477,7 @@ PROC FL_MENU
 PreProc
   if debug then
     // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
-    trace(on, ".\debug.app", clear);
+    trace(on, ".\debug.apc", clear);
 //  trace(on);
     set trace;
   endif;
@@ -1840,7 +1815,7 @@ onfocus
     SendData_CSW();
   endif;
   
-
+      SmartPut(receive, "*.dat;*.sts", CSWebSurvey + "Final");
   // get system version 
   sysver = getver( wrkref + "/version.txt" );
   { set up string to display version numbers at top of menu } 
@@ -1848,21 +1823,18 @@ onfocus
     heading = maketext("Supervisor %4d: %s: Cluster %s [%s] " , WSUPER, getbluetoothname(), xcluster , versiontxt) ;
     codes.clear();
     codes.add( "1 Affecter les ménages pour une grappe",01);
-//     codes.add( "2 Envoyer l'affectation des ménages aux enquêteurs/trices",02);
-//     codes.add( "3 Recevoir les données de l’enquêteur(trice)/Biomarqueur",03);
     codes.add( "3 Synchroniser les données avec un enquêteur/trice",03);
     codes.add( "4 Lister les données de l’enquêteur(trice)/Biomarqueur",04);
-    codes.add( "5 Revoir Questionnaires ménages",05);
-    codes.add( "6 Revoir Questionnaires individuels",06);
-    codes.add( "7 Fermer/Enumérer la grappe",07);
+    codes.add( "5 Revoir questionnaires ménages",05);
+    codes.add( "6 Revoir questionnaires individuels",06);
+    codes.add( "7A Rapport du status de la grappe",07);
+    codes.add( "7B Fermer/Enumérer la grappe",10);
     codes.add( "8 Transférer des données au bureau central",08);
     codes.add( "9 Lister des notes de la grappe",09);
-    codes.add( "U Envoyer les mises à jour aux enquêteurs",10);
     codes.add( "R Remesure de la taille et du poids",11);
     codes.add( "I ---Menu re-interview---",12);
     codes.add( "C Changer de numéro de grappe",13);
     codes.add( "D ---Autre------",14);
-    codes.add( "Q Questionnaires Pratique",15);
     codes.add( "E Quitter le système",16);
     setvalueset($, codes);
 postproc 
@@ -1942,14 +1914,11 @@ postproc
  elseif action = 6 then
     hhtoget = 0;
     review_ind();
-  elseif action = 7 then       { close or list a cluster }
-      option =  accept("Selectionnez l'option", 
-                " 1. Rapport de l'état de travail de la grappe", 
-                " 2. Fermer la grappe",
-                " 9. Annuler "
-                );
-
-    if option in 1:2 then
+  elseif action in 7,10 then       { close or list a cluster }
+      recode action -> option;
+                  7 -> 1;
+                 10 -> 2;
+      endrecode;
       if anyfiles(1) then         { check if hh files has been transferred to supervisor }
         { check for duplicated HOUSEHOLDs, individuals and biomarkers }
         collapse();
@@ -1968,7 +1937,6 @@ postproc
       else
         errmsg( 080, xcluster );
       endif; // anyfiles
-    endif;  // option in 1,2
   elseif action = 8 then        { create file to transfer to central office }
     SendData_CSW();
     AppName = "./SUPMENU";

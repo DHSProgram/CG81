@@ -908,12 +908,17 @@ Language = FR
   FR ( "Last name" ) Nom
   FR ( "First name" ) Prénom
   FR ( "Relation" ) Relation
-  FR ( "Sex" ) Sexe
+  FR ("Initial Outcome") Résultat de la grossesse Initial (Q216)
+  FR ("Final Outcome") Résultat de la grossesse Finale (Q223)
+  FR ("Live Mother") Vit avec sa mère
+  FR ( "Boy" ) Garçon
+  FR ( "Girl" ) Fille
   FR ( "Age" ) Age
   FR ( "Day" ) Jour   
   FR ( "Month" ) Mois   
   FR ( "Year" ) Année
   FR ( "Alive" ) Vivant
+  FR ( "Dead" ) Décédé(e)
   FR ( "Liv Moth" ) Vit avec mère
   FR ( "Line" ) Ligne
   FR ( "Y-D" ) A-D
@@ -947,6 +952,7 @@ Language = FR
   FR ( "Pregnancy losses" ) Pertes de grossesse
   FR ( "Boys" ) Fils
   FR ( "Girls" ) Filles
+  FR ( "Move pregnancy" ) Déplacez la grossesse
   FR ( "Reorder, remove or add children as necessary" ) Réordonner, supprimer ou ajouter des enfants si nécessaire
   FR ( "First child" ) Premier enfant
   FR ( "Boys at home" ) Fils à la maison
@@ -1017,6 +1023,16 @@ Language = FR
   FR ( "Date of birth in pregnancy history" ) Date de naissance dans l’historique des grossesses
   FR ( "Select the pregnancy to move the current pregnancy before" ) Sélectionnez la grossesse avant laquelle la grossesse actuelle sera positionnée
   FR ( "Yes, move the pregnancy of %s in %s %d before the pregnancy of %s in %s %d") Oui, déplacez la grossesse de %s en %s %d avant la grossesse de %s en %s %d
+  FR ( "Correct the number of pregnancies in Q201-Q212" ) Corrigez le total des grossesses citée dans Q201-Q212
+  FR ( "Continue to pregnancy history to remove the incorrect pregnancy" ) Avançez à l'historique des naissances pour enlèver le grossesse qui n'est pas correcte
+  FR ( "Date of birth/end of pregnancy" ) Date de naissance/fin de la grossesse
+  FR ( "Pregnancy inserted" ) Grossesse inserée
+  FR ( "Pregnancy deleted" ) Grossesse supprimée
+  FR ( "Pregnancy moved" ) Grossesse déplacée
+  FR ( "Yes, delete the pregnancy of %s in %s %d" ) Oui, supprimér la nassance de %s en %s %d
+  FR ( "No, make no change" ) Non, fait aucun changement
+  FR ( "No change made" ) Aucun changement fait
+  FR ( "Select the pregnancy to move the current pregnancy before" ) Choississez la grossesse avant lequelle vous voulez insérez la grossesse courante
   FR ( "Date tested positive" ) Date testé(e) positif(ve)
   FR ( "Date tested positive" ) Date testé(e) positif(ve)
   FR ( "Duration of pregnancy" ) Durée de la grossesse
@@ -1065,7 +1081,7 @@ Language = FR
   FR ( "his" ) il
   FR ( "Do you want to take another picture of the document" ) Voulez-vous prendre une autre photo du document
   FR ( "Add pregnancy after last pregnancy" ) Ajouter une grossesse après la dernière grossesse
-  FR ( "Insert pregnancy before current pregnancy" ) Insérer la grossesse avant la grossesse actuelle
+  FR ( "Insert pregnancy before current pregnancy" ) Insérer une nouvelle grossesse avant la grossesse actuelle
   FR ( "Delete current pregnancy" ) Supprimer la grossesse actuelle
   FR ( "Move current pregnancy" ) Déplacer la grossesse actuelle
   FR ( "Show pregnancies" ) Afficher les grossesses
@@ -1297,6 +1313,7 @@ language = FR
  2030 E Le nombre de garçons et de filles doit être supérieur à zéro
  2080 E Nombre d'enfants nés incorrect
  2090 E Insister et corriger 201-208 si nécessaire
+ 2100 E Nombre des grossesses déjà enregistrées (%d) dépasse le nombre cité dans Q212 (%d). Corrigez le nombre des grossesses cités dans Q201-Q212 ou supprimez la grossesse incorrecte dans l'historique de grossesses
  2120 E Code de naissance multiple incorrect
  2121 W Idéalement le résultat des naissances multiples devraient être le même, assurez-vous que c'est correct 
  2122 E Grossesses multiples, mais un seul résultat de grossesse Q212W=%d

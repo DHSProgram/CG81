@@ -1,48 +1,115 @@
-﻿[CSPro Application]
-Version=CSPro 7.7
-Label=COLLECTHH
-Name=COLLECTHH
-AppType=DataEntry
-OperatorID=No
-ShowEndCaseDialog=No
-PartialSave=Yes
-CAPI=Yes
-CenterForms=Yes
-DisplayCodesAlongsideLabels=Yes
-ShowFieldLabels=No
-ShowRefusals=No
-VerifyFrequency=1
-VerifyStart=RANDOM
-ParadataCollection=SomeEvents
-ParadataRecordValues=Yes
-ParadataRecordCoordinates=Yes
-ParadataDeviceStateMinutes=5
-ParadataGpsLocationMinutes=5
-ParadataCollectEvent=field_entry_event
-ParadataCollectEvent=field_movement_event
-ParadataCollectEvent=gps_event
-ParadataCollectEvent=language_change_event
-ParadataCollectEvent=message_event
-[External Dictionaries]
-File=..\Dicts\Clusters.dcf
-File=..\Dicts\HHForInt.dcf
-File=..\Dicts\CGIN80.dcf
-File=..\Dicts\Interv.dcf
-[AppCode]
-File=.\CollectHH.apc
-Include=..\Library\DPCollect.apc
-Include=..\Library\EntryFunctions.apc
-[Message]
-File=.\CollecTot.mgf
-[Help]
-File=.\CollectHH.qsf
-[Forms]
-File=.\CGHH80.fmf
-File=.\Others.fmf
-[Dictionary Types]
-Dict-Type=..\Dicts\Clusters.dcf,External
-Dict-Type=..\Dicts\HHForInt.dcf,External
-Dict-Type=..\Dicts\Others.dcf,External,.\Others.fmf
-Dict-Type=..\Dicts\CGHH80.dcf,Input,.\CGHH80.fmf
-Dict-Type=..\Dicts\CGIN80.dcf,External
-Dict-Type=..\Dicts\Interv.dcf,External
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "COLLECTHH", 
+  "label": "COLLECTHH", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../Dicts/CGHH80.dcf", 
+      "parent": "CGHH80.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Others.dcf", 
+      "parent": "Others.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Clusters.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/HHForInt.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGIN80.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Interv.dcf"
+    }
+  ], 
+  "forms": [
+    "CGHH80.fmf", 
+    "Others.fmf"
+  ], 
+  "questionText": [
+    "CollectHH.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "CollectHH.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/DPCollect.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/EntryFunctions.apc"
+    }
+  ], 
+  "messages": [
+    "CollecTot.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": false, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "mobileOnly", 
+    "centerForms": true, 
+    "createListing": true, 
+    "createLog": true, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": true, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": true
+    }, 
+    "showEndCaseMessage": false, 
+    "showOnlyDiscreteValuesInComboBoxes": false, 
+    "showFieldLabels": false, 
+    "showErrorMessageNumbers": true, 
+    "showQuestionText": true, 
+    "showRefusals": false, 
+    "verify": {
+      "frequency": 1, 
+      "start": "random"
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "partial", 
+      "events": [
+        "field_entry_event", 
+        "field_movement_event", 
+        "gps_event", 
+        "language_change_event", 
+        "message_event"
+      ], 
+      "recordCoordinates": true, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": true, 
+      "deviceStateIntervalMinutes": 5, 
+      "gpsLocationIntervalMinutes": 5
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

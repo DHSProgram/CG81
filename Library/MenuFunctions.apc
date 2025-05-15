@@ -61,8 +61,6 @@
     //        checktype - 1 : hh 2: INDIVIDUAL
     //        autodelete : if set to 1 function will delete 1st dup case in pair and not display msgs
     //                      use this flag when running fct tables from reeive
-    FILE DUPREPORT;
-    setfile(DUPREPORT,"duplicates.txt", create);
     hashmap case_ids default(0);
     list string filelisting;
     list string templist;
@@ -71,6 +69,31 @@
     string partialcase;
     numeric ctr, fctr, dres;
     numeric dupfound = 0;
+
+    { set the name for the HTML file }
+    HTML_InitAlign();
+    HTMLname = "DupReport.html";
+    if FileExist( HTMLname ) then
+      FileDelete( HTMLname )
+    endif;
+    setfile( HTMLFile, HTMLname, create );
+
+    { initialize the report headings }
+    zstring1 = MakeText( tr("Duplicate cases report"), zcluster );
+    CellValues(1) = tr("Household");
+    CellValues(2) = tr("Line");
+    CellValues(3) = tr("Interviewer");
+    CellValues(4) = tr("Result");
+    CellValues(5) = tr("Status");
+
+  { specify columns that are left aligned, strings are left aligned }
+  CellAlign(1) = 4;
+  CellAlign(2) = 5;
+
+   // !! adding application specific javascript to html output
+   HTML_Header( CellAlign, zstring1);  // generates a general HTML header
+   HTML_BeginTable( CellValues, tr( "Duplicated cases" ), 5, "Main" );  // generates the HTML table script with the column headers
+
     // create list of files to check
     do ctr = 1 while ctr <= wdir.length()
       dirlist(templist, wdir(ctr) , "HI"[checktype:1] + str_cluster + "????.DAT");
@@ -105,21 +128,22 @@
       // errmsg("%s : %d", caseidlist(ctr), case_ids(caseidlist(ctr)) );
       if case_ids(caseidlist(ctr)) > 1 then
         dupfound = 1;
-        if checktype = 1 then
-          DUPREPORT.write(maketext("HOUSEHOLD %4s is duplicated\n", caseidlist(ctr)[5:4]));
-        else
-          DUPREPORT.write( maketext("INDIVIDUAL line %s in HOUSEHOLD %04s is duplicated\n", caseidlist(ctr)[9:2], caseidlist(ctr)[5:4]) );
-        endif;
         do fctr = 1 while fctr <= fileListing.length()
           if checktype = 1 then
             SetFile(CGHH80, fileListing(fctr), update);
             if loadcase(CGHH80, caseidlist(ctr) ) then
               if partialcs( 1, QHCLUST, QHNUMBER, 0, fileListing(fctr)  ) then
-                partialcase = "-Partial case"
+                partialcase = tr( "Partial" )
               else
-                partialcase = ""
+                partialcase = tr( "Complete" )
               endif;
-              DUPREPORT.write ( maketext("Case created by RA %4d, Result =%s (%1d) %s\n File:%s\n ", QHINTNUM, getlabel(QHRESULT, QHRESULT), QHRESULT, partialcase, fileListing(fctr)) );
+              CellValues(1) = caseidlist(ctr)[5:4];
+              CellValues(2) = "BLANK";
+              CellValues(3) = edit("9999", QHINTNUM);
+              CellValues(4) = getlabel(QHRESULT, QHRESULT);
+              CellValues(5) = partialcase;
+              HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+              // HTMLFile.write ( maketext("Case created by interviewer %4d, Result =%s (%1d) %s\n File:%s\n ", QHINTNUM, getlabel(QHRESULT, QHRESULT), QHRESULT, partialcase, fileListing(fctr)) );
               if autodelete then
                 dres= delcase(CGHH80, caseidlist(ctr));
                 // errmsg("dres=%d, fname=%s, case=%s", dres, fileListing(fctr), caseidlist(ctr));
@@ -131,11 +155,16 @@
             if loadcase(CGIN80, caseidlist(ctr) ) then
               // if ckpartial(caseidlist(ctr), fileListing(fctr)) then
               if partialcs( 2, QCLUSTER, QNUMBER, QLINE, fileListing(fctr)  ) then
-                partialcase = "-Partial case"
+                partialcase = tr( "Partial" )
               else
-                partialcase = ""
+                partialcase = tr( "Complete" )
               endif;
-              DUPREPORT.write( maketext("Case created by RA %4d, %s Auestionaire, %s, Result =%s (%1d) %s\n File:%s\n", QINTNUM, GetLabel(QQTYPE, QQTYPE), strip( QNAME ), getlabel(QRESULT, QRESULT), QRESULT, partialcase, fileListing(fctr)) );
+              CellValues(1) = caseidlist(ctr)[5:4];
+              CellValues(2) = caseidlist(ctr)[9:2];
+              CellValues(3) = edit("9999", QINTNUM);
+              CellValues(4) = getlabel(QRESULT);
+              CellValues(5) = partialcase;
+              HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
               if autodelete then
                 dres = delcase(CGIN80, caseidlist(ctr));
                 // errmsg("dres=%d, fname=%s, case=%s", dres, fileListing(fctr), caseidlist(ctr));
@@ -144,12 +173,15 @@
             close(CGIN80);
           endif;
         enddo;
-        DUPREPORT.write("");
       endif;
     enddo;
-    DUPREPORT.close();
+    HTML_EndTable();
+    HTML_Paragraph( " " );
+    HTML_Paragraph( " " );
+    HTML_ParagraphS( tr("Please resolve the duplicated cases listed above before continuing") );
+    HTML_End();
     if !autodelete & dupfound then
-      viewtext("duplicates.txt");
+     view(HTMLName);
     endif;
     FindDups = dupfound;  
   end;
@@ -229,8 +261,11 @@
     FILE version;
     list string version_txt;
     setfile(version, filepath, update);
-    FileRead(version, version_txt);
-    getver = version_txt(1);
+    if FileRead(version, version_txt) then
+      getver = version_txt(1);
+    else
+      getver = "0";
+    endif;
     close(version);
   end;
   function DisplayFile (string FileToDisplay);
@@ -251,4 +286,67 @@
          2 -> DisplayFile(DispPath + "/Femme.pdf");
          3 -> DisplayFile(DispPath + "/Biomarqeur.pdf");
     endwhen;
+  end;
+  //Splits a string delimited by 'splitChar' into a list of substrings 'Spl'
+  //Returns count of split strings
+  function Split(string input, alpha(1) splitChar, list string Spl, optional maxCount = 0)
+    Spl.Clear();
+    string gv_line;
+    numeric gv_p = pos(splitChar, input);
+	while gv_p & (!maxCount | Spl.Length() < maxCount - 1) do
+	  Spl.Add(input[1:gv_p - 1]);
+	  input = input[gv_p + 1:length(strip(input)) - gv_p];
+	  gv_p = pos(splitChar, input);
+    enddo;
+	Spl.Add(input);
+	
+	Split = Spl.Length();
+  end;
+  function FileChanged (string filetocheck);
+    // uses md5 checksum to determine if a file has changed
+    // return values: 0: not changed 1: changed 2: new file
+    // requires MD5 file to have been opened prior to calling the function
+    numeric md5res = 0;
+    string file_path = strip(filetocheck);
+    string MD5_Value = diagnostics("md5",file_path); // generate md5 hash for the file
+    if FileExist(filetocheck) then // check file exists first !!!
+      open(MD5);
+      FILE_NAME = file_path; // get file name for lookup
+      numeric found = loadcase(MD5,FILE_NAME);        // look up file in md5 database
+      if !found then  // new file
+        md5res = 2;
+      elseif MD5CODE <> MD5_Value then  // existing file but changed
+        md5res = 1;
+      else                             // existing file, not changed
+        md5res = 0;
+      endif;
+      if md5res then // if changed/new we update the MD5 database
+        MD5CODE= MD5_Value ;
+        writecase(MD5);
+      endif;
+      close(MD5);
+    endif;
+    FileChanged = md5res;
+  end;
+  function SmartPut (string str_dir, string str_mask, string str_dest, isrecursive = 0 );
+    // used to only PUT changed files when syncing
+    // assumes current connection to a sync server
+    // works over Bluetooth or CSWEb
+    // note that the destination folder must exist on the server otherwise the transfer
+    // will fail
+    list string filestocheck;
+    dirlist(filestocheck, str_dir, filter:=str_mask, recursive:=isrecursive);
+    // check if files changed
+    do numeric f = filestocheck.length() while f > 0 by (-1)
+       if !FileChanged(filestocheck(f)) then
+         filestocheck.remove(f); // remove files that didn't change
+       endif;
+    enddo;
+    filestocheck.show();
+    // sync changed files
+    // !! NOTE this assumes a connection to the server has been already made
+    do numeric f = 1 until f > filestocheck.length()
+      SyncFile( PUT, filestocheck(f), str_dest + "/" + path.GetFileName(filestocheck(f)))
+      // errmsg("%s->%s", filestocheck(f), str_dest);
+    enddo;
   end;

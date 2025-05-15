@@ -12,6 +12,9 @@
       "path": "..\\Dicts\\CGIN80.dcf"
     }, 
     {
+      "path": "..\\Entry\\Android.xml"
+    }, 
+    {
       "path": "..\\Entry\\CGHH80.fmf"
     }, 
     {
@@ -60,9 +63,6 @@
       "path": "..\\PII\\Ref\\version.txt"
     }, 
     {
-      "path": "..\\Questionnaires\\Menage.pdf"
-    }, 
-    {
       "path": "..\\Superv\\assignhh.ent"
     }, 
     {
@@ -73,6 +73,15 @@
     }, 
     {
       "path": "..\\Superv\\CheckID.mgf"
+    }, 
+    {
+      "path": "..\\Superv\\RemeasEntry.ent"
+    }, 
+    {
+      "path": "..\\Superv\\RemeasLst.ent"
+    }, 
+    {
+      "path": "..\\Superv\\RemeasSel.ent"
     }, 
     {
       "path": "..\\Superv\\SelectHH.ent"
@@ -111,10 +120,16 @@
       "path": "..\\Dicts\\Cnull.dcf"
     }, 
     {
+      "path": "..\\Dicts\\ContSup.dcf"
+    }, 
+    {
       "path": "..\\Dicts\\CONTSUP.dcf"
     }, 
     {
       "path": "..\\Dicts\\EligIndv.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\FieldWKQuest.dcf"
     }, 
     {
       "path": "..\\Dicts\\HHForInt.dcf"
@@ -137,6 +152,10 @@
     }, 
     {
       "path": "..\\Dicts\\Others.dcf"
+    }, 
+    {
+      "path": "..\\dicts\\Remeasure.dcf", 
+      "uploadForSync": true
     }, 
     {
       "path": "..\\Dicts\\Remeasure.dcf"

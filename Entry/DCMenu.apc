@@ -710,32 +710,6 @@
         FileCopy( ListUpgrades(ctr), target_dir );      
       enddo;        
     end;
-    function FileChanged (string filetocheck);
-      // uses md5 checksum to determine if a file has changed
-      // return values: 0: not changed 1: changed 2: new file
-      // requires MD5 file to have been opened prior to calling the function
-      numeric found = 0;
-      numeric md5res = 0;
-      string file_path = strip(filetocheck);
-      string MD5_Value = diagnostics("md5",file_path); // generate md5 hash for the file
-
-      FILE_NAME = path.GetFileName(file_path); // get file name for lookup
-      found = loadcase(MD5,FILE_NAME);        // look up file in md5 database
-      if !FileExist(filetocheck) then // if file does not exist treat as though not changed
-        md5res = 0;   
-      elseif !found then  // new file
-        md5res = 2;
-      elseif MD5CODE <> MD5_Value then  // existing file but changed
-        md5res = 1;
-      else                             // existing file, not changed
-        md5res = 0;
-      endif;
-      if md5res then // if changed/new we update the MD5 database
-        MD5CODE= MD5_Value ;
-        writecase(MD5);
-      endif;
-      FileChanged = md5res;
-    end;
     function string extract_UpgrNum (string str_path)
       string str_fname = path.GetFileName(str_path);
       numeric w_start, w_len;
@@ -806,27 +780,19 @@
       SetAssignFile = x;
     end;
     function SendFiles ();
-        fname = data + "\?" + xfilenum + "*.DAT"; // main data files
-        SyncFile( PUT, fname, temp );
-        fname = data + "\?" + xfilenum + "*.cslog"; // paradata
-        SyncFile( PUT, fname, temp );
-        fname = data + "\?" + xfilenum + "*.csnot"; // notes
-        SyncFile( PUT, fname, temp );
-        fname = data + "\?" + xfilenum + "*dat.sts"; // partial
-        SyncFile( PUT, fname, temp );
-        fname = data + "\?" + xfilenum + "*DAT.sts"; // partial
-        SyncFile( PUT, fname, temp );
-        // get backup pictures 
-        do numeric pic = 1 until pic > 3
-          fname = pictures + "\P" + xcluster + "????????" + "_" + edit("99",pic) + ".jpg"; // get up to 4 previous pictures !!
-          SyncFile( PUT, fname, pictures );
-        enddo;
-        // get FW interview data files
-        fname = data + "\F*" + edit("9999", WINTNUM) + ".DAT";
-        SyncFile( PUT, fname, receive );
-        // get FW quiz data files
-        fname = data + "\Q*" + edit("9999", WINTNUM) + ".DAT";
-        SyncFile( PUT, fname, receive );
+        SmartPut(data, "?" + xfilenum + "*.DAT", temp);
+        SmartPut(data, "?" + xfilenum + "*.dat", temp);
+        SmartPut(data, "?" + xfilenum + "*.cslog", temp);
+        SmartPut(data, "?" + xfilenum + "*.csnot", temp);
+        SmartPut(data, "?" + xfilenum + "*.dat.sts", temp);
+        SmartPut(data, "?" + xfilenum + "*.DAT.sts", temp);
+        SmartPut(pictures, pictures + "P" + xcluster + "*.jpg", temp);
+        // // send FW interview data files
+        // fname = data + "\F*" + edit("9999", WINTNUM) + ".DAT";
+        // SyncFile( PUT, fname, receive );
+        // // send FW quiz data files
+        // fname = data + "\Q*" + edit("9999", WINTNUM) + ".DAT";
+        // SyncFile( PUT, fname, receive );
     end;
     { receiving HOUSEHOLD assignment from supervisor }
     function sync_sup()
@@ -842,7 +808,7 @@
           SendFiles();
           // now get any new upgrades 
          // get the latest versions of the application files from the server 
-          SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
+          // SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
           SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
           SyncFile(GET, wrkprj + "/Dicts/*.dcf", wrkprj + "/Dicts");
           SyncFile(GET, wrkref + "/version.txt", wrkref);
@@ -1377,7 +1343,6 @@ PreProc
     setlanguage("FR");
     setvaluesets( "_" + getlanguage() );
     SameSession = tonumber(loadsetting("DCSession"));
-    sysver      = loadsetting("Version", "0");
 
     
     { set main directories }
@@ -1429,7 +1394,9 @@ PreProc
     
     { check for upgrades and apply !!! }
     ApplyUpgr();
-
+    
+    { get current system version to enable restart after receiving update from supervisor }
+    sysver      = getver( wrkref + "/version.txt" );
 
     { initialize array of interviewers }
     do i = 1 while i <= 20
@@ -1730,6 +1697,12 @@ postproc
       elseif option = 1 then
         { sync with supervisor }
         sync_sup();
+        // check if update received and if so restart the menu !!
+        if getver( wrkref + "/version.txt" ) <> sysver then
+          errmsg(091);
+          AppName = "DCMENU";
+          runpffS();
+        endif;
       { transfer HOUSEHOLD data to another interviewer }
       elseif option = 2 then
         sendhhdat();
@@ -1737,9 +1710,8 @@ postproc
       elseif option = 3 then
         receivehh();
       elseif option = 4 then
-        RunDataRepair( "csentry:CG81/Entry/" + "Android.xml", "English" )
-
-      { fix identifiers (cluster, HOUSEHOLD, interviewers) or delete women  }
+        { fix identifiers (cluster, HOUSEHOLD, interviewers) or delete women  }
+        RunDataRepair( maketext("csentry:%s/Android.xml", path.getrelativepath(Pathname(CSentry), entry)), "French" );
       elseif option = 5 then
         heading = "Autres options. Grappe: " + xcluster + " Enq. " + edit("9999", WINTNUM);
         numeric suboption  = accept( heading,
@@ -1898,11 +1870,12 @@ preproc
     WCORRECT2 = notappl;
     WNAME     = "";
     if FindDups( dirstocheck, xcluster, 1  ) then
-      errmsg("Duplicate HOUSEHOLD cases detected in data. The system will attempt to continue but you may find that not all HOUSEHOLDs are available. You should remove the duplicate cases as soon as possible");
+      reenter WFINAL;
+    else
+      concathh();
+      WrkElig( 2, WNUMBER, IntSex );           { generates file with HH from all interviewers and others }
+      noinput;
     endif;
-    concathh();
-    WrkElig( 2, WNUMBER, IntSex );           { generates file with HH from all interviewers and others }
-    noinput;
 
   
 PROC WINDIV

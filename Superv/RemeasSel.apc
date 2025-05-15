@@ -195,60 +195,60 @@ preproc
   endif;
 
   { loops over households to check structural problems and to count eligible children for remeasurment }
-  while loadcase( CCHH80 ) do
-    casepart = partialcs( 1, AHCLUST, AHNUMBER, 0, FileHH );
+  while loadcase( CGHH80 ) do
+    casepart = partialcs( 1, QHCLUST, QHNUMBER, 0, FileHH );
     xht      = xht + 1;   { total households }
 
-    if AHRESULT = 1 & casepart then
+    if QHRESULT = 1 & casepart then
       { no structure checked for partial cases }
       getmessage( 50055 );
-      hhe = ListErrMsg.add( maketext(alphaMSG, AHNUMBER) );
+      hhe = ListErrMsg.add( maketext(alphaMSG, QHNUMBER) );
     endif;
 	
 	{ check that household is part of the sample file }
     found = 0;
     do j = 1 while j <= soccurs( SAMREC2 ) & !found
-	  if XNUMBER(j) = AHNUMBER then
+	  if XNUMBER(j) = QHNUMBER then
 	    found = 1;
 	  endif;
 	enddo;
 	if !found then
       getmessage( 50160 );
-      hhe = ListErrMsg.add( maketext(alphaMSG, AHNUMBER) )
+      hhe = ListErrMsg.add( maketext(alphaMSG, QHNUMBER) )
     endif;
 	{ count households in subsample for height & weight }
-	if AHELIGM = 1 then
+	if QHELIGM = 1 then
 	  cnthh = cnthh + 1;
 	endif;
 
     { biomarker front page questionnaire }
-    chbio = count( ccHH80.AHSEC01 where AH11 <> 0 );
-    if chbio & soccurs( ABSECOVER ) <> 1 then
+    chbio = count( CGHH80.QHSEC01 where QH11 <> 0 );
+    if chbio & soccurs( QBSECOVER ) <> 1 then
       getmessage( 50100 );
-      bioe = ListErrMsg.add( maketext(alphaMSG, AHNUMBER, GetLabel(ABSECOVER)) )
+      bioe = ListErrMsg.add( maketext(alphaMSG, QHNUMBER, GetLabel(QBSECOVER)) )
     endif;
-    for i in record AHSEC01 do
-      if AH11 <> 0 then
+    for i in record QHSEC01 do
+      if QH11 <> 0 then
         found = 0;
-        do j = 1 while j <= soccurs( ABSEC01 ) & !found
-          if AH11 = AB102(j) then
+        do j = 1 while j <= soccurs( QBSEC01 ) & !found
+          if QH11 = QB102(j) then
             found = 1;
-            if AB104(j) = notappl | AB104(j) in 0:4 & (AB106(j) = notappl | AB108(j) = notappl) then      { height & weight }
+            if QB104(j) = notappl | QB104(j) in 0:4 & (QB106(j) = notappl | QB108(j) = notappl) then      { height & weight }
               getmessage( 50057 );
-              bioe = ListErrMsg.add( maketext(alphaMSG, AHNUMBER, xhw, xbiom, AH11) );
-			elseif AB104(j) in 0:4 & !AB106(j) in 99.90:99.98,missing & !AB108(j) in 999.0:999.8, missing then
+              bioe = ListErrMsg.add( maketext(alphaMSG, QHNUMBER, xhw, xbiom, QH11) );
+			elseif QB104(j) in 0:4 & !QB106(j) in 99.90:99.98,missing & !QB108(j) in 999.0:999.8, missing then
               xch   = xch + 1;   { number of children eligible for random selection }
             endif;
           endif;
         enddo;
         if !found then             { biomarker record missing for child }
           getmessage( 50056 );
-          bioe = ListErrMsg.add( maketext(alphaMSG, AHNUMBER, xbiom, AH11) );
+          bioe = ListErrMsg.add( maketext(alphaMSG, QHNUMBER, xbiom, QH11) );
         endif;
       endif;
     enddo;
   enddo;
-  close( CCHH80 );
+  close( CGHH80 );
   if !hwsub & XTOTAL <> xht then
     getmessage( 50161 );
     hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
@@ -280,29 +280,29 @@ preproc
         chselected(j) = x;
       enddo;
 	endif;
-	open( CCHH80 );
+	open( CGHH80 );
     { loop over all households in cluster }
 	selch = 0;
-    while loadcase( CCHH80 ) do
+    while loadcase( CGHH80 ) do
 	  { initialize array of eligible women }
 	  do j = 1 while j <= 50
 	    eligw(j) = 0;
 	  enddo;
 	  { populates array of eligible women in household }
-      for i in record AHSEC01 do
-	    if AH09 <> 0 then
+      for i in record QHSEC01 do
+	    if QH09 <> 0 then
 		  do j = 1 while eligw(j) <> 0 & j <= 50
           enddo;
-          eligw(j) = AH09;
+          eligw(j) = QH09;
         endif;  		  
 	  enddo;
       { identify children to be reamesured }
-      for i in record AHSEC01 do
-        if AH11 <> 0 then
-          do j = 1 while j <= soccurs( ABSEC01 )
-            if AH11 = AB102(j) then
+      for i in record QHSEC01 do
+        if QH11 <> 0 then
+          do j = 1 while j <= soccurs( QBSEC01 )
+            if QH11 = QB102(j) then
 			  { first find out if child was randomly selected }
-			  if AB104(j) in 0:4 & !AB106(j) in 99.90:99.98,missing & !AB108(j) in 999.0:999.8,missing then
+			  if QB104(j) in 0:4 & !QB106(j) in 99.90:99.98,missing & !QB108(j) in 999.0:999.8,missing then
                 selch   = selch + 1;             { count children to know if this one has to be selected }
 			    do n = 1 while n <= xsel
 			      if chselected(n) = selch then
@@ -312,21 +312,21 @@ preproc
 			    ransel = ( n <= xsel );
               
 				{ check if child is declared by any aligible women and in that case take the date birth from the mother }
-                xtempd = AB103D(j);
-                xtempm = AB103M(j);
-                xtempy = AB103Y(j);
+                xtempd = QB103D(j);
+                xtempm = QB103M(j);
+                xtempy = QB103Y(j);
 				found = 0;
 				do n = 1 while eligw(n) <> 0 & !found
-				  ALINE = eligw(n);
-				  if loadcase( ccIN80, AHCLUST, AHNUMBER, ALINE ) then
-				    do m = 1 while m <= soccurs( AWSEC2B ) & !found
-					  if A227(m) = AB102(j) then
-					    if validyr(A220Y(m)) & valid(A220M(m)) then
-						  xtempy = A220Y(m);
-						  xtempm = A220M(m);
-						  xtempd = A220D(m);
-						endif;
-                        found = 1;
+				  QLINE = eligw(n);
+				  if loadcase( CGIN80, QHCLUST, QHNUMBER, QLINE ) then
+				    do m = 1 while m <= soccurs( QWSEC2B ) & !found
+					  if Q227(m) = QB102(j) then
+					    if validyr(Q220Y(m)) & valid(Q220M(m)) then
+						  xtempy = Q220Y(m);
+						  xtempm = Q220M(m);
+						  xtempd = Q220D(m);
+                                            endif;
+                                            found = 1;
 					  endif;
 					enddo;
 				  endif;
@@ -336,7 +336,7 @@ preproc
                 if validyr(xtempy) & valid(xtempm) then
                   { Age of child in days }
                   if !xtempd in 1:31 then xtempd = 15 endif;
-                  agechild = CDCode(AB109Y(j), AB109M(j), AB109D(j)) - CDCode(xtempy, xtempm, xtempd);
+                  agechild = CDCode(QB109Y(j), QB109M(j), QB109D(j)) - CDCode(xtempy, xtempm, xtempd);
                   dateflag = 1;
                 else
                   agechild = 9999;
@@ -344,11 +344,11 @@ preproc
               
                 { Calculate anthropometric Z-scores }
                        // weightch, lengthch, lyingstanding, sexchild, agechild, dateflag, child line no
-                WHO_anthro( AB106(j), AB108(j), AB110(j), AH04(AB102(j)), agechild, dateflag, AB102(j) );
+                WHO_anthro( QB106(j), QB108(j), QB110(j), QH04(QB102(j)), agechild, dateflag, QB102(j) );
               
                 { Just for testing }
 //                AlphaMSG = maketext( "HH=%04d Line%02d: BMI:%5.2f Weight-for-length %5.2f Weight-for-age %5.2f Length-for-age %5.2f BMI-for-age %5.2f",
-//                                     AHNUMBER, AB102(j), bmi/100, zwhz/100, zwaz/100, zhaz/100, zbmi/100 );
+//                                     QHNUMBER, QB102(j), bmi/100, zwhz/100, zwaz/100, zhaz/100, zbmi/100 );
 //                ListErrMsg.add( maketext(alphaMSG );
                 scoresel = ( dateflag <> 9 & (!ValidScore(zwhz) | !ValidScore(zwaz) | !ValidScore(zhaz)) );
 				{ if randomly selected or if selected because of the Z-score }
@@ -356,16 +356,16 @@ preproc
 				  { mark the child in supervisor control file }
 				  do n = 1 while n <= maxocc( SREMEAS )
 				    if SREMHH(n) = 0 then
-					  SREMHH(n)   = AHNUMBER;
-					  SREMLINE(n) = AB102(j);
+					  SREMHH(n)   = QHNUMBER;
+					  SREMLINE(n) = QB102(j);
 					  WriteCase( CONTSUP );
 					  break;
 					endif;
 			      enddo;
 				  { write file for children selected for remeasurement }
-				  RCLUSTER = AHCLUST;
-				  RNUMBER  = AHNUMBER;
-				  R102L    = AB102(j);
+				  RCLUSTER = QHCLUST;
+				  RNUMBER  = QHNUMBER;
+				  R102L    = QB102(j);
 				  recode ransel :: scoresel -> RTYPE;
 				            1   ::    1     -> 3;
 						    1   ::          -> 1;
@@ -373,21 +373,20 @@ preproc
 							    ::          -> default;
 				  endrecode;
 				  RTYPET    = GetValueLabel( RTYPE );
-				  RADDRESS  = AHADDRESS;
-				  R102N     = ACNAME(j);
-				  RSEX      = AH04(R102L);
-				  RAGE      = AH07(R102L);
-				  RHEADHH   = AH02(1);
-				  RBIOMARK  = AB115(j);
-                  RFINTD    = AB109D(j);
-                  RFINTM    = AB109M(j);
-                  RFINTY    = AB109Y(j);
-				  RFWEIGHT  = AB106(j);
-				  RFHEIGHT  = AB108(j);
-				  RFLYNSTN  = AB110(j);
-				  R103D     = AB103D(j);
-				  R103M     = AB103M(j);
-				  R103Y     = AB103Y(j);
+				  RADDRESS  = QHADDRESS;
+				  R102N     = QCNAME(j);
+				  RSEX      = QH04(R102L);
+				  RAGE      = QH07(R102L);
+				  RHEADHH   = QH02(1);
+				  RBIOMARK  = QB115(j);
+                                  RFINTD    = QB109D(j); RFINTM    = QB109M(j);
+                                  RFINTY    = QB109Y(j);
+				  RFWEIGHT  = QB106(j);
+				  RFHEIGHT  = QB108(j);
+				  RFLYNSTN  = QB110(j);
+				  R103D     = QB103D(j);
+				  R103M     = QB103M(j);
+				  R103Y     = QB103Y(j);
 				  RLAST     = "Z";
 				  WriteCase( RMEASURE );
                   CellValues(1)  = edit("9999",RNUMBER);
@@ -416,8 +415,8 @@ preproc
   close( CONTSUP );
   close( SAMPSEL );
   close( RMEASURE );
-  close( CCHH80 );
-  close( CCIN80 );
+  close( CGHH80 );
+  close( CGIN80 );
   view( "file://" + pathname(application) + HTMLName );
 
   stop(1);
