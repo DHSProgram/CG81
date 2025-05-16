@@ -28,6 +28,7 @@ File=..\Dicts\CGHH80.dcf
 File=.\CollectIN.apc
 Include=..\Library\DPCollect.apc
 Include=..\Library\EntryFunctions.apc
+Include=..\Library\HTMLFunctions.apc
 [Message]
 File=.\CollecTot.mgf
 [Help]

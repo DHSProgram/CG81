@@ -332,6 +332,84 @@
 	ph_array = i-1;
   end;
 
+  function showpregs ();
+    numeric npregs =  ph_array();
+    HTML_InitAlign();
+    HTMLname = "message.html";
+    if FileExist( HTMLname ) then
+      FileDelete( HTMLname )
+    endif;
+    setfile( HTMLFile, HTMLname, create );
+    zstring1 = tr("Reproduction and Pregnancies");
+    list string js_scripts;
+    js_scripts.add("../Superv/checkid.js");
+    HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
+    CellValues(1) = tr("Source");
+    CellValues(2) = maketext("%s (%s)", getlabel(Q203A) , getsymbol(Q203A));
+    CellValues(3) = maketext("%s (%s)", getlabel(Q203B) , getsymbol(Q203B));
+    CellValues(4) = maketext("%s (%s)", getlabel(Q205A) , getsymbol(Q205A));
+    CellValues(5) = maketext("%s (%s)", getlabel(Q205B) , getsymbol(Q205B));
+    CellValues(6) = maketext("%s (%s)", getlabel(Q207A) , getsymbol(Q207A));
+    CellValues(7) = maketext("%s (%s)", getlabel(Q207B) , getsymbol(Q207B));
+    CellValues(8) = maketext("%s (%s)", getlabel(Q211 ) , getsymbol(Q211));
+    zstring2 = "Reproduction";
+    HTML_BeginTable( CellValues, zstring2, 8, "Totals" );  // generates the HTML table script with the column headers
+
+    CellValues(1) = tr("Reproduction");
+    CellValues(2) = edit("99", Q203A); 
+    CellValues(3) = edit("99", Q203B); 
+    CellValues(4) = edit("99", Q205A); 
+    CellValues(5) = edit("99", Q205B); 
+    CellValues(6) = edit("99", Q207A); 
+    CellValues(7) = edit("99", Q207B); 
+    CellValues(8) = edit("99", Q211 ); 
+    HTML_OneRow( CellValues, 8 );
+
+    CellValues(1) = "Pregnancy History";
+    CellValues(2) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q226)= 1));
+    CellValues(3) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q226)= 1));
+    CellValues(4) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q226)= 2));
+    CellValues(5) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q226)= 2));
+    CellValues(6) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q224)= 2));
+    CellValues(7) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q224)= 2));
+    CellValues(8) =edit ("99", count(QWSEC2B where visualvalue(Q223) in 2:4 ));
+    HTML_OneRow( CellValues, 8 );
+    HTML_EndTable();
+    HTML_ParaGraph(" ");
+    HTML_ParaGraph(" ");
+
+    CellValues(1) = tr("Line");
+    CellValues(2) = tr("Name");
+    CellValues(3) = tr("Initial Outcome");
+    CellValues(4) = tr("Final Outcome");
+    CellValues(5) = tr("Sex");
+    CellValues(6) = tr("Date");
+    CellValues(7) = tr("Alive");
+    CellValues(8) = tr("Age");
+    CellValues(9) = tr("Live Mother");
+
+    { specify columns that are left aligned, strings are left aligned }
+    CellAlign(1) = 2;  
+    CellAlign(2) = 3;  
+    CellAlign(3) = 4;  
+    HTML_BeginTable( CellValues, "Pregnancies", 9, "Pregnancies" );  // generates the HTML table script with the column headers
+    do i = 1 until i > npregs
+      CellValues(1) = preghist(i,1);
+      CellValues(2) = preghist(i,2);
+      CellValues(3) = preghist(i,3);
+      CellValues(4) = preghist(i,4);
+      CellValues(5) = preghist(i,5);
+      CellValues(6) = preghist(i,6);
+      CellValues(7) = preghist(i,7);
+      CellValues(8) = preghist(i,8);
+      CellValues(9) = preghist(i,9);
+      HTML_OneRow( CellValues, 9 );  // generates the HTML script for a row with relevant individual data
+    enddo;
+    HTML_EndTable();
+    HTML_End();
+    view(HTMLName);
+  end;
+
   array string hhmember(50,7);
   function hhm_array();
     do i = 1 while i <= QHMEMBER
@@ -710,7 +788,7 @@
     numeric newocc;
     lastfield = getsymbol();
     if getrecord( lastfield ) = "QWSEC2B" then
-      x = accept( tr("Pregnancies"),
+      x = accept( tr("Move, delete or insert pregnancies"),
 	              tr("Insert pregnancy before current pregnancy"),
 				  tr("Delete current pregnancy"),
 				  tr("Move current pregnancy"),
@@ -1972,10 +2050,11 @@ preproc
 
 onfocus
   if !preghid then
-    preghid = userbar( add button, tr("Pregnancy history"), showroster( 1 ) );
+    // preghid = userbar( add button, tr("Pregnancy history"), showroster( 1 ) );
+    preghid = userbar( add button, tr("Pregnancy history"), showpregs()  );
   endif;
   if !pregsid then
-    pregsid = userbar( add button, tr("Pregnancies"), preg_tools() ); // add userbar for pregnancies once we get to pregnacy history
+    pregsid = userbar( add button, tr("Move, delete or insert pregnancies"), preg_tools() ); // add userbar for pregnancies once we get to pregnacy history
   endif;
 
 killfocus

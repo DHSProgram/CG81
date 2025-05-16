@@ -511,13 +511,13 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
-            <p>222-1.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
+            <p>222--~~Q215L~~.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
             <p>222. Were there any other pregnancies between the previous pregnancy and this pregnancy?</p>
           FR: |
-            <p>222-2.  &#160;Y a-t-il eu d’autres grossesses entre la grossesse pr&#233;c&#233;dente et cette grossesse&#160;?</p>
+            <p>222-~~Q215L~~.  &nbsp;Y a-t-il eu d’autres grossesses entre la grossesse précédente et cette grossesse&nbsp;?</p>
   - name: CGIN80.Q222A
     conditions:
       - questionText:
