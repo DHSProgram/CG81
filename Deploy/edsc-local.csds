@@ -48,7 +48,10 @@
       "path": "..\\Entry\\LstQuest.ent"
     }, 
     {
-      "path": "..\\Entry\\TablesStyle.css"
+      "path": "..\\Library\\checkid.js"
+    }, 
+    {
+      "path": "..\\Library\\TablesStyle.css"
     }, 
     {
       "path": "..\\PII\\Ref\\Clusters.csdb"
@@ -67,9 +70,6 @@
     }, 
     {
       "path": "..\\Superv\\CheckID.ent"
-    }, 
-    {
-      "path": "..\\Superv\\checkid.js"
     }, 
     {
       "path": "..\\Superv\\CheckID.mgf"
@@ -91,9 +91,6 @@
     }, 
     {
       "path": "..\\Superv\\SupMenu.pff"
-    }, 
-    {
-      "path": "..\\Superv\\TablesStyle.css"
     }, 
     {
       "path": "..\\Superv\\TEntry.ent"

@@ -800,7 +800,7 @@
 	  elseif x in 0,4 then // do nothing
 	  endif;
 	else // just show the roster
-      showroster(1)
+          showpregs();
 	endif;
   end;
 
@@ -863,7 +863,7 @@
     elseif I_Key in {116,}2068 then { F5, Ctrl-M - move }
       if getrecord( lastfield ) = "QWSEC2B" then
 	    select_preg( curocc() ); 
-		newocc = showroster(1); 
+		newocc = showpregs(); 
 		move_preg( curocc(), newocc );
 	  endif;
 	  I_key = 0;

@@ -1,19 +1,21 @@
-﻿Language = EN
+﻿Language = FR
+{ common strings used by application }
+  FR ( "CHILDREN SELECTED FOR REMEASUREMENT IN CLUSTER: %s" ) ENFANTS SÉLECTIONNÉS POUR LA REMESURE DANS LA GRAPPE : %s
+  FR ( "Pay special attention to 'height difference'" ) Portez une attention particulière à la « différence de la taille »
+  FR ( "HH" ) MG
+  FR ( "Line" ) Ligne
+  FR ( "Child Name" ) Nom de l'enfant
+  FR ( "Household Address" ) Adresse du ménage
+  FR ( "Date Remeasure" ) Date remesure
+  FR ( "Date of Birth" ) Date de naissance
+  FR ( "Weight" ) Poids
+  FR ( "Height" ) Taille
+  FR ( "Lying/Stand" ) Allongé/Debout
+  FR ( "Diff-Height" ) Diff-Taille
+  FR ( "Acceptable" ) Acceptable
+  FR ( "Unacceptable" ) Inacceptable
+
+Language = EN
 99999 Dummy message until a CSPro bug is fixed to properly handle languages
 
-Language = ES
-{ common strings used by application }
-  ES ( "CHILDREN SELECTED FOR REMEASUREMENT IN CLUSTER: %s" ) NIÑOS SELECCIONADOS PARA REMEDICION EN SEGMENTO: %s
-  ES ( "Pay special attention to 'height difference'" ) Preste atencion especial a la diferencia en talla
-  ES ( "HH" ) Hogar
-  ES ( "Line" ) Linea
-  ES ( "Child Name" ) Nombre de niño
-  ES ( "Household Address" ) Direccion Hogar
-  ES ( "Date Remeasure" ) Fecha Remedicion
-  ES ( "Date of Birth" ) Fecha Nacio
-  ES ( "Weight" ) Peso
-  ES ( "Height" ) Talla
-  ES ( "Lying/Stand" ) Acost./Parado
-  ES ( "Diff-Height" ) Dif-Talla
-  ES ( "Acceptable" ) Aceptable
-  ES ( "Unacceptable" ) Inaceptable
+

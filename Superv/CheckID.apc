@@ -330,7 +330,7 @@ preproc
   CellAlign(2) = 5;  // column 4 is result of the interview
   // !! adding application specific javascript to html output
   list string js_scripts;
-  js_scripts.add("./checkid.js");
+  js_scripts.add("../Library/checkid.js");
   HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
 
   { initialize transmittal sheet arrays to control duplicates }

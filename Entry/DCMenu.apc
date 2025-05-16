@@ -808,7 +808,8 @@
           SendFiles();
           // now get any new upgrades 
          // get the latest versions of the application files from the server 
-          // SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
+         // not using syncapp until all devices are installed from server
+          SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
           SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
           SyncFile(GET, wrkprj + "/Dicts/*.dcf", wrkprj + "/Dicts");
           SyncFile(GET, wrkref + "/version.txt", wrkref);

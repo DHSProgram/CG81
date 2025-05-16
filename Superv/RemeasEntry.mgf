@@ -1,55 +1,55 @@
-﻿language = EN  
+﻿language = FR
+{ common strings used by application }
+  FR ( "Return to selection" ) Retour à la sélection
+  FR ( "STANDING UP" ) DEBOUT
+  FR ( "LYING DOWN" ) ALLONGÉ
+  FR ( "Weight" ) Poids
+  FR ( "Height" ) Taille
+  FR ( "Continue" ) Continuer
+  FR ( "Initial weight" ) Poids initial
+  FR ( "Initial height" ) Taille initiale
+  FR ( "Measure lying/standing" ) Mesurer couché/debout
+  FR ( "Correct measure" ) Mesure correcte
+  FR ( "Remeasurement date" ) Date de remesurage
+  FR ( "Reason not measured properly" ) Raison non mesurée correctement
+  FR ( "Fieldworker" ) Agent de terrain
+  FR ( "Assistant" ) assistant de mesure
+  FR ( "End of Remeasurement, do you want to:" ) Fin de remesure, voulez-vous :
+  FR ( "Review Remeasurement" ) Vérifier la remesure
+  FR ( "Finalize Remeasurement" ) Finaliser
+  FR ( "Please use this information to complete the Referral form \n\n" ) Veuillez utiliser ces informations pour remplir le formulaire de parrainage \n\n
+  FR ( "Name: %s \nAge in Months: %02d \n" ) Nom : %s \nÂge en mois : %02d \n
+  FR ( "Weight: %6.2f \nHeight: %6.1f \nWeight-for-height (Z-score): %6.2f" ) Poids : %6,2f \nTaille : %6,1f \nPoids pour la taille (score Z) : %6,2f
+  
+0025 %s %04d non enregistré dans le fichier de données du personnel de terrain
+0030 Le mesureur anthropométriste doit être différent de l'assistant
+0035 Spécialiste de la santé qui mesure l'enfant pour la première fois %d différent pour le spécialiste de la santé qui a pris la nouvelle mesure
+0036 Le spécialiste de la santé doit être le même que celui enregistré pour collecter la taille et le poids pour une nouvelle mesure %d
+0100 Aucun enfant sélectionné pour la nouvelle mesure
+0200 Date de nouvelle mesure supérieure à la date actuelle (%02d/%02d/%04d)
+0201 La date de nouvelle mesure doit être supérieure ou égale à la date enregistrée pour la première mesure (%02d/%02d/%04d)
+0435 Réponse incompatible avec l'année de naissance
+0442 Le poids est différent du poids saisi précédemment
+0451 Taille %5.1f inférieure au poids %6.2f ; ils devraient peut-être être inversés!
+0452 La hauteur est différente de la hauteur saisie précédemment
+0460 Les enfants de moins de 2 ans sont généralement mesurés couchés, les enfants de 2 ans et plus sont mesurés debout
+0462 Incohérence entre l'âge (%d), la façon dont l'enfant a été mesuré (%d) et la réponse à cette question
+0463 Il est nécessaire d'écrire une raison
+2145 Date de naissance hors plage ou combinaison jour/mois/année incorrecte
+
+language = EN  
 0025 %s %04d not registered in the fieldwork personnel data file
-0030 The anthropometrist measurer must be different from assistant
-0035 Biomarker technician that measured child the first time %d different for biomarker technician that took the remeasurement
-0036 Biomarker technician should be the same as the one registered to collect height and weight for remeasurement %d 
+0030 The anthropometrist measurer must be different from assitant
+0035 Health specialist that measure child the first time %d different for health specialist that took the remeasurement
+0036 Health specialist should be the same as the one registerd to collect height and weight for remeasurement %d 
 0100 No child selected for remeasurement
 0200 Date of remeasurement greater than current date (%02d/%02d/%04d)
 0201 Date of remeasurement has to be greater or equal to date registered for the first measurement (%02d/%02d/%04d)
 0435 Response inconsistent with year of birth
 0442 Weight is different from the weight entered previously
 0451 Height %5.1f smaller than weight %6.2f; they should possibly be reversed!
-0452 Height is different from the height entered previously
+0452 Height is different from the height entered previoulsy
 0460 Children under 2 are usually measured lying down, children 2+ measured standing up
 0462 Inconsistency between age (%d), how child was measured(%d) and answer to this question
 0463 It is necessary to write a reason
 2145 Date of birth out of range or combination of day/month/year incorrect
-
-language = ES
-{ common strings used by application }
-  ES ( "Return to selection" ) Regresar a seleccion
-  ES ( "STANDING UP" ) DE PIE
-  ES ( "LYING DOWN" ) ACOSTADO
-  ES ( "Weight" ) Peso
-  ES ( "Height" ) Talla
-  ES ( "Continue" ) Continue
-  ES ( "Initial weight" ) Peso inicial
-  ES ( "Initial height" ) Talla inicial
-  ES ( "Measure lying/standing" ) Medicion acostado/de pie
-  ES ( "Correct measure" ) Correcta medicion
-  ES ( "Remeasurement date" ) Fecha de medicion
-  ES ( "Reason not measured properly" ) Razon no fue medido correctamente
-  ES ( "Fieldworker" ) Trabajador de campo
-  ES ( "Assistant" ) Asistente de medicion
-  ES ( "End of Remeasurement, do you want to:" ) Fin de la Remedicion, desea:
-  ES ( "Review Remeasurement" ) Revisar Remedicion
-  ES ( "Finalize Remeasurement" ) Grabar Remedicion
-  ES ( "Please use this information to complete the Referral form \n\n" ) Por favor usar esta informacion para diligenciar la forma de remison
-  ES ( "Name: %s \nAge in Months: %02d \n" ) Nombre: %s \nEdad en meses: %02d \n
-  ES ( "Weight: %6.2f \nHeight: %6.1f \nWeight-for-height (Z-score): %6.2f" ) Peso: %6.2f \nTalla: %6.1f \nPeso-para-talla (Z-score): %6.2f
-  
-0025 %s %04d no se encuentra registrada(o) en el archivo de personal de trabajo de campo
-0030 La antropometrista principal debe ser diferente de la asistente
-0035 Especialista de peso y talla que tomo la medicion la primera vez %d diferente de la(el) que hizo la remedicion
-0036 El especialista de peso y talla debe ser el mismo que el que se registro para la remedicion %d 
-0100 No se selecciono ningun niño(a) para la remedicion
-0200 Fecha de remedicion mayor que la fecha actual (%02d/%02d/%04d)
-0201 Fecha de remedicion debe ser mayor o igual que la fecha registrada para la primera medicion (%02d/%02d/%04d)
-0435 Respuesta inconsistente con el año de nacimiento
-0442 El peso es diferente del peso que se ingreso anteriormente
-0451 La talla %5.1f es menor que el peso %6.2f; probablemente estan reversados!
-0452 La talla es diferente de la talla ingresada anteriormente
-0460 Niños menores de 2 años se miden normalmente acostados, niños de 2 años o mas se miden de pie
-0462 Inconsistency between age (%d), how child was measured(%d) and answer to this question
-0463 Es necesario escibir una razon
-2145 Fecha de nacimiento fuera de rango o la combinacion dia/mes/año es incorrecta

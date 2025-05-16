@@ -22,7 +22,7 @@
     FileWrite( HTMLFile, "<html>" );
     FileWrite( HTMLFile, "  <head>" );
     FileWrite( HTMLFile, '    <meta charset="utf-8">' );
-    FileWrite( HTMLFile, '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no">');
+    FileWrite( HTMLFile, '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, maximum-scale=1, minimum-scale=1, user-scalable=yes">');
     FileWrite( HTMLFile, '<script src="/action-invoker.js"></script>');
     FileWrite( HTMLFile, '<script src="/external/jquery/jquery.min.js"></script>');
     // add any external application specific scripts
@@ -33,7 +33,7 @@
 	if getos() = 10 then
       FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
 	else
-      FileWrite( HTMLFile, '    <link href="./TablesStyle.css" rel="stylesheet" type="text/css">' );  // Android
+      FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
 	endif;
     FileWrite( HTMLFile, "    <style>" );
     do z = 1 while align(z)
@@ -43,7 +43,7 @@
     FileWrite( HTMLFile, "    </style>" );
     FileWrite( HTMLFile, "  </head>" );
     FileWrite( HTMLFile, "  <body>" );
-    FileWrite( HTMLFile, "     <h2>" + caption + "</h2>" );
+    FileWrite( HTMLFile, "     <h1>" + caption + "</h1>" );
     close( HTMLFile );
   end;
 

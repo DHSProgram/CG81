@@ -1,4 +1,37 @@
-﻿language = EN
+﻿language = FR
+{ common strings used by application }
+  FR ( "CHILDREN SELECTED FOR REMEASUREMENT IN CLUSTER: %04d" ) ENFANTS SÉLECTIONNÉS POUR LA REMESURE DANS LA GRAPPE : %04d
+  FR ( "Children eligible for remeasurement identified" ) Enfants éligibles à la remesure identifiés
+  FR ( "HH" ) MG
+  FR ( "Line" ) Ligne
+  FR ( "Health Spec." ) Spéc. Santé
+  FR ( "Child Name" ) Nom de l'enfant
+  FR ( "Date of Birth" ) Date de naissance
+  FR ( "Lying/Stand" ) Couché/Debout
+  FR ( "Household Head" ) Chef de ménage
+  FR ( "Household Address" ) Adresse du ménage
+  FR ( "height & weight" ) taille & poids
+  FR ( "child" ) enfant
+  FR ( "Children in cluster %d were already selected for remeasurement. Do you want to select them again?" ) Les enfants de la grappe %d ont déjà été sélectionnés pour une nouvelle mesure. Voulez-vous les sélectionner à nouveau ?
+  FR ( "Yes" ) Oui
+  FR ( "No" ) Non
+  FR ( "SUMMARY OF OUTSTANDING ISSUES THAT NEED TO BE RESOLVED BEFORE SELECTION CAN BE PERFORMED" ) RÉSUMÉ DES PROBLÈMES EN SUSPENS QUI DOIVENT ÊTRE RÉSOLUS AVANT QUE LA SÉLECTION PEUT ÊTRE EFFECTUÉE
+  FR ( "MESSAGE JUST FOR INFORMATION" ) MESSAGE JUSTE POUR INFORMATION
+
+50000 Langue à utiliser pour signaler les messages introuvables. Veuillez parler à l'expert informatique
+50001 Numéro d'erreur %d introuvable dans le fichier de données des messages d'erreur
+50041 Le fichier de contrôle pour le cluster %04d n'a pas pu être chargé
+50042 Le fichier d'assignation des ménages pour la grappe %03d n'a pas pu être chargé
+50055 Ménage=%04d partiellement terminé
+50056 Ménage=%04d enregistrement pour les biomarqueurs pour %s (%02d) n'existe pas
+50057 Ménage=%04d %s pour %s (%02d) n'existe pas
+50100 Ménage=%04d enregistrement avec des données pour : %s, manquant
+50160 Ménage=%04d non défini dans le fichier d'exemple
+50161 Nombre de Ménages trouvés (%02d) différents des Ménages déclarés dans le fichier échantillon (%02d)
+50162 Remesure déjà effectuée et il a été décidé de ne pas sélectionner à nouveau
+50163 Il n'y a pas d'enfants éligibles pour une nouvelle mesure dans la grappe
+
+language = EN
 50000 Language to be used to report messages not found. Please talk to the IT expert
 50001 Error number %d not found in error messages data file
 50041 Control file for cluster %04d could not be loaded
@@ -12,35 +45,3 @@
 50162 Remeasurement already done and it was decided no to select again
 50163 There are no children eligible for remeasurement in the cluster
 
-language = ES
-{ common strings used by application }
-  ES ( "CHILDREN SELECTED FOR REMEASUREMENT IN CLUSTER: %04d" ) NIÑOS SELEECIONADOS PARA REMEDICION EN SEGMENTO: %04d
-  ES ( "Children eligible for remeasurement identified" ) Niños elegibles para remedicion identificados
-  ES ( "HH" ) Hogar
-  ES ( "Line" ) Linea
-  ES ( "Health Spec." ) Espec. Salud
-  ES ( "Child Name" ) Nombre de niño
-  ES ( "Date of Birth" ) Fecha Nacio
-  ES ( "Lying/Stand" ) Acost./Parado
-  ES ( "Household Head" ) Jefe de Hogar
-  ES ( "Household Address" ) Direccion Hogar
-  ES ( "height & weight" ) peso y talla
-  ES ( "child" ) niño
-  ES ( "Children in cluster %d were already selected for remeasurement. Do you want to select them again?" ) Niños en segmento %d ya fueron seleccionados para remedicion. Desea seleccionarlos de nuevo?
-  ES ( "Yes" ) Si
-  ES ( "No" ) No
-  ES ( "SUMMARY OF OUTSTANDING ISSUES THAT NEED TO BE RESOLVED BEFORE SELECTION CAN BE PERFORMED" ) RESUMEN DE PROBLEMAS IDENTIFICADOS QUE REQUIEREN CORRECCION PARA HACER SELECCION
-  ES ( "MESSAGE JUST FOR INFORMATION" ) MENSAJE SOLO PARA INFORMACION
-
-50000 Idioma a ser usado para reportar mensajes no se encontro. Por favor comentalo con la persona encargada del sistema
-50001 Numero de error %d no se encontro en el archivo de mensajes de error
-50041 No se pudo cargar el archivo de control para el segmento %04d
-50042 No se pudo cargar el archivo de assignacion de hogares para el segmento %03d
-50055 Hogar=%04d recolectado parcialmente, no se revisara su estructura en este momento
-50056 Hogar=%04d registro de biomarcadores para %s (%02d) no existe
-50057 Hogar=%04d %s para %s (%02d) no existe 
-50100 Hogar=%04d Falta registro con informacion para: %s
-50160 Hogar=%04d no esta definido en el archivo de muestra
-50161 Numero de hogares encontrados (%02d) diferente de los hogares declarados en el archivo de muestra (%02d)
-50162 La remedicion ya se realizo y se decidio no realizarla de nuevo
-50163 No hay niÃ±os elegibles para remedicion en el segmento

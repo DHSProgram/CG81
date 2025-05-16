@@ -73,11 +73,11 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">SUPERVISOR MENU &#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~   Supervisor:~~WSUPER~~-~~SupName~~&#160;</span></p>
-            <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press the ENTER key and Select an option from the list to be displayed&#160;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">SUPERVISOR MENU &nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Cluster: ~~WCLUSTER~~   Supervisor:~~WSUPER~~-~~SupName~~&nbsp;</span></p>
+            <p style="text-align:center;"><span style="font-size:14px;color:#ff00ff;font-family:'Arial', sans-serif;">Press the ENTER key and Select an option from the list to be displayed&nbsp;</span></p>
           FR: |
-            <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU SUPERVISEUR</b></span></font></p><p style="text-align: center;"><span style="font-family: Arial, sans-serif; font-size: 14px;">-~~SupName~~ (~~WSUPER~~)</span></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">Grappe: ~~WCLUSTER~~, ~~WSTATEN~~, ~~WDISTRICTN~~, ~~WCITYN~~</span></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;">~~heading~~</span></font></p><div><font face="Arial, sans-serif"><span style="font-size: 14px;"><br></span></font></div><p></p>
+            <p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;background: rgb(173, 173, 173)"><b>TROISIÈME ENQUÊTE DÉMOGRAPHIQUE ET DE SANTÉ AU CONGO EDSIII</b></span></font></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;"><b>MENU SUPERVISEUR</b></span></font></p><p style="text-align: center;"><span style="font-family: Arial, sans-serif; font-size: 18px;">~~SupName~~ <b>(~~WSUPER~~</b>)</span></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;"><span style="font-size: 18px;">Grappe:<b> ~~WCLUSTER~~</b>,</span> </span></p><p style="text-align: center;"><span style="font-size: 14px; font-family: Arial, sans-serif;">~~WSTATEN~~, ~~WDISTRICTN~~, ~~WCITYN~~</span></p><p style="text-align: center;"><font face="Arial, sans-serif"><span style="font-size: 14px;">~~heading~~</span></font></p><div><font face="Arial, sans-serif"><span style="font-size: 14px;"><br></span></font></div><p></p>
         helpText:
           EN: |
             
