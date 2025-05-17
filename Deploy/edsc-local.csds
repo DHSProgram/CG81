@@ -84,6 +84,15 @@
       "path": "..\\Superv\\RemeasSel.ent"
     }, 
     {
+      "path": "..\\Superv\\RemeasEntry.ent"
+    }, 
+    {
+      "path": "..\\Superv\\RemeasLst.ent"
+    }, 
+    {
+      "path": "..\\Superv\\RemeasSel.ent"
+    }, 
+    {
       "path": "..\\Superv\\SelectHH.ent"
     }, 
     {
@@ -126,6 +135,9 @@
       "path": "..\\Dicts\\EligIndv.dcf"
     }, 
     {
+      "path": "..\\Dicts\\FieldWKQuest.dcf"
+    }, 
+    {
       "path": "..\\Dicts\\HHForInt.dcf"
     }, 
     {
@@ -148,7 +160,12 @@
       "path": "..\\Dicts\\Others.dcf"
     }, 
     {
+<<<<<<< HEAD
       "path": "..\\dicts\\Remeasure.dcf"
+=======
+      "path": "..\\dicts\\Remeasure.dcf", 
+      "uploadForSync": true
+>>>>>>> 8422eef0d671cd2c1213bbda1ac4a494c49c30c5
     }, 
     {
       "path": "..\\Dicts\\Remeasure.dcf"

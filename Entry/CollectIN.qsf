@@ -511,7 +511,11 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
+<<<<<<< HEAD
             <p>222--~~Q215L~~.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
+=======
+            <p>222-1.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
+>>>>>>> 8422eef0d671cd2c1213bbda1ac4a494c49c30c5
       - logic: curocc() in 2:24
         questionText:
           EN: |

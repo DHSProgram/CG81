@@ -838,9 +838,14 @@ preproc
           CellValues(4) = xstring;
           CellValues(5) = yresult;
           CellValues(6) = edit("9", QVISITS);
+<<<<<<< HEAD
           CellValues(7) = "BLANK";
           CellValues(8) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
           HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data 
+=======
+          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
+          HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data 
+>>>>>>> 8422eef0d671cd2c1213bbda1ac4a494c49c30c5
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
             getmessage( 50200 );

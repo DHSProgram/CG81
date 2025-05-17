@@ -1816,6 +1816,10 @@ onfocus
     SendData_CSW();
   endif;
   
+<<<<<<< HEAD
+=======
+      SmartPut(receive, "*.dat;*.sts", CSWebSurvey + "Final");
+>>>>>>> 8422eef0d671cd2c1213bbda1ac4a494c49c30c5
   // get system version 
   sysver = getver( wrkref + "/version.txt" );
   { set up string to display version numbers at top of menu } 
