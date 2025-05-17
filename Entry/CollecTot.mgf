@@ -218,8 +218,10 @@
   FR ( "Show pregnancies" ) Afficher les grossesses
   FR ( "Cancel" ) Annuler
   FR ( "Currently pregnant" ) Actuellement enceinte
-  FR ( "Date of vaccination" ) Date de vaccination
+  FR ( "Date given" ) Date reçu
   FR ( "Vaccination" ) Vaccination
+  FR ( "Vaccinations for %s. Select vaccination to modify or exit to continue" ) Tableau des vaccinations pour %s. Sélectionnez la vaccination à modifier ou quittez pour continuer.
+  FR ( "Select child for vaccinations" ) Sélectionnez le nom de l'enfant pour afficher les dates de vaccination saisies
   FR ( "Time living in place of interview" )  Temps vécu au lieu de l'interview
   FR ( "Years living in place of residence" ) Années vécu au lieu de résidence
   FR ( "Single or multiple pregnancy" ) Grossesse simple ou multiple
@@ -529,8 +531,8 @@ language = FR
  4460 E Combinaison de possession (Q504 = %d) et d'observation (Q507 = %d) de carte et/ou autre document incohérent
  4470 E Date de vaccination (%02d/%02d/%04d) hors limites ou combinaison jour/mois/année incorrecte
  4471 F Date de vaccination indiquée (%02d/%02d/%04d) pour l'enfant %02d avant la naissance de l'enfant (%02d/%02d/%04d)
- 4473 E Vacc col %1d: Date of %s (%02d/%02d/%04d) is earlier than %s (%02d/%02d/%04d)
- 4474 W Vacc col %1d: Dates are different (b=%s v h=%s v p0=%s, p1=%s v d1=%s v n1=%s v r1=%s, p2=%s v d2=%s v n2=%s v r2=%s, p3=%s v d3=%s v n3=%s v r3=%s)
+ 4473 W Vacc col %1d : la date de %s (%02d/%02d/%04d) est antérieure à %s (%02d/%02d/%04d)
+ 4474 W Dates des vaccinations sont differents : %s:%s vs %s:%s
  4475 W Date de naissance enregistrée ici (%02d/%02d/%04d), différente de la date de naissance selon l'historique des grossesses (%02d/%02d/%04d)
  4478 E Vacc col %1d: Date of %s (%02d/%02d/%04d) is after date of death (%02d/%02d/%04d)
  4480 E Réception d'autres vaccins incohérente avec les autres vaccins enregistrés avec le code 66 ci-dessus

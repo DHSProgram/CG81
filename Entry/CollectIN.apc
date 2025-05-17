@@ -1193,27 +1193,31 @@
 	  3 - Name of variable for reentry
 	}
     numeric v = 0;
-	inc(v); vacc_array(v,3) = "D509B"  ; vacc_array(v,1) = "BCG"                                       ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509B  (vc)), visualvalue(M509B  (vc)), visualvalue(Y509B  (vc)) );
-	inc(v); vacc_array(v,3) = "D509H"  ; vacc_array(v,1) = "HÉPATITE B À LA NAISSANCE"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509H  (vc)), visualvalue(M509H  (vc)), visualvalue(Y509H  (vc)) );
-	inc(v); vacc_array(v,3) = "D509P0" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 0 (DOSE NAISSANCE)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P0 (vc)), visualvalue(M509P0 (vc)), visualvalue(Y509P0 (vc)) );
-        inc(v); vacc_array(v,3) = "D509D1" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 1"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D1 (vc)), visualvalue(M509D1 (vc)), visualvalue(Y509D1 (vc)) );
-        inc(v); vacc_array(v,3) = "D509R1" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 1"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R1 (vc)), visualvalue(M509R1 (vc)), visualvalue(Y509R1 (vc)) );
-        inc(v); vacc_array(v,3) = "D509N1" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 1"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N1 (vc)), visualvalue(M509N1 (vc)), visualvalue(Y509N1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509P1" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 1"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P1 (vc)), visualvalue(M509P1 (vc)), visualvalue(Y509P1 (vc)) );
-        inc(v); vacc_array(v,3) = "D509D2" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 2"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D2 (vc)), visualvalue(M509D2 (vc)), visualvalue(Y509D2 (vc)) );
-        inc(v); vacc_array(v,3) = "D509R2" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 2"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R2 (vc)), visualvalue(M509R2 (vc)), visualvalue(Y509R2 (vc)) );
-        inc(v); vacc_array(v,3) = "D509N2" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 2"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N2 (vc)), visualvalue(M509N2 (vc)), visualvalue(Y509N2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509P2" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 2"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P2 (vc)), visualvalue(M509P2 (vc)), visualvalue(Y509P2 (vc)) );
-        inc(v); vacc_array(v,3) = "D509D3" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 3"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D3 (vc)), visualvalue(M509D3 (vc)), visualvalue(Y509D3 (vc)) );
-        inc(v); vacc_array(v,3) = "D509R3" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 3"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R3 (vc)), visualvalue(M509R3 (vc)), visualvalue(Y509R3 (vc)) );
-        inc(v); vacc_array(v,3) = "D509N3" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 3"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N3 (vc)), visualvalue(M509N3 (vc)), visualvalue(Y509N3 (vc)) );
-        inc(v); vacc_array(v,3) = "D509P3" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 3"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P3 (vc)), visualvalue(M509P3 (vc)), visualvalue(Y509P3 (vc)) );
-        inc(v); vacc_array(v,3) = "D509IPV1"; vacc_array(v,1)= "VACCIN POLIO INACTIVÉ (VPI) 1"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV1(vc)), visualvalue(M509IPV1(vc)), visualvalue(Y509IPV1(vc)) );
-        inc(v); vacc_array(v,3) = "D509IPV2"; vacc_array(v,1)= "VACCIN POLIO INACTIVÉ (VPI) 2"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV2(vc)), visualvalue(M509IPV2(vc)), visualvalue(Y509IPV2(vc)) );
-        inc(v); vacc_array(v,3) = "D509M1" ; vacc_array(v,1) = "VACCIN ANTIROUGEOLEUX (VAR) 1"             ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M1 (vc)), visualvalue(M509M1 (vc)), visualvalue(Y509M1 (vc)) );
-	inc(v); vacc_array(v,3) = "D509FJ"  ; vacc_array(v,1)= "VACCIN CONTRE LA FIÈVRE JAUNE (VAA) "  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509FJ  (vc)), visualvalue(M509FJ  (vc)), visualvalue(Y509FJ  (vc)) );
-	inc(v); vacc_array(v,3) = "D509M2" ; vacc_array(v,1) = "VACCIN ANTIROUGEOLEUX (VAR) 2/RUBÉOLE (RR)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M2 (vc)), visualvalue(M509M2 (vc)), visualvalue(Y509M2 (vc)) );
-	inc(v); vacc_array(v,3) = "D509V"  ; vacc_array(v,1) = "VITAMINE A (LA PLUS RÉCENTE)"          ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509V  (vc)), visualvalue(M509V  (vc)), visualvalue(Y509V  (vc)) );
+    vacc_array.clear();
+    inc(v); vacc_array(v,3) = "D509B"  ; vacc_array(v,1) = "BCG"                                       ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509B  (vc)), visualvalue(M509B  (vc)), visualvalue(Y509B  (vc)) );
+    inc(v); vacc_array(v,3) = "D509H"  ; vacc_array(v,1) = "HÉPATITE B À LA NAISSANCE"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509H  (vc)), visualvalue(M509H  (vc)), visualvalue(Y509H  (vc)) );
+    inc(v); vacc_array(v,3) = "D509P0" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 0 (DOSE NAISSANCE)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P0 (vc)), visualvalue(M509P0 (vc)), visualvalue(Y509P0 (vc)) );
+    inc(v); vacc_array(v,3) = "D509D1" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 1"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D1 (vc)), visualvalue(M509D1 (vc)), visualvalue(Y509D1 (vc)) );
+    inc(v); vacc_array(v,3) = "D509R1" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 1"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R1 (vc)), visualvalue(M509R1 (vc)), visualvalue(Y509R1 (vc)) );
+    inc(v); vacc_array(v,3) = "D509N1" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 1"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N1 (vc)), visualvalue(M509N1 (vc)), visualvalue(Y509N1 (vc)) );
+    inc(v); vacc_array(v,3) = "D509P1" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 1"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P1 (vc)), visualvalue(M509P1 (vc)), visualvalue(Y509P1 (vc)) );
+    inc(v); vacc_array(v,3) = "D509D2" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 2"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D2 (vc)), visualvalue(M509D2 (vc)), visualvalue(Y509D2 (vc)) );
+    inc(v); vacc_array(v,3) = "D509R2" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 2"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R2 (vc)), visualvalue(M509R2 (vc)), visualvalue(Y509R2 (vc)) );
+    inc(v); vacc_array(v,3) = "D509N2" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 2"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N2 (vc)), visualvalue(M509N2 (vc)), visualvalue(Y509N2 (vc)) );
+    inc(v); vacc_array(v,3) = "D509P2" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 2"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P2 (vc)), visualvalue(M509P2 (vc)), visualvalue(Y509P2 (vc)) );
+    inc(v); vacc_array(v,3) = "D509D3" ; vacc_array(v,1) = "DTCoq-HEP.B-HIB (PENTAVALENT) 3"           ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509D3 (vc)), visualvalue(M509D3 (vc)), visualvalue(Y509D3 (vc)) );
+    inc(v); vacc_array(v,3) = "D509R3" ; vacc_array(v,1) = "ROTAVIRUS (ROTA) 3"                        ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509R3 (vc)), visualvalue(M509R3 (vc)), visualvalue(Y509R3 (vc)) );
+    inc(v); vacc_array(v,3) = "D509N3" ; vacc_array(v,1) = "PNEUMOCOQUE (PCV13) 3"                     ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509N3 (vc)), visualvalue(M509N3 (vc)), visualvalue(Y509N3 (vc)) );
+    inc(v); vacc_array(v,3) = "D509P3" ; vacc_array(v,1) = "VACCIN POLIO ORAL (VPO) 3"                 ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509P3 (vc)), visualvalue(M509P3 (vc)), visualvalue(Y509P3 (vc)) );
+    inc(v); vacc_array(v,3) = "D509IPV1"; vacc_array(v,1)= "VACCIN POLIO INACTIVÉ (VPI) 1"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV1(vc)), visualvalue(M509IPV1(vc)), visualvalue(Y509IPV1(vc)) );
+    inc(v); vacc_array(v,3) = "D509IPV2"; vacc_array(v,1)= "VACCIN POLIO INACTIVÉ (VPI) 2"         ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509IPV2(vc)), visualvalue(M509IPV2(vc)), visualvalue(Y509IPV2(vc)) );
+    inc(v); vacc_array(v,3) = "D509M1" ; vacc_array(v,1) = "VACCIN ANTIROUGEOLEUX (VAR) 1"             ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M1 (vc)), visualvalue(M509M1 (vc)), visualvalue(Y509M1 (vc)) );
+    inc(v); vacc_array(v,3) = "D509FJ"  ; vacc_array(v,1)= "VACCIN CONTRE LA FIÈVRE JAUNE (VAA) "  ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509FJ  (vc)), visualvalue(M509FJ  (vc)), visualvalue(Y509FJ  (vc)) );
+    inc(v); vacc_array(v,3) = "D509M2" ; vacc_array(v,1) = "VACCIN ANTIROUGEOLEUX (VAR) 2/RUBÉOLE (RR)"; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509M2 (vc)), visualvalue(M509M2 (vc)), visualvalue(Y509M2 (vc)) );
+    inc(v); vacc_array(v,3) = "D509V"  ; vacc_array(v,1) = "VITAMINE A (LA PLUS RÉCENTE)"          ; vacc_array(v,2) = maketext( "%02d/%02d/%04d", visualvalue(D509V  (vc)), visualvalue(M509V  (vc)), visualvalue(Y509V  (vc)) );
+    do numeric ctr = 1 until ctr > v
+      vacc_array(ctr,4) = " ";
+    enddo;
     getvaccs = v;
   end;
 
@@ -1221,8 +1225,8 @@
   function showvaccs(vc);
     numeric vacc, nvaccs;
     nvaccs = getvaccs(vc);
-    vacc = showarray( maketext( "Vaccinations for %s. Select vaccination to modify or exit to continue", strip(Q503N(vc)) ), vacc_array, nvaccs,
-          title( tr("Vaccination"), tr("Date of vaccination"), tr("Status")) );
+    vacc = showarray( maketext( tr( "Vaccinations for %s. Select vaccination to modify or exit to continue" ), strip(Q503N(vc)) ), vacc_array, nvaccs,
+          title( tr("Vaccination"), tr("Date given"), tr(" "), tr("Status") ));
     if vacc then
       vaccstr = maketext("%s(%d)", vacc_array(vacc,3), vc); 	  
 	  reenter vaccstr;
@@ -1361,6 +1365,7 @@ function mapvacc (vp);
         19   ->  20 ;{VACCIN ANTIROUGEOLEUX (VAR) 2/RUB}
         20   ->  21 ;{VITAMINE A (LA PLUS RÉCENTE)    }
   endrecode;
+  mapvacc = vn;
 end;
   { convert the 3 components of a vaccination date into a variable to EDIT it later }
   function vdate( vday, vmonth, vyear )
@@ -1371,7 +1376,7 @@ end;
   { check if vaccinations are given on the same date under below conditions. }
   { These conditions suggest that there is a likely error in recording or    }
   { entering the vaccination dates                                           }
-  function ckvdate( pd, pm, py, dptd, dptm, dpty, p_pos, dp_pos )
+  function ckvdate( pd, pm, py, dptd, dptm, dpty, p_pos, d_pos )
   { Note: the following table is being used to decide whether a message is needed }
   { Day   Month   Year   Code  Result
     diff  diff    diff    0    No message
@@ -1384,8 +1389,17 @@ end;
     same  same    same    7    No message
   }
     n = (pd = dptd) + 2*(pm = dptm) + 4*(py = dpty);
+    if ( n in 2,3,5,6 ) then
+      string vac1 = vacc_array(mapvacc(p_pos), 1);
+      string dat1 = vacc_array(mapvacc(p_pos), 2);
+      string vac2 = vacc_array(mapvacc(d_pos), 1);
+      string dat2 = vacc_array(mapvacc(d_pos), 2);
+      string msgtext = maketext("4474 W Dates des vaccinations sont differents : %s:%s vs %s:%s", vac1, dat1, vac2, dat2);
+      errmsg(msgtext);
+      vacc_array(mapvacc(p_pos), 4) = msgtext;
+      vacc_array(mapvacc(d_pos), 4) = msgtext;
+    endif;
     ckvdate = ( n in 2,3,5,6 );
-    errmsg("n=%d, pd=%d, dptd=%d, pm=%d, dptm=%d",n,pd,dptd, pm, dptm);
   end
 function check_vaccs ();
         numeric verr = 0;
@@ -1407,68 +1421,27 @@ function check_vaccs ();
           endif;
 
           if     v =  1 then vd = D509B ;  vm = M509B ;  vy = Y509B ;  vstring = "BCG"
-          elseif v =  2 then vd = D509H ;  vm = M509H ;  vy = Y509H ;  vstring = tr("Hep at birth")
-          elseif v =  3 then vd = D509P0;  vm = M509P0;  vy = Y509P0;  vstring = tr("Polio") + "0"
-          elseif v =  4 then vd = D509P1;  vm = M509P1;  vy = Y509P1;  vstring = tr("Polio") + "1"
-          elseif v =  5 then vd = D509P2;  vm = M509P2;  vy = Y509P2;  vstring = tr("Polio") + "2"
-          elseif v =  6 then vd = D509P3;  vm = M509P3;  vy = Y509P3;  vstring = tr("Polio") + "3"
-          elseif v =  7 then vd = D509IPV1; vm = M509IPV1; vy = Y509IPV1; vstring = tr("Polio") + tr("IPV1")
-          elseif v =  8 then vd = D509IPV2; vm = M509IPV2; vy = Y509IPV2; vstring = tr("Polio") + tr("IPV2")
-          elseif v =  9 then vd = D509D1;  vm = M509D1;  vy = Y509D1;  vstring = tr("DPT") + "1"
-          elseif v =  10 then vd = D509D2;  vm = M509D2;  vy = Y509D2;  vstring = tr("DPT") + "2"
-          elseif v = 11 then vd = D509D3;  vm = M509D3;  vy = Y509D3;  vstring = tr("DPT") + "3"
-          elseif v = 12 then vd = D509N1;  vm = M509N1;  vy = Y509N1;  vstring = tr("Pneumococ") + "1"
-          elseif v = 13 then vd = D509N2;  vm = M509N2;  vy = Y509N2;  vstring = tr("Pneumococ") + "2"
-          elseif v = 14 then vd = D509N3;  vm = M509N3;  vy = Y509N3;  vstring = tr("Pneumococ") + "3"
+          elseif v =  2 then vd = D509H ;  vm = M509H ;  vy = Y509H ;  vstring = tr("Hép. B naiss.")
+          elseif v =  3 then vd = D509P0;  vm = M509P0;  vy = Y509P0;  vstring = tr("Polio oral (VPO)") + "0"
+          elseif v =  4 then vd = D509P1;  vm = M509P1;  vy = Y509P1;  vstring = tr("Polio oral (VPO)") + "1"
+          elseif v =  5 then vd = D509P2;  vm = M509P2;  vy = Y509P2;  vstring = tr("Polio oral (VPO)") + "2"
+          elseif v =  6 then vd = D509P3;  vm = M509P3;  vy = Y509P3;  vstring = tr("Polio oral (VPO)") + "3"
+          elseif v =  7 then vd = D509IPV1; vm = M509IPV1; vy = Y509IPV1; vstring = tr("Vac.Polio inactivé (VPI) 1")
+          elseif v =  8 then vd = D509IPV2; vm = M509IPV2; vy = Y509IPV2; vstring = tr("Vac.Polio inactivé (VPI) 2")
+          elseif v =  9 then vd = D509D1;  vm = M509D1;  vy = Y509D1;  vstring = tr("Penta") + "1"
+          elseif v =  10 then vd = D509D2;  vm = M509D2;  vy = Y509D2;  vstring = tr("Penta") + "2"
+          elseif v = 11 then vd = D509D3;  vm = M509D3;  vy = Y509D3;  vstring = tr("Penta") + "3"
+          elseif v = 12 then vd = D509N1;  vm = M509N1;  vy = Y509N1;  vstring = tr("Pneumocoque") + "1"
+          elseif v = 13 then vd = D509N2;  vm = M509N2;  vy = Y509N2;  vstring = tr("Pneumocoque") + "2"
+          elseif v = 14 then vd = D509N3;  vm = M509N3;  vy = Y509N3;  vstring = tr("Pneumocoque") + "3"
           elseif v = 15 then vd = D509R1;  vm = M509R1;  vy = Y509R1;  vstring = tr("Rotavirus") + "1"
           elseif v = 16 then vd = D509R2;  vm = M509R2;  vy = Y509R2;  vstring = tr("Rotavirus") + "2"
           elseif v = 17 then vd = D509R3;  vm = M509R3;  vy = Y509R3;  vstring = tr("Rotavirus") + "3"
-          elseif v = 18 then vd = D509M1;  vm = M509M1;  vy = Y509M1;  vstring = tr("Measles") + "1"
-          elseif v = 19 then vd = D509M2;  vm = M509M2;  vy = Y509M2;  vstring = tr("Measles") + "2"
+          elseif v = 18 then vd = D509M1;  vm = M509M1;  vy = Y509M1;  vstring = tr("Anti-Roug.") + "1"
+          elseif v = 19 then vd = D509M2;  vm = M509M2;  vy = Y509M2;  vstring = tr("Anti-Roug.") + "2"
           elseif v = 20 then vd = D509V;   vm = M509V;   vy = Y509V;   vstring = tr("Vitamin") + "A1"
           endif;
 { --------------------------------------------------------------------------- }
-
-          // { check vaccination given before interview date }
-          // if vy in 0,4444,6666 then vy = 9999 endif;
-          // if validyr(vy) & (vy > QINTY | (vy = QINTY &
-          //    valid  (vm) & (vm > QINTM | (vm = QINTM &
-          //    valid  (vd) &  vd > QINTD )))) then
-          //   errmsg( 4471, i, vstring, vd, vm, vy, QINTD, QINTM, QINTY );
-          //   vd = 0; vm = 0; vy = 0;
-          // endif;
-          //
-          // { vaccination date should be after date of birth }
-          // if vy < cy | (vy = cy & (vm < cm | (vm = cm & vd < cd))) then
-          //   errmsg( 4472, i, vstring, vd, vm, vy, cd, cm, cy );
-          //   vd = 0; vm = 0; vy = 0;
-          // endif;
-
-          { vaccination should be given before age at death }
-          if Q224(Q503) = 2 then                     { child died }
-            if validyr(vy) & (vy > dy | (vy = dy &
-               valid  (vm) & (vm > dm | (vm = dm &
-               valid  (vd) &  vd > dd )))) then
-              verr = errmsg( 4478, i, vstring, vd, vm, vy, dd, dm,dy );
-              vacc_array(mapvacc(v),4) = "!";
-            endif
-          endif;
-
-          { Get date of latest vaccination }
-          if validyr(vy) & vy > lastvacy then
-            lastvacy = vy;
-            if valid(vm) then
-              lastvacm = vm;
-              if valid(vd) then
-                lastvacd = vd;
-              else
-                lastvacd = 0;
-              endif
-            else
-              lastvacm = 0;
-              lastvacd = 0;
-            endif
-          endif;
 
           { Check if vaccinations given in order }
           if vd <> 0 & xd <> 0 then
@@ -1476,7 +1449,8 @@ function check_vaccs ();
                valid  (xm) & (vm < xm | (vm = xm &
                valid  (xd) &  vd < xd )))) then
               verr = errmsg( 4473, i, vstring, vd, vm, vy, xstring, xd, xm, xy );
-              vacc_array(mapvacc(v),4) = "!";
+              string strmsgtxt =  maketext("W Vacc col %1d : la date de %s (%02d/%02d/%04d) est antérieure à %s (%02d/%02d/%04d)", i, vstring, vd, vm, vy, xstring, xd, xm, xy );
+              vacc_array(mapvacc(v),4) = strmsgtxt;
             endif
           endif;
 
@@ -1503,6 +1477,12 @@ function check_vaccs ();
 
         check_vaccs = verr; // return error code 
 
+        numeric vacc = showarray( maketext(tr(  "Vaccinations for %s. Select vaccination to modify or exit to continue" ), strip(Q503N(curocc())) ), vacc_array, 21,
+              title( tr("Vaccination"), tr("Date given"), tr(" "), tr("Status") ));
+        if vacc then
+          vaccstr = maketext("%s(%d)", vacc_array(vacc,3), curocc()); 	  
+          reenter vaccstr;
+        endif;
 end;
 
 PROC CGIN80_FF
@@ -5417,13 +5397,15 @@ PROC Y509V
 PROC Q510
 preproc
 // check vaccs here !!
-  numeric isverr = check_vaccs();
-  showvaccs(curocc());
-  if demode() = add & !inAdvance() & isverr then
-  endif;
-
+  check_vaccs();
+  numeric firsttime = (visualvalue($) = notappl);
 postproc
-  if demode() = add & !inAdvance() & $ = 1 then
+// added code 7 to allow photo again
+  if !inAdvance() & ( firsttime & $ = 1  ) | $ = 7 then
+    // reset if code 7 for retake entered
+    if $ = 7 then
+      $ = 1;
+    endif;
     if android then
       TakePictureA( Q503 )
     else	  
@@ -5433,6 +5415,7 @@ postproc
     getother( GetSymbol(), curocc() );
     enter FL_OTHERS
   endif;  
+  firsttime = 0;
 
 PROC Q512
 preproc

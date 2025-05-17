@@ -511,11 +511,7 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
-<<<<<<< HEAD
-            <p>222--~~Q215L~~.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
-=======
             <p>222-1.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
->>>>>>> 8422eef0d671cd2c1213bbda1ac4a494c49c30c5
       - logic: curocc() in 2:24
         questionText:
           EN: |
@@ -2062,42 +2058,22 @@ questions:
             <p><span class="instruction">RECORD '44' IN 'DAY' COLUMN IF CARD SHOWS THAT A DOSE WAS GIVEN, BUT NO DATE IS RECORDED.  RECORD '00&quot; IN 'DAY' COLUMN IF CARD IS BLANK FOR THE DOSE</span></p>
             <p><span class="instruction">BCG DAY</span></p>
           FR: |
-            <table border="0" cellpadding="0" cellspacing="0" width="534" style="width: 402pt;"><p>
-             <colgroup><col width="16" span="16" style="width:12pt">
-             <col width="10" span="2" style="mso-width-source:userset;mso-width-alt:426;
-             width:8pt">
-             <col width="16" span="15" style="width:12pt">
-             <col width="18" style="mso-width-source:userset;mso-width-alt:768;width:14pt">
-             </colgroup><tbody><tr height="15" style="height:11.25pt">
-              <td colspan="34" height="15" class="xl70" width="534" style="height:11.25pt;
-              width:402pt"><font color="#0000ff">RECOPIEZ LES DATES DES VACCINATIONS DU CARNET DE ~~Q503N~~.</font></td>
-             </tr>
-             <tr height="15" style="mso-height-source:userset;height:11.25pt">
-              <td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
-              width:402pt"><font color="#0000ff">INSCRIVEZ ‘44' DANS LA COLONNE ‘JOUR' SI LE CARNET MONTRE QU'UNE
-              DOSE A ÉTÉ DONNÉE MAIS QUE LA DATE N'A PAS ÉTÉ ENREGISTRÉE. INSCRIVEZ '00'
-              DANS LA COLONNE 'JOUR' SI LA CARTE EST VIDE POUR LA DOSE.</font></td></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
-              width:402pt"><font color="#0000ff">~~vaccstr~~</font></td></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
-              width:402pt"><font color="#0000ff"><br></font></td>
-             </tr>
-             <tr height="15" style="mso-height-source:userset;height:11.25pt">
-             </tr>
-             <tr height="15" style="mso-height-source:userset;height:11.25pt">
-             </tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><br></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><br></tr></tbody></p></table><p></p>
+            <p></p><p>
+             </p><p></p><p></p><p></p><p></p><p></p><p></p><span style="color: rgb(0, 0, 255);">RECOPIEZ LES DATES DES VACCINATIONS DU CARNET DE ~~Q503N~~.</span><p></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ ‘44' DANS LA COLONNE ‘JOUR' SI LE CARNET MONTRE QU'UNE DOSE A ÉTÉ DONNÉE MAIS QUE LA DATE N'A PAS ÉTÉ ENREGISTRÉE. INSCRIVEZ '00' DANS LA COLONNE 'JOUR' SI LA CARTE EST VIDE POUR LA DOSE.</span></p><p><span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><span style="color: rgb(0, 0, 255);"></span></p><p><span style="color: rgb(0, 0, 255);">JOUR</span><span style="color: rgb(0, 0, 255);"><br></span><span style="color: rgb(0, 0, 255);"><br></span></p><p></p><p></p><p></p><p></p><p></p><p></p>
   - name: CGIN80.M509B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">BCG MONTH</span></p>
           FR: |
-            <span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><p></p>
+            <p><span style="color: rgb(0, 0, 255);">~~vaccstr~~</span></p><p><span style="color: rgb(0, 0, 255);"><br></span></p><p><span style="color: rgb(0, 0, 255);">MOIS</span><p></p></p>
   - name: CGIN80.Y509B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">BCG YEAR</span></p>
           FR: |
-            <span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><p></p>
+            <p><span style="color: rgb(0, 0, 255);">~~vaccstr~~</span></p><p><span style="color: rgb(0, 0, 255);"><br></span></p><p><span style="color: rgb(0, 0, 255);">ANNÉE</span><p></p></p>
   - name: Q509H_BLOCK
     conditions:
       - questionText:

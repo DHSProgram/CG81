@@ -5958,6 +5958,7 @@ Name=Q510_VS1
 Value=1;Photographie prise
 Value=2;Photographie non prise, permission non accordée
 Value=6;Photographie non prise, autre raison
+Value=7;Reprendre une photo
 
 [Item]
 Label=Other vaccination not recorded|Autre vaccination non enregistrée

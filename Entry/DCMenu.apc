@@ -808,20 +808,17 @@
           SendFiles();
           // now get any new upgrades 
          // get the latest versions of the application files from the server 
-<<<<<<< HEAD
          // not using syncapp until all devices are installed from server
           SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
-=======
-          // SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
->>>>>>> 8422eef0d671cd2c1213bbda1ac4a494c49c30c5
           SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
+          SyncFile(GET, wrkprj + "/Library/*.*", wrkprj + "/Library");
           SyncFile(GET, wrkprj + "/Dicts/*.dcf", wrkprj + "/Dicts");
           SyncFile(GET, wrkref + "/version.txt", wrkref);
           // syncapp();
           // fname = upgrades + "/" + upgrname + "*.zip";
           // SyncFile( GET, fname, upgrades );
           SyncDisconnect();
-          ApplyUpgr();
+          // ApplyUpgr();
 
         endif;        
       else
@@ -1606,11 +1603,10 @@ onfocus
         transuper();
       endif;
     endif;
-    // heading = maketext("Ver[%s]", getver( wrkref + "/version.txt" ));
-    // if debug then
-    //   heading = heading + " debug mode enabled !!"
-    // endif;
-    heading = "1\n2\n3\n";
+    heading = maketext("Ver[%s]", getver( wrkref + "/version.txt" ));
+    if debug then
+      heading = heading + " debug mode enabled !!"
+    endif;
 
    codes.clear();
    { 1} codes.add("1 Menu des questionnaires Ménages",01);
