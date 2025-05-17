@@ -1177,7 +1177,7 @@ Color=8388863
 [Form]
 Name=AMFORM3A
 Label=Contraceptive Knowledge & Use (Men)
-QuestionTextHeight=106
+QuestionTextHeight=241
 Level=1
 Size=480,580
   
@@ -1552,7 +1552,6 @@ Item=GIAUX
 Item=GIINTRO
 Item=GILATITUDE
 Item=GILONGITUDE
-Item=GIALTITUDE
 Item=GIACCURACY
 Item=QFINAL
   
@@ -4333,6 +4332,7 @@ UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
+Position=0,0,55,16
 Text=Q317EM
  
 [Field]
@@ -4384,6 +4384,7 @@ UpperCase=Yes
 DataCaptureType=RadioButton
   
 [Text]
+Position=0,0,56,16
 Text=Q317GM
  
 [Field]
@@ -11807,7 +11808,7 @@ Item=Q908,CGIN80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
-DataCaptureType=ComboBox
+DataCaptureType=RadioButton
 Form=18
   
 [Text]
@@ -11881,7 +11882,7 @@ Item=Q913,CGIN80
 UseEnterKey=Yes
 Verify=No
 UpperCase=Yes
-DataCaptureType=ComboBox
+DataCaptureType=RadioButton
 Form=18
   
 [Text]
@@ -12135,6 +12136,20 @@ Position=417,251,457,267
 Text=Q930B
  
   
+[Field]
+Name=Q930C
+Position=519,276,533,296
+Item=Q930C,CGIN80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=18
+  
+[Text]
+Position=418,279,458,295
+Text=Q930C
+ 
+  
   
 [Field]
 Name=Q931A
@@ -12195,20 +12210,6 @@ Form=18
 [Text]
 Position=632,122,641,138
 Text=D
- 
-  
-[Field]
-Name=Q930C
-Position=519,276,533,296
-Item=Q930C,CGIN80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=18
-  
-[Text]
-Position=418,279,458,295
-Text=Q930C
  
   
   
@@ -12343,7 +12344,7 @@ Text=I
 Name=Q931_BLOCK
 Label=Presence of persons
 DisplayTogether=Yes
-Position=29
+Position=30
 Length=4
   
 [Block]
@@ -16393,7 +16394,7 @@ Position=151,152,178,172
 Item=QM604,CGIN80
 UseEnterKey=Yes
 UpperCase=Yes
-DataCaptureType=ComboBox
+DataCaptureType=RadioButton
 Form=31
   
 [Text]
@@ -18047,20 +18048,6 @@ Form=35
 [Text]
 Position=182,174,317,190
 Text=Longitude in degrees
- 
-  
-[Field]
-Name=GIALTITUDE
-Position=439,205,505,225
-Item=GIALTITUDE,CGIN80
-UseEnterKey=Yes
-Protected=Yes
-DataCaptureType=TextBox
-Form=35
-  
-[Text]
-Position=183,207,295,223
-Text=Altitude in meters
  
   
 [Field]

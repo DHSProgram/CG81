@@ -251,10 +251,10 @@ preproc
   close( CGHH80 );
   if !hwsub & XTOTAL <> xht then
     getmessage( 50161 );
-    hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
+    // hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
   elseif hwsub & subhh <> cnthh then
     getmessage( 50161 );
-    hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
+    // hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
   endif;
   
   { if all households interviewed and no errors found in biomarkers for children, do selection }

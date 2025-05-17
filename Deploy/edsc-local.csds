@@ -126,9 +126,6 @@
       "path": "..\\Dicts\\EligIndv.dcf"
     }, 
     {
-      "path": "..\\Dicts\\FieldWKQuest.dcf"
-    }, 
-    {
       "path": "..\\Dicts\\HHForInt.dcf"
     }, 
     {
@@ -151,11 +148,13 @@
       "path": "..\\Dicts\\Others.dcf"
     }, 
     {
-      "path": "..\\dicts\\Remeasure.dcf", 
-      "uploadForSync": true
+      "path": "..\\dicts\\Remeasure.dcf"
     }, 
     {
       "path": "..\\Dicts\\Remeasure.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\REMEASURE.dcf"
     }, 
     {
       "path": "..\\Dicts\\SampSel.dcf", 

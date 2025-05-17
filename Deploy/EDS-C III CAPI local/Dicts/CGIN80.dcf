@@ -517,7 +517,7 @@ DataType=Numeric
 Label=Auxiliary for INDIVIDUAL coordinates|Auxiliary for INDIVIDUAL coordinates|Auxiliar para coordenadas de INDIVIDUAL
 Name=GIAUX_VS1
 Value=1;Si
-Value=2;No
+Value=2;No|Non
 
 [Item]
 Label=Introduction|Introduction|Introduccion
@@ -827,7 +827,7 @@ Label=Reason for moving|Raison du déménagement
 Name=Q109_VS1
 Value=1;Emploi
 Value=2;Éducation/formation
-Value=3;Réunification de conjoints/mariage
+Value=3;Mariage
 Value=4;Réunification familiale/autre raison familiale
 Value=5;Déplacement forcé
 Value=96;Autre
@@ -1115,7 +1115,7 @@ DataType=Numeric
 [ValueSet]
 Label=Religion
 Name=Q130_VS1
-Link=17446744073709551616
+Link=141428160
 Value=1;Catholique
 Value=2;Protestante
 Value=3;Musulmane
@@ -1491,8 +1491,8 @@ DataType=Numeric
 [ValueSet]
 Label=Pregnancy between last pregnancy and interview (working var)
 Name=Q222AW_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Auxiliary to display pregnancy history|Auxiliaire pour afficher l'historique de grossesse
@@ -4774,8 +4774,8 @@ DataType=Numeric
 [ValueSet]
 Label=Still breastfeeding
 Name=Q485_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Drink in a bottle with nipple|Boire quelque chose au biberon
@@ -9347,6 +9347,7 @@ Value=0;Moins d'1 an
 Value=1;6ième
 Value=2;5ième
 Value=3;4ième
+Value=4;3ième
 
 [ValueSet]
 Label=Highest grade completed
@@ -9354,6 +9355,7 @@ Name=Q905_VS3
 Value=0;Moins d'1 an
 Value=1;2nde
 Value=2;1ière
+Value=3;Terminale
 
 [ValueSet]
 Label=Highest grade completed
@@ -9403,8 +9405,8 @@ DataType=Numeric
 [ValueSet]
 Label=Partner's occupation|Occupation du mari/partenaire
 Name=Q908_VS1
-Value=0:95
-Value=96;Autre
+Link=119364440
+Value=96;Enregistrez les details d'occupation
 
 [Item]
 Label=Respondent worked in last 7 days (apart from own housework)|Enquêtée a travaillé dans les 7 derniers jours (en dehors du travail domestique)
@@ -9466,10 +9468,9 @@ Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Respondent's occupation|Occupation de l'enquêtée
+Label=Respondent's occupation
 Name=Q913_VS1
-Value=0:95
-Value=96;Autre
+Link=119364440
 
 [Item]
 Label=Work for a family member|Travaille pour un membre de la famille
@@ -10707,12 +10708,12 @@ DataType=Numeric
 [ValueSet]
 Label=Mode of transportation to nearest healthcare facility|Moyen de transport vers l'établissement de santé le plus proche
 Name=Q1102_VS1
-Value=10;---MOTORIZED---
+Value=10;---MOTORIZÉ---
 Value=1;Voiture/camion
 Value=2;Bus public
 Value=3;Motocyclette/scooter
 Value=4;Bateau à moteur
-Value=20;---NOT MOTORIZED---
+Value=20;---NON MOTORIZÉ---
 Value=5;Charrette tirée par un animal
 Value=6;Bicyclette
 Value=7;Bateau sans moteur
@@ -10969,8 +10970,8 @@ DataType=Numeric
 [ValueSet]
 Label=Any more siblings
 Name=QMMMORE_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Other brothers and sisters
@@ -10980,10 +10981,10 @@ Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Other brothers and sisters
+Label=Any more siblings|Other brothers and sisters
 Name=QMM03_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Other brothers and sisters living elsewhere
@@ -10993,10 +10994,10 @@ Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Other brothers and sisters living elsewhere
+Label=Any more siblings|Other brothers and sisters living elsewhere
 Name=QMM04_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Other brothers and sisters who died
@@ -11006,10 +11007,10 @@ Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Other brothers and sisters who died
+Label=Any more siblings|Other brothers and sisters who died
 Name=QMM05_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Other brothers and sisters  of same mother but different father
@@ -11019,10 +11020,10 @@ Len=1
 DataType=Numeric
 
 [ValueSet]
-Label=Other brothers and sisters  of same mother but different father
+Label=Any more siblings|Other brothers and sisters  of same mother but different father
 Name=QMM06_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Record]
 Label=Maternal mortality summary and filters
@@ -11041,7 +11042,7 @@ DataType=Numeric
 [ValueSet]
 Label=Start Adult and Maternal Mortality Module
 Name=QMM00_VS1
-Value=1;Press 1 to Continue
+Value=1;Press 1 to Continue|Entrez <<1>> pour continuer
 
 [Item]
 Label=Siblings order number
@@ -11066,7 +11067,7 @@ DataType=Numeric
 [ValueSet]
 Label=Number of brothers and sisters recorded in MM01 (excluding respondent)
 Name=QMM07_VS1
-Value=0;No brother/sister
+Value=0;No brother/sister|Pas de frère/soeur
 Value=1:20
 
 [Item]
@@ -11079,8 +11080,8 @@ DataType=Numeric
 [ValueSet]
 Label=Check for total brothers and sisters
 Name=QMM08_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Ordering of brothers and sisters
@@ -11092,8 +11093,8 @@ DataType=Numeric
 [ValueSet]
 Label=Ordering of brothers and sisters
 Name=QMM10_VS1
-Value=1;Go back and enter/edit order number
-Value=2;Order number is already entered, Continue interview
+Value=1;Go back and enter/edit order number|Revenez en arrière et saisissez/modifiez le numéro de l'ordre
+Value=2;Order number is already entered, Continue interview|Le numéro de l'ordre est déjà saisi. Poursuivez l'entretien
 
 [Item]
 Label=Brothers and sisters born before respondent (excluding respondent)
@@ -11144,8 +11145,8 @@ DataType=Numeric
 [ValueSet]
 Label=Sex of sibling
 Name=QMM14_VS1
-Value=1;Male
-Value=2;Female
+Value=1;Male|Homme
+Value=2;Female|Femme
 
 [Item]
 Label=Sibling alive
@@ -11157,9 +11158,9 @@ DataType=Numeric
 [ValueSet]
 Label=Sibling alive
 Name=QMM15_VS1
-Value=1;Yes
-Value=2;No
-Value=8;Don't know
+Value=1;Yes|Oui
+Value=2;No|Non
+Value=8;Don't know|Ne sait pas
 
 [Item]
 Label=Age of sibling
@@ -11207,8 +11208,8 @@ DataType=Numeric
 [ValueSet]
 Label=Died while pregnant
 Name=QMM19_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Died during childbirth
@@ -11220,8 +11221,8 @@ DataType=Numeric
 [ValueSet]
 Label=Died during childbirth
 Name=QMM20_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Died within 2 months of delivery
@@ -11233,8 +11234,8 @@ DataType=Numeric
 [ValueSet]
 Label=Died within 2 months of delivery
 Name=QMM21_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Days after end of pregnancy sister died
@@ -11258,8 +11259,8 @@ DataType=Numeric
 [ValueSet]
 Label=Death due to violence
 Name=QMM23_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=Death due to accident
@@ -11271,8 +11272,8 @@ DataType=Numeric
 [ValueSet]
 Label=Death due to accident
 Name=QMM24_VS1
-Value=1;Yes
-Value=2;No
+Value=1;Yes|Oui
+Value=2;No|Non
 
 [Item]
 Label=CMC date of birth of sibling
@@ -11344,9 +11345,9 @@ DataType=Numeric
 [ValueSet]
 Label=Fistule a commencé après un accouchement ou fausse-couche
 Name=FI4_VS1
-Value=1;Après naissance d'un bébé vivant
-Value=2;Après naissance d'un mort-né
-Value=3;Nu l'un, ni l'autre
+Value=1;Après naissance d'un bébé vivant|Après l'accouchement
+Value=2;Après naissance d'un mort-né|Après avoir eu un enfant mort-né
+Value=3;Nu l'un, ni l'autre|Ni l'un, ni l'autre
 
 [Item]
 Label=Fistule a commencé après un travail et un accouchement normaux ou un travail et un accouchement  très difficiles
@@ -11358,7 +11359,7 @@ DataType=Numeric
 [ValueSet]
 Label=Fistule a commencé après un travail et un accouchement normaux ou un travail et un accouchement  très difficiles
 Name=FI5_VS1
-Value=1;Travail/ accouchement noramal
+Value=1;Travail/ accouchement noramal|Travail/ accouchement normal
 Value=2;Travail/Accouchement très difficle
 
 [Item]
@@ -11955,6 +11956,11 @@ Name=QM130
 Start=61
 Len=2
 DataType=Numeric
+
+[ValueSet]
+Label=Religion
+Name=QM130_VS1
+Link=141428160
 
 [Item]
 Label=Ethnicity|Ethnie
@@ -13468,10 +13474,9 @@ Len=2
 DataType=Numeric
 
 [ValueSet]
-Label=Occupation|Occupation de l'enquêté
+Label=Occupation
 Name=QM604_VS1
-Value=0:95
-Value=96;Autre
+Link=119364440
 
 [Item]
 Label=Works seasonally|Travaille toute l'année/saisonnière

@@ -18,6 +18,7 @@ File=..\Dicts\CGHH80.dcf
 File=..\Dicts\CGIN80.dcf
 File=..\Dicts\CONTSUP.dcf
 File=..\Dicts\HHFORINT.dcf
+File=..\Dicts\REMEASURE.dcf
 [AppCode]
 File=.\SupMenu.apc
 Include=..\Library\HTMLFunctions.apc
@@ -39,3 +40,4 @@ Dict-Type=..\Dicts\CGHH80.dcf,External
 Dict-Type=..\Dicts\CGIN80.dcf,External
 Dict-Type=..\Dicts\CONTSUP.dcf,External
 Dict-Type=..\Dicts\HHFORINT.dcf,External
+Dict-Type=..\Dicts\REMEASURE.dcf,External

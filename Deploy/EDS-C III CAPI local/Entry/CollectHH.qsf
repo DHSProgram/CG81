@@ -1,6 +1,6 @@
 ﻿---
 fileType: Question Text
-version: CSPro 7.7
+version: CSPro 8.0
 languages:
   - name: FR
     label: French
@@ -1507,7 +1507,7 @@ questions:
           EN: |
             <p>Did you get the net through a [LOCAL NAME OF MASS DISTRIBUTION CAMPAIGN], during an antenatal care visit, or during an immunization visit?</p>
           FR: |
-            <p>143.  Avez-vous obtenu la moustiquaire &#224; l&#39;occasion [NOM LOCAL D&#39;UNE CAMPAGNE DE DISTRIBUTION DE MASSE], durant une visite pr&#233;natale ou au cours d&#39;une visite pour une vaccination ?</p>
+            <p>143.&nbsp;Avez-vous obtenu la moustiquaire à l'occasion de la campagne nationale de distribution de masse des moustiquaires, durant une visite prénatale ou au cours d'une visite pour une vaccination ?</p>
   - name: CGHH80.QH144
     conditions:
       - questionText:
@@ -1703,7 +1703,7 @@ questions:
           EN: |
             <p><span class="instruction">ENTER WHETHER A TRANSLATOR WAS USED DURING THE INTERVIEW</span></p>
           FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">Traducteur utilisé&nbsp;</span><p></p>
+            <span style="color: rgb(0, 0, 255);">INDIQUEZ SI UN TRADUCTEUR A ÉTÉ UTILISÉ PENDANT L’ENTREVUE.</span><p></p>
   - name: CGHH80.GHAUX
     conditions:
       - questionText:
@@ -1739,21 +1739,29 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">Record the day of the visit</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">Inscrivez le jour de la visite&nbsp;</span><p></p>
   - name: CGHH80.QBINTM
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Record the month of the visit</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">Inscrivez le mois de la visite&nbsp;</span><p></p>
   - name: CGHH80.QBINTY
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Record the year of the visit</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">Inscrivez l'année de la visite&nbsp;</span><p></p>
   - name: CGHH80.QBVISITS
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">Register the number of visits necessary to complete the biomarker questionnaire</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">Inscrivez le nombre de visites nécessaires pour remplir le questionnaire sur les biomarqueurs&nbsp;</span><p></p>
   - name: CGHH80.QB102
     conditions:
       - questionText:
@@ -1764,149 +1772,276 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">Do you want to enter biomarker measurements for ~~QCNAME~~?</span></p>
+          FR: |
+            <font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">Voulez-vous saisir des mesures de biomarqueurs pour ~~QCNAME~~ ?</span></font><p></p>
   - name: QB103_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>What is ~~QCNAME~~'s date of birth?</p>
+          FR: |
+            QB103. Quelle est la date de naissance de ~~QCNAME~~?<p></p>
   - name: CGHH80.QB103D
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD DAY</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER JOUR&nbsp;</span><p></p>
   - name: CGHH80.QB103M
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER MOIS&nbsp;</span><p></p>
   - name: CGHH80.QB103Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER ANNEE&nbsp;&nbsp;</span><p></p>
   - name: CGHH80.QB104
     conditions:
       - questionText:
           EN: |
             <p>How old was ~~QCNAME~~ at ~~QCNAME~~'s last birthday? </p>
+          FR: |
+            <span style="font-family: Arial, sans-serif;">QB104. Quel âge avait ~~QCNAME~~ à son dernier anniversaire?&nbsp;</span><p></p>
   - name: CGHH80.QB106
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QCNAME~~'S WEIGHT IN KILOGRAMS.</span></p>
             <p><span class="instruction">(Use format xx.xx and enter the decimal point)</span></p>
+          FR: |
+            <p class="MsoNormal"><span lang="FR"><font color="#0000ff">QB106.&nbsp;ENREGISTREZ LE POIDS DE ~~QCNAME~~ EN KILOGRAMMES.&nbsp;<o:p></o:p></font></span></p><p style="font-size: 16px;"></p><p class="MsoNormal"><span lang="FR"><font color="#0000ff">(Utilisez le format xx.xx et entrez le point pour la virgule décimale en Français)&nbsp;</font></span></p><p></p>
   - name: CGHH80.QB106W
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RE-ENTER ~~QCNAME~~'S WEIGHT IN KILOGRAMS.</span></p>
             <p><span class="instruction">(Use format xx.xx and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 16px;"><font color="#0000ff"><span style="font-family: Arial, sans-serif; font-size: 21px;">QB106.&nbsp;</span><span style="font-size: 21px; font-family: Arial, sans-serif;">RE-ENRE</span></font><span style="font-size: 21px; color: rgb(0, 0, 255); font-family: Arial, sans-serif;">GISTREZ LE POIDS DE ~~QCNAME~~ EN KILOGRAMMES.&nbsp;</span></p><p style="font-size: 16px;"><span style="font-size: 21px; color: rgb(0, 0, 255); font-family: Arial, monospace;">(Utilisez le format xx.xx et entrez le point pour la virgule décimale en Français)&nbsp;</span></p><p></p>
   - name: CGHH80.QB107
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">WAS THE CHILD MINIMALLY DRESSED?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB107.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">L'ENFANT ÉTAIT-IL HABILLÉ LÉGÈREMENT?&nbsp;</span><p></p>
   - name: CGHH80.QB108
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QCNAME~~'S HEIGHT IN CENTIMETERS.</span></p>
             <p><span class="instruction">(Use format xxx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 16px;"><font color="#0000ff"><span style="font-family: Arial, sans-serif; font-size: 21px;">QB108.&nbsp;</span><span style="font-size: 21px; font-family: Arial, sans-serif;">ENREGISTREZ LA TAILLE DE ~~QCNAME~~ EN CENTIMÈTRES.&nbsp;</span></font></p><p style="font-size: 16px;"><span style="font-size: 21px; color: rgb(0, 0, 255); font-family: Arial, monospace;">(Utilisez le format xx.x et entrez le point pour la virgule décimale en Français)&nbsp;</span></p><p></p>
   - name: CGHH80.QB108W
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RE-ENTER ~~QCNAME~~'S HEIGHT IN CENTIMETERS.</span></p>
             <p><span class="instruction">(Use format xxx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 16px;"><font color="#0000ff"><span style="font-family: Arial, sans-serif; font-size: 21px;">QB108.&nbsp;</span><span style="font-size: 21px; font-family: Arial, sans-serif;">RE-ENREGISTRE</span></font><span style="font-size: 21px; color: rgb(0, 0, 255); font-family: Arial, sans-serif;">Z LA TAILLE DE ~~QCNAME~~ EN CENTIMÈTRES.&nbsp;</span></p><p style="font-size: 16px;"><span style="font-size: 21px; color: rgb(0, 0, 255); font-family: Arial, monospace;">(Utilisez le format xx.x et entrez le point pour la virgule décimale en Français)&nbsp;</span></p><p></p>
   - name: QB109_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>RECORD THE DATE OF MEASUREMENT</p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB109.&nbsp;</span><span style="color: rgb(0, 0, 255);">ENREGISTRER LA DATE DE LA MESURE</span><p></p>
   - name: CGHH80.QB109D
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD DAY</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER JOUR&nbsp;</span><p></p>
   - name: CGHH80.QB109M
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER MOIS&nbsp;</span><p></p>
   - name: CGHH80.QB109Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER ANNEE&nbsp;&nbsp;</span><p></p>
   - name: CGHH80.QB110
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD WHETHER ~~QCNAME~~'S WAS MEASURED LYING DOWN OR STANDING UP.</span></p>
+          FR: |
+            <span style="font-family: Arial, sans-serif;"><font color="#0000ff">QB110.&nbsp;</font></span><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">L'ENFANT A T-IL ÉTÉ&nbsp; MESURÉ EN POSITION ALLONGÉE OU DEBOUT?</font><p></p>
   - name: CGHH80.QB112
     conditions:
       - logic: chage = 0
         questionText:
           EN: |
             <p><span class="instruction">PRESS ENTER AND RECORD THE REASON WHY ~~QCNAME~~ WAS MEASURED STANDING UP</span></p>
+          FR: |
+            <span style="font-size: 24px; color: rgb(0, 0, 255);">QB112.&nbsp;</span><span style="font-size: 24px; color: rgb(0, 0, 255);">VÉRIFIEZ 104 ET 109: SUR LA BASE DE L'ÂGE DE L'ENFANT, LA PROCÉDURE CORRECTE POUR LA MESURE A T-ELLE ÉTÉ SUIVIE ?</span><p></p>
       - logic: chage = 1
         questionText:
           EN: |
             <p><span class="instruction">PRESS ENTER AND RECORD THE REASON WHY ~~QCNAME~~ WAS MEASURED LYING DOWN</span></p>
+          FR: |
+            <span style="font-size: 24px; color: rgb(0, 0, 255);">QB112.&nbsp;</span><span style="font-size: 24px; color: rgb(0, 0, 255);">VÉRIFIEZ 104 ET 109: SUR LA BASE DE L'ÂGE DE L'ENFANT, LA PROCÉDURE CORRECTE POUR LA MESURE A T-ELLE ÉTÉ SUIVIE ?</span><p></p>
   - name: CGHH80.QB113
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?</span></p>
+          FR: |
+            <span style="font-family: Arial, sans-serif;"><font color="#0000ff">QB113.&nbsp;</font></span><font color="#0000ff">LA MESURE ENREGISTRÉE A-T-ELLE ÉTÉ GÊNÉE PAR DES CHEVEUX TRESSÉS OU COIFFÉS ?</font><p></p>
   - name: CGHH80.QB114
     conditions:
       - questionText:
           EN: |
             <font color="#0000ff">WAS HEIGHT/LENGTH AND WEIGHT FOR&nbsp;</font><span style="color: rgb(0, 0, 255);">&nbsp;~~QCNAME~~&nbsp;</span><font color="#0000ff">RECORDED IN THE [ANTHROPOMETRY AND ANEMIA PAMPHLET]?</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB114.&nbsp;</span><font color="#0000ff">CE QUE LA TAILLE/LONGUEUR ET LE POIDS ONTS ÉTÉ INSCRITS DANS [LA BROCHURE D’INFORMATION]?</font><p></p>
   - name: CGHH80.QB115
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER OF THE BIOMARKER MEASURER.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB115.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR.</font><p></p>
   - name: CGHH80.QB116
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER OF ASSISTANT MEASURER.</span></p>
             <p><span class="instruction">IF NO ASSISTANT MEASURER, ENTER 9999.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB116.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR ASSISTANT</font><p></p>
   - name: CGHH80.QB118
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD LINE NUMBER OF PARENT/OTHER ADULT RESPONSIBLE FOR ~~QCNAME~~.</span></p>
             <p><span class="instruction">RECORD '0' IF NOT LISTED</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB118.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NOM ET NUMERO DE LIGNE DU PARENT/ADULTE RESPONSABLE DE L'ENFANT</font><p></p>
   - name: CGHH80.QB120
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD WHETHER CONSENT FOR ANEMIA TESTING WAS GRANTED FOR ~~QCNAME~~</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB120.&nbsp;</span><font color="#0000ff">DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LE TEST DE PALUDISME :</font><p></p>
   - name: CGHH80.QB121
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER OF HEMOGLOBIN MEASURER.</span></p>
-  - name: CGHH80.QB123
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD HEMOGLOBIN LEVEL FOR ~~QCNAME~~.</span></p>
-            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
-  - name: CGHH80.QB123W
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RE-ENTER HEMOGLOBIN LEVEL FOR ~~QCNAME~~.</span></p>
-            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
+          FR: |
+            <font color="#0000ff">&nbsp;</font><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB121.&nbsp;</span><font color="#0000ff">SIGNEZ&nbsp; ET INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN].</font><p></p>
   - name: CGHH80.QB124
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">CHECK 122: HEMOGLOBIN RESULT</span></p>
+            <p><span style="color: rgb(0, 0, 255);">QB124 ENREGISTRER LE RÉSULTAT DU TDR DU PALUDISME</span></p>
+          FR: |
+            <font color="#0000ff">QB124 ENREGISTRER LE RÉSULTAT DU TDR DU PALUDISME</font><p></p>
+  - name: QB125_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(41, 82, 24); font-family: Arial, sans-serif;">QBM125.&nbsp;</span><span style="color: rgb(41, 82, 24);">Est-ce que~~QCNAME~~&nbsp;souffre d'une des maladies suivantes ou présente un ou des symptômes suivants :</span><p></p>
+          FR: |
+            <span style="color: rgb(41, 82, 24); font-family: Arial, sans-serif;">QBM125.&nbsp;</span><span style="color: rgb(41, 82, 24);">Est-ce que~~QCNAME~~&nbsp;souffre d'une des maladies suivantes ou présente un ou des symptômes suivants :</span><p></p>
+  - name: CGHH80.QB125A
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">a) PROSTRATION</span><p></p>
+  - name: CGHH80.QB125B
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">b) PROBLÈMES CARDIAQUES</span><p></p>
+  - name: CGHH80.QB125C
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">c) PERTE CONSCIENCE</span><p></p>
+  - name: CGHH80.QB125D
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">d) RESPIRATION DIFFICILE</span><p></p>
+  - name: CGHH80.QB125E
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">e) CONVULSIONS</span><p></p>
+  - name: CGHH80.QB125F
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">f) SAIGNEMENTS</span><p></p>
+  - name: CGHH80.QB125G
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">g) JAUNISSE</span><p></p>
+  - name: CGHH80.QB125H
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">h) URINE FONCÉES</span><p></p>
+  - name: CGHH80.QB127
+    conditions:
+      - questionText:
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QBM127.&nbsp;</span><font color="#0000ff">DÉCLARATION POUR RÉFÉRENCE POUR PALUDISME SÉVÈRE.</font></p><p>Le test pour le diagnostic du paludisme montre que {NOM DE L'ENFANT} a du paludisme. Votre enfant a également des symptômes de paludisme sévère. Le médicament que j'ai contre le paludisme n'aidera pas votre enfant, et je ne peux pas lui donner de traitement. Votre enfant est sérieusement malade et doit être améné tout de suite à un établissement de santé.<br></p><p><font color="#0000ff">ENREGISTRER LE RESULTAT DU TDR DU PALUDISME SUR LA FICHE DE RÉFÉRENCE DU PALUDISME SÉVÈRE.</font></p><p></p>
+  - name: CGHH80.QB128
+    conditions:
+      - questionText:
+          FR: |
+            <p>QBM128. Au cours des 2 dernières semaines, est-ce que&nbsp;&nbsp;~~QCNAME~~a pris ou&nbsp;&nbsp;~~QCNAME~~&nbsp;prend-il du CTA donné par un médecin ou un centre de santé pour traiter le paludisme ?</p><p><br></p><p><font color="#0000ff">VÉRIFIEZ EN DEMANDANT DE VOIR LE TRAITEMENT.&nbsp;</font></p><p></p>
+  - name: CGHH80.QB131
+    conditions:
+      - questionText:
+          FR: |
+            <p><font color="#0000ff">QBM131.DÉCLARATION DE CONSENTEMENT AU PARENT OU AUTRE ADULTE RESPONSABLE POUR L'ENFANT.</font></p><p><br></p><p></p>
+  - name: CGHH80.QB132
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QBM132. INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN].</span><p></p>
+  - name: QB135_BLOCK
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QBM135. ENREGISTRER LA DATE DE LA MESURE DU PALUDISME</span><p></p>
+  - name: CGHH80.QB135D
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">﻿ENTRER LE JOUR</span><p></p>
+  - name: CGHH80.QB135M
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">ENTRER LE MOIS</span><p></p>
+  - name: CGHH80.QB135Y
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">ENTRER L'ANNEE</span><p></p>
   - name: CGHH80.QB202
     conditions:
       - questionText:
@@ -1916,1827 +2051,591 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">Do you want to enter biomarker measurements for ~~QWNAME~~?</span></p>
+            <p><span class="instruction">Do you want to enter biomarker measurements for ~~QMNAME~~?</span></p>
+          FR: |
+            <font color="#0000ff">Voulez-vous saisir des mesures de biomarqueurs pour ~~QMNAME~~ ?</font><p></p>
   - name: CGHH80.QB203
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD WHETHER AGE OF ~~QWNAME~~ IS 15-17 YEARS, OR 18-49 YEARS</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB203. ENREGISTRER SI L'AGE DE&nbsp;</span><b style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">~~QWNAME~~</b><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;EST 15-17 ANSS, OU 18-49 ANS</span><p></p>
   - name: CGHH80.QB204
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QWNAME~~'S MARITAL STATUS</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB204.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ETAT MATRIMONIAL DE&nbsp;</span><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span><p></p>
   - name: CGHH80.QB205
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QWNAME~~'S WEIGHT IN KILOGRAMS.</span></p>
             <p><span class="instruction">(Use format xxx.xx and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB205.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">POIDS EN KILOGRAMMES DE&nbsp;</font><span style="color: rgb(0, 0, 255); font-size: 21px;">~~QWNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.xx et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: CGHH80.QB205W
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RE-ENTER ~~QWNAME~~'S WEIGHT IN KILOGRAMS</span></p>
             <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB205.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">RE-SAISIR POIDS EN KILOGRAMMES&nbsp;</font><font color="#0000ff" face="Arial, sans-serif">DE&nbsp;</font><span style="font-size: 21px; color: rgb(0, 0, 255);">~~QWNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.xx et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: CGHH80.QB206
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">WAS THE WOMAN WEARING ONLY LIGHTWEIGHT CLOTHING?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB206.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">PORTAIT UNIQUEMENT DES VÊTEMENTS LÉGERS</span><p></p>
   - name: CGHH80.QB207
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QWNAME~~'S HEIGHT IN CENTIMETERS.</span></p>
             <p><span class="instruction">(Use format xxx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB207.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">TAILLE EN CENTIMÈTRES&nbsp;</font><font color="#0000ff" face="Arial, sans-serif">DE&nbsp;</font><span style="font-size: 21px; color: rgb(0, 0, 255);">~~QWNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.&nbsp;</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.x et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: CGHH80.QB207W
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RE-ENTER ~~QWNAME~~'S HEIGHT IN CENTIMETERS</span></p>
             <p><span class="instruction">(Use format xxx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB207.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">RE-SAISIR TAILLE EN CENTIMÈTRES&nbsp;</font><font color="#0000ff" face="Arial, sans-serif">DE&nbsp;</font><span style="font-size: 21px; color: rgb(0, 0, 255);">~~QWNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.&nbsp;</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.x et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: QB211_BLOCK
     conditions:
       - questionText:
           EN: |
             <p>RECORD THE DATE OF MEASUREMENT</p>
+          FR: |
+            <font color="#295218"><span style="font-family: Arial, sans-serif; font-size: 24px;">QB211.&nbsp;</span><span style="font-size: 24px;">ENREGISTRER LA DATE DE LA MESURE</span></font><br><p></p>
   - name: CGHH80.QB211D
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD DAY</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">﻿ENTRER LE JOUR</span><p></p>
   - name: CGHH80.QB211M
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">ENTRER LE MOIS</span><p></p>
   - name: CGHH80.QB211Y
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">ENTRER L'ANNEE</span><p></p>
   - name: CGHH80.QB208
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB208.&nbsp;</span><span style="color: rgb(0, 0, 255); font-size: 24px;">LA MESURE ENREGISTRÉE A-T-ELLE ÉTÉ GÊNÉE PAR DES CHEVEUX TRESSÉS OU COIFFÉS</span><p></p>
   - name: CGHH80.QB209
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD FIELDWORKER NUMBER OF BIOMARKER MEASURER.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB209.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">NUMÉRO DE L'AGENT BIOMARQUEUR&nbsp;</span><p></p>
   - name: CGHH80.QB210
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER OF ASSISTANT MEASURER.</span></p>
             <p><span class="instruction">IF NO ASSISTANT MEASURER, ENTER 9999.</span></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB210.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff"><span style="font-size: 24px;">INSCRIVEZ NUMÉRO [AGENT DE TERRAIN]&nbsp; DU MESUREUR ASSISTANT.</span></font></p><p><font color="#0000ff"><span style="font-size: 24px;"><br></span></font></p><p><br></p><p></p>
   - name: CGHH80.QB214
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER&nbsp;</span><span style="color: rgb(0, 0, 255);">CONSENT</span><span style="color: rgb(0, 0, 255);">&nbsp;FOR OTHER&nbsp;</span><span style="color: rgb(0, 0, 255);">TEST WAS GRANTED BY ~~QWNAME~~</span></p>
+            <font color="#0000ff">DEMANDEZ LE CONSENTEMENT POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE DÉPISTAGE DU VIH :</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB214. DEMANDEZ LE CONSENTEMENT POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE DÉPISTAGE DU VIH :</span><p></p>
   - name: CGHH80.QB215
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255);">ENTER FIELDWORKER NUMBER FOR OTHER TEST MEASURER.</span><p></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB215.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO&nbsp; DU TECHNICIEN DE SANTÉ.</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB215.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO&nbsp; DU TECHNICIEN DE SANTÉ.</span></font><p></p>
+  - name: CGHH80.QB216
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB216.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB216.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><br><p></p>
+  - name: CGHH80.QB217
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size: 24px; color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB217.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</span></font></p>
+          FR: |
+            <p style=""><span style="font-size: 24px; color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB217.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</span></font></p><p></p>
+  - name: CGHH80.QB219
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, serif;">QB219 .</span><font color="#0000ff" face="Arial, serif">DEMANDEZ LE CONSENTEMENT POUR DES TESTS SUPPLÉMENTAIRES</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB219.&nbsp;</span><font color="#0000ff" face="Arial, serif">DEMANDEZ LE CONSENTEMENT POUR DES TESTS SUPPLÉMENTAIRES</font><p></p>
+  - name: CGHH80.QB220
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD WHETHER&nbsp;</span><span style="color: rgb(0, 0, 255);">CONSENT</span><span style="color: rgb(0, 0, 255);">&nbsp;FOR OTHER&nbsp;</span><span style="color: rgb(0, 0, 255);">TEST WAS GRANTED BY ~~QWNAME~~</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB220.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">SIGNEZ&nbsp; ET INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><br><p></p>
+  - name: CGHH80.QB221
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB220.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB220.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">&nbsp;INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
   - name: CGHH80.QB222
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER&nbsp;</span><span style="color: rgb(0, 0, 255);">CONSENT</span><span style="color: rgb(0, 0, 255);">&nbsp;FOR&nbsp;</span><span style="color: rgb(0, 0, 255);">OTHER TEST WAS GRANTED BY PARENT/RESPONSILBE ADULT FOR ~~QWNAME~~</span></p>
+            <span style="color: rgb(0, 0, 255);">QB222:&nbsp;DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DÉPISTAGE DU VIH:</span><p></p>
+          FR: |
+            <font color="#0000ff">QB222:&nbsp;DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DÉPISTAGE DU VIH:</font><p></p>
   - name: CGHH80.QB223
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD FIELDWORKER NUMBER FOR OTHER TEST MEASURER.</span></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB223.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">&nbsp;INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB223.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">&nbsp;INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
   - name: CGHH80.QB226
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT FOR OTHER TEST WAS GRANTED BY&nbsp;</span><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span></p>
+            <font color="#0000ff">DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DE DÉPISTAGE DU VIH:</font><p></p>
+          FR: |
+            <font color="#0000ff">DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DE DÉPISTAGE DU VIH:</font><p></p>
   - name: CGHH80.QB227
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD FIELDWORKER NUMBER OF BIOMARKER MEASURER.</span></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB227.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font></p><p></p>
+  - name: CGHH80.QB228
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB228.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB228.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><p></p>
+  - name: CGHH80.QB229
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB229.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB229.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+  - name: CGHH80.QB231
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB231. DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :&nbsp;</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB231. DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :&nbsp;</span><p></p>
+  - name: CGHH80.QB232
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB232.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB232.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+  - name: CGHH80.QB234
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB234.&nbsp;</span><span style="color: rgb(0, 0, 255);">DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS&nbsp;</span><p></p>
+          FR: |
+            <font color="#0000ff"><span style="font-family: Arial, sans-serif; font-size: 24px;">QB234.&nbsp;</span>DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS&nbsp;</font><p></p>
+  - name: CGHH80.QB235
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB235.SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</span><p></p>
+          FR: |
+            <font color="#0000ff">QB235.SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</font><p></p>
+  - name: CGHH80.QB237
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB237.&nbsp;DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS</span><p></p>
+          FR: |
+            <font color="#0000ff">QB237.&nbsp;DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS</font><p></p>
+  - name: CGHH80.QB238
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB238.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</font><p></p>
+          FR: |
+            <p class="MsoNormal"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB238.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</font></p><p></p>
   - name: CGHH80.QB239
     conditions:
       - questionText:
           EN: |
-            <font color="#0000ff">PREPARE EQUIPMENT AND SUPPLIES ONLY FOR THE TEST(S) FOR WHICH CONSENT HAS BEEN GRANTED.</font><p></p>
+            <div><font color="#0000ff">POUR ADULTE : VÉRIFIEZ 214, 216, ET 219 ET ENREGISTRER LES TESTS POUR LESQUELS UN CONSENTEMENT ÉCLAIRÉ A ÉTÉ OBTENU.&nbsp;</font></div><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">POUR MINEUR : VÉRIFIEZ 222/226, 228/231, ET 234/237 ET ENREGISTREZ LES TESTS POUR LESQUELS LE CONSENTEMENT ÉCLAIRÉ DES PARENTS ET L'ACCENT DU MINEUR ONT ETE OBTENU.&nbsp;</font></div><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">PRÉPAREZ L'EQUIPEMENT ET LES FOURNITURES SEULEMENT POUR LE/LES TESTS POUR LESQUELS VOUS AVEZ OBTENU LE CONSENTEMENT.</font></div><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB239.&nbsp;</span><font color="#0000ff">POUR ADULTE : VÉRIFIEZ 214, 216, ET 219 ET ENREGISTRER LES TESTS POUR LESQUELS UN CONSENTEMENT ÉCLAIRÉ A ÉTÉ OBTENU.&nbsp;</font><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">POUR MINEUR : VÉRIFIEZ 222/226, 228/231, ET 234/237 ET ENREGISTREZ LES TESTS POUR LESQUELS LE CONSENTEMENT ÉCLAIRÉ DES PARENTS ET L'ACCENT DU MINEUR ONT ETE OBTENU.&nbsp;</font></div><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">PRÉPAREZ L'EQUIPEMENT ET LES FOURNITURES SEULEMENT POUR LE/LES TESTS POUR LESQUELS VOUS AVEZ OBTENU LE CONSENTEMENT.</font></div><p></p>
   - name: CGHH80.QB240
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD BAR CODE ASSIGNED TO ~~QWNAME~~'S DBS SAMPLE</span></p>
+            <p><font color="#0000ff">QB240 PLACEZ ÉTIQUETTE CODE BARRE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">COLLER LA 2ème ÉTIQUETTE CODE BARRE SUR LA FICHE DE TRANSMISSION ET LA 3ème SUR LE PAPIER FILTRE DE L'ENQUÊTÉE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">SI LE CONSENTEMENT N'A PAS ÉTÉ ACCORDÉ, ÉCRIVEZ "NAT" SUR LE PAPIER FILTRE.</font></p><p></p>
+          FR: |
+            <p><font color="#0000ff">QB240 PLACEZ ÉTIQUETTE CODE BARRE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">COLLER LA 2ème ÉTIQUETTE CODE BARRE SUR LA FICHE DE TRANSMISSION ET LA 3ème SUR LE PAPIER FILTRE DE L'ENQUÊTÉE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">SI LE CONSENTEMENT N'A PAS ÉTÉ ACCORDÉ, ÉCRIVEZ "NAT" SUR LE PAPIER FILTRE.</font></p><p></p>
+  - name: CGHH80.QB241
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">ENREGISTREZ LE RÉSULTAT DU DETERMINE DU VIH ICI.</font><span style="white-space: pre;"><font color="#0000ff">	</font></span><p></p>
+          FR: |
+            <font color="#0000ff">QB241 ENREGISTREZ LE RÉSULTAT DU DETERMINE DU VIH ICI.</font><span style="white-space:pre"><font color="#0000ff">	</font>	</span><p></p>
+  - name: CGHH80.QB242
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB242.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU BIO-LINE DU VIH ICI.</span></font></p><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB242.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU BIO-LINE DU VIH ICI.</span></font></p><p></p>
+  - name: CGHH80.QB241A
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB241A.&nbsp;</span><font color="#0000ff">RÉPÉTEZ DETERMINE VIH ET ENREGISTREZ LE RÉSULTAT ICI.<span style="white-space:pre">	</span></font><p></p>
+  - name: CGHH80.QB242A
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">RÉPÉTEZ BIO-LINE VIH ET ENREGISTREZ LE RÉSULTAT ICI.</font><span style="white-space: pre;"><font color="#0000ff">		</font></span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB242A.&nbsp;</span><font color="#0000ff">RÉPÉTEZ BIO-LINE VIH ET ENREGISTREZ LE RÉSULTAT ICI.</font><span style="white-space:pre"><font color="#0000ff">		</font>	</span><p></p>
+  - name: CGHH80.QB244
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB244.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU UNIGOLD.<span style="white-space: pre;">		</span></span></font></p><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB244.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU UNIGOLD.<span style="white-space: pre;">		</span></span></font></p><p></p>
   - name: CGHH80.QB302
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD LINE NUMBER OF MAN</span></p>
-  - name: CGHH80.QMAUXIL
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">Do you want to enter biomarker measurements for ~~QMNAME~~?</span></p>
+            <p><span class="instruction">RECORD LINE NUMBER OF WOMAN</span></p>
   - name: CGHH80.QB303
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER AGE OF ~~QMNAME~~ IS 15-17 YEARS, OR 18-[49] YEARS</span></p>
+            <p><span class="instruction">RECORD WHETHER AGE OF ~~QMNAME~~ IS 15-17 YEARS, OR 18-49 YEARS</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB303. ENREGISTRER SI L'AGE DE&nbsp;</span><b style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">~~QMNAME~~</b><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;EST 15-17 ANSS, OU 18-49 ANS</span><p></p>
   - name: CGHH80.QB304
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QMNAME~~'S MARITAL STATUS</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB304.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">ETAT MATRIMONIAL DE&nbsp;</span><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span><p></p>
   - name: CGHH80.QB305
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QMNAME~~'S WEIGHT IN KILOGRAMS.</span></p>
             <p><span class="instruction">(Use format xxx.xx and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB305.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">POIDS EN KILOGRAMMES DE&nbsp;</font><span style="color: rgb(0, 0, 255); font-size: 21px;">~~QMNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.xx et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: CGHH80.QB305W
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RE-ENTER ~~QMNAME~~'S WEIGHT IN KILOGRAMS</span></p>
-            <p><span class="instruction">(Use format xxx.xx and enter the decimal point)</span></p>
+            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB305.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">RE-SAISIR POIDS EN KILOGRAMMES&nbsp;</font><font color="#0000ff" face="Arial, sans-serif">DE&nbsp;</font><span style="font-size: 21px; color: rgb(0, 0, 255);">~~QMNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.xx et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: CGHH80.QB306
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">WAS THE MAN WEARING ONLY LIGHTWEIGHT CLOTHING?</span></p>
+            <p><span class="instruction">WAS THE WOMAN WEARING ONLY LIGHTWEIGHT CLOTHING?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB306.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">PORTAIT UNIQUEMENT DES VÊTEMENTS LÉGERS</span><p></p>
   - name: CGHH80.QB307
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD ~~QMNAME~~'S HEIGHT IN CENTIMETERS.</span></p>
             <p><span class="instruction">(Use format xxx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB307.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">TAILLE EN CENTIMÈTRES&nbsp;</font><font color="#0000ff" face="Arial, sans-serif">DE&nbsp;</font><span style="font-size: 21px; color: rgb(0, 0, 255);">~~QMNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.&nbsp;</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.x et entrez le point décimal)&nbsp;</span></p><p></p>
   - name: CGHH80.QB307W
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RE-ENTER ~~QMNAME~~'S HEIGHT IN CENTIMETERS</span></p>
             <p><span class="instruction">(Use format xxx.x and enter the decimal point)</span></p>
+          FR: |
+            <p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB307.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">RE-SAISIR TAILLE EN CENTIMÈTRES&nbsp;</font><font color="#0000ff" face="Arial, sans-serif">DE&nbsp;</font><span style="font-size: 21px; color: rgb(0, 0, 255);">~~QMNAME~~</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">.&nbsp;</span></p><p style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">(Utilisez le format xxx.x et entrez le point décimal)&nbsp;</span></p><p></p>
+  - name: QB311_BLOCK
+    conditions:
+      - questionText:
+          EN: |
+            <p>RECORD THE DATE OF MEASUREMENT</p>
+          FR: |
+            <font color="#295218"><span style="font-family: Arial, sans-serif; font-size: 24px;">QB311.&nbsp;</span><span style="font-size: 24px;">ENREGISTRER LA DATE DE LA MESURE</span></font><br><p></p>
+  - name: CGHH80.QB311D
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD DAY</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">﻿ENTRER LE JOUR</span><p></p>
+  - name: CGHH80.QB311M
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD MONTH</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">ENTRER LE MOIS</span><p></p>
+  - name: CGHH80.QB311Y
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD YEAR</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-size: 24px;">ENTRER L'ANNEE</span><p></p>
+  - name: CGHH80.QB308
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB308.&nbsp;</span><span style="color: rgb(0, 0, 255); font-size: 24px;">LA MESURE ENREGISTRÉE A-T-ELLE ÉTÉ GÊNÉE PAR DES CHEVEUX TRESSÉS OU COIFFÉS</span><p></p>
   - name: CGHH80.QB309
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD FIELDWORKER NUMBER OF BIOMARKER MEASURER.</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB309.&nbsp;</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">NUMÉRO DE L'AGENT BIOMARQUEUR&nbsp;</span><p></p>
+  - name: CGHH80.QB310
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">ENTER FIELDWORKER NUMBER OF ASSISTANT MEASURER.</span></p>
             <p><span class="instruction">IF NO ASSISTANT MEASURER, ENTER 9999.</span></p>
-  - name: CGHH80.QB310
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">WAS HEIGHT/LENGTH AND WEIGHT RECORDED IN THE [ANTHROPOMETRY AND ANEMIA PAMPHLET]?</font><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB310.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff"><span style="font-size: 24px;">INSCRIVEZ NUMÉRO [AGENT DE TERRAIN]&nbsp; DU MESUREUR ASSISTANT.</span></font></p><p><font color="#0000ff"><span style="font-size: 24px;"><br></span></font></p><p><br></p><p></p>
   - name: CGHH80.QB314
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER&nbsp;</span><span style="color: rgb(0, 0, 255);">CONSENT</span><span style="color: rgb(0, 0, 255);">&nbsp;FOR OTHER&nbsp;</span><span style="color: rgb(0, 0, 255);">TEST WAS GRANTED BY ~~QMNAME~~</span></p>
+            <font color="#0000ff">DEMANDEZ LE CONSENTEMENT POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE DÉPISTAGE DU VIH :</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB314. DEMANDEZ LE CONSENTEMENT POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE DÉPISTAGE DU VIH :</span><p></p>
   - name: CGHH80.QB315
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255);">ENTER FIELDWORKER NUMBER FOR OTHER TEST MEASURER.</span><p></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB315.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO&nbsp; DU TECHNICIEN DE SANTÉ.</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB315.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO&nbsp; DU TECHNICIEN DE SANTÉ.</span></font><p></p>
+  - name: CGHH80.QB316
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB316.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB316.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><br><p></p>
+  - name: CGHH80.QB317
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="font-size: 24px; color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB317.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</span></font></p>
+          FR: |
+            <p style=""><span style="font-size: 24px; color: rgb(0, 0, 255); font-family: Arial, sans-serif;">QB317.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</span></font></p><p></p>
+  - name: CGHH80.QB319
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, serif;">QB319 .</span><font color="#0000ff" face="Arial, serif">DEMANDEZ LE CONSENTEMENT POUR DES TESTS SUPPLÉMENTAIRES</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB319.&nbsp;</span><font color="#0000ff" face="Arial, serif">DEMANDEZ LE CONSENTEMENT POUR DES TESTS SUPPLÉMENTAIRES</font><p></p>
+  - name: CGHH80.QB320
+    conditions:
+      - questionText:
+          EN: |
+            <p><span class="instruction">RECORD WHETHER&nbsp;</span><span style="color: rgb(0, 0, 255);">CONSENT</span><span style="color: rgb(0, 0, 255);">&nbsp;FOR OTHER&nbsp;</span><span style="color: rgb(0, 0, 255);">TEST WAS GRANTED BY ~~QMNAME~~</span></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB320.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">SIGNEZ&nbsp; ET INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><br><p></p>
+  - name: CGHH80.QB321
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB320.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB320.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">&nbsp;INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
   - name: CGHH80.QB322
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER&nbsp;</span><span style="color: rgb(0, 0, 255);">CONSENT</span><span style="color: rgb(0, 0, 255);">&nbsp;FOR&nbsp;</span><span style="color: rgb(0, 0, 255);">OTHER TEST WAS GRANTED BY PARENT/RESPONSILBE ADULT FOR ~~QMNAME~~</span></p>
+            <span style="color: rgb(0, 0, 255);">QB322:&nbsp;DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DÉPISTAGE DU VIH:</span><p></p>
+          FR: |
+            <font color="#0000ff">QB322:&nbsp;DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DÉPISTAGE DU VIH:</font><p></p>
   - name: CGHH80.QB323
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD FIELDWORKER NUMBER FOR OTHER TEST MEASURER.</span></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB323.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">&nbsp;INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB323.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">&nbsp;INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
   - name: CGHH80.QB326
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT FOR OTHER TEST WAS GRANTED BY&nbsp;</span><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span></p>
+            <font color="#0000ff">DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DE DÉPISTAGE DU VIH:</font><p></p>
+          FR: |
+            <font color="#0000ff">DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LA COLLECTE DE GOUTTES DE SANG SÉCHÉ POUR LE TEST DE DÉPISTAGE DU VIH:</font><p></p>
   - name: CGHH80.QB327
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">RECORD FIELDWORKER NUMBER OF BIOMARKER MEASURER.</span></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB327.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font></p><p></p>
+  - name: CGHH80.QB328
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB328.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB328.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">DEMANDEZ LE CONSENTEMENT DU PARENT/ADULTE RESPONSABLE POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :</span></font><p></p>
+  - name: CGHH80.QB329
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB329.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB329.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+  - name: CGHH80.QB331
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB331. DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :&nbsp;</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB331. DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR LE TEST DE DÉPISTAGE RAPIDE DU VIH :&nbsp;</span><p></p>
+  - name: CGHH80.QB332
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB332.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB332.</span><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ</span></font><p></p>
+  - name: CGHH80.QB334
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB334.&nbsp;</span><span style="color: rgb(0, 0, 255);">DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS&nbsp;</span><p></p>
+          FR: |
+            <font color="#0000ff"><span style="font-family: Arial, sans-serif; font-size: 24px;">QB334.&nbsp;</span>DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS&nbsp;</font><p></p>
+  - name: CGHH80.QB335
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB335.SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</span><p></p>
+          FR: |
+            <font color="#0000ff">QB335.SIGNEZ ET INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</font><p></p>
+  - name: CGHH80.QB337
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">QB337.&nbsp;DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS</span><p></p>
+          FR: |
+            <font color="#0000ff">QB337.&nbsp;DEMANDEZ L'ACCORD DU RÉPONDANT MINEUR POUR DES TESTS</font><p></p>
+  - name: CGHH80.QB338
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB338.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</font><p></p>
+          FR: |
+            <p class="MsoNormal"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB338.&nbsp;</span><font color="#0000ff">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ.</font></p><p></p>
   - name: CGHH80.QB339
     conditions:
       - questionText:
           EN: |
-            <font color="#0000ff">PREPARE EQUIPMENT AND SUPPLIES ONLY FOR THE TEST(S) FOR WHICH CONSENT HAS BEEN GRANTED.</font><p></p>
+            <div><font color="#0000ff">POUR ADULTE : VÉRIFIEZ 214, 216, ET 219 ET ENREGISTRER LES TESTS POUR LESQUELS UN CONSENTEMENT ÉCLAIRÉ A ÉTÉ OBTENU.&nbsp;</font></div><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">POUR MINEUR : VÉRIFIEZ 222/226, 228/231, ET 234/237 ET ENREGISTREZ LES TESTS POUR LESQUELS LE CONSENTEMENT ÉCLAIRÉ DES PARENTS ET L'ACCENT DU MINEUR ONT ETE OBTENU.&nbsp;</font></div><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">PRÉPAREZ L'EQUIPEMENT ET LES FOURNITURES SEULEMENT POUR LE/LES TESTS POUR LESQUELS VOUS AVEZ OBTENU LE CONSENTEMENT.</font></div><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB339.&nbsp;</span><font color="#0000ff">POUR ADULTE : VÉRIFIEZ 214, 216, ET 219 ET ENREGISTRER LES TESTS POUR LESQUELS UN CONSENTEMENT ÉCLAIRÉ A ÉTÉ OBTENU.&nbsp;</font><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">POUR MINEUR : VÉRIFIEZ 222/226, 228/231, ET 234/237 ET ENREGISTREZ LES TESTS POUR LESQUELS LE CONSENTEMENT ÉCLAIRÉ DES PARENTS ET L'ACCENT DU MINEUR ONT ETE OBTENU.&nbsp;</font></div><div><font color="#0000ff"><br></font></div><div><font color="#0000ff">PRÉPAREZ L'EQUIPEMENT ET LES FOURNITURES SEULEMENT POUR LE/LES TESTS POUR LESQUELS VOUS AVEZ OBTENU LE CONSENTEMENT.</font></div><p></p>
   - name: CGHH80.QB340
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THE BARCODE USED FOR THE TEST</span><p></p>
+            <p><font color="#0000ff">QB340 PLACEZ ÉTIQUETTE CODE BARRE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">COLLER LA 2ème ÉTIQUETTE CODE BARRE SUR LA FICHE DE TRANSMISSION ET LA 3ème SUR LE PAPIER FILTRE DE L'ENQUÊTÉE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">SI LE CONSENTEMENT N'A PAS ÉTÉ ACCORDÉ, ÉCRIVEZ "NAT" SUR LE PAPIER FILTRE.</font></p><p></p>
+          FR: |
+            <p><font color="#0000ff">QB340 PLACEZ ÉTIQUETTE CODE BARRE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">COLLER LA 2ème ÉTIQUETTE CODE BARRE SUR LA FICHE DE TRANSMISSION ET LA 3ème SUR LE PAPIER FILTRE DE L'ENQUÊTÉE.</font></p><p><font color="#0000ff"><br></font></p><p><font color="#0000ff">SI LE CONSENTEMENT N'A PAS ÉTÉ ACCORDÉ, ÉCRIVEZ "NAT" SUR LE PAPIER FILTRE.</font></p><p></p>
+  - name: CGHH80.QB341
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">ENREGISTREZ LE RÉSULTAT DU DETERMINE DU VIH ICI.</font><span style="white-space: pre;"><font color="#0000ff">	</font></span><p></p>
+          FR: |
+            <font color="#0000ff">QB341 ENREGISTREZ LE RÉSULTAT DU DETERMINE DU VIH ICI.</font><span style="white-space:pre"><font color="#0000ff">	</font>	</span><p></p>
+  - name: CGHH80.QB342
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB342.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU BIO-LINE DU VIH ICI.</span></font></p><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB342.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU BIO-LINE DU VIH ICI.</span></font></p><p></p>
+  - name: CGHH80.QB341A
+    conditions:
+      - questionText:
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB341A.&nbsp;</span><font color="#0000ff">RÉPÉTEZ DETERMINE VIH ET ENREGISTREZ LE RÉSULTAT ICI.<span style="white-space:pre">	</span></font><p></p>
+  - name: CGHH80.QB342A
+    conditions:
+      - questionText:
+          EN: |
+            <font color="#0000ff">RÉPÉTEZ BIO-LINE VIH ET ENREGISTREZ LE RÉSULTAT ICI.</font><span style="white-space: pre;"><font color="#0000ff">		</font></span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">QB342A.&nbsp;</span><font color="#0000ff">RÉPÉTEZ BIO-LINE VIH ET ENREGISTREZ LE RÉSULTAT ICI.</font><span style="white-space:pre"><font color="#0000ff">		</font>	</span><p></p>
+  - name: CGHH80.QB344
+    conditions:
+      - questionText:
+          EN: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB344.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU UNIGOLD.<span style="white-space: pre;">		</span></span></font></p><p></p>
+          FR: |
+            <p><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB344.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">ENREGISTREZ LE RÉSULTAT DU UNIGOLD.<span style="white-space: pre;">		</span></span></font></p><p></p>
   - name: CGHH80.QBFINISH
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">END OF BIOMARKER QUESTIONNAIRE.</span></p>
             <p><span class="instruction">A WINDOW WILL BE DISPLAYED TO WRITE ANY NOTES.  AFTER THAT THE QUESTIONNAIRE WILL BE SAVED AUTOMATICALLY.</span></p>
+          FR: |
+            <font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">FIN DU QUESTIONNAIRE BIOMARQUEUR.</font><div style="font-size: 24px;"><font color="#0000ff" face="Arial, sans-serif"><br></font></div><div style="font-size: 24px;"><span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">UNE FENÊTRE S'AFFICHERA POUR ÉCRIRE DES NOTES. APRÈS CELA, LE QUESTIONNAIRE SERA ENREGISTRÉ AUTOMATIQUEMENT.</span></div><p></p>
   - name: OTHERS.OTHRESP
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD 'OTHER' ANSWER</span></p>
-  - name: AB224_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER ~~QWNAME~~ HAVE DONE THIS WITHIN LAST 30 MINUTES:</span><p></p>
-  - name: ABM128_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>RECORD THE DATE OF MEASUREMENT</p>
-  - name: ACHL12_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ do any of the following for this household?</p>
-  - name: AHFS_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>Now I would like to ask you some questions about food. During the last 12 months, was there a time when:</p>
-  - name: CGHH80.AB236M
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD MINUTES</font><p></p>
-  - name: CGHH80.ABM128D
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD DAY</span></p>
-  - name: CGHH80.ABM128M
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD MONTH</span></p>
-  - name: CGHH80.ABM128Y
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD YEAR</span></p>
-  - name: CGHH80.ABMHIV1
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD BAR CODE ASSIGNED TO ~~QMNAME~~'S DBS SAMPLE</span><p></p>
-  - name: CGHH80.ABXXX
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">CHECK 104 AND 109: BASED ON CHILD'S AGE, WAS CORRECT MEASUREMENT PROCEDURE FOLLOWED?</span></p>
-  - name: CGHH80.QB125
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE RESULT OF THE ANEMIA TEST ON THE SEVERE ANEMIA REFERRAL FORM FOR ~~QCNAME~~</font><p></p>
-  - name: CGHH80.QB228H
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD HOUR</font><p></p>
-  - name: CGHH80.QB228M
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD MINUTES</span><p></p>
-  - name: CGHH80.QB308D
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD DAY</span></p>
-  - name: CGHH80.QB308M
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD MONTH</span></p>
-  - name: CGHH80.QB308Y
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD YEAR</span></p>
-  - name: CGHH80.QB311
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?</span></p>
-  - name: CGHH80.QB328H
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD HOUR</font><p></p>
-  - name: CGHH80.QB328M
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD MINUTES</span><p></p>
-  - name: CGHH80.QBM112
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD BAR CODE ASSIGNED TO ~~QCNAME~~ FOR MALARIA LAB</span></p>
-  - name: CGHH80.QBM124
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD THE RESULT OF THE MALARIA RDT </span></p>
-  - name: CGHH80.QBM125A
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">a) EXTREME WEAKNESS?</span></p>
-  - name: CGHH80.QBM125B
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">b) HEART PROBLEMS?</span></p>
-  - name: CGHH80.QBM125C
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">c) LOSS OF CONSCIOUSNESS?</span></p>
-  - name: CGHH80.QBM125D
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">d) RAPID OR DIFFICULT BREATHING?</span></p>
-  - name: CGHH80.QBM125E
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">e) SEIZURES?</span></p>
-  - name: CGHH80.QBM125F
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">f) ABNORMAL BLEEDING?</span></p>
-  - name: CGHH80.QBM125G
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">g) JAUNDICE OR YELLOW SKIN?</span></p>
-  - name: CGHH80.QBM125H
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">h) DARK URINE?</span></p>
-  - name: CGHH80.QBM127
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD HEMOGLOBIN RESULT</span></p>
-  - name: CGHH80.QBM128
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD IF ~~QCNAME~~ IN THE PAST 2 WEEKS OR IS TAKING [FIRST LINE MEDICATION] GIVEN BY A DOCTOR</span></p>
-  - name: CGHH80.QBM131
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD IF PARENT/RESPONSIBLE ADULT ACCEPTED OR REFUSED [FIRST LINE OF MEDICATION] FOR CHILD</span></p>
-  - name: CGHH80.QBM132
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER FOR ACCEPTANCE OF MALARIA MEDICINE.</span></p>
-  - name: CGHH80.QCDI3
-    conditions:
-      - questionText:
-          EN: |
-            <p>Adults use certain ways to teach children the right behaviour or to address a behaviour problem. I will read various methods that are used. Please tell me if you or any other adult in this household has used this method with ~~QCDINAME~~ in the past month.</p>
-          FR: |
-            Les adultes utilisent certains moyens pour apprendre aux enfants à bien se comporter ou pour traiter des problèmes de comportement. Je vais vous lire une liste de méthodes qui sont utilisées et j’aimerais que vous me disiez&nbsp; si vous avez ou n'importe quel autre membre de votre ménage a utilisé une de ces méthodes avec ~~QCDINAME~~ au cours du mois dernier<p></p>
-  - name: CGHH80.QH132Q
-    conditions:
-      - questionText:
-          EN: |
-            <p></p>
-          FR: |
-            <p></p>
-  - name: CGHH80.QH148DM
-    conditions:
-      - questionText:
-          EN: |
-            <p><font color="#0000ff">MOIS</font></p><p></p>
-          FR: |
-            <p><span style="color: rgb(0, 0, 255);">MOIS</span></p><p></p>
-  - name: CGHH80.QH148DY
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">ANNEE</span><p></p>
-          FR: |
-            <span style="color: rgb(0, 0, 255);">ANNEE</span><p></p>
-  - name: CGHH80.QH148FM
-    conditions:
-      - questionText:
-          EN: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure pour la dernière fois ?</p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p><p></p></p>
-          FR: |
-            <p>Quand votre ménage ou l'une des personnes qui composent votre ménage a reçu une aide grâce à un programme d'aide économique extérieure pour la dernière fois ?</p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ&nbsp; EN MOIS SI MOINS DE 12 MOIS; EN ANNÉES SI&nbsp; 1AN /12 MOIS OU PLUS</span></p><p><p></p></p>
-  - name: CGHH80.QH148FY
-    conditions:
-      - questionText:
-          EN: |
-            <span class="instruction">ANNEE</span><p></p>
-          FR: |
-            <br><p></p>
-  - name: CGHH80.QH155
-    conditions:
-      - questionText:
-          EN: |
-            <p>I would like to check whether the salt used in your household is iodized. May I have a sample of the salt used to cook meals in your household?</p>
-            <p><span class="instruction">TEST SALT FOR IODINE.</span></p>
-          FR: |
-            <p>155.  Je voudrais v&#233;rifier si le sel utilis&#233; dans votre m&#233;nage est iod&#233;. Puis-je avoir un peu de sel qui est utilis&#233; pour cuisiner dans votre m&#233;nage ?</p><p><span class="instruction">TEST DU SEL POUR L&#39;IODE.</span></p>
-  - name: CGHH80.QH202
-    conditions:
-      - questionText:
-          EN: |
-            <p>Now I would like to ask some questions about the household members who stayed overnight in a health facility in the last six months.</p><p><font color="#ff0000">Press the enter key to continue</font></p>
-  - name: CGHH80.QHAI1
-    conditions:
-      - questionText:
-          EN: |
-            <p>Now I would like to ask you about road traffic accidents that anyone in your household may have been involved in. </p>
-            <p>During the past 12 months, was anyone in your household killed in a road traffic accident, or injured in a road traffic accident with injuries severe enough that for at least one day they could not carry out their normal daily activities?</p>
-  - name: CGHH80.QHAI17
-    conditions:
-      - questionText:
-          EN: |
-            <p>In the last 12 months, was anyone in your household killed or injured in an incident other than a road traffic accident? </p>
-            <p>By injured, I mean that their injuries were severe enough that for at least one day they could not carry out their normal daily activities.</p>
-  - name: CGHH80.Z_B210
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">WAS HEIGHT/LENGTH AND WEIGHT RECORDED IN THE [ANTHROPOMETRY AND ANEMIA PAMPHLET]?</font><p></p>
-  - name: CGHH80.Z_B212A
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD LINE NUMBER OF PARENT/OTHER ADULT RESPONSIBLE FOR ~~QWNAME~~</span></p>
-            <p><span class="instruction">RECORD '0' IF NOT LISTED</span></p>
-  - name: CGHH80.Z_B214
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER BLOOD PRESSURE CONSENT WAS GRANTED BY ~~QWNAME~~</span><p></p>
-  - name: CGHH80.Z_B214A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER BLOOD PRESSURE CONSENT WAS GRANTED BY PARENT/RESPONSIBLE ADULT FOR ~~QWNAME~~</span><p></p>
-  - name: CGHH80.Z_B214B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span><p></p>
-  - name: CGHH80.Z_B215
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span><p></p>
-  - name: CGHH80.Z_B215C
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER BLOOD PRESSURE CONSENT WAS GRANTED BY ~~QWNAME~~</span><p></p>
-  - name: CGHH80.Z_B215D
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">ENTER FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span><p></p>
-  - name: CGHH80.Z_B217
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT WAS GRANTED FOR ANEMIA TESTING BY&nbsp;</span><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span></p>
-  - name: CGHH80.Z_B217A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER ANEMIA TEST CONSENT WAS GRANTED BY PARENT/RESPONSIBLE ADULT FOR ~~QWNAME~~</span><p></p>
-  - name: CGHH80.Z_B217B
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span></p>
-  - name: CGHH80.Z_B218
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER OF HEMOGLOBIN MEASURER.</span></p>
-  - name: CGHH80.Z_B218C
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER ANEMIA TEST CONSENT WAS GRANTED BY ~~QWNAME~~</span></p>
-  - name: CGHH80.Z_B218D
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER OF HEMOGLOBIN MEASURER.</span></p>
-  - name: CGHH80.Z_B224A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">a) EATEN ANYTHING?</span><p></p>
-  - name: CGHH80.Z_B224B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">B) HAD COFFEE, TEA, COLA OR OTHER DRINK THAT HAS CAFFEINE?</span><p></p>
-  - name: CGHH80.Z_B224C
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">c) SMOKED ANY TOBACCO PRODUCT?</span><p></p>
-  - name: CGHH80.Z_B224D
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">d) CONDUCTED ANY PHYSICAL ACTIVITY OR EXERCISES THAT MADE BREATHE HARDER THAN USUAL?</span><p></p>
-  - name: CGHH80.Z_B225
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD ARM CIRCUMFERENCE.</font><p></p>
-  - name: CGHH80.Z_B226
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE APPROPRIATE BLOOD PRESSURE MONITOR MODEL AND CUFF SIZE.&nbsp;</font><p></p>
-  - name: CGHH80.Z_B227A
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD FIRST READING OF THE SYSTOLIC BLOOD PRESSURE</font>&nbsp;<p></p>
-  - name: CGHH80.Z_B227AW
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RE-ENTER FIRST READING OF THE SYSTOLIC BLOOD PRESSURE</font>&nbsp;<p></p>
-  - name: CGHH80.Z_B227B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD FIRST READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B227BW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER FIRST READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B230
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD IF EVER HAD BLOOD PRESSURE MEASURED</font><p></p>
-  - name: CGHH80.Z_B231
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF EVER BEEN TOLD BY A DOCTOR OR OTHER HEALTH WORKER THAT HAVE HIGH BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B232
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF IN LAST 12 MONTHS HAVE BEEN TOLD BY A DOCTOR OR OTHER HEALTH WORKER THAT HAVE HIGH BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B233
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF DOCTOR OR OTHER HEALTH WORKER PRESCRIBED MEDICATION TO CONTROL BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B234
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF TAKING MEDICATION TO CONTROL BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B235
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF AGREED TO TAKE SECOND READING FOR BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B236A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD SECOND READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B236AW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER SECOND READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B236B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD SECOND READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B236BW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER SECOND READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B237H
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD HOUR</span><p></p>
-  - name: CGHH80.Z_B237M
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD MINUTES</span><p></p>
-  - name: CGHH80.Z_B238
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF AGREED TO TAKE THIRD READING FOR BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B239A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THIRD READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B239AW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER THIRD READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B239B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THIRD READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B239BW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER THIRD READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B240H
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD HOUR</span><p></p>
-  - name: CGHH80.Z_B240M
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD MINUTES</span><p></p>
-  - name: CGHH80.Z_B250A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THE FINAL SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B250B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THE FINAL DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B252
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE VALUE OF BLOOD PRESSURE REPORT AND REFERRAL.</font>&nbsp;&nbsp;<p></p>
-  - name: CGHH80.Z_B253
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD IF RESPONDENT PROVIDED THE BLOOD PRESSURE REPORTING FORM</font><p></p>
-  - name: CGHH80.Z_B255
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD ~~QWNAME~~'S HEMOGLOBIN LEVEL.</span></p>
-            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
-  - name: CGHH80.Z_B255W
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RE-ENTER ~~QWNAME~~'S HEMOGLOBIN LEVEL</span></p>
-            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
-  - name: CGHH80.Z_B256
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">CHECK 257: HEMOGLOBIN RESULT</span></p>
-  - name: CGHH80.Z_B257
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE RESULT OF THE ANEMIA TEST ON THE SEVERE ANEMIA REFERRAL FORM.</font><p></p>
-  - name: CGHH80.Z_B259
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">CONDUCT TEST AND RECORD RESULT HERE AND IN [ANTHROPOMETRY AND ANEMIA AND OTHER TEST PAMPHLET].</font><p></p>
-  - name: CGHH80.Z_B260
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE RESULT OF [OTHER TEST] ON THE [TEST] REFERRAL FORM.</font><p></p>
-  - name: CGHH80.Z_B310
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD FIELDWORKER NUMBER OF BIOMARKER MEASURER.</span></p>
-  - name: CGHH80.Z_B312A
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD LINE NUMBER OF PARENT/OTHER ADULT RESPONSIBLE FOR ~~QMNAME~~</span></p>
-            <p><span class="instruction">RECORD '0' IF NOT LISTED</span></p>
-  - name: CGHH80.Z_B314
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER BLOOD PRESSURE CONSENT WAS GRANTED BY ~~QMNAME~~</span><p></p>
-  - name: CGHH80.Z_B314A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER BLOOD PRESSURE CONSENT WAS GRANTED BY PARENT/RESPONSIBLE ADULT FOR ~~QMNAME~~</span><p></p>
-  - name: CGHH80.Z_B314B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span><p></p>
-  - name: CGHH80.Z_B315
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span><p></p>
-  - name: CGHH80.Z_B315C
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER BLOOD PRESSURE CONSENT WAS GRANTED BY ~~QMNAME~~</span><p></p>
-  - name: CGHH80.Z_B315D
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">ENTER FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span><p></p>
-  - name: CGHH80.Z_B317
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT WAS GRANTED FOR ANEMIA TESTING BY&nbsp;</span><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span></p>
-  - name: CGHH80.Z_B317A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER ANEMIA TEST CONSENT WAS GRANTED BY PARENT/RESPONSIBLE ADULT FOR ~~QMNAME~~</span><p></p>
-  - name: CGHH80.Z_B317B
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER FOR BLOOD PRESSURE MEASURER.</span></p>
-  - name: CGHH80.Z_B318
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER OF HEMOGLOBIN MEASURER.</span></p>
-  - name: CGHH80.Z_B318B
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER OF HEMOGLOBIN MEASURER.</span></p>
-  - name: CGHH80.Z_B318C
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER ANEMIA TEST CONSENT WAS GRANTED BY ~~QMNAME~~</span></p>
-  - name: CGHH80.Z_B318D
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">ENTER FIELDWORKER NUMBER OF HEMOGLOBIN MEASURER.</span></p>
-  - name: CGHH80.Z_B324A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">a) EATEN ANYTHING?</span><p></p>
-  - name: CGHH80.Z_B324B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">B) HAD COFFEE, TEA, COLA OR OTHER DRINK THAT HAS CAFFEINE?</span><p></p>
-  - name: CGHH80.Z_B324C
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">c) SMOKED ANY TOBACCO PRODUCT?</span><p></p>
-  - name: CGHH80.Z_B324D
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">d) CONDUCTED ANY PHYSICAL ACTIVITY OR EXERCISES THAT MADE BREATHE HARDER THAN USUAL?</span><p></p>
-  - name: CGHH80.Z_B325
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD ARM CIRCUMFERENCE.</font><p></p>
-  - name: CGHH80.Z_B326
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE APPROPRIATE BLOOD PRESSURE MONITOR MODEL AND CUFF SIZE.&nbsp;</font><p></p>
-  - name: CGHH80.Z_B327A
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD FIRST READING OF THE SYSTOLIC BLOOD PRESSURE</font>&nbsp;<p></p>
-  - name: CGHH80.Z_B327AW
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RE_ENTER FIRST READING OF THE SYSTOLIC BLOOD PRESSURE</font>&nbsp;<p></p>
-  - name: CGHH80.Z_B327B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD FIRST READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B327BW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER FIRST READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B330
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD IF EVER HAD BLOOD PRESSURE MEASURED</font><p></p>
-  - name: CGHH80.Z_B331
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF EVER BEEN TOLD BY A DOCTOR OR OTHER HEALTH WORKER THAT HAVE HIGH BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B332
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF IN LAST 12 MONTHS HAVE BEEN TOLD BY A DOCTOR OR OTHER HEALTH WORKER THAT HAVE HIGH BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B333
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF DOCTOR OR OTHER HEALTH WORKER PRESCRIBED MEDICATION TO CONTROL BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B334
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF TAKING MEDICATION TO CONTROL BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B335
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF AGREED TO TAKE SECOND READING FOR BLOOD PRESSURE&nbsp;</span><p></p>
-  - name: CGHH80.Z_B336A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD SECOND READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B336AW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER SECOND READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B336B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD SECOND READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B336BW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER SECOND READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B337H
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD HOUR</span><p></p>
-  - name: CGHH80.Z_B337M
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD MINUTES</span><p></p>
-  - name: CGHH80.Z_B338
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD IF AGREED TO TAKE THIRD READING FOR BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B339A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THIRD READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B339AW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER THIRD READING OF THE SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B339B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THIRD READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B339BW
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RE-ENTER THIRD READING OF DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B340H
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD HOUR</span><p></p>
-  - name: CGHH80.Z_B340M
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD MINUTES</span><p></p>
-  - name: CGHH80.Z_B350A
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THE FINAL SYSTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B350B
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THE FINAL DIASTOLIC BLOOD PRESSURE</span><p></p>
-  - name: CGHH80.Z_B352
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE VALUE OF BLOOD PRESSURE REPORT AND REFERRAL.</font>&nbsp;&nbsp;<p></p>
-  - name: CGHH80.Z_B353
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD IF RESPONDENT PROVIDED THE BLOOD PRESSURE REPORTING FORM</font><p></p>
-  - name: CGHH80.Z_B355
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD ~~QMNAME~~'S HEMOGLOBIN LEVEL</span></p>
-            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
-  - name: CGHH80.Z_B355W
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RE-ENTER ~~QMNAME~~'S HEMOGLOBIN LEVEL</span></p>
-            <p><span class="instruction">(Use format xx.x and enter the decimal point)</span></p>
-  - name: CGHH80.Z_B356
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">CHECK 357: HEMOGLOBIN RESULT</span></p>
-  - name: CGHH80.Z_B357
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE RESULT OF THE ANEMIA TEST ON THE SEVERE ANEMIA REFERRAL FORM.</font><p></p>
-  - name: CGHH80.Z_B359
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">CONDUCT TEST AND RECORD RESULT HERE AND IN [ANTHROPOMETRY AND ANEMIA AND OTHER TEST PAMPHLET].</font><p></p>
-  - name: CGHH80.Z_B360
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">RECORD THE RESULT OF [OTHER TEST] ON THE [TEST] REFERRAL FORM.</font><p></p>
-  - name: CGHH80.ZBMHIV3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER RESPONDENT GRANTED CONSENT FOR ADDITIONAL TESTING</span></p>
-  - name: CGHH80.ZBMHIV7
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT FOR ADDITIONAL TESTING WAS GRANTED BY CARETAKER FOR ~~QMNAME~~</span></p>
-  - name: CGHH80.ZBMHIV8
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT FOR ADDITIONAL TESTING WAS GRANTED BY ~~QMNAME~~</span></p>
-  - name: CGHH80.ZBWHIV3
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER RESPONDENT GRANTED CONSENT FOR ADDITIONAL TESTING</span></p>
-  - name: CGHH80.ZBWHIV7
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT FOR ADDITIONAL TESTING WAS GRANTED BY CARETAKER FOR ~~QWNAME~~</span></p>
-  - name: CGHH80.ZBWHIV8
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER CONSENT FOR ADDITIONAL TESTING WAS GRANTED BY ~~QWNAME~~</span></p>
-  - name: CGHH80.ZZ_H12A
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>12A.  In what year did ~~QH02~~&#39;s biological mother die?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>12A.  In what year did your biological mother die?</p>
-  - name: CGHH80.ZZ_H133E
-    conditions:
-      - questionText:
-          EN: |
-            <p>An animal-drawn cart?</p>
-  - name: CGHH80.ZZ_H133F
-    conditions:
-      - questionText:
-          EN: |
-            <p>A car or truck?</p>
-  - name: CGHH80.ZZ_H14A
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>14A.  In what year did ~~QH02~~&#39;s biological father die?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>14A.  In what year did your biological father die?</p>
-  - name: CGHH80.ZZ_H15C
-    conditions:
-      - questionText:
-          EN: |
-            <p>15C.  Who is ~~QH02~~&#39;s primary caregiver? </p><p>That is, the person who provides daily care for the child?</p>
-  - name: CGHH80.ZZ_H15D
-    conditions:
-      - questionText:
-          EN: |
-            <p>15D.  What is the relationship of the primary caregiver to ~~QH02~~?</p>
-  - name: CGHH80.ZZ_H204
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Where did ~~ZZ_H203N~~ most recently stay overnight for health care?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Where did you most recently stay overnight for health care?</p>
-  - name: CGHH80.ZZ_H205
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for ~~ZZ_H203N~~ to seek care this most recent time?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for you to seek care this most recent time?</p>
-  - name: CGHH80.ZZ_H206
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>During the most recent overnight stay, did ~~ZZ_H203N~~ have surgery?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>During the most recent overnight stay, did you have surgery?</p>
-  - name: CGHH80.ZZ_H207
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services ~~ZZ_H203N~~ received during the most recent overnight stay? We want to know about all the costs for the stay, including any charges for laboratory tests, drugs, or other items.</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services you received during the most recent overnight stay? We want to know about all the costs for the stay, including any charges for laboratory tests, drugs, or other items.</p>
-  - name: CGHH80.ZZ_H208
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Did ~~ZZ_H203N~~ stay overnight at a health facility another time in the last six months?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Did you stay overnight at a health facility another time in the last six months?</p>
-  - name: CGHH80.ZZ_H209
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Where did ~~ZZ_H203N~~ stay the next-to-last time (he/she) stayed overnight for health care?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Where did you stay the next-to-last time (he/she) stayed overnight for health care?</p>
-  - name: CGHH80.ZZ_H21
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>In the last six months, was ~~QH02~~ admitted overnight to stay at a health facility?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>In the last six months, were you admitted overnight to stay at a health facility?</p>
-  - name: CGHH80.ZZ_H210
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for ~~ZZ_H203N~~ to seek care this next-to-last time?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for you to seek care this next-to-last time?</p>
-  - name: CGHH80.ZZ_H211
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>During the next-to-last overnight stay, did ~~ZZ_H203N~~ have surgery?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>During the next-to-last overnight stay, did you have surgery?</p>
-  - name: CGHH80.ZZ_H212
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services ~~ZZ_H203N~~ received during the next-to-last overnight stay? We want to know about all the costs for the stay, including any charges for laboratory tests, drugs, or other items.</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services you received during the next-to-last overnight stay? We want to know about all the costs for the stay, including any charges for laboratory tests, drugs, or other items.</p>
-  - name: CGHH80.ZZ_H213
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Besides the two stays you have told me about, did ~~ZZ_H203N~~ stay overnight in a health facility another time in the last six months?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Besides the two stays you have told me about, did you stay overnight in a health facility another time in the last six months?</p>
-  - name: CGHH80.ZZ_H214
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Where did ~~ZZ_H203N~~ stay the second-to-last time (he/she) stayed overnight for health care?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Where did you stay the second-to-last time (he/she) stayed overnight for health care?</p>
-  - name: CGHH80.ZZ_H215
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for ~~ZZ_H203N~~ to seek care this second-to-last time?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for you to seek care this second-to-last time?</p>
-  - name: CGHH80.ZZ_H216
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>During the second-to-last overnight stay, did ~~ZZ_H203N~~ have surgery?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>During the second-to-last overnight stay, did you have surgery?</p>
-  - name: CGHH80.ZZ_H217
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services ~~ZZ_H203N~~ received during the second-to-last overnight stay? We want to know about all the costs for the stay, including any charges for laboratory tests, drugs, or other items.</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services you received during the second-to-last overnight stay? We want to know about all the costs for the stay, including any charges for laboratory tests, drugs, or other items.</p>
-  - name: CGHH80.ZZ_H218
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Besides the three stays you have told me about, did ~~ZZ_H203N~~ stay overnight in a health facility another time in the last six months?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Besides the three stays you have told me about, did you stay overnight in a health facility another time in the last six months?</p>
-  - name: CGHH80.ZZ_H219
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>In total, how many times did ~~ZZ_H203N~~ stay overnight in a health facility in the last six months?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>In total, how many times did you stay overnight in a health facility in the last six months?</p>
-  - name: CGHH80.ZZ_H220
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>Is ~~ZZ_H203N~~ covered by any health insurance?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>Are you covered by any health insurance?</p>
-  - name: CGHH80.ZZ_H221
-    conditions:
-      - logic: ZZ_H203 <> QHRESP
-        questionText:
-          EN: |
-            <p>What is ~~ZZ_H203N~~'s main type of health insurance?</p>
-      - logic: ZZ_H203 = QHRESP
-        questionText:
-          EN: |
-            <p>What is your main type of health insurance?</p>
-  - name: CGHH80.ZZ_H23
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>In the last four weeks, did ~~QH02~~ receive care from a health provider, a pharmacy, or a traditional healer without staying overnight at a health facility?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>In the last four weeks, did you receive care from a health provider, a pharmacy, or a traditional healer without staying overnight at a health facility?</p>
-  - name: CGHH80.ZZ_H24
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>The last time ~~QH02~~ received care, was any money paid?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>The last time you received care, was any money paid?</p>
-  - name: CGHH80.ZZ_H26
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>Does ~~QH02~~ wear glasses or contact lenses to help them see?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>Do you wear glasses or contact lenses to help you see?</p>
-  - name: CGHH80.ZZ_H27
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty seeing even when wearing glasses or contact lenses. Would you say that ~~QH02~~ has no difficulty seeing, some difficulty, a lot of difficulty, or cannot see at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty seeing even when wearing glasses or contact lenses. Would you say that you have no difficulty seeing, some difficulty, a lot of difficulty, or cannot see at all?</p>
-  - name: CGHH80.ZZ_H28
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty seeing. Would you say that ~~QH02~~ has no difficulty seeing, some difficulty, a lot of difficulty, or cannot see at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty seeing. Would you say that you have no difficulty seeing, some difficulty, a lot of difficulty, or cannot see at all?</p>
-  - name: CGHH80.ZZ_H29
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>Does ~~QH02~~ wear a hearing aid?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>Do you wear a hearing aid?</p>
-  - name: CGHH80.ZZ_H30
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty hearing even when using a hearing aid. Would you say that ~~QH02~~ has no difficulty hearing, some difficulty, a lot of difficulty, or cannot hear at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty hearing even when using a hearing aid. Would you say that you have no difficulty hearing, some difficulty, a lot of difficulty, or cannot hear at all?</p>
-  - name: CGHH80.ZZ_H303
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>Now I would like to ask some questions about health care that ~~ZZ_H302N~~ received in the last four weeks, without having to stay overnight. Where did ~~ZZ_H302N~~ get care most recently without staying overnight?</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>Now I would like to ask some questions about health care that you received in the last four weeks, without having to stay overnight. Where did you get care most recently without staying overnight?</p>
-  - name: CGHH80.ZZ_H304
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services ~~ZZ_H302N~~ received from ~~provider~~? Please include the consulting fee and any expenses for other items including drugs and tests.</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>How much money was spent on treatment and services you received from ~~provider~~? Please include the consulting fee and any expenses for other items including drugs and tests.</p>
-  - name: CGHH80.ZZ_H305
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for ~~ZZ_H302N~~ to seek care this most recent time?</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>What was the main reason for you to seek care this most recent time?</p>
-  - name: CGHH80.ZZ_H306
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>Did ~~ZZ_H302N~~ get care another time in the last four weeks from a health provider, a pharmacy, or a traditional healer, without staying overnight?</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>Did you get care another time in the last four weeks from a health provider, a pharmacy, or a traditional healer, without staying overnight?</p>
-  - name: CGHH80.ZZ_H307
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>How many other times did ~~ZZ_H302N~~ get care in the last four weeks?</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>How many other times did you get care in the last four weeks?</p>
-  - name: CGHH80.ZZ_H308
-    conditions:
-      - questionText:
-          EN: |
-            <p>How many times was money spent?</p>
-  - name: CGHH80.ZZ_H309
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>Is ~~ZZ_H302N~~ covered by any health insurance?</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>Are you covered by any health insurance?</p>
-  - name: CGHH80.ZZ_H31
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty hearing. Would you say that ~~QH02~~ has no difficulty hearing, some difficulty, a lot of difficulty, or cannot hear at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty hearing. Would you say that you have no difficulty hearing, some difficulty, a lot of difficulty, or cannot hear at all?</p>
-  - name: CGHH80.ZZ_H310
-    conditions:
-      - logic: ZZ_H302 <> QHRESP
-        questionText:
-          EN: |
-            <p>What is ~~ZZ_H302N~~'s main type of health insurance?</p>
-      - logic: ZZ_H302 = QHRESP
-        questionText:
-          EN: |
-            <p>What is your main type of health insurance?</p>
-  - name: CGHH80.ZZ_H311
-    conditions:
-      - questionText:
-          EN: |
-            <p>Sometimes people buy vitamins, medicines, and herbal remedies without consulting with a health provider, pharmacy, or traditional healer. They may also buy other health-related items such as band-aids/plasters, thermometers, or other medical devices, and so on without a consultation. In the last four weeks, how much money was spent on these types of health-related items for all the members of your household?</p>
-  - name: CGHH80.ZZ_H32
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty communicating when using his/her usual language. Would you say that ~~QH02~~ has no difficulty understanding or being understood, some difficulty, a lot of difficulty, or cannot communicate at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty communicating when using your usual language. Would you say that you have no difficulty understanding or being understood, some difficulty, a lot of difficulty, or cannot communicate at all?</p>
-  - name: CGHH80.ZZ_H33
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty remembering or concentrating. Would you say that ~~QH02~~ has no difficulty remembering or concentrating, some difficulty, a lot of difficulty, or cannot remember or concentrate at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty remembering or concentrating. Would you say that you have no difficulty remembering or concentrating, some difficulty, a lot of difficulty, or cannot remember or concentrate at all?</p>
-  - name: CGHH80.ZZ_H34
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty walking or climbing steps. Would you say that ~~QH02~~ has no difficulty walking or climbing steps, some difficulty, a lot of difficulty, or cannot walk or climb steps at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty walking or climbing steps. Would you say that you have no difficulty walking or climbing steps, some difficulty, a lot of difficulty, or cannot walk or climb steps at all?</p>
-  - name: CGHH80.ZZ_H35
-    conditions:
-      - logic: QH01 <> QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if ~~QH02~~ has difficulty washing all over or dressing. Would you say that ~~QH02~~ has no difficulty washing all over or dressing, some difficulty, a lot of difficulty, or cannot wash all over or dress at all?</p>
-      - logic: QH01 = QHRESP
-        questionText:
-          EN: |
-            <p>I would like to know if you have difficulty washing all over or dressing. Would you say that you have no difficulty washing all over or dressing, some difficulty, a lot of difficulty, or cannot wash all over or dress at all?</p>
-  - name: CGHH80.ZZ_HAI10
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">SELECT HOUSEHOLD MEMBER NAME FROM LIST PROVIDED.</span></p>
-            <p><span class="instruction">SELECT '0' IF PERSON NOT LISTED.</span></p>
-  - name: CGHH80.ZZ_HAI11
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~ZZ_HAI2~~ male or female?</p>
-  - name: CGHH80.ZZ_HAI12
-    conditions:
-      - questionText:
-          EN: |
-            <p>How old is ~~ZZ_HAI2~~?</p>
-  - name: CGHH80.ZZ_HAI13
-    conditions:
-      - questionText:
-          EN: |
-            <p>What kind of injuries did ~~ZZ_HAI2~~ have as a result of the accident?</p>
-  - name: CGHH80.ZZ_HAI14
-    conditions:
-      - questionText:
-          EN: |
-            <p>Does ~~ZZ_HAI2~~ continue to have any health problems as a result of the road traffic accident?</p>
-  - name: CGHH80.ZZ_HAI15
-    conditions:
-      - questionText:
-          EN: |
-            <p>In what ways does ~~ZZ_HAI2~~ continue to have health problems as a result of the road traffic accident?</p>
-  - name: CGHH80.ZZ_HAI16
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was any other member of this household killed or injured in a road traffic accident in the past 12 months?</p>
-  - name: CGHH80.ZZ_HAI19
-    conditions:
-      - logic: curocc() in 1
-        questionText:
-          EN: |
-            <p>What is the name of the first person killed or injured?</p>
-      - logic: curocc() in 2:10
-        questionText:
-          EN: |
-            <p>What is the name of the next person (~~ZZ_HAI17L~~) killed or injured?</p>
-  - name: CGHH80.ZZ_HAI2
-    conditions:
-      - logic: curocc() in 1
-        questionText:
-          EN: |
-            <p>What is the name of the first person killed or injured in a road traffic accident?</p>
-      - logic: curocc() in 2:10
-        questionText:
-          EN: |
-            <p>What is the name of the next person (~~ZZ_HAI1L~~) killed or injured in a road traffic accident?</p>
-  - name: CGHH80.ZZ_HAI20
-    conditions:
-      - questionText:
-          EN: |
-            <p>In what type of incident was ~~ZZ_HAI19~~ killed or injured?</p>
-  - name: CGHH80.ZZ_HAI21
-    conditions:
-      - questionText:
-          EN: |
-            <p>How did the death or injury happen?</p>
-  - name: CGHH80.ZZ_HAI22
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~ZZ_HAI19~~ still alive?</p>
-  - name: CGHH80.ZZ_HAI23
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was ~~ZZ_HAI19~~ male or female?</p>
-  - name: CGHH80.ZZ_HAI24
-    conditions:
-      - questionText:
-          EN: |
-            <p>What was ~~ZZ_HAI19~~'s age when ~~ZZ_HAI19~~ died?</p>
-  - name: CGHH80.ZZ_HAI25
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was ~~ZZ_HAI19~~&rsquo;s death related to this incident?</p>
-  - name: CGHH80.ZZ_HAI26
-    conditions:
-      - questionText:
-          EN: |
-            <p>What kind of injuries did ~~ZZ_HAI19~~ have as a result of the incident?</p>
-  - name: CGHH80.ZZ_HAI27
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">SELECT HOUSEHOLD MEMBER NAME FROM LIST PROVIDED.</span></p>
-            <p><span class="instruction">SELECT '0' IF PERSON NOT LISTED.</span></p>
-  - name: CGHH80.ZZ_HAI28
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~ZZ_HAI19~~ male or female?</p>
-  - name: CGHH80.ZZ_HAI29
-    conditions:
-      - questionText:
-          EN: |
-            <p>How old is ~~ZZ_HAI19~~?</p>
-  - name: CGHH80.ZZ_HAI30
-    conditions:
-      - questionText:
-          EN: |
-            <p>What kind of injuries did ~~ZZ_HAI19~~ have as a result of the incident?</p>
-  - name: CGHH80.ZZ_HAI31
-    conditions:
-      - questionText:
-          EN: |
-            <p>Does ~~ZZ_HAI19~~ continue to have any health problems as a result of the incident?</p>
-  - name: CGHH80.ZZ_HAI32
-    conditions:
-      - questionText:
-          EN: |
-            <p>In what ways does ~~ZZ_HAI19~~ continue to have health problems as a result of the injury?</p>
-  - name: CGHH80.ZZ_HAI33
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was any other member of this household killed or injured in an incident other than a road traffic accident in the past 12 months?</p>
-  - name: CGHH80.ZZ_HAI4
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was ~~ZZ_HAI2~~ in a car, truck, bus, motorcycle, bicycle, another kind of vehicle, or was ~~ZZ_HAI2~~ a pedestrian?</p>
-  - name: CGHH80.ZZ_HAI5
-    conditions:
-      - questionText:
-          EN: |
-            <p>Is ~~ZZ_HAI2~~ still alive?</p>
-  - name: CGHH80.ZZ_HAI6
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was ~~ZZ_HAI2~~ male or female?</p>
-  - name: CGHH80.ZZ_HAI7
-    conditions:
-      - questionText:
-          EN: |
-            <p>What was ~~ZZ_HAI2~~'s age when ~~ZZ_HAI2~~ died?</p>
-            <p><span class="instruction">IF LESS THAN ONE YEAR, RECORD '0'.</span></p>
-  - name: CGHH80.ZZ_HAI8
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was ~~ZZ_HAI2~~&rsquo;s death related to the road traffic accident?</p>
-  - name: CGHH80.ZZ_HAI9
-    conditions:
-      - questionText:
-          EN: |
-            <p>What kind of injuries did ~~ZZ_HAI2~~ have as a result of the accident?</p>
-  - name: CGHH80.ZZ_HCW05
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">SELECT THE LINE NUMBER OF ONE OF THE CHILDREN LISTED BELOW</span><br><p></p></p>
-  - name: CGHH80.ZZ_HCW06
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW06.  Now I would like to ask you some questions about ~~ZZ_HCW05N~~.</p><p><font color="#0000ff">Press enter to continue</font></p>
-  - name: CGHH80.ZZ_HCW08N
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">﻿RECORD THE AMOUNT OF TIME</span></p>
-  - name: CGHH80.ZZ_HCW08U
-    conditions:
-      - questionText:
-          EN: |
-            <span class="instruction">RECORD THE UNIT OF TIME</span><p></p>
-  - name: CGHH80.ZZ_HCW09
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW09.  In the last 6 months, how often has ~~ZZ_HCW05N~~&#39;s biological mother seen or communicated with ~~ZZ_HCW05N~~: almost every day, at least once a week, at least once a month, less than once a month, or not at all?</p>
-  - name: CGHH80.ZZ_HCW11
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW11.  Does ~~ZZ_HCW05N~~ have the same biological mother as another child I have already asked you about?</p>
-  - name: CGHH80.ZZ_HCW12
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW12.  Which child has the same biological mother as ~~ZZ_HCW05N~~?</p><p><span class="instruction">RECORD THE HOUSEHOLD LINE NUMBER OF THE CHILD WITH THE SAME BIOLOGICAL MOTHER AS ~~ZZ_HCW05N~~.</span></p>
-  - name: CGHH80.ZZ_HCW13
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW13.  Is ~~ZZ_HCW05N~~&#39;s biological mother married or living with a man as if married? </p>
-  - name: CGHH80.ZZ_HCW14
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW14.  Is this man ~~ZZ_HCW05N~~&#39;s biological father?</p>
-  - name: CGHH80.ZZ_HCW15
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW15.  Does ~~ZZ_HCW05N~~&#39;s biological mother send money or goods to this household?</p>
-  - name: CGHH80.ZZ_HCW16
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW16.  Does ~~ZZ_HCW05N~~&#39;s biological mother receive money or goods from this household?</p>
-  - name: CGHH80.ZZ_HCW17
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW17.  Where does ~~ZZ_HCW05N~~&#39;s biological mother live?</p>
-  - name: CGHH80.ZZ_HCW19N
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">﻿RECORD THE AMOUNT OF TIME</span><p></p>
-  - name: CGHH80.ZZ_HCW19U
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD THE UNIT OF TIME</span><p></p>
-  - name: CGHH80.ZZ_HCW20
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW20.  In the last 6 months, how often has ~~ZZ_HCW05N~~&#39;s biological father seen or communicated with ~~ZZ_HCW05N~~: almost every day, at least once a week, at least once a month, less than once a month, or not at all?</p>
-  - name: CGHH80.ZZ_HCW22
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW22.  Does ~~ZZ_HCW05N~~ have the same biological father as another child I have already asked you about?</p>
-  - name: CGHH80.ZZ_HCW23
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW23.  Which child has the same biological father as ~~ZZ_HCW05N~~?</p><p><span class="instruction">RECORD THE HOUSEHOLD LINE NUMBER OF THE CHILD WITH THE SAME BIOLOGICAL FATHER AS ~~ZZ_HCW05N~~.</span></p>
-  - name: CGHH80.ZZ_HCW25
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW25.  Is ~~ZZ_HCW05N~~&#39;s biological father married or living with a woman as if married? </p>
-  - name: CGHH80.ZZ_HCW26
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW26.  Does ~~ZZ_HCW05N~~&#39;s biological father send money or goods to this household?</p>
-  - name: CGHH80.ZZ_HCW27
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW27.  Does ~~ZZ_HCW05N~~&#39;s biological father receive money or goods from this household?</p>
-  - name: CGHH80.ZZ_HCW28
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW28.  Where does ~~ZZ_HCW05N~~&#39;s biological father live?</p>
-  - name: CGHH80.ZZ_HFS1
-    conditions:
-      - questionText:
-          EN: |
-            <p>You or others in your household worried about not having enough food to eat because of a lack of money or other resources?</p>
-  - name: CGHH80.ZZ_HFS2
-    conditions:
-      - questionText:
-          EN: |
-            <p>Still thinking about the last 12 months, was there a time when you or others in your household were unable to eat healthy and nutritious food because of a lack of money or other resources? </p>
-  - name: CGHH80.ZZ_HFS3
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was there a time when you or others in your household ate only a few kinds of foods because of a lack of money or other resources? </p>
-  - name: CGHH80.ZZ_HFS4
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was there a time when you or others in your household had to skip a meal because there was not enough money or other resources to get food? </p>
-  - name: CGHH80.ZZ_HFS5
-    conditions:
-      - questionText:
-          EN: |
-            <p>Still thinking about the last 12 months, was there a time when you or others in your household ate less than you thought you should because of a lack of money or other resources?</p>
-  - name: CGHH80.ZZ_HFS6
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was there a time when your household ran out of food because of a lack of money or other resources?</p>
-  - name: CGHH80.ZZ_HFS7
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was there a time when you or others in your household were hungry but did not eat because there was not enough money or other resources for food?</p>
-  - name: CGHH80.ZZ_HFS8
-    conditions:
-      - questionText:
-          EN: |
-            <p>Was there a time when you or others in your household went without eating for a whole day because of a lack of money or other resources?</p>
-  - name: QB308_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>RECORD THE DATE OF MEASUREMENT</p>
-  - name: QB324_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">RECORD WHETHER ~~QMNAME~~ HAVE DONE THIS WITHIN LAST 30 MINUTES:</span><p></p>
-  - name: QBM125_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p><span class="instruction">RECORD WHETHER ~~QCNAME~~ SUFFER FROM THIS ILLNESS/SYMPTOM:</span></p>
-  - name: Z_B228_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">TIME OF THE FIRST BP READING</font><p></p>
-  - name: Z_B237_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE SECOND BP READING</span><p></p>
-  - name: Z_B240_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
-  - name: Z_B314_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
-  - name: Z_B328_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <font color="#0000ff">TIME OF THE FIRST BP READING</font><p></p>
-  - name: Z_B337_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE SECOND BP READING</span><p></p>
-  - name: Z_B340_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <span style="color: rgb(0, 0, 255);">TIME OF THE THIRD BP READING</span><p></p>
-  - name: ZZ_HCW08_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW08.  How long has it been since ~~ZZ_HCW05N~~ and ~~ZZ_HCW05N~~&#39;s mother have lived together?</p><p><span class="instruction">IF LESS THAN 1 YEAR, RECORD ANSWER IN MONTHS. IF 1 YEAR OR MORE, RECORD ANSWER IN COMPLETED YEARS.</span></p><p><span class="instruction">IF ~~ZZ_HCW05N~~ AND ~~ZZ_HCW05N~~&#39;S MOTHER NEVER LIVED TOGETHER, RECORD &#39;95&#39; AND &#39;9&#39; FOR THE UNITS. </span></p>
-  - name: ZZ_HCW19_BLOCK
-    conditions:
-      - questionText:
-          EN: |
-            <p>ZZ_HCW19.  How long has it been since ~~ZZ_HCW05N~~ and ~~ZZ_HCW05N~~&#39;s father have lived together?</p><p><span class="instruction">IF LESS THAN 1 YEAR, RECORD ANSWER IN MONTHS. IF 1 YEAR OR MORE, RECORD ANSWER IN COMPLETED YEARS.</span></p><p>IF ~~ZZ_HCW05N~~ AND ~~ZZ_HCW05N~~&#39;s FATHER NEVER LIVED TOGETHER, RECORD &#39;95&#39; AND &#39;9&#39; FOR THE UNITS. </p>
 ...

@@ -1602,10 +1602,11 @@ onfocus
         transuper();
       endif;
     endif;
-    heading = maketext("Ver[%s]", getver( wrkref + "/version.txt" ));
-    if debug then
-      heading = heading + " debug mode enabled !!"
-    endif;
+    // heading = maketext("Ver[%s]", getver( wrkref + "/version.txt" ));
+    // if debug then
+    //   heading = heading + " debug mode enabled !!"
+    // endif;
+    heading = "1\n2\n3\n";
 
    codes.clear();
    { 1} codes.add("1 Menu des questionnaires Ménages",01);

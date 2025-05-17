@@ -215,7 +215,7 @@ postproc
 PROC R113
   { Verify that fieldworker is registered }
   if !incapi then
-    if !loadcase( FIELDWKQ, $ ) then
+    if !loadcase( INTERV, $ ) then
       errmsg( 0025, tr("Fieldworker"), $ ) select( tr("Fieldworker"), $ );
     elseif $ <> RBIOMARK then 
       warning( 0035, RBIOMARK )  select( tr("Fieldworker"), $, tr("Continue"), continue );
@@ -226,7 +226,7 @@ PROC R113
 
 PROC R114
   { Verify that fieldworker is registered }
-  if !loadcase( FIELDWKQ, $ ) then
+  if !loadcase( INTERV, $ ) then
     errmsg( 0025, tr("Assistant"), $ ) select( tr("Assistant"), $ );
   elseif $ = R113 then
     errmsg( 0030 ) select( tr("Assistant"), $ );

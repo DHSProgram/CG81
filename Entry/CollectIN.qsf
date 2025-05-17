@@ -5302,7 +5302,7 @@ questions:
     conditions:
       - questionText:
           FR: |
-            <p><font color="#0000ff">LISEZ LEURS NOMS À L'ENQUÊTÉE</font></p><p>~~SIBLING_NAMES~~<font color="#0000ff"></font></p><p><font color="#0000ff">APRÈS LE DERNIER, DEMANDEZ:</font></p><p>Y a-t-il d'autres frères et soeurs de la même mère que vous n'avez pas cités ?&nbsp;&nbsp;</p><p></p><p></p>
+            <p><font color="#0000ff">LISEZ LEURS NOMS À L'ENQUÊTÉE</font></p><p>&nbsp;~~sibling_names~~&nbsp;</p><p><span style="color: rgb(0, 0, 255);">APRÈS LE DERNIER, DEMANDEZ:</span></p><p>Y a-t-il d'autres frères et soeurs de la même mère que vous n'avez pas cités ?&nbsp;&nbsp;</p><p></p><p></p>
   - name: CGIN80.QMM04
     conditions:
       - questionText:

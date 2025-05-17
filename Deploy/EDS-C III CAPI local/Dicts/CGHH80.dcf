@@ -1216,7 +1216,7 @@ DataType=Numeric
 
 [ValueSet]
 Label=Grade attending
-Name=QH19B_VS1
+Name=QH19B_VS0
 Value=0;MOINS D'1 AN.
 Value=1;1ère an. / Petite section
 Value=2;2ème an./ Moyenne section
@@ -1224,7 +1224,7 @@ Value=3;3ème an./Grande section
 
 [ValueSet]
 Label=Highest grade completed
-Name=QH19B_VS2
+Name=QH19B_VS1
 Value=0;MOINS D'1 AN.
 Value=1;CP1
 Value=2;CP2
@@ -1235,7 +1235,7 @@ Value=6;CM2
 
 [ValueSet]
 Label=Highest grade completed
-Name=QH19B_VS3
+Name=QH19B_VS2
 Value=0;MOINS D'1 AN.
 Value=1;Sixième
 Value=2;cinquième
@@ -1244,7 +1244,7 @@ Value=4;Troisième
 
 [ValueSet]
 Label=Highest grade completed
-Name=QH19B_VS4
+Name=QH19B_VS3
 Value=0;MOINS D'1 AN.
 Value=1;Seconde
 Value=2;Première
@@ -1252,7 +1252,7 @@ Value=3;Terminale
 
 [ValueSet]
 Label=Highest grade completed
-Name=QH19B_VS5
+Name=QH19B_VS4
 Value=0;MOINS D'1 AN.
 Value=1;1ère année
 Value=2;2ème année

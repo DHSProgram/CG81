@@ -340,11 +340,11 @@
       FileDelete( HTMLname )
     endif;
     setfile( HTMLFile, HTMLname, create );
-    zstring1 = tr("Reproduction and Pregnancies");
+    zstring1 = tr("Reproduction et l'historique des grossesses");
     list string js_scripts;
     js_scripts.add("../Superv/checkid.js");
     HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
-    CellValues(1) = tr("Source");
+    CellValues(1) = "BLANK";
     CellValues(2) = maketext("%s (%s)", getlabel(Q203A) , getsymbol(Q203A));
     CellValues(3) = maketext("%s (%s)", getlabel(Q203B) , getsymbol(Q203B));
     CellValues(4) = maketext("%s (%s)", getlabel(Q205A) , getsymbol(Q205A));
@@ -352,10 +352,11 @@
     CellValues(6) = maketext("%s (%s)", getlabel(Q207A) , getsymbol(Q207A));
     CellValues(7) = maketext("%s (%s)", getlabel(Q207B) , getsymbol(Q207B));
     CellValues(8) = maketext("%s (%s)", getlabel(Q211 ) , getsymbol(Q211));
-    zstring2 = "Reproduction";
-    HTML_BeginTable( CellValues, zstring2, 8, "Totals" );  // generates the HTML table script with the column headers
+    CellValues(9) = "Total";
+    zstring2 = "Section 2 Reproduction";
+    HTML_BeginTable( CellValues, zstring2, 9, "Totals" );  // generates the HTML table script with the column headers
 
-    CellValues(1) = tr("Reproduction");
+    CellValues(1) = tr("Section 2 Reproduction");
     CellValues(2) = edit("99", Q203A); 
     CellValues(3) = edit("99", Q203B); 
     CellValues(4) = edit("99", Q205A); 
@@ -363,9 +364,10 @@
     CellValues(6) = edit("99", Q207A); 
     CellValues(7) = edit("99", Q207B); 
     CellValues(8) = edit("99", Q211 ); 
-    HTML_OneRow( CellValues, 8 );
+    CellValues(9) = edit("99", Q212W); 
+    HTML_OneRow( CellValues, 9 );
 
-    CellValues(1) = "Pregnancy History";
+    CellValues(1) = "Historique des grossesses";
     CellValues(2) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q226)= 1));
     CellValues(3) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q226)= 1));
     CellValues(4) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q226)= 2));
@@ -373,7 +375,8 @@
     CellValues(6) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q224)= 2));
     CellValues(7) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q224)= 2));
     CellValues(8) =edit ("99", count(QWSEC2B where visualvalue(Q223) in 2:4 ));
-    HTML_OneRow( CellValues, 8 );
+    CellValues(9) =edit ("99", count(QWSEC2B where visualvalue(Q215L) <> notappl));
+    HTML_OneRow( CellValues, 9 );
     HTML_EndTable();
     HTML_ParaGraph(" ");
     HTML_ParaGraph(" ");
@@ -392,7 +395,7 @@
     CellAlign(1) = 2;  
     CellAlign(2) = 3;  
     CellAlign(3) = 4;  
-    HTML_BeginTable( CellValues, "Pregnancies", 9, "Pregnancies" );  // generates the HTML table script with the column headers
+    HTML_BeginTable( CellValues, "Historique des grossesses", 9, "Pregnancies" );  // generates the HTML table script with the column headers
     do i = 1 until i > npregs
       CellValues(1) = preghist(i,1);
       CellValues(2) = preghist(i,2);
@@ -1181,7 +1184,7 @@
     endif;
   end;
 
-  array string vacc_array(20,3);
+  array string vacc_array(21,4);
   { function to prepare an array of vaccinations and their dates for display (and selection for reentry) }
   function getvaccs(vc);
     { array elements:
@@ -1219,7 +1222,7 @@
     numeric vacc, nvaccs;
     nvaccs = getvaccs(vc);
     vacc = showarray( maketext( "Vaccinations for %s. Select vaccination to modify or exit to continue", strip(Q503N(vc)) ), vacc_array, nvaccs,
-          title( tr("Vaccination"), tr("Date of vaccination") ) );
+          title( tr("Vaccination"), tr("Date of vaccination"), tr("Status")) );
     if vacc then
       vaccstr = maketext("%s(%d)", vacc_array(vacc,3), vc); 	  
 	  reenter vaccstr;
@@ -1331,6 +1334,175 @@ function get_sib_names (setValues=notappl);
 	enddo; 
 
   
+end;
+
+function mapvacc (vp);
+  // convert position of vaccination 
+  recode  vp -> numeric vn;
+         1   ->   1 ;{BCG                             }
+         2   ->   2 ;{HÉPATITE B À LA NAISSANCE       }
+         3   ->   3 ;{VACCIN POLIO ORAL (VPO) 0 (DOSE N}
+         9   ->   4 ;{DTCoq-HEP.B-HIB (PENTAVALENT) 1 }
+        15   ->   5 ;{ROTAVIRUS (ROTA) 1              }
+        12   ->   6 ;{PNEUMOCOQUE (PCV13) 1           }
+         4   ->   7 ;{VACCIN POLIO ORAL (VPO) 1       }
+        10   ->   8 ;{DTCoq-HEP.B-HIB (PENTAVALENT) 2 }
+        16   ->   9 ;{ROTAVIRUS (ROTA) 2              }
+        13   ->  10 ;{PNEUMOCOQUE (PCV13) 2           }
+         5   ->  11 ;{VACCIN POLIO ORAL (VPO) 2       }
+        11   ->  12 ;{DTCoq-HEP.B-HIB (PENTAVALENT) 3 }
+        17   ->  13 ;{ROTAVIRUS (ROTA) 3              }
+        14   ->  14 ;{PNEUMOCOQUE (PCV13) 3           }
+         6   ->  15 ;{VACCIN POLIO ORAL (VPO) 3       }
+         7   ->  16 ;{VACCIN POLIO INACTIVÉ (VPI) 1   }
+         8   ->  17 ;{VACCIN POLIO INACTIVÉ (VPI) 2   }
+        18   ->  18 ;{VACCIN ANTIROUGEOLEUX (VAR) 1   }
+        21   ->  19 ;{VACCIN CONTRE LA FIÈVRE JAUNE (VA}
+        19   ->  20 ;{VACCIN ANTIROUGEOLEUX (VAR) 2/RUB}
+        20   ->  21 ;{VITAMINE A (LA PLUS RÉCENTE)    }
+  endrecode;
+end;
+  { convert the 3 components of a vaccination date into a variable to EDIT it later }
+  function vdate( vday, vmonth, vyear )
+    vdate = (vday*100+vmonth)*10000+vyear;
+  end;
+
+  { ------------------------------------------------------------------------ }
+  { check if vaccinations are given on the same date under below conditions. }
+  { These conditions suggest that there is a likely error in recording or    }
+  { entering the vaccination dates                                           }
+  function ckvdate( pd, pm, py, dptd, dptm, dpty, p_pos, dp_pos )
+  { Note: the following table is being used to decide whether a message is needed }
+  { Day   Month   Year   Code  Result
+    diff  diff    diff    0    No message
+    same  diff    diff    1    No message
+    diff  same    diff    2    Give message
+    same  same    diff    3    Give message
+    diff  diff    same    4    No message
+    same  diff    same    5    Give message
+    diff  same    same    6    Give message
+    same  same    same    7    No message
+  }
+    n = (pd = dptd) + 2*(pm = dptm) + 4*(py = dpty);
+    ckvdate = ( n in 2,3,5,6 );
+    errmsg("n=%d, pd=%d, dptd=%d, pm=%d, dptm=%d",n,pd,dptd, pm, dptm);
+  end
+function check_vaccs ();
+        numeric verr = 0;
+        numeric cy, cm, cd, dy, dm, dd, xy, xm, xd, vd, vy, vm;
+        numeric lastvacy = 0; numeric lastvacm = 0; numeric lastvacd = 0;
+        string xstring, vstring;
+
+        // get vaccs into array for display later
+        getvaccs(curocc());
+        do numeric v = 1 while v <= 20
+
+          { Loop through all of the vaccinations }
+
+          { BCG | Hep B at birth | Pol 0 | DPT 1 | Pneumococcal 1 | rotavirus 1 | Measles 1 | Vit.A }
+          if v in 1,2,3,8,12,15,18,20 then
+            xy =  0; xm =  0; xd =  0;
+          elseif vd > 0 then
+            xy = vy; xm = vm; xd = vd; xstring = vstring;
+          endif;
+
+          if     v =  1 then vd = D509B ;  vm = M509B ;  vy = Y509B ;  vstring = "BCG"
+          elseif v =  2 then vd = D509H ;  vm = M509H ;  vy = Y509H ;  vstring = tr("Hep at birth")
+          elseif v =  3 then vd = D509P0;  vm = M509P0;  vy = Y509P0;  vstring = tr("Polio") + "0"
+          elseif v =  4 then vd = D509P1;  vm = M509P1;  vy = Y509P1;  vstring = tr("Polio") + "1"
+          elseif v =  5 then vd = D509P2;  vm = M509P2;  vy = Y509P2;  vstring = tr("Polio") + "2"
+          elseif v =  6 then vd = D509P3;  vm = M509P3;  vy = Y509P3;  vstring = tr("Polio") + "3"
+          elseif v =  7 then vd = D509IPV1; vm = M509IPV1; vy = Y509IPV1; vstring = tr("Polio") + tr("IPV1")
+          elseif v =  8 then vd = D509IPV2; vm = M509IPV2; vy = Y509IPV2; vstring = tr("Polio") + tr("IPV2")
+          elseif v =  9 then vd = D509D1;  vm = M509D1;  vy = Y509D1;  vstring = tr("DPT") + "1"
+          elseif v =  10 then vd = D509D2;  vm = M509D2;  vy = Y509D2;  vstring = tr("DPT") + "2"
+          elseif v = 11 then vd = D509D3;  vm = M509D3;  vy = Y509D3;  vstring = tr("DPT") + "3"
+          elseif v = 12 then vd = D509N1;  vm = M509N1;  vy = Y509N1;  vstring = tr("Pneumococ") + "1"
+          elseif v = 13 then vd = D509N2;  vm = M509N2;  vy = Y509N2;  vstring = tr("Pneumococ") + "2"
+          elseif v = 14 then vd = D509N3;  vm = M509N3;  vy = Y509N3;  vstring = tr("Pneumococ") + "3"
+          elseif v = 15 then vd = D509R1;  vm = M509R1;  vy = Y509R1;  vstring = tr("Rotavirus") + "1"
+          elseif v = 16 then vd = D509R2;  vm = M509R2;  vy = Y509R2;  vstring = tr("Rotavirus") + "2"
+          elseif v = 17 then vd = D509R3;  vm = M509R3;  vy = Y509R3;  vstring = tr("Rotavirus") + "3"
+          elseif v = 18 then vd = D509M1;  vm = M509M1;  vy = Y509M1;  vstring = tr("Measles") + "1"
+          elseif v = 19 then vd = D509M2;  vm = M509M2;  vy = Y509M2;  vstring = tr("Measles") + "2"
+          elseif v = 20 then vd = D509V;   vm = M509V;   vy = Y509V;   vstring = tr("Vitamin") + "A1"
+          endif;
+{ --------------------------------------------------------------------------- }
+
+          // { check vaccination given before interview date }
+          // if vy in 0,4444,6666 then vy = 9999 endif;
+          // if validyr(vy) & (vy > QINTY | (vy = QINTY &
+          //    valid  (vm) & (vm > QINTM | (vm = QINTM &
+          //    valid  (vd) &  vd > QINTD )))) then
+          //   errmsg( 4471, i, vstring, vd, vm, vy, QINTD, QINTM, QINTY );
+          //   vd = 0; vm = 0; vy = 0;
+          // endif;
+          //
+          // { vaccination date should be after date of birth }
+          // if vy < cy | (vy = cy & (vm < cm | (vm = cm & vd < cd))) then
+          //   errmsg( 4472, i, vstring, vd, vm, vy, cd, cm, cy );
+          //   vd = 0; vm = 0; vy = 0;
+          // endif;
+
+          { vaccination should be given before age at death }
+          if Q224(Q503) = 2 then                     { child died }
+            if validyr(vy) & (vy > dy | (vy = dy &
+               valid  (vm) & (vm > dm | (vm = dm &
+               valid  (vd) &  vd > dd )))) then
+              verr = errmsg( 4478, i, vstring, vd, vm, vy, dd, dm,dy );
+              vacc_array(mapvacc(v),4) = "!";
+            endif
+          endif;
+
+          { Get date of latest vaccination }
+          if validyr(vy) & vy > lastvacy then
+            lastvacy = vy;
+            if valid(vm) then
+              lastvacm = vm;
+              if valid(vd) then
+                lastvacd = vd;
+              else
+                lastvacd = 0;
+              endif
+            else
+              lastvacm = 0;
+              lastvacd = 0;
+            endif
+          endif;
+
+          { Check if vaccinations given in order }
+          if vd <> 0 & xd <> 0 then
+            if validyr(xy) & (vy < xy | (vy = xy &
+               valid  (xm) & (vm < xm | (vm = xm &
+               valid  (xd) &  vd < xd )))) then
+              verr = errmsg( 4473, i, vstring, vd, vm, vy, xstring, xd, xm, xy );
+              vacc_array(mapvacc(v),4) = "!";
+            endif
+          endif;
+
+        enddo;
+
+{ --------------------------------------------------------------------------- }
+
+        { Check if vaccinations were given on the same day }
+        { There are two ways that this may happen, depending on the country }
+        { 1) BCG & P1, P2 & D1, P3 & D2 }
+        { 2) BCG & Hep & P0, P1 & D1 & N1 & R1, P2 & D2 & N2 & R2, P3 & D3 & N3 & R3 <- current default !!! modify as needed }
+
+        ckvdate( D509B,  M509B,  Y509B,  D509H,  M509H,  Y509H  ,1,2) ;
+        ckvdate( D509B,  M509B,  Y509B,  D509P0, M509P0, Y509P0 ,1,3) ;
+        ckvdate( D509P1, M509P1, Y509P1, D509D1, M509D1, Y509D1 ,4,9) ;
+        ckvdate( D509P1, M509P1, Y509P1, D509N1, M509N1, Y509N1 ,4,12) ;
+        ckvdate( D509P1, M509P1, Y509P1, D509R1, M509R1, Y509R1 ,4,15) ;
+        ckvdate( D509P2, M509P2, Y509P2, D509D2, M509D2, Y509D2 ,5,10) ;
+        ckvdate( D509P2, M509P2, Y509P2, D509N2, M509N2, Y509N2 ,5,13) ;
+        ckvdate( D509P2, M509P2, Y509P2, D509R2, M509R2, Y509R2 ,5,16) ;
+        ckvdate( D509P3, M509P3, Y509P3, D509D3, M509D3, Y509D3 ,6,11) ;
+        ckvdate( D509P3, M509P3, Y509P3, D509N3, M509N3, Y509N3 ,6,14) ;
+        ckvdate( D509P3, M509P3, Y509P3, D509R3, M509R3, Y509R3 ,6,17) ;
+
+        check_vaccs = verr; // return error code 
+
 end;
 
 PROC CGIN80_FF
@@ -5244,8 +5416,10 @@ PROC Y509V
 
 PROC Q510
 preproc
-  if demode() = add & !inAdvance() then
-    showvaccs(curocc());
+// check vaccs here !!
+  numeric isverr = check_vaccs();
+  showvaccs(curocc());
+  if demode() = add & !inAdvance() & isverr then
   endif;
 
 postproc

@@ -120,7 +120,7 @@
   { check if vaccinations are given on the same date under below conditions. }
   { These conditions suggest that there is a likely error in recording or    }
   { entering the vaccination dates                                           }
-  function ckvdate( pd, pm, py, dptd, dptm, dpty )
+  function ckvdate( pd, pm, py, dptd, dptm, dpty, p_pos, dp_pos )
   { Note: the following table is being used to decide whether a message is needed }
   { Day   Month   Year   Code  Result
     diff  diff    diff    0    No message

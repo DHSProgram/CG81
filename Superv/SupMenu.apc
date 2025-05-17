@@ -62,6 +62,8 @@ PROC GLOBAL
   array interrole(20);                     { to store role of interviewers assigned to a supervisor }
   array string intername(20);              { interviewer's name assigned to supervisor }
   valueset fieldworkers;
+  array string Remeasurement(40,4);        { store children available for selection for remeasurment }
+  string xremeas;
   valueset codes;
 
   array intvwcode(400);                    { to store interviewers - code }
@@ -268,7 +270,7 @@ PROC GLOBAL
     FileWrite( piffile, "CONTSUP="  + wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb" );
     FileWrite( piffile, "SAMPSEL="  + wrkref + "\" + getsampfile(WCLUSTER));
     FileWrite( piffile, "TRANSMIT=" + wrkref + "\TRANSMITM" + xsuperv + ".DAT" );
-    FileWrite( piffile, "RMEASURE=" + temp   + "\R" + xcluster + ".dat" );
+    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + xcluster + ".csdb" );
     if whatdata = 1 then       { data by interviewers }
       FileWrite( piffile, "CGHH80=" + receive + "\H" + xfilenum + ".DAT" );
       FileWrite( piffile, "CGIN80=" + work    + "\ALLIND.DAT" );
@@ -441,7 +443,7 @@ PROC GLOBAL
     FileWrite( piffile, "SAMPSEL="  + wrkref + "\" + getsampfile(WCLUSTER));
     FileWrite( piffile, "CGHH80="   + temp   + "\H" + xcluster + ".dat" );
     FileWrite( piffile, "CGIN80="   + temp   + "\I" + xcluster + ".dat" );
-    FileWrite( piffile, "RMEASURE=" + temp   + "\R" + xcluster + ".dat" );
+    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + xcluster + ".csdb" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
     FileWrite( piffile, "Parameter=" + xcluster );
@@ -470,7 +472,7 @@ PROC GLOBAL
     FileWrite( piffile, "<autosend>false</autosend>" );
     FileWrite( piffile, "<timeout>120</timeout>" );
     { file to be sent }
-    fname = temp + "\R" + xcluster + ".dat";
+    fname = receive + "\R" + xcluster + ".csdb";
     FileWrite( piffile, '<file source="' + fname + '" destdir="' + btdata + '" />');        { actual file name }
     FileWrite( piffile, "</transfer>" );
     close( piffile );
@@ -488,22 +490,21 @@ PROC GLOBAL
   { construct the PFF file to run application to enter remeasurement }
   function RemeasEntry( capipaper )
     InitPFF();
-    FileWrite( piffile, "StartMode=ADD" );
+    FileWrite( piffile, "StartMode=MODIFY;" + xremeas );
     FileWrite( piffile, "Fullscreen=Yes" );
     FileWrite( piffile, "NoFileOpen=Yes" );
-    FileWrite( piffile, "ShowInApplicationListing=Never" );
 
     FileWrite( piffile, "[Files]" );
     FileWrite( piffile, "Application=" + superv + "\" + AppName + ".ent" );
+    FileWrite( piffile, "InputData="   + receive   + "\R" + xcluster + ".csdb" );
     FileWrite( piffile, "Listing="    + superv + "\" + AppName + ".lst" );
     FileWrite( piffile, "WriteData="  + superv + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "RMEASURE="  + temp   + "\R" + xcluster + ".dat" );
-    FileWrite( piffile, "INTERV="  + wrkref + "\INTERV.csdb" );
+    FileWrite( piffile, "INTERV="  + wrkref + "\interv.csdb" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + edit("9",capipaper) + edit("9999",codebiomarker) + xcluster );
+    FileWrite( piffile, "Parameter=" + edit("9",capipaper) + edit("9999",codebiomarker) );
     FileWrite( piffile, "OnExit=.\SupMenu.pff" );
     FileWrite( piffile, "ViewListing=OnError" );
     FileWrite( piffile, "ViewResults=No" );
@@ -524,7 +525,7 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="  + superv + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "RMEASURE="   + temp + "\R" + xcluster + ".dat" );
+    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + xcluster + ".csdb" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
     FileWrite( piffile, "Parameter=" + xcluster );
@@ -1003,7 +1004,7 @@ PROC GLOBAL
     FileWrite( piffile, "CGHH80="   + wdir + "\AllHH.dat");
     FileWrite( piffile, "CGIN80="   + wdir + "\AllInd.dat");
     FileWrite( piffile, "CONTSUP="  + wrkref + "\Superv" + edit("9999",SupCode) + ".csdb" );
-    FileWrite( piffile, "RMEASURE=" + wdir + "\AllRm.dat");
+    FileWrite( piffile, "RMEASURE=" + wdir + "\AllRm.csdb");
 
     FileWrite( piffile, "" );
     FileWrite( piffile, "[UserFiles]" );
@@ -1973,8 +1974,8 @@ postproc
                { 1}  "1 Sélectionner les enfants pour la remesure",
                { 2}  "2 Saisir la remesure",
                { 3}  "3 Lister les enfants sélectionnées pour la remesure",
-               { 4}  "4 Envoyer la double mesure au Technicien de la santé",
-               { 5}  "5 Recevoir la double mesure du Technicien de la santé",
+//                { 4}  "4 Envoyer la double mesure au Technicien de la santé",
+//                { 5}  "5 Recevoir la double mesure du Technicien de la santé",
                { 6}  "9 Retourner au menu principal" );
     endif;
         { select children for remeasurement }
@@ -1992,19 +1993,34 @@ postproc
         RemeasSel();
         RunPFFS();
       endif;
-      { enter remeasurement data from paper questionnaires }
     elseif option = 2 then
-      fname = temp + "\R" + xcluster + ".dat";
+      { enter remeasurement data from paper questionnaires }
+      fname = receive + "\R" + xcluster + ".csdb";
       if FileExist( fname ) & !FileEmpty( fname ) then
-        AppName = "RemeasEntry";
-        RemeasEntry( 0 );             // 1-Biomarker in CAPI, 0-Biomarker on paper
-        RunPFFS();
+        setfile(RMEASURE, fname);
+        do i = 1 while loadcase(RMEASURE) 
+          Remeasurement(i,1) = edit("9999",RNUMBER);
+          Remeasurement(i,2) = edit("99",R102L);
+          Remeasurement(i,3) = R102N;
+          Remeasurement(i,4) = RADDRESS;
+        enddo;              
+        close( RMEASURE );
+        x = showarray( tr("Select the child for whom remeasurement data will be entered"), Remeasurement, 
+                    title(tr("Household"), tr("Child Number"), tr("Child Name"), tr("Address")) );
+        if x then 
+          xremeas = xcluster + Remeasurement(x,1) + Remeasurement(x,2);           
+          AppName = "RemeasEntry";
+          RemeasEntry( 0 );             // 1-Biomarker in CAPI, 0-Biomarker on paper
+          RunPFFS();
+        else
+          errmsg( 130 );
+        endif;            
       else
         errmsg( 110, fname );
       endif;
-  { list children eligible for remeasurement }
     elseif option = 3 then
-        fname = temp + "\R" + xcluster + ".dat";
+      { list children eligible for remeasurement }
+        fname = receive + "\R" + xcluster + ".csdb";
         if FileExist( fname ) & !FileEmpty( fname ) then
           AppName = "RemeasLst";
           RemeasLst();
@@ -2014,7 +2030,7 @@ postproc
         endif;
   { send children selected for remeasurement to health specialist }
     // elseif option = 4 then
-    //   fname = temp + "\R" + xcluster + ".dat";
+    //   fname = receive + "\R" + xcluster + ".csdb";
     //   if FileExist( fname ) & !FileEmpty( fname ) then
     //     SendRemeas();
     //   else
@@ -2023,7 +2039,7 @@ postproc
     //   { receive remeasurement data from health specialist }
     // elseif option = 5 then
     //   ReceiveRemeas();
-    //   fname = temp + "\R" + xcluster + ".dat";
+    //   fname = receive + "\R" + xcluster + ".csdb";
     //   if FileExist( fname ) & !FileEmpty( fname ) then
     //     AppName = "RemeasLst";
     //     RemeasLst();

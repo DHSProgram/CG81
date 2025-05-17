@@ -6,13 +6,31 @@
   "description": "", 
   "files": [
     {
+      "path": "..\\Dicts\\CGHH80.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\CGIN80.dcf"
+    }, 
+    {
+      "path": "..\\Entry\\Android.xml"
+    }, 
+    {
+      "path": "..\\Entry\\CGHH80.fmf"
+    }, 
+    {
+      "path": "..\\Entry\\CGIN80.fmf"
+    }, 
+    {
       "path": "..\\Entry\\CollectHH.ent"
+    }, 
+    {
+      "path": "..\\Entry\\CollectHH.qsf"
     }, 
     {
       "path": "..\\Entry\\CollectIN.ent"
     }, 
     {
-      "path": "..\\Entry\\CollectIN.pff"
+      "path": "..\\Entry\\CollectIN.qsf"
     }, 
     {
       "path": "..\\Entry\\DCMenu.ent"
@@ -24,19 +42,16 @@
       "path": "..\\Entry\\ListElig.ent"
     }, 
     {
-      "path": "..\\Entry\\LISTELIG.pff"
-    }, 
-    {
       "path": "..\\Entry\\ListNotes.ent"
-    }, 
-    {
-      "path": "..\\Entry\\LISTNOTES.pff"
     }, 
     {
       "path": "..\\Entry\\LstQuest.ent"
     }, 
     {
-      "path": "..\\Entry\\LSTQUEST.pff"
+      "path": "..\\Library\\checkid.js"
+    }, 
+    {
+      "path": "..\\Library\\TablesStyle.css"
     }, 
     {
       "path": "..\\PII\\Ref\\Clusters.csdb"
@@ -54,31 +69,19 @@
       "path": "..\\Superv\\assignhh.ent"
     }, 
     {
-      "path": "..\\Superv\\ASSIGNHH.pff"
-    }, 
-    {
-      "path": "..\\Superv\\CaptureGPS.pff"
-    }, 
-    {
       "path": "..\\Superv\\CheckID.ent"
     }, 
     {
       "path": "..\\Superv\\CheckID.mgf"
     }, 
     {
-      "path": "..\\Superv\\CHECKID.pff"
+      "path": "..\\Superv\\RemeasEntry.ent"
     }, 
     {
-      "path": "..\\Superv\\FCT.pff"
+      "path": "..\\Superv\\RemeasLst.ent"
     }, 
     {
-      "path": "..\\Superv\\RemeasEntry.pff"
-    }, 
-    {
-      "path": "..\\Superv\\RemeasLst.pff"
-    }, 
-    {
-      "path": "..\\Superv\\RemeasSel.pff"
+      "path": "..\\Superv\\RemeasSel.ent"
     }, 
     {
       "path": "..\\Superv\\SelectHH.ent"
@@ -104,7 +107,8 @@
       "path": "..\\Dicts\\Clusters.dcf"
     }, 
     {
-      "path": "..\\Dicts\\CLUSTERS.dcf"
+      "path": "..\\Dicts\\CLUSTERS.dcf", 
+      "uploadForSync": true
     }, 
     {
       "path": "..\\dicts\\Cnull.dcf"
@@ -113,10 +117,16 @@
       "path": "..\\Dicts\\Cnull.dcf"
     }, 
     {
+      "path": "..\\Dicts\\ContSup.dcf"
+    }, 
+    {
       "path": "..\\Dicts\\CONTSUP.dcf"
     }, 
     {
       "path": "..\\Dicts\\EligIndv.dcf"
+    }, 
+    {
+      "path": "..\\Dicts\\FieldWKQuest.dcf"
     }, 
     {
       "path": "..\\Dicts\\HHForInt.dcf"
@@ -141,6 +151,9 @@
       "path": "..\\Dicts\\Others.dcf"
     }, 
     {
+      "path": "..\\dicts\\Remeasure.dcf"
+    }, 
+    {
       "path": "..\\Dicts\\Remeasure.dcf"
     }, 
     {
@@ -158,8 +171,9 @@
     }
   ], 
   "deployment": {
-    "type": "CSWeb", 
+    "type": "LocalFolder", 
     "cswebUrl": "https://eds.ins-congo.app/api/", 
-    "ftpUrl": "ftp://"
+    "ftpUrl": "ftp://", 
+    "localFolderPath": "EDS-C III CAPI local"
   }
 }

@@ -47,6 +47,9 @@
   list string MessageAvail;              { to load the error messages depending on laguage used }
   list string ListErrmsg;                { to keep track of error messages }
 
+  list rmlines;                          { keep track of children eligible for remeasurement }
+  list rmres;
+
   numeric found, ycluster, fwrt, e, hhe, bioe, wme, casepart, x, i, j;
   numeric xht, xhc, xhi, xit, xic, xii, xwc, xwi, xmc, xmi, chbio, wmbio, mnbio, casefound, centoff;
   numeric hogregis, chktot, rwrthha, xlen, siblings, hhOK, newhh, bioexist;
@@ -225,15 +228,21 @@
       ShowStatus = utf_x_icon;;
     endif;
   end;
-  function PrintBio (pline, string pstring, string presult, pstatus);
+  function PrintBio (pline, string pstring, string presult, pstatus, remeas = notappl);
     CellValues(1) = "BLANK";
     CellValues(2) = edit("99", pline);
     CellValues(3) = "BLANK";
     CellValues(4) = pstring[1:30];
     CellValues(5) = presult;
     CellValues(6) = "BLANK";
-    CellValues(7) = ShowStatus(pstatus);
-    HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
+    when remeas;
+      notappl -> CellValues(7) = "BLANK";
+            0 -> CellValues(7) = utf_x_icon;
+            1 -> CellValues(7) = utf_tick_icon;
+            9 -> CellValues(7) = "!";
+    endwhen;
+    CellValues(8) = ShowStatus(pstatus);
+    HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
   end;
 
 PROC FL_CNULL
@@ -323,7 +332,8 @@ preproc
   CellValues(4) = tr("Name");
   CellValues(5) = tr("Result");
   CellValues(6) = tr("Visits");
-  CellValues(7) = tr("Status");
+  CellValues(7) = tr("Remeasure");
+  CellValues(8) = tr("Status");
 
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 4;  // column 3 is household address/name 
@@ -345,7 +355,7 @@ preproc
     trace("hh=%d", QHNUMBER);
     { load files based on first case }
     if ycluster = 0 then
-      HTML_BeginTable( CellValues, zstring2, 7, "Main" );  // generates the HTML table script with the column headers
+      HTML_BeginTable( CellValues, zstring2, 8, "Main" );  // generates the HTML table script with the column headers
      { load supervisor control to make sure that total number of cases to be collected in cluster is assigned }
           { it also checks that cluster was already selected for remeasurement and data were colleted }
       SSAMPLE = QHCLUST;
@@ -362,18 +372,26 @@ preproc
         getmessage( 50164 );
         e = ListErrMsg.add( AlphaMSG );
       else
+        // check results of remeasurement and update CONTSUP file
+        rmlines.clear();
+        rmres.clear();
         found = 0;
             do i = 1 while i <= maxocc(SREMEAS) & SREMHH(i) <> 0
+              rmlines.add(SREMLINE(i));
               RCLUSTER = SSAMPLE;
               RNUMBER  = SREMHH(i);
               R102L    = SREMLINE(i);
               if !loadcase( RMEASURE, RCLUSTER, RNUMBER, R102L ) then
-                // getmessage( 50165 );
-                // e = ListErrMsg.add( MakeText(AlphaMSG, RNUMBER, R102L) );
+                getmessage( 50165 );
+                e = ListErrMsg.add( MakeText(AlphaMSG, RNUMBER, R102L) );
+                rmres.add(9);
               elseif R104 in 0:4 & ( R106 = notappl | R108 = notappl ) | 
                      R104 = notappl then
                 getmessage( 50166 );
                 e = ListErrMsg.add( maketext(AlphaMSG, RNUMBER, R102L)  );
+                rmres.add(0);
+              else
+                rmres.add(1);
               endif;
             enddo;
       endif;
@@ -567,8 +585,9 @@ preproc
     CellValues(4) = xstring[1:60];
     CellValues(5) = yresult;
     CellValues(6) = edit("9", QHVISITS);
-    CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon) + " " + ShowStatus(status);
-    HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
+    CellValues(7) = "BLANK";
+    CellValues(8) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon) + " " + ShowStatus(status);
+    HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
     
     sumreport(sumidx, 7) = edit("99", bioexist) + "/" + edit("99", x);
     if bioexist > x then
@@ -682,8 +701,16 @@ preproc
               bioe = 1;
               measure = "N";
             endif;
+            numeric r = rmlines.seek(QH11);
+            if r then
+              if rmres(r) <> 1 then // reset status flag if remeasurement not completed !!
+                status = 0;
+              endif;
+              PrintBio(i, xstring, yresult, status, rmres(r));
+            else
+              PrintBio(i, xstring, yresult, status);
+            endif;
             // output to report
-            PrintBio(i, xstring, yresult, status);
           endif;
         enddo;
 
@@ -811,8 +838,9 @@ preproc
           CellValues(4) = xstring;
           CellValues(5) = yresult;
           CellValues(6) = edit("9", QVISITS);
-          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
-          HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data 
+          CellValues(7) = "BLANK";
+          CellValues(8) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
+          HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data 
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
             getmessage( 50200 );
@@ -987,8 +1015,9 @@ preproc
           CellValues(4) = xstring;
           CellValues(5) = yresult;
           CellValues(6) = "BLANK";
-          CellValues(7) = ShowStatus(status);
-          HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
+          CellValues(7) = "BLANK";
+          CellValues(8) = ShowStatus(status);
+          HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data
        endif;
       endif;
     enddo;

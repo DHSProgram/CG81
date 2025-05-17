@@ -1,522 +1,1020 @@
-﻿[Dictionary]
-Version=CSPro 7.5
-Label=Children selected for remeasurement
-Name=RMEASURE
-RecordTypeStart=0
-RecordTypeLen=0
-Positions=Relative
-ZeroFill=No
-DecimalChar=Yes
-SecurityOptions=CB238446827C4057C6EBC6691E0CEC094C5EECAF0D5D0D068C677653514D6EC1
-
-[Level]
-Label=Children selected for remeasurement
-Name=CASES_QUEST
-
-[IdItems]
-
-[Item]
-Label=Cluster
-Name=RCLUSTER
-Start=1
-Len=4
-ZeroFill=Yes
-
-[Item]
-Label=Household
-Name=RNUMBER
-Start=5
-Len=4
-ZeroFill=Yes
-
-[Item]
-Label=Child line number
-Name=R102L
-Start=9
-Len=2
-ZeroFill=Yes
-
-[Record]
-Label=Record for children selected for remeasurement
-Name=CASES_REC
-RecordTypeValue=''
-RecordLen=234
-
-[Item]
-Label=Reason for selection
-Name=RTYPE
-Start=11
-Len=1
-
-[ValueSet]
-Label=Reason for selection
-Name=RTYPE_EN
-Value=1;Random
-Value=2;Z-Scores
-Value=3;Both
-
-[ValueSet]
-Label=Razon para la seleccion
-Name=RTYPE_ES
-Value=1;Al azar
-Value=2;Z-Scores
-Value=3;Ambos
-
-[Item]
-Label=Textual reason for selection
-Name=RTYPET
-Start=12
-Len=10
-DataType=Alpha
-
-[Item]
-Label=Household address
-Name=RADDRESS
-Start=22
-Len=30
-DataType=Alpha
-
-[Item]
-Label=Child name
-Name=R102N
-Start=52
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Child age declared in household roster
-Name=RAGE
-Start=72
-Len=2
-
-[Item]
-Label=Child sex declared in household roster
-Name=RSEX
-Start=74
-Len=1
-
-[Item]
-Label=Name of household head
-Name=RHEADHH
-Start=75
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Biomarker/Health specialist code
-Name=RBIOMARK
-Start=95
-Len=4
-
-[Item]
-Label=Day of measurement in CAPI/questionnaire
-Name=RFINTD
-Start=99
-Len=2
-ZeroFill=Yes
-
-[Item]
-Label=Month of measurement in CAPI/questionnaire
-Name=RFINTM
-Start=101
-Len=2
-ZeroFill=Yes
-
-[Item]
-Label=Year of measurement in CAPI/questionnaire
-Name=RFINTY
-Start=103
-Len=4
-ZeroFill=Yes
-
-[Item]
-Label=Weight in kilograms from CAPI/biomarker questionnaire
-Name=RFWEIGHT
-Start=107
-Len=6
-Decimal=2
-DecimalChar=Yes
-
-[Item]
-Label=Height in centimeters from CAPI/biomarker questionnaire
-Name=RFHEIGHT
-Start=113
-Len=5
-Decimal=1
-DecimalChar=Yes
-
-[Item]
-Label=Measurement lying/standing from CAPI/biomarker questionnaire
-Name=RFLYNSTN
-Start=118
-Len=1
-
-[ValueSet]
-Label=Measurement lying/standing from CAPI/biomarker questionnaire
-Name=RFLYNSTN_EN
-Value=1;Lying
-Value=2;Standing
-
-[ValueSet]
-Label=Mediion acostado/de pie del CAPI/biomarcadro
-Name=RFLYNSTN_ES
-Value=1;Acostado
-Value=2;De pie
-
-[Item]
-Label=Day of remeasurement
-Name=R115D
-Start=119
-Len=2
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of remeasurement
-Name=R115D_EN
-Value=1:31
-
-[Item]
-Label=Month of remeasurement
-Name=R115M
-Start=121
-Len=2
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of remeasurement
-Name=R115M_EN
-Value=1:12
-
-[Item]
-Label=Year of remeasurement
-Name=R115Y
-Start=123
-Len=4
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of remeasurement
-Name=R115Y_EN
-Value=2020:2025
-
-[Item]
-Label=Number of visits for remeasurement
-Name=RVISITS
-Start=127
-Len=1
-
-[ValueSet]
-Label=Number of visits for remeasurement
-Name=RVISITS_EN
-Value=1:5
-
-[ValueSet]
-Label=Numero de visitas para re-medicion
-Name=RVISITS_ES
-Value=1:5
-
-[Item]
-Label=Day of birth
-Name=R103D
-Start=128
-Len=2
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of birth
-Name=R103D_EN
-Value=1:31
-Value=98;Don't know
-
-[ValueSet]
-Label=Dia de nacimiento
-Name=R103D_ES
-Value=1:31
-Value=98;No sabe
-
-[Item]
-Label=Month of birth
-Name=R103M
-Start=130
-Len=2
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of birth
-Name=R103M_EN
-Value=1;January
-Value=2;February
-Value=3;March
-Value=4;April
-Value=5;May
-Value=6;June
-Value=7;July
-Value=8;August
-Value=9;September
-Value=10;October
-Value=11;November
-Value=12;December
-Value=98;DK month
-
-[ValueSet]
-Label=Mes de nacimiento
-Name=R103M_ES
-Value=1;Enero
-Value=2;Febrero
-Value=3;Marzo
-Value=4;Abril
-Value=5;Mayo
-Value=6;Junio
-Value=7;Julio
-Value=8;Agosto
-Value=9;Septiembre
-Value=10;Octubre
-Value=11;Noviembre
-Value=12;Diciembre
-Value=98;No sabe
-
-[Item]
-Label=Year of birth
-Name=R103Y
-Start=132
-Len=4
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of birth
-Name=R103Y_EN
-Value=2015;2015
-Value=2016;2016
-Value=2017;2017
-Value=2018;2018
-Value=2019;2019
-Value=2020;2020
-Value=2021;2021
-Value=9998;Don't know year
-
-[ValueSet]
-Label=Año de nacimiento
-Name=R103Y_ES
-Value=2015;2015
-Value=2016;2016
-Value=2017;2017
-Value=2018;2018
-Value=2019;2019
-Value=2020;2020
-Value=2021;2021
-Value=9998;No sabe año
-
-[Item]
-Label=Age of child in years for eligibility
-Name=R104
-Start=136
-Len=1
-
-[ValueSet]
-Label=Age of child in years for eligibility
-Name=R104_EN
-Value=0:4
-
-[ValueSet]
-Label=Elegibilidad basada en edad en años
-Name=R104_ES
-Value=0:4
-
-[Item]
-Label=Weight in kilograms at remeasurement
-Name=R106
-Start=137
-Len=5
-Decimal=2
-DecimalChar=Yes
-
-[ValueSet]
-Label=Weight in kilograms at remeasurement
-Name=R106_EN
-Value=0.50:40.00
-Value=99.94;Not present
-Value=99.95;Refused
-Value=99.96;Other
-
-[ValueSet]
-Label=Peso en kilogramos por re-medicion
-Name=R106_ES
-Value=0.50:40.00
-Value=99.94;No presente
-Value=99.95;Rechazo
-Value=99.96;Otro
-
-[Item]
-Label=Weight in kilograms - working field for re-entering
-Name=R106W
-Start=142
-Len=5
-Decimal=2
-DecimalChar=Yes
-
-[ValueSet]
-Label=Weight in kilograms - working field for re-entering
-Name=R106W_EN
-Value=0.50:40.00
-Value=99.94;Not present
-Value=99.95;Refused
-Value=99.96;Other
-
-[ValueSet]
-Label=Peso en kilogramos - campo de trabajo para re-medicion
-Name=R106W_ES
-Value=0.50:40.00
-Value=99.94;No presente
-Value=99.95;Rechazo
-Value=99.96;Otro
-
-[Item]
-Label=Child minimally dressed
-Name=R107
-Start=147
-Len=1
-
-[ValueSet]
-Label=Child minimally dressed
-Name=R107_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Height in centimeters at remeasurement
-Name=R108
-Start=148
-Len=5
-Decimal=1
-DecimalChar=Yes
-
-[ValueSet]
-Label=Height in centimeters at remeasurement
-Name=R108_EN
-Value=20.0:140.0
-Value=999.4;Not present
-Value=999.5;Refused
-Value=999.6;Other
-
-[ValueSet]
-Label=Talla en centimetros en la re-medicion
-Name=R108_ES
-Value=20.0:140.0
-Value=999.4;No presente
-Value=999.5;Rechazo
-Value=999.6;Otro
-
-[Item]
-Label=Height in centimeters - working field for re-entering
-Name=R108W
-Start=153
-Len=5
-Decimal=1
-DecimalChar=Yes
-
-[ValueSet]
-Label=Height in centimeters - working field for re-entering
-Name=R108W_EN
-Value=20.0:140.0
-Value=999.4;Not present
-Value=999.5;Refused
-Value=999.6;Other
-
-[ValueSet]
-Label=Talla en centimetros - campo de trabajo para la re-medicion
-Name=R108W_ES
-Value=20.0:140.0
-Value=999.4;No presente
-Value=999.5;Rechazo
-Value=999.6;Otro
-
-[Item]
-Label=Height: lying or standing at remeasurement
-Name=R109
-Start=158
-Len=1
-
-[ValueSet]
-Label=Height: lying or standing at remeasurement
-Name=R109_EN
-Value=1;Lying
-Value=2;Standing
-
-[ValueSet]
-Label=Talla: medido acostado/de pie en la re-medicion
-Name=R109_ES
-Value=1;Acostado
-Value=2;De pie
-
-[Item]
-Label=Correct measurement procedure used
-Name=R110
-Start=159
-Len=1
-
-[ValueSet]
-Label=Correct measurement procedure used
-Name=R110_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Reason for incorrect measurement
-Name=R111
-Start=160
-Len=60
-DataType=Alpha
-
-[Item]
-Label=Child's hair had braids or ornaments
-Name=R112
-Start=220
-Len=1
-
-[ValueSet]
-Label=Child's hair had braids or ornaments
-Name=R112_VS1
-Value=1;Yes
-Value=2;No
-
-[Item]
-Label=Fieldworker number for H/W
-Name=R113
-Start=221
-Len=4
-
-[Item]
-Label=Assistant for remeasurement
-Name=R114
-Start=225
-Len=4
-
-[Item]
-Label=Auxiliary to finalize remeasurement
-Name=RAUXILIAR
-Start=229
-Len=1
-DataType=Alpha
-
-[Item]
-Label=Wt/Ht Standard deviations  (according to WHO)
-Name=RZSWH
-Start=230
-Len=4
-
-[ValueSet]
-Label=Wt/Ht Standard deviations  (according to WHO)
-Name=RZSWH_VS1
-Value=-999:999
-Value=9996;Height out of plausible limits
-Value=9997;Age in days out of plausible limits
-Value=9998;Flagged cases
-Value=9999;Missing
-Name=MISSING,Special
-
-[Item]
-Label=Used to have a fix length record
-Name=RLAST
-Start=234
-Len=1
-DataType=Alpha
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "RMEASURE", 
+  "languages": [
+    {
+      "name": "EN", 
+      "label": "English"
+    }, 
+    {
+      "name": "FR", 
+      "label": "Français"
+    }
+  ], 
+  "labels": [ { "text": "Children selected for remeasurement" } ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "cb238446827c4057c6ebc6691e0cec094c5eecaf0d5d0d068c677653514d6ec1"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 0, 
+    "length": 0
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "CASES_QUEST", 
+      "labels": [ { "text": "Children selected for remeasurement" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "RCLUSTER", 
+            "labels": [ { "text": "Cluster" } ], 
+            "contentType": "numeric", 
+            "start": 1, 
+            "length": 4, 
+            "zeroFill": true
+          }, 
+          {
+            "name": "RNUMBER", 
+            "labels": [ { "text": "Household" } ], 
+            "contentType": "numeric", 
+            "start": 5, 
+            "length": 4, 
+            "zeroFill": true
+          }, 
+          {
+            "name": "R102L", 
+            "labels": [ { "text": "Child line number" } ], 
+            "contentType": "numeric", 
+            "start": 9, 
+            "length": 2, 
+            "zeroFill": true
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "CASES_REC", 
+          "labels": [ { "text": "Record for children selected for remeasurement" } ], 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "RTYPE", 
+              "labels": [ { "text": "Reason for selection" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "RTYPE_EN", 
+                  "labels": [ { "text": "Reason for selection" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Random" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Z-Scores" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Both" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }, 
+                {
+                  "name": "RTYPE_ES", 
+                  "labels": [ { "text": "Razon para la seleccion" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Al azar" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Z-Scores" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Ambos" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "RTYPET", 
+              "labels": [ { "text": "Textual reason for selection" } ], 
+              "contentType": "alpha", 
+              "length": 10
+            }, 
+            {
+              "name": "RADDRESS", 
+              "labels": [ { "text": "Household address" } ], 
+              "contentType": "alpha", 
+              "length": 30
+            }, 
+            {
+              "name": "R102N", 
+              "labels": [ { "text": "Child name" } ], 
+              "contentType": "alpha", 
+              "length": 20
+            }, 
+            {
+              "name": "RAGE", 
+              "labels": [ { "text": "Child age declared in household roster" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "RSEX", 
+              "labels": [ { "text": "Child sex declared in household roster" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "RHEADHH", 
+              "labels": [ { "text": "Name of household head" } ], 
+              "contentType": "alpha", 
+              "length": 20
+            }, 
+            {
+              "name": "RBIOMARK", 
+              "labels": [ { "text": "Biomarker/Health specialist code" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "RFINTD", 
+              "labels": [ { "text": "Day of measurement in CAPI/questionnaire" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "RFINTD_VS1", 
+                  "labels": [ { "text": "Day of measurement in CAPI/questionnaire" } ], 
+                  "values": []
+                }
+              ]
+            }, 
+            {
+              "name": "RFINTM", 
+              "labels": [ { "text": "Month of measurement in CAPI/questionnaire" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "RFINTY", 
+              "labels": [ { "text": "Year of measurement in CAPI/questionnaire" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "RFWEIGHT", 
+              "labels": [ { "text": "Weight in kilograms from CAPI/biomarker questionnaire" } ], 
+              "contentType": "numeric", 
+              "length": 6, 
+              "decimals": 2, 
+              "decimalMark": true, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "RFHEIGHT", 
+              "labels": [ { "text": "Height in centimeters from CAPI/biomarker questionnaire" } ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "decimals": 1, 
+              "decimalMark": true, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "RFLYNSTN", 
+              "labels": [ { "text": "Measurement lying/standing from CAPI/biomarker questionnaire" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "RFLYNSTN_EN", 
+                  "labels": [ { "text": "Measurement lying/standing from CAPI/biomarker questionnaire" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Lying" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Standing" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }, 
+                {
+                  "name": "RFLYNSTN_ES", 
+                  "labels": [ { "text": "Mediion acostado/de pie del CAPI/biomarcadro" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Acostado" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "De pie" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R115D", 
+              "labels": [ { "text": "Day of remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "R115D_EN", 
+                  "labels": [ { "text": "Day of remeasurement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "1", "31" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R115M", 
+              "labels": [ { "text": "Month of remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "R115M_EN", 
+                  "labels": [ { "text": "Month of remeasurement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "1", "12" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R115Y", 
+              "labels": [ { "text": "Year of remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "R115Y_EN", 
+                  "labels": [ { "text": "Year of remeasurement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "2020", "2025" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "RVISITS", 
+              "labels": [ { "text": "Number of visits for remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "RVISITS_EN", 
+                  "labels": [ { "text": "Number of visits for remeasurement" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "1", "5" ] } ]
+                    }
+                  ]
+                }, 
+                {
+                  "name": "RVISITS_ES", 
+                  "labels": [ { "text": "Numero de visitas para re-medicion" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "1", "5" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R103D", 
+              "labels": [ { "text": "Day of birth" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "R103D_VS1", 
+                  "labels": [ { "text": "Day of birth" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "1", "31" ] } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Don't know", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Ne sait pas", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "98" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R103M", 
+              "labels": [ { "text": "Month of birth" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "R103M_VS1", 
+                  "labels": [ { "text": "Month of birth" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "January", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Janvier", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "February", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Février", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "March", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Mars", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "April", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Avril", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "May", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Mai", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "June", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Juin", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "July", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Juillet", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "August", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Août", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "September", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Septembre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "9" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "October", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Octobre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "10" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "November", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Novembre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "11" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "December", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Décembre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "12" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "DK month", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Ne sait pas le mois", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "98" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R103Y", 
+              "labels": [ { "text": "Year of birth" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "R103Y_VS1", 
+                  "labels": [ { "text": "Year of birth" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "2020" } ], 
+                      "pairs": [ { "value": "2020" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "2021" } ], 
+                      "pairs": [ { "value": "2021" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "2022" } ], 
+                      "pairs": [ { "value": "2022" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "2023" } ], 
+                      "pairs": [ { "value": "2023" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "2024" } ], 
+                      "pairs": [ { "value": "2024" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "2025" } ], 
+                      "pairs": [ { "value": "2025" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Don't know year", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Ne sait pas année", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "9998" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R104", 
+              "labels": [ { "text": "Age of child in years for eligibility" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R104_VS1", 
+                  "labels": [ { "text": "Age of child in years for eligibility" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "0", "4" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R106", 
+              "labels": [ { "text": "Weight in kilograms at remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "decimals": 2, 
+              "decimalMark": true, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R106_VS1", 
+                  "labels": [ { "text": "Weight in kilograms at remeasurement" } ], 
+                  "link": "170766568", 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "0.50", "40.00" ] } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Not present", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Absent", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "99.94" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Refused", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Refus", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "99.95" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Other", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Autre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "99.96" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R106W", 
+              "labels": [ { "text": "Weight in kilograms - working field for re-entering" } ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "decimals": 2, 
+              "decimalMark": true, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R106W_VS1", 
+                  "labels": [ { "text": "Weight in kilograms - working field for re-entering" } ], 
+                  "link": "170766568"
+                }
+              ]
+            }, 
+            {
+              "name": "R107", 
+              "labels": [
+                {
+                  "text": "Child minimally dressed", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Enfant habillé légèrement", 
+                  "language": "FR"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R107_VS1", 
+                  "labels": [ { "text": "Child minimally dressed" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Yes", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Oui", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "No", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Non", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R108", 
+              "labels": [ { "text": "Height in centimeters at remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "decimals": 1, 
+              "decimalMark": true, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R108_VS1", 
+                  "labels": [ { "text": "Height in centimeters at remeasurement" } ], 
+                  "link": "137572435", 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "20.0", "140.0" ] } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Not present", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Absent", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "999.4" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Refused", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Refus", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "999.5" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Other", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Autre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "999.6" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R108W", 
+              "labels": [ { "text": "Height in centimeters - working field for re-entering" } ], 
+              "contentType": "numeric", 
+              "length": 5, 
+              "decimals": 1, 
+              "decimalMark": true, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R108W_VS1", 
+                  "labels": [ { "text": "Height in centimeters - working field for re-entering" } ], 
+                  "link": "137572435"
+                }
+              ]
+            }, 
+            {
+              "name": "R109", 
+              "labels": [ { "text": "Height: lying or standing at remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R109_VS1", 
+                  "labels": [ { "text": "Height: lying or standing at remeasurement" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Lying", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Allongé", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Standing", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Debout", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R110", 
+              "labels": [ { "text": "Correct measurement procedure used" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R110_VS1", 
+                  "labels": [ { "text": "Correct measurement procedure used" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Yes", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Oui", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "No", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Non", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R111", 
+              "labels": [ { "text": "Reason for incorrect measurement" } ], 
+              "contentType": "alpha", 
+              "length": 60
+            }, 
+            {
+              "name": "R112", 
+              "labels": [ { "text": "Child's hair had braids or ornaments" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "R112_VS1", 
+                  "labels": [ { "text": "Child's hair had braids or ornaments" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Yes", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Oui", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "No", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Non", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "R113", 
+              "labels": [ { "text": "Fieldworker number for H/W" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "R114", 
+              "labels": [ { "text": "Assistant for remeasurement" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "RAUXILIAR", 
+              "labels": [ { "text": "Auxiliary to finalize remeasurement" } ], 
+              "contentType": "alpha", 
+              "length": 1
+            }, 
+            {
+              "name": "RZSWH", 
+              "labels": [ { "text": "Wt/Ht Standard deviations  (according to WHO)" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "RZSWH_VS1", 
+                  "labels": [ { "text": "Wt/Ht Standard deviations  (according to WHO)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "-999", "999" ] } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Height out of plausible limits" } ], 
+                      "pairs": [ { "value": "9996" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Age in days out of plausible limits" } ], 
+                      "pairs": [ { "value": "9997" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Flagged cases" } ], 
+                      "pairs": [ { "value": "9998" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Missing" } ], 
+                      "special": "MISSING", 
+                      "pairs": [ { "value": "9999" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "RLAST", 
+              "labels": [ { "text": "Used to have a fix length record" } ], 
+              "contentType": "alpha", 
+              "length": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
