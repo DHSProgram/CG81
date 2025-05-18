@@ -22,43 +22,53 @@
   numeric prevhh;
   function fillhdr ();
     CellValues(1) = tr("HH");
-    CellValues(2) = tr("Name");
-    CellValues(3) = tr("Result");
-    CellValues(4) = tr("Visits");
-    CellValues(5) = tr("Biomarkers");
+    CellValues(2) = tr("Ligne");
+    CellValues(3) = tr("Name");
+    CellValues(4) = tr("Result");
+    CellValues(5) = tr("Visits");
+    CellValues(6) = tr("Biomarkers");
+    CellValues(7) = tr("Delegated to");
   end;
   function fillhh ();
     string name;
     CellValues(1) = edit("9999", QHNUMBER);
+    CellValues(2) = "BLANK";
     if noccurs(QHSEC01X) then
       name = QHFIRSTN(1) + " " + QHLASTN(1);
     endif;
     if length(name) then
-      CellValues(2) = name;
+      CellValues(3) = name;
     else
-      CellValues(2) = QHADDRESS[1:30];
+      CellValues(3) = QHADDRESS[1:30];
     endif;
-    CellValues(3) = xresult;
-    CellValues(4) = edit("9", QHVISITS);
+    CellValues(4) = xresult;
+    CellValues(5) = edit("9", QHVISITS);
     if QHRESULT = 1 then
-      CellValues(5) = edit("99", wmhw+mnhw+chhw) + "-" + edit("99", x);
+      CellValues(6) = edit("99", wmhw+mnhw+chhw) + "-" + edit("99", x);
       if x = wmhw+mnhw+chhw then
         hwstatus = "✔";
       else
         hwstatus = "!";
       endif;
-      CellValues(5) = CellValues(5) + hwstatus;
+      CellValues(6) = CellValues(6) + hwstatus;
     else
-      CellValues(5) = "BLANK";
+      CellValues(6) = "BLANK";
     endif;
+    CellValues(7) = "BLANK";
   end;
 
   function fillind (string wvisits);
-    CellValues(1) = edit("  99", QLINE);
-    CellValues(2) = zstring1;
-    CellValues(3) = xresult;
-    CellValues(4) = wvisits;
-    CellValues(5) = "BLANK";
+    CellValues(1) = "BLANK";
+    CellValues(2) = edit("  99", QLINE);
+    CellValues(3) = zstring1;
+    CellValues(4) = xresult;
+    CellValues(6) = wvisits;
+    CellValues(6) = "BLANK";
+    if seek(QLINE = QH01) & QHDELEG(QLINE) then
+      CellValues(7) = edit("9999", QHDELEG(QLINE));
+    else
+      CellValues(7) = "-";
+    endif;
   end;
 
 PROC FL_CNULL
@@ -96,7 +106,7 @@ preproc
   { go over each household }
   open( CGHH80 );
   if !FileEmpty( fnameHH ) then    { it is important because some interviewers may not have household questionnaires }
-    HTML_BeginTable( CellValues, zstring2, 5 );  // generates the HTML table script with the column headers
+    HTML_BeginTable( CellValues, zstring2, 7 );  // generates the HTML table script with the column headers
     while loadcase( CGHH80 ) do
       if QHRESULT = 1 & partialcs( 1, QHCLUST, QHNUMBER, 0, fnameHH  ) then
         xresult = edit("9",QHRESULT) + tr("-Partial")
@@ -136,7 +146,7 @@ preproc
       endif;                    
           { populates the elements of a row based on household information }
       fillhh();
-      HTML_OneRow( CellValues, 5 );   // generates the HTML script for a row with relevant household data
+      HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
 
       if QHRESULT = 1 then  { check individuals only if they are part of completed households }
 
@@ -171,13 +181,13 @@ preproc
               endif;
                   { populates the elements of a row based on individual information }
               FillInd(edit("9", QVISITS));
-              HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+              HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
 
             else
                   { populates the elements of a row for an individual that hasn't been visited }
               xresult = tr("Not visited");
               FillInd("BLANK");
-              HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+              HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
             endif;
           endif;
         enddo;

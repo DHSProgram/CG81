@@ -1389,7 +1389,7 @@ end;
     same  same    same    7    No message
   }
     n = (pd = dptd) + 2*(pm = dptm) + 4*(py = dpty);
-    if ( n in 2,3,5,6 ) then
+    if !pd in 44,66 & !dptd in 44,66 & ( n in 2,3,5,6 ) then
       string vac1 = vacc_array(mapvacc(p_pos), 1);
       string dat1 = vacc_array(mapvacc(p_pos), 2);
       string vac2 = vacc_array(mapvacc(d_pos), 1);
@@ -1444,7 +1444,7 @@ function check_vaccs ();
 { --------------------------------------------------------------------------- }
 
           { Check if vaccinations given in order }
-          if vd <> 0 & xd <> 0 then
+          if !vd in 0,44,66 & !xd in 0,44,66 then
             if validyr(xy) & (vy < xy | (vy = xy &
                valid  (xm) & (vm < xm | (vm = xm &
                valid  (xd) &  vd < xd )))) then

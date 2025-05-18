@@ -47,7 +47,7 @@ ZeroFill=Yes
 Label=Households and individuals record|Registro de hogares e individuales
 Name=CASES_REC
 RecordTypeValue=''
-RecordLen=117
+RecordLen=121
 
 [Item]
 Label=Questionnaire type|Tipo de cuestionario
@@ -107,10 +107,11 @@ DataType=Numeric
 [ValueSet]
 Label=Status code|Codigo de estado
 Name=ZSTATUSC_EN
-Value=0;Not visited|Not visitado
-Value=1;Complete|Completo
-Value=2;Incomplete|Incompleto
-Value=3;Partial|Parcial
+Value=0;Not visited|Pas visitée
+Value=1;Complete|Complet
+Value=2;Incomplete|Incomplet
+Value=3;Partial|Partiel
+Value=7;Delegated|Déléguée
 
 [Item]
 Label=Household owner|Entrevistador a cargo del hogar
@@ -146,3 +147,15 @@ Name=ZMALE
 Start=117
 Len=1
 DataType=Numeric
+
+[Item]
+Label=Interviewer to whom delegated
+Name=ZDELEG
+Start=118
+Len=4
+DataType=Numeric
+
+[ValueSet]
+Label=Interviewer to whom delegated
+Name=ZDELEG_VS1
+Value=0;Not delegated

@@ -1988,7 +1988,7 @@ questions:
             <p>502. Now I would like to ask some questions about vaccinations received by your children born in the last 3 years.</p>
             <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
           FR: |
-            <p>486.  Je voudrais maintenant vous poser des questions sur la santé de vos enfants nés dans les 3 dernières années.</p><p><span style="color: rgb(0, 0, 255);">ENREGISTRER L'UNIT</span><span style="color: rgb(0, 0, 255);">É</span></p>
+            <p>502.  Je voudrais maintenant vous poser des questions sur la santé de vos enfants nés dans les 3 dernières années.</p><p><br></p>
       - logic: pregvacc > 1
         questionText:
           EN: |

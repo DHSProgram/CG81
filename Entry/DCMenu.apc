@@ -3,7 +3,7 @@
   FILE   piffile;                       { data entry PFF file for the application }
   FILE   justone;                       { file handler to make sure that there are no concurrent sessions }
   FILE   TrackUpg;                      { file handler to track upgrades coming from CSWeb server }
-  numeric debug = 0;
+  numeric debug = 1;
   numeric training = 1;                 { flag to indicate training mode !!}
   string  TheCommand, newupgrades;
   string  CSPro;                         { CSPro executables directory }
@@ -14,6 +14,7 @@
   string  temp;                        { directory where data collected by supervisor (acting as interviewer) is transferred to his/her machine }
   string  btsup, btwork, btsamp;           { directories used by the client/server applications to send/receive data via bluetooth }
   string  fpath, fname, work, dicts, entry, utility, wrkref, upgrades, SampData, SampApps, images, receive, pilotdata, audiodata, quizdata;
+  string     fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and INDIVIDUAL dictionaries }
   string  quest;
   string  chkfile;
   string  heading;
@@ -47,7 +48,7 @@
   array interview(20);                     { to store interviewers assigned to a supervisor }
   array interrole(20);                     { role of interviewers assigned to a supervisor }
   array string intername(20);              { interviewer's name assigned to supervisor }
-  valueset fieldworkers;
+  valueset fieldworkers, m_fieldworkers, f_fieldworkers;
   valueset codes;
   
   array intvwcode(400);                    { to store interviewers - code }
@@ -56,7 +57,7 @@
   array intvwsex(400);                     {                       - sex  }
   array string intvwname(400);              {                       - name }
 
-  array string caselist ( 100, 6 );
+  array string caselist ( 100, 7 );
 
   { setup basic user bar }
   function userbase();
@@ -256,10 +257,10 @@
   end;
 
   { change file setting for HOUSEHOLD assignment for a cluster }
-  function SetEligFile(newfile)
+  function SetEligFile(newfile = 0)
     x = 1;
     { file name for HOUSEHOLDs assigned to interviewers is only known after the cluster is entered. It is set here }
-    fname = work + "\eligibles.dat";
+    fname = work + "\eligibles.csdb";
     if !FileExist( fname ) then
       errmsg( 035, fname );
       x = 0;
@@ -274,11 +275,10 @@
   end;
   
   { runs wrkelig logic  }
-  function WrkElig( xtype, xhhnum, xintsex )
+  function WrkElig( xtype, xhhnum = notappl, xintsex = notappl )
     SetEligFile(1);
     { type   1-HOUSEHOLDs, 2-INDIVIDUAL, 3: HOUSEHOLDs not including shared }
     alpha(10)  key_HH;                     { !! adjust to the length of the key cluster+hh+line }
-    string     fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and INDIVIDUAL dictionaries }
     
     fnameHH = work + "\ALLHH.DAT";
     fnameIN = data + "\I" + xfilenum + ".DAT";
@@ -328,12 +328,14 @@
           ZSTATUSC = 1;
         endif;
         ZQUEST  = 1;
+        // flag if hh has delegated individuals
+        ZDELEG = count(QHSEC01 where QHDELEG > 0);
         writecase( ELIGINDV );
               
       { INDIVIDUALs requested }
-      elseif xhhnum = QHNUMBER then
+      elseif xhhnum = QHNUMBER | xhhnum = 0 then
         ZADDRESS = QHADDRESS;
-        if !length(strip(QHADDRESS)) & soccurs( CGHH80.QHSEC01X ) then
+        if {!length(strip(QHADDRESS)) & }soccurs( CGHH80.QHSEC01X ) then
           ZADDRESS = strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1));
         endif;
         for i in record QHSEC01 do
@@ -378,10 +380,17 @@
               endif;
               ZOWNER  = QINTNUM;
             endif;
+            ZDELEG = QHDELEG(i);
+            // if ZOWNER = WINTNUM & ZDELEG then // if delegated and is on the owner device adjust status flag 
+            //   ZSTATUSC = 7;
+            //   ZSTATUS = getlabel(ZSTATUS, ZSTATUS);
+            // endif;
             writecase( ELIGINDV );
           endif;
         enddo;
-        break;
+        if xhhnum then
+          break;
+        endif;
       endif;
     enddo;
     close( CGHH80 );
@@ -442,6 +451,7 @@
    //           2:completed hhs assigned to other interviewers
    //           3:all cases - used for selection of INDIVIDUALs
    //           4:biomarkers selection
+   //           5:delegation selection
     SetEligFile(0);
     forcase ELIGINDV do
       // do selection first skip if case doesn't meet criteria
@@ -449,24 +459,34 @@
       ( seltype = 1 & ZRESULT = 1 & ZOWNER = IntCode { & ZSTATUSC = 1 }) |           // completed hhs of interviewer, no partials
       ( seltype = 4 & ZRESULT = 1 & ZOWNER = IntCode & ZMALE = 1   ) |           // completed hhs of interviewer, include partials for biomarkers
                                                                                  // !! only hh's selected for male interview eligible for biomarkers !!       
-      ( seltype = 2 & ZRESULT = 1 & ZOWNER <> IntCode & ZSTATUSC = 1 )|          //  completed hh's of other interviewers
-        seltype  = 3                                              //  all cases 
+      ( seltype = 2 & ZRESULT = 1 & ZOWNER <> IntCode & ZSTATUSC = 1 & ZDELEG )|          //  completed hh's of other interviewers
+        seltype in 3,5                                              //  all cases 
       then 
         inc(ctr);
         // next, populate the array
-        if seltype in 0:2,4:5 then                             // hh's
+        if seltype in 0:2,4 then                             // hh's
           caselist(ctr,1) = maketext("%04d", ZNUMBER );
           caselist(ctr,2) = ZNAME;
           caselist(ctr,3) = maketext("%04d", ZOWNER );
           caselist(ctr,4) = ZSTATUS;
           caselist(ctr,5) = tr( "YN" )[ZMALE:1];
-        else                                               // INDIVIDUALs
+        elseif seltype = 3 & WINTNUM in ZOWNER, ZDELEG then                                       // INDIVIDUALs 
           caselist(ctr,1) = maketext("%04d", ZNUMBER );
           caselist(ctr,2) = maketext("%02d", ZLINE );
           caselist(ctr,3) = ZNAME;
           caselist(ctr,4) = maketext("%04d", ZOWNER );
           caselist(ctr,5) = ZQTYPEA;
           caselist(ctr,6) = ZSTATUS;
+        elseif seltype = 5 then                                       // delegation
+          if ZSTATUSC = 0 | ZDELEG then // delegated or not started 
+            caselist(ctr,1) = ZADDRESS;
+            caselist(ctr,2) = maketext("%04d", ZNUMBER );
+            caselist(ctr,3) = maketext("%02d", ZLINE );
+            caselist(ctr,4) = ZNAME;
+            caselist(ctr,5) = ZQTYPEA;
+            caselist(ctr,6) = ZSTATUS;
+            caselist(ctr,7) = maketext("%04d", ZDELEG );
+          endif;
         endif;
       endif;
     enddo;
@@ -875,7 +895,6 @@
 
     { gets one HOUSEHOLD from file provided by supervisor with HOUSEHOLDs assigned to interviewers }
     function getonehh( task )
-      trace("fname=%s", FileName(ELIGINDV));
       numeric cancelled, y = 1, newHH;
       fname = work + "\S" + xcluster + ".csdb";
       if !FileExist( fname ) then
@@ -902,9 +921,9 @@
         elseif task = 4 then // INDIVIDUALs ( only hhs with result = 1 )
           heading = tr("Select Household for individual interview");
           if x = 1  then // not shared
-          fill_caselist(1);
+            fill_caselist(1);
           else // shared
-          fill_caselist(2);
+            fill_caselist(2);
           endif;
         elseif task = 5 then    { New HOUSEHOLD not in original sample, ie split HOUSEHOLD }
           SetAssignFile();
@@ -1312,7 +1331,7 @@ PROC FL_MENU
 PreProc
     if debug then
       // errmsg(  "WARNING: DEBUG MODE ENABLED!" );
-      trace(on, ".\debug.app", clear);
+      trace(on, ".\debug.apc", clear);
   //  trace(on);
       set trace;
     endif;
@@ -1452,6 +1471,8 @@ PROC WSUPER
   
 onfocus
     fieldworkers.clear();
+    m_fieldworkers.clear();
+    f_fieldworkers.clear();
     do j = 1 while j <= totintvw
       if intvwrole(j) = 2 then            { supervisor }
         fieldworkers.add( intvwname(j), intvwcode(j) );
@@ -1491,6 +1512,11 @@ onfocus
     do j = 1 while j <= totintvw
       if intvwrole(j) in 1:3 & intvwteam(j) = steam then // include biomarker technicians since they will do hh interviews !!!
         fieldworkers.add( intvwname(j), intvwcode(j) );
+        if intvwsex(j) = 1 then
+          m_fieldworkers.add( intvwname(j), intvwcode(j) );
+        else
+          f_fieldworkers.add( intvwname(j), intvwcode(j) );
+        endif;
       endif;
     enddo;
     SetValueSet( $, fieldworkers );
@@ -1613,7 +1639,7 @@ onfocus
    { 2} codes.add("2 Afficher les individus/biomarqueurs éligibles",02);
    { 3} codes.add("3 Entrer les données des biomarqueurs",03);
    { 4} codes.add("4 Menu des individus éligibles",04);
-   { 5} codes.add("--------------------------------------",00);
+   { 5} codes.add("4A Delegation/sharing menu            ",5);
    { 6} codes.add("5 Afficher la liste des questionnaires de la grappe",06);
    { 7} codes.add("6 Afficher les notes sur la grappe",07);
    { 8} codes.add("[[ 7 Transfert de données/autres utilitaires ]]",08);
@@ -1666,8 +1692,60 @@ postproc
         endif;
       endif;
 
-    { line separator is treated as a dummy option }
+    { sharing households/delegation  }
     elseif action = 5 then
+        
+        option  = accept( "Menu de la délégation",
+                  {  1} "Déléguer des indidivuels à un autre enquêteur(trice)",
+                  {  2} "Transférer des délégations à un autre enquêteur(trice)",
+                  {  3} "Recevoir des délégations d'un autre enquêteur(trice)");
+
+       if option = 1 then
+         concathh();
+         if !FindDups( dirstocheck , xcluster, 1) then
+          WrkElig( 1 );
+          fill_caselist(1);
+          numeric idx = showarray(heading, caselist, title ( tr("HH"), tr("Name"), tr("Int."), tr("Status") , tr("Male/LS"))  );
+          x  = tonumber( caselist(idx,1) );
+          WrkElig( 2, x, IntSex );
+          fill_caselist(5);
+          while 1 do
+            idx = showarray(tr("Individuals to delegate"), caselist, title ( tr("Head"), tr("Number"), tr("Line"), tr("Name") , tr("Type") , tr("Status"), tr("Delegated")) );
+            if idx then
+              if caselist(idx,5) = "Homme"  then
+                caselist(idx,7) = edit("9999", m_fieldworkers.show() );
+              else
+                caselist(idx,7) = edit("9999", f_fieldworkers.show() );
+              endif;
+            else
+              break;
+            endif;
+          enddo;
+          // now set the QHEDELEG flags in the household data
+          setfile(CGHH80, data + "\H" + xfilenum + ".DAT", update);
+          do idx = 1 until idx > caselist.length(1);
+            numeric wdeleg = tonumber( caselist(idx,7) );
+            if wdeleg then
+              QHCLUST = WCLUSTER;
+              QHNUMBER = tonumber(caselist(idx,2));
+              numeric wdline  = tonumber( caselist(idx,3) );
+              if loadcase(CGHH80, QHCLUST, QHNUMBER) then
+                if QHDELEG(wdline) <> wdeleg then
+                  QHDELEG(wdline) = wdeleg;
+                  writecase(CGHH80);
+                endif;
+              endif;
+            endif;
+          enddo;
+          close(CGHH80);
+         endif;
+      { transfer HOUSEHOLD data to another interviewer }
+      elseif option = 2 then
+        sendhhdat();
+      { receive HOUSEHOLD data from another interviewer }
+      elseif option = 3 then
+        receivehh();
+       endif;
 
     { lists interviewer's notes in cluster }
     elseif action = 7 then
@@ -1687,14 +1765,12 @@ postproc
         heading = "Transfer des données et outils. Grappe: " + xcluster + " Enq. " + edit("9999", WINTNUM);
         option  = accept( heading,
                   {  1} "1 Synchroniser avec superviseur/contrôleur",
-                  {  2} "3 Partager les données de ménage avec d'autres enquêteurs",
-                  {  3} "4 Recevoir les données de ménage des autres enquêteurs",
-                  {  4} "6 Modifier les IDs/Supprimer des questionnaires",
-                  {  5} "7 [[Autres options]]",
-                  {  6} "X Retourner au menu principal" );
+                  {  2} "6 Modifier les IDs/Supprimer des questionnaires",
+                  {  3} "7 [[Autres options]]",
+                  {  4} "X Retourner au menu principal" );
 
       { return to main menu }
-      if option = 6 then
+      if option = 4 then
         reenter;
       elseif option = 1 then
         { sync with supervisor }
@@ -1705,16 +1781,10 @@ postproc
           AppName = "DCMENU";
           runpffS();
         endif;
-      { transfer HOUSEHOLD data to another interviewer }
-      elseif option = 2 then
-        sendhhdat();
-      { receive HOUSEHOLD data from another interviewer }
       elseif option = 3 then
-        receivehh();
-      elseif option = 4 then
         { fix identifiers (cluster, HOUSEHOLD, interviewers) or delete women  }
         RunDataRepair( maketext("csentry:%s/Android.xml", path.getrelativepath(Pathname(CSentry), entry)), "French" );
-      elseif option = 5 then
+      elseif option = 4 then
         heading = "Autres options. Grappe: " + xcluster + " Enq. " + edit("9999", WINTNUM);
         numeric suboption  = accept( heading,
                   {1} "1 Corriger code enquêteur/Résultat dans un ménage",
@@ -1886,8 +1956,6 @@ preproc
     SetEligFile(0);
     fill_caselist(3);
     SaveSetting( "DCSession", "1" );
-    // if selcase( ELIGINDV, "", 4) include( ZOWNER, ZNUMBER, ZLINE, ZNAME, ZQTYPEA, ZSTATUS )
-    //             where ZQUEST = 2 & ZNUMBER = WNUMBER then
       ifok = showarray(tr( "Select INDIVIDUAL for interview" ), caselist, 
       title ( tr("HH"), tr("Line"),tr("Name"), tr("Interviewer"),tr("Ques."), tr("Status") )  );
       if ifok then
