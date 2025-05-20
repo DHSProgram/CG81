@@ -331,7 +331,22 @@
 	enddo;
 	ph_array = i-1;
   end;
-
+  function get_ph_totals(array phtotals);
+    // gets totals from ph for use in report
+    // need to loop through the section because visualvalue won't work with count if the current position isn't at the end of
+    // the section
+    do numeric ctr = 1 until visualvalue( Q215L(ctr) ) = notappl
+     if visualvalue(Q219(ctr)) = 1 & visualvalue(Q226(ctr))= 1 then inc(phtotals(1)) endif; { boys at home }
+     if visualvalue(Q219(ctr)) = 2 & visualvalue(Q226(ctr))= 1 then inc(phtotals(2)) endif; { girls at home  }
+     if visualvalue(Q219(ctr)) = 1 & visualvalue(Q226(ctr))= 2 then inc(phtotals(3)) endif; { boys away  }
+     if visualvalue(Q219(ctr)) = 2 & visualvalue(Q226(ctr))= 2 then inc(phtotals(4)) endif; { girls away }
+     if visualvalue(Q219(ctr)) = 1 & visualvalue(Q224(ctr))= 2 then inc(phtotals(5)) endif; { boys dead }
+     if visualvalue(Q219(ctr)) = 2 & visualvalue(Q224(ctr))= 2 then inc(phtotals(6)) endif; { girls dead }
+     if visualvalue(Q223(ctr)) in 2:4 then inc(phtotals(7)) endif;                      { non-live pregnancies }
+     if visualvalue(Q215L(ctr)) <> notappl then inc(phtotals(8)) endif;                 { total }
+    enddo;
+    get_ph_totals = phtotals(8);
+  end;
   function showpregs ();
     numeric npregs =  ph_array();
     HTML_InitAlign();
@@ -367,15 +382,17 @@
     CellValues(9) = edit("99", Q212W); 
     HTML_OneRow( CellValues, 9 );
 
+    array ph_totals(8);
+    get_ph_totals(ph_totals);
     CellValues(1) = "Historique des grossesses";
-    CellValues(2) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q226)= 1));
-    CellValues(3) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q226)= 1));
-    CellValues(4) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q226)= 2));
-    CellValues(5) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q226)= 2));
-    CellValues(6) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 1 & visualvalue(Q224)= 2));
-    CellValues(7) =edit ("99", count(QWSEC2B where visualvalue(Q219) = 2 & visualvalue(Q224)= 2));
-    CellValues(8) =edit ("99", count(QWSEC2B where visualvalue(Q223) in 2:4 ));
-    CellValues(9) =edit ("99", count(QWSEC2B where visualvalue(Q215L) <> notappl));
+    CellValues(2) =edit ("99", ph_totals(1)); 
+    CellValues(3) =edit ("99", ph_totals(2)); 
+    CellValues(4) =edit ("99", ph_totals(3)); 
+    CellValues(5) =edit ("99", ph_totals(4)); 
+    CellValues(6) =edit ("99", ph_totals(5)); 
+    CellValues(7) =edit ("99", ph_totals(6)); 
+    CellValues(8) =edit ("99", ph_totals(7)); 
+    CellValues(9) =edit ("99", ph_totals(8)); 
     HTML_OneRow( CellValues, 9 );
     HTML_EndTable();
     HTML_ParaGraph(" ");
@@ -786,6 +803,14 @@
       title( tr("Name"), tr("Outcome"), tr("Sex"), tr("Date"), tr("Alive"), tr("Age") ) where Q215L <> exclude_occ );
   end;
 
+  { function to reset Q212W count to be equal to total pregnancies in Q201-Q212 }
+  function reset_preg()
+    numeric choice =  errmsg(tr( "Confirm that you wish to reset the total of pregnancies expected in the pregnancy history from %02d to %02d ?" ), Q212W, Q212)
+           select(tr( "Yes" ), continue, tr( "No" ), continue);
+    if choice = 1 then
+      Q212W = Q212;
+    endif;
+  end;
   { Popup for adding, inserting, deleting, moving pregnancies, or showing the pregnancy history }
   function preg_tools()
     numeric newocc;
@@ -795,12 +820,14 @@
 	              tr("Insert pregnancy before current pregnancy"),
 				  tr("Delete current pregnancy"),
 				  tr("Move current pregnancy"),
+				  tr("Reset number of entries in pregnancy history"),
 				  tr("Cancel") );
       if     x = 1 then insert_preg( curocc() );
 	  elseif x = 2 then delete_preg( curocc() );
 	  elseif x = 3 then newocc = select_preg( curocc() ); 
 	                    move_preg( curocc(), newocc );
-	  elseif x in 0,4 then // do nothing
+	  elseif x = 4 then reset_preg();
+	  elseif x in 0,5 then // do nothing
 	  endif;
 	else // just show the roster
           showpregs();
@@ -7925,21 +7952,8 @@ PROC QM114
 
 PROC QM115
 onfocus
-  grades.clear();
-  grades.add(tr("Less than one year"), 0);
-  n = maxgrade(QM114);
-  do i = 1 while i <= n
-    grades.add(maketext("Year %d", i), i);
-    // change the above to match the terms used in the country
-    // e.g. it might be "Year" that is used in most levels, but "Form" is used in secondary schooling
-    // if QM114 = 2 then
-    //   grades.add(maketext("Form %d", i), i);
-    // else
-    //   grades.add(maketext("Year %d", i), i);
-    // endif;
-  enddo;
-  SetValueSet( $, grades );
-
+    setvalueset(QM115, maketext("QM115_VS%1d", QM114));
+  
 postproc
   if !LevelYears( QM114, $ ) then
     errmsg( 21091 ) 

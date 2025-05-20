@@ -153,6 +153,7 @@
   FR ( "Date of birth on card" ) Date de naissance sur la carte
   FR ( "Date of birth in pregnancy history" ) Date de naissance dans l’historique des grossesses
   FR ( "Select the pregnancy to move the current pregnancy before" ) Sélectionnez la grossesse avant laquelle la grossesse actuelle sera positionnée
+  FR ( "Confirm that you wish to change the total in Q212W from %02d to be equal to the number of pregnancies in the pregnancy history?" ) Confirm that you wish to change the total in Q212W from %02d to be equal to the number of pregnancies in the pregnancy history?
   FR ( "Yes, move the pregnancy of %s in %s %d before the pregnancy of %s in %s %d") Oui, déplacez la grossesse de %s en %s %d avant la grossesse de %s en %s %d
   FR ( "Correct the number of pregnancies in Q201-Q212" ) Corrigez le total des grossesses citée dans Q201-Q212
   FR ( "Continue to pregnancy history to remove the incorrect pregnancy" ) Avançez à l'historique des naissances pour enlèver le grossesse qui n'est pas correcte
@@ -164,6 +165,8 @@
   FR ( "No, make no change" ) Non, fait aucun changement
   FR ( "No change made" ) Aucun changement fait
   FR ( "Select the pregnancy to move the current pregnancy before" ) Choississez la grossesse avant lequelle vous voulez insérez la grossesse courante
+  FR ("Reset number of entries in pregnancy history") Réinitialiser le nombre d'entrées dans l'historique de grossesse 
+  FR ("Confirm that you wish to reset the total of pregnancies expected in the pregnancy history from %02d to %02d ?") Confirmez que vous souhaitez réinitialiser le total des grossesses attendues dans l'historique des grossesses de %02d à %02d ?
   FR ( "Date tested positive" ) Date testé(e) positif(ve)
   FR ( "Date tested positive" ) Date testé(e) positif(ve)
   FR ( "Duration of pregnancy" ) Durée de la grossesse

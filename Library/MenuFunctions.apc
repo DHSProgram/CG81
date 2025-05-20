@@ -83,8 +83,8 @@
     CellValues(1) = tr("Household");
     CellValues(2) = tr("Line");
     CellValues(3) = tr("Interviewer");
-    CellValues(4) = tr("Result");
-    CellValues(5) = tr("Status");
+    CellValues(4) = tr("Status");
+    CellValues(5) = tr("Fichier");
 
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 4;
@@ -92,7 +92,11 @@
 
    // !! adding application specific javascript to html output
    HTML_Header( CellAlign, zstring1);  // generates a general HTML header
-   HTML_BeginTable( CellValues, tr( "Duplicated cases" ), 5, "Main" );  // generates the HTML table script with the column headers
+   if checktype = 1 then
+     HTML_BeginTable( CellValues, maketext("%s %s", tr( "Duplicated cases"), tr( "Household" ) ), 5, "Main" );  // generates the HTML table script with the column headers
+   else
+     HTML_BeginTable( CellValues, maketext("%s %s", tr( "Duplicated cases"), tr( "Individuals" ) ), 5, "Main" );  // generates the HTML table script with the column headers
+   endif;
 
     // create list of files to check
     do ctr = 1 while ctr <= wdir.length()
@@ -132,16 +136,16 @@
           if checktype = 1 then
             SetFile(CGHH80, fileListing(fctr), update);
             if loadcase(CGHH80, caseidlist(ctr) ) then
-              if partialcs( 1, QHCLUST, QHNUMBER, 0, fileListing(fctr)  ) then
-                partialcase = tr( "Partial" )
-              else
-                partialcase = tr( "Complete" )
-              endif;
               CellValues(1) = caseidlist(ctr)[5:4];
               CellValues(2) = "BLANK";
               CellValues(3) = edit("9999", QHINTNUM);
-              CellValues(4) = getlabel(QHRESULT, QHRESULT);
-              CellValues(5) = partialcase;
+              if partialcs( 1, QHCLUST, QHNUMBER, 0, fileListing(fctr)  ) then
+                CellValues(4) = tr( "Partial" )
+              else
+                CellValues(4) = getlabel(QHRESULT, QHRESULT);
+              endif;
+              CellValues(5) = path.getRelativePath( pathname(application),  fileListing(fctr));
+
               HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
               // HTMLFile.write ( maketext("Case created by interviewer %4d, Result =%s (%1d) %s\n File:%s\n ", QHINTNUM, getlabel(QHRESULT, QHRESULT), QHRESULT, partialcase, fileListing(fctr)) );
               if autodelete then
@@ -162,8 +166,12 @@
               CellValues(1) = caseidlist(ctr)[5:4];
               CellValues(2) = caseidlist(ctr)[9:2];
               CellValues(3) = edit("9999", QINTNUM);
-              CellValues(4) = getlabel(QRESULT);
-              CellValues(5) = partialcase;
+              if partialcs( 2, QCLUSTER, QNUMBER, QLINE, fileListing(fctr)  ) then
+                CellValues(4) = tr( "Partial" )
+              else
+                CellValues(4) = getlabel(QRESULT, QRESULT);
+              endif;
+              CellValues(5) = path.getRelativePath( pathname(application),  fileListing(fctr));
               HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
               if autodelete then
                 dres = delcase(CGIN80, caseidlist(ctr));

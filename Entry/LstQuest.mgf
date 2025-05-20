@@ -25,6 +25,7 @@ language = ES
   FR ( "W-" ) F-
   FR ( "M-" ) H-
   FR ( "Not visited" ) Non visité
+  FR ( "No interviews found in this cluster" ) Aucune entretien trouvée dans cette grappe
   FR ( "Status for cluster: %s Interviewer %s" ) État de la grappe : %s Enq.  %s
   FR ( "Interviews collected in cluster" ) Entretiens collectés dans la grappe
   FR ( "HH" ) MG

@@ -366,9 +366,11 @@
             ZSTATUS  = tr("Not Visited");
             ZSTATUSC = 0;
             if loadcase( CGIN80, key_HH) then
-              ZOWNER   = QINTNUM;
+              if !special(QINTNUM) then
+                ZOWNER   = QINTNUM;
+              endif;
               ZRESULT  = NaToZero( QRESULT );
-              if QRESULT <> 1 then
+              if QRESULT in 2:7 then
                 ZSTATUS  = getlabel(QRESULT, QRESULT);
                 ZSTATUSC = 2;
               elseif partialcs( 2, QCLUSTER, QNUMBER, QLINE, fnameIN  ) then
@@ -378,7 +380,6 @@
                 ZSTATUS  = tr("Complete");
                 ZSTATUSC = 1;
               endif;
-              ZOWNER  = QINTNUM;
             endif;
             ZDELEG = QHDELEG(i);
             // if ZOWNER = WINTNUM & ZDELEG then // if delegated and is on the owner device adjust status flag 
@@ -399,7 +400,7 @@
     // also check consistency of assignments versus actual data on interviewer device
     // hh assigned to another but found on device 
     // 
-    if xtype = 3 then
+    if xtype = 3 & setalready then
       forcase HHFORINT do 
         ZCLUSTER = WCLUSTER;
         ZNUMBER  = VNUMBER;
@@ -784,16 +785,20 @@
     end;
     
     { change the file setting for the HOUSEHOLD assignment for a cluster }
-    function SetAssignFile()
+    function SetAssignFile(mustexist = 0)
       x = 1;
       { file name for HOUSEHOLDs assigned to interviewers is only known after the cluster is entered.  It is set here }
       fname = work + "\S" + edit("9999",WCLUSTER) + ".csdb";
       if !FileExist( fname ) then
-        errmsg( 095, fname, WCLUSTER );
+        if mustexist then
+          errmsg( 095, fname, WCLUSTER );
+        endif;
         x = 0;
       else
         if !setfile( HHFORINT, fname ) then
-          errmsg( 095, fname, WCLUSTER );
+          if mustexist then
+            errmsg( 095, fname, WCLUSTER );
+          endif;
           x = 0;
         endif;
       endif;
@@ -821,7 +826,7 @@
         btserver = edit("9999", WSUPER);
         if SyncConnect( Bluetooth, btserver ) then
           // get the assignment file
-          fname = work + "\S" + xcluster + ".csdb";
+          fname = work + "\S" + xcluster + "*.csdb";
           FileDelete( fname );
           SyncFile( GET, fname, work );
           // send interview files
@@ -829,10 +834,11 @@
           // now get any new upgrades 
          // get the latest versions of the application files from the server 
          // not using syncapp until all devices are installed from server
+          SyncFile(GET, wrkprj + "/Entry/*.xml", PathName(Application));
+          SyncFile(GET, wrkprj + "/Entry/*.pff", PathName(Application));
           SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
           SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
           SyncFile(GET, wrkprj + "/Library/*.*", wrkprj + "/Library");
-          SyncFile(GET, wrkprj + "/Dicts/*.dcf", wrkprj + "/Dicts");
           SyncFile(GET, wrkref + "/version.txt", wrkref);
           // syncapp();
           // fname = upgrades + "/" + upgrname + "*.zip";
@@ -895,12 +901,10 @@
 
     { gets one HOUSEHOLD from file provided by supervisor with HOUSEHOLDs assigned to interviewers }
     function getonehh( task )
-      numeric cancelled, y = 1, newHH;
-      fname = work + "\S" + xcluster + ".csdb";
-      if !FileExist( fname ) then
-        errmsg( 095, fname, WCLUSTER );
-        ifok = 0;
-      else
+        numeric cancelled, y = 1, newHH;
+        if task in 1:3 & !SetAssignFile(1) then
+          exit;
+        endif;
         if task = 4 then  { eligible INDIVIDUALs }
           { find if HOUSEHOLD assigned or not to interviewer by supervisor }
           x = accept( tr("Individual interview is from"),
@@ -926,7 +930,7 @@
             fill_caselist(2);
           endif;
         elseif task = 5 then    { New HOUSEHOLD not in original sample, ie split HOUSEHOLD }
-          SetAssignFile();
+          SetAssignFile(1);
           // can only split from a HOUSEHOLD assigned to you !!!
           ifok = selcase( tr("Select the HOUSEHOLD that is to be split and press continue. Otherwise press cancel to return to main menu"), HHFORINT, "", 4) 
             include( VNAME, VADDRESS, VRESULT )
@@ -961,7 +965,6 @@
             close(ELIGINDV);
           endif;
         endif;
-      endif;
       getonehh = ifok;
       close(ELIGINDV);
     end;
@@ -1639,7 +1642,7 @@ onfocus
    { 2} codes.add("2 Afficher les individus/biomarqueurs éligibles",02);
    { 3} codes.add("3 Entrer les données des biomarqueurs",03);
    { 4} codes.add("4 Menu des individus éligibles",04);
-   { 5} codes.add("4A Delegation/sharing menu            ",5);
+   { 5} codes.add("4A Menu de la délégation            ",5);
    { 6} codes.add("5 Afficher la liste des questionnaires de la grappe",06);
    { 7} codes.add("6 Afficher les notes sur la grappe",07);
    { 8} codes.add("[[ 7 Transfert de données/autres utilitaires ]]",08);
@@ -1672,10 +1675,12 @@ postproc
         errmsg(103);
         reenter;
       else
-        if !setalready & !SetAssignFile() then
-          reenter;
-        else
-          setalready = 1;
+        if action in 1:3 then
+          if !setalready & !SetAssignFile(1) then
+            reenter;
+          else
+            setalready = 1;
+          endif;
         endif;
         { get a HOUSEHOLD }
         concathh();
@@ -1706,7 +1711,6 @@ postproc
           WrkElig( 1 );
           fill_caselist(1);
           numeric idx = showarray(heading, caselist, title ( tr("HH"), tr("Name"), tr("Int."), tr("Status") , tr("Male/LS"))  );
-          x  = tonumber( caselist(idx,1) );
           WrkElig( 2, x, IntSex );
           fill_caselist(5);
           while 1 do
@@ -1781,10 +1785,10 @@ postproc
           AppName = "DCMENU";
           runpffS();
         endif;
-      elseif option = 3 then
+      elseif option = 2 then
         { fix identifiers (cluster, HOUSEHOLD, interviewers) or delete women  }
         RunDataRepair( maketext("csentry:%s/Android.xml", path.getrelativepath(Pathname(CSentry), entry)), "French" );
-      elseif option = 4 then
+      elseif option = 3 then
         heading = "Autres options. Grappe: " + xcluster + " Enq. " + edit("9999", WINTNUM);
         numeric suboption  = accept( heading,
                   {1} "1 Corriger code enquêteur/Résultat dans un ménage",
@@ -1799,7 +1803,7 @@ postproc
           reenter;
         { fix the result of a HOUSEHOLD assigned to interviewer }
         elseif suboption = 1 then
-          if setalready | SetAssignFile() then
+          if setalready | SetAssignFile(1) then
             AppName = "FIxResult";
             if selcase( HHFORINT, "") include( VNUMBER, VNAME, VINTCODE, VRESULT )  where VINTCODE <> notappl then
               FIxResult();

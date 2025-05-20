@@ -195,7 +195,7 @@ preproc
     enddo;
     HTML_EndTable();
   else
-    HTML_Paragraph( tr("No data for assigned households") );
+    HTML_ParagraphS( tr("No interviews found in this cluster") );
   endif;
 
   { go sequentially over file with individuals to check if they were marked }

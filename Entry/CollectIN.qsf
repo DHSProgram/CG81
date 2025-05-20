@@ -511,7 +511,7 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
-            <p>222-1.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
+            <p>222-1. Y a-t-il eu d'autres grossesses avant cette grossesse ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
@@ -3500,7 +3500,7 @@ questions:
             <p>Please do not answer 'yes' for any food or ingredient only used in a small amount to add flavor to a dish.</p>
             <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
           FR: |
-            <p>643.  Je voudrais vous demander maintenant quels aliments et quelles boissons vous avez consommés hier durant le jour ou la nuit, que ce soit à la maison ou quelque part d'autre. Veuillez inclure des gouters ou petits repas ainsi que des repas principaux.</p><p>Je vais vous poser des questions sur différents aliments et boissons, et je voudrais savoir si votre enfant a mangé cet aliment même s'il était mélangé à d'autres aliments.  </p><p>Ne répondez pas ‘oui’ pour un aliment ou un ingrédient utilisé en petite quantité que pour ajouter du gout à un plat.</p><p><span class="instruction">(Après avoir lu, cliquez sur Entrée ou sur le bouton d’avance pour continuer)</span></p><p><br></p>
+            <p>643.Je voudrais vous demander maintenant quels aliments et quelles boissons vous avez consommés hier durant le jour ou la nuit, que ce soit à la maison ou quelque part d'autre. Veuillez inclure des gouters ou collations ou petits repas ainsi que des repas principaux.</p><p>Je vais vous poser des questions sur différents aliments et boissons, et je voudrais savoir si vous avez mangé un aliment même s'il était mélangé à d'autres aliments.&nbsp;&nbsp;</p><p>Ne répondez pas ‘oui’ pour un aliment ou un ingrédient utilisé uniquement en petite quantité pour ajouter du goût à un plat.</p><div><span style="color: rgb(0, 0, 255);">(Après avoir lu, cliquez sur Entrée ou sur le bouton d’avance pour continuer)</span></div><p><br></p>
   - name: Q643_BLOCK
     conditions:
       - questionText:

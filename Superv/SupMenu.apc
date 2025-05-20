@@ -6,7 +6,7 @@ PROC GLOBAL
   FILE      justone;                       { file handler to make sure that there are no concurrent sessions }
   FILE      TrackUpg;                      { file handler to track upgrades coming from CSWeb server }
   FILE      SyncLog;                      { file to log connections to server and  }
-  numeric debug =    1;// sets debugging on
+  numeric debug =    0;// sets debugging on
 
   string TheCommand, fname, fname2, newupgrades;
   string FilesToZip;
