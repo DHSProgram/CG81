@@ -712,7 +712,9 @@ PROC GLOBAL
   { make supervisor machine available as server for interviewers to retrieve HOUSEHOLD assignment }
   function sync_int()
     if isAndroid | useCSBT  then
+      setfile(INTERV, IntervFname, update);
       SyncServer( Bluetooth );
+      close(INTERV);
     else
       fpath = utility + "\btclientPC";
       setfile( piffile, fpath + "\transfer.xml", create );

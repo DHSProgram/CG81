@@ -52,7 +52,7 @@ forcase CLUSTERS do
      endif;
      VRESULT = 0;
      XNUMBER(i) = VNUMBER;
-     XSTRUCT(i) = VSTRUCT;
+     XSTRUCT(i) = VNUMBER;
      XADDRESS(i) = VADDRESS;
      XNAME(i) = VNAME;
      XMALE(i) = VMALE;

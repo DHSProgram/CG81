@@ -372,14 +372,14 @@
     HTML_BeginTable( CellValues, zstring2, 9, "Totals" );  // generates the HTML table script with the column headers
 
     CellValues(1) = tr("Section 2 Reproduction");
-    CellValues(2) = edit("99", Q203A); 
-    CellValues(3) = edit("99", Q203B); 
-    CellValues(4) = edit("99", Q205A); 
-    CellValues(5) = edit("99", Q205B); 
-    CellValues(6) = edit("99", Q207A); 
-    CellValues(7) = edit("99", Q207B); 
-    CellValues(8) = edit("99", Q211 ); 
-    CellValues(9) = edit("99", Q212W); 
+    CellValues(2) = edit("99",visualvalue ( Q203A )); 
+    CellValues(3) = edit("99",visualvalue ( Q203B )); 
+    CellValues(4) = edit("99",visualvalue ( Q205A )); 
+    CellValues(5) = edit("99",visualvalue ( Q205B )); 
+    CellValues(6) = edit("99",visualvalue ( Q207A )); 
+    CellValues(7) = edit("99",visualvalue ( Q207B )); 
+    CellValues(8) = edit("99",visualvalue ( Q211  )); 
+    CellValues(9) = edit("99",visualvalue ( Q212W )); 
     HTML_OneRow( CellValues, 9 );
 
     array ph_totals(8);

@@ -1,80 +1,188 @@
-﻿[Dictionary]
-Version=CSPro 7.7
-Label=Interviewer - CG81L
-Name=INTERV
-RecordTypeStart=0
-RecordTypeLen=0
-Positions=Relative
-ZeroFill=Yes
-DecimalChar=Yes
-SecurityOptions=103F9E991B4B5D0E63662BB8AF0A61F5
-
-[Languages]
-EN=English
-FR=Francais
-
-[Level]
-Label=Interviewer level
-Name=INTERV_LEVEL
-
-[IdItems]
-
-[Item]
-Label=Interviewer code
-Name=ICODE
-Start=1
-Len=4
-DataType=Numeric
-ZeroFill=Yes
-
-[Record]
-Label=Interviewer record
-Name=INTERV_REC
-RecordTypeValue=''
-RecordLen=38
-
-[Item]
-Label=Interviewer's name
-Name=INAME
-Start=5
-Len=30
-DataType=Alpha
-
-[Item]
-Label=Interviewer's team
-Name=ITEAM
-Start=35
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Fieldworker role
-Name=IROLE
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Fieldworker role
-Name=IROLE_VS1
-Value=1;Interviewer|Enqueteur/Enumerateur
-Value=2;Supervisor|Superviseur
-Value=3;Biomarker|Biomarqueur
-Value=4;QC team|Equipe Controle Qualite
-Value=5;Reserve
-
-[Item]
-Label=Interviewer's sex
-Name=ISEX
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Interviewer's sex
-Name=ISEX_VS1
-Value=1;Male|Homme
-Value=2;Female|Femme
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "INTERV", 
+  "languages": [
+    {
+      "name": "EN", 
+      "label": "English"
+    }, 
+    {
+      "name": "FR", 
+      "label": "Francais"
+    }
+  ], 
+  "labels": [ { "text": "Interviewer - CG81 EDS" } ], 
+  "security": {
+    "allowDataViewerModifications": true, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "878fb7bae3cb28dd6e6816ac604e5db6"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 0, 
+    "length": 0
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": true
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "INTERV_LEVEL", 
+      "labels": [ { "text": "Interviewer level" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "ICODE", 
+            "labels": [ { "text": "Interviewer code" } ], 
+            "contentType": "numeric", 
+            "start": 1, 
+            "length": 4, 
+            "zeroFill": true
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "INTERV_REC", 
+          "labels": [ { "text": "Interviewer record" } ], 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "INAME", 
+              "labels": [ { "text": "Interviewer's name" } ], 
+              "contentType": "alpha", 
+              "length": 30
+            }, 
+            {
+              "name": "ITEAM", 
+              "labels": [ { "text": "Interviewer's team" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": true
+            }, 
+            {
+              "name": "IROLE", 
+              "labels": [ { "text": "Fieldworker role" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "IROLE_VS1", 
+                  "labels": [ { "text": "Fieldworker role" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Interviewer", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Enqueteur/Enumerateur", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Supervisor", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Superviseur", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Biomarker", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Biomarqueur", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "QC team", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Equipe Controle Qualite", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Reserve" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "ISEX", 
+              "labels": [ { "text": "Interviewer's sex" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": true, 
+              "valueSets": [
+                {
+                  "name": "ISEX_VS1", 
+                  "labels": [ { "text": "Interviewer's sex" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Male", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Homme", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Female", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Femme", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

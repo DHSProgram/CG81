@@ -23,6 +23,7 @@
   string ccode;                            { country code for dictionaries }
   string pcode;                            { phase code for dictionaries }
   string btserver = "";
+  string ClustFname, IntervFname;                     { keeps clusters filename after dictionary closed }
 
   alpha(4)   xintnum;                      { Interviewer }
   alpha(4)   xsuperv;                      { Supervisor }
@@ -35,7 +36,6 @@
   string     xlang;                        { to check if there is another session running }
   string versiontxt ; // text showing version information at top of menu
   string sysver;                           // number of last upgrade
-  string clustfname;                      { keeps clusters filename after dictionary closed }
 
   numeric i, x, ifok, action, option, partial, IntCode, IntSex, IntRole, setalready;
   numeric j, k, xlen, totintvw, steam, n, SameSession, HHprevious;
@@ -832,6 +832,9 @@
         btserver = edit("9999", WSUPER);
         if SyncConnect( Bluetooth, btserver ) then
           // get the assignment file
+          // !! only 1 file expected but using wildcard
+          // prevents the transfer aborting if the file 
+          // isnt present on the server
           fname = work + "\S" + xcluster + "*.csdb";
           FileDelete( fname );
           SyncFile( GET, fname, work );
@@ -846,11 +849,16 @@
           SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
           SyncFile(GET, wrkprj + "/Library/*.*", wrkprj + "/Library");
           SyncFile(GET, wrkref + "/version.txt", wrkref);
+
+          // sync INTERV and CLUSTERS
+          setfile(INTERV, IntervFname, update);
+          SyncData(GET, INTERV);
+          close(INTERV);
+          // setfile(CLUSTERS, ClustFname, update);
+          // SyncData(GET, CLUSTERS);
+          // close(CLUSTERS);
           // syncapp();
-          // fname = upgrades + "/" + upgrname + "*.zip";
-          // SyncFile( GET, fname, upgrades );
           SyncDisconnect();
-          // ApplyUpgr();
 
         endif;        
       else
@@ -1366,6 +1374,10 @@ PreProc
     { set font for value sets }
     setfont( All, "Arial", 18, bold );
 
+    { save ref file names }
+    ClustFname   = FileName(CLUSTERS);
+    IntervFname  = FileName(INTERV);
+
     { set up minimal user bar }
     userbase();
     userbar( show );
@@ -1438,9 +1450,6 @@ PreProc
   { folder list for checking duplicates }
   dirstocheck = data, work;
   
-  { load cluster file name }
-  clustfname = FileName(CLUSTERS);
-
   { clean index files in case indexes were out of date/corrupted !!! }
   { just do it once when menu started }
   if SameSession = 1 then
@@ -1654,7 +1663,6 @@ onfocus
    { 6} codes.add("5 Afficher la liste des questionnaires de la grappe",06);
    { 7} codes.add("6 Afficher les notes sur la grappe",07);
    { 8} codes.add("[[ 7 Transfert de données/autres utilitaires ]]",08);
-   {10} codes.add("10 Questionnaires Pratique",10);
    {11} codes.add("C Changer de numéro de grappe",11);
    {12} codes.add("E Quitter le système", 12);
   setvalueset($, codes);

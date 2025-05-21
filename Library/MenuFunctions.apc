@@ -229,10 +229,8 @@
          string str_received = CS.UI.showDialog(path := Path.Concat(Application, HTMLName), displayOptions := @object display_options);
          str_received = replace(str_received, '"', ''); // remove quotes from string returned by HTML dialog
          if length( str_received ) then
-           errmsg("%s", str_received);
            list string Spl;
            split(str_received, ",", Spl);
-           Spl.show();
            string caseid = spl(1);
            string fname = "../PII/receive/" + spl(2);
            // check if a valid caseid was returned if so view the case otherwise quit

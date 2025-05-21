@@ -54,16 +54,17 @@
       "path": "..\\Library\\TablesStyle.css"
     }, 
     {
+      "onlyOnFirstInstall": true, 
       "path": "..\\PII\\Ref\\Clusters.csdb"
     }, 
     {
       "path": "..\\PII\\Ref\\INTERV.csdb"
     }, 
     {
+      "onlyOnFirstInstall": true, 
       "path": "..\\PII\\Ref\\SAMPSEL.csdb"
     }, 
     {
-      "onlyOnFirstInstall": true, 
       "path": "..\\PII\\Ref\\version.txt"
     }, 
     {

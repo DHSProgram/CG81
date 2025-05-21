@@ -199,6 +199,10 @@ Language=FR
 020 Il n'y a pas des femmes/hommes éligibles dans le ménage ou aucun individu n'a été sélectionné
 025 Un individu ne peut seulement être revisité quand le résultat de la visite précédante était incomplet ou partiel (%s)
 026 Seuls les individus enquêtés avec  résultat complet, peuvent être modifiés (%s)
+030 Il n'y a pas de NOTES disponibles à l'affichage
+035 Erreur lors de la configuration du fichier %s
+045 Un nouveau ménage portant le numéro %04d a été créé et appartient à l'enquêteur %04d
+050 Incompatibilité entre le numéro de grappe actuel dans le menu de l'intervieweur ( %s) et le menu du superviseur ( %s). Veuillez vérifier, assurez-vous que les deux menus sont réglés sur le bon numéro de la grappe et recomme
 054 Vous devrez sélectionner le code du superviseur de l'équipe
 045 Un nouveau ménage avec le code %04d a été créé et a été affecté à l'enquêteur %04d
 061 La carte SD du superviseur n'est pas dans votre tablette.  Insérez-la et répétez cette option
