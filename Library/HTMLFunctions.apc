@@ -4,6 +4,20 @@
   array string CellValues(50);           { used to store the values of a full row in a report }
   array CellAlign(50);                  { specifies if the cell is left aligned. 0-Center aligned, other correspond to the column that is left aligned }
   string HTMLname, zstring1, zstring2;    { working variables associated to HTML construction }
+  
+  // set constants for utf characters for display
+  string utf_tick_icon    =  "&#x2705;";
+  string utf_x_icon       =  "&#x10102;";
+  string utf_view_icon    =  "&#x1f50e;";
+  // string utf_child_icon   =  "&#129490;&#x1F3FE;";
+  string utf_child_icon   =  "&#129490";
+  string utf_man_icon     =  "&#x1f6b9;";
+  string utf_woman_icon   =  "&#x1f6ba;";
+  string utf_biom_icon    =  "&#x2696;";
+  // string utf_qre_icon     =  "&#x1F4D3;";
+  string utf_qre_icon     =  "&#x1F4CB;";
+  // string utf_hh_icon      =  "&#x1f46a;";
+  string utf_hh_icon      =  "&#x1f3e0;";
 
   { initialize array that stores the type of alignment for each cell }
   function HTML_InitAlign()

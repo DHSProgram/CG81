@@ -5,19 +5,6 @@
   FILE   ReadMSG;                      { file used to read the error messages }
   numeric debug =    0;// sets debugging on
 
-  // set constants for utf characters for display
-  string utf_tick_icon    =  "&#x2705;";
-  string utf_x_icon       =  "&#x10102;";
-  string utf_view_icon    =  "&#x1f50e;";
-  // string utf_child_icon   =  "&#129490;&#x1F3FE;";
-  string utf_child_icon   =  "&#129490";
-  string utf_man_icon     =  "&#x1f6b9;";
-  string utf_woman_icon   =  "&#x1f6ba;";
-  string utf_biom_icon    =  "&#x2696;";
-  // string utf_qre_icon     =  "&#x1F4D3;";
-  string utf_qre_icon     =  "&#x1F4CB;";
-  // string utf_hh_icon      =  "&#x1f46a;";
-  string utf_hh_icon      =  "&#x1f3e0;";
 
   string blanks;
   string yresult, zcluster;
@@ -28,6 +15,7 @@
   string AlphaMSG;                     { string used to read error messages }
   string xbiom, xhw, xanem, xhiv;
   string pictures, final;
+  string FnameIN;
 
   array transHIV(200);                 { array to know barcodes in the transmittal that are not in questionnaires for HIV }
   array transMAL(200);                 { array to know barcodes in the transmittal that are not in questionnaires for MALARIA }
@@ -216,9 +204,9 @@
   end;
 
   function string HTML_Button (string str_CallBack, string str_Text);
-    if str_callback = "Return_Case_ID('')" then
+    // if str_callback = "Return_Case_ID('')" then
       HTML_Button = maketext('<button onclick="%s">%s</button>', encode(str_CallBack), str_Text);
-    endif;
+    // endif;
   end;
 
   function string ShowStatus ( statusflag );
@@ -278,6 +266,8 @@ preproc
   pictures = sysparm("Pictures");
   final    = sysparm("Final");
   closing  = ( sysparm("Closing") = "Y" );
+
+  FnameIN = FileName(CGIN80);
 
  
   // !!! run resize picture logic here based on presence of pictures parameter
@@ -1156,6 +1146,7 @@ preproc
         // e = ListErrMsg.add( maketext(AlphaMSG, QNUMBER, QLINE, QINTNUM) );
       endif;
     enddo;
+    close(CGIN80);
     
     { copy remeasure variables to HH data file }
     close( RMEASURE );
@@ -1225,10 +1216,16 @@ preproc
      string caseid = CS.UI.showDialog(path := Path.Concat(Application, HTMLName), displayOptions := @object display_options);
      caseid = replace(caseid, '"', ''); // remove quotes from string returned by HTML dialog
      // check if a valid caseid was returned if so view the case otherwise quit
-     if loadcase(CGIN80, caseid) then
-       ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
-     elseif loadcase(CGHH80, caseid) then
+     if length(caseid) = 8 then
+       errmsg("%s", filename(cghh80));
+       setfile(CGHH80, FileName(CGHH80), update);
+       loadcase(CGHH80, caseid);
        ViewQre("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
+     elseif length(caseid) = 10 then
+       errmsg("%s-%s", fnameIN, caseid);
+       setfile(CGIN80, fnameIN, update);
+       loadcase(CGIN80, caseid);
+       ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
      else
        break;
      endif;

@@ -26,6 +26,14 @@
   
   FR ( "There is another session running or the computer crashed while running" ) Il y a une autre session en cours ou bien que l'ordinateur s'est plantÃ© en cours d'exÃ©cution
   FR ( "Reset" ) Re-initialiser
+  FR ( "Select an interviewer that you wish to connect to" ) Sélectionnez un agent avec lequel vous souhaitez vous connecter
+  FR ( "Interviewers") Agents 
+  FR ( "No delegation" ) Aucune délégation
+  FR ( "Individuals to delegate" ) Individuels à déléguer 
+  FR ( "Interviewer to delegate to" ) Enquêteur(trice) à déléguer
+  FR ( "Delegated" ) Délégué(e)
+  FR ( "Name of head" ) Nom du chef du ménage
+  FR ( "Number" ) Numéro 
   FR ( "Yes" ) Oui
   FR ( "No" ) Non
   FR ("Select Language") Choisir la langue 

@@ -63,6 +63,7 @@
       "path": "..\\PII\\Ref\\SAMPSEL.csdb"
     }, 
     {
+      "onlyOnFirstInstall": true, 
       "path": "..\\PII\\Ref\\version.txt"
     }, 
     {
@@ -73,15 +74,6 @@
     }, 
     {
       "path": "..\\Superv\\CheckID.mgf"
-    }, 
-    {
-      "path": "..\\Superv\\RemeasEntry.ent"
-    }, 
-    {
-      "path": "..\\Superv\\RemeasLst.ent"
-    }, 
-    {
-      "path": "..\\Superv\\RemeasSel.ent"
     }, 
     {
       "path": "..\\Superv\\RemeasEntry.ent"
@@ -133,9 +125,6 @@
     }, 
     {
       "path": "..\\Dicts\\EligIndv.dcf"
-    }, 
-    {
-      "path": "..\\Dicts\\FieldWKQuest.dcf"
     }, 
     {
       "path": "..\\Dicts\\HHForInt.dcf"

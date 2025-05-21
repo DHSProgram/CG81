@@ -505,7 +505,7 @@ Name=FORM008
 Label=Weight, Height and Hemoglobin Measurement for Women
 QuestionTextHeight=118
 Level=1
-Size=1048,1126
+Size=1049,1125
   
 Item=QBSEC02_ROSTER
   
@@ -6221,7 +6221,7 @@ Required=No
 Type=Record
 TypeName=QBSEC02
 Max=20
-DisplaySize=25,45,1023,1101
+DisplaySize=26,44,1024,1100
 Orientation=Vertical
 ColumnWidth=93
 StubColumnWidth=113

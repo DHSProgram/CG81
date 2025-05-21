@@ -25,7 +25,7 @@ PROC GLOBAL
   string logCode;                         { used by IFSS to retrieve the result of data transferred }
   string synclogfile;                     { used to store sync data for upload to server }
   string IFSSlogFile;
-  string clustfname;                      { keeps clusters filename after dictionary closed }
+  string clustfname, sampselFname, intervFname;                     { keeps clusters filename after dictionary closed }
   string btserver = "";
   string  quest;
         
@@ -33,7 +33,7 @@ PROC GLOBAL
   alpha(4) xintnum;                       { Interviewer }
   alpha(4) xsuperv;                       { Supervisor }
   alpha(8) xfilenum;                      { Number corresponding to data file names }
-  alpha(4) xcluster;                      { Cluster number }
+  alpha(4) strcluster;                      { Cluster number }
   string   xcase;                         { Case: Cluster number, HOUSEHOLD number, woman line number }
   string   xupgrade;                      { variable to read/write file fupgrade that remembers the number of upgrades arrived to the supervisor machine }
   string   upgrname;                      { upgrade names 9prefix) for interviewers.  supervisors are upgraded automatically by IFSS }
@@ -178,51 +178,51 @@ PROC GLOBAL
     fdel( work + "\ALLIND.DAT" );
     fdel( work + "\ALLIND.DAT.CSIDX" );
     FileConcat( CGIN80, work + "\ALLIND.DAT",                           { result file }
-              receive + "\I" + xcluster + "????.DAT" );         { individuals from all interviewers }
+              receive + "\I" + strcluster + "????.DAT" );         { individuals from all interviewers }
   end;
 
   { concatenates partial cases for individuals from all interviewers }
   function concatpari()
     fdel( work + "\ALLIND.DAT.sts" );
     FileConcat( work + "\ALLIND.DAT.sts",                      { result file }
-              receive + "\I" + xcluster + "????.DAT.sts" ,      { partial files for individuals from all interviewers }
-              receive + "\I" + xcluster + "????.dat.sts" );     { partial files for individuals from all interviewers }
+              receive + "\I" + strcluster + "????.DAT.sts" ,      { partial files for individuals from all interviewers }
+              receive + "\I" + strcluster + "????.dat.sts" );     { partial files for individuals from all interviewers }
   end;
 
   { concatenates HOUSEHOLD files for all interviewers }
   function concathh()
     fdel( work + "\ALLHH.DAT" );
     FileConcat( CGHH80, work + "\ALLHH.DAT",                           { result file }
-               receive + "\H" + xcluster + "????.DAT" );        { HOUSEHOLD files from all interviewers }
+               receive + "\H" + strcluster + "????.DAT" );        { HOUSEHOLD files from all interviewers }
   end;
 
   { concatenate biomarker data in case more than one biomarker specialist per team (very unsual but possible) }
   function concatBio()
     fdel( work + "\ALLBIO.DAT" );
     FileConcat( work + "\ALLBIO.DAT",                          { result file }
-               receive + "\B" + xcluster + "????.DAT" );        { biomarker data files from all biomarker specialists }
+               receive + "\B" + strcluster + "????.DAT" );        { biomarker data files from all biomarker specialists }
   end;
 
   { concatenates others files for all interviewers }
   function concatoth()
     fdel( work + "\ALLOTH.DAT" );
     FileConcat( work + "\ALLOTH.DAT",                           { result file }
-               receive + "\O" + xcluster + "????.DAT" );         { other files from all interviewers }
+               receive + "\O" + strcluster + "????.DAT" );         { other files from all interviewers }
   end;
 
   { concatenates others files for all interviewers }
   function concatnotes()
     fdel( work + "\ALLNOTES.DAT" );
     FileConcat( work + "\ALLNOTES.DAT",                        { result file }
-               receive + "\H" + xcluster + "????.DAT.CSNOT",    { HOUSEHOLD notes from all interviewers }
-               receive + "\I" + xcluster + "????.DAT.CSNOT" );  { individual notes from all interviewers }
+               receive + "\H" + strcluster + "????.DAT.CSNOT",    { HOUSEHOLD notes from all interviewers }
+               receive + "\I" + strcluster + "????.DAT.CSNOT" );  { individual notes from all interviewers }
   end;
 
   { concatenates files collected by interviewers for sampling selection }
   function concatsamp()
-    fdel( SampData + "\L" + xcluster + ".DAT" );
-    FileConcat( SampData + "\L" + xcluster + ".DAT",            { result file }
-               SampData + "\L" + xcluster + "????.DAT" );      { files with HOUSEHOLDs listed by interviewers }
+    fdel( SampData + "\L" + strcluster + ".DAT" );
+    FileConcat( SampData + "\L" + strcluster + ".DAT",            { result file }
+               SampData + "\L" + strcluster + "????.DAT" );      { files with HOUSEHOLDs listed by interviewers }
   end;
 
   { since all applications are of data entry type the first lines are the same for all of them }
@@ -270,20 +270,20 @@ PROC GLOBAL
     FileWrite( piffile, "CONTSUP="  + wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb" );
     FileWrite( piffile, "SAMPSEL="  + wrkref + "\" + getsampfile(WCLUSTER));
     FileWrite( piffile, "TRANSMIT=" + wrkref + "\TRANSMITM" + xsuperv + ".DAT" );
-    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + xcluster + ".csdb" );
+    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + strcluster + ".csdb" );
     if whatdata = 1 then       { data by interviewers }
       FileWrite( piffile, "CGHH80=" + receive + "\H" + xfilenum + ".DAT" );
       FileWrite( piffile, "CGIN80=" + work    + "\ALLIND.DAT" );
     elseif whatdata = 2 then   { data in working directory }
-      FileWrite( piffile, "CGHH80=" + temp + "\H" + xcluster + ".DAT" );
-      FileWrite( piffile, "CGIN80=" + temp + "\I" + xcluster + ".DAT" );
+      FileWrite( piffile, "CGHH80=" + temp + "\H" + strcluster + ".DAT" );
+      FileWrite( piffile, "CGIN80=" + temp + "\I" + strcluster + ".DAT" );
     elseif whatdata = 3 then   { data before sending cluster to central office }
-      FileWrite( piffile, "CGHH80=" + final + "\H" + xcluster + ".DAT" );
-      FileWrite( piffile, "CGIN80=" + final + "\I" + xcluster + ".DAT" );
+      FileWrite( piffile, "CGHH80=" + final + "\H" + strcluster + ".DAT" );
+      FileWrite( piffile, "CGIN80=" + final + "\I" + strcluster + ".DAT" );
     endif;
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + xcluster + edit("9",chktotals) + edit("9", dosumrep ));
+    FileWrite( piffile, "Parameter=" + strcluster + edit("9",chktotals) + edit("9", dosumrep ));
     if whatdata = 3 then // !!! flag to indicate closing cluster
       FileWrite( piffile, "Closing=" + "Y");
     endif;
@@ -314,7 +314,7 @@ PROC GLOBAL
     FileWrite( piffile, "[Parameters]" );
     { parameters are: cluster and HOUSEHOLD number (may include others for sub-samples) }
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + xcluster + "1" );
+    FileWrite( piffile, "Parameter=" + strcluster + "1" );
     FileWrite( piffile, "ViewListing=Never" );
     FileWrite( piffile, "ViewResults=No" );
     FileWrite( piffile, "OnExit=.\SupMenu.pff" );
@@ -359,7 +359,7 @@ PROC GLOBAL
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "CONTSUP="  + wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb" );
     FileWrite( piffile, "INTERV="   + wrkref + "\INTERV.csdb" );
-    FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".csdb" );
+    FileWrite( piffile, "HHFORINT=" + work   + "\S" + strcluster + ".csdb" );
 
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
@@ -402,11 +402,11 @@ PROC GLOBAL
     if questype = 1 then
       FileWrite( piffile, "CGIN80="   + work   + "\ALLIND.DAT" );
       FileWrite( piffile, "INTERV=" + wrkref + "\INTERV.csdb" );
-      FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".csdb" );
+      FileWrite( piffile, "HHFORINT=" + work   + "\S" + strcluster + ".csdb" );
     elseif questype = 2 then
       FileWrite( piffile, "CGHH80=" + work + "\ALLHH.DAT" );
     elseif questype = 3 then
-      FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".csdb" );
+      FileWrite( piffile, "HHFORINT=" + work   + "\S" + strcluster + ".csdb" );
     endif;
     FileWrite( piffile, "CLUSTERS=" + wrkref + "\CLUSTERS.csdb" );
     FileWrite( piffile, "OTHERS="   + work  + "\ALLOTH.DAT" );
@@ -417,7 +417,7 @@ PROC GLOBAL
     xparamet[11:1] = edit( "9", change );    { to run modify mode }
     xparamet[12:1] = edit( "9", savpart );   { case saved partially }
     xparamet[13:1] = edit( "9", hghtwght );  { to enter height and weight }
-    FileWrite( piffile, "Parameter=" + xparamet + xcluster + edit("99",steam) );
+    FileWrite( piffile, "Parameter=" + xparamet + strcluster + edit("99",steam) );
     if questype = 3 then
       FileWrite( piffile, "ReInterview=1");
     endif;
@@ -441,12 +441,12 @@ PROC GLOBAL
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "CONTSUP="  + wrkref + "\Superv" + edit("9999",SupCode) + ".csdb" );
     FileWrite( piffile, "SAMPSEL="  + wrkref + "\" + getsampfile(WCLUSTER));
-    FileWrite( piffile, "CGHH80="   + temp   + "\H" + xcluster + ".dat" );
-    FileWrite( piffile, "CGIN80="   + temp   + "\I" + xcluster + ".dat" );
-    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + xcluster + ".csdb" );
+    FileWrite( piffile, "CGHH80="   + temp   + "\H" + strcluster + ".dat" );
+    FileWrite( piffile, "CGIN80="   + temp   + "\I" + strcluster + ".dat" );
+    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + strcluster + ".csdb" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + xcluster );
+    FileWrite( piffile, "Parameter=" + strcluster );
     FileWrite( piffile, "OnExit=.\SupMenu.pff" );
     FileWrite( piffile, "ViewListing=OnError" );
     FileWrite( piffile, "ViewResults=No" );
@@ -472,7 +472,7 @@ PROC GLOBAL
     FileWrite( piffile, "<autosend>false</autosend>" );
     FileWrite( piffile, "<timeout>120</timeout>" );
     { file to be sent }
-    fname = receive + "\R" + xcluster + ".csdb";
+    fname = receive + "\R" + strcluster + ".csdb";
     FileWrite( piffile, '<file source="' + fname + '" destdir="' + btdata + '" />');        { actual file name }
     FileWrite( piffile, "</transfer>" );
     close( piffile );
@@ -496,7 +496,7 @@ PROC GLOBAL
 
     FileWrite( piffile, "[Files]" );
     FileWrite( piffile, "Application=" + superv + "\" + AppName + ".ent" );
-    FileWrite( piffile, "InputData="   + receive   + "\R" + xcluster + ".csdb" );
+    FileWrite( piffile, "InputData="   + receive   + "\R" + strcluster + ".csdb" );
     FileWrite( piffile, "Listing="    + superv + "\" + AppName + ".lst" );
     FileWrite( piffile, "WriteData="  + superv + "\" + AppName + ".wrt" );
 
@@ -525,10 +525,10 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="  + superv + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + xcluster + ".csdb" );
+    FileWrite( piffile, "RMEASURE=" + receive   + "\R" + strcluster + ".csdb" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + xcluster );
+    FileWrite( piffile, "Parameter=" + strcluster );
     FileWrite( piffile, "OnExit=.\SupMenu.pff" );
     FileWrite( piffile, "ViewListing=OnError" );
     FileWrite( piffile, "ViewResults=No" );
@@ -554,7 +554,7 @@ PROC GLOBAL
     string fletter = "HIB";   // H-HOUSEHOLDs, I-Individuals, B-Biomarkers
     found = 0;
     do i = 1 while i <= TeamMemb & !found
-      if FileExist( receive + "\" + fletter[thisfile:1] + xcluster + TeamShare(i,1) + ".dat" ) then
+      if FileExist( receive + "\" + fletter[thisfile:1] + strcluster + TeamShare(i,1) + ".dat" ) then
         found = 1;
       endif;
     enddo;
@@ -564,16 +564,16 @@ PROC GLOBAL
   { collapses data files from all interviewers for the same cluster }
   function collapse();
     { files: data and partials for HOUSEHOLDs and women }
-    FileConcat( CGHH80, temp + "\H" + xcluster + ".dat",                   { HOUSEHOLDs }
-               receive + "\H" + xcluster + "????.DAT" );
-    FileConcat( temp + "\H" + xcluster + ".dat.sts", 
-                   receive + "\H" + xcluster + "????.DAT.sts" );
-    FileConcat( CGIN80, temp + "\I" + xcluster + ".dat",                   { individuals }
-               receive + "\I" + xcluster + "????.DAT" );
-    FileConcat( temp + "\I" + xcluster + ".dat.sts",
-               receive + "\I" + xcluster + "????.DAT.sts" );
-    FileConcat( temp + "\B" + xcluster + ".dat",                   { biomarkers }
-               receive + "\B" + xcluster + "????.DAT" );
+    FileConcat( CGHH80, temp + "\H" + strcluster + ".dat",                   { HOUSEHOLDs }
+               receive + "\H" + strcluster + "????.DAT" );
+    FileConcat( temp + "\H" + strcluster + ".dat.sts", 
+                   receive + "\H" + strcluster + "????.DAT.sts" );
+    FileConcat( CGIN80, temp + "\I" + strcluster + ".dat",                   { individuals }
+               receive + "\I" + strcluster + "????.DAT" );
+    FileConcat( temp + "\I" + strcluster + ".dat.sts",
+               receive + "\I" + strcluster + "????.DAT.sts" );
+    FileConcat( temp + "\B" + strcluster + ".dat",                   { biomarkers }
+               receive + "\B" + strcluster + "????.DAT" );
   end;
   function string setblank (string instring, recidpos, string str_recid, varpos, varlength);
     // sets a specfied portion of a string to blank 
@@ -638,31 +638,31 @@ PROC GLOBAL
     list string hhlogs, inlogs;
     numeric e;
     { copy main files from temp to final }
-    FileCopy( temp + "\H" + xcluster + ".dat", final );         { hh }
-    FileCopy( temp + "\H" + xcluster + ".DAT", final );         { individuals }
-    FileCopy( temp + "\I" + xcluster + ".dat", final );         { hh }
-    FileCopy( temp + "\I" + xcluster + ".DAT", final );         { individuals }
+    FileCopy( temp + "\H" + strcluster + ".dat", final );         { hh }
+    FileCopy( temp + "\H" + strcluster + ".DAT", final );         { individuals }
+    FileCopy( temp + "\I" + strcluster + ".dat", final );         { hh }
+    FileCopy( temp + "\I" + strcluster + ".DAT", final );         { individuals }
 
     // list all paradata logs
-    dirlist(hhlogs, receive, "H" + xcluster + "????.cslog");
-    dirlist(inlogs, receive, "I" + xcluster + "????.cslog");
+    dirlist(hhlogs, receive, "H" + strcluster + "????.cslog");
+    dirlist(inlogs, receive, "I" + strcluster + "????.cslog");
     // concatenate paradata logs into one file
     if hhlogs.length() | inlogs.length() then
-      paradata(concat, final + "\CS" + xcluster + ".cslog", hhlogs, inlogs);
+      paradata(concat, final + "\CS" + strcluster + ".cslog", hhlogs, inlogs);
     endif;
 
-    // FileCopy( receive + "\?" + xcluster + "*.CSLOG", final );         { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
-    // FileCopy( receive + "\?" + xcluster + "*.cslog", final );         { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
+    // FileCopy( receive + "\?" + strcluster + "*.CSLOG", final );         { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
+    // FileCopy( receive + "\?" + strcluster + "*.cslog", final );         { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
     // !!! zip the cslog and pictures files to reduce # files being moved around
-    compress(final + "\CS" + xcluster + ".zip", final + "\CS" + xcluster + ".cslog");  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
-    // compress(final + "\P"     + xcluster + ".zip", pictures + "\tnP" + xcluster + "*.jpg");   { pictures files for vaccinations }
+    compress(final + "\CS" + strcluster + ".zip", final + "\CS" + strcluster + ".cslog");  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
+    // compress(final + "\P"     + strcluster + ".zip", pictures + "\tnP" + strcluster + "*.jpg");   { pictures files for vaccinations }
 
     { concatenate others }
-    FileConcat( final + "\O" +  xcluster + ".DAT",
-               receive + "\O" + xcluster + "????.DAT" );
+    FileConcat( final + "\O" +  strcluster + ".DAT",
+               receive + "\O" + strcluster + "????.DAT" );
     { concatenate note files }
-    FileConcat( final + "\N" + xcluster + ".CSNOT",
-               receive + "\?" + xcluster + "????.DAT.csnot" );
+    FileConcat( final + "\N" + strcluster + ".CSNOT",
+               receive + "\?" + strcluster + "????.DAT.csnot" );
   end;
 
   { receive data from interviewer using bluetooth }
@@ -684,7 +684,7 @@ PROC GLOBAL
         SyncFile( GET, fname, temp );
         // get backup pictures 
         do pic = 1 until pic > 3
-          fname = pictures + "\P" + xcluster + "????????" + "_" + edit("99",pic) + ".jpg"; // get up to 4 previous pictures !!
+          fname = pictures + "\P" + strcluster + "????????" + "_" + edit("99",pic) + ".jpg"; // get up to 4 previous pictures !!
           SyncFile( GET, fname, pictures );
         enddo;
         // get FW interview data files
@@ -731,7 +731,7 @@ PROC GLOBAL
       FileWrite( piffile, "<autosend>false</autosend>" );
       FileWrite( piffile, "<timeout>120</timeout>" );
       { construct send the file }
-      fname = work + "\S" + xcluster + ".csdb";
+      fname = work + "\S" + strcluster + ".csdb";
       if FileExist(fname) then
         FileWrite( piffile, '<file source="' + fname + '" destdir="' + btwork + '" />' );        { actual file name }
         FileWrite( piffile, '<file source="' + fname + '.CSIDX" destdir="' + btwork + '" />' );    { index file }
@@ -784,7 +784,7 @@ PROC GLOBAL
   { check if other interviewers sent data concurrently }
   function remainfile()
     do i = 1 while interview(i)
-      fname = xcluster + edit("9999", interview(i)) + ".DAT";
+      fname = strcluster + edit("9999", interview(i)) + ".DAT";
       { check if HOUSEHOLD/woman file arrived at the supervisor machine for interviewer(i) }
       if FileExist( temp + "\H" + fname ) |
          FileExist( temp + "\I" + fname ) |
@@ -799,12 +799,12 @@ PROC GLOBAL
   { check version number available for next back-up.  It is a Round-robin system made of up to 10 versions  }
   function backupn()
     numeric n;
-    do n = 0 while n <= 9 & FileExist(bkpsup + "\C" + xcluster + "_" + edit("9",n) + ".zip")
+    do n = 0 while n <= 9 & FileExist(bkpsup + "\C" + strcluster + "_" + edit("9",n) + ".zip")
     enddo;
     { open space for next back-up }
     x = n + 1;
     if n = 9 then x = 0 endif;
-    fname = bkpsup + "\C" + xcluster + "_" + edit("9",x) + ".zip";
+    fname = bkpsup + "\C" + strcluster + "_" + edit("9",x) + ".zip";
     if FileExist( fname ) then
       FileDelete( fname );
     endif;
@@ -833,7 +833,7 @@ PROC GLOBAL
     // if DirExist(bkpsup) then
       // { round robin next back-up number }
       // nextbkp = backupn();
-      // TheCommand = Utility + "\UpgradePc\7za.exe a -w" + work + " -i!" + final +  "\*" + xcluster + ".dat -pDHS" + xsuperv + " " + bkpsup + "\C" + xcluster + "_" + edit("9",nextbkp) + ".zip";
+      // TheCommand = Utility + "\UpgradePc\7za.exe a -w" + work + " -i!" + final +  "\*" + strcluster + ".dat -pDHS" + xsuperv + " " + bkpsup + "\C" + strcluster + "_" + edit("9",nextbkp) + ".zip";
 // {     errmsg( "Command=%s", TheCommand );   }
       // ExecSystem( TheCommand, maximized, wait );
       // errmsg( 072, bkpsup );
@@ -865,25 +865,37 @@ PROC GLOBAL
   { function to send data to central office using CSWeb FTP }
   function SendData_CSW()
     numeric DataOK = 0;
-    if !connection() | debug then
+    if !connection() { | debug } then
       // errmsg( 200 );
       SendData_CSW = DataOK;
       exit;
     endif;
     if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
-      if SyncFile( PUT, final + "\?" + xcluster + "*.", CSWebSurvey + "Final" ) then
-         SyncFile( PUT, final + "\?" + xcluster + "*.cslog", CSWebSurvey + "Final" );  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
-         // SyncFile( PUT, wrkref + "\Superv" + xsuperv + "*.csdb", CSWebSurvey + "Final" );  
-         SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
-         SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
-         SyncFile( PUT, wrkref + "\TransmitM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
-         SyncFile( PUT, wrkref + "\TRANSMITM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
-         SyncFile( PUT, Receive + "\?" + xcluster + "????.DAT", CSWebSurvey + "Receive" );
-         SyncFile( PUT, Receive + "\?" + xcluster + "????.DAT.sts", CSWebSurvey + "Receive" );
-        // get the latest versions of the application files from the server 
-         syncapp();
-         DataOK = 1;
-      endif;
+      SmartPut( final, "?" + strcluster + "*.*", CSWebSurvey + "Final" );
+      SmartPut(final , "?" + strcluster + "*.cslog", CSWebSurvey + "Final" );  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
+      SmartPut(wrkref , "TRANSMITM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
+      SmartPut(wrkref , "TransmitM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
+      SmartPut(wrkref , "TransmitM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
+      SmartPut(wrkref , "TRANSMITM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
+      SmartPut(Receive , "?" + strcluster + "????.DAT", CSWebSurvey + "Receive" );
+      SmartPut(Receive , "?" + strcluster + "????.DAT.sts", CSWebSurvey + "Receive" );
+      // get the latest versions of the application files from the server 
+       syncapp();
+       DataOK = 1;
+     // update INTERV, CLUSTERs and SAMPSEL
+      // CLUSTERS
+      // setFile(CLUSTERS, clustfname, update);
+      // SyncData(GET, CLUSTERS);
+      // close(CLUSTERS);
+      // SAMPSEL
+      setFile(SAMPSEL, SampSelFname, update);
+      SyncData(PUT, SAMPSEL); // first put to avoid current cluster status being overwritten
+      SyncData(GET, SAMPSEL);
+      close(SAMPSEL);
+      // INTERV
+      setFile(INTERV, IntervFname, update);
+      SyncData(GET, INTERV);
+      close(INTERV);
       syncdisconnect();
     endif;
     if DataOK then 
@@ -1033,7 +1045,7 @@ PROC GLOBAL
     // asks user to select an interviewer and sets internal variables 
     ifound = showarray( tr("Select fieldworker you want to get data from"), TeamShare, title(tr("Code"), tr("Name"), tr("Role")) );
     if ifound then
-      xfilenum = xcluster + TeamShare(ifound,1);
+      xfilenum = strcluster + TeamShare(ifound,1);
       intcode  = tonumber(TeamShare(ifound,1));
       introle  = tonumber(TeamShare(ifound,3));
       intname  = TeamShare(ifound,2);
@@ -1154,7 +1166,7 @@ PROC GLOBAL
     fname = work + "\ALLHH.DAT";
     concathh();                { concatenate HOUSEHOLDs }
     concatoth();                { concatenate others }
-    hhdups  = FindDups( dirstocheck, xcluster, 1);
+    hhdups  = FindDups( dirstocheck, strcluster, 1);
     if !hhdups then
       setfile(CGHH80, fname );
       if selcase(header, CGHH80, "", 15) include(QHNUMBER, QHADDRESS, QHRESULT, QHINTNUM) then
@@ -1169,7 +1181,7 @@ PROC GLOBAL
   end;
   function review_hh ();
     if !anyfiles(1) then            { check if hh files have been transferred to supervisor }
-      errmsg( 080, xcluster );
+      errmsg( 080, strcluster );
     else
       if gethh() then
         { review HOUSEHOLDs including incomplete }
@@ -1183,7 +1195,7 @@ PROC GLOBAL
   function review_ind();
     string header;
     if !anyfiles(2) then            { check if ind files have been transferred to supervisor }
-      errmsg( 080, xcluster );
+      errmsg( 080, strcluster );
     else
       if !hhtoget then
         hhtoget = gethh();
@@ -1191,7 +1203,7 @@ PROC GLOBAL
       fname = work + "\ALLIND.DAT";
       concatind();
       concatoth();                { concatenate others }
-      if !FindDups( dirstocheck, xcluster, 2) then
+      if !FindDups( dirstocheck, strcluster, 2) then
         setfile(CGIN80, fname );
         header = maketext (tr("Select an individual to interview from HOUSEHOLD %04d"), hhtoget);
         if selcase(header, CGIN80, "", 15) include(QNUMBER, QLINE, QNAME, QRESULT, QINTNUM) where QNUMBER = hhtoget then
@@ -1257,7 +1269,7 @@ PROC GLOBAL
     numeric hhsel, hhidx, choice;
     list hhids;
     seed(systime());
-    hhdups  = FindDups( dirstocheck, xcluster, 1);
+    hhdups  = FindDups( dirstocheck, strcluster, 1);
     if !hhdups then
       concathh();                { concatenate HOUSEHOLDs }
       fname = work + "\ALLHH.DAT";
@@ -1414,14 +1426,14 @@ PROC GLOBAL
     { External Files section }
     FileWrite( piffile, " " );
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "HHFORINT=" + work   + "\S" + xcluster + ".csdb" );
-    FileWrite( piffile, "CGHH80=" + final + "\V" + xcluster + edit("9999",SupCode) + ".DAT" );
+    FileWrite( piffile, "HHFORINT=" + work   + "\S" + strcluster + ".csdb" );
+    FileWrite( piffile, "CGHH80=" + final + "\V" + strcluster + edit("9999",SupCode) + ".DAT" );
     FileWrite( piffile, "CONTSUP="  + wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb" );
     FileWrite( piffile, "ELIGINDV=" + work + "\eligibles.dat");
     FileWrite( piffile, "[Parameters]" );
     { parameters are: cluster and HOUSEHOLD number (may include others for sub-samples) }
     FileWrite( piffile, "Language=" + GetLanguage() );
-    FileWrite( piffile, "Parameter=" + xcluster + edit("9999",SupCode) );
+    FileWrite( piffile, "Parameter=" + strcluster + edit("9999",SupCode) );
     FileWrite( piffile, "allhh=" + work + "\ALLHH.DAT");
     FileWrite( piffile, "ViewListing=Never" );
     FileWrite( piffile, "ViewResults=No" );
@@ -1446,12 +1458,12 @@ PROC GLOBAL
     // check cluster number is the same on both tablets !!!
     // first check interviewer cluster number = supervisor one
     if message_name = "INTERVIEWER_CLUSTER" then
-      if message_value <> xcluster then // if its different display error message and disconnect
-        errmsg(050, message_value, xcluster);
+      if message_value <> strcluster then // if its different display error message and disconnect
+        errmsg(050, message_value, strcluster);
         syncdisconnect();
       endif;
     elseif message_name = "SUPERVISOR_CLUSTER" then // send cluster number back to interviewer menu
-      exit xcluster;
+      exit strcluster;
     endif;
   end;
 
@@ -1607,7 +1619,9 @@ PreProc
     ApplyUpgr();
 
   { load cluster file name }
-  clustfname = FileName(CLUSTERS);
+  clustfname   = FileName(CLUSTERS);
+  SampSelFname = FileName(SAMPSEL);
+  IntervFname  = FileName(INTERV);
 
   { clean files from old phases !!! }
   { do this with care !!! }
@@ -1712,7 +1726,7 @@ postproc
   WSTATEN    = YSTATEN;
   WDISTRICTN = YDISTRICTN;
   WCITYN     = YCITYN;
-  xcluster = edit( "9999", WCLUSTER );                    { cluster number }
+  strcluster = edit( "9999", WCLUSTER );                    { cluster number }
   xintnum  = edit( "9999", IntCode );                     { Interviewer }
   if SupCode then
     xsuperv  = edit( "9999", SupCode );                     { Supervisor }
@@ -1740,7 +1754,7 @@ postproc
   { 13:1   - enter height & weight data                               }
   { 14:4   - HOUSEHOLD number                                         }
   { 18:2   - woman's line number                                      }
-  xfilenum = xcluster + xintnum;         { data file names coming from interviewers }
+  xfilenum = strcluster + xintnum;         { data file names coming from interviewers }
 
   // check bluetooth id is set to the interviewer code
     if ( isAndroid | useCSBT ) & getbluetoothname() <> edit("9999",SupCode ) then
@@ -1820,7 +1834,7 @@ onfocus
   sysver = getver( wrkref + "/version.txt" );
   { set up string to display version numbers at top of menu } 
     versiontxt = maketext(" Ver:%s ", sysver); // version = date + hour + minutes
-    heading = maketext("Supervisor %4d: %s: Cluster %s [%s] " , WSUPER, getbluetoothname(), xcluster , versiontxt) ;
+    heading = maketext("Supervisor %4d: %s: Cluster %s [%s] " , WSUPER, getbluetoothname(), strcluster , versiontxt) ;
     codes.clear();
     codes.add( "1 Affecter les ménages pour une grappe",01);
     codes.add( "3 Synchroniser les données avec un enquêteur/trice",03);
@@ -1869,7 +1883,7 @@ postproc
       if getquest( intcode ) then
         { check duplicates for individuals }
         concatind();     { concatenate individual questionnaires from all interviewers }
-        if FindDups( dirstocheck, xcluster, 2) then
+        if FindDups( dirstocheck, strcluster, 2) then
           reenter WFINAL;
         endif;
         { next 'if' necessary because CHECKID iterates over the cluster's HOUSEHOLD file }
@@ -1892,7 +1906,7 @@ postproc
   elseif action = 4 then       { list questionnaires from an interviewer }
     { check duplicates for individuals and biomarkers }
     concatind();     { concatenate individual questionnaires from all interviewers }
-    if FindDups( dirstocheck, xcluster, 2) then
+    if FindDups( dirstocheck, strcluster, 2) then
       reenter WFINAL;
     endif;
     if getint() then
@@ -1922,8 +1936,8 @@ postproc
       if anyfiles(1) then         { check if hh files has been transferred to supervisor }
         { check for duplicated HOUSEHOLDs, individuals and biomarkers }
         collapse();
-        hhdups  = FindDups( dirstocheck, xcluster, 1);
-        indups  = FindDups( dirstocheck, xcluster, 2);
+        hhdups  = FindDups( dirstocheck, strcluster, 1);
+        indups  = FindDups( dirstocheck, strcluster, 2);
         if hhdups | indups then
           reenter WFINAL;
         endif;
@@ -1935,7 +1949,7 @@ postproc
         endif;
         RunPFFS();
       else
-        errmsg( 080, xcluster );
+        errmsg( 080, strcluster );
       endif; // anyfiles
   elseif action = 8 then        { create file to transfer to central office }
     SendData_CSW();
@@ -1948,7 +1962,7 @@ postproc
       ListNotes();
       runpffs();
     else
-      errmsg( 080, xcluster );
+      errmsg( 080, strcluster );
     endif;
   elseif action = 10 then       { send upgrades to interviewer's machine }
     sendupgr();
@@ -1982,9 +1996,9 @@ postproc
     if option = 1 then
       { check for duplicated HOUSEHOLDs }
       collapse();
-      hhdups  = FindDups( dirstocheck , xcluster ,1);
+      hhdups  = FindDups( dirstocheck , strcluster ,1);
       if anyfiles(2) then
-        indups  = FindDups( dirstocheck , xcluster ,2);
+        indups  = FindDups( dirstocheck , strcluster ,2);
       endif;            
       if hhdups | indups then
         reenter WFINAL;
@@ -1995,7 +2009,7 @@ postproc
       endif;
     elseif option = 2 then
       { enter remeasurement data from paper questionnaires }
-      fname = receive + "\R" + xcluster + ".csdb";
+      fname = receive + "\R" + strcluster + ".csdb";
       if FileExist( fname ) & !FileEmpty( fname ) then
         setfile(RMEASURE, fname);
         do i = 1 while loadcase(RMEASURE) 
@@ -2008,7 +2022,7 @@ postproc
         x = showarray( tr("Select the child for whom remeasurement data will be entered"), Remeasurement, 
                     title(tr("Household"), tr("Child Number"), tr("Child Name"), tr("Address")) );
         if x then 
-          xremeas = xcluster + Remeasurement(x,1) + Remeasurement(x,2);           
+          xremeas = strcluster + Remeasurement(x,1) + Remeasurement(x,2);           
           AppName = "RemeasEntry";
           RemeasEntry( 0 );             // 1-Biomarker in CAPI, 0-Biomarker on paper
           RunPFFS();
@@ -2020,7 +2034,7 @@ postproc
       endif;
     elseif option = 3 then
       { list children eligible for remeasurement }
-        fname = receive + "\R" + xcluster + ".csdb";
+        fname = receive + "\R" + strcluster + ".csdb";
         if FileExist( fname ) & !FileEmpty( fname ) then
           AppName = "RemeasLst";
           RemeasLst();
@@ -2030,7 +2044,7 @@ postproc
         endif;
   { send children selected for remeasurement to health specialist }
     // elseif option = 4 then
-    //   fname = receive + "\R" + xcluster + ".csdb";
+    //   fname = receive + "\R" + strcluster + ".csdb";
     //   if FileExist( fname ) & !FileEmpty( fname ) then
     //     SendRemeas();
     //   else
@@ -2039,7 +2053,7 @@ postproc
     //   { receive remeasurement data from health specialist }
     // elseif option = 5 then
     //   ReceiveRemeas();
-    //   fname = receive + "\R" + xcluster + ".csdb";
+    //   fname = receive + "\R" + strcluster + ".csdb";
     //   if FileExist( fname ) & !FileEmpty( fname ) then
     //     AppName = "RemeasLst";
     //     RemeasLst();
@@ -2085,7 +2099,7 @@ postproc
       endif;
      elseif option = 3 then 
        // list HOUSEHOLDs
-      hhdups  = FindDups( dirstocheck, xcluster, 1);
+      hhdups  = FindDups( dirstocheck, strcluster, 1);
       if !hhdups then
         concathh();                { concatenate HOUSEHOLDs }
         SetAssignFile();
@@ -2211,8 +2225,8 @@ postproc
   // logic for entering re-interview
   xparaux  = xsuperv + xsuperv + "0" + "0000";
   xparamet = xparaux  + edit("9999",ZNUMBER);
-  xcase    = xcluster + edit("9999",ZNUMBER);
-  xfilenum = xcluster + xsuperv;         { data file name for supervisor}
+  xcase    = strcluster + edit("9999",ZNUMBER);
+  xfilenum = strcluster + xsuperv;         { data file name for supervisor}
   { start data collection for a HOUSEHOLD }
   numeric partial  = partialcs( 1, ZCLUSTER, ZNUMBER, 0, final + "\V" + xfilenum + ".DAT" );
   AppName = "COLLECTHH";

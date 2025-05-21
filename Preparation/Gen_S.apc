@@ -2,14 +2,23 @@
 PROC GLOBAL
 numeric c,i;
 
-numeric maxhh = 6;
+numeric maxhh = 9;
 numeric maxcluster = 130;
 numeric preassign = 0;
+numeric firsttime = 0;
 
 PROC CNULL_FF
 clear(SAMPSEL);
-setfile(SAMPSEL, ".\SAMPSEL.csdb", create);
+if firsttime then
+  setfile(SAMPSEL, ".\SAMPSEL.csdb", create);
+else
+  setfile(SAMPSEL, ".\SAMPSEL.csdb", update);
+endif;
 forcase CLUSTERS do
+
+  if YCLUSTER < 9910 then
+    next;
+  endif;
   if preassign then
     setfile(HHFORINT, ".\PII\WORK\S"+edit("9999",c)+".DAT", create);
   endif;

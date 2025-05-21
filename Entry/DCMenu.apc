@@ -3,7 +3,7 @@
   FILE   piffile;                       { data entry PFF file for the application }
   FILE   justone;                       { file handler to make sure that there are no concurrent sessions }
   FILE   TrackUpg;                      { file handler to track upgrades coming from CSWeb server }
-  numeric debug = 1;
+  numeric debug = 0;
   numeric training = 1;                 { flag to indicate training mode !!}
   string  TheCommand, newupgrades;
   string  CSPro;                         { CSPro executables directory }
@@ -463,15 +463,16 @@
       ( seltype = 2 & ZRESULT = 1 & ZOWNER <> IntCode & ZSTATUSC = 1 & ZDELEG )|          //  completed hh's of other interviewers
         seltype in 3,5                                              //  all cases 
       then 
-        inc(ctr);
         // next, populate the array
         if seltype in 0:2,4 then                             // hh's
+          inc(ctr);
           caselist(ctr,1) = maketext("%04d", ZNUMBER );
           caselist(ctr,2) = ZNAME;
           caselist(ctr,3) = maketext("%04d", ZOWNER );
           caselist(ctr,4) = ZSTATUS;
           caselist(ctr,5) = tr( "YN" )[ZMALE:1];
         elseif seltype = 3 & WINTNUM in ZOWNER, ZDELEG then                                       // INDIVIDUALs 
+          inc(ctr);
           caselist(ctr,1) = maketext("%04d", ZNUMBER );
           caselist(ctr,2) = maketext("%02d", ZLINE );
           caselist(ctr,3) = ZNAME;
@@ -480,13 +481,18 @@
           caselist(ctr,6) = ZSTATUS;
         elseif seltype = 5 then                                       // delegation
           if ZSTATUSC = 0 | ZDELEG then // delegated or not started 
+          inc(ctr);
             caselist(ctr,1) = ZADDRESS;
             caselist(ctr,2) = maketext("%04d", ZNUMBER );
             caselist(ctr,3) = maketext("%02d", ZLINE );
             caselist(ctr,4) = ZNAME;
             caselist(ctr,5) = ZQTYPEA;
             caselist(ctr,6) = ZSTATUS;
-            caselist(ctr,7) = maketext("%04d", ZDELEG );
+            if ZDELEG then
+              caselist(ctr,7) = edit("9999", ZDELEG );
+            else
+              caselist(ctr,7) = "-"
+            endif;
           endif;
         endif;
       endif;
@@ -663,7 +669,7 @@
     { share HOUSEHOLD data with another interviewer in the same team using bluetooth }
     function sendhhdat()
       if isAndroid | useCSBT then
-        x = showarray( "Select whom you want to share HH data with", TeamShare, title("Codes", "Interviewer Names") );  
+        x = showarray(tr(  "Select an interviewer that you wish to connect to" ), TeamShare, title(tr( "Codes" ),tr(  "Interviewer Names" )) );  
         btserver = TeamShare(x,1);
         if SyncConnect( Bluetooth, btserver) then
           fname = data + "\H" + xfilenum + ".DAT";
@@ -1476,6 +1482,8 @@ onfocus
     fieldworkers.clear();
     m_fieldworkers.clear();
     f_fieldworkers.clear();
+    m_fieldworkers.add(tr("No delegation"), 9995);
+    f_fieldworkers.add(tr("No delegation"), 9995);
     do j = 1 while j <= totintvw
       if intvwrole(j) = 2 then            { supervisor }
         fieldworkers.add( intvwname(j), intvwcode(j) );
@@ -1703,23 +1711,33 @@ postproc
         option  = accept( "Menu de la délégation",
                   {  1} "Déléguer des indidivuels à un autre enquêteur(trice)",
                   {  2} "Transférer des délégations à un autre enquêteur(trice)",
-                  {  3} "Recevoir des délégations d'un autre enquêteur(trice)");
+                  {  3} "Recevoir des délégations d'un autre enquêteur(trice)",
+                  {  4} "Annuler");
 
        if option = 1 then
          concathh();
          if !FindDups( dirstocheck , xcluster, 1) then
           WrkElig( 1 );
           fill_caselist(1);
+          heading = tr("Select Household");
           numeric idx = showarray(heading, caselist, title ( tr("HH"), tr("Name"), tr("Int."), tr("Status") , tr("Male/LS"))  );
           WrkElig( 2, x, IntSex );
           fill_caselist(5);
           while 1 do
-            idx = showarray(tr("Individuals to delegate"), caselist, title ( tr("Head"), tr("Number"), tr("Line"), tr("Name") , tr("Type") , tr("Status"), tr("Delegated")) );
+            idx = showarray(tr("Individuals to delegate"), caselist, title ( tr("Name of head"), tr("Number"), tr("Line"), tr("Name") , tr("Type") , tr("Status"), tr("Delegated")) );
             if idx then
+              heading = tr("Interviewer to delegate to");
+              numeric welig = 0;
               if caselist(idx,5) = "Homme"  then
-                caselist(idx,7) = edit("9999", m_fieldworkers.show() );
+                welig = m_fieldworkers.show(heading);
               else
-                caselist(idx,7) = edit("9999", f_fieldworkers.show() );
+                welig = f_fieldworkers.show(heading);
+              endif;
+              trace("welig=%d", welig);
+              if welig then
+                if welig = 9995 then welig = 0 endif;
+                caselist(idx,7) = edit("9999", welig );
+                trace("welig=%d, caselist=%s", welig, caselist(idx,7));
               endif;
             else
               break;
@@ -1729,7 +1747,7 @@ postproc
           setfile(CGHH80, data + "\H" + xfilenum + ".DAT", update);
           do idx = 1 until idx > caselist.length(1);
             numeric wdeleg = tonumber( caselist(idx,7) );
-            if wdeleg then
+            if wdeleg <> notappl then
               QHCLUST = WCLUSTER;
               QHNUMBER = tonumber(caselist(idx,2));
               numeric wdline  = tonumber( caselist(idx,3) );
@@ -1749,7 +1767,9 @@ postproc
       { receive HOUSEHOLD data from another interviewer }
       elseif option = 3 then
         receivehh();
-       endif;
+      elseif option = 4 then // back to main menu
+        reenter;
+     endif;
 
     { lists interviewer's notes in cluster }
     elseif action = 7 then

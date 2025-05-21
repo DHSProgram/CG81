@@ -53,6 +53,24 @@
     HTMLFile.close();
     view( "file://" + pathname(application) + HTMLName );
   end;
+  //Splits a string delimited by 'splitChar' into a list of substrings 'Spl'
+  //Returns count of split strings
+  function Split(string input, alpha(1) splitChar, list string Spl, optional maxCount = 0)
+    Spl.Clear();
+    string gv_line;
+    numeric gv_p = pos(splitChar, input);
+	while gv_p & (!maxCount | Spl.Length() < maxCount - 1) do
+	  Spl.Add(input[1:gv_p - 1]);
+	  input = input[gv_p + 1:length(strip(input)) - gv_p];
+	  gv_p = pos(splitChar, input);
+    enddo;
+	Spl.Add(input);
+	
+	Split = Spl.Length();
+  end;
+  function string HTML_Button (string str_CallBack, string str_Text);
+    HTML_Button = maketext('<button onclick="%s">%s</button>', encode(str_CallBack), str_Text);
+  end;
   function FindDups (list string wdir, string str_cluster, checktype, numeric autodelete = 0);
     set trace(on);
     // looks for duplicate cases in hh or ind files across list of folders
@@ -82,20 +100,24 @@
     zstring1 = MakeText( tr("Duplicate cases report"), zcluster );
     CellValues(1) = tr("Household");
     CellValues(2) = tr("Line");
-    CellValues(3) = tr("Interviewer");
-    CellValues(4) = tr("Status");
-    CellValues(5) = tr("Fichier");
+    CellValues(3) = tr("Name");
+    CellValues(4) = tr("Interviewer");
+    CellValues(5) = tr("Status");
+    CellValues(6) = tr("Fichier");
 
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 4;
   CellAlign(2) = 5;
 
    // !! adding application specific javascript to html output
-   HTML_Header( CellAlign, zstring1);  // generates a general HTML header
+   list string js_scripts;
+   js_scripts.add("../Library/checkid.js");
+   HTML_Header( CellAlign, zstring1, js_scripts );  // generates a general HTML header
+
    if checktype = 1 then
-     HTML_BeginTable( CellValues, maketext("%s %s", tr( "Duplicated cases"), tr( "Household" ) ), 5, "Main" );  // generates the HTML table script with the column headers
+     HTML_BeginTable( CellValues, maketext("%s %s", tr( "Duplicated cases"), tr( "Household" ) ), 6, "Main" );  // generates the HTML table script with the column headers
    else
-     HTML_BeginTable( CellValues, maketext("%s %s", tr( "Duplicated cases"), tr( "Individuals" ) ), 5, "Main" );  // generates the HTML table script with the column headers
+     HTML_BeginTable( CellValues, maketext("%s %s", tr( "Duplicated cases"), tr( "Individuals" ) ), 6, "Main" );  // generates the HTML table script with the column headers
    endif;
 
     // create list of files to check
@@ -138,15 +160,16 @@
             if loadcase(CGHH80, caseidlist(ctr) ) then
               CellValues(1) = caseidlist(ctr)[5:4];
               CellValues(2) = "BLANK";
-              CellValues(3) = edit("9999", QHINTNUM);
+              CellValues(3) = "BLANK";
+              CellValues(4) = edit("9999", QHINTNUM);
               if partialcs( 1, QHCLUST, QHNUMBER, 0, fileListing(fctr)  ) then
-                CellValues(4) = tr( "Partial" )
+                CellValues(5) = tr( "Partial" )
               else
-                CellValues(4) = getlabel(QHRESULT, QHRESULT);
+                CellValues(5) = getlabel(QHRESULT, QHRESULT);
               endif;
-              CellValues(5) = path.getRelativePath( pathname(application),  fileListing(fctr));
+              CellValues(6) = HTML_Button(maketext("Return_Case_ID('%04d%04d,%s')", QHCLUST, QHNUMBER, path.GetFileName( fileListing(fctr) )), utf_view_icon) + " " + path.getRelativePath( pathname(application),  fileListing(fctr));
 
-              HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+              HTML_OneRow( CellValues, 6 );  // generates the HTML script for a row with relevant individual data
               // HTMLFile.write ( maketext("Case created by interviewer %4d, Result =%s (%1d) %s\n File:%s\n ", QHINTNUM, getlabel(QHRESULT, QHRESULT), QHRESULT, partialcase, fileListing(fctr)) );
               if autodelete then
                 dres= delcase(CGHH80, caseidlist(ctr));
@@ -165,14 +188,15 @@
               endif;
               CellValues(1) = caseidlist(ctr)[5:4];
               CellValues(2) = caseidlist(ctr)[9:2];
-              CellValues(3) = edit("9999", QINTNUM);
+              CellValues(3) = QNAME;
+              CellValues(4) = edit("9999", QINTNUM);
               if partialcs( 2, QCLUSTER, QNUMBER, QLINE, fileListing(fctr)  ) then
-                CellValues(4) = tr( "Partial" )
+                CellValues(5) = tr( "Partial" )
               else
-                CellValues(4) = getlabel(QRESULT, QRESULT);
+                CellValues(5) = getlabel(QRESULT, QRESULT);
               endif;
-              CellValues(5) = path.getRelativePath( pathname(application),  fileListing(fctr));
-              HTML_OneRow( CellValues, 5 );  // generates the HTML script for a row with relevant individual data
+              CellValues(6) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d,%s')", QCLUSTER, QNUMBER, QLINE, path.GetFileName( fileListing(fctr) )), utf_view_icon) + " " + path.getRelativePath( pathname(application),  fileListing(fctr));
+              HTML_OneRow( CellValues, 6 );  // generates the HTML script for a row with relevant individual data
               if autodelete then
                 dres = delcase(CGIN80, caseidlist(ctr));
                 // errmsg("dres=%d, fname=%s, case=%s", dres, fileListing(fctr), caseidlist(ctr));
@@ -186,10 +210,48 @@
     HTML_EndTable();
     HTML_Paragraph( " " );
     HTML_Paragraph( " " );
+    HTML_Paragraph( HTML_Button("Return_Case_ID('')", tr("OK")));
     HTML_ParagraphS( tr("Please resolve the duplicated cases listed above before continuing") );
     HTML_End();
     if !autodelete & dupfound then
-     view(HTMLName);
+      // !! display form and handle requests to view questionnaires
+      // set up display options
+      string display_options = maketext('{ "width": %d, '
+                                        '  "height": %d, '
+                                                                        '  "resizable": %d }'
+                                                                        , int(tonumber(getproperty("MaxDisplayWidth")) * 0.9)
+                                                                        , int(tonumber(getproperty("MaxDisplayHeight")) * 0.9)
+                                                                        , true);
+       // loop until no qres selected by user 
+       #if exists(QHCSPRO8)
+       while true do 
+         // show html dialog form
+         string str_received = CS.UI.showDialog(path := Path.Concat(Application, HTMLName), displayOptions := @object display_options);
+         str_received = replace(str_received, '"', ''); // remove quotes from string returned by HTML dialog
+         if length( str_received ) then
+           errmsg("%s", str_received);
+           list string Spl;
+           split(str_received, ",", Spl);
+           Spl.show();
+           string caseid = spl(1);
+           string fname = "../PII/receive/" + spl(2);
+           // check if a valid caseid was returned if so view the case otherwise quit
+           if checktype = 1 then 
+             setfile(CGHH80, fname, update);
+             loadcase(CGHH80, caseid);
+             ViewQre("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
+           else
+             setfile(CGIN80, fname, update);
+             loadcase(CGIN80, caseid);
+             ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
+           endif;
+         else
+           break;
+         endif;
+       enddo;
+       #else
+         view(HTMLName);
+       #endif
     endif;
     FindDups = dupfound;  
   end;
@@ -295,21 +357,6 @@
          3 -> DisplayFile(DispPath + "/Biomarqeur.pdf");
     endwhen;
   end;
-  //Splits a string delimited by 'splitChar' into a list of substrings 'Spl'
-  //Returns count of split strings
-  function Split(string input, alpha(1) splitChar, list string Spl, optional maxCount = 0)
-    Spl.Clear();
-    string gv_line;
-    numeric gv_p = pos(splitChar, input);
-	while gv_p & (!maxCount | Spl.Length() < maxCount - 1) do
-	  Spl.Add(input[1:gv_p - 1]);
-	  input = input[gv_p + 1:length(strip(input)) - gv_p];
-	  gv_p = pos(splitChar, input);
-    enddo;
-	Spl.Add(input);
-	
-	Split = Spl.Length();
-  end;
   function FileChanged (string filetocheck);
     // uses md5 checksum to determine if a file has changed
     // return values: 0: not changed 1: changed 2: new file
@@ -344,17 +391,16 @@
     // will fail
     list string filestocheck;
     dirlist(filestocheck, str_dir, filter:=str_mask, recursive:=isrecursive);
+    // filestocheck.show();
     // check if files changed
     do numeric f = filestocheck.length() while f > 0 by (-1)
        if !FileChanged(filestocheck(f)) then
          filestocheck.remove(f); // remove files that didn't change
        endif;
     enddo;
-    filestocheck.show();
     // sync changed files
     // !! NOTE this assumes a connection to the server has been already made
     do numeric f = 1 until f > filestocheck.length()
-      SyncFile( PUT, filestocheck(f), str_dest + "/" + path.GetFileName(filestocheck(f)))
-      // errmsg("%s->%s", filestocheck(f), str_dest);
+      SmartPut = SyncFile( PUT, filestocheck(f), str_dest + "/" + path.GetFileName(filestocheck(f)))
     enddo;
   end;

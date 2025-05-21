@@ -27,6 +27,7 @@ Include=..\Library\MenuFunctions.apc
 [Message]
 File=..\Superv\SupMenu.mgf
 Include=.\DCMenu.mgf
+Include=..\Superv\CheckId.mgf
 [Help]
 File=.\DCMenu.qsf
 [Forms]
