@@ -92,6 +92,7 @@
   numeric indexpreg, indexpreg2, childecd;
   numeric twinnum;
   numeric gl;
+  numeric wmm03, wmm04,wmm05,wmm06;
 
   valueset individuals, vs;
   valueset string vaccinations, foods, sources;
@@ -522,7 +523,7 @@
   function relterms()              // relationship terms
     if Q701 = 1 then
       partner = tr("husband")
-	elseif QM401 = 1 then
+    elseif QM401 = 1 then
       partner = tr("wife")
     elseif Q701 = 2 | QM401 = 2 then
       partner = tr("partner")
@@ -1344,7 +1345,11 @@
 
 function get_sib_names (setValues=notappl);
     MyValueset.clear();
+        Sibling_names = "";
 	do varying i=1 while i <=count(QWSIBL_ROSTER where 1 in QMMMORE, QMM03, QMM04, QMM05, QMM06, QMM07)+1 //QMM07;
+		if setValues <> notappl then
+                  MyValueset.add(QMM01N(i), i);
+		endif;
 		x=0;
 		string InN="";
 		do varying j=1 while j<curocc()
@@ -1357,14 +1362,13 @@ function get_sib_names (setValues=notappl);
 			InN=maketext("(%V):-",QMM01(i));
 		endif;
 		Sibling_names=Sibling_names+ InN+ strip( QMM01N(i))+", "; 
-		if setValues<>notappl then
-			if x=0   then
-				MyValueset.add(maketext("Numéro d'ordre"+ ": %v",i),i);
-			endif;
-		endif;
 	enddo; 
-
-  
+        do varying j=1 while j < curocc()
+          numeric found = MyValueSet.Codes.seek(QMM01(j));
+          if found then
+            MyValueSet.remove(QMM01(j));
+          endif;
+        enddo;
 end;
 
 function mapvacc (vp);
@@ -1512,6 +1516,16 @@ function check_vaccs ();
         endif;
 end;
 
+function GetMMCols ();
+  wmm03 = 0;wmm04 = 0;wmm05 = 0;wmm06 = 0;
+  do numeric ctr = 1 until ctr > totocc( QWSIBL_ROSTER )
+    // get totals of highlighted values for the prompt columns in the MM01 section 
+    if highlighted(QMM03(ctr)) & visualvalue( QMM03(ctr) ) in 1,2 then inc(wmm03) endif;
+    if highlighted(QMM04(ctr)) & visualvalue( QMM04(ctr) ) in 1,2 then inc(wmm04) endif;
+    if highlighted(QMM05(ctr)) & visualvalue( QMM05(ctr) ) in 1,2 then inc(wmm05) endif;
+    if highlighted(QMM06(ctr)) & visualvalue( QMM06(ctr) ) in 1,2 then inc(wmm06) endif;
+  enddo;
+end;
 PROC CGIN80_FF
 preproc
 
@@ -1708,6 +1722,11 @@ preproc
   
 postproc
   id = edit("9999",QCLUSTER)+edit("9999",QNUMBER)+edit("99",QLINE);
+  // check not delegated to someone else
+  if QHDELEG(QLINE) & QHDELEG(QLINE) <> xintnum then
+    errmsg(1005, QHDELEG(QLINE));
+    stop(1);
+  endif;
 
 PROC QVIOLEN
 preproc
@@ -7431,12 +7450,11 @@ preproc
 
 { @@@ Begin Maternal Mortality Module for Women }
 
-gl=0;
 PROC QWSIBL_ROSTER 
 onfocus
-  if gl=0 then
     gl = userbar( add button, tr("Delete Sibling"), DeletSiblings() ); // add userbar for pregnancies once we get to pregnacy history
-  endif;
+    // initialize tracking variables used in GetMMCols
+
 
 killfocus
   if gl then
@@ -7466,17 +7484,19 @@ postproc
     setocclabel(QWSIBL_ROSTER(curocc()),maketext("%d %s",curocc(),strip($)));
   endif;
 
+
 PROC QMMMORE 
 
 postproc
-  if $ <> 1 & seek(QMM06 in 1,2) then // end listing since all probes completed !!!
+  if $ <> 1 & wmm06 then // end listing since all probes completed !!!
     endgroup;
   endif;
 
  
 PROC QMM03
 preproc  
-	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+        GetMMCols();
+	ask if QMMMORE = 2  & ( !wmm03 | visualvalue($) <> notappl ) ;
 	 
 	
 onfocus
@@ -7496,7 +7516,7 @@ postproc
  
 PROC QMM04
 preproc 
-	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+	ask if QMMMORE = 2  & ( !wmm04 | visualvalue($) <> notappl ) ;
 onfocus
 	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
 		$=2;
@@ -7509,7 +7529,7 @@ postproc
   endif;
 PROC QMM05
 preproc
-	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+	ask if QMMMORE = 2  & ( !wmm05 | visualvalue($) <> notappl ) ;
 onfocus
 	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
 		$=2;
@@ -7521,7 +7541,7 @@ postproc
 
 PROC QMM06
 preproc
-	ask if QMMMORE = 2  & ( seek(visualvalue($) in 1,2)=0 | visualvalue($) <> notappl ) ;
+	ask if QMMMORE = 2  & ( !wmm06 | visualvalue($) <> notappl ) ;
 onfocus
 	if visualvalue(QMM07)<>notappl and visualvalue(QMMMORE(curocc()+1))=notappl then
 		$=2;
@@ -7560,7 +7580,6 @@ preproc
     endgroup;
   endif;
 onfocus
-	// Sibling_names="";
   get_sib_names(1);
   setvalueset($, MyValueset);
 postproc
@@ -7661,10 +7680,9 @@ preproc
   do i = 1 while i <= maxsib
     if i <= QMM07 then
       QMM13(i)  = i;
-{     QMM13N(i) = QMM01N(i);  }
- 	    do j = 1 while j <= maxsib { & i <> QMM01(j) }
-        if i = QMM01(j) then
-          QMM13N(i) = QMM01N(j);
+      do j = 1 while j <= maxsib { & i <> QMM01(j) }
+        if i = j then
+          QMM13N(i) = QMM01N(QMM01(j));
           break;
         endif;
       enddo;
@@ -7968,7 +7986,7 @@ postproc
 
 PROC QM117
 preproc
-  if QM114 = 3 then
+  if QM114 = 4 then
     skip to QM119
   endif;
 

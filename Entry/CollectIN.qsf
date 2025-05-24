@@ -5305,11 +5305,16 @@ questions:
             QMM08.&nbsp;Juste pour être sûre que j'ai le bon résultat : Votre mère a eu ~~QMM07~~&nbsp;&nbsp;naissances, sans vous compter, durant sa vie. Est-ce correct ?<p></p>
   - name: CGIN80.QMM01
     conditions:
-      - questionText:
+      - logic: curocc() = 1
+        questionText:
           EN: |
-            <p><span class="instruction">MM01.</span>&nbsp;Please tell me, from the siblings you have listed, which order number is ~~QMM01N(curocc())~~?<br></p><p><br></p><p><br>~~SIBLING_NAMES~~<p></p></p><p><br></p><p><br></p>
+            <p><span class="instruction">MM01.</span>&nbsp;Please tell me, from the siblings you have listed, wh</p><p><br>~~SIBLING_NAMES~~</p><p></p><p></p><p><br></p><p><br></p>
           FR: |
-            <p>S’il vous plaît dites-moi, quel frère ou sœur est né en premier? Et lequel est né ensuite ?</p><p>(~~QMM01N(curocc())~~)</p><p><span class="instruction">ENREGISTREZ '01' POUR LE NUMÉRO D'ORDRE POUR LE PREMIER FRÈRE OU LA PREMIÈRE SŒUR, '02' POUR LE SECOND, ET AINSI DE SUITE JUSQU’À CE QUE VOUS AYEZ ENREGISTRÉ LE NUMÉRO DE L'ORDRE POUR TOUS LES FRÈRES ET SŒURS.</span></p><p></p>
+            <p>S’il vous plaît dites-moi, quel frère ou sœur est né en premier ?</p><p><span style="color: rgb(0, 0, 255);">ENREGISTREZ '01' POUR LE NUMÉRO D'ORDRE POUR LE PREMIER FRÈRE OU LA PREMIÈRE SŒUR, '02' POUR LE SECOND, ET AINSI DE SUITE JUSQU’À CE QUE VOUS AYEZ ENREGISTRÉ LE NUMÉRO DE L'ORDRE POUR TOUS LES FRÈRES ET SŒURS.</span></p><p></p>
+      - logic: curocc() > 1
+        questionText:
+          FR: |
+            <p><span style="color: rgb(99, 99, 99);">~~curocc()~~ i</span><font color="#636363">ème</font><span style="color: rgb(99, 99, 99);">&nbsp;</span><span style="color: rgb(99, 99, 99);">FRÈRE OU SŒUR</span></p><p>Et lequel est né ensuite ?</p><p></p><p><span style="color: rgb(0, 0, 255);">ENREGISTREZ '01' POUR LE NUMÉRO D'ORDRE POUR LE PREMIER FRÈRE OU LA PREMIÈRE SŒUR, '02' POUR LE SECOND, ET AINSI DE SUITE JUSQU’À CE QUE VOUS AYEZ ENREGISTRÉ LE NUMÉRO DE L'ORDRE POUR TOUS LES FRÈRES ET SŒURS.</span></p><p><br></p><p></p>
   - name: CGIN80.QMM11
     conditions:
       - questionText:
@@ -5359,7 +5364,7 @@ questions:
             <p>QMM18. How old was ~~QMM13N~~ when she died?</p>
             <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
           FR: |
-            <p>QMM18. Quel âge avait ~~QMM13N~~&nbsp;lorsqu'elle est décédée ?</p><p>SI VOUS NE SAVEZ PAS, POSEZ DES QUESTIONS SUPPLÉMENTAIRES POUR OBTENIR UNE ESTIMATION.<br></p><p></p>
+            <p>QMM18. Quel âge avait ~~QMM13N~~&nbsp;lorsqu'elle est décédée ?</p><p><font color="#0000ff">SI VOUS NE SAVEZ PAS, POSEZ DES QUESTIONS SUPPLÉMENTAIRES POUR OBTENIR UNE ESTIMATION.</font><br></p><p></p>
   - name: CGIN80.QMM19
     conditions:
       - questionText:

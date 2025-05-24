@@ -7094,10 +7094,10 @@ UseEnterKey=Yes
 Verify=No
 ValidationMethod=NoConfirm
 UpperCase=Yes
-DataCaptureType=RadioButton
+DataCaptureType=ComboBox
   
 [Text]
-Position=0,0,76,20
+Position=0,0,44,16
 Text=QB240
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
@@ -8136,10 +8136,10 @@ UseEnterKey=Yes
 Verify=No
 ValidationMethod=NoConfirm
 UpperCase=Yes
-DataCaptureType=RadioButton
+DataCaptureType=DropDown
   
 [Text]
-Position=0,0,59,16
+Position=0,0,44,16
 Text=QB340
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  

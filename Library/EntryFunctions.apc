@@ -5,7 +5,7 @@
   function barcodeError( alpha(5) thisbarcode )
      numeric isOK = 0, checkdig = 0, base = 26, k, z;
     { check sequence of characters }
-    if !thisbarcode in "99994":"99996" then
+    if !thisbarcode in "99994":"99996", "" then
       if pos("?",thisbarcode) & length(strip(thisbarcode)) <> 1 then
         isOK = 1;
       elseif !pos("?",thisbarcode) then

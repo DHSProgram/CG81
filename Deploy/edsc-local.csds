@@ -80,10 +80,19 @@
       "path": "..\\Superv\\RemeasEntry.ent"
     }, 
     {
+      "path": "..\\Superv\\RemeasEntry.mgf"
+    }, 
+    {
       "path": "..\\Superv\\RemeasLst.ent"
     }, 
     {
+      "path": "..\\Superv\\RemeasLst.mgf"
+    }, 
+    {
       "path": "..\\Superv\\RemeasSel.ent"
+    }, 
+    {
+      "path": "..\\Superv\\RemeasSel.mgf"
     }, 
     {
       "path": "..\\Superv\\SelectHH.ent"
@@ -122,7 +131,8 @@
       "path": "..\\Dicts\\ContSup.dcf"
     }, 
     {
-      "path": "..\\Dicts\\CONTSUP.dcf"
+      "path": "..\\Dicts\\CONTSUP.dcf", 
+      "uploadForSync": true
     }, 
     {
       "path": "..\\Dicts\\EligIndv.dcf"
@@ -175,6 +185,7 @@
   "deployment": {
     "type": "CSWeb", 
     "cswebUrl": "https://eds.ins-congo.app/api/", 
-    "ftpUrl": "ftp://"
+    "ftpUrl": "ftp://", 
+    "localFolderPath": "EDS-C III CAPI local"
   }
 }

@@ -1392,10 +1392,15 @@ preproc
 
 postproc
   if $ <> 1 then
-    skip to QH149
+    endgroup;
   endif;
 
 { @@@ Begin Mosquito nets section for malaria module }
+PROC QHSEC03_FORM
+preproc
+  if QH137 <> 1 then
+    endgroup;
+  endif;
 PROC QH139
 preproc
   { Initialize line numbers for mosquito nets }

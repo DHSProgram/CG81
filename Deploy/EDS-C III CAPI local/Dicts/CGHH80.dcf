@@ -881,7 +881,7 @@ Name=QHSEC01
 RecordTypeValue='H01'
 Required=No
 MaxRecords=50
-RecordLen=76
+RecordLen=80
 
 [Item]
 Label=Line number of member|Numéro de ligne du membre
@@ -1476,6 +1476,13 @@ Label=Pregnancy status from individual questionnaire|Statut de la grossesse à p
 Name=MLPREG_VS1
 Value=1;Yes|Oui|Si
 Value=0;No, don't know|Non, ne sait pas
+
+[Item]
+Label=Interviewer to whom individual interview was delegated
+Name=QHDELEG
+Start=77
+Len=4
+DataType=Numeric
 
 [Record]
 Label=Child Labor MICS version 01/2015

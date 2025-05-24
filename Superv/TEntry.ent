@@ -1,19 +1,80 @@
-﻿[CSPro Application]
-Version=CSPro 7.7
-Label=TENTRY
-Name=TENTRY
-AppType=DataEntry
-OperatorID=No
-ShowEndCaseDialog=No
-CAPI=Yes
-[AppCode]
-File=.\TENTRY.apc
-Include=..\Library\EntryFunctions.apc
-[Message]
-File=.\TENTRY.mgf
-[Help]
-File=.\TENTRY.qsf
-[Forms]
-File=.\TRANSMIT.fmf
-[Dictionary Types]
-Dict-Type=..\Dicts\TRANSMIT.dcf,Input,.\TRANSMIT.fmf
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "TENTRY", 
+  "label": "TENTRY", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../Dicts/TRANSMIT.dcf", 
+      "parent": "TRANSMIT.fmf"
+    }
+  ], 
+  "forms": [
+    "TRANSMIT.fmf"
+  ], 
+  "questionText": [
+    "TENTRY.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "TENTRY.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/EntryFunctions.apc"
+    }
+  ], 
+  "messages": [
+    "TENTRY.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": false, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "mobileOnly", 
+    "centerForms": false, 
+    "createListing": true, 
+    "createLog": true, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": false, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": false
+    }, 
+    "showEndCaseMessage": false, 
+    "showOnlyDiscreteValuesInComboBoxes": false, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": true, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "none", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

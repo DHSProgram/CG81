@@ -92,7 +92,7 @@
 
     FileWrite( piffile, "[Files]" );
     FileWrite( piffile, "Application=" + prepare + "\" + AppName + ".ent" );
-    FileWrite( piffile, "InputData="   + wrkref  + "\Interv.dat" );
+    FileWrite( piffile, "InputData="   + wrkref  + "\Interv.csdb" );
 
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
@@ -116,7 +116,7 @@
     FileWrite( piffile, "InputData="   + wrkref  + "\Fieldworker.dat" );
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "OTHERS=" + wrkref + "\OthersFW.dat" );
-    FileWrite( piffile, "INTERV=" + wrkref + "\Interv.dat" );
+    FileWrite( piffile, "INTERV=" + wrkref + "\Interv.csdb" );
 
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
@@ -211,7 +211,7 @@
     FileWrite( piffile, "WriteData="   + prepare + "\reports.wrt" );
     FileWrite( piffile, "[ExternalFiles]" );
     FileWrite( piffile, "Clusters=" + wrkref + "\Clusters.dat" );
-    FileWrite( piffile, "INTERV="   + wrkref + "\Interv.dat" );
+    FileWrite( piffile, "INTERV="   + wrkref + "\Interv.csdb" );
     FileWrite( piffile, "Sampsel="  + wrkref + "\Sampsel.csdb" );
     FileWrite( piffile, "FIELDWKQ=" + wrkref + "\Fieldwork.dat" );
 

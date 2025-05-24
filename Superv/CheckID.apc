@@ -828,11 +828,12 @@ preproc
           CellValues(4) = xstring;
           CellValues(5) = yresult;
           CellValues(6) = edit("9", QVISITS);
-          CellValues(7) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
-          HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data 
+          CellValues(7) = "BLANK";
+          CellValues(8) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
+          HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data 
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
-            getmessage( 50200 );
+            // getmessage( 50200 );
             wme  = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE) );
             xii = xii + 1;               { partial case counted as incomplete }
             if QQTYPE = 1 then
@@ -1217,12 +1218,10 @@ preproc
      caseid = replace(caseid, '"', ''); // remove quotes from string returned by HTML dialog
      // check if a valid caseid was returned if so view the case otherwise quit
      if length(caseid) = 8 then
-       errmsg("%s", filename(cghh80));
        setfile(CGHH80, FileName(CGHH80), update);
        loadcase(CGHH80, caseid);
        ViewQre("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
      elseif length(caseid) = 10 then
-       errmsg("%s-%s", fnameIN, caseid);
        setfile(CGIN80, fnameIN, update);
        loadcase(CGIN80, caseid);
        ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");

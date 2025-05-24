@@ -1,85 +1,313 @@
-﻿[Dictionary]
-Version=CSPro 7.5
-Label=Transmit|Transmision
-Name=TRANSMIT
-RecordTypeStart=5
-RecordTypeLen=1
-Positions=Relative
-ZeroFill=No
-DecimalChar=Yes
-SecurityOptions=ADC8FBA0B683DFBC74EE2CC2347CC723BE601C7306E949FCBC2D7A49CE8F307B
-
-[Languages]
-EN=English
-ES=Español
-
-[Level]
-Label=Transmittal sheet|Hoja de transmision
-Name=TRANSMIT_QUEST
-
-[IdItems]
-
-[Item]
-Label=Cluster number|Numero de segmento
-Name=TCLUSTER
-Start=1
-Len=4
-ZeroFill=Yes
-
-[Record]
-Label=Transmittal sheet summary|Resumen hoja de transmision
-Name=TRECORD1
-RecordTypeValue='1'
-RecordLen=9
-
-[Item]
-Label=Number of bar codes in transmittal sheet|Numero de codigos de barra en la hoja de transmision
-Name=TBCODES
-Start=6
-Len=3
-
-[Item]
-Label=Auxiliar to display options|Auxiliar to display options
-Name=TAUXILIAR
-Start=9
-Len=1
-
-[ValueSet]
-Label=Auxiliar to display options|Auxiliar to display options
-Name=TAUXILIAR_EN
-Value=1;Add bar code|Agregar codigo de barra
-Value=2;Remove bar code|Borrar codigo de barra
-Value=9;Cancel|Cancelar
-
-[Record]
-Label=Barcode transmit record|Registro para codigo de barras
-Name=TRECORD2
-RecordTypeValue='2'
-Required=No
-MaxRecords=100
-RecordLen=14
-
-[Item]
-Label=Line number|Numero de linea
-Name=TLINE
-Start=6
-Len=3
-
-[Item]
-Label=Bar code|Codigo de barras
-Name=TBARCODE
-Start=9
-Len=5
-DataType=Alpha
-
-[Item]
-Label=More bar codes|Mas codigos de barra
-Name=TMORE
-Start=14
-Len=1
-
-[ValueSet]
-Label=More bar codes|Mas codigos de barra
-Name=TMORE_EN
-Value=1;Yes|Si
-Value=2;No|No
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "TRANSMIT", 
+  "languages": [
+    {
+      "name": "EN", 
+      "label": "English"
+    }, 
+    {
+      "name": "ES", 
+      "label": "Español"
+    }, 
+    {
+      "name": "FR", 
+      "label": "Français"
+    }
+  ], 
+  "labels": [
+    {
+      "text": "Transmit", 
+      "language": "EN"
+    }, 
+    {
+      "text": "Transmision", 
+      "language": "ES"
+    }
+  ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "adc8fba0b683dfbc74ee2cc2347cc723be601c7306e949fcbc2d7a49ce8f307b"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 5, 
+    "length": 1
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "TRANSMIT_QUEST", 
+      "labels": [
+        {
+          "text": "Transmittal sheet", 
+          "language": "EN"
+        }, 
+        {
+          "text": "Hoja de transmision", 
+          "language": "ES"
+        }
+      ], 
+      "ids": {
+        "items": [
+          {
+            "name": "TCLUSTER", 
+            "labels": [
+              {
+                "text": "Cluster number", 
+                "language": "EN"
+              }, 
+              {
+                "text": "Numero de segmento", 
+                "language": "ES"
+              }
+            ], 
+            "contentType": "numeric", 
+            "start": 1, 
+            "length": 4, 
+            "zeroFill": true
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "TRECORD1", 
+          "labels": [
+            {
+              "text": "Transmittal sheet summary", 
+              "language": "EN"
+            }, 
+            {
+              "text": "Resumen hoja de transmision", 
+              "language": "ES"
+            }
+          ], 
+          "recordType": "1", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "TBCODES", 
+              "labels": [
+                {
+                  "text": "Number of bar codes in transmittal sheet", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Numero de codigos de barra en la hoja de transmision", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 3, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "TAUXILIAR", 
+              "labels": [ { "text": "Auxiliar to display options" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "TAUXILIAR_EN", 
+                  "labels": [ { "text": "Auxiliar to display options" } ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Add bar code", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Agregar codigo de barra", 
+                          "language": "ES"
+                        }, 
+                        {
+                          "text": "Ajoutez un code barre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Remove bar code", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Borrar codigo de barra", 
+                          "language": "ES"
+                        }, 
+                        {
+                          "text": "Supprimez un code barre", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Voir list des codes barres saisis", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "Cancel", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Cancelar", 
+                          "language": "ES"
+                        }, 
+                        {
+                          "text": "Annuler", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }, 
+        {
+          "name": "TRECORD2", 
+          "labels": [
+            {
+              "text": "Barcode transmit record", 
+              "language": "EN"
+            }, 
+            {
+              "text": "Registro para codigo de barras", 
+              "language": "ES"
+            }
+          ], 
+          "recordType": "2", 
+          "occurrences": {
+            "required": false, 
+            "maximum": 100
+          }, 
+          "items": [
+            {
+              "name": "TLINE", 
+              "labels": [
+                {
+                  "text": "Line number", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Numero de linea", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 3, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "TBARCODE", 
+              "labels": [
+                {
+                  "text": "Bar code", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Codigo de barras", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "alpha", 
+              "length": 5
+            }, 
+            {
+              "name": "TMORE", 
+              "labels": [
+                {
+                  "text": "More bar codes", 
+                  "language": "EN"
+                }, 
+                {
+                  "text": "Mas codigos de barra", 
+                  "language": "ES"
+                }
+              ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "TMORE_EN", 
+                  "labels": [
+                    {
+                      "text": "More bar codes", 
+                      "language": "EN"
+                    }, 
+                    {
+                      "text": "Mas codigos de barra", 
+                      "language": "ES"
+                    }
+                  ], 
+                  "values": [
+                    {
+                      "labels": [
+                        {
+                          "text": "Yes", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Si", 
+                          "language": "ES"
+                        }, 
+                        {
+                          "text": "Oui", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [
+                        {
+                          "text": "No", 
+                          "language": "EN"
+                        }, 
+                        {
+                          "text": "Non", 
+                          "language": "FR"
+                        }
+                      ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

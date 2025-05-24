@@ -416,11 +416,6 @@ Len=2
 ItemType=SubItem
 DataType=Numeric
 
-[ValueSet]
-Label=End of household interview (hour)|Fin de l’interview ménager (heure)
-Name=QH156H_VS1
-Value=6:22
-
 [Item]
 Label=End of household interview (minutes)|Fin de l’interview ménager (minutes)
 Name=QH156M

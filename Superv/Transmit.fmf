@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.3
+Version=CSPro 8.0
 Name=Transmit_FF
 Label=Transmit
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -12,6 +12,7 @@ File=..\Dicts\Transmit.dcf
 [Form]
 Name=FORM000
 Label=Transmit questionnaire
+QuestionTextHeight=244
 Level=1
 Size=584,1036
   
@@ -32,7 +33,6 @@ Required=Yes
 Name=Transmit_QUEST_FORM
 Label=Transmit questionnaire
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
@@ -42,6 +42,7 @@ Item=TCLUSTER,TRANSMIT
 UseEnterKey=Yes
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -55,6 +56,7 @@ Position=393,23,436,43
 Item=TBCODES,TRANSMIT
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -607,6 +609,7 @@ Item=TLINE,TRANSMIT
 UseEnterKey=Yes
 Protected=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Position=0,0,81,16
@@ -627,6 +630,7 @@ Position=0,0,71,20
 Item=TBARCODE,TRANSMIT
 UseEnterKey=Yes
 UpperCase=Yes
+DataCaptureType=TextBox
   
 [Text]
 Text=Bar code

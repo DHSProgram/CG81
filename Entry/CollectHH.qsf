@@ -2051,9 +2051,9 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p><span class="instruction">Do you want to enter biomarker measurements for ~~QMNAME~~?</span></p>
+            <p><span style="color: rgb(0, 0, 255);">Voulez-vous saisir des mesures de biomarqueurs pour ~~QWNAME~~ ?</span></p>
           FR: |
-            <font color="#0000ff">Voulez-vous saisir des mesures de biomarqueurs pour ~~QMNAME~~ ?</font><p></p>
+            <font color="#0000ff">Voulez-vous saisir des mesures de biomarqueurs pour ~~QWNAME~~ ?</font><p></p>
   - name: CGHH80.QB203
     conditions:
       - questionText:
@@ -2342,6 +2342,13 @@ questions:
       - questionText:
           EN: |
             <p><span class="instruction">RECORD LINE NUMBER OF WOMAN</span></p>
+  - name: CGHH80.QMAUXIL
+    conditions:
+      - questionText:
+          EN: |
+            <span style="color: rgb(0, 0, 255);">Voulez-vous saisir des mesures de biomarqueurs pour ~~QMNAME~~ ?</span><p></p>
+          FR: |
+            <span style="color: rgb(0, 0, 255);">Voulez-vous saisir des mesures de biomarqueurs pour ~~QMNAME~~ ?</span><p></p>
   - name: CGHH80.QB303
     conditions:
       - questionText:

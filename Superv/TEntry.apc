@@ -53,9 +53,9 @@ postproc
 
 PROC TAUXILIAR
   n = totocc( TRECORD2_ROSTER );
-  if $ = 1 then                       { add a new household }
+  if $ = 1 then                       { add a new barcode }
     advance to TLINE(n+1);
-  elseif $ = 2 then                   { delete a household }
+  elseif $ = 2 then                   { delete a barcode }
     if n = 0 then
       errmsg( 0005 );
       reenter
@@ -63,7 +63,15 @@ PROC TAUXILIAR
       set attributes( TLINE ) autoskip;
       set attributes( TBARCODE, TMORE ) protect;
     endif;
-  elseif n = 0 then                   { exit household listing }
+  elseif $ = 3 then { generate report }
+    array string barcodes(100,2);
+	do i = 1 until i > totocc(TRECORD2_ROSTER)
+	  barcodes(i,1) = edit("99", i);
+	  barcodes(i,2) = TBARCODE(i);
+	enddo;
+    showarray(tr("Barcodes"), barcodes, title(tr("Index"), tr("Barcode")));
+    reenter;
+  elseif n = 0 then                   { exit barcode listing }
     stop(-1)
   else
     advance to TLINE(n+1);
@@ -103,11 +111,17 @@ postproc
   TBCODES = curocc();
 
 PROC TBARCODE
+  
+onfocus
+    $ = barcode.read();
+    noinput;
+  
+postproc
   { check for duplicates }
   n = curocc();
   for i in TRECORD2_ROSTER do
     if TLINE <> TLINE(n) & $ = $(n) then
-      errmsg( 0485, i );
+      // errmsg( 0485, $, i );
       reenter
     endif;
   enddo;

@@ -397,15 +397,15 @@ questions:
       - logic: curocc() in 1
         questionText:
           EN: |
-            <p>215. Think back to your first pregnancy. Was that a single pregnancy, twins, or triplets?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~</font></i></p><p>215. Think back to your first pregnancy. Was that a single pregnancy, twins, or triplets?</p>
           FR: |
-            <p>215-~~Q215L~~.  Rappelez-vous de votre première grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~</font></i></p><p>215-~~Q215L~~.  Rappelez-vous de votre première grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
             <p>215. Think back to your next pregnancy. Was that a single pregnancy, twins, or triplets?</p>
           FR: |
-            <p>215-~~Q215L~~.  Rappelez-vous de votre suivante grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>215-~~Q215L~~.  Rappelez-vous de votre suivante grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
   - name: CGIN80.Q216
     conditions:
       - logic: Q215 = 1
@@ -413,26 +413,26 @@ questions:
           EN: |
             <p>216. Was the baby born alive, born dead, or did you have a miscarriage or abortion?</p>
           FR: |
-            <p>216-~~Q215L~~.  Est-ce que le bébé est né vivant, mort-né ou avez-vous eu une fausse-couche ou un avortement ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>216-~~Q215L~~.  Est-ce que le bébé est né vivant, mort-né ou avez-vous eu une fausse-couche ou un avortement ?</p>
       - logic: twinnum = 1
         questionText:
           EN: |
             <p>216. Was the first baby in this pregnancy born alive or born dead?</p>
           FR: |
-            <p>216-~~Q215L~~.  Est-ce que le premier bébé de cette grossesse est né vivant ou mort ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>216-~~Q215L~~.  Est-ce que le premier bébé de cette grossesse est né vivant ou mort ?</p>
       - logic: twinnum > 1
         questionText:
           EN: |
             <p>216. Was the next baby in this pregnancy born alive or born dead?</p>
           FR: |
-            <p>216-~~Q215L~~.  Est-ce que le prochain bébé de cette grossesse est né vivant ou mort ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>216-~~Q215L~~.  Est-ce que le prochain bébé de cette grossesse est né vivant ou mort ?</p>
   - name: CGIN80.Q217
     conditions:
       - questionText:
           EN: |
             <p>217. Did the baby cry, move, or breathe?</p>
           FR: |
-            <p>217-~~Q215L~~.  Est-ce que le bébé a crié, a bougé ou respiré ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>217-~~Q215L~~.  Est-ce que le bébé a crié, a bougé ou respiré ?</p>
   - name: CGIN80.Q218
     conditions:
       - questionText:
@@ -440,14 +440,14 @@ questions:
             <p>218. What name was given to the baby?</p>
             <p><span class="instruction">RECORD NAME.</span></p>
           FR: |
-            <p>218-~~Q215L~~.  Quel nom a été donné au bébé ?</p><p><span class="instruction">INSCRIVEZ LE NOM.</span></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>218-~~Q215L~~.  Quel nom a été donné au bébé ?</p><p><span class="instruction">INSCRIVEZ LE NOM.</span></p>
   - name: CGIN80.Q219
     conditions:
       - questionText:
           EN: |
             <p>219. Is ~~Q218~~ a boy or a girl?</p>
           FR: |
-            <p>219-~~Q215L~~.  ~~Q218(curocc())~~ est-il un garçon ou une fille&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>219-~~Q215L~~.  ~~Q218(curocc())~~ est-il un garçon ou une fille&nbsp;?</p>
   - name: Q220_BLOCK
     conditions:
       - logic: pregtype = 0
@@ -455,13 +455,13 @@ questions:
           EN: |
             <p>220. On what day, month, and year did this pregnancy end?</p>
           FR: |
-            <p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année, cette grossesse s'est-elle terminée ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année, cette grossesse s'est-elle terminée ?</p>
       - logic: pregtype = 1
         questionText:
           EN: |
             <p>220. On what day, month, and year was ~~Q218~~ born?</p>
           FR: |
-            <p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année ~~Q218(curocc())~~ est-il/elle né(e) ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année ~~Q218(curocc())~~ est-il/elle né(e) ?</p>
   - name: CGIN80.Q220D
     conditions:
       - questionText:
@@ -489,7 +489,7 @@ questions:
           EN: |
             <p>221. How long did this pregnancy last in weeks or months?</p>
           FR: |
-            <p>221-~~Q215L~~.  Combien de semaines ou de mois cette grossesse a-t-elle durée ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>221-~~Q215L~~.  Combien de semaines ou de mois cette grossesse a-t-elle durée ?</p>
   - name: CGIN80.Q221N
     conditions:
       - questionText:
@@ -511,7 +511,7 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
-            <p>222--~~Q215L~~.  Avez-vous eu une grossesse qui s'est terminée avant de la dernière&nbsp; &nbsp; &nbsp; grossesse que vous avez mentionnée ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>222-1. Y a-t-il eu d'autres grossesses avant cette grossesse ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
@@ -541,7 +541,7 @@ questions:
           EN: |
             <p>224. Is ~~Q218(QPLINE)~~ still alive?</p>
           FR: |
-            <p>224-~~QPLINE~~.  ~~Q218(curocc())~~ est-il/elle encore en vie&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>224-~~QPLINE~~.  ~~Q218(curocc())~~ est-il/elle encore en vie&nbsp;?</p>
   - name: CGIN80.Q225
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -550,21 +550,21 @@ questions:
             <p>225. How old was ~~Q218(QPLINE)~~ at his last birthday?</p>
             <p><span class="instruction">RECORD AGE IN COMPLETED YEARS.</span></p>
           FR: |
-            <p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
       - logic: Q219(QPLINE) = 2
         questionText:
           EN: |
             <p>225. How old was ~~Q218(QPLINE)~~ at her last birthday?</p>
             <p><span class="instruction">RECORD AGE IN COMPLETED YEARS.</span></p>
           FR: |
-            <p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
   - name: CGIN80.Q226
     conditions:
       - questionText:
           EN: |
             <p>226. Is ~~Q218(QPLINE)~~ living with you?</p>
           FR: |
-            <p>226-~~QPLINE~~.  ~~Q218(curocc())~~ vit-il/elle avec vous&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>226-~~QPLINE~~.  ~~Q218(curocc())~~ vit-il/elle avec vous&nbsp;?</p>
   - name: CGIN80.Q227
     conditions:
       - questionText:
@@ -572,7 +572,7 @@ questions:
             <p><span class="instruction">227. RECORD HOUSEHOLD LINE NUMBER OF CHILD (~~Q218(QPLINE)~~)</span></p>
             <p><span class="instruction">RECORD '0' IF CHILD NOT LISTED IN HOUSEHOLD.</span></p>
           FR: |
-            <p><font color="#0000ff">227-~~QPLINE~~</font><span style="color: rgb(0, 0, 255);">. ENREGISTRER LE NUMÉRO DE LIGNE DU MÉNAGE DE L’ENFANT (~~Q218(QPLINE)~~)</span></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ « 0 » SI L’ENFANT N’EST PAS INSCRIT DANS LE MÉNAGE.</span></p><p></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i><font color="#0000ff"></font></p><p><font color="#0000ff">227-~~QPLINE~~</font><span style="color: rgb(0, 0, 255);">. ENREGISTRER LE NUMÉRO DE LIGNE DU MÉNAGE DE L’ENFANT (~~Q218(QPLINE)~~)</span></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ « 0 » SI L’ENFANT N’EST PAS INSCRIT DANS LE MÉNAGE.</span></p><p></p>
   - name: Q228_BLOCK
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -580,13 +580,13 @@ questions:
           EN: |
             <p>228. How old was ~~Q218(QPLINE)~~ when he died?</p>
           FR: |
-            <p>228a-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand il est décédé ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>228a-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand il est décédé ?</p>
       - logic: Q219(QPLINE) = 2
         questionText:
           EN: |
             <p>228. How old was ~~Q218(QPLINE)~~ when she died?</p>
           FR: |
-            <p>228b-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand elle est décédé ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>228b-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand elle est décédé ?</p>
   - name: CGIN80.Q228N
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -1988,7 +1988,7 @@ questions:
             <p>502. Now I would like to ask some questions about vaccinations received by your children born in the last 3 years.</p>
             <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
           FR: |
-            <p>486.  Je voudrais maintenant vous poser des questions sur la santé de vos enfants nés dans les 3 dernières années.</p><p><span style="color: rgb(0, 0, 255);">ENREGISTRER L'UNIT</span><span style="color: rgb(0, 0, 255);">É</span></p>
+            <p>502.  Je voudrais maintenant vous poser des questions sur la santé de vos enfants nés dans les 3 dernières années.</p><p><br></p>
       - logic: pregvacc > 1
         questionText:
           EN: |
@@ -2058,42 +2058,22 @@ questions:
             <p><span class="instruction">RECORD '44' IN 'DAY' COLUMN IF CARD SHOWS THAT A DOSE WAS GIVEN, BUT NO DATE IS RECORDED.  RECORD '00&quot; IN 'DAY' COLUMN IF CARD IS BLANK FOR THE DOSE</span></p>
             <p><span class="instruction">BCG DAY</span></p>
           FR: |
-            <table border="0" cellpadding="0" cellspacing="0" width="534" style="width: 402pt;"><p>
-             <colgroup><col width="16" span="16" style="width:12pt">
-             <col width="10" span="2" style="mso-width-source:userset;mso-width-alt:426;
-             width:8pt">
-             <col width="16" span="15" style="width:12pt">
-             <col width="18" style="mso-width-source:userset;mso-width-alt:768;width:14pt">
-             </colgroup><tbody><tr height="15" style="height:11.25pt">
-              <td colspan="34" height="15" class="xl70" width="534" style="height:11.25pt;
-              width:402pt"><font color="#0000ff">RECOPIEZ LES DATES DES VACCINATIONS DU CARNET DE ~~Q503N~~.</font></td>
-             </tr>
-             <tr height="15" style="mso-height-source:userset;height:11.25pt">
-              <td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
-              width:402pt"><font color="#0000ff">INSCRIVEZ ‘44' DANS LA COLONNE ‘JOUR' SI LE CARNET MONTRE QU'UNE
-              DOSE A ÉTÉ DONNÉE MAIS QUE LA DATE N'A PAS ÉTÉ ENREGISTRÉE. INSCRIVEZ '00'
-              DANS LA COLONNE 'JOUR' SI LA CARTE EST VIDE POUR LA DOSE.</font></td></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
-              width:402pt"><font color="#0000ff">~~vaccstr~~</font></td></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><td colspan="34" rowspan="3" height="45" class="xl71" width="534" style="height:33.75pt;
-              width:402pt"><font color="#0000ff"><br></font></td>
-             </tr>
-             <tr height="15" style="mso-height-source:userset;height:11.25pt">
-             </tr>
-             <tr height="15" style="mso-height-source:userset;height:11.25pt">
-             </tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><br></tr></tbody></p><p><tbody><tr height="15" style="mso-height-source:userset;height:11.25pt"><br></tr></tbody></p></table><p></p>
+            <p></p><p>
+             </p><p></p><p></p><p></p><p></p><p></p><p></p><span style="color: rgb(0, 0, 255);">RECOPIEZ LES DATES DES VACCINATIONS DU CARNET DE ~~Q503N~~.</span><p></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ ‘44' DANS LA COLONNE ‘JOUR' SI LE CARNET MONTRE QU'UNE DOSE A ÉTÉ DONNÉE MAIS QUE LA DATE N'A PAS ÉTÉ ENREGISTRÉE. INSCRIVEZ '00' DANS LA COLONNE 'JOUR' SI LA CARTE EST VIDE POUR LA DOSE.</span></p><p><span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><span style="color: rgb(0, 0, 255);"></span></p><p><span style="color: rgb(0, 0, 255);">JOUR</span><span style="color: rgb(0, 0, 255);"><br></span><span style="color: rgb(0, 0, 255);"><br></span></p><p></p><p></p><p></p><p></p><p></p><p></p>
   - name: CGIN80.M509B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">BCG MONTH</span></p>
           FR: |
-            <span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><p></p>
+            <p><span style="color: rgb(0, 0, 255);">~~vaccstr~~</span></p><p><span style="color: rgb(0, 0, 255);"><br></span></p><p><span style="color: rgb(0, 0, 255);">MOIS</span><p></p></p>
   - name: CGIN80.Y509B
     conditions:
       - questionText:
           EN: |
             <p><span class="instruction">BCG YEAR</span></p>
           FR: |
-            <span style="color: rgb(0, 0, 255);">~~vaccstr~~</span><p></p>
+            <p><span style="color: rgb(0, 0, 255);">~~vaccstr~~</span></p><p><span style="color: rgb(0, 0, 255);"><br></span></p><p><span style="color: rgb(0, 0, 255);">ANNÉE</span><p></p></p>
   - name: Q509H_BLOCK
     conditions:
       - questionText:
@@ -3520,7 +3500,7 @@ questions:
             <p>Please do not answer 'yes' for any food or ingredient only used in a small amount to add flavor to a dish.</p>
             <p><span class="instruction">(After reading, click Enter or the advance button to continue)</span></p>
           FR: |
-            <p>643.  Je voudrais vous demander maintenant quels aliments et quelles boissons vous avez consommés hier durant le jour ou la nuit, que ce soit à la maison ou quelque part d'autre. Veuillez inclure des gouters ou petits repas ainsi que des repas principaux.</p><p>Je vais vous poser des questions sur différents aliments et boissons, et je voudrais savoir si votre enfant a mangé cet aliment même s'il était mélangé à d'autres aliments.  </p><p>Ne répondez pas ‘oui’ pour un aliment ou un ingrédient utilisé en petite quantité que pour ajouter du gout à un plat.</p><p><span class="instruction">(Après avoir lu, cliquez sur Entrée ou sur le bouton d’avance pour continuer)</span></p><p><br></p>
+            <p>643.Je voudrais vous demander maintenant quels aliments et quelles boissons vous avez consommés hier durant le jour ou la nuit, que ce soit à la maison ou quelque part d'autre. Veuillez inclure des gouters ou collations ou petits repas ainsi que des repas principaux.</p><p>Je vais vous poser des questions sur différents aliments et boissons, et je voudrais savoir si vous avez mangé un aliment même s'il était mélangé à d'autres aliments.&nbsp;&nbsp;</p><p>Ne répondez pas ‘oui’ pour un aliment ou un ingrédient utilisé uniquement en petite quantité pour ajouter du goût à un plat.</p><div><span style="color: rgb(0, 0, 255);">(Après avoir lu, cliquez sur Entrée ou sur le bouton d’avance pour continuer)</span></div><p><br></p>
   - name: Q643_BLOCK
     conditions:
       - questionText:
@@ -5302,7 +5282,7 @@ questions:
     conditions:
       - questionText:
           FR: |
-            <p><font color="#0000ff">LISEZ LEURS NOMS À L'ENQUÊTÉE</font></p><p><br></p><table class="table table-bordered"><tbody><tr><td>1</td><td>~~QMM01N(1)~~</td><td>11</td><td>~~QMM01N(1)~~</td></tr><tr><td>2</td><td>~~QMM01N(2)~~</td><td>12</td><td>~~QMM01N(1)~~</td></tr><tr><td>3</td><td>~~QMM01N(3)~~</td><td>13</td><td>~~QMM01N(1)~~</td></tr><tr><td>4</td><td>~~QMM01N(4)~~</td><td>14</td><td>~~QMM01N(1)~~</td></tr><tr><td>5</td><td>~~QMM01N(5)~~</td><td>15</td><td>~~QMM01N(1)~~</td></tr><tr><td>6</td><td>~~QMM01N(6)~~</td><td>16</td><td>~~QMM01N(1)~~</td></tr><tr><td>7</td><td>~~QMM01N(7)~~</td><td>17</td><td>~~QMM01N(1)~~</td></tr><tr><td>8</td><td>~~QMM01N(8)~~</td><td>18</td><td>~~QMM01N(1)~~</td></tr><tr><td>9</td><td>~~QMM01N(19~~</td><td>19</td><td>~~QMM01N(1)~~</td></tr><tr><td>10</td><td>~~QMM01N(1)~~</td><td>20</td><td>~~QMM01N(1)~~</td></tr></tbody></table><p><br></p><p><font color="#0000ff">APRÈS LE DERNIER, DEMANDEZ:</font></p><p>Y a-t-il d'autres frères et soeurs de la même mère que vous n'avez pas cités ?&nbsp;&nbsp;</p><p></p><p></p>
+            <p><font color="#0000ff">LISEZ LEURS NOMS À L'ENQUÊTÉE</font></p><p>&nbsp;~~sibling_names~~&nbsp;</p><p><span style="color: rgb(0, 0, 255);">APRÈS LE DERNIER, DEMANDEZ:</span></p><p>Y a-t-il d'autres frères et soeurs de la même mère que vous n'avez pas cités ?&nbsp;&nbsp;</p><p></p><p></p>
   - name: CGIN80.QMM04
     conditions:
       - questionText:
@@ -5325,11 +5305,16 @@ questions:
             QMM08.&nbsp;Juste pour être sûre que j'ai le bon résultat : Votre mère a eu ~~QMM07~~&nbsp;&nbsp;naissances, sans vous compter, durant sa vie. Est-ce correct ?<p></p>
   - name: CGIN80.QMM01
     conditions:
-      - questionText:
+      - logic: curocc() = 1
+        questionText:
           EN: |
-            <p><span class="instruction">MM01.</span>&nbsp;Please tell me, from the siblings you have listed, which order number is ~~QMM01N(curocc())~~?<br></p><p><br></p><p><br>~~SIBLING_NAMES~~<p></p></p><p><br></p><p><br></p>
+            <p><span class="instruction">MM01.</span>&nbsp;Please tell me, from the siblings you have listed, wh</p><p><br>~~SIBLING_NAMES~~</p><p></p><p></p><p><br></p><p><br></p>
           FR: |
-            <p>S’il vous plaît dites-moi, quel frère ou sœur est né en premier? Et lequel est né ensuite ?</p><p>(~~QMM01N(curocc())~~)</p><p><span class="instruction">ENREGISTREZ '01' POUR LE NUMÉRO D'ORDRE POUR LE PREMIER FRÈRE OU LA PREMIÈRE SŒUR, '02' POUR LE SECOND, ET AINSI DE SUITE JUSQU’À CE QUE VOUS AYEZ ENREGISTRÉ LE NUMÉRO DE L'ORDRE POUR TOUS LES FRÈRES ET SŒURS.</span></p><p></p>
+            <p>S’il vous plaît dites-moi, quel frère ou sœur est né en premier ?</p><p><span style="color: rgb(0, 0, 255);">ENREGISTREZ '01' POUR LE NUMÉRO D'ORDRE POUR LE PREMIER FRÈRE OU LA PREMIÈRE SŒUR, '02' POUR LE SECOND, ET AINSI DE SUITE JUSQU’À CE QUE VOUS AYEZ ENREGISTRÉ LE NUMÉRO DE L'ORDRE POUR TOUS LES FRÈRES ET SŒURS.</span></p><p></p>
+      - logic: curocc() > 1
+        questionText:
+          FR: |
+            <p><span style="color: rgb(99, 99, 99);">~~curocc()~~ i</span><font color="#636363">ème</font><span style="color: rgb(99, 99, 99);">&nbsp;</span><span style="color: rgb(99, 99, 99);">FRÈRE OU SŒUR</span></p><p>Et lequel est né ensuite ?</p><p></p><p><span style="color: rgb(0, 0, 255);">ENREGISTREZ '01' POUR LE NUMÉRO D'ORDRE POUR LE PREMIER FRÈRE OU LA PREMIÈRE SŒUR, '02' POUR LE SECOND, ET AINSI DE SUITE JUSQU’À CE QUE VOUS AYEZ ENREGISTRÉ LE NUMÉRO DE L'ORDRE POUR TOUS LES FRÈRES ET SŒURS.</span></p><p><br></p><p></p>
   - name: CGIN80.QMM11
     conditions:
       - questionText:
@@ -5379,7 +5364,7 @@ questions:
             <p>QMM18. How old was ~~QMM13N~~ when she died?</p>
             <p><span class="instruction">IF DON'T KNOW, PROBE AND ASK ADDITIONAL QUESTIONS TO GET AN ESTIMATE.</span></p>
           FR: |
-            <p>QMM18. Quel âge avait ~~QMM13N~~&nbsp;lorsqu'elle est décédée ?</p><p>SI VOUS NE SAVEZ PAS, POSEZ DES QUESTIONS SUPPLÉMENTAIRES POUR OBTENIR UNE ESTIMATION.<br></p><p></p>
+            <p>QMM18. Quel âge avait ~~QMM13N~~&nbsp;lorsqu'elle est décédée ?</p><p><font color="#0000ff">SI VOUS NE SAVEZ PAS, POSEZ DES QUESTIONS SUPPLÉMENTAIRES POUR OBTENIR UNE ESTIMATION.</font><br></p><p></p>
   - name: CGIN80.QMM19
     conditions:
       - questionText:

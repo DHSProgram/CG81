@@ -898,6 +898,12 @@ PROC GLOBAL
       setFile(INTERV, IntervFname, update);
       SyncData(GET, INTERV);
       close(INTERV);
+      // get CONTSUP data for troubleshooting
+      setfile(CONTSUP, wrkref + "\SUPERV" + edit("9999",SupCode) + ".csdb", update);
+      if FileExist(FileName(CONTSUP)) then
+        SyncData(PUT, CONTSUP);
+      endif;
+      close(CONTSUP);
       syncdisconnect();
     endif;
     if DataOK then 
@@ -1488,6 +1494,35 @@ PROC GLOBAL
     enddo;
   end;
 
+  { prepares PIF file to enter transmittal sheet }
+  function tentry( ttype )
+    InitPff();
+
+    FileWrite( piffile, "StartMode=ADD;" + strcluster );
+    FileWrite( piffile, "Lock=Modify, Verify" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+    FileWrite( piffile, "ShowInApplicationListing=Never" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + superv + "\" + AppName + ".ent" );
+    if  ttype = 1 then
+      FileWrite( piffile, "InputData=" + wrkref + "\TransmitH" + xsuperv + ".csdb" );
+    else
+      FileWrite( piffile, "InputData=" + wrkref + "\TransmitM" + xsuperv + ".csdb" );
+    endif;
+    FileWrite( piffile, "Listing=" + superv + "\T" + strcluster + ".lst" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+
+    FileWrite( piffile, "[Parameters]" );
+    { customize parameters for different types of data entry modes }
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + strcluster );
+    FileWrite( piffile, "OnExit=.\SupMenu.pff" );
+    close( piffile );
+  end;
+
 PROC FL_MENU
 PreProc
   if debug then
@@ -1848,6 +1883,7 @@ onfocus
     codes.add( "8 Transférer des données au bureau central",08);
     codes.add( "9 Lister des notes de la grappe",09);
     codes.add( "R Remesure de la taille et du poids",11);
+    codes.add( "A Entrez la feuille de transmission du test",15);
     codes.add( "I ---Menu re-interview---",12);
     codes.add( "C Changer de numéro de grappe",13);
     codes.add( "D ---Autre------",14);
@@ -2124,6 +2160,10 @@ postproc
   //   endrecode;
   //   savesetting("Language", getlanguage());
   //   reenter;
+  elseif action in 15 then       { enter transmittal sheet }
+      AppName = "Tentry";
+      tentry( 1 );
+      RunPFFS();
   elseif action = 14 then      { diagnostic tools to view logs }
     option = accept ("Other options",
                 "1. Split a HOUSEHOLD",

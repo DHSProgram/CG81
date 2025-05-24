@@ -18,4 +18,11 @@ language = ES
  9994 E Special answers inconsistent
  9980 E Please select from the categories within the major groups
  
- 
+language = FR
+0001 Grappe %04d introuvable dans le fichier de plan d'échantillonnage
+0005 Aucun code-barres à supprimer. Choisir une autre option.
+0485 Code-barres %s dupliqué avec celui de la ligne numéro %d.
+0486 Numéro de ligne non valide ; il est attendu %d.
+0494 Pour les codes manquants, mettre un «?» en première position uniquement (%5s).
+0495 Séquence de caractères non valide dans le code-barres (%5s).
+0496 Champ de contrôle non valide (dernier caractère) pour le code-barres (%5s).

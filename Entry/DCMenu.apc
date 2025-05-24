@@ -13,7 +13,7 @@
   string  backup;                        { SD card for backup }
   string  temp;                        { directory where data collected by supervisor (acting as interviewer) is transferred to his/her machine }
   string  btsup, btwork, btsamp;           { directories used by the client/server applications to send/receive data via bluetooth }
-  string  fpath, fname, work, dicts, entry, utility, wrkref, upgrades, SampData, SampApps, images, receive, pilotdata, audiodata, quizdata;
+  string  fpath, fname, work, dicts, entry, utility, wrkref, upgrades, SampData, SampApps, images, receive, pilotdata, audiodata, quizdata, library;
   string     fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and INDIVIDUAL dictionaries }
   string  quest;
   string  chkfile;
@@ -479,6 +479,11 @@
           caselist(ctr,4) = maketext("%04d", ZOWNER );
           caselist(ctr,5) = ZQTYPEA;
           caselist(ctr,6) = ZSTATUS;
+          if ZDELEG then
+            caselist(ctr,7) = edit("9999", ZDELEG );
+          else
+            caselist(ctr,7) = "-"
+          endif;
         elseif seltype = 5 then                                       // delegation
           if ZSTATUSC = 0 | ZDELEG then // delegated or not started 
           inc(ctr);
@@ -811,12 +816,12 @@
       SetAssignFile = x;
     end;
     function SendFiles ();
-        SmartPut(data, "?" + xfilenum + "*.DAT", temp);
-        SmartPut(data, "?" + xfilenum + "*.dat", temp);
+        SyncFile(PUT, data + "/?" + xfilenum + "*.DAT", temp);
+        SyncFile(PUT, data + "/?" + xfilenum + "*.dat", temp);
+        SyncFile(PUT, data + "/?" + xfilenum + "*.csnot", temp);
+        SyncFile(PUT, data + "/?" + xfilenum + "*.dat.sts", temp);
+        SyncFile(PUT, data + "/?" + xfilenum + "*.DAT.sts", temp);
         SmartPut(data, "?" + xfilenum + "*.cslog", temp);
-        SmartPut(data, "?" + xfilenum + "*.csnot", temp);
-        SmartPut(data, "?" + xfilenum + "*.dat.sts", temp);
-        SmartPut(data, "?" + xfilenum + "*.DAT.sts", temp);
         SmartPut(pictures, pictures + "P" + xcluster + "*.jpg", temp);
         // // send FW interview data files
         // fname = data + "\F*" + edit("9999", WINTNUM) + ".DAT";
@@ -847,7 +852,8 @@
           SyncFile(GET, wrkprj + "/Entry/*.pff", PathName(Application));
           SyncFile(GET, wrkprj + "/Entry/*.pen", PathName(Application));
           SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
-          SyncFile(GET, wrkprj + "/Library/*.*", wrkprj + "/Library");
+          SyncFile(GET, wrkprj + "/Entry/*.fmf", PathName(Application));
+          SyncFile(GET, wrkprj + "/Library/*.*", library);
           SyncFile(GET, wrkref + "/version.txt", wrkref);
 
           // sync INTERV and CLUSTERS
@@ -1393,6 +1399,7 @@ PreProc
     utility  = wrkprj + "/Utility";   { all utilities used by the system }
     upgrades = wrkprj + "/Upgrades";  { upgrades sent by supervisors are stored here }
     wrkref   = wrkpii + "/Ref";       { reference directory for clusters, sample and teams files  }
+    library  = wrkpii + "/library";   { shared files }
     data     = wrkpii + "/Data" ;     { where data is stored }
     images   = wrkprj + "/Images";     { images  }
     temp     = wrkpii + "/Temp" ;     { used for several purposes but specially to store temporary data }
@@ -1417,6 +1424,7 @@ PreProc
     ChkDir( work );    
     ChkDir( upgrades ); 
     ChkDir( wrkref );  
+    ChkDir( library );  
     ChkDir( data );  
     ChkDir( images );  
     ChkDir( pictures );
@@ -1729,7 +1737,7 @@ postproc
           fill_caselist(1);
           heading = tr("Select Household");
           numeric idx = showarray(heading, caselist, title ( tr("HH"), tr("Name"), tr("Int."), tr("Status") , tr("Male/LS"))  );
-          WrkElig( 2, x, IntSex );
+          WrkElig( 2, tonumber( caselist(idx,1) ), IntSex );
           fill_caselist(5);
           while 1 do
             idx = showarray(tr("Individuals to delegate"), caselist, title ( tr("Name of head"), tr("Number"), tr("Line"), tr("Name") , tr("Type") , tr("Status"), tr("Delegated")) );
@@ -1989,7 +1997,7 @@ preproc
     fill_caselist(3);
     SaveSetting( "DCSession", "1" );
       ifok = showarray(tr( "Select INDIVIDUAL for interview" ), caselist, 
-      title ( tr("HH"), tr("Line"),tr("Name"), tr("Interviewer"),tr("Ques."), tr("Status") )  );
+      title ( tr("HH"), tr("Line"),tr("Name"), tr("Interviewer"),tr("Ques."), tr("Status"), tr("Delegation") )  );
       if ifok then
        SetEligFile(0);
        ZNUMBER = tonumber( caselist(ifok,1) );

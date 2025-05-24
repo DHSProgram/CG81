@@ -435,6 +435,7 @@ language = FR
  0505 W Les consentements saisis pour cette question (%s) ne sont pas d'accord avec les consentements donnés selon Q214-Q237 (%s)  
  1000 E Numéro de ligne du répondant incorrect: Veuillez entrer le numéro de femme %02d
  1002 W Questionnaire individuel incomplet. Vérifier le code de résultat
+ 1005 E Cet individu est délégué à un autre intervieweur (code %04d), vous ne pouvez pas ouvrir d'entretien. Pour interviewer cette personne vous devez d'abord annuler la délégation en utilisant le menu délégation.
  1030 E Le temps vécu par le répondant sur le lieu de résidence actuel (Q104=%02d) dépasse son âge actuel
  1031 W La répondante est une visiteuse, mais elle est une résidente habituelle dans le tableau du ménage ( %1d)
  1035 W Date d'emménagement au lieu de résidence actuelle incohérente avec le nombre d'années vécues dans le lieu actuel Q104=%d
