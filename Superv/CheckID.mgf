@@ -104,6 +104,7 @@ language = ES
 50151 El numero de hogares encontrados y registados(%02d) es correcto pero aun existen errores que se deben solucionar
 50164 Segmento no ha sido seleccionado para remedicion todavia
 50200 Hogar=%04d %s=%02d recolectado(a) parcialmente, no se revisara su estructura en este momento
+50202 Household=%04d individual=%02d there must be at least one record for the history of use (%d)
 50203 Hogar=%04d %s=%02d falta algun registro obligatorio
 50204 Hogar=%04d mujer=%02d registros de historia de uso (%d) inconsistente con uso alguna vez (A307=%d)
 50205 Hogar=%04d individual=%02d registros del calendario (%d) incompletos. Deben exisitir %d
@@ -197,6 +198,7 @@ Language = FR
 50165 La Grappe a été sélectionnée pour la remesure, mais quelque chose ne va pas avec l'enfant sélectionné (ménage =%04d Ligne =%02d)
 50166 Ménage =%04d Enfant %02d a été sélectionné pour la remesure, mais les données n'ont pas encore été entrées (saisies).
 50200 Le ménage=%04d %s=%02d est partiellement rempli, le contrôle de structure ne peut pas être effectué à ce moment
+50202 Ménage=%04d individu=%02d Le répondant utilise actuellement méthode %s, il devrait donc y avoir au moins un enregistrement dans le section de l'historique d'utilisation (%d)
 50203 Ménage=%04d %s=%02d : une ou plusieurs sections obligatoires sont manquantes
 50204 Ménage=%04d Questionnaire individuel=%02d: enregistrements de l'historique d'utilisation (%d) incohérents avec utilisation (Q307=%d)
 50205 Ménage=%04d Questionnaire individuel=%02d: enregistrements du calendrier (%d) incomplets. Il doit avoir %d

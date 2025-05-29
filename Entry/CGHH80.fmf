@@ -7812,6 +7812,7 @@ FieldLabelType=DictionaryName
 DataCaptureType=TextBox
   
 [Text]
+Position=0,0,44,16
 Text=QB320
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
@@ -8136,7 +8137,7 @@ UseEnterKey=Yes
 Verify=No
 ValidationMethod=NoConfirm
 UpperCase=Yes
-DataCaptureType=DropDown
+DataCaptureType=ComboBox
   
 [Text]
 Position=0,0,44,16

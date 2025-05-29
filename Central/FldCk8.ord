@@ -1,13 +1,13 @@
 ﻿[FormFile]
-Version=CSPro 7.5
-Name=CCHH80_FF
-Label=ccFldCk7
+Version=CSPro 8.0
+Name=CGHH80_FF
+Label=FldCk8
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
 Type=OperatorControlled
   
 [Dictionaries]
-File=..\Dicts\ccHH80.dcf
+File=..\Dicts\CGHH80.dcf
   
 [Form]
 Name=FORM000
@@ -15,8 +15,8 @@ Label=(Id Items)
 Level=1
 Size=300,300
   
-Item=AHCLUST
-Item=AHNUMBER
+Item=QHCLUST
+Item=QHNUMBER
   
 [EndForm]
   
@@ -24,56 +24,62 @@ Item=AHNUMBER
 Name=FORM001
 Label=Household identification
 Level=1
-Size=300,1470
+Size=300,1620
   
-Item=AHREGION
-Item=AHTYPE
-Item=AHADDRESS
-Item=AHELIGM
-Item=AHVLINE
-Item=AHVDAY
-Item=AHVMONTH
-Item=AHVYEAR
-Item=AHVHOUR
-Item=AHVMINUTE
-Item=AHVRESULT
-Item=AHINTD
-Item=AHINTM
-Item=AHINTY
-Item=AHINTNUM
-Item=AHRESULT
-Item=AHVISITS
-Item=AHCONSENT
-Item=AHMEMBER
-Item=AHWOMEN
-Item=AHMEN
-Item=AHRESP
-Item=AHTEAM
-Item=AHSUPERV
-Item=AHLANGQ
-Item=AHLANGI
-Item=AHLANGR
-Item=AHTRANS
-Item=AH100
-Item=AH100H
-Item=AH100M
-Item=AH07A
-Item=AH07B
-Item=AH07C
-Item=AHNUMDV
-Item=AHINTC
-Item=AHINTCD
-Item=AHWEIGHT
-Item=AMWEIGHT
-Item=AHSTRATA
-Item=AHWLTHF
-Item=AHWLTHI
-Item=AHWLTFUR
-Item=AHWLTIUR
-Item=AHALTIT
-Item=AHELIHEM
-Item=ACHL22
-Item=AHFINISH
+Item=QHREGION
+Item=QHTYPE
+Item=QHADDRESS
+Item=QHELIGM
+Item=QHVLINE
+Item=QHVDAY
+Item=QHVMONTH
+Item=QHVYEAR
+Item=QHVHOUR
+Item=QHVMINUTE
+Item=QHVRESULT
+Item=QHINTD
+Item=QHINTM
+Item=QHINTY
+Item=QHINTNUM
+Item=QHRESULT
+Item=QHVISITS
+Item=QHCONSENT
+Item=QHMEMBER
+Item=QHWOMEN
+Item=QHMEN
+Item=QHRESP
+Item=QHTEAM
+Item=QHSUPERV
+Item=QHLANGQ
+Item=QHLANGI
+Item=QHLANGR
+Item=QHTRANS
+Item=QH100
+Item=QH100H
+Item=QH100M
+Item=QH156
+Item=QH156H
+Item=QH156M
+Item=QH07A
+Item=QH07B
+Item=QH07C
+Item=QHNUMDV
+Item=QHINTC
+Item=QHINTCD
+Item=QHWEIGHT
+Item=QMWEIGHT
+Item=QHSTRATA
+Item=QHWLTHF
+Item=QHWLTHI
+Item=QHWLTFUR
+Item=QHWLTIUR
+Item=QHALTIT
+Item=QHELIHEM
+Item=QCHL22
+Item=QHAI1
+Item=QHAI17
+Item=QH202
+Item=QHFINISH
 Item=GHAUX
 Item=GHINTRO
 Item=GHLATITUDE
@@ -83,6 +89,7 @@ Item=GHLNGPOLE
 Item=GHALTITUDE
 Item=GHSATELLIT
 Item=GHACCURACY
+Item=QHCSPRO8
   
 [EndForm]
   
@@ -90,18 +97,18 @@ Item=GHACCURACY
 Name=FORM002
 Label=Household members list
 Level=1
-Repeat=AHSEC01X
+Repeat=QHSEC01X
 Size=300,300
   
-Item=AHLINE
-Item=AHFIRSTN
-Item=AHLASTN
-Item=AHRELAT
-Item=AHLIVES
-Item=AHSTAYED
-Item=AHSEX
-Item=AHAGE
-Item=AHMORE
+Item=QHLINE
+Item=QHFIRSTN
+Item=QHLASTN
+Item=QHRELAT
+Item=QHLIVES
+Item=QHSTAYED
+Item=QHSEX
+Item=QHAGE
+Item=QHMORE
   
 [EndForm]
   
@@ -109,437 +116,478 @@ Item=AHMORE
 Name=FORM003
 Label=Household Schedule
 Level=1
-Repeat=AHSEC01
-Size=300,1020
+Repeat=QHSEC01
+Size=300,1050
   
-Item=AH01
-Item=AH02
-Item=AH03
-Item=AH04
-Item=AH05
-Item=AH06
-Item=AH07
-Item=AH08
-Item=AH09
-Item=AH10
-Item=AH11
-Item=AH12
-Item=AH13
-Item=AH14
-Item=AH15
-Item=AH16
-Item=AH17
-Item=AH17A
-Item=AH17B
-Item=AH18
-Item=AH19
-Item=AH19A
-Item=AH19B
-Item=AH20
-Item=AH26
-Item=AH27
-Item=AH28
-Item=AH29
-Item=AH30
-Item=AH31
-Item=AH32
-Item=AH33
-Item=AH34
-Item=AH35
+Item=QH01
+Item=QH02
+Item=QH03
+Item=QH04
+Item=QH05
+Item=QH06
+Item=QH07
+Item=QH08
+Item=QH09
+Item=QH10
+Item=QH11
+Item=QH12
+Item=QH13
+Item=QH14
+Item=QH15
+Item=QH16
+Item=QH17
+Item=QH17A
+Item=QH17B
+Item=QH18
+Item=QH19
+Item=QH19A
+Item=QH19B
+Item=QH20
+Item=QH26
+Item=QH27
+Item=QH28
+Item=QH29
+Item=QH30
+Item=QH31
+Item=QH32
+Item=QH33
+Item=QH34
+Item=QH35
 Item=ML07I
 Item=ML07F
 Item=MLPREG
+Item=QHDELEG
   
 [EndForm]
   
 [Form]
 Name=FORM004
-Label=Household Characteristics
+Label=Child Labor MICS version 01/2015
 Level=1
-Size=300,1590
+Size=300,870
   
-Item=AH101
-Item=AH102
-Item=AH103
-Item=AH104
-Item=AH105
-Item=AH106
-Item=AH107
-Item=AH108
-Item=AH109
-Item=AH110
-Item=AH111
-Item=AH112
-Item=AH114
-Item=AH115
-Item=AH116
-Item=AH117
-Item=AH118
-Item=AH120
-Item=AH121
-Item=AH122
-Item=AH123
-Item=AH124
-Item=AH125
-Item=AH126
-Item=AH127
-Item=AH128
-Item=AH129A
-Item=AH129B
-Item=AH129C
-Item=AH129D
-Item=AH129E
-Item=AH129F
-Item=AH130
-Item=AH131
-Item=AH132A
-Item=AH132B
-Item=AH132C
-Item=AH132D
-Item=AH132E
-Item=AH132F
-Item=AH133A
-Item=AH133B
-Item=AH133C
-Item=AH133D
-Item=AH133E
-Item=AH133F
-Item=AH133G
-Item=AH134
-Item=AH135
-Item=AH136
-Item=AH137
-Item=AH138
+Item=QCHLINE
+Item=QCHL2A
+Item=QCHL2B
+Item=QCHL2C
+Item=QCHL2D
+Item=QCHL4
+Item=QCHL5
+Item=QCHL6
+Item=QCHL7A
+Item=QCHL7B
+Item=QCHL7C
+Item=QCHL7D
+Item=QCHL7E
+Item=QCHL7F
+Item=QCHL8
+Item=QCHL9
+Item=QCHL10
+Item=QCHL11
+Item=QCHL12A
+Item=QCHL12B
+Item=QCHL12C
+Item=QCHL12D
+Item=QCHL12E
+Item=QCHL12F
+Item=QCHL12G
+Item=QCHL14
+Item=QCHLWGT
+Item=QCHLNAME
   
 [EndForm]
   
 [Form]
 Name=FORM005
-Label=Mosquito Nets
+Label=Child discipline
 Level=1
-Repeat=AHSEC03
-Size=300,390
+Size=300,510
   
-Item=AH139
-Item=AH140
-Item=AH141
-Item=AH142
-Item=AH143
-Item=AH144
-Item=AH145
-Item=AH146A
-Item=AH146B
-Item=AH146C
-Item=AH146D
-Item=AH147
+Item=QCDI2
+Item=QCDI3A
+Item=QCDI3B
+Item=QCDI3C
+Item=QCDI3D
+Item=QCDI3E
+Item=QCDI3F
+Item=QCDI3G
+Item=QCDI3H
+Item=QCDI3I
+Item=QCDI3J
+Item=QCDI3K
+Item=QCDI4
+Item=QCDWGT
+Item=QCDINAME
+Item=QCDI3
   
 [EndForm]
   
 [Form]
 Name=FORM006
-Label=Additional household characteristics
+Label=Household Characteristics
 Level=1
-Size=300,300
+Size=300,2010
   
-Item=AH149
-Item=AH150
-Item=AH151
-Item=AH152
-Item=AH153
-Item=AH154
-Item=AH155
-Item=AH156
-Item=AH156H
-Item=AH156M
+Item=QH101
+Item=QH102
+Item=QH103
+Item=QH104
+Item=QH105
+Item=QH106
+Item=QH107
+Item=QH108
+Item=QH109
+Item=QH110
+Item=QH111
+Item=QH112
+Item=QH114
+Item=QH115
+Item=QH116
+Item=QH117
+Item=QH118
+Item=QH120
+Item=QH121
+Item=QH122
+Item=QH123
+Item=QH124
+Item=QH125
+Item=QH126
+Item=QH127
+Item=QH128
+Item=QH129A
+Item=QH129B
+Item=QH129C
+Item=QH129D
+Item=QH129E
+Item=QH129F
+Item=QH129G
+Item=QH129H
+Item=QH130
+Item=QH131
+Item=QH132A
+Item=QH132B
+Item=QH132C
+Item=QH132D
+Item=QH132E
+Item=QH132F
+Item=QH132G
+Item=QH132H
+Item=QH132I
+Item=QH132J
+Item=QH132K
+Item=QH132L
+Item=QH132M
+Item=QH132N
+Item=QH132O
+Item=QH132P
+Item=QH133A
+Item=QH133B
+Item=QH133C
+Item=QH133D
+Item=QH133E
+Item=QH133F
+Item=QH133G
+Item=QH133H
+Item=QH133I
+Item=QH134
+Item=QH135
+Item=QH136
+Item=QH137
+Item=QH138
   
 [EndForm]
   
 [Form]
 Name=FORM007
-Label=Child Labor MICS version 01/2015
+Label=Mosquito Nets
 Level=1
-Size=300,840
+Repeat=QHSEC03
+Size=300,390
   
-Item=ACHLINE
-Item=ACHL2A
-Item=ACHL2B
-Item=ACHL2C
-Item=ACHL2D
-Item=ACHL4
-Item=ACHL5
-Item=ACHL6
-Item=ACHL7A
-Item=ACHL7B
-Item=ACHL7C
-Item=ACHL7D
-Item=ACHL7E
-Item=ACHL7F
-Item=ACHL8
-Item=ACHL9
-Item=ACHL10
-Item=ACHL11
-Item=ACHL12A
-Item=ACHL12B
-Item=ACHL12C
-Item=ACHL12D
-Item=ACHL12E
-Item=ACHL12F
-Item=ACHL12G
-Item=ACHL14
-Item=ACHLNAME
+Item=QH139
+Item=QH140
+Item=QH141
+Item=QH142
+Item=QH143
+Item=QH144
+Item=QH145
+Item=QH146A
+Item=QH146B
+Item=QH146C
+Item=QH146D
+Item=QH147
   
 [EndForm]
   
 [Form]
 Name=FORM008
-Label=Child discipline
+Label=Transfers sociaux
 Level=1
-Size=300,450
+Size=300,300
   
-Item=ACDI2
-Item=ACDI3A
-Item=ACDI3B
-Item=ACDI3C
-Item=ACDI3D
-Item=ACDI3E
-Item=ACDI3F
-Item=ACDI3G
-Item=ACDI3H
-Item=ACDI3I
-Item=ACDI3J
-Item=ACDI3K
-Item=ACDI4
-Item=ACDINAME
+Item=QH148B
+Item=QH148C
+Item=QH148D
+Item=QH148DU
+Item=QH148DN
+Item=QH148E
+Item=QH148F
+Item=QH148FU
+Item=QH148FN
   
 [EndForm]
   
 [Form]
 Name=FORM009
-Label=Biomarker Identification
+Label=Additional household characteristics
 Level=1
 Size=300,300
   
-Item=ABINT
-Item=ABINTD
-Item=ABINTM
-Item=ABINTY
-Item=ABVISITS
-Item=ABCHILD
-Item=ABFINISH
-Item=ABINTC
-Item=ABINTCD
+Item=QH149
+Item=QH150
+Item=QH151
+Item=QH152
+Item=QH153
+Item=QH154
+Item=QH155
   
 [EndForm]
   
 [Form]
 Name=FORM010
-Label=Height, Weight, Hemoglobin (children)
+Label=Biomarker Identification
 Level=1
-Repeat=ABSEC01
-Size=300,1980
+Size=300,300
   
-Item=ABCOL1
-Item=AB102
-Item=AB103
-Item=AB103D
-Item=AB103M
-Item=AB103Y
-Item=AB104
-Item=AB106
-Item=AB106W
-Item=AB107
-Item=AB108
-Item=AB108W
-Item=AB109
-Item=AB110
-Item=AB111
-Item=AB112
-Item=AB113
-Item=AB114
-Item=AB115
-Item=AB115D
-Item=AB115M
-Item=AB115Y
-Item=AB118
-Item=AB120
-Item=AB121
-Item=AB122
-Item=AB122W
-Item=AB123
-Item=ABRTYPE
-Item=ABWEIGHT
-Item=ABHEIGHT
-Item=ABLYNSTN
-Item=ABRDAY
-Item=ABRMONTH
-Item=ABRYEAR
-Item=ABRMEAS
-Item=ABM112
-Item=ABM114
-Item=ABM115A
-Item=ABM115B
-Item=ABM115C
-Item=ABM115D
-Item=ABM115E
-Item=ABM115F
-Item=ABM115G
-Item=ABM115H
-Item=ABM117
-Item=ABM119
-Item=ABM122
-Item=ABM123
-Item=ABM128
-Item=ABM128D
-Item=ABM128M
-Item=ABM128Y
-Item=ACCMC
-Item=ACCDC
-Item=ACCDCM
-Item=ACFLG
-Item=ACDBR
-Item=ACMBR
-Item=ACYBR
-Item=ACMLN
-Item=ACBO
-Item=ACBI
-Item=ACED1
-Item=ACED2
-Item=ACED3
-Item=ACZSHA
-Item=ACZSWA
-Item=ACZSWH
-Item=ACZSBM
-Item=ACAGEM
-Item=ACNAME
-Item=ACAUXIL
+Item=QBINT
+Item=QBINTD
+Item=QBINTM
+Item=QBINTY
+Item=QBVISITS
+Item=QBCHILD
+Item=QBFINISH
+Item=QBINTC
+Item=QBINTCD
   
 [EndForm]
   
 [Form]
 Name=FORM011
-Label=Height, Weight, Hemoglobin (women)
+Label=Height, Weight, Hemoglobin (children)
 Level=1
-Repeat=ABSEC02
-Size=300,1590
+Repeat=QBSEC01
+Size=300,1920
   
-Item=ABCOL2
-Item=AB202
-Item=AB203
-Item=AB204
-Item=AB205
-Item=AB205W
-Item=AB206
-Item=AB207
-Item=AB207W
-Item=AB208
-Item=AB209
-Item=AB210
-Item=AB211
-Item=AB211D
-Item=AB211M
-Item=AB211Y
-Item=AB215
-Item=AB216
-Item=ABWHIV1
-Item=ABWHIV2
-Item=ABWHIV3
-Item=AB217
-Item=AB219
-Item=AB220
-Item=AB223
-Item=AB224
-Item=ABWHIV4
-Item=ABWHIV5
-Item=ABWHIV6
-Item=ABWHIV7
-Item=ABWHIV8
-Item=AB225
-Item=AB225W
-Item=AB226
-Item=ABWHIV9
-Item=AWCMC
-Item=AWFLG
-Item=AWMBR
-Item=AWYBR
-Item=AWSMK
-Item=AWPRG
-Item=AWMOS
-Item=AWBM
-Item=AWRESI
-Item=AWED1
-Item=AWED2
-Item=AWED3
-Item=AWZSHA
-Item=AWZSWA
-Item=AWZSWH
-Item=AWZSBM
-Item=AWAGEM
-Item=AWHIVWGT
-Item=AWNAME
-Item=AWAUXIL
+Item=QBCOL1
+Item=QB102
+Item=QB103
+Item=QB103D
+Item=QB103M
+Item=QB103Y
+Item=QB104
+Item=QB106
+Item=QB106W
+Item=QB107
+Item=QB108
+Item=QB108W
+Item=QB109
+Item=QB109D
+Item=QB109M
+Item=QB109Y
+Item=QB110
+Item=QB112
+Item=QB113
+Item=QB114
+Item=QB115
+Item=QB116
+Item=QB118
+Item=QB120
+Item=QB121
+Item=QB123
+Item=QB123W
+Item=QBRTYPE
+Item=QBWEIGHT
+Item=QBHEIGHT
+Item=QBLYNSTN
+Item=QBRDAY
+Item=QBRMONTH
+Item=QBRYEAR
+Item=QBRMEAS
+Item=QB124
+Item=QB125A
+Item=QB125B
+Item=QB125C
+Item=QB125D
+Item=QB125E
+Item=QB125F
+Item=QB125G
+Item=QB125H
+Item=QB127
+Item=QB128
+Item=QB131
+Item=QB132
+Item=QB135
+Item=QB135D
+Item=QB135M
+Item=QB135Y
+Item=QCCMC
+Item=QCCDC
+Item=QCCDCM
+Item=QCFLG
+Item=QCDBR
+Item=QCMBR
+Item=QCYBR
+Item=QCMLN
+Item=QCBO
+Item=QCBI
+Item=QCED1
+Item=QCED2
+Item=QCED3
+Item=QCZSHA
+Item=QCZSWA
+Item=QCZSWH
+Item=QCZSBM
+Item=QCAGEM
+Item=QCNAME
+Item=QCAUXIL
   
 [EndForm]
   
 [Form]
 Name=FORM012
+Label=Height, Weight, Hemoglobin (women)
+Level=1
+Repeat=QBSEC02
+Size=300,1740
+  
+Item=QBCOL2
+Item=QB202
+Item=QB203
+Item=QB204
+Item=QB205
+Item=QB205W
+Item=QB206
+Item=QB207
+Item=QB207W
+Item=QB208
+Item=QB209
+Item=QB210
+Item=QB211
+Item=QB211D
+Item=QB211M
+Item=QB211Y
+Item=QB214
+Item=QB215
+Item=QB216
+Item=QB217
+Item=QB219
+Item=QB220
+Item=QB221
+Item=QB222
+Item=QB223
+Item=QB226
+Item=QB227
+Item=QB228
+Item=QB229
+Item=QB231
+Item=QB232
+Item=QB234
+Item=QB235
+Item=QB237
+Item=QB238
+Item=QB239
+Item=QB240
+Item=QB241
+Item=QB242
+Item=QB241A
+Item=QB242A
+Item=QB244
+Item=QWCMC
+Item=QWFLG
+Item=QWMBR
+Item=QWYBR
+Item=QWSMK
+Item=QWPRG
+Item=QWMOS
+Item=QWBM
+Item=QWRESI
+Item=QWED1
+Item=QWED2
+Item=QWED3
+Item=QWZSHA
+Item=QWZSBM
+Item=QWAGEM
+Item=QWHIVWGT
+Item=QWNAME
+Item=QWAUXIL
+  
+[EndForm]
+  
+[Form]
+Name=FORM013
 Label=Height, Weight, Hemoglobin (men)
 Level=1
-Repeat=ABSEC03
-Size=300,1530
+Repeat=QBSEC03
+Size=300,1680
   
-Item=ABCOL3
-Item=AB302
-Item=AB303
-Item=AB304
-Item=AB305
-Item=AB305W
-Item=AB306
-Item=AB307
-Item=AB307W
-Item=AB308
-Item=AB309
-Item=AB310
-Item=AB311
-Item=AB311D
-Item=AB311M
-Item=AB311Y
-Item=AB315
-Item=AB316
-Item=ABMHIV1
-Item=ABMHIV2
-Item=ABMHIV3
-Item=AB317
-Item=AB319
-Item=AB320
-Item=AB323
-Item=AB324
-Item=ABMHIV4
-Item=ABMHIV5
-Item=ABMHIV6
-Item=ABMHIV7
-Item=ABMHIV8
-Item=AB325
-Item=AB325W
-Item=AB326
-Item=ABMHIV9
-Item=AMCMC
-Item=AMFLG
-Item=AMMBR
-Item=AMYBR
-Item=AMSMK
-Item=AMBM
-Item=AMRESI
-Item=AMED1
-Item=AMED2
-Item=AMED3
-Item=AMZSHA
-Item=AMZSWA
-Item=AMZSWH
-Item=AMZSBM
-Item=AMAGEM
-Item=AMHIVWGT
-Item=AMNAME
-Item=AMAUXIL
+Item=QBCOL3
+Item=QB302
+Item=QB303
+Item=QB304
+Item=QB305
+Item=QB305W
+Item=QB306
+Item=QB307
+Item=QB307W
+Item=QB308
+Item=QB309
+Item=QB310
+Item=QB311
+Item=QB311D
+Item=QB311M
+Item=QB311Y
+Item=QB314
+Item=QB315
+Item=QB316
+Item=QB317
+Item=QB319
+Item=QB320
+Item=QB321
+Item=QB322
+Item=QB323
+Item=QB326
+Item=QB327
+Item=QB328
+Item=QB329
+Item=QB331
+Item=QB332
+Item=QB334
+Item=QB335
+Item=QB337
+Item=QB338
+Item=QB339
+Item=QB340
+Item=QB341
+Item=QB342
+Item=QB341A
+Item=QB342A
+Item=QB344
+Item=QMCMC
+Item=QMFLG
+Item=QMMBR
+Item=QMYBR
+Item=QMSMK
+Item=QMBM
+Item=QMRESI
+Item=QMED1
+Item=QMED2
+Item=QMED3
+Item=QMZSHA
+Item=QMZSBM
+Item=QMAGEM
+Item=QMHIVWGT
+Item=QMNAME
+Item=QMAUXIL
   
 [EndForm]
   
@@ -552,2617 +600,2847 @@ Required=Yes
 Name=IDS0_EDT
 Label=(Id Items)
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
-Name=AHCLUST
-Item=AHCLUST,CCHH80
+Name=QHCLUST
+Item=QHCLUST,CGHH80
 Form=1
   
   
 [Field]
-Name=AHNUMBER
-Item=AHNUMBER,CCHH80
+Name=QHNUMBER
+Item=QHNUMBER,CGHH80
 Form=1
   
 [EndGroup]
   
 [Group]
 Required=Yes
-Name=AHSECOVER_EDT
+Name=QHSECOVER_EDT
 Label=Household identification
 Form=2
-LogicControl=No
 Type=Record
-TypeName=AHSECOVER
+TypeName=QHSECOVER
 Max=1
   
 [Field]
-Name=AHREGION
-Item=AHREGION,CCHH80
+Name=QHREGION
+Item=QHREGION,CGHH80
 Form=2
   
   
 [Field]
-Name=AHTYPE
-Item=AHTYPE,CCHH80
+Name=QHTYPE
+Item=QHTYPE,CGHH80
 Form=2
   
   
 [Field]
-Name=AHADDRESS
-Item=AHADDRESS,CCHH80
+Name=QHADDRESS
+Item=QHADDRESS,CGHH80
 Form=2
   
   
 [Field]
-Name=AHELIGM
-Item=AHELIGM,CCHH80
+Name=QHELIGM
+Item=QHELIGM,CGHH80
 Form=2
   
   
 [Group]
 Required=Yes
-Name=AHCONTVISIT000
+Name=QHCONTVISIT000
 Label=Group to control visits
 Form=2
-LogicControl=No
 Type=Item
-TypeName=AHCONTVISIT
+TypeName=QHCONTVISIT
 Max=5
   
 [Field]
-Name=AHVLINE
-Item=AHVLINE,CCHH80
+Name=QHVLINE
+Item=QHVLINE,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVDAY
-Item=AHVDAY,CCHH80
+Name=QHVDAY
+Item=QHVDAY,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVMONTH
-Item=AHVMONTH,CCHH80
+Name=QHVMONTH
+Item=QHVMONTH,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVYEAR
-Item=AHVYEAR,CCHH80
+Name=QHVYEAR
+Item=QHVYEAR,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVHOUR
-Item=AHVHOUR,CCHH80
+Name=QHVHOUR
+Item=QHVHOUR,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVMINUTE
-Item=AHVMINUTE,CCHH80
+Name=QHVMINUTE
+Item=QHVMINUTE,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVRESULT
-Item=AHVRESULT,CCHH80
+Name=QHVRESULT
+Item=QHVRESULT,CGHH80
 Form=2
   
 [EndGroup]
   
   
 [Field]
-Name=AHINTD
-Item=AHINTD,CCHH80
+Name=QHINTD
+Item=QHINTD,CGHH80
 Form=2
   
   
 [Field]
-Name=AHINTM
-Item=AHINTM,CCHH80
+Name=QHINTM
+Item=QHINTM,CGHH80
 Form=2
   
   
 [Field]
-Name=AHINTY
-Item=AHINTY,CCHH80
+Name=QHINTY
+Item=QHINTY,CGHH80
 Form=2
   
   
 [Field]
-Name=AHINTNUM
-Item=AHINTNUM,CCHH80
+Name=QHINTNUM
+Item=QHINTNUM,CGHH80
 Form=2
   
   
 [Field]
-Name=AHRESULT
-Item=AHRESULT,CCHH80
+Name=QHRESULT
+Item=QHRESULT,CGHH80
 Form=2
   
   
 [Field]
-Name=AHVISITS
-Item=AHVISITS,CCHH80
+Name=QHVISITS
+Item=QHVISITS,CGHH80
 Form=2
   
   
 [Field]
-Name=AHCONSENT
-Item=AHCONSENT,CCHH80
+Name=QHCONSENT
+Item=QHCONSENT,CGHH80
 Form=2
   
   
 [Field]
-Name=AHMEMBER
-Item=AHMEMBER,CCHH80
+Name=QHMEMBER
+Item=QHMEMBER,CGHH80
 Form=2
   
   
 [Field]
-Name=AHWOMEN
-Item=AHWOMEN,CCHH80
+Name=QHWOMEN
+Item=QHWOMEN,CGHH80
 Form=2
   
   
 [Field]
-Name=AHMEN
-Item=AHMEN,CCHH80
+Name=QHMEN
+Item=QHMEN,CGHH80
 Form=2
   
   
 [Field]
-Name=AHRESP
-Item=AHRESP,CCHH80
+Name=QHRESP
+Item=QHRESP,CGHH80
 Form=2
   
   
 [Field]
-Name=AHTEAM
-Item=AHTEAM,CCHH80
+Name=QHTEAM
+Item=QHTEAM,CGHH80
 Form=2
   
   
 [Field]
-Name=AHSUPERV
-Item=AHSUPERV,CCHH80
+Name=QHSUPERV
+Item=QHSUPERV,CGHH80
 Form=2
   
   
 [Field]
-Name=AHLANGQ
-Item=AHLANGQ,CCHH80
+Name=QHLANGQ
+Item=QHLANGQ,CGHH80
 Form=2
   
   
 [Field]
-Name=AHLANGI
-Item=AHLANGI,CCHH80
+Name=QHLANGI
+Item=QHLANGI,CGHH80
 Form=2
   
   
 [Field]
-Name=AHLANGR
-Item=AHLANGR,CCHH80
+Name=QHLANGR
+Item=QHLANGR,CGHH80
 Form=2
   
   
 [Field]
-Name=AHTRANS
-Item=AHTRANS,CCHH80
+Name=QHTRANS
+Item=QHTRANS,CGHH80
 Form=2
   
   
 [Field]
-Name=AH100
-Item=AH100,CCHH80
+Name=QH100
+Item=QH100,CGHH80
 Form=2
   
   
 [Field]
-Name=AH100H
-Item=AH100H,CCHH80
+Name=QH100H
+Item=QH100H,CGHH80
 Form=2
   
   
 [Field]
-Name=AH100M
-Item=AH100M,CCHH80
+Name=QH100M
+Item=QH100M,CGHH80
 Form=2
   
   
 [Field]
-Name=AH07A
-Item=AH07A,CCHH80
+Name=QH156
+Item=QH156,CGHH80
 Form=2
   
   
 [Field]
-Name=AH07B
-Item=AH07B,CCHH80
+Name=QH156H
+Item=QH156H,CGHH80
 Form=2
   
   
 [Field]
-Name=AH07C
-Item=AH07C,CCHH80
+Name=QH156M
+Item=QH156M,CGHH80
 Form=2
   
   
 [Field]
-Name=AHNUMDV
-Item=AHNUMDV,CCHH80
+Name=QH07A
+Item=QH07A,CGHH80
 Form=2
   
   
 [Field]
-Name=AHINTC
-Item=AHINTC,CCHH80
+Name=QH07B
+Item=QH07B,CGHH80
 Form=2
   
   
 [Field]
-Name=AHINTCD
-Item=AHINTCD,CCHH80
+Name=QH07C
+Item=QH07C,CGHH80
 Form=2
   
   
 [Field]
-Name=AHWEIGHT
-Item=AHWEIGHT,CCHH80
+Name=QHNUMDV
+Item=QHNUMDV,CGHH80
 Form=2
   
   
 [Field]
-Name=AMWEIGHT
-Item=AMWEIGHT,CCHH80
+Name=QHINTC
+Item=QHINTC,CGHH80
 Form=2
   
   
 [Field]
-Name=AHSTRATA
-Item=AHSTRATA,CCHH80
+Name=QHINTCD
+Item=QHINTCD,CGHH80
 Form=2
   
   
 [Field]
-Name=AHWLTHF
-Item=AHWLTHF,CCHH80
+Name=QHWEIGHT
+Item=QHWEIGHT,CGHH80
 Form=2
   
   
 [Field]
-Name=AHWLTHI
-Item=AHWLTHI,CCHH80
+Name=QMWEIGHT
+Item=QMWEIGHT,CGHH80
 Form=2
   
   
 [Field]
-Name=AHWLTFUR
-Item=AHWLTFUR,CCHH80
+Name=QHSTRATA
+Item=QHSTRATA,CGHH80
 Form=2
   
   
 [Field]
-Name=AHWLTIUR
-Item=AHWLTIUR,CCHH80
+Name=QHWLTHF
+Item=QHWLTHF,CGHH80
 Form=2
   
   
 [Field]
-Name=AHALTIT
-Item=AHALTIT,CCHH80
+Name=QHWLTHI
+Item=QHWLTHI,CGHH80
 Form=2
   
   
 [Field]
-Name=AHELIHEM
-Item=AHELIHEM,CCHH80
+Name=QHWLTFUR
+Item=QHWLTFUR,CGHH80
 Form=2
   
   
 [Field]
-Name=ACHL22
-Item=ACHL22,CCHH80
+Name=QHWLTIUR
+Item=QHWLTIUR,CGHH80
 Form=2
   
   
 [Field]
-Name=AHFINISH
-Item=AHFINISH,CCHH80
+Name=QHALTIT
+Item=QHALTIT,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QHELIHEM
+Item=QHELIHEM,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QCHL22
+Item=QCHL22,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QHAI1
+Item=QHAI1,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QHAI17
+Item=QHAI17,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QH202
+Item=QH202,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QHFINISH
+Item=QHFINISH,CGHH80
 Form=2
   
   
 [Field]
 Name=GHAUX
-Item=GHAUX,CCHH80
+Item=GHAUX,CGHH80
 Form=2
   
   
 [Field]
 Name=GHINTRO
-Item=GHINTRO,CCHH80
+Item=GHINTRO,CGHH80
 Form=2
   
   
 [Field]
 Name=GHLATITUDE
-Item=GHLATITUDE,CCHH80
+Item=GHLATITUDE,CGHH80
 Form=2
   
   
 [Field]
 Name=GHLATPOLE
-Item=GHLATPOLE,CCHH80
+Item=GHLATPOLE,CGHH80
 Form=2
   
   
 [Field]
 Name=GHLONGITUDE
-Item=GHLONGITUDE,CCHH80
+Item=GHLONGITUDE,CGHH80
 Form=2
   
   
 [Field]
 Name=GHLNGPOLE
-Item=GHLNGPOLE,CCHH80
+Item=GHLNGPOLE,CGHH80
 Form=2
   
   
 [Field]
 Name=GHALTITUDE
-Item=GHALTITUDE,CCHH80
+Item=GHALTITUDE,CGHH80
 Form=2
   
   
 [Field]
 Name=GHSATELLIT
-Item=GHSATELLIT,CCHH80
+Item=GHSATELLIT,CGHH80
 Form=2
   
   
 [Field]
 Name=GHACCURACY
-Item=GHACCURACY,CCHH80
+Item=GHACCURACY,CGHH80
+Form=2
+  
+  
+[Field]
+Name=QHCSPRO8
+Item=QHCSPRO8,CGHH80
 Form=2
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC01X_EDT
+Name=QHSEC01X_EDT
 Label=Household members list
 Form=3
-LogicControl=No
 Type=Record
-TypeName=AHSEC01X
+TypeName=QHSEC01X
 Max=50
   
 [Field]
-Name=AHLINE
-Item=AHLINE,CCHH80
+Name=QHLINE
+Item=QHLINE,CGHH80
 Form=3
   
   
 [Field]
-Name=AHFIRSTN
-Item=AHFIRSTN,CCHH80
+Name=QHFIRSTN
+Item=QHFIRSTN,CGHH80
 Form=3
   
   
 [Field]
-Name=AHLASTN
-Item=AHLASTN,CCHH80
+Name=QHLASTN
+Item=QHLASTN,CGHH80
 Form=3
   
   
 [Field]
-Name=AHRELAT
-Item=AHRELAT,CCHH80
+Name=QHRELAT
+Item=QHRELAT,CGHH80
 Form=3
   
   
 [Field]
-Name=AHLIVES
-Item=AHLIVES,CCHH80
+Name=QHLIVES
+Item=QHLIVES,CGHH80
 Form=3
   
   
 [Field]
-Name=AHSTAYED
-Item=AHSTAYED,CCHH80
+Name=QHSTAYED
+Item=QHSTAYED,CGHH80
 Form=3
   
   
 [Field]
-Name=AHSEX
-Item=AHSEX,CCHH80
+Name=QHSEX
+Item=QHSEX,CGHH80
 Form=3
   
   
 [Field]
-Name=AHAGE
-Item=AHAGE,CCHH80
+Name=QHAGE
+Item=QHAGE,CGHH80
 Form=3
   
   
 [Field]
-Name=AHMORE
-Item=AHMORE,CCHH80
+Name=QHMORE
+Item=QHMORE,CGHH80
 Form=3
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC01_EDT
+Name=QHSEC01_EDT
 Label=Household Schedule
 Form=4
-LogicControl=No
 Type=Record
-TypeName=AHSEC01
+TypeName=QHSEC01
 Max=50
   
 [Field]
-Name=AH01
-Item=AH01,CCHH80
+Name=QH01
+Item=QH01,CGHH80
 Form=4
   
   
 [Field]
-Name=AH02
-Item=AH02,CCHH80
+Name=QH02
+Item=QH02,CGHH80
 Form=4
   
   
 [Field]
-Name=AH03
-Item=AH03,CCHH80
+Name=QH03
+Item=QH03,CGHH80
 Form=4
   
   
 [Field]
-Name=AH04
-Item=AH04,CCHH80
+Name=QH04
+Item=QH04,CGHH80
 Form=4
   
   
 [Field]
-Name=AH05
-Item=AH05,CCHH80
+Name=QH05
+Item=QH05,CGHH80
 Form=4
   
   
 [Field]
-Name=AH06
-Item=AH06,CCHH80
+Name=QH06
+Item=QH06,CGHH80
 Form=4
   
   
 [Field]
-Name=AH07
-Item=AH07,CCHH80
+Name=QH07
+Item=QH07,CGHH80
 Form=4
   
   
 [Field]
-Name=AH08
-Item=AH08,CCHH80
+Name=QH08
+Item=QH08,CGHH80
 Form=4
   
   
 [Field]
-Name=AH09
-Item=AH09,CCHH80
+Name=QH09
+Item=QH09,CGHH80
 Form=4
   
   
 [Field]
-Name=AH10
-Item=AH10,CCHH80
+Name=QH10
+Item=QH10,CGHH80
 Form=4
   
   
 [Field]
-Name=AH11
-Item=AH11,CCHH80
+Name=QH11
+Item=QH11,CGHH80
 Form=4
   
   
 [Field]
-Name=AH12
-Item=AH12,CCHH80
+Name=QH12
+Item=QH12,CGHH80
 Form=4
   
   
 [Field]
-Name=AH13
-Item=AH13,CCHH80
+Name=QH13
+Item=QH13,CGHH80
 Form=4
   
   
 [Field]
-Name=AH14
-Item=AH14,CCHH80
+Name=QH14
+Item=QH14,CGHH80
 Form=4
   
   
 [Field]
-Name=AH15
-Item=AH15,CCHH80
+Name=QH15
+Item=QH15,CGHH80
 Form=4
   
   
 [Field]
-Name=AH16
-Item=AH16,CCHH80
+Name=QH16
+Item=QH16,CGHH80
 Form=4
   
   
 [Field]
-Name=AH17
-Item=AH17,CCHH80
+Name=QH17
+Item=QH17,CGHH80
 Form=4
   
   
 [Field]
-Name=AH17A
-Item=AH17A,CCHH80
+Name=QH17A
+Item=QH17A,CGHH80
 Form=4
   
   
 [Field]
-Name=AH17B
-Item=AH17B,CCHH80
+Name=QH17B
+Item=QH17B,CGHH80
 Form=4
   
   
 [Field]
-Name=AH18
-Item=AH18,CCHH80
+Name=QH18
+Item=QH18,CGHH80
 Form=4
   
   
 [Field]
-Name=AH19
-Item=AH19,CCHH80
+Name=QH19
+Item=QH19,CGHH80
 Form=4
   
   
 [Field]
-Name=AH19A
-Item=AH19A,CCHH80
+Name=QH19A
+Item=QH19A,CGHH80
 Form=4
   
   
 [Field]
-Name=AH19B
-Item=AH19B,CCHH80
+Name=QH19B
+Item=QH19B,CGHH80
 Form=4
   
   
 [Field]
-Name=AH20
-Item=AH20,CCHH80
+Name=QH20
+Item=QH20,CGHH80
 Form=4
   
   
 [Field]
-Name=AH26
-Item=AH26,CCHH80
+Name=QH26
+Item=QH26,CGHH80
 Form=4
   
   
 [Field]
-Name=AH27
-Item=AH27,CCHH80
+Name=QH27
+Item=QH27,CGHH80
 Form=4
   
   
 [Field]
-Name=AH28
-Item=AH28,CCHH80
+Name=QH28
+Item=QH28,CGHH80
 Form=4
   
   
 [Field]
-Name=AH29
-Item=AH29,CCHH80
+Name=QH29
+Item=QH29,CGHH80
 Form=4
   
   
 [Field]
-Name=AH30
-Item=AH30,CCHH80
+Name=QH30
+Item=QH30,CGHH80
 Form=4
   
   
 [Field]
-Name=AH31
-Item=AH31,CCHH80
+Name=QH31
+Item=QH31,CGHH80
 Form=4
   
   
 [Field]
-Name=AH32
-Item=AH32,CCHH80
+Name=QH32
+Item=QH32,CGHH80
 Form=4
   
   
 [Field]
-Name=AH33
-Item=AH33,CCHH80
+Name=QH33
+Item=QH33,CGHH80
 Form=4
   
   
 [Field]
-Name=AH34
-Item=AH34,CCHH80
+Name=QH34
+Item=QH34,CGHH80
 Form=4
   
   
 [Field]
-Name=AH35
-Item=AH35,CCHH80
+Name=QH35
+Item=QH35,CGHH80
 Form=4
   
   
 [Field]
 Name=ML07I
-Item=ML07I,CCHH80
+Item=ML07I,CGHH80
 Form=4
   
   
 [Field]
 Name=ML07F
-Item=ML07F,CCHH80
+Item=ML07F,CGHH80
 Form=4
   
   
 [Field]
 Name=MLPREG
-Item=MLPREG,CCHH80
+Item=MLPREG,CGHH80
+Form=4
+  
+  
+[Field]
+Name=QHDELEG
+Item=QHDELEG,CGHH80
 Form=4
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC02_EDT
-Label=Household Characteristics
+Name=QHSECCL_EDT
+Label=Child Labor MICS version 01/2015
 Form=5
-LogicControl=No
 Type=Record
-TypeName=AHSEC02
+TypeName=QHSECCL
 Max=1
   
 [Field]
-Name=AH101
-Item=AH101,CCHH80
+Name=QCHLINE
+Item=QCHLINE,CGHH80
 Form=5
   
   
 [Field]
-Name=AH102
-Item=AH102,CCHH80
+Name=QCHL2A
+Item=QCHL2A,CGHH80
 Form=5
   
   
 [Field]
-Name=AH103
-Item=AH103,CCHH80
+Name=QCHL2B
+Item=QCHL2B,CGHH80
 Form=5
   
   
 [Field]
-Name=AH104
-Item=AH104,CCHH80
+Name=QCHL2C
+Item=QCHL2C,CGHH80
 Form=5
   
   
 [Field]
-Name=AH105
-Item=AH105,CCHH80
+Name=QCHL2D
+Item=QCHL2D,CGHH80
 Form=5
   
   
 [Field]
-Name=AH106
-Item=AH106,CCHH80
+Name=QCHL4
+Item=QCHL4,CGHH80
 Form=5
   
   
 [Field]
-Name=AH107
-Item=AH107,CCHH80
+Name=QCHL5
+Item=QCHL5,CGHH80
 Form=5
   
   
 [Field]
-Name=AH108
-Item=AH108,CCHH80
+Name=QCHL6
+Item=QCHL6,CGHH80
 Form=5
   
   
 [Field]
-Name=AH109
-Item=AH109,CCHH80
+Name=QCHL7A
+Item=QCHL7A,CGHH80
 Form=5
   
   
 [Field]
-Name=AH110
-Item=AH110,CCHH80
+Name=QCHL7B
+Item=QCHL7B,CGHH80
 Form=5
   
   
 [Field]
-Name=AH111
-Item=AH111,CCHH80
+Name=QCHL7C
+Item=QCHL7C,CGHH80
 Form=5
   
   
 [Field]
-Name=AH112
-Item=AH112,CCHH80
+Name=QCHL7D
+Item=QCHL7D,CGHH80
 Form=5
   
   
 [Field]
-Name=AH114
-Item=AH114,CCHH80
+Name=QCHL7E
+Item=QCHL7E,CGHH80
 Form=5
   
   
 [Field]
-Name=AH115
-Item=AH115,CCHH80
+Name=QCHL7F
+Item=QCHL7F,CGHH80
 Form=5
   
   
 [Field]
-Name=AH116
-Item=AH116,CCHH80
+Name=QCHL8
+Item=QCHL8,CGHH80
 Form=5
   
   
 [Field]
-Name=AH117
-Item=AH117,CCHH80
+Name=QCHL9
+Item=QCHL9,CGHH80
 Form=5
   
   
 [Field]
-Name=AH118
-Item=AH118,CCHH80
+Name=QCHL10
+Item=QCHL10,CGHH80
 Form=5
   
   
 [Field]
-Name=AH120
-Item=AH120,CCHH80
+Name=QCHL11
+Item=QCHL11,CGHH80
 Form=5
   
   
 [Field]
-Name=AH121
-Item=AH121,CCHH80
+Name=QCHL12A
+Item=QCHL12A,CGHH80
 Form=5
   
   
 [Field]
-Name=AH122
-Item=AH122,CCHH80
+Name=QCHL12B
+Item=QCHL12B,CGHH80
 Form=5
   
   
 [Field]
-Name=AH123
-Item=AH123,CCHH80
+Name=QCHL12C
+Item=QCHL12C,CGHH80
 Form=5
   
   
 [Field]
-Name=AH124
-Item=AH124,CCHH80
+Name=QCHL12D
+Item=QCHL12D,CGHH80
 Form=5
   
   
 [Field]
-Name=AH125
-Item=AH125,CCHH80
+Name=QCHL12E
+Item=QCHL12E,CGHH80
 Form=5
   
   
 [Field]
-Name=AH126
-Item=AH126,CCHH80
+Name=QCHL12F
+Item=QCHL12F,CGHH80
 Form=5
   
   
 [Field]
-Name=AH127
-Item=AH127,CCHH80
+Name=QCHL12G
+Item=QCHL12G,CGHH80
 Form=5
   
   
 [Field]
-Name=AH128
-Item=AH128,CCHH80
+Name=QCHL14
+Item=QCHL14,CGHH80
 Form=5
   
   
 [Field]
-Name=AH129A
-Item=AH129A,CCHH80
+Name=QCHLWGT
+Item=QCHLWGT,CGHH80
 Form=5
   
   
 [Field]
-Name=AH129B
-Item=AH129B,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH129C
-Item=AH129C,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH129D
-Item=AH129D,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH129E
-Item=AH129E,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH129F
-Item=AH129F,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH130
-Item=AH130,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH131
-Item=AH131,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH132A
-Item=AH132A,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH132B
-Item=AH132B,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH132C
-Item=AH132C,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH132D
-Item=AH132D,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH132E
-Item=AH132E,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH132F
-Item=AH132F,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133A
-Item=AH133A,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133B
-Item=AH133B,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133C
-Item=AH133C,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133D
-Item=AH133D,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133E
-Item=AH133E,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133F
-Item=AH133F,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH133G
-Item=AH133G,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH134
-Item=AH134,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH135
-Item=AH135,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH136
-Item=AH136,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH137
-Item=AH137,CCHH80
-Form=5
-  
-  
-[Field]
-Name=AH138
-Item=AH138,CCHH80
+Name=QCHLNAME
+Item=QCHLNAME,CGHH80
 Form=5
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC03_EDT
-Label=Mosquito Nets
+Name=QHSECCD_EDT
+Label=Child discipline
 Form=6
-LogicControl=No
 Type=Record
-TypeName=AHSEC03
+TypeName=QHSECCD
+Max=1
+  
+[Field]
+Name=QCDI2
+Item=QCDI2,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3A
+Item=QCDI3A,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3B
+Item=QCDI3B,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3C
+Item=QCDI3C,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3D
+Item=QCDI3D,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3E
+Item=QCDI3E,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3F
+Item=QCDI3F,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3G
+Item=QCDI3G,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3H
+Item=QCDI3H,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3I
+Item=QCDI3I,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3J
+Item=QCDI3J,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3K
+Item=QCDI3K,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI4
+Item=QCDI4,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDWGT
+Item=QCDWGT,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDINAME
+Item=QCDINAME,CGHH80
+Form=6
+  
+  
+[Field]
+Name=QCDI3
+Item=QCDI3,CGHH80
+Form=6
+  
+[EndGroup]
+  
+[Group]
+Required=No
+Name=QHSEC02_EDT
+Label=Household Characteristics
+Form=7
+Type=Record
+TypeName=QHSEC02
+Max=1
+  
+[Field]
+Name=QH101
+Item=QH101,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH102
+Item=QH102,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH103
+Item=QH103,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH104
+Item=QH104,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH105
+Item=QH105,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH106
+Item=QH106,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH107
+Item=QH107,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH108
+Item=QH108,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH109
+Item=QH109,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH110
+Item=QH110,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH111
+Item=QH111,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH112
+Item=QH112,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH114
+Item=QH114,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH115
+Item=QH115,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH116
+Item=QH116,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH117
+Item=QH117,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH118
+Item=QH118,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH120
+Item=QH120,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH121
+Item=QH121,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH122
+Item=QH122,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH123
+Item=QH123,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH124
+Item=QH124,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH125
+Item=QH125,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH126
+Item=QH126,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH127
+Item=QH127,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH128
+Item=QH128,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129A
+Item=QH129A,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129B
+Item=QH129B,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129C
+Item=QH129C,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129D
+Item=QH129D,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129E
+Item=QH129E,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129F
+Item=QH129F,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129G
+Item=QH129G,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH129H
+Item=QH129H,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH130
+Item=QH130,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH131
+Item=QH131,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132A
+Item=QH132A,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132B
+Item=QH132B,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132C
+Item=QH132C,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132D
+Item=QH132D,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132E
+Item=QH132E,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132F
+Item=QH132F,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132G
+Item=QH132G,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132H
+Item=QH132H,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132I
+Item=QH132I,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132J
+Item=QH132J,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132K
+Item=QH132K,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132L
+Item=QH132L,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132M
+Item=QH132M,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132N
+Item=QH132N,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132O
+Item=QH132O,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH132P
+Item=QH132P,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133A
+Item=QH133A,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133B
+Item=QH133B,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133C
+Item=QH133C,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133D
+Item=QH133D,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133E
+Item=QH133E,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133F
+Item=QH133F,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133G
+Item=QH133G,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133H
+Item=QH133H,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH133I
+Item=QH133I,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH134
+Item=QH134,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH135
+Item=QH135,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH136
+Item=QH136,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH137
+Item=QH137,CGHH80
+Form=7
+  
+  
+[Field]
+Name=QH138
+Item=QH138,CGHH80
+Form=7
+  
+[EndGroup]
+  
+[Group]
+Required=No
+Name=QHSEC03_EDT
+Label=Mosquito Nets
+Form=8
+Type=Record
+TypeName=QHSEC03
 Max=7
   
 [Field]
-Name=AH139
-Item=AH139,CCHH80
-Form=6
+Name=QH139
+Item=QH139,CGHH80
+Form=8
   
   
 [Field]
-Name=AH140
-Item=AH140,CCHH80
-Form=6
+Name=QH140
+Item=QH140,CGHH80
+Form=8
   
   
 [Field]
-Name=AH141
-Item=AH141,CCHH80
-Form=6
+Name=QH141
+Item=QH141,CGHH80
+Form=8
   
   
 [Field]
-Name=AH142
-Item=AH142,CCHH80
-Form=6
+Name=QH142
+Item=QH142,CGHH80
+Form=8
   
   
 [Field]
-Name=AH143
-Item=AH143,CCHH80
-Form=6
+Name=QH143
+Item=QH143,CGHH80
+Form=8
   
   
 [Field]
-Name=AH144
-Item=AH144,CCHH80
-Form=6
+Name=QH144
+Item=QH144,CGHH80
+Form=8
   
   
 [Field]
-Name=AH145
-Item=AH145,CCHH80
-Form=6
+Name=QH145
+Item=QH145,CGHH80
+Form=8
   
   
 [Field]
-Name=AH146A
-Item=AH146A,CCHH80
-Form=6
+Name=QH146A
+Item=QH146A,CGHH80
+Form=8
   
   
 [Field]
-Name=AH146B
-Item=AH146B,CCHH80
-Form=6
+Name=QH146B
+Item=QH146B,CGHH80
+Form=8
   
   
 [Field]
-Name=AH146C
-Item=AH146C,CCHH80
-Form=6
+Name=QH146C
+Item=QH146C,CGHH80
+Form=8
   
   
 [Field]
-Name=AH146D
-Item=AH146D,CCHH80
-Form=6
+Name=QH146D
+Item=QH146D,CGHH80
+Form=8
   
   
 [Field]
-Name=AH147
-Item=AH147,CCHH80
-Form=6
+Name=QH147
+Item=QH147,CGHH80
+Form=8
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSEC04_EDT
+Name=QHSEC03B_EDT
+Label=Transfers sociaux
+Form=9
+Type=Record
+TypeName=QHSEC03B
+Max=1
+  
+[Field]
+Name=QH148B
+Item=QH148B,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148C
+Item=QH148C,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148D
+Item=QH148D,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148DU
+Item=QH148DU,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148DN
+Item=QH148DN,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148E
+Item=QH148E,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148F
+Item=QH148F,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148FU
+Item=QH148FU,CGHH80
+Form=9
+  
+  
+[Field]
+Name=QH148FN
+Item=QH148FN,CGHH80
+Form=9
+  
+[EndGroup]
+  
+[Group]
+Required=No
+Name=QHSEC04_EDT
 Label=Additional household characteristics
-Form=7
-LogicControl=No
+Form=10
 Type=Record
-TypeName=AHSEC04
+TypeName=QHSEC04
 Max=1
   
 [Field]
-Name=AH149
-Item=AH149,CCHH80
-Form=7
+Name=QH149
+Item=QH149,CGHH80
+Form=10
   
   
 [Field]
-Name=AH150
-Item=AH150,CCHH80
-Form=7
+Name=QH150
+Item=QH150,CGHH80
+Form=10
   
   
 [Field]
-Name=AH151
-Item=AH151,CCHH80
-Form=7
+Name=QH151
+Item=QH151,CGHH80
+Form=10
   
   
 [Field]
-Name=AH152
-Item=AH152,CCHH80
-Form=7
+Name=QH152
+Item=QH152,CGHH80
+Form=10
   
   
 [Field]
-Name=AH153
-Item=AH153,CCHH80
-Form=7
+Name=QH153
+Item=QH153,CGHH80
+Form=10
   
   
 [Field]
-Name=AH154
-Item=AH154,CCHH80
-Form=7
+Name=QH154
+Item=QH154,CGHH80
+Form=10
   
   
 [Field]
-Name=AH155
-Item=AH155,CCHH80
-Form=7
-  
-  
-[Field]
-Name=AH156
-Item=AH156,CCHH80
-Form=7
-  
-  
-[Field]
-Name=AH156H
-Item=AH156H,CCHH80
-Form=7
-  
-  
-[Field]
-Name=AH156M
-Item=AH156M,CCHH80
-Form=7
+Name=QH155
+Item=QH155,CGHH80
+Form=10
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=AHSECCL_EDT
-Label=Child Labor MICS version 01/2015
-Form=8
-LogicControl=No
-Type=Record
-TypeName=AHSECCL
-Max=1
-  
-[Field]
-Name=ACHLINE
-Item=ACHLINE,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL2A
-Item=ACHL2A,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL2B
-Item=ACHL2B,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL2C
-Item=ACHL2C,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL2D
-Item=ACHL2D,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL4
-Item=ACHL4,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL5
-Item=ACHL5,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL6
-Item=ACHL6,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL7A
-Item=ACHL7A,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL7B
-Item=ACHL7B,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL7C
-Item=ACHL7C,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL7D
-Item=ACHL7D,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL7E
-Item=ACHL7E,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL7F
-Item=ACHL7F,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL8
-Item=ACHL8,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL9
-Item=ACHL9,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL10
-Item=ACHL10,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL11
-Item=ACHL11,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12A
-Item=ACHL12A,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12B
-Item=ACHL12B,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12C
-Item=ACHL12C,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12D
-Item=ACHL12D,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12E
-Item=ACHL12E,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12F
-Item=ACHL12F,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL12G
-Item=ACHL12G,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHL14
-Item=ACHL14,CCHH80
-Form=8
-  
-  
-[Field]
-Name=ACHLNAME
-Item=ACHLNAME,CCHH80
-Form=8
-  
-[EndGroup]
-  
-[Group]
-Required=No
-Name=AHSECCD_EDT
-Label=Child discipline
-Form=9
-LogicControl=No
-Type=Record
-TypeName=AHSECCD
-Max=1
-  
-[Field]
-Name=ACDI2
-Item=ACDI2,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3A
-Item=ACDI3A,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3B
-Item=ACDI3B,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3C
-Item=ACDI3C,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3D
-Item=ACDI3D,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3E
-Item=ACDI3E,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3F
-Item=ACDI3F,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3G
-Item=ACDI3G,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3H
-Item=ACDI3H,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3I
-Item=ACDI3I,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3J
-Item=ACDI3J,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI3K
-Item=ACDI3K,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDI4
-Item=ACDI4,CCHH80
-Form=9
-  
-  
-[Field]
-Name=ACDINAME
-Item=ACDINAME,CCHH80
-Form=9
-  
-[EndGroup]
-  
-[Group]
-Required=No
-Name=ABSECOVER_EDT
+Name=QBSECOVER_EDT
 Label=Biomarker Identification
-Form=10
-LogicControl=No
+Form=11
 Type=Record
-TypeName=ABSECOVER
+TypeName=QBSECOVER
 Max=1
   
 [Field]
-Name=ABINT
-Item=ABINT,CCHH80
-Form=10
+Name=QBINT
+Item=QBINT,CGHH80
+Form=11
   
   
 [Field]
-Name=ABINTD
-Item=ABINTD,CCHH80
-Form=10
+Name=QBINTD
+Item=QBINTD,CGHH80
+Form=11
   
   
 [Field]
-Name=ABINTM
-Item=ABINTM,CCHH80
-Form=10
+Name=QBINTM
+Item=QBINTM,CGHH80
+Form=11
   
   
 [Field]
-Name=ABINTY
-Item=ABINTY,CCHH80
-Form=10
+Name=QBINTY
+Item=QBINTY,CGHH80
+Form=11
   
   
 [Field]
-Name=ABVISITS
-Item=ABVISITS,CCHH80
-Form=10
+Name=QBVISITS
+Item=QBVISITS,CGHH80
+Form=11
   
   
 [Field]
-Name=ABCHILD
-Item=ABCHILD,CCHH80
-Form=10
+Name=QBCHILD
+Item=QBCHILD,CGHH80
+Form=11
   
   
 [Field]
-Name=ABFINISH
-Item=ABFINISH,CCHH80
-Form=10
+Name=QBFINISH
+Item=QBFINISH,CGHH80
+Form=11
   
   
 [Field]
-Name=ABINTC
-Item=ABINTC,CCHH80
-Form=10
+Name=QBINTC
+Item=QBINTC,CGHH80
+Form=11
   
   
 [Field]
-Name=ABINTCD
-Item=ABINTCD,CCHH80
-Form=10
+Name=QBINTCD
+Item=QBINTCD,CGHH80
+Form=11
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=ABSEC01_EDT
+Name=QBSEC01_EDT
 Label=Height, Weight, Hemoglobin (children)
-Form=11
-LogicControl=No
+Form=12
 Type=Record
-TypeName=ABSEC01
+TypeName=QBSEC01
 Max=20
   
 [Field]
-Name=ABCOL1
-Item=ABCOL1,CCHH80
-Form=11
+Name=QBCOL1
+Item=QBCOL1,CGHH80
+Form=12
   
   
 [Field]
-Name=AB102
-Item=AB102,CCHH80
-Form=11
+Name=QB102
+Item=QB102,CGHH80
+Form=12
   
   
 [Field]
-Name=AB103
-Item=AB103,CCHH80
-Form=11
+Name=QB103
+Item=QB103,CGHH80
+Form=12
   
   
 [Field]
-Name=AB103D
-Item=AB103D,CCHH80
-Form=11
+Name=QB103D
+Item=QB103D,CGHH80
+Form=12
   
   
 [Field]
-Name=AB103M
-Item=AB103M,CCHH80
-Form=11
+Name=QB103M
+Item=QB103M,CGHH80
+Form=12
   
   
 [Field]
-Name=AB103Y
-Item=AB103Y,CCHH80
-Form=11
+Name=QB103Y
+Item=QB103Y,CGHH80
+Form=12
   
   
 [Field]
-Name=AB104
-Item=AB104,CCHH80
-Form=11
+Name=QB104
+Item=QB104,CGHH80
+Form=12
   
   
 [Field]
-Name=AB106
-Item=AB106,CCHH80
-Form=11
+Name=QB106
+Item=QB106,CGHH80
+Form=12
   
   
 [Field]
-Name=AB106W
-Item=AB106W,CCHH80
-Form=11
+Name=QB106W
+Item=QB106W,CGHH80
+Form=12
   
   
 [Field]
-Name=AB107
-Item=AB107,CCHH80
-Form=11
+Name=QB107
+Item=QB107,CGHH80
+Form=12
   
   
 [Field]
-Name=AB108
-Item=AB108,CCHH80
-Form=11
+Name=QB108
+Item=QB108,CGHH80
+Form=12
   
   
 [Field]
-Name=AB108W
-Item=AB108W,CCHH80
-Form=11
+Name=QB108W
+Item=QB108W,CGHH80
+Form=12
   
   
 [Field]
-Name=AB109
-Item=AB109,CCHH80
-Form=11
+Name=QB109
+Item=QB109,CGHH80
+Form=12
   
   
 [Field]
-Name=AB110
-Item=AB110,CCHH80
-Form=11
+Name=QB109D
+Item=QB109D,CGHH80
+Form=12
   
   
 [Field]
-Name=AB111
-Item=AB111,CCHH80
-Form=11
+Name=QB109M
+Item=QB109M,CGHH80
+Form=12
   
   
 [Field]
-Name=AB112
-Item=AB112,CCHH80
-Form=11
+Name=QB109Y
+Item=QB109Y,CGHH80
+Form=12
   
   
 [Field]
-Name=AB113
-Item=AB113,CCHH80
-Form=11
+Name=QB110
+Item=QB110,CGHH80
+Form=12
   
   
 [Field]
-Name=AB114
-Item=AB114,CCHH80
-Form=11
+Name=QB112
+Item=QB112,CGHH80
+Form=12
   
   
 [Field]
-Name=AB115
-Item=AB115,CCHH80
-Form=11
+Name=QB113
+Item=QB113,CGHH80
+Form=12
   
   
 [Field]
-Name=AB115D
-Item=AB115D,CCHH80
-Form=11
+Name=QB114
+Item=QB114,CGHH80
+Form=12
   
   
 [Field]
-Name=AB115M
-Item=AB115M,CCHH80
-Form=11
+Name=QB115
+Item=QB115,CGHH80
+Form=12
   
   
 [Field]
-Name=AB115Y
-Item=AB115Y,CCHH80
-Form=11
+Name=QB116
+Item=QB116,CGHH80
+Form=12
   
   
 [Field]
-Name=AB118
-Item=AB118,CCHH80
-Form=11
+Name=QB118
+Item=QB118,CGHH80
+Form=12
   
   
 [Field]
-Name=AB120
-Item=AB120,CCHH80
-Form=11
+Name=QB120
+Item=QB120,CGHH80
+Form=12
   
   
 [Field]
-Name=AB121
-Item=AB121,CCHH80
-Form=11
+Name=QB121
+Item=QB121,CGHH80
+Form=12
   
   
 [Field]
-Name=AB122
-Item=AB122,CCHH80
-Form=11
+Name=QB123
+Item=QB123,CGHH80
+Form=12
   
   
 [Field]
-Name=AB122W
-Item=AB122W,CCHH80
-Form=11
+Name=QB123W
+Item=QB123W,CGHH80
+Form=12
   
   
 [Field]
-Name=AB123
-Item=AB123,CCHH80
-Form=11
+Name=QBRTYPE
+Item=QBRTYPE,CGHH80
+Form=12
   
   
 [Field]
-Name=ABRTYPE
-Item=ABRTYPE,CCHH80
-Form=11
+Name=QBWEIGHT
+Item=QBWEIGHT,CGHH80
+Form=12
   
   
 [Field]
-Name=ABWEIGHT
-Item=ABWEIGHT,CCHH80
-Form=11
+Name=QBHEIGHT
+Item=QBHEIGHT,CGHH80
+Form=12
   
   
 [Field]
-Name=ABHEIGHT
-Item=ABHEIGHT,CCHH80
-Form=11
+Name=QBLYNSTN
+Item=QBLYNSTN,CGHH80
+Form=12
   
   
 [Field]
-Name=ABLYNSTN
-Item=ABLYNSTN,CCHH80
-Form=11
+Name=QBRDAY
+Item=QBRDAY,CGHH80
+Form=12
   
   
 [Field]
-Name=ABRDAY
-Item=ABRDAY,CCHH80
-Form=11
+Name=QBRMONTH
+Item=QBRMONTH,CGHH80
+Form=12
   
   
 [Field]
-Name=ABRMONTH
-Item=ABRMONTH,CCHH80
-Form=11
+Name=QBRYEAR
+Item=QBRYEAR,CGHH80
+Form=12
   
   
 [Field]
-Name=ABRYEAR
-Item=ABRYEAR,CCHH80
-Form=11
+Name=QBRMEAS
+Item=QBRMEAS,CGHH80
+Form=12
   
   
 [Field]
-Name=ABRMEAS
-Item=ABRMEAS,CCHH80
-Form=11
+Name=QB124
+Item=QB124,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM112
-Item=ABM112,CCHH80
-Form=11
+Name=QB125A
+Item=QB125A,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM114
-Item=ABM114,CCHH80
-Form=11
+Name=QB125B
+Item=QB125B,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115A
-Item=ABM115A,CCHH80
-Form=11
+Name=QB125C
+Item=QB125C,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115B
-Item=ABM115B,CCHH80
-Form=11
+Name=QB125D
+Item=QB125D,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115C
-Item=ABM115C,CCHH80
-Form=11
+Name=QB125E
+Item=QB125E,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115D
-Item=ABM115D,CCHH80
-Form=11
+Name=QB125F
+Item=QB125F,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115E
-Item=ABM115E,CCHH80
-Form=11
+Name=QB125G
+Item=QB125G,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115F
-Item=ABM115F,CCHH80
-Form=11
+Name=QB125H
+Item=QB125H,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115G
-Item=ABM115G,CCHH80
-Form=11
+Name=QB127
+Item=QB127,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM115H
-Item=ABM115H,CCHH80
-Form=11
+Name=QB128
+Item=QB128,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM117
-Item=ABM117,CCHH80
-Form=11
+Name=QB131
+Item=QB131,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM119
-Item=ABM119,CCHH80
-Form=11
+Name=QB132
+Item=QB132,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM122
-Item=ABM122,CCHH80
-Form=11
+Name=QB135
+Item=QB135,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM123
-Item=ABM123,CCHH80
-Form=11
+Name=QB135D
+Item=QB135D,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM128
-Item=ABM128,CCHH80
-Form=11
+Name=QB135M
+Item=QB135M,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM128D
-Item=ABM128D,CCHH80
-Form=11
+Name=QB135Y
+Item=QB135Y,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM128M
-Item=ABM128M,CCHH80
-Form=11
+Name=QCCMC
+Item=QCCMC,CGHH80
+Form=12
   
   
 [Field]
-Name=ABM128Y
-Item=ABM128Y,CCHH80
-Form=11
+Name=QCCDC
+Item=QCCDC,CGHH80
+Form=12
   
   
 [Field]
-Name=ACCMC
-Item=ACCMC,CCHH80
-Form=11
+Name=QCCDCM
+Item=QCCDCM,CGHH80
+Form=12
   
   
 [Field]
-Name=ACCDC
-Item=ACCDC,CCHH80
-Form=11
+Name=QCFLG
+Item=QCFLG,CGHH80
+Form=12
   
   
 [Field]
-Name=ACCDCM
-Item=ACCDCM,CCHH80
-Form=11
+Name=QCDBR
+Item=QCDBR,CGHH80
+Form=12
   
   
 [Field]
-Name=ACFLG
-Item=ACFLG,CCHH80
-Form=11
+Name=QCMBR
+Item=QCMBR,CGHH80
+Form=12
   
   
 [Field]
-Name=ACDBR
-Item=ACDBR,CCHH80
-Form=11
+Name=QCYBR
+Item=QCYBR,CGHH80
+Form=12
   
   
 [Field]
-Name=ACMBR
-Item=ACMBR,CCHH80
-Form=11
+Name=QCMLN
+Item=QCMLN,CGHH80
+Form=12
   
   
 [Field]
-Name=ACYBR
-Item=ACYBR,CCHH80
-Form=11
+Name=QCBO
+Item=QCBO,CGHH80
+Form=12
   
   
 [Field]
-Name=ACMLN
-Item=ACMLN,CCHH80
-Form=11
+Name=QCBI
+Item=QCBI,CGHH80
+Form=12
   
   
 [Field]
-Name=ACBO
-Item=ACBO,CCHH80
-Form=11
+Name=QCED1
+Item=QCED1,CGHH80
+Form=12
   
   
 [Field]
-Name=ACBI
-Item=ACBI,CCHH80
-Form=11
+Name=QCED2
+Item=QCED2,CGHH80
+Form=12
   
   
 [Field]
-Name=ACED1
-Item=ACED1,CCHH80
-Form=11
+Name=QCED3
+Item=QCED3,CGHH80
+Form=12
   
   
 [Field]
-Name=ACED2
-Item=ACED2,CCHH80
-Form=11
+Name=QCZSHA
+Item=QCZSHA,CGHH80
+Form=12
   
   
 [Field]
-Name=ACED3
-Item=ACED3,CCHH80
-Form=11
+Name=QCZSWA
+Item=QCZSWA,CGHH80
+Form=12
   
   
 [Field]
-Name=ACZSHA
-Item=ACZSHA,CCHH80
-Form=11
+Name=QCZSWH
+Item=QCZSWH,CGHH80
+Form=12
   
   
 [Field]
-Name=ACZSWA
-Item=ACZSWA,CCHH80
-Form=11
+Name=QCZSBM
+Item=QCZSBM,CGHH80
+Form=12
   
   
 [Field]
-Name=ACZSWH
-Item=ACZSWH,CCHH80
-Form=11
+Name=QCAGEM
+Item=QCAGEM,CGHH80
+Form=12
   
   
 [Field]
-Name=ACZSBM
-Item=ACZSBM,CCHH80
-Form=11
+Name=QCNAME
+Item=QCNAME,CGHH80
+Form=12
   
   
 [Field]
-Name=ACAGEM
-Item=ACAGEM,CCHH80
-Form=11
-  
-  
-[Field]
-Name=ACNAME
-Item=ACNAME,CCHH80
-Form=11
-  
-  
-[Field]
-Name=ACAUXIL
-Item=ACAUXIL,CCHH80
-Form=11
+Name=QCAUXIL
+Item=QCAUXIL,CGHH80
+Form=12
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=ABSEC02_EDT
+Name=QBSEC02_EDT
 Label=Height, Weight, Hemoglobin (women)
-Form=12
-LogicControl=No
+Form=13
 Type=Record
-TypeName=ABSEC02
+TypeName=QBSEC02
 Max=20
   
 [Field]
-Name=ABCOL2
-Item=ABCOL2,CCHH80
-Form=12
+Name=QBCOL2
+Item=QBCOL2,CGHH80
+Form=13
   
   
 [Field]
-Name=AB202
-Item=AB202,CCHH80
-Form=12
+Name=QB202
+Item=QB202,CGHH80
+Form=13
   
   
 [Field]
-Name=AB203
-Item=AB203,CCHH80
-Form=12
+Name=QB203
+Item=QB203,CGHH80
+Form=13
   
   
 [Field]
-Name=AB204
-Item=AB204,CCHH80
-Form=12
+Name=QB204
+Item=QB204,CGHH80
+Form=13
   
   
 [Field]
-Name=AB205
-Item=AB205,CCHH80
-Form=12
+Name=QB205
+Item=QB205,CGHH80
+Form=13
   
   
 [Field]
-Name=AB205W
-Item=AB205W,CCHH80
-Form=12
+Name=QB205W
+Item=QB205W,CGHH80
+Form=13
   
   
 [Field]
-Name=AB206
-Item=AB206,CCHH80
-Form=12
+Name=QB206
+Item=QB206,CGHH80
+Form=13
   
   
 [Field]
-Name=AB207
-Item=AB207,CCHH80
-Form=12
+Name=QB207
+Item=QB207,CGHH80
+Form=13
   
   
 [Field]
-Name=AB207W
-Item=AB207W,CCHH80
-Form=12
+Name=QB207W
+Item=QB207W,CGHH80
+Form=13
   
   
 [Field]
-Name=AB208
-Item=AB208,CCHH80
-Form=12
+Name=QB208
+Item=QB208,CGHH80
+Form=13
   
   
 [Field]
-Name=AB209
-Item=AB209,CCHH80
-Form=12
+Name=QB209
+Item=QB209,CGHH80
+Form=13
   
   
 [Field]
-Name=AB210
-Item=AB210,CCHH80
-Form=12
+Name=QB210
+Item=QB210,CGHH80
+Form=13
   
   
 [Field]
-Name=AB211
-Item=AB211,CCHH80
-Form=12
+Name=QB211
+Item=QB211,CGHH80
+Form=13
   
   
 [Field]
-Name=AB211D
-Item=AB211D,CCHH80
-Form=12
+Name=QB211D
+Item=QB211D,CGHH80
+Form=13
   
   
 [Field]
-Name=AB211M
-Item=AB211M,CCHH80
-Form=12
+Name=QB211M
+Item=QB211M,CGHH80
+Form=13
   
   
 [Field]
-Name=AB211Y
-Item=AB211Y,CCHH80
-Form=12
+Name=QB211Y
+Item=QB211Y,CGHH80
+Form=13
   
   
 [Field]
-Name=AB215
-Item=AB215,CCHH80
-Form=12
+Name=QB214
+Item=QB214,CGHH80
+Form=13
   
   
 [Field]
-Name=AB216
-Item=AB216,CCHH80
-Form=12
+Name=QB215
+Item=QB215,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV1
-Item=ABWHIV1,CCHH80
-Form=12
+Name=QB216
+Item=QB216,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV2
-Item=ABWHIV2,CCHH80
-Form=12
+Name=QB217
+Item=QB217,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV3
-Item=ABWHIV3,CCHH80
-Form=12
+Name=QB219
+Item=QB219,CGHH80
+Form=13
   
   
 [Field]
-Name=AB217
-Item=AB217,CCHH80
-Form=12
+Name=QB220
+Item=QB220,CGHH80
+Form=13
   
   
 [Field]
-Name=AB219
-Item=AB219,CCHH80
-Form=12
+Name=QB221
+Item=QB221,CGHH80
+Form=13
   
   
 [Field]
-Name=AB220
-Item=AB220,CCHH80
-Form=12
+Name=QB222
+Item=QB222,CGHH80
+Form=13
   
   
 [Field]
-Name=AB223
-Item=AB223,CCHH80
-Form=12
+Name=QB223
+Item=QB223,CGHH80
+Form=13
   
   
 [Field]
-Name=AB224
-Item=AB224,CCHH80
-Form=12
+Name=QB226
+Item=QB226,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV4
-Item=ABWHIV4,CCHH80
-Form=12
+Name=QB227
+Item=QB227,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV5
-Item=ABWHIV5,CCHH80
-Form=12
+Name=QB228
+Item=QB228,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV6
-Item=ABWHIV6,CCHH80
-Form=12
+Name=QB229
+Item=QB229,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV7
-Item=ABWHIV7,CCHH80
-Form=12
+Name=QB231
+Item=QB231,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV8
-Item=ABWHIV8,CCHH80
-Form=12
+Name=QB232
+Item=QB232,CGHH80
+Form=13
   
   
 [Field]
-Name=AB225
-Item=AB225,CCHH80
-Form=12
+Name=QB234
+Item=QB234,CGHH80
+Form=13
   
   
 [Field]
-Name=AB225W
-Item=AB225W,CCHH80
-Form=12
+Name=QB235
+Item=QB235,CGHH80
+Form=13
   
   
 [Field]
-Name=AB226
-Item=AB226,CCHH80
-Form=12
+Name=QB237
+Item=QB237,CGHH80
+Form=13
   
   
 [Field]
-Name=ABWHIV9
-Item=ABWHIV9,CCHH80
-Form=12
+Name=QB238
+Item=QB238,CGHH80
+Form=13
   
   
 [Field]
-Name=AWCMC
-Item=AWCMC,CCHH80
-Form=12
+Name=QB239
+Item=QB239,CGHH80
+Form=13
   
   
 [Field]
-Name=AWFLG
-Item=AWFLG,CCHH80
-Form=12
+Name=QB240
+Item=QB240,CGHH80
+Form=13
   
   
 [Field]
-Name=AWMBR
-Item=AWMBR,CCHH80
-Form=12
+Name=QB241
+Item=QB241,CGHH80
+Form=13
   
   
 [Field]
-Name=AWYBR
-Item=AWYBR,CCHH80
-Form=12
+Name=QB242
+Item=QB242,CGHH80
+Form=13
   
   
 [Field]
-Name=AWSMK
-Item=AWSMK,CCHH80
-Form=12
+Name=QB241A
+Item=QB241A,CGHH80
+Form=13
   
   
 [Field]
-Name=AWPRG
-Item=AWPRG,CCHH80
-Form=12
+Name=QB242A
+Item=QB242A,CGHH80
+Form=13
   
   
 [Field]
-Name=AWMOS
-Item=AWMOS,CCHH80
-Form=12
+Name=QB244
+Item=QB244,CGHH80
+Form=13
   
   
 [Field]
-Name=AWBM
-Item=AWBM,CCHH80
-Form=12
+Name=QWCMC
+Item=QWCMC,CGHH80
+Form=13
   
   
 [Field]
-Name=AWRESI
-Item=AWRESI,CCHH80
-Form=12
+Name=QWFLG
+Item=QWFLG,CGHH80
+Form=13
   
   
 [Field]
-Name=AWED1
-Item=AWED1,CCHH80
-Form=12
+Name=QWMBR
+Item=QWMBR,CGHH80
+Form=13
   
   
 [Field]
-Name=AWED2
-Item=AWED2,CCHH80
-Form=12
+Name=QWYBR
+Item=QWYBR,CGHH80
+Form=13
   
   
 [Field]
-Name=AWED3
-Item=AWED3,CCHH80
-Form=12
+Name=QWSMK
+Item=QWSMK,CGHH80
+Form=13
   
   
 [Field]
-Name=AWZSHA
-Item=AWZSHA,CCHH80
-Form=12
+Name=QWPRG
+Item=QWPRG,CGHH80
+Form=13
   
   
 [Field]
-Name=AWZSWA
-Item=AWZSWA,CCHH80
-Form=12
+Name=QWMOS
+Item=QWMOS,CGHH80
+Form=13
   
   
 [Field]
-Name=AWZSWH
-Item=AWZSWH,CCHH80
-Form=12
+Name=QWBM
+Item=QWBM,CGHH80
+Form=13
   
   
 [Field]
-Name=AWZSBM
-Item=AWZSBM,CCHH80
-Form=12
+Name=QWRESI
+Item=QWRESI,CGHH80
+Form=13
   
   
 [Field]
-Name=AWAGEM
-Item=AWAGEM,CCHH80
-Form=12
+Name=QWED1
+Item=QWED1,CGHH80
+Form=13
   
   
 [Field]
-Name=AWHIVWGT
-Item=AWHIVWGT,CCHH80
-Form=12
+Name=QWED2
+Item=QWED2,CGHH80
+Form=13
   
   
 [Field]
-Name=AWNAME
-Item=AWNAME,CCHH80
-Form=12
+Name=QWED3
+Item=QWED3,CGHH80
+Form=13
   
   
 [Field]
-Name=AWAUXIL
-Item=AWAUXIL,CCHH80
-Form=12
+Name=QWZSHA
+Item=QWZSHA,CGHH80
+Form=13
+  
+  
+[Field]
+Name=QWZSBM
+Item=QWZSBM,CGHH80
+Form=13
+  
+  
+[Field]
+Name=QWAGEM
+Item=QWAGEM,CGHH80
+Form=13
+  
+  
+[Field]
+Name=QWHIVWGT
+Item=QWHIVWGT,CGHH80
+Form=13
+  
+  
+[Field]
+Name=QWNAME
+Item=QWNAME,CGHH80
+Form=13
+  
+  
+[Field]
+Name=QWAUXIL
+Item=QWAUXIL,CGHH80
+Form=13
   
 [EndGroup]
   
 [Group]
 Required=No
-Name=ABSEC03_EDT
+Name=QBSEC03_EDT
 Label=Height, Weight, Hemoglobin (men)
-Form=13
-LogicControl=No
+Form=14
 Type=Record
-TypeName=ABSEC03
+TypeName=QBSEC03
 Max=20
   
 [Field]
-Name=ABCOL3
-Item=ABCOL3,CCHH80
-Form=13
+Name=QBCOL3
+Item=QBCOL3,CGHH80
+Form=14
   
   
 [Field]
-Name=AB302
-Item=AB302,CCHH80
-Form=13
+Name=QB302
+Item=QB302,CGHH80
+Form=14
   
   
 [Field]
-Name=AB303
-Item=AB303,CCHH80
-Form=13
+Name=QB303
+Item=QB303,CGHH80
+Form=14
   
   
 [Field]
-Name=AB304
-Item=AB304,CCHH80
-Form=13
+Name=QB304
+Item=QB304,CGHH80
+Form=14
   
   
 [Field]
-Name=AB305
-Item=AB305,CCHH80
-Form=13
+Name=QB305
+Item=QB305,CGHH80
+Form=14
   
   
 [Field]
-Name=AB305W
-Item=AB305W,CCHH80
-Form=13
+Name=QB305W
+Item=QB305W,CGHH80
+Form=14
   
   
 [Field]
-Name=AB306
-Item=AB306,CCHH80
-Form=13
+Name=QB306
+Item=QB306,CGHH80
+Form=14
   
   
 [Field]
-Name=AB307
-Item=AB307,CCHH80
-Form=13
+Name=QB307
+Item=QB307,CGHH80
+Form=14
   
   
 [Field]
-Name=AB307W
-Item=AB307W,CCHH80
-Form=13
+Name=QB307W
+Item=QB307W,CGHH80
+Form=14
   
   
 [Field]
-Name=AB308
-Item=AB308,CCHH80
-Form=13
+Name=QB308
+Item=QB308,CGHH80
+Form=14
   
   
 [Field]
-Name=AB309
-Item=AB309,CCHH80
-Form=13
+Name=QB309
+Item=QB309,CGHH80
+Form=14
   
   
 [Field]
-Name=AB310
-Item=AB310,CCHH80
-Form=13
+Name=QB310
+Item=QB310,CGHH80
+Form=14
   
   
 [Field]
-Name=AB311
-Item=AB311,CCHH80
-Form=13
+Name=QB311
+Item=QB311,CGHH80
+Form=14
   
   
 [Field]
-Name=AB311D
-Item=AB311D,CCHH80
-Form=13
+Name=QB311D
+Item=QB311D,CGHH80
+Form=14
   
   
 [Field]
-Name=AB311M
-Item=AB311M,CCHH80
-Form=13
+Name=QB311M
+Item=QB311M,CGHH80
+Form=14
   
   
 [Field]
-Name=AB311Y
-Item=AB311Y,CCHH80
-Form=13
+Name=QB311Y
+Item=QB311Y,CGHH80
+Form=14
   
   
 [Field]
-Name=AB315
-Item=AB315,CCHH80
-Form=13
+Name=QB314
+Item=QB314,CGHH80
+Form=14
   
   
 [Field]
-Name=AB316
-Item=AB316,CCHH80
-Form=13
+Name=QB315
+Item=QB315,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV1
-Item=ABMHIV1,CCHH80
-Form=13
+Name=QB316
+Item=QB316,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV2
-Item=ABMHIV2,CCHH80
-Form=13
+Name=QB317
+Item=QB317,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV3
-Item=ABMHIV3,CCHH80
-Form=13
+Name=QB319
+Item=QB319,CGHH80
+Form=14
   
   
 [Field]
-Name=AB317
-Item=AB317,CCHH80
-Form=13
+Name=QB320
+Item=QB320,CGHH80
+Form=14
   
   
 [Field]
-Name=AB319
-Item=AB319,CCHH80
-Form=13
+Name=QB321
+Item=QB321,CGHH80
+Form=14
   
   
 [Field]
-Name=AB320
-Item=AB320,CCHH80
-Form=13
+Name=QB322
+Item=QB322,CGHH80
+Form=14
   
   
 [Field]
-Name=AB323
-Item=AB323,CCHH80
-Form=13
+Name=QB323
+Item=QB323,CGHH80
+Form=14
   
   
 [Field]
-Name=AB324
-Item=AB324,CCHH80
-Form=13
+Name=QB326
+Item=QB326,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV4
-Item=ABMHIV4,CCHH80
-Form=13
+Name=QB327
+Item=QB327,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV5
-Item=ABMHIV5,CCHH80
-Form=13
+Name=QB328
+Item=QB328,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV6
-Item=ABMHIV6,CCHH80
-Form=13
+Name=QB329
+Item=QB329,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV7
-Item=ABMHIV7,CCHH80
-Form=13
+Name=QB331
+Item=QB331,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV8
-Item=ABMHIV8,CCHH80
-Form=13
+Name=QB332
+Item=QB332,CGHH80
+Form=14
   
   
 [Field]
-Name=AB325
-Item=AB325,CCHH80
-Form=13
+Name=QB334
+Item=QB334,CGHH80
+Form=14
   
   
 [Field]
-Name=AB325W
-Item=AB325W,CCHH80
-Form=13
+Name=QB335
+Item=QB335,CGHH80
+Form=14
   
   
 [Field]
-Name=AB326
-Item=AB326,CCHH80
-Form=13
+Name=QB337
+Item=QB337,CGHH80
+Form=14
   
   
 [Field]
-Name=ABMHIV9
-Item=ABMHIV9,CCHH80
-Form=13
+Name=QB338
+Item=QB338,CGHH80
+Form=14
   
   
 [Field]
-Name=AMCMC
-Item=AMCMC,CCHH80
-Form=13
+Name=QB339
+Item=QB339,CGHH80
+Form=14
   
   
 [Field]
-Name=AMFLG
-Item=AMFLG,CCHH80
-Form=13
+Name=QB340
+Item=QB340,CGHH80
+Form=14
   
   
 [Field]
-Name=AMMBR
-Item=AMMBR,CCHH80
-Form=13
+Name=QB341
+Item=QB341,CGHH80
+Form=14
   
   
 [Field]
-Name=AMYBR
-Item=AMYBR,CCHH80
-Form=13
+Name=QB342
+Item=QB342,CGHH80
+Form=14
   
   
 [Field]
-Name=AMSMK
-Item=AMSMK,CCHH80
-Form=13
+Name=QB341A
+Item=QB341A,CGHH80
+Form=14
   
   
 [Field]
-Name=AMBM
-Item=AMBM,CCHH80
-Form=13
+Name=QB342A
+Item=QB342A,CGHH80
+Form=14
   
   
 [Field]
-Name=AMRESI
-Item=AMRESI,CCHH80
-Form=13
+Name=QB344
+Item=QB344,CGHH80
+Form=14
   
   
 [Field]
-Name=AMED1
-Item=AMED1,CCHH80
-Form=13
+Name=QMCMC
+Item=QMCMC,CGHH80
+Form=14
   
   
 [Field]
-Name=AMED2
-Item=AMED2,CCHH80
-Form=13
+Name=QMFLG
+Item=QMFLG,CGHH80
+Form=14
   
   
 [Field]
-Name=AMED3
-Item=AMED3,CCHH80
-Form=13
+Name=QMMBR
+Item=QMMBR,CGHH80
+Form=14
   
   
 [Field]
-Name=AMZSHA
-Item=AMZSHA,CCHH80
-Form=13
+Name=QMYBR
+Item=QMYBR,CGHH80
+Form=14
   
   
 [Field]
-Name=AMZSWA
-Item=AMZSWA,CCHH80
-Form=13
+Name=QMSMK
+Item=QMSMK,CGHH80
+Form=14
   
   
 [Field]
-Name=AMZSWH
-Item=AMZSWH,CCHH80
-Form=13
+Name=QMBM
+Item=QMBM,CGHH80
+Form=14
   
   
 [Field]
-Name=AMZSBM
-Item=AMZSBM,CCHH80
-Form=13
+Name=QMRESI
+Item=QMRESI,CGHH80
+Form=14
   
   
 [Field]
-Name=AMAGEM
-Item=AMAGEM,CCHH80
-Form=13
+Name=QMED1
+Item=QMED1,CGHH80
+Form=14
   
   
 [Field]
-Name=AMHIVWGT
-Item=AMHIVWGT,CCHH80
-Form=13
+Name=QMED2
+Item=QMED2,CGHH80
+Form=14
   
   
 [Field]
-Name=AMNAME
-Item=AMNAME,CCHH80
-Form=13
+Name=QMED3
+Item=QMED3,CGHH80
+Form=14
   
   
 [Field]
-Name=AMAUXIL
-Item=AMAUXIL,CCHH80
-Form=13
+Name=QMZSHA
+Item=QMZSHA,CGHH80
+Form=14
+  
+  
+[Field]
+Name=QMZSBM
+Item=QMZSBM,CGHH80
+Form=14
+  
+  
+[Field]
+Name=QMAGEM
+Item=QMAGEM,CGHH80
+Form=14
+  
+  
+[Field]
+Name=QMHIVWGT
+Item=QMHIVWGT,CGHH80
+Form=14
+  
+  
+[Field]
+Name=QMNAME
+Item=QMNAME,CGHH80
+Form=14
+  
+  
+[Field]
+Name=QMAUXIL
+Item=QMAUXIL,CGHH80
+Form=14
   
 [EndGroup]
   

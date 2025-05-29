@@ -1,0 +1,16 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=KIRMIS-8
+Name=KIRMIS-8
+AppType=Batch
+[External Dictionaries]
+File=.\wprelim8.dcf
+[AppCode]
+File=.\KIRMIS-8.apc
+[Message]
+File=.\ccIQ81.mgf
+[Order]
+File=.\ccIQ81.ord
+[Dictionary Types]
+Dict-Type=..\dicts\ccIQ81.dcf,Input,.\ccIQ81.ord
+Dict-Type=.\wprelim8.dcf,Working

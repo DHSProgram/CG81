@@ -14,7 +14,7 @@
   string  temp;                        { directory where data collected by supervisor (acting as interviewer) is transferred to his/her machine }
   string  btsup, btwork, btsamp;           { directories used by the client/server applications to send/receive data via bluetooth }
   string  fpath, fname, work, dicts, entry, utility, wrkref, upgrades, SampData, SampApps, images, receive, pilotdata, audiodata, quizdata, library;
-  string     fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and INDIVIDUAL dictionaries }
+  string  fnameHH, fnameIN;              { to extract file name from HOUSEHOLD and INDIVIDUAL dictionaries }
   string  quest;
   string  chkfile;
   string  heading;

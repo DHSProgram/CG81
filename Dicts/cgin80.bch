@@ -1,0 +1,41 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "batch", 
+  "name": "CGIN80", 
+  "label": "cgin80", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "CGIN80.dcf", 
+      "parent": "cgin80.ord"
+    }
+  ], 
+  "order": [
+    "cgin80.ord"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "cgin80.bch.apc"
+    }
+  ], 
+  "messages": [
+    "cgin80.bch.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "htmlDialogs": true, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

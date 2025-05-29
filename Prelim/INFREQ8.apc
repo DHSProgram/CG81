@@ -1,0 +1,286 @@
+﻿
+
+PROC GLOBAL
+{ DHS-V raw data frequencies  version 1.0.1 of 07/14/06 }
+
+  array alpha(80) xcal(9);
+
+  numeric i, j, x, calend, calbeg, callen, calint, found;
+  numeric DaysMonth = 30.4375;
+
+  numeric hweight, rweight, dweight, unweight;
+  
+PROC CGIN80_FF
+preproc
+   setlanguage("FR");
+
+    calend = cmcode(12,2020);   { !!! last date of calendar }
+    calbeg = cmcode( 1,2015);   { !!! first date of calendar }
+    callen = calend-calbeg+1;   { length of calendar }
+
+  unweight = ( sysparm()[1:1] <> "W" );       // 0-Weighted, 1-Unweighted
+  if unweight then
+    errmsg( "Raw frequencies for Country are UNWEIGHTED" );
+  else	
+    errmsg( "Raw frequencies for Country are WEIGHTED" );
+  endif
+
+PROC INDIVIDUAL
+preproc
+
+  { Drop incomplete and non-de facto }
+  if QCLUSTER < 9971 | QRESULT <> 1 {| QH06(QLINE) <> 1 } then skip case; endif;
+  QTYPE = 1;
+  
+
+  if unweight then
+    rweight = 1;
+	dweight = 1;
+  else	
+    rweight = QWEIGHT/1000000;
+    dweight = QDWEIGHT/1000000;
+  endif;	
+
+  if QQTYPE = 2 then      { Women }
+{
+    { get freqs of HH vars that will appear in woman's recode file }
+    freq include(QHWLTHF,QHWLTFUR)
+         stat nofreq
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+    if QH05(QLINE) = 1 then
+      freq include(QHSEC02 numeric alpha) 
+           breakdown(1)
+           title( "Country - Women's data at HH level for dejure women" )
+            weighted rweight;
+    endif;
+}
+    freq include( QLINE,
+                  QSECOVER numeric alpha,
+                  QWSEC01  numeric alpha,
+                  QWSEC2A  numeric alpha,
+                  QWSEC2B  numeric alpha,
+                  QWSEC2D  numeric alpha )
+         breakdown(1)
+         exclude( QINTCD, Q220CD )
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+	   freq include( QINTCD, Q220CD )
+         stat nofreq
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+    freq include( QWSEC3A numeric alpha )
+         disjoint
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+    freq include( QWSEC3B numeric alpha )
+         breakdown(1)
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+    for i in QWSEC04_EDT do
+      freq include( QWSEC04 numeric alpha )
+           breakdown(1)
+           title( "Country - Women's Data" )
+           select( (QINTCD - Q220CD(Q404)) / DaysMonth < 36 )
+           weighted rweight;
+    enddo;
+
+    for i in QWSEC05_EDT do
+      freq include( QWSEC05 numeric alpha)
+           breakdown(1)
+           title( "Country - Women's Data" )
+           select( (QINTCD - Q220CD(Q503)) / DaysMonth < 36 )    { !!! make sure vaccinations only for last three years }
+           weighted rweight;
+    enddo;
+
+    for i in QWSEC6A_EDT do
+      freq include( QWSEC6A numeric alpha)
+           breakdown(1)
+           title( "Country - Women's Data" )
+           select( (QINTCD - Q220CD(Q603)) / DaysMonth < 60 )
+           weighted rweight;
+    enddo;
+{
+    for j in QWSEC2B_EDT do
+      if Q227 in 1:50 & (QINTCD-Q220CD)/DaysMonth < 60 then
+        found = 0;
+        do i = 1 while i <= soccurs(QBSEC01) & !found
+          if Q227(j) = QB102(i) then
+            found = 1;
+            recode QB106(i) -> hw2;
+                   99.94    -> 9994;
+                   99.95    -> 9995;
+                   99.96    -> 9996;
+                   missing  -> missing;
+                            -> int(QB106(i)*10+0.5);
+            endrecode;
+            hw3  = int(QB108(i)*10);
+            hw15 = QB110(i);
+            hw16 = QCDBR(i);
+            hw17 = QBINTD;
+            hw18 = QBINTM;
+            hw19 = QBINTY;
+            hw51 = QB118(i);
+            hw52 = QB120(i);
+            hw53 = QB123(i)*10;
+            hw70 = QCZSHA(i);
+            hw71 = QCZSWA(i);
+            hw72 = QCZSWH(i);
+            hw73 = QCZSBM(i);
+            freq include( hw2, hw3, hw15, hw16, hw17, hw18, hw19, hw51, hw52, hw53 )
+              title( "Country - children's anthropometry at woman's level" )
+                   weighted rweight;
+            freq include( hw70, hw71, hw72, hw73 )
+                 nofreq stat
+              title( "Country - children's anthropometry at woman's level" )
+                   weighted rweight;
+          endif;
+        enddo;
+      endif;
+    enddo;
+
+    for i in QWSEC04_EDT do
+      freq include( Q436, Q476, Q478, Q482U, Q482N, Q485 )
+           title( "Mom freqs for V4...current status" )
+           select( (QINTCD - Q220CD(Q404)) / DaysMonth < 60 & QCOL41 = 1 )
+           weighted rweight;
+    enddo;
+
+    for i in QBSEC02_EDT do
+      if QB202 = QLINE then
+        recode QB205 -> v437;
+             999.94  -> 9994;
+             999.95  -> 9995;
+             999.96  -> 9996;
+             missing -> missing;
+                     -> int(QB205*10+0.5);
+        endrecode;
+        v438  = int(QB207*10);
+        v445  = QWBM;
+        freq include( v437, v438, v453 )
+             title( "woman's hts/wts/anemia" )
+             weighted rweight;
+        freq include( v445 )
+             nofreq stat
+             title( "woman's anthropometry scores" )
+             weighted rweight;
+      endif;
+    enddo;
+}
+    x = count(QWSEC2B where (QINTCD - Q220CD) / DaysMonth < 24 & Q226 = 1 );
+	if x then
+      freq include( Q635,  Q636A,  Q636B,  Q636BN,  Q636C,  Q636CN, Q636CA, Q636E,  Q636EA, 
+	                Q636F, Q636G,  Q636H,  Q636I,   Q636IA, Q636J,  Q636K,  Q636KA,  
+					Q637A, Q637AN, Q637AY, Q637AYA, Q637B,  Q637C,  Q637D,  Q637E,  Q637F,  
+					Q637G, Q637H,  Q637I,  Q637J,   Q637K,  Q637L,  Q637M,  Q637N,  Q637O,  
+					Q637P, Q637Q,  Q637R,  Q637S,   Q637T,  Q637U,  Q637V,  Q639,   Q640,    
+					Q641,  Q642,   Q636Z,  Q637Z ) 
+         breakdown(1)
+         title( "feeding practices for children 0:23" )
+         weighted rweight;
+    endif;		 
+    freq include( Q643A, Q643B,  Q643C,  Q643D, Q643E, Q643F, Q643G, Q643H,  Q643I,  Q643J, Q643K, 
+		          Q643L, Q643M,  Q643N,  Q643O, Q643P, Q643Q, Q643R, Q643S,  Q643T,  Q643U, Q643V,
+				  Q643W, Q643X,  Q643XA, Q643Y, Q643Z  ) 
+         breakdown(1)					
+         title( "feeding practices for women" )
+         weighted rweight;
+
+    freq include( QWSEC07 numeric alpha,
+                  QWSEC08 numeric alpha,
+                  QWSEC09 numeric alpha,
+                  QWSEC10 numeric alpha,
+                  QWSEC11 numeric alpha )
+         disjoint
+         breakdown(1)
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+    { Maternal mortality module }
+    freq include( QWSECM2 numeric alpha 
+                  QWSECM3 numeric alpha )
+         title( "Country - Women's Data" )
+         weighted rweight;
+   
+    { early childhood development }
+    for i in QWSECECD_EDT do
+      freq include( QWSECECD numeric alpha )
+           breakdown(1)
+           title( "Country - Women's Data" )
+           select( Q226(QECDCA) = 1 & (QINTCD - Q220CD(QECDCA)) / DaysMonth >= 24 & (QINTCD - Q220CD(QECDCA)) / DaysMonth < 60 )
+           weighted rweight;
+    enddo;		   
+
+    { fistula }
+    freq include( QWSECFIS numeric alpha )
+         breakdown(1)
+         title( "Country - Women's Data" )
+         weighted rweight;
+
+    { Calendar all columns month by month }
+    freq include(QCAL)
+         disjoint
+         breakdown(1)
+         title( "Country - Women's Data - All Calendar" )
+         weighted rweight;
+
+    { Calendar - month of interview only }
+    calint = calend - cmcode(QINTM,QINTY) + 1;  { row of month of interview }
+    do i = 1 while i <= totocc( QWSEC2C_EDT )
+      xcal(i) = QCAL(i);
+      QCAL(i) = xcal(i)[calint:1];
+    enddo;
+    freq include(QCAL)
+         disjoint
+         breakdown(1)
+         title( "Country - Women's Data - Interview Month" )
+         weighted rweight;
+    do i = 1 while i <= totocc( QWSEC2C_EDT )
+      QCAL(i) = xcal(i);
+    enddo;
+
+  elseif QQTYPE = 1 then  { Men }
+{
+    { get freqs of HH vars that will appear in men's recode file }
+    freq include(QHWLTHF,QHWLTFUR)
+         stat nofreq
+         title( "Country - Men's Data" )
+         weighted rweight;
+}
+    freq include( QLINE,
+                  QSECOVER numeric alpha,
+                  QMSEC01  numeric alpha,
+                  QMSEC02  numeric alpha )
+         exclude( QINTCD )
+         title( "Country - Men's Data" )
+         weighted rweight;
+
+	freq include( QINTCD )
+         stat nofreq
+         title( "Country - Men's Data" )
+         weighted rweight;
+
+    freq include( QMSEC3A numeric alpha,
+                  QMSEC3B numeric alpha,
+                  QMSEC04 numeric alpha )
+         disjoint
+         breakdown(1)
+         title( "Country - Men's Data" )
+         weighted rweight;
+
+    freq include( QMSEC05 numeric alpha,
+                  QMSEC06 numeric alpha,
+                  QMSEC07 numeric alpha,
+                  QMSEC08 numeric alpha )
+         breakdown(1)
+         title( "Country - Men's Data" )
+         weighted rweight;
+
+
+
+  endif;

@@ -1,0 +1,52 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "batch", 
+  "name": "HHFREQ8", 
+  "label": "IQFREQ8", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../dicts/CGHH80.dcf", 
+      "parent": "../dicts/cghh80.ord"
+    }, 
+    {
+      "type": "working", 
+      "path": "FREQWORK.dcf"
+    }
+  ], 
+  "order": [
+    "../dicts/cghh80.ord"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "HHFreq8.apc"
+    }
+  ], 
+  "messages": [
+    "CcIQ81.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "none", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

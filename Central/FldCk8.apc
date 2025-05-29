@@ -14,298 +14,243 @@
 
   array interview(100);       { determine if an individual was successfully interviewed to be used for DBS collection }
 
-  crosstab float(1) f1u Fteams+{fintnum+}ftotal AHRESULT+ftotaln+ftarget
+  crosstab float(1) f1u Fteams+{fintnum+}ftotal QHRESULT+ftotaln+ftarget
     exclude( percents, totals, specval )
-    title( "FC-1: Household completion rate (urban)", " ",
-           "Percent distribution of sampled households by results of household",
-           "interview, according to interviewer team, Country, 2015" )
+    title( "FC-1U: Taux de réponse des ménages (Urbain)", " ",
+           "Distribution (en %) des ménages par résultat de l'interview",
+           ", selon l'équipe, Pré-test République du Congo EDSC-III 2025" )
 
-  crosstab float(1) f1r Fteams+{fintnum+}ftotal AHRESULT+ftotaln+ftarget
+  crosstab float(1) f1r Fteams+{fintnum+}ftotal QHRESULT+ftotaln+ftarget
     exclude( percents, totals, specval )
     title( "FC-1: Household completion rate (rural)", " ",
            "Percent distribution of sampled households by results of household",
-           "interview, according to interviewer team, Country, 2015" )
+           "interview, according to interviewer team, République du Congo EDSC-III 2025 Pretest" )
 
   crosstab float(2) f2w Fteams+{fintnum+}ftotal URBRUR*Fhhmean
     exclude( percents, totals, specval )
-    title( "FC-2W: Eligible women per household","",
-           "Mean number of de facto eligible women per household,",
-           "according to interviewer team.",
-           "Country 2015" );
+    title( "FC-2W: Femmes éligibles par ménage","",
+           "Nombre moyen de femmes (population de fait) éligibles par ménage,",
+           "selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(2) f2m Fteams+{fintnum+}ftotal URBRUR*Fhhmeanm
     exclude( percents, totals, specval )
-    title( "FC-2M: Eligible men per household","",
-           "Mean number of de facto eligible men per household,",
-           "according to interviewer team.",
-           "Country 2015" );
+    title( "FC-2M: Hommes éligibles par ménage","",
+           "Nombre moyen d'hommes (population de fait) éligibles par ménage,",
+           "selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
-  crosstab float(1) f3wu Fteams+{fintnum+}ftotal ARESULT+ftotaln+ftarget
+  crosstab float(1) f3wu Fteams+{fintnum+}ftotal QRESULT+ftotaln+ftarget
     exclude( percents, totals, specval )
-    title( "FC-3W: Eligible woman completion rate (urban)","",
-           "Percent distribution of de facto eligible women by result",
-           "of individual interview, according to interviewer team.",
-           "Country 2015" );
+    title( "FC-3WU: Taux de réponse des femmes éligibles (Urbain)","",
+           "Distribution (en %) des femmes (population de fait) éligibles ",
+           "selon le résultat de l'interview individuelle par équipe,",
+           "Pré-test République du Congo EDSC-III 2025" );
 
-  crosstab float(1) f3wr Fteams+{fintnum+}ftotal ARESULT+ftotaln+ftarget
+  crosstab float(1) f3wr Fteams+{fintnum+}ftotal QRESULT+ftotaln+ftarget
     exclude( percents, totals, specval )
     title( "FC-3W: Eligible woman completion rate (rural)","",
            "Percent distribution of de facto eligible women by result",
            "of individual interview, according to interviewer team.",
-           "Country 2015" );
+           "République du Congo EDSC-III 2025 Pretest" );
 
-  crosstab float(1) f3mu Fteams+{fintnum+}ftotal ARESULT+ftotaln+ftarget
+  crosstab float(1) f3mu Fteams+{fintnum+}ftotal QRESULT+ftotaln+ftarget
     exclude( percents, totals, specval )
-    title( "FC-3M: Eligible man completion rate (urban)","",
-           "Percent distribution of de facto eligible men by result",
-           "of individual interview, according to interviewer team.",
-           "Country 2015" );
+    title( "FC-3MU: Taux de réponse des hommes éligibles (Urbain)","",
+           "Distribution (en %) des hommes (population de fait) éligibles ",
+           "selon le résultat de l'interview individuelle par équipe, ",
+           "Pré-test République du Congo EDSC-III 2025" );
 
-  crosstab float(1) f3mr Fteams+{fintnum+}ftotal ARESULT+ftotaln+ftarget
+  crosstab float(1) f3mr Fteams+{fintnum+}ftotal QRESULT+ftotaln+ftarget
     exclude( percents, totals, specval )
     title( "FC-3M: Eligible man completion rate (rural)","",
            "Percent distribution of de facto eligible men by result",
            "of individual interview, according to interviewer team.",
-           "Country 2015" );
+           "République du Congo EDSC-III 2025 Pretest" );
 
   crosstab float(2) f4w Fteams+{fintnum+}ftotal Fage+ftotalw+Fratio+ftarget
     exclude( percents, totals, specval )
-    title( "FC-4W: Age displacement: women","",
-           "Number of all women age 12-18 years listed in the household",
-           "schedule by single year of age and age ratio 15/14,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-4W: Déplacement des âges: femmes","",
+           "Effectif de toutes les femmes* de 12-18 ans listées dans ",
+           "le questionnaire ménage par année d'âge et ratio des âges 15/14, ",
+           "selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(2) f4m Fteams+{fintnum+}ftotal Fagem+ftotalm+Fratiom+ftarget
     exclude( percents, totals, specval )
-    title( "FC-4M: Age displacement: men","",
-           "Number of all men age 12-18 years listed in the household",
-           "schedule by single year of age and age ratio 15/14,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-4M: Déplacement des âges: hommes","",
+           "Effectif de Effectif de tous les hommes* de 12-18 ans listés dans ",
+           "le questionnaire ménage par année d'âge et ratio des âges 15/14, ",
+           "selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f5 Fteams+{fintnum+}ftotal Fceb+ftarget
     exclude( percents, totals, specval )
-    title( "FC-5:  Children ever born","",
-           "Number of all women with a completed interview, total number",
-           "of children ever born (CEB), and mean number of CEB,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-5:  Enfants déjà nés ","",
+           "Effectif de TOUTES LES FEMMES* avec une interview complète, ",
+           "effectif d'enfants déjà nés et nombre moyen d'enfants déjà nés, ",
+           "selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(2) f6 Fteams+{fintnum+}ftotal Fyearb+ftotalb+Fratiob+ftarget
     exclude( percents, totals, specval)
-    title( "FC-6: Birth displacement","",
-           "Number of births since [2006] by year of birth and birth year",
-           "ratio [2010/2009], according to interviewer team (based on",
-           "all births of all women), Country 2015" );
+    title( "FC-6: Déplacement des naissances","",
+           "Effectif de naissances depuis 2018 par année de naissance et ",
+           "ratio des années de naissance 2022/2023, selon l'équipe ",
+           "(basé sur les naissances de toutes les femmes), Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f7l Fteams+{fintnum+}ftotal Fcompl+ftotaln+ftarget
     exclude( percents, totals, specval )
-    title( "FC-7L: Birth date reporting: living children","",
-           "Percent distribution of births by completeness of date of",
-           "birth/age information, according to interviewer team (based",
-           "on births of all women), Country 2015" );
-
+    title( "FC-7L: Déclaration de la date de naissance: enfants vivants","",
+           "Distribution (en %) des naissances par complétude de l'information ",
+           "sur la date de naissance/âge, selon l'équipe ",
+           "(basé sur les naissances de toutes les femmes), Pré-test République du Congo EDSC-III 2025" );
+           
   crosstab float(1) f7d Fteams+{fintnum+}ftotal Fcompd+ftotaln+ftarget
     exclude( percents, totals, specval )
-    title( "FC-7D: Birth date reporting: dead children","",
-           "Percent distribution of births by completeness of date of",
-           "birth information, according to interviewer team (based",
-           "on births of all women), Country 2015" );
+    title( "FC-7D: Déclaration de la date de naissance: enfants décédés","",
+           "Distribution (en %) des naissances par complétude de l'information ",
+           "sur la date de naissance, selon l'équipe ",
+           "(basé sur les naissances de toutes les femmes), Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f8  Fteams+{fintnum+}ftotal Faged+ftotald+Fratiod+ftarget
     exclude( percents, totals, specval )
-    title( "FC-8: Age at death heaping","",
-           "Number of deaths in the 15 years preceding the survey",
-           "occurring at 8-16 months of age by reported months of age",
-           "at death (including age at death reported as 'one year') and",
-           "12 months ratio, according to interviewer team. (Includes",
-           "deaths for which a calendar period of death could not be assigned",
-           "because of missing date of birth information.  Deaths lacking",
-           "age at death are not included. Based on births of all women)",
-           "Country 2015" );
+    title( "FC-8: Attraction des âges au décès","",
+           "Effectif des décès des 15 dernières années, survenus aux âges de 8-16 ",
+           "mois selon l'âge au décès en mois déclaré (y compris l'âge au décès ",
+           "déclaré comme '1 an') et ratio des 12 mois, selon l'équipe. ",
+           "Y compris les décès pour lesquels une période de calendrier de décès ne peut être ",
+           "affectée parce que la date de naissance est manquante. Les décès sans âge au décès ",
+           "ne sont pas inclus. Basé sur les naissances de toutes les femmes, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(2) f9  Fteams+{fintnum+}ftotal Faged9+Falive+ftotalb9+Fratio9
     exclude( percents, totals, specval )
-    title( "FC-9:  Child mortality","",
-           "Number of births in the 15 years before the survey by survival",
-           "status and age at death (for those who died), the ratio of",
-           "neonatal deaths (<1 month) to all infant deaths (<12 months),",
-           "and the ratio of infant deaths to all births,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-9:  Mortalité des enfants","",
+           "Effectif de naissances des 15 années avant l'enquête selon l'état de survie et ",
+           "l'âge au décès (pour les décédés), ratio des décès néonatals (<1 mois) à tous ",
+           "les décès infantiles (<12 mois), et ratio des décès infantiles à toutes ",
+           "les naissances, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f10 Fteams+{fintnum+}ftotal Fcardr+Fcardp+ftarget
     exclude( percents, totals, specval )
-    title( "FC-10: Vaccination cards","",
-           "Percentage of living children born since January [2002] who",
-           "currently have a health card and of children whose health card",
-           "was seen by the interviewer and proportion of cards seen,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-10: Carnets de Vaccination","",
+           "Pourcentage d'enfants vivants agés 12-23 mois qui ont actuellement une carte ",
+           "de vaccination, pourcentage d'enfants dont la carte a été vue par l'enquêtrice, ",
+           "et proportion de cartes vues, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
+
 
    crosstab float(1) f11cw1 Fteams+{fintnum+}ftotal fwc11+ftotalc2+Fhwc+ftarget2
     exclude( percents, totals, specval )
-    title( "FC-11CW: Children's weight","",
-           "Percent distribution of  children under 5 eligible for height and weight",
-           "by result of weight measurement, percentage of children measured who have out of range",
-           "weight values or incomplete date of birth, and percentage of children measured who",
-           "have out of range weight-for-height Z-score, according to interviewer team, Country 2015" );
+    title( "FC-11CW: Poids des enfants","",
+           "Distribution (en %) d'enfants de moins de 5 ans éligibles pour le poids et la taille ",
+           "par les résultats des mesures du poids, et pourcentage des enfants mesurés dont ",
+           "les valeurs du poids sont hors fourchettes ou dont la date de naissance est incomplète, ",
+           "et pourcentage des enfant mesurés dont les valeurs poids-taille ",
+           "Z-score sont hors fourchettes, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
    crosstab float(1) f11cw2 Fteams+{fintnum+}ftotal fdec1+ftotpc1+ftotalc3+ftarget
     exclude( percents, totals, specval )
-    title( "FC-11C wt 1dec: Accuracy of children's weight, 1st decimal","",
-           "Percent distribution of children <5 weighed and with valid data by 1st decimal of the",
-           "recorded weight, according to interviewer team, Country 2015" );
+    title( "FC-11C wt 1dec: Précision du Poids des enfants, 1ère décimale","",
+           "Pourcentage du poids des enfants de moins de 5 ans pesés et avec données , ",
+           "valides d'après la première décimale du poids enregistrée, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
    crosstab float(1) f11cw3 Fteams+{fintnum+}ftotal fdec2+ftotpc2+ftotalc3+ftarget
     exclude( percents, totals, specval )
-    title( "FC-11C wt 2dec: Accuracy of children's weight, 2nd decimal","",
-           "Percent distribution of children <5 weighed and with valid data, by 2nd decimal of the",
-           "reported weight, according to interviewer team, Country 2015" );
+    title( "FC-11C wt 2dec: Précision du Poids des enfants, 2ème décimale","",
+           "Pourcentage du poids des enfants de moins de 5 ans pesés et avec données valides ",
+           "d'après la deuxième du poids enregistrée, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
    crosstab float(1) f11ch Fteams+{fintnum+}ftotal fhc11+ftotalc2+Fhwc+ftarget3
     exclude( percents, totals, specval )
-    title( "FC-11CH: Height: children","",
-           "Percent distribution of children under 5 eligible for height ",
-           "by result of height measurement, and percentage of",
-           "children measured who have out of range values or incomplete date",
-           "of birth, according to interviewer team, Country 2015" );
+    title( "FC-11CH: Taille des enfants","",
+           "Distribution (en %) d'enfants de moins de 5 ans éligibles pour le poids ",
+           "et la taille par les résultats des mesures de la taille, et pourcentage ",
+           "mesurés dont les valeurs de la taille sont hors fourchettes ou dont ",
+           "la date de naissance est incomplète, et pourcentage des enfant mesures dont ",
+           "les valeurs taille-age Z-score sont hors fourchettes, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11ww1 Fteams+{fintnum+}ftotal fww11+ftotalw2+Fhww+ftarget4
     exclude( percents, totals, specval )
-    title( "FC-11W wt: Women's weight","",
-           "Percent distribution of women eligible for height and weight ",
-           "by result of weight measurement,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-11W wt: Poids des femmes","",
+           "Distribution (en %) de femmes éligibles pour le poids et ",
+           "le poids et la taille par résultat des mesures du poids, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11ww2 Fteams+{fintnum+}ftotal fdec1+ftotpc1+ftotalw3+ftarget
     exclude( percents, totals, specval )
-    title( "FC-11W wt 1dec: Accuracy of women's weight, 1st decimal","",
-           "Percent distribution of women weighed and with valid data, by 1st decimal of the",
-           "reported weight, according to interviewer team, Country 2015" );
+    title( "FC-11W wt 1dec: Précision du Poids des femmes 1ère décimale","",
+           "Pourcentage du poids des femmes de 15-49 ans pesés et avec données valides ",
+           "d'après la première décimale du poids enregistrée, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11ww3 Fteams+{fintnum+}ftotal fdec2+ftotpc2+ftotalw3+ftarget
     exclude( percents, totals, specval )
-    title( "FC-11W wt 2dec: Accuracy of women's weight, 2nd decimal","",
-           "Percent distribution of women weighed and with valid data, by 2nd decimal of the",
-           "reported weight, according to interviewer team, Country 2015" );
+    title( "FC-11W wt 2dec: Précision du Poids des femmes 2ème décimale","",
+           "Pourcentage du poids des femmes de 15-49 ans pesés et avec données ",
+           "valides d'après la seconde décimale du poids enregistrée, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11wh Fteams+{fintnum+}ftotal fhw11+ftotalw2+Fhww+ftarget4
     exclude( percents, totals, specval )
-    title( "FC-11W ht: Women's height","",
-           "Percent distribution of women eligible for height and weight",
-           "by result of height measurement, according to interviewer team, Country 2015" );
+    title( "FC-11W ht: Taille des femmes","",
+           "Distribution (en %) de femmes de 15-49 ans éligibles pour le poids ",
+           "et la taille par les résultats des mesures de la taille, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11mw1 Fteams+{fintnum+}ftotal Fwm11+ftotalm2+Fhwm+ftarget5
     exclude( percents, totals, specval )
-    title( "FC-11M wt: Men's weight","",
-           "Percent distribution of men eligible for height and weight ",
-           "by result of weight measurement, according to interviewer team, Country 2015" );
+    title( "FC-11M wt: Poids des hommes","",
+           "Distribution (en %) des hommes éligibles pour le poids et ",
+           "le poids et la taille par résultat des mesures du poids, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11mw2 Fteams+{fintnum+}ftotal fdec1+ftotpc1+ftotalm3+ftarget
     exclude( percents, totals, specval )
-    title( "FC-11M wt 1dec: Accuracy of men's weight, 1st decimal","",
-           "Percent distribution of men weighed and with valid data, by 1st decimal of the",
-           "reported weight, according to interviewer team, Country 2015" );
+    title( "FC-11M wt 1dec: Précision du Poids des hommes 1ère décimale","",
+           "Pourcentage du poids des hommes de 15-49 ans pesés et avec données valides ",
+           "d'après la première décimale du poids enregistrée, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11mw3 Fteams+{fintnum+}ftotal fdec2+ftotpc2+ftotalm3+ftarget
     exclude( percents, totals, specval )
-    title( "FC-11M wt 2dec: Accuracy of men's weight, 2nd decimal","",
-           "Percent distribution of men weighed and with valid data, by 2nd decimal of the",
-           "reported weight, according to interviewer team, Country 2015" );
+    title( "FC-11M wt 2dec: Précision du Poids des hommes 2ème décimale","",
+           "Pourcentage du poids des hommes de 15-49 ans pesés et avec données ",
+           "valides d'après la seconde décimale du poids enregistrée, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f11mh Fteams+{fintnum+}ftotal Fhm11+ftotalm2+Fhwm+ftarget5
     exclude( percents, totals, specval )
-    title( "FC-11MH: Height: men","",
-           "Percent distribution of men eligible for height ",
-           "by result of height measurement, and",
-           "percentage of men measured who have out of range values,",
-           "according to interviewer team, Country 2015" );
-
-  crosstab float(1) f12c1 Fteams+{fintnum+}ftotal Fac12+ftotalc5+fanc+ftarget6
-    exclude( percents, totals, specval )
-    title( "FC-12C hb: Anemia testing: children","",
-           "Percent distribution of children 6-59 months eligible for",
-           "anemia testing by result of anemia testing,",
-           "according to interviewer team, Country 2015" );
-
-  crosstab float(1) f12c2 Fteams+{fintnum+}ftotal fdec1+ftotpc1+ftotalc4+ftarget
-    exclude( percents, totals, specval )
-    title( "FC-12C hb 1dec: Accuracy of children's hemoglobin level, 1st decimal","",
-           "Percent distribution of children 6-59 months tested for hemoglobin and with",
-           "valid data, by1st decimal of reported hemoglobin level,",
-           "according to interviewer team, Country 2015" );
-
-  crosstab float(1) f12w1 Fteams+{fintnum+}ftotal Faw12+ftotalw2+fanw+ftarget4
-    exclude( percents, totals, specval )
-    title( "FC-12W hb: Anemia testing: women","",
-           "Percent distribution of women eligible for",
-           "anemia testing by result of anemia testing,",
-           "according to interviewer team, Country 2015" );
-
-  crosstab float(1) f12w2 Fteams+{fintnum+}ftotal fdec1+ftotpc1+ftotalw3+ftarget
-    exclude( percents, totals, specval )
-    title( "FC-12W hb 1dec: Accuracy of women's hemoglobin level, 1st decimal","",
-           "Percent distribution of women tested for hemoglobin and with valid data,",
-           "by 1st decimal of reported hemoglobin level,",
-           "according to interviewer team, Country 2015" );
-
-  crosstab float(1) f12m1 Fteams+{fintnum+}ftotal Fam12+ftotalm2+fanm+ftarget5
-    exclude( percents, totals, specval )
-    title( "FC-12M hb: Anemia testing: men","",
-           "Percent distribution of men eligible for anemia testing by result of anemia testing,",
-           "according to interviewer team, Country 2015" );
-
-  crosstab float(1) f12m2 Fteams+{fintnum+}ftotal fdec1+ftotpc1+ftotalm3+ftarget
-    exclude( percents, totals, specval )
-    title( "FC-12M hb 1dec: Accuracy of men's hemoglobin level, 1st decimal","",
-           "Percent distribution of men tested for hemoglobin and with valid data,",
-           "by 1st decimal of reported hemoglobin level,",
-           "according to interviewer team, Country 2015" );
+    title( "FC-11M ht: Taille des hommes","",
+           "Distribution (en %) des hommes de 15-49 ans éligibles pour le poids ",
+           "et la taille par les résultats des mesures de la taille, selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f13w Fteams+{fintnum+}ftotal fdbs*findint+ftotalw2+ftarget
     exclude( percents, totals, specval )
-    title( "FC-13W: HIV blood collection: women","",
-           "Percent distribution of women eligible for HIV testing by",
-           "result of HIV blood collection, according to interviewer team,",
-           "Country 2015" );
+        title( "FC-13W : Collecte de sang pour le VIH : femmes","",
+        "Répartition en pourcentage des femmes éligibles au dépistage du VIH par",
+        "résultat de la collecte de sang pour le VIH, selon l'équipe",
+        "Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f13m Fteams+{fintnum+}ftotal fdbs*findint+ftotalm2+ftarget
     exclude( percents, totals, specval )
-    title( "FC-13M: HIV blood collection: men","",
-           "Percent distribution of men eligible for HIV testing by",
-           "result of HIV blood collection, according to interviewer team,",
-           "Country 2015" );
+        title( "FC-13M : Collecte de sang pour le VIH : hommes","",
+        "Répartition en pourcentage des hommes éligibles au dépistage du VIH par",
+        "résultat de la collecte de sang pour le VIH, selon l'équipe",
+        "Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(1) f14 Fteams+{fintnum+}ftotal
                       fcol14a+ftarget+fcol14b+ftarget+fcol14c+ftarget
     exclude( percents, totals, specval )
-    title( "FC-14:  Adult and Maternal Mortality Module","",
-           "Number of deceased sisters and number and percentage for whom",
-           "age at death is missing; number of sisters who died",
-           "at age 12 years and above and number and percentage for whom",
-           "information on death during pregnancy, during delivery or",
-           "after delivery is missing, and for whom information on timing",
-           "of death ('years ago') is missing, according to interviewer team ",
-           "(all women) Country 2015" );
-
-  crosstab float(1) f15 Fteams+{fintnum+}ftotal resdv+ftarget
-    exclude( percents, totals, specval )
-    title( "FC-15:  Domestic violence","",
-           "Women eligible for domestic violence and interviewed",
-           "(privacy obtained), according to interviewer team,",
-           "Country 2015" );
+    title( "FC-14:  Module de mortalité maternelle","",
+           "Effectif de soeurs décédées et effectif et pourcentage de celles pour lesquelles ",
+           "l'âge au décès est manquant; effectif de soeurs décédées à l'âge de 12 ans ou ",
+           "plus et effectif et pourcentage de celles pour lesquelles l'information sur ",
+           "le décès au cours de la grossesse, de l'accouchement ou après l'accouchement est manquante, ",
+           "et pour lesquelles l'information sur le nombre d'années depuis le décès est manquante ",
+           "(TOUTES les femmes), selon l'équipe, Pré-test République du Congo EDSC-III 2025" );
 
   crosstab float(0) f20 Fteams+{fintnum+}ftotal fsumm1
     exclude( percents, totals, specval )
     title( "Global evaluation tables 1 to 10, 14 and 15","",
-           "according to interviewer team, Country 2015" );
+           "according to interviewer team, République du Congo EDSC-III 2025 Pretest" );
 
   crosstab float(0) f21 Fteams+{fintnum+}ftotal fsumm2
     exclude( percents, totals, specval )
     title( "Global evaluation biomarker tables 11 and 12 ","",
-           "according to interviewer team, Country 2015" );
+           "according to interviewer team, République du Congo EDSC-III 2025 Pretest" );
 
   crosstab float(0) f22 Fteams+{fintnum+}ftotal fsumm3
     exclude( percents, totals, specval )
     title( "Global evaluation all targets","",
-           "according to interviewer team, Country 2015" );
+           "according to interviewer team, République du Congo EDSC-III 2025 Pretest" );
 
   { obtain measurement result for children's weight }
   function measure1( xvar )
@@ -367,7 +312,7 @@
     measure5 = x;
   end;
 
-PROC CCHH80_FF
+PROC CGHH80_FF
 preproc
   { get language from calling menu }
   SetLanguage( GetLanguage() );
@@ -394,10 +339,10 @@ preproc
   fratiod  = notappl;
   fratio9  = notappl;
 
-  byteam = ( sysparm()[1:1] = "T" );
+  byteam = 1;
 
-  yearint = 2015;                      { Year of interview (Last year)    }
-  cutoff  = 2010;                      { Cutoff year/health section       }
+  yearint = 2025;                      { Year of interview (Last year)    }
+  cutoff  = 2023;                      { Cutoff year/health section       }
 
   { Targets }
   f1u_tar   = 96;       { !! request target from CM }
@@ -1072,146 +1017,6 @@ postproc
     endif;
   enddo;
 
-  { Table f12c1 }
-  jtot = tblcol( f12c1, ftotalc5 );
-  jmax = jtot - 2;
-  { % with anemia out of range }
-  f12c1[*,jtot+1] = f12c1[*,jtot+1] * 100 / f12c1[*,0];
-  { Percents }
-  do j = 0 while j <= jmax
-    f12c1[*,j] = f12c1[*,j] * 100 / f12c1[*,jtot];
-  enddo;
-  f12c1[*,jtot-1] = tblsum( column f12c1[*,0:jmax] );
-  { % of children with valid data }
-  jtot1 = tblcol( f12c1, ftarget6 = 1);
-  f12c1[*,jtot1] = f12c1[*,0] - f12c1[*,0]*f12c1[*,jtot+1]/100;
-  { target 1 }
-  fsumm2 = 11;
-  itot = tblrow( f12c1 );
-  do i = 0 while i <= itot
-    f12c1(i,jtot1+1) = Default;
-    if f12c1(i,jtot1) <= f12_tar1 then
-      f12c1(i,jtot1+1) = f12c1(i,jtot1);
-      f21(i,fsumm2) = asterisk;             { summary table }
-    endif;
-  enddo;
-
-  { Table f12c2 }
-  jtot1 = tblcol( f12c2, ftotalc4 );
-  jmax = jtot1 - 3;
-  { Percents }
-  do j = 0 while j <= jmax
-    f12c2[*,j] = f12c2[*,j] * 100 / f12c2[*,jtot1];
-  enddo;
-  f12c2[*,jmax+1] = tblsum( column f12c2[*,0:jmax] );
-  { % with 1st decimal o or 5 }
-  jmax  = tblcol( f12c2, fdec1 = 5 );
-  f12c2[*,jtot1-1] = f12c2[*,0] + f12c2[*,jmax];
-  { target  }
-  fsumm2 = 12;
-  jtot2 = tblcol( f12c2 );
-  itot  = tblrow( f12c2 );
-  do i = 0 while i <= itot
-    f12c2(i,jtot2) = Default;
-    if f12c2(i,jtot1-1) >= f12_tar2 then
-      f12c2(i,jtot2) = f12c2(i,jtot1-1);
-      f21(i,fsumm2) = asterisk;             { summary table }
-    endif;
-  enddo;
-
-  { Table f12w1 }
-  jtot = tblcol( f12w1, ftotalw2 );
-  jmax = jtot - 2;
-  { % with hemoglobin out of range }
-  f12w1[*,jtot+1] = f12w1[*,jtot+1] * 100 / f12w1[*,0];
-  { Percents }
-  do j = 0 while j <= jmax
-    f12w1[*,j] = f12w1[*,j] * 100 / f12w1[*,jtot];
-  enddo;
-  f12w1[*,jtot-1] = tblsum( column f12w1[*,0:jmax] );
-  { % of women with valid data }
-  jtot1 = tblcol( f12w1, ftarget4 = 1);
-  f12w1[*,jtot1] = f12w1[*,0] - f12w1[*,0]*f12w1[*,jtot+1]/100;
-  { target 1 }
-  fsumm2 = 13;
-  itot = tblrow( f12w1 );
-  do i = 0 while i <= itot
-    f12w1(i,jtot1+1) = Default;
-    if f12w1(i,jtot1) < f12_tar3 then
-      f12w1(i,jtot1+1) = f12w1(i,jtot1);
-      f21(i,fsumm2) = asterisk;             { summary table }
-    endif;
-  enddo;
-
-  { Table f12w2 }
-  jtot1 = tblcol( f12w2, ftotalw3 );
-  jmax = jtot1 - 3;
-  { Percents }
-  do j = 0 while j <= jmax
-    f12w2[*,j] = f12w2[*,j] * 100 / f12w2[*,jtot1];
-  enddo;
-  f12w2[*,jmax+1] = tblsum( column f12w2[*,0:jmax] );
-  { % with 1st decimal o or 5 }
-  jmax  = tblcol( f12w2, fdec1 = 5 );
-  f12w2[*,jtot1-1] = f12w2[*,0] + f12w2[*,jmax];
-  { target  }
-  fsumm2 = 14;
-  jtot2 = tblcol( f12w2 );
-  itot  = tblrow( f12w2 );
-  do i = 0 while i <= itot
-    f12w2(i,jtot2) = Default;
-    if f12w2(i,jtot1-1) >= f12_tar2 then
-      f12w2(i,jtot2) = f12w2(i,jtot1-1);
-      f21(i,fsumm2) = asterisk;             { summary table }
-    endif;
-  enddo;
-
-  { Table f12m1 }
-  jtot = tblcol( f12m1, ftotalm2 );
-  jmax = jtot - 2;
-  { % with anemia out of range }
-  f12m1[*,jtot+1] = f12m1[*,jtot+1] * 100 / f12m1[*,0];
-  { Percents }
-  do j = 0 while j <= jmax
-    f12m1[*,j] = f12m1[*,j] * 100 / f12m1[*,jtot];
-  enddo;
-  f12m1[*,jtot-1] = tblsum( column f12m1[*,0:jmax] );
-  { % of men with valid data }
-  jtot1 = tblcol( f12m1, ftarget5 = 1);
-  f12m1[*,jtot1] = f12m1[*,0] - f12m1[*,0]*f12m1[*,jtot+1]/100;
-  { target 1 }
-  fsumm2 = 15;
-  itot = tblrow( f12m1 );
-  do i = 0 while i <= itot
-    f12m1(i,jtot1+1) = Default;
-    if f12m1(i,jtot1) < f12_tar3 then
-      f12m1(i,jtot1+1) = f12m1(i,jtot1);
-      f21(i,fsumm2) = asterisk;             { summary table }
-    endif;
-  enddo;
-
-  { Table f12m2 }
-  jtot1 = tblcol( f12m2, ftotalm3 );
-  jmax = jtot1 - 3;
-  { Percents }
-  do j = 0 while j <= jmax
-    f12m2[*,j] = f12m2[*,j] * 100 / f12m2[*,jtot1];
-  enddo;
-  f12m2[*,jmax+1] = tblsum( column f12m2[*,0:jmax] );
-  { % with 1st decimal o or 5 }
-  jmax  = tblcol( f12m2, fdec1 = 5 );
-  f12m2[*,jtot1-1] = f12m2[*,0] + f12m2[*,jmax];
-  { target  }
-  fsumm2 = 16;
-  jtot2 = tblcol( f12m2 );
-  itot  = tblrow( f12m2 );
-  do i = 0 while i <= itot
-    f12m2(i,jtot2) = Default;
-    if f12m2(i,jtot1-1) >= f12_tar2 then
-      f12m2(i,jtot2) = f12m2(i,jtot1-1);
-      f21(i,fsumm2) = asterisk;             { summary table }
-    endif;
-  enddo;
 
   { Table f13w }
   jtot = tblcol( f13w, ftotalw2 );
@@ -1284,21 +1089,6 @@ postproc
     endif;
   enddo;
 
-  { Table f15 }
-  jtot = tblcol( f15 );
-  itot = tblrow( f15 );
-  { Percents }
-  f15[*,jtot-1] = f15[*,jtot-1] * 100 / f15[*,jtot-2];
-  { Targets }
-  fsumm1 = 19;
-  do i = 0 while i <= itot
-    f15(i,jtot) = Default;
-    if f15(i,jtot-1) >= f15_tar then
-      f15(i,jtot) = f15(i,jtot-1);
-      f20(i,fsumm1) = asterisk;             { summary table }
-    endif;
-  enddo;
-
   { Table f20 & f22 }
   itot = tblrow( f20 );
   jtot = tblcol( f20 );
@@ -1339,39 +1129,41 @@ postproc
 PROC HOUSEHOLD
 preproc
 
+  QHTYPE = 1;
   { initialize array to identify individuals interviewed }
   do i = 1 while i <= 100
     interview(i) = 0;
   enddo;
 
-  URBRUR  = AHTYPE;
-  fintnum = AHINTNUM;  { !!!! make sure to adjust the value sets based on the actual interviewer codes for the survey }
+  URBRUR  = QHTYPE;
+  fintnum = QHINTNUM;  { !!!! make sure to adjust the value sets based on the actual interviewer codes for the survey }
   Fteams = notappl;
   if byteam then
     { !! recode teams as necessary }
     Fteams = int( fintnum/100 );               {!!}
+    errmsg("fteams=%d, fintnum=%d", fteams, fintnum);
     fintnum = notappl;
   endif;
 
   { Table f1u & f1r }
-  if AHTYPE = 1 then
+  if QHTYPE = 1 then
     xtab( f1u );
   else
     xtab( f1r );
   endif;
 
   { skip incomplete households }
-  if AHRESULT <> 1 then skip case endif;
+  if QHRESULT <> 1 | QHCLUST < 9971 then skip case; endif;
 
   { array interview is used by tables f13w and f13m and therefore needs to be poulated here }
-  do k = 1 while k <= soccurs( AHSEC01 )
-    if AH09(k) | AH10(k) then               { if mmember is eligible }
-      ALINE = AH09(k);
-      if AH10(k) then ALINE = AH10(k) endif;
-      if loadcase( ccIN80, AHCLUST, AHNUMBER, ALINE ) then   { if member found in individual questionnaire }
+  do k = 1 while k <= soccurs( QHSEC01 )
+    if QH09(k) | QH10(k) then               { if mmember is eligible }
+      QLINE = QH09(k);
+      if QH10(k) then QLINE = QH10(k) endif;
+      if loadcase( CGIN80, QHCLUST, QHNUMBER, QLINE ) then   { if member found in individual questionnaire }
         { update array of individuals interviewed }
-        if ARESULT = 1 then
-          interview(ALINE) = 1;
+        if QRESULT = 1 then
+          interview(QLINE) = 1;
         endif;
       endif;
     endif;
@@ -1383,58 +1175,58 @@ postproc
   Fhhmean  = 0;        { number of complete households }
   xtab( f2w );
   Fhhmean = 1;        { to count number of de facto women }
-  for i in AHSEC01_EDT do
-    if AH04 = 2 & AH06 = 1 & AH09 <> 0 then   { DE FACTO eligible women }
+  for i in QHSEC01_EDT do
+    if QH04 = 2 & QH06 = 1 & QH09 <> 0 then   { DE FACTO eligible women }
       xtab( f2w );
     endif;
   enddo;
 
   { Table f2m }
-  if AHELIGM = 1 then
+  if QHELIGM = 1 then
     Fhhmeanm = 0;        { number of completed households }
     xtab( f2m );
     Fhhmeanm = 1;                       { to count number of de facto men }
-    for i in AHSEC01_EDT do
-      if AH04 = 1 & AH06 = 1 & AH10 <> 0 then    { DE FACTO eligible men }
+    for i in QHSEC01_EDT do
+      if QH04 = 1 & QH06 = 1 & QH10 <> 0 then    { DE FACTO eligible men }
         xtab( f2m );
       endif;
     enddo;
   endif;
 
   { Table f4w, f4m }
-  for i in AHSEC01_EDT do
-    if AH04 = 2 & AH07 in 12:18 then                  { women age 12:18 }
-      Fage = AH07(i);
+  for i in QHSEC01_EDT do
+    if QH04 = 2 & QH07 in 12:18 then                  { women age 12:18 }
+      Fage = QH07(i);
       xtab( f4w );
     endif;
-    if AHELIGM = 1 & AH04 = 1 & AH07 in 12:18 then    { men age 12:18 }
-        Fagem = AH07(i);
+    if QHELIGM = 1 & QH04 = 1 & QH07 in 12:18 then    { men age 12:18 }
+        Fagem = QH07(i);
         xtab( f4m );
     endif;
   enddo;
 
   { Tables f11cw1, f11cw2, fc11cw3 }
-  for i in ABSEC01_EDT do
+  for i in QBSEC01_EDT do
     Fhwc     = notappl;
     ftarget2 = notappl;
-    if AH07(AB102) in 0:4 & AB104 in 0:4 then            { children under 5 }
-      weightch = AB106;
-      lengthch = AB108;
-      lystand  = AB109;
+    if QH07(QB102) in 0:4 & QB104 in 0:4 then            { children under 5 }
+      weightch = QB106;
+      lengthch = QB108;
+      lystand  = QB110;
       { !!!! change weight and height according to type of remeasurement when present }
-      if ABRTYPE in 2,3 & !ABWEIGHT in 99.90:99.98,missing,notappl & !ABHEIGHT in 999.0:999.8,missing,notappl then
-        weightch = ABWEIGHT;
-        lengthch = ABHEIGHT;
-        lystand  = ABLYNSTN;
+      if QBRTYPE in 2,3 & !QBWEIGHT in 99.90:99.98,missing,notappl & !QBHEIGHT in 999.0:999.8,missing,notappl then
+        weightch = QBWEIGHT;
+        lengthch = QBHEIGHT;
+        lystand  = QBLYNSTN;
       endif;
       { result of measurement based on weight }
       fwc11 = measure1( weightch );
-      valdate  = ( valid(AB103M) & validyr(AB103Y) );
+      valdate  = ( valid(QB103M) & validyr(QB103Y) );
       dateflag = 0;
       if valdate then
         { Age of child in days }
-        if !AB103D in 1:31 then AB103D = 15 endif;
-        agechild = CDCode( ABINTY, ABINTM, ABINTD ) - CDCode( AB103Y, AB103M, AB103D );
+        if !QB103D in 1:31 then QB103D = 15 endif;
+        agechild = CDCode( QBINTY, QBINTM, QBINTD ) - CDCode( QB103Y, QB103M, QB103D );
         dateflag = 1;
       else
         agechild = 9999;
@@ -1442,13 +1234,13 @@ postproc
 
       { Calculate anthropometric Z-scores }
              // weightch,   lengthch, lyingstanding,sexchild,agechild,dateflag
-      WHO_anthro( weightch, lengthch, lystand, AH04(AB102), agechild, dateflag, AB102 );
+      WHO_anthro( weightch, lengthch, lystand, QH04(QB102), agechild, dateflag, QB102 );
 
       { determine if weight for height z-score out of range }
       if fwc11 = 1 & valdate & zwhz in missing,notappl,9996:9998 then ftarget2 = 3 endif;
       if fwc11 = 1 & valdate then                     { weighted & with a valid date of birth }
-        hwage   = cmcode(ABINTM,ABINTY) - cmcode(AB103M(i),AB103Y(i));
-        hwsex   = AH04(AB102);
+        hwage   = cmcode(QBINTM,QBINTY) - cmcode(QB103M(i),QB103Y(i));
+        hwsex   = QH04(QB102);
         if hwsex = 1 then
           recode hwage :: weightch -> hwerr;
                  0: 2 :: 0.5:10.0 -> 0;
@@ -1507,9 +1299,9 @@ postproc
 
       { f11cw2, f11cw3 }
       if fwc11 = 1 then                        { for children measured }
-        fdec1 = GetDecimal( AB106, 1 );
+        fdec1 = GetDecimal( QB106, 1 );
         xtab( f11cw2 );
-        fdec2 = GetDecimal( AB106, 2 );
+        fdec2 = GetDecimal( QB106, 2 );
         xtab( f11cw3 );
       endif;
 
@@ -1517,27 +1309,27 @@ postproc
   enddo;
 
   { Tables f11ch }
-  for i in ABSEC01_EDT do
+  for i in QBSEC01_EDT do
     Fhwc  = notappl;
     ftarget3 = notappl;
-    if AH07(AB102) in 0:4 & AB104 in 0:4 then            { children under 5 }
-      weightch = AB106;
-      lengthch = AB108;
-      lystand  = AB109;
+    if QH07(QB102) in 0:4 & QB104 in 0:4 then            { children under 5 }
+      weightch = QB106;
+      lengthch = QB108;
+      lystand  = QB110;
       { change weight and height according to type of remeasurement when present }
-      if ABRTYPE in 2,3 & !ABWEIGHT in 99.90:99.98,missing,notappl & !ABHEIGHT in 999.0:999.8,missing,notappl then
-        weightch = ABWEIGHT;
-        lengthch = ABHEIGHT;
-        lystand  = ABLYNSTN;
+      if QBRTYPE in 2,3 & !QBWEIGHT in 99.90:99.98,missing,notappl & !QBHEIGHT in 999.0:999.8,missing,notappl then
+        weightch = QBWEIGHT;
+        lengthch = QBHEIGHT;
+        lystand  = QBLYNSTN;
       endif;
       { result of measurement based on height }
       fhc11 = measure5( lengthch );
-      valdate  = ( valid(AB103M) & validyr(AB103Y) );
+      valdate  = ( valid(QB103M) & validyr(QB103Y) );
       dateflag = 0;
       if valdate then
         { Age of child in days }
-        if !AB103D in 1:31 then AB103D = 15 endif;
-        agechild = CDCode( ABINTY, ABINTM, ABINTD ) - CDCode( AB103Y, AB103M, AB103D );
+        if !QB103D in 1:31 then QB103D = 15 endif;
+        agechild = CDCode( QBINTY, QBINTM, QBINTD ) - CDCode( QB103Y, QB103M, QB103D );
         dateflag = 1;
       else
         agechild = 9999;
@@ -1545,13 +1337,13 @@ postproc
 
       { Calculate anthropometric Z-scores }
              // weightch,   lengthch, lyingstanding,sexchild,agechild,dateflag
-      WHO_anthro( weightch, lengthch, lystand, AH04(AB102), agechild, dateflag, AB102 );
+      WHO_anthro( weightch, lengthch, lystand, QH04(QB102), agechild, dateflag, QB102 );
 
       { determine if height for age z-score out of range }
       if fhc11 = 1 & valdate & zhaz in missing,notappl,9996:9998 then ftarget3 = 3 endif;
       if fhc11 = 1 & valdate then                     { measured & with a valid date of birth }
-        hwage   = cmcode(AHINTM,AHINTY) - cmcode(AB103M(i),AB103Y(i));
-        hwsex   = AH04(AB102);
+        hwage   = cmcode(QHINTM,QHINTY) - cmcode(QB103M(i),QB103Y(i));
+        hwsex   = QH04(QB102);
         if hwsex = 1 then
           recode hwage ::  lengthch  -> hwerr;
                  0: 2 :: 36.0: 74.0 -> 0;
@@ -1611,30 +1403,30 @@ postproc
   enddo;
 
   { Tables f11ww1, f11ww2, f11ww3 }
-  for i in ABSEC02_EDT do
+  for i in QBSEC02_EDT do
     Fhww = notappl;
-    fww11 = measure2( AB205 );
+    fww11 = measure2( QB205 );
     if fww11 = 1 then
-      if !AB205 in 20:150,missing then { weight out of range }
+      if !QB205 in 20:150,missing then { weight out of range }
         Fhww = 1;
       endif;
     endif;
     xtab( f11ww1 );
     { f11ww2, f11ww3 }
     if fww11 = 1 then                        { for women measured }
-      fdec1 = GetDecimal( AB205, 1 );
+      fdec1 = GetDecimal( QB205, 1 );
       xtab( f11ww2 );
-      fdec2 = GetDecimal( AB205, 2 );
+      fdec2 = GetDecimal( QB205, 2 );
       xtab( f11ww3 );
     endif;
   enddo;
 
   { Tables f11wh }
-  for i in ABSEC02_EDT do
+  for i in QBSEC02_EDT do
     Fhww = notappl;
-    fhw11 = measure5( AB207 );
+    fhw11 = measure5( QB207 );
     if fhw11 = 1 then
-      if !AB207 in 100:200,missing then { height out of range }
+      if !QB207 in 100:200,missing then { height out of range }
         Fhww = 1;
       endif;
     endif;
@@ -1642,105 +1434,62 @@ postproc
   enddo;
 
   { Tables f11mw1, f11mw2, f11mw3 }
-  for i in ABSEC03_EDT do
+  for i in QBSEC03_EDT do
     Fhwm = notappl;
-    fwm11 = measure2( AB305 );
+    fwm11 = measure2( QB305 );
     if fwm11 = 1 then
-      if !AB305 in 20:150,missing then { weight out of range }
+      if !QB305 in 20:150,missing then { weight out of range }
         Fhwm = 1;
       endif;
     endif;
     xtab( f11mw1 );
     { f11mw2, f11mw3 }
     if fwm11 = 1 then                        { for men measured }
-      fdec1 = GetDecimal( AB305, 1 );
+      fdec1 = GetDecimal( QB305, 1 );
       xtab( f11mw2 );
-      fdec2 = GetDecimal( AB305, 2 );
+      fdec2 = GetDecimal( QB305, 2 );
       xtab( f11mw3 );
     endif;
   enddo;
 
   { Tables f11mh }
-  for i in ABSEC03_EDT do
+  for i in QBSEC03_EDT do
     fhwm = notappl;
-    fhm11 = measure5( AB307 );
+    fhm11 = measure5( QB307 );
     if fhm11 = 1 then
-      if !AB307 in 100:200,missing then { height out of range }
+      if !QB307 in 100:200,missing then { height out of range }
         Fhwm = 1;
       endif;
     endif;
     xtab( f11mh );
   enddo;
 
-  { Tables f12c1, f12c2 }
-  for i in ABSEC01_EDT do
-    fanc = notappl;
-    if ACAGEM > 5 then
-      fac12 = measure3( AB122 );
-      if AB122 in 0.0:3.9,26.1:99.0 then
-        fanc = 1;
-      endif;
-      xtab( f12c1 );
-      if fac12 = 1 then
-        fdec1 = GetDecimal( AB122, 1 );
-        xtab( f12c2 );
-      endif;
-    endif;
-  enddo;
-
-  { Tables f12w1, f12w2 }
-  for i in ABSEC02_EDT do
-    fanw = notappl;
-    faw12 = measure3( AB225 );
-    if AB225 in 0.0:3.9,26.1:99.0 then
-      fanw = 1;
-    endif;
-    xtab( f12w1 );
-    if faw12 = 1 then
-      fdec1 = GetDecimal( AB225, 1 );
-      xtab( f12w2 );
-    endif;
-  enddo;
-
-  { Tables f12m1, f12m2 }
-  for i in ABSEC03_EDT do
-    fanm = notappl;
-    fam12 = measure3( AB325 );
-    if AB325 in 0.0:3.9,26.1:99.0 then
-      fanm = 1;
-    endif;
-    xtab( f12m1 );
-    if fam12 = 1 then
-      fdec1 = GetDecimal( AB325, 1 );
-      xtab( f12m2 );
-    endif;
-  enddo;
 
   { Tables f13w }
-  for i in ABSEC02_EDT do
-    fdbs = measure4( ABWHIV9 );
+  for i in QBSEC02_EDT do
+    fdbs = measure4( QB240 );
     findint = 2;
-    if interview(AB202) then findint = 1 endif;
+    if interview(QB202) then findint = 1 endif;
     xtab( f13w );
   enddo;
 
   { Tables f13m }
-  for i in ABSEC03_EDT do
-    fdbs = measure4( ABMHIV9 );
+  for i in QBSEC03_EDT do
+    fdbs = measure4( QB340 );
     findint = 2;
-    if interview(AB302) then findint = 1 endif;
+    if interview(QB302) then findint = 1 endif;
     xtab( f13m );
   enddo;
 
   { tables for Individual Questionnaire }
-  do k = 1 while k <= soccurs( AHSEC01 )
-    if AH09(k) | AH10(k) then               { if mmember is eligible }
-      ALINE = AH09(k);
-      if AH10(k) then ALINE = AH10(k) endif;
-      if loadcase( ccIN80, AHCLUST, AHNUMBER, ALINE ) then   { if member found in individual questionnaire }
+  do k = 1 while k <= soccurs( QHSEC01 )
+    if QH09(k) | QH10(k) then               { if mmember is eligible }
+      QLINE = QH09(k);
+      if QH10(k) then QLINE = QH10(k) endif;
+      if loadcase( CGIN80, QHCLUST, QHNUMBER, QLINE ) then   { if member found in individual questionnaire }
 
         Fteams  = notappl;
-        fintnum = AINTNUM;  { !!!! make sure to adjust the value sets based on the actual interviewer codes for the survey }
+        fintnum = QINTNUM;  { !!!! make sure to adjust the value sets based on the actual interviewer codes for the survey }
         if byteam then
           { !! recode teams as necessary }
           Fteams = int( fintnum/100 );               {!!}
@@ -1748,46 +1497,46 @@ postproc
         endif;
 
         { Table f3wu, f3mu, f3wr, f3mr }
-        if AHTYPE = 1 then
-          if AQTYPE = 2 & AH06(ALINE) = 1 then  { DE FACTO women }
+        if QHTYPE = 1 then
+          if QQTYPE = 2 & QH06(QLINE) = 1 then  { DE FACTO women }
             xtab( f3wu );
-          elseif AQTYPE = 1 & AH06(ALINE) = 1 then  { DE FACTO men }
+          elseif QQTYPE = 1 & QH06(QLINE) = 1 then  { DE FACTO men }
             xtab( f3mu );
           endif;
         else
-          if AQTYPE = 2 & AH06(ALINE) = 1 then  { DE FACTO women }
+          if QQTYPE = 2 & QH06(QLINE) = 1 then  { DE FACTO women }
             xtab( f3wr );
-          elseif AQTYPE = 1 & AH06(ALINE) = 1 then  { DE FACTO men }
+          elseif QQTYPE = 1 & QH06(QLINE) = 1 then  { DE FACTO men }
             xtab( f3mr );
           endif;
         endif;
 
         { skip incomplete individual interviews }
-        if ARESULT <> 1 then next endif;
+        if QRESULT <> 1 then next endif;
 
-        if AQTYPE = 2 & AH06(ALINE) = 1 then        { DE FACTO women }
+        if QQTYPE = 2 & QH06(QLINE) = 1 then        { DE FACTO women }
 
           { Tables f5 }
           Fceb     = 1;       { All completed women }
           xtab( f5 );
           Fceb = 2;   { Children ever born }
-          xtab( f5, A208 );
+          xtab( f5, Q208 );
 
           { Table f6 }
-          for i in ccIN80.AWSEC2B do
-            if A220Y = missing | A220Y >= cutoff - 4 then
-              Fyearb = A220Y;
-              if A220Y in missing,9997:9998 then Fyearb = 9999 endif;
+          for i in CGIN80.QWSEC2B do
+            if Q220Y = missing | Q220Y >= cutoff - 4 then
+              Fyearb = Q220Y;
+              if Q220Y in missing,9997:9998 then Fyearb = 9999 endif;
               xtab( f6 );
             endif;
           enddo;
 
           { Tables f7l & f7d }
-          for i in ccIN80.AWSEC2B do
-            ismonth = valid(A220M);
-            isyear  = validyr(A220Y);
-            if A224 = 1 then
-              isage = valid(A225);
+          for i in CGIN80.QWSEC2B do
+            ismonth = valid(Q220M);
+            isyear  = validyr(Q220Y);
+            if Q224 = 1 then
+              isage = valid(Q225);
               recode isyear :: ismonth :: isage -> Fcompl;
                       1    ::    1    ::      -> 1;
                       1    ::         ::  1   -> 2;
@@ -1808,10 +1557,10 @@ postproc
           enddo;
 
           { Tables f8 }
-          for i in ccIN80.AWSEC2B do
-            if A224 = 2 & ( !validyr(A220Y) | A220Y >= AINTY-15 ) then   { deaths in the last 15 years }
-              unitx  = A228U;
-              number = A228N;
+          for i in CGIN80.QWSEC2B do
+            if Q224 = 2 & ( !validyr(Q220Y) | Q220Y >= QINTY-15 ) then   { deaths in the last 15 years }
+              unitx  = Q228U;
+              number = Q228N;
               recode unitx :: number -> Faged;
                       2   :: 8:12   -> number-8;  { codes 0::4 }
                       3   ::   1    -> 5;
@@ -1825,13 +1574,13 @@ postproc
           enddo;
 
           { Table f9 }
-          for i in ccIN80.AWSEC2B do
-            if !validyr(A220Y) | A220Y >= AINTY-15 then       { births last 15 years }
+          for i in CGIN80.QWSEC2B do
+            if !validyr(Q220Y) | Q220Y >= QINTY-15 then       { births last 15 years }
               Falive = notappl;
               Faged9 = notappl;
-              if A224 = 2 then
-                unitx  = A228U(i);
-                number = A228N(i);
+              if Q224 = 2 then
+                unitx  = Q228U(i);
+                number = Q228N(i);
                 recode unitx :: number -> Faged9;
                         1   ::  0:30  -> 1;
                         1   :: 31:96  -> 2;
@@ -1849,13 +1598,13 @@ postproc
           enddo;
 
           { Table f10 }
-          for i in ccIN80.AWSEC05 do
-            if A224(A503) = 1 then { Living children }
-              if A504 in 1:3  then   { with a vacination card or other document }
+          for i in CGIN80.QWSEC05 do
+            if Q224(Q503) = 1 then { Living children }
+              if Q504 in 1:3  then   { with a vacination card or other document }
                 fcardr = 1;
                 xtab( f10 );
               endif;
-              if A507 in 1:3 then       { vaccination card or other document seen }
+              if Q507 in 1:3 then       { vaccination card or other document seen }
                 fcardr = 2;
                 xtab( f10 );
               endif;
@@ -1867,26 +1616,26 @@ postproc
           { table f14 }
           Fcol14b = notappl;
           Fcol14c = notappl;
-          for i in ccIN80.AWSECM3 do
-            if AMM14 = 2 & AMM15 = 2 then       { Deceased sister }
+          for i in CGIN80.QWSECM3 do
+            if QMM14 = 2 & QMM15 = 2 then       { Deceased sister }
               fcol14a = 1;
               xtab( f14 );
-              if !valid(AMM18) then
+              if !valid(QMM18) then
                 fcol14a = 2;
                 xtab( f14 );
               endif;
               Fcol14a = notappl;
-              if AMM18 in 12:96 then
+              if QMM18 in 12:96 then
                 fcol14b = 1;
                 xtab( f14 );
-                if AMM19 = missing & AMM20 = missing & AMM21 = missing then
+                if QMM19 = missing & QMM20 = missing & QMM21 = missing then
                   fcol14b = 2;
                   xtab( f14 );
                 endif;
                 fcol14b = notappl;
                 fcol14c = 1;
                 xtab( f14 );
-                if !valid(AMM17) then
+                if !valid(QMM17) then
                   fcol14c = 2;
                   xtab( f14 );
                 endif;
@@ -1895,15 +1644,6 @@ postproc
             endif;
           enddo;
 
-          { f15 }
-          if AHNUMDV = ALINE then               { woman eligible for doemstic violence }
-            resdv = 1;
-            xtab( f15 );
-            if DV01 <> 1 then                   { privacy not obtined }
-              resdv = 2;
-              xtab( f15 );
-            endif;
-          endif;
         endif;                                  { end DE FACTO women }
       endif;                                 { end found individual member }
     endif;                               { end found individual member }

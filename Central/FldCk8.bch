@@ -1,20 +1,57 @@
-﻿[CSPro Application]
-Version=CSPro 7.5
-Label=FLDCK8
-Name=FLDCK8
-AppType=Batch
-[External Dictionaries]
-File=..\Dicts\ccIN80.dcf
-File=.\FieldCk.dcf
-[AppCode]
-File=.\FldCk8.apc
-Include=..\Library\DPCollect.apc
-Include=..\Library\Anthrop.apc
-[Message]
-File=.\FldCk8.mgf
-[Order]
-File=.\FldCk8.ord
-[Dictionary Types]
-Dict-Type=.\FieldCk.dcf,Working
-Dict-Type=..\Dicts\ccHH80.dcf,Input,.\FldCk8.ord
-Dict-Type=..\Dicts\ccIN80.dcf,External
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "batch", 
+  "name": "FLDCK8", 
+  "label": "FldCk8", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../Dicts/CGHH80.dcf", 
+      "parent": "FldCk8.ord"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGIN80.dcf"
+    }, 
+    {
+      "type": "working", 
+      "path": "FieldCk.dcf"
+    }
+  ], 
+  "order": [
+    "FldCk8.ord"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "FldCk8.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/DPCollect.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/Anthrop.apc"
+    }
+  ], 
+  "messages": [
+    "FldCk8.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "htmlDialogs": true, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

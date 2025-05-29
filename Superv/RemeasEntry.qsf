@@ -34,9 +34,8 @@ questions:
           EN: |
             <p><font color="#ffffff"><span style="font-size: 21px;">Me</span></font></p><p><span style="font-size:21px;color:#0000ff;">RECORD THE NUMBER OF VISITS NECESSARY FOR REMEASUREMENT&nbsp;</span></p>
             <p>&nbsp;</p>
-            
           FR: |
-            <table class="table table-bordered"><tbody><tr><td>Ménage</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~RNUMBER~~</span></td></tr><tr><td>Nom du chef du ménage</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~RHEADHH~~</span></td></tr><tr><td>Address</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~RADDRESS~~</span></td></tr><tr><td>Numéro du ligne de l'enfant</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~R102L~~</span></td></tr></tbody></table><p><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">&nbsp;Nom de l'enfant</span>&nbsp;&nbsp;<span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~R102N~~</span>&nbsp; &nbsp; &nbsp;&nbsp;</p><p><span style="color: rgb(0, 0, 255); font-size: 21px;">RECORD THE NUMBER OF VISITS NECESSARY FOR REMEASUREMENT&nbsp;</span></p><p></p><p></p>
+            <table class="table table-bordered"><tbody><tr><td>Ménage</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~RNUMBER~~</span></td></tr><tr><td>Nom du chef du ménage</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~RHEADHH~~</span></td></tr><tr><td>Address</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~RADDRESS~~</span></td></tr><tr><td>Numéro du ligne de l'enfant</td><td><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~R102L~~</span></td></tr></tbody></table><p><span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">&nbsp;Nom de l'enfant</span>&nbsp;&nbsp;<span style="font-family: Arial, sans-serif; font-size: 18px; text-align: center;">~~R102N~~</span>&nbsp; &nbsp;&nbsp;</p><p><span style="color: rgb(0, 0, 255); font-size: 21px;">NOMBRE TOTAL DES VISITES&nbsp;</span></p><p></p><p></p>
         helpText:
           EN: |
             
@@ -46,7 +45,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;"> <span style="color:#008040;">RECORD THE DATE OF MEASUREMENT&#160;</span></span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff"><span style="font-size: 21px;">DATE DE VISITE FINALE</span></font><p></p>
         helpText:
           EN: |
             
@@ -56,7 +56,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RECORD DAY&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">JOUR</font><p></p>
         helpText:
           EN: |
             
@@ -66,7 +67,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RECORD MONTH&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">MOIS</font><p></p>
         helpText:
           EN: |
             
@@ -76,7 +78,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RECORD YEAR&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">ANNEE</font><p></p>
         helpText:
           EN: |
             
@@ -87,7 +90,8 @@ questions:
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RECORD ~~R102N~~&apos;S WEIGHT IN KILOGRAMS.&#160;</span></p>
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">(Use format xx.xx and enter the decimal point)&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">POIDS EN KILOGRAMMES</font><p></p>
         helpText:
           EN: |
             
@@ -98,7 +102,8 @@ questions:
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RE-ENTER ~~R102N~~&apos;S WEIGHT IN KILOGRAMS.&#160;</span></p>
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">(Use format xx.xx and enter the decimal point)&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">RE-SAISIR POIDS EN KILOGRAMMES</font><p></p>
         helpText:
           EN: |
             
@@ -108,7 +113,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;">WAS THE CHILD MINIMALLY DRESSED?&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">L'ENFANT ÉTAIT-IL HABILLÉ LÉGÈREMENT?</font><p></p>
         helpText:
           EN: |
             
@@ -119,7 +125,8 @@ questions:
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RECORD ~~R102N~~&apos;S HEIGHT IN CENTIMETERS.&#160;</span></p>
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">(Use format xxx.x and enter the decimal point)&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">TAILLE EN CENTIMÈTRES.</font><p></p>
         helpText:
           EN: |
             
@@ -130,7 +137,8 @@ questions:
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RE-ENTER ~~R102N~~&apos;S HEIGHT IN CENTIMETERS.&#160;</span></p>
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">(Use format xxx.x and enter the decimal point)&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <span style="color: rgb(0, 0, 255);">RE-SAISIR&nbsp;</span><span style="color: rgb(0, 0, 255);">TAILLE EN CENTIMÈTRES.</span><p></p>
         helpText:
           EN: |
             
@@ -140,7 +148,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">RECORD WHETHER ~~R102N~~&apos;S WAS MEASURED LYING DOWN OR STANDING UP.&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">L'ENFANT A T-IL ÉTÉ&nbsp; MESURÉ EN POSITION ALLONGÉE OU DEBOUT?</font><p></p>
         helpText:
           EN: |
             
@@ -150,7 +159,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;">CHECK 104 AND 109: BASED ON CHILD&apos;S AGE, WAS CORRECT MEASUREMENT PROCEDURE FOLLOWED?&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">VÉRIFIEZ 104 ET 109: SUR LA BASE DE L'ÂGE DE L'ENFANT, LA PROCÉDURE CORRECTE POUR LA MESURE A T-ELLE ÉTÉ SUIVIE ?</font><p></p>
         helpText:
           EN: |
             
@@ -161,7 +171,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">PRESS ENTER AND RECORD THE REASON WHY ~~R102N~~ WAS MEASURED STANDING UP&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">SI L'ENFANT A&nbsp; 0-1 AN : POURQUOI (NOM) A-T-IL ÉTÉ MESURÉ EN POSITION DEBOUT?</font><p></p>
         helpText:
           EN: |
             
@@ -170,7 +181,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">PRESS ENTER AND RECORD THE REASON WHY ~~R102N~~ WAS MEASURED LYING DOWN&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">SI L'ENFANT A 2-4 ANS : POURQUOI (NOM) A-T-IL ÉTÉ MESURÉ EN POSITION ALLONGÉE?</font><p></p>
         helpText:
           EN: |
             
@@ -178,9 +190,10 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p><span style="font-size:21px;color:#0000ff;">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?&#160;</span></p>
-            <p>&#160;</p>
-            
+            <p><span style="font-size:21px;color:#0000ff;">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?&nbsp;</span></p>
+            <p>&nbsp;</p>
+          FR: |
+            <font color="#0000ff">LA MESURE ENREGISTRÉE A-T-ELLE ÉTÉ GÊNÉE PAR DES CHEVEUX TRESSÉS OU COIFFÉS ?</font><p></p>
         helpText:
           EN: |
             
@@ -190,7 +203,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">ENTER FIELDWORKER NUMBER OF THE BIOMARKER MEASURER.&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff">INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ MESUREUR.</font><p></p>
         helpText:
           EN: |
             
@@ -202,7 +216,8 @@ questions:
             <p>&#160;</p>
             <p><span style="font-size:21px;color:#0000ff;">IF NO ASSISTANT MEASURER, ENTER 9999.&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <p>INSCRIVEZ LE NUMÉRO DU TECHNICIEN DE SANTÉ MESUREUR ASSISTANT</p><p><p><br></p><p><font color="#0000ff"><span style="font-size: 21px;">SI AUCUN MESUREUR ASSISTANT, ENTRER 9999.</span></font></p></p>
         helpText:
           EN: |
             
@@ -212,7 +227,8 @@ questions:
           EN: |
             <p><span style="font-size:21px;color:#0000ff;font-family:'Arial', sans-serif;">PLEASE PRESS ANY KEY TO CONTINUE&#160;</span></p>
             <p>&#160;</p>
-            
+          FR: |
+            <font color="#0000ff"><b>VEUILLEZ APPUYER SUR N'IMPORTE QUELLE TOUCHE POUR CONTINUER</b></font><p></p>
         helpText:
           EN: |
             
@@ -221,7 +237,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">WAS THE RECORDED MEASUREMENT INTERFERED WITH BY BRAIDED OR ORNAMENTED HAIR?&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -231,7 +246,6 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Record the child date of birth (DAY).&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -241,7 +255,6 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">MONTH&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -250,7 +263,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">YEAR&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -259,7 +271,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">WAS THE CHILD MINIMALLY DRESSED?&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -268,7 +279,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">Was child born in ~~healthy~~ or later&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -277,7 +287,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">ENTER FIELDWORKER NUMBER OF ASSISTANT MEASURER.&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -287,7 +296,6 @@ questions:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">ENTER FIELDWORKER NUMBER OF MEASURER.&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -299,7 +307,6 @@ questions:
             <p>&#160;</p>
             <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">Based on the child&apos;s age in months (~~agemnth~~), this child should be measured ~~textstr1~~.&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -308,7 +315,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Reenter ~~RNAME~~&apos;s height&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -318,7 +324,6 @@ questions:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">Register the day of the visit&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -328,7 +333,6 @@ questions:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">Register the month of the visit&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -338,7 +342,6 @@ questions:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">Register the year of the visit&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -348,7 +351,6 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">WAS THE CHILD MEASURED LYING DOWN OR STANDING UP?&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -357,7 +359,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">BASED ON CHILD&apos;S AGE, WAS CORRECT MEASUREMENT PROCEDURE FOLLOWED?&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -367,7 +368,6 @@ questions:
         questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">WHY WAS ~~RNAME~~ MEASURED LYING DOWN?&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -375,7 +375,6 @@ questions:
         questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;font-family:'Arial', sans-serif;">WHY WAS ~~RNAME~~ MEASURED STANDING UP?&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -384,7 +383,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">What was the result of the measrument&#160;</span></p>
-            
         helpText:
           EN: |
             
@@ -394,7 +392,6 @@ questions:
           EN: |
             <p><span style="font-size:14px;color:#0000ff;font-family:'Arial', sans-serif;">Record weight of ~~RNAME~~ in kilograms&#160;</span></p>
             <p>&#160;</p>
-            
         helpText:
           EN: |
             
@@ -403,7 +400,6 @@ questions:
       - questionText:
           EN: |
             <p><span style="font-size:16px;color:#0000ff;">Reenter ~~RNAME~~&apos;s weight&#160;</span></p>
-            
         helpText:
           EN: |
             

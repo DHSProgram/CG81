@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.5
+Version=CSPro 8.0
 Name=RMEASURE_FF
 Label=Remeasure
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -12,6 +12,7 @@ File=..\Dicts\Remeasure.dcf
 [Form]
 Name=FORM001
 Label=Record for children selected for remeasurement
+QuestionTextHeight=270
 Level=1
 Size=790,768
   
@@ -75,7 +76,6 @@ Required=Yes
 Name=RMEASURE_FORM
 Label=Record for children selected for remeasurement
 Form=1
-LogicControl=No
 Max=1
   
 [Field]
@@ -84,6 +84,7 @@ Position=174,74,231,94
 Item=RCLUSTER,RMEASURE
 Protected=Yes
 FieldLabelType=DictionaryLabel
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -97,6 +98,7 @@ Position=174,96,231,116
 Item=RNUMBER,RMEASURE
 Protected=Yes
 FieldLabelType=DictionaryLabel
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -110,6 +112,7 @@ Position=419,73,700,93
 Item=RHEADHH,RMEASURE
 Protected=Yes
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -123,6 +126,7 @@ Position=450,96,700,116
 Item=RADDRESS,RMEASURE
 Protected=Yes
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -135,6 +139,7 @@ Name=R102L
 Position=358,171,387,191
 Item=R102L,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -148,6 +153,7 @@ Position=217,196,387,216
 Item=R102N,RMEASURE
 Protected=Yes
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -160,6 +166,7 @@ Name=RSEX
 Position=372,223,387,243
 Item=RSEX,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -172,6 +179,7 @@ Name=RVISITS
 Position=216,129,231,149
 Item=RVISITS,RMEASURE
 UseEnterKey=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -184,6 +192,7 @@ Name=R103D
 Position=358,251,387,271
 Item=R103D,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -196,6 +205,7 @@ Name=R103M
 Position=358,275,387,295
 Item=R103M,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -208,6 +218,7 @@ Name=R103Y
 Position=330,298,387,318
 Item=R103Y,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -260,6 +271,7 @@ Name=R104
 Position=370,325,385,345
 Item=R104,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -357,6 +369,7 @@ Item=R111,RMEASURE
 UseEnterKey=Yes
 UpperCase=Yes
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -382,6 +395,7 @@ Name=R113
 Position=328,579,385,599
 Item=R113,RMEASURE
 UseEnterKey=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -394,6 +408,7 @@ Name=R114
 Position=328,605,385,625
 Item=R114,RMEASURE
 UseEnterKey=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -406,6 +421,7 @@ Name=RZSWH
 Position=594,658,651,678
 Item=RZSWH,RMEASURE
 Protected=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -419,6 +435,7 @@ Position=633,689,651,709
 Item=RAUXILIAR,RMEASURE
 UseEnterKey=Yes
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]

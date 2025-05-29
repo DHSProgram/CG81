@@ -1,6 +1,6 @@
 ﻿---
 fileType: Question Text
-version: CSPro 7.7
+version: CSPro 8.0
 languages:
   - name: EN
     label: English
@@ -399,13 +399,13 @@ questions:
           EN: |
             <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~</font></i></p><p>215. Think back to your first pregnancy. Was that a single pregnancy, twins, or triplets?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~</font></i></p><p>215-~~Q215L~~.  Rappelez-vous de votre première grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>215-~~Q215L~~.  Rappelez-vous de votre première grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
             <p>215. Think back to your next pregnancy. Was that a single pregnancy, twins, or triplets?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>215-~~Q215L~~.  Rappelez-vous de votre suivante grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~&nbsp;</font></i></p><p>215-~~Q215L~~.  Rappelez-vous de votre suivante grossesse. Est-ce que c'était une grossesse simple, des jumeaux ou triplés ?</p>
   - name: CGIN80.Q216
     conditions:
       - logic: Q215 = 1
@@ -447,7 +447,7 @@ questions:
           EN: |
             <p>219. Is ~~Q218~~ a boy or a girl?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>219-~~Q215L~~.  ~~Q218(curocc())~~ est-il un garçon ou une fille&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~ ~~Q218~~</font></i></p><p>219.-~~Q215L~~&nbsp; &nbsp; &nbsp;~~Q218~~ est-il un garçon ou une fille ?</p>
   - name: Q220_BLOCK
     conditions:
       - logic: pregtype = 0
@@ -455,13 +455,13 @@ questions:
           EN: |
             <p>220. On what day, month, and year did this pregnancy end?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année, cette grossesse s'est-elle terminée ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~ ~~Q218~~</font></i></p><div>220-~~Q215L~~.  Quel jour, quel mois et en quelle année, cette grossesse s'est-elle terminée ?</div>
       - logic: pregtype = 1
         questionText:
           EN: |
             <p>220. On what day, month, and year was ~~Q218~~ born?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>220-~~Q215L~~.  Quel jour, quel mois et en quelle année ~~Q218(curocc())~~ est-il/elle né(e) ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~ ~~Q218~~</font></i></p><div>220-~~Q215L~~.  Quel jour, quel mois et en quelle année ~~Q218(curocc())~~ est-il/elle né(e) ?</div>
   - name: CGIN80.Q220D
     conditions:
       - questionText:
@@ -489,7 +489,7 @@ questions:
           EN: |
             <p>221. How long did this pregnancy last in weeks or months?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>221-~~Q215L~~.  Combien de semaines ou de mois cette grossesse a-t-elle durée ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~ ~~Q218~~</font></i></p><div>221-~~Q215L~~.  Combien de semaines ou de mois cette grossesse a-t-elle durée ?</div>
   - name: CGIN80.Q221N
     conditions:
       - questionText:
@@ -511,13 +511,13 @@ questions:
           EN: |
             <p>222. Were there any other pregnancies before this pregnancy?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~</font></i></p><p>222-1. Y a-t-il eu d'autres grossesses avant cette grossesse ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~ ~~Q218~~</font></i></p><div><i><font color="#9c9c94"><br></font></i></div><p>222-1. Y a-t-il eu d'autres grossesses avant cette grossesse ?</p>
       - logic: curocc() in 2:24
         questionText:
           EN: |
             <p>222. Were there any other pregnancies between the previous pregnancy and this pregnancy?</p>
           FR: |
-            <p>222-~~Q215L~~.  &nbsp;Y a-t-il eu d’autres grossesses entre la grossesse précédente et cette grossesse&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~Q215L~~ ~~Q218~~</font></i></p><div><i><font color="#9c9c94"><br></font></i></div><p>222-~~Q215L~~.  &nbsp;Y a-t-il eu d’autres grossesses entre la grossesse précédente et cette grossesse&nbsp;?</p>
   - name: CGIN80.Q222A
     conditions:
       - questionText:
@@ -541,7 +541,7 @@ questions:
           EN: |
             <p>224. Is ~~Q218(QPLINE)~~ still alive?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>224-~~QPLINE~~.  ~~Q218(curocc())~~ est-il/elle encore en vie&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p>224-~~QPLINE~~.  ~~Q218(curocc())~~ est-il/elle encore en vie&nbsp;?</p>
   - name: CGIN80.Q225
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -550,21 +550,21 @@ questions:
             <p>225. How old was ~~Q218(QPLINE)~~ at his last birthday?</p>
             <p><span class="instruction">RECORD AGE IN COMPLETED YEARS.</span></p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
       - logic: Q219(QPLINE) = 2
         questionText:
           EN: |
             <p>225. How old was ~~Q218(QPLINE)~~ at her last birthday?</p>
             <p><span class="instruction">RECORD AGE IN COMPLETED YEARS.</span></p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p>225-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ à son dernier anniversaire&nbsp;?</p><p><span class="instruction">INSCRIVEZ L'ÂGE EN ANNÉE RÉVOLUE.</span></p>
   - name: CGIN80.Q226
     conditions:
       - questionText:
           EN: |
             <p>226. Is ~~Q218(QPLINE)~~ living with you?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>226-~~QPLINE~~.  ~~Q218(curocc())~~ vit-il/elle avec vous&nbsp;?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p>226-~~QPLINE~~.  ~~Q218(curocc())~~ vit-il/elle avec vous&nbsp;?</p>
   - name: CGIN80.Q227
     conditions:
       - questionText:
@@ -572,7 +572,7 @@ questions:
             <p><span class="instruction">227. RECORD HOUSEHOLD LINE NUMBER OF CHILD (~~Q218(QPLINE)~~)</span></p>
             <p><span class="instruction">RECORD '0' IF CHILD NOT LISTED IN HOUSEHOLD.</span></p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i><font color="#0000ff"></font></p><p><font color="#0000ff">227-~~QPLINE~~</font><span style="color: rgb(0, 0, 255);">. ENREGISTRER LE NUMÉRO DE LIGNE DU MÉNAGE DE L’ENFANT (~~Q218(QPLINE)~~)</span></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ « 0 » SI L’ENFANT N’EST PAS INSCRIT DANS LE MÉNAGE.</span></p><p></p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p><font color="#0000ff">227-~~QPLINE~~</font><span style="color: rgb(0, 0, 255);">. ENREGISTRER LE NUMÉRO DE LIGNE DU MÉNAGE DE L’ENFANT (~~Q218(QPLINE)~~)</span></p><p><span style="color: rgb(0, 0, 255);">INSCRIVEZ « 0 » SI L’ENFANT N’EST PAS INSCRIT DANS LE MÉNAGE.</span></p><p></p>
   - name: Q228_BLOCK
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -580,13 +580,13 @@ questions:
           EN: |
             <p>228. How old was ~~Q218(QPLINE)~~ when he died?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>228a-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand il est décédé ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p>228a-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand il est décédé ?</p>
       - logic: Q219(QPLINE) = 2
         questionText:
           EN: |
             <p>228. How old was ~~Q218(QPLINE)~~ when she died?</p>
           FR: |
-            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i></p><p>228b-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand elle est décédé ?</p>
+            <p><i><font color="#9c9c94">Grossesses attendus: ~~Q212W~~ Grossesse courant:&nbsp;~~QPLINE~~</font></i><i><font color="#9c9c94">&nbsp;</font></i><i><font color="#9c9c94">~~Q218(curocc())~~</font></i></p><p>228b-~~QPLINE~~.  Quel âge avait ~~Q218(curocc())~~ quand elle est décédé ?</p>
   - name: CGIN80.Q228N
     conditions:
       - logic: Q219(QPLINE) = 1
@@ -5268,7 +5268,7 @@ questions:
           EN: |
             <p>Je voudrais maintenant vous poser des questions sur vos frères et soeurs, c'est-à-dire sur tous les enfants nés de votre mère biologique, y compris ceux qui vivent avec vous, ceux qui vivent ailleurs et ceux qui sont décédés. Nous avons appris au cours des&nbsp; enquêtes précédentes qu'il peut être difficile d'établir une liste complète de tous les enfants nés de votre mère biologique. Nous travaillerons ensemble pour établir la liste la plus complète et pour vous aider à vous souvenir de tous vos frères et soeurs. Pouvez-vous maintenant me donner les noms de tous vos frères et soeurs nés de votre mère biologique ?&nbsp;</p><p><font color="#0000ff">NE REMPLISSEZ PAS ENCORE L'ORDRE DES FRÈRES ET SOEURS</font>.&nbsp;</p><p></p>
           FR: |
-            <p>Je voudrais maintenant vous poser des questions sur vos frères et soeurs, c'est-à-dire sur tous les enfants nés de votre mère biologique, y compris ceux qui vivent avec vous, ceux qui vivent ailleurs et ceux qui sont décédés. Nous avons appris au cours des&nbsp; enquêtes précédentes qu'il peut être difficile d'établir une liste complète de tous les enfants nés de votre mère biologique. Nous travaillerons ensemble pour établir la liste la plus complète et pour vous aider à vous souvenir de tous vos frères et soeurs. Pouvez-vous maintenant me donner les noms de tous vos frères et soeurs nés de votre mère biologique ?&nbsp;</p><p><br></p><p></p>
+            <p>Je voudrais maintenant vous poser des questions sur vos frères et soeurs, c'est-à-dire sur tous les enfants nés de votre mère biologique, y compris ceux qui vivent avec vous, ceux qui vivent ailleurs et ceux qui sont décédés. Nous avons appris au cours des&nbsp; enquêtes précédentes qu'il peut être difficile d'établir une liste complète de tous les enfants nés de votre mère biologique. Nous travaillerons ensemble pour établir la liste la plus complète et pour vous aider à vous souvenir de tous vos frères et soeurs. Pouvez-vous maintenant me donner les noms de tous vos frères et soeurs nés de votre mère biologique ?&nbsp;</p><p><font color="#0000ff">SI LE RÉPONDANT N'A PAS DE FRÈRES ET SŒURS, LAISSEZ CE CHAMP VIDE ET CLIQUEZ SUR LA FLÈCHE DROITE POUR CONTINUER</font></p><div><br></div><p></p>
       - logic: curocc() > 1
         questionText:
           FR: |

@@ -1,0 +1,32 @@
+﻿[FormFile]
+Version=CSPro 8.0
+Name=MENU_FF
+Label=ResetData
+DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
+Type=SystemControlled
+  
+[Dictionaries]
+File=..\Dicts\Menu.dcf
+  
+[Form]
+Name=FORM000
+Label=Menu level
+Level=1
+Size=0,0
+  
+  
+[EndForm]
+  
+[Level]
+Name=MENU_LEVEL
+Label=Menu level
+  
+[Group]
+Required=Yes
+Name=MENU_LEVEL_FORM
+Label=Menu level
+Form=1
+Max=1
+[EndGroup]
+  

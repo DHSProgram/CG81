@@ -577,7 +577,7 @@ questions:
             <p>Since last ~~dayalpha~~, did ~~QCHLNAME~~ do any of the following activities, even for only one hour?</p>
             <p>Did ~~QCHLNAME~~ do any work or help on ~~hisher~~ own or the household's plot, farm, or food garden or looked after animals? For example, growing farm produce, harvesting, or feeding, grazing, or milking animals?</p>
           FR: |
-            <p>Maintenant je voudrais vous parler de tout travail que ~~QCHLNAME~~ pourrait faire.</p><p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ a-t-il/elle fait une des activités suivantes, même si c’est pendant une heure seulement ?</p><p></p>
+            <p>Maintenant je voudrais vous parler de tout travail que ~~QCHLNAME~~ pourrait faire.</p><p>Depuis ~~dayalpha~~ dernier, ~~QCHLNAME~~ a-t-il/elle fait une des activités suivantes, même si c’est pendant une heure seulement ?</p><p>Est-ce que&nbsp;&nbsp;~~QCHLNAME~~&nbsp;a travaillé sur son propre terrain ou ferme ou potager ou sur celui du ménage ou s’est occupé des animaux. Par exemple : faire pousser des produits de la ferme, les récolter, nourrir les animaux, les emmener au pâturage ou les traire ?</p><p></p>
   - name: CGHH80.QCHL2B
     conditions:
       - questionText:
@@ -1804,9 +1804,16 @@ questions:
             <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif;">ENGISTRER ANNEE&nbsp;&nbsp;</span><p></p>
   - name: CGHH80.QB104
     conditions:
-      - questionText:
+      - logic: from_mother = "Yes"
+        questionText:
           EN: |
             <p>How old was ~~QCNAME~~ at ~~QCNAME~~'s last birthday? </p>
+          FR: |
+            <p><span style="font-family: Arial, sans-serif;"><font color="#0000ff">Date de naissance selon le questionnaire de la mère:</font></span></p><p><br></p><table class="table table-bordered"><tbody><tr><td><font color="#0000ff">Jour</font></td><td><font color="#0000ff">~~QB103D~~</font></td></tr><tr><td><font color="#0000ff">Mois</font></td><td><font color="#0000ff">~~QB103M~~</font></td></tr><tr><td><font color="#0000ff">Année</font></td><td><font color="#0000ff">~~QB103Y~~</font></td></tr></tbody></table><p><span style="font-family: Arial, sans-serif;">QB104. Quel âge avait ~~QCNAME~~ à son dernier anniversaire?&nbsp;</span></p><p></p><p></p>
+      - logic: from_mother <> "Yes"
+        questionText:
+          EN: |
+            <span style="font-family: Arial, sans-serif;">QB104. Quel âge avait ~~QCNAME~~ à son dernier anniversaire?&nbsp;</span><p></p>
           FR: |
             <span style="font-family: Arial, sans-serif;">QB104. Quel âge avait ~~QCNAME~~ à son dernier anniversaire?&nbsp;</span><p></p>
   - name: CGHH80.QB106
@@ -2203,9 +2210,9 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB220.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB221.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NOM DU PARENT/ADULTE RESPONSABLE DE L'ENQUÊTÉE MINEURE.</span></font><p></p>
           FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB220.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">&nbsp;INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QWNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB221.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NOM DU PARENT/ADULTE RESPONSABLE DE L'ENQUÊTÉE MINEURE.</span></font><p></p>
   - name: CGHH80.QB222
     conditions:
       - questionText:
@@ -2498,9 +2505,9 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB320.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB321.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NOM DU PARENT/ADULTE RESPONSABLE DE L'ENQUÊTÉE MINEURE.</span></font><p></p>
           FR: |
-            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB320.&nbsp;</span><font color="#0000ff" face="Arial, sans-serif">&nbsp;INSCRIVEZ LE NUMÉRO DE [AGENT DE TERRAIN] DU MESUREUR DU TEST&nbsp;</font><font color="#0000ff" face="Arial, sans-serif" style="font-size: 24px;">DE&nbsp;</font><span style="color: rgb(0, 0, 255);">~~QMNAME~~</span><font color="#0000ff" face="Arial, sans-serif">.</font><p></p>
+            <span style="color: rgb(0, 0, 255); font-family: Arial, sans-serif; font-size: 24px;">QB321.</span><font color="#0000ff" face="Arial, sans-serif"><span style="font-size: 24px;">INSCRIVEZ LE NOM DU PARENT/ADULTE RESPONSABLE DE L'ENQUÊTÉE MINEURE.</span></font><p></p>
   - name: CGHH80.QB322
     conditions:
       - questionText:

@@ -1,0 +1,97 @@
+﻿PROC GLOBAL
+{ DHS-V raw data frequencies  version 1.0.1 of 07/14/06 }
+
+  array alpha(80) xcal(9);
+
+  numeric i, j, x, calend, calbeg, callen, calint, found;
+  numeric DaysMonth = 30.4375;
+
+  numeric hweight, rweight, dweight, unweight;
+
+PROC CGHH80_FF
+preproc
+
+  setlanguage("FR");
+  unweight = ( sysparm()[1:1] <> "W" );       // 0-Weighted, 1-Unweighted
+  if unweight then
+    errmsg( "Raw frequencies for Country are UNWEIGHTED" );
+  else	
+    errmsg( "Raw frequencies for Country are WEIGHTED" );
+  endif
+  
+PROC HOUSEHOLD
+preproc
+  if QHCLUST < 9971 then skip case; endif;
+  QHTYPE = 1;
+  if unweight then
+    hweight = 1;
+  else	
+    hweight = QHWEIGHT/1000000;
+  endif;	
+
+  if QHRESULT = 1 then
+    freq include( QHCLUST, QHNUMBER,
+                  QHSECOVER numeric alpha,
+                  QHSEC01   numeric alpha,
+                 
+
+                  QHSEC02   numeric alpha,
+                  QHSEC03   numeric alpha,
+                  QHSEC04   numeric alpha,
+                  QHSECCL   numeric alpha,
+                  QHSECCD   numeric alpha,
+
+                  QBSECOVER numeric alpha )
+	     exclude( QHINTCD, QHWLTHF, QHWLTFUR, QBINTCD )
+         breakdown(1)
+         title( "EDSC-III Congo Questionnaire Ménage" )
+         weighted hweight;
+
+    freq include( QHINTCD, QHWLTHF, QHWLTFUR, QBINTCD )
+         stat nofreq
+         title( "EDSC-III Congo Questionnaire Ménage" )
+         weighted hweight;
+
+    { H/W & Anemia -- Children }
+    for i in QBSEC01_EDT do
+      freq include( QBSEC01 numeric alpha )
+           title( "EDSC-III Congo Questionnaire Ménage" )
+           // select( (QCCDCM - QCCDC) / DaysMonth < 60 )
+           weighted hweight;
+    enddo;
+
+    { H/W & Anemia -- Children statistics for z-scores }
+    for i in QBSEC01_EDT do
+      freq include( QCCDC, QCCDCM, QCZSHA, QCZSWA, QCZSWH, QCZSBM )
+           stat nofreq
+           title( "EDSC-III Congo Questionnaire Ménage" )
+           // select( (QCCDCM - QCCDC) / DaysMonth < 60 )
+           weighted hweight;
+    enddo;
+
+    { H/W, Anemia & HIV testing -- Women }
+    freq include( QBSEC02 numeric alpha )
+         
+         title( "EDSC-III Congo Questionnaire Ménage" )
+         weighted hweight;
+
+    { H/W & Anemia -- Women statistics for z-scores }
+    freq include( QWBM )
+         stat nofreq
+         title( "EDSC-III Congo Questionnaire Ménage" )
+         weighted hweight;
+
+    { H/W, Anemia & HIV testing -- Men }
+    freq include( QBSEC03 numeric alpha )
+
+         title( "EDSC-III Congo Questionnaire Ménage" )
+         weighted hweight;
+
+    { H/W & Anemia -- men statistics for z-scores }
+    freq include( QMBM )
+         stat nofreq
+         title( "EDSC-III Congo Questionnaire Ménage" )
+         weighted hweight;
+
+  endif;
+

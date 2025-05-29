@@ -14,7 +14,7 @@ Language = ES
   ES ( "Marital Status" ) Estado Civil
   ES ( "Pregnant" ) Embarazo
   ES ( "Date of birth" ) Fecha nacimiento
-  ES ( "There are no individuals eligible for individual survey neither children eligible for biomarkers" ) No hay individuos elegibles para entrevista individual tampoco niños elegibles para biomarcadores
+  ES ( "There are no individuals eligible for individual survey or children eligible for biomarkers" ) No hay individuos elegibles para entrevista individual tampoco niños elegibles para biomarcadores
   ES ( "Women eligible for biomarkers" ) Mujeres elegibles para biomarcadores
   ES ( "Never in union" ) Nunca unida(o)
   ES ( "Other" ) Otro
@@ -34,7 +34,7 @@ Language = FR
   FR ( "Marital Status" ) État civil
   FR ( "Pregnant" ) Enceinte
   FR ( "Date of birth" ) Date de naissance
-  FR ( "There are no individuals eligible for individual survey neither children eligible for biomarkers" ) Il n'y a pas d'individus éligibles pour l'enquête individuelle ni d'enfants éligibles pour les biomarqueurs
+  FR ( "There are no individuals eligible for individual survey or children eligible for biomarkers" ) Il n'y a pas d'individus éligibles pour l'enquête individuelle ni d'enfants éligibles pour les biomarqueurs
   FR ( "Women eligible for biomarkers" ) Femmes éligibles aux biomarqueurs
   FR ( "Never in union" ) Jamais en union
   FR ( "Other" ) Autre

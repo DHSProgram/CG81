@@ -38,6 +38,7 @@ preproc
   QHNUMBER = xhhnum;
   { list of individuals and children eligible for individual and height & weight }
   if loadcase( CGHH80, QHCLUST, QHNUMBER ) then
+    numeric hwsel = (QHELIGM = 1); // !! set to 1 if no sub-sample !!
     zstring1 = MakeText( tr("Eligible Individuals in Cluster: %04d Household: %04d"), xcluster, xhhnum );
     zstring2 = tr("Women/men eligible for individual interview");
     xstring3 = tr("Children eligible for biomarkers");
@@ -55,18 +56,19 @@ preproc
     CellAlign(3) = 6;  // column 5 marital status
     CellAlign(4) = 7;  // column 7 currently pregnant
     HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
-	
-	{ first determine if there eligible individuals at all }
+    { first determine if there eligible individuals at all }
 	womelig = count( QHSEC01 where QH09 <> 0 );
 	manelig = count( QHSEC01 where QH10 <> 0 );
-	chielig = count( QHSEC01 where QH11 <> 0 );
+    if hwsel then
+         chielig = count( QHSEC01 where QH11 <> 0 );
+    endif;
     { if appropriate generates the HTML table script with the column headers }
 	if chielig then
       HTML_BeginTable( CellValues, "", 8 );
     elseif womelig | manelig then
       HTML_BeginTable( CellValues, "", 8 );
 	else
-      HTML_Paragraph( tr("There are no individuals eligible for individual survey neither children eligible for biomarkers") );
+      HTML_Paragraph( tr("There are no individuals eligible for individual survey or children eligible for biomarkers") );
 	endif;
 
     { initialize array of children's birth dates, ages and woman's pregnancy }
@@ -159,7 +161,7 @@ preproc
     endif;
 	
 	{ women eligible for biomarkers }
-    if womelig then
+    if womelig & hwsel then
       HTML_Subtitle( tr("Women eligible for biomarkers"), 8 );
       for i in record QHSEC01 do
         if QH09 <> 0 then
@@ -192,7 +194,7 @@ preproc
     endif;
 	
 	{ men eligible for biomarkers }
-    if count( CGHH80.QHSEC01 where QH10 <> 0 ) then
+    if count( CGHH80.QHSEC01 where QH10 <> 0 ) & hwsel then
       HTML_Subtitle( tr("Men eligible for biomarkers"), 8 );
       for i in record QHSEC01 do
         if QH10 <> 0 then

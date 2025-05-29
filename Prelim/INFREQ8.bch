@@ -1,0 +1,52 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "batch", 
+  "name": "INFREQ8", 
+  "label": "INFREQ8", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../dicts/CGIN80.dcf", 
+      "parent": "../dicts/CGIN80.ord"
+    }, 
+    {
+      "type": "working", 
+      "path": "FREQWORK.dcf"
+    }
+  ], 
+  "order": [
+    "../dicts/CGIN80.ord"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "INFreq8.apc"
+    }
+  ], 
+  "messages": [
+    "ccIQ81.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "none", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

@@ -1,948 +1,2757 @@
-[Dictionary]
-Version=CSPro 4.1
-Label=FieldCk
-Name=FieldCk
-RecordTypeStart=2
-RecordTypeLen=2
-Positions=Relative
-ZeroFill=No
-DecimalChar=No
-
-[Level]
-Label=LEVEL1
-Name=LEVEL_1
-
-[IdItems]
-
-[Item]
-Label=Level1 Identification
-Name=LEVEL1ID
-Start=1
-Len=1
-DataType=Alpha
-
-[Record]
-Label=Working variables
-Name=FIELDCKW
-RecordTypeValue='AA'
-RecordLen=85
-
-[Item]
-Label=Team
-Name=FTEAMS
-Start=4
-Len=2
-
-[ValueSet]
-Label=Team
-Name=FTEAMS_VS1
-Value=1;Team 1
-Value=2;Team 2
-Value=3;Team 3
-Value=4;Team 4
-Value=5;Team 5
-Value=6;Team 6
-Value=7;Team 7
-Value=8;Team 8
-Value=9;Team 9
-Value=10;Team 10
-
-[Item]
-Label=Interviewer number
-Name=FINTNUM
-Start=6
-Len=4
-
-[ValueSet]
-Label=Interviewer number
-Name=FINTNUM_VS1
-Value=1000:1010;!!!!! Assign the correct valu sets
-Value=1100:1110
-
-[Item]
-Label=.
-Name=URBRUR
-Start=10
-Len=1
-
-[ValueSet]
-Label=.
-Name=URBRUR_VS1
-Value=1;Urban
-Value=2;Rural
-
-[Item]
-Label=.
-Name=FTOTAL
-Start=11
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTAL_VS1
-Value=1;All teams
-
-[Item]
-Label=.
-Name=FTOTALB
-Start=12
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALB_VS1
-Value=1;Number of births
-
-[Item]
-Label=.
-Name=FTOTALD
-Start=13
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALD_VS1
-Value=1;Total 8-16 months (including '1 year')
-
-[Item]
-Label=.
-Name=FTOTALM
-Start=14
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALM_VS1
-Value=1;Number of men
-
-[Item]
-Label=.
-Name=FTOTALN
-Start=15
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALN_VS1
-Value=0;Percent
-Value=1;Number
-
-[Item]
-Label=.
-Name=FTOTALW
-Start=16
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALW_VS1
-Value=1;Number of women
-
-[Item]
-Label=.
-Name=FTOTALB9
-Start=17
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALB9_VS1
-Value=1;Total births
-
-[Item]
-Label=.
-Name=FTOTALC2
-Start=18
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALC2_VS1
-Value=0;Total
-Value=1;Number of children < 5
-
-[Item]
-Label=.
-Name=FTOTALC3
-Start=19
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALC3_VS1
-Value=1;Children <5 with valid weight data
-
-[Item]
-Label=.
-Name=FTOTALC4
-Start=20
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALC4_VS1
-Value=1;Children 6-59 m. with hemoglobin valid
-
-[Item]
-Label=.
-Name=FTOTALC5
-Start=21
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALC5_VS1
-Value=0;Total
-Value=1;Number of children 6-59 months
-
-[Item]
-Label=.
-Name=FTOTPC1
-Start=22
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTPC1_VS1
-Value=0;Total
-Value=1;Percent with 1st decimal = 0 or 5
-
-[Item]
-Label=.
-Name=FTOTPC2
-Start=23
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTPC2_VS1
-Value=0;Total
-Value=1;Percent with 2nd decimal = 0 or 5
-
-[Item]
-Label=.
-Name=FTOTALW2
-Start=24
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALW2_VS1
-Value=0;Total
-Value=1;Number  of women
-
-[Item]
-Label=.
-Name=FTOTALW3
-Start=25
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALW3_VS1
-Value=1;Number of women with valid data
-
-[Item]
-Label=.
-Name=FTOTALM2
-Start=26
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALM2_VS1
-Value=0;Total
-Value=1;Number  of men
-
-[Item]
-Label=.
-Name=FTOTALM3
-Start=27
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTOTALM3_VS1
-Value=1;Number of men with valid data
-
-[Item]
-Label=.
-Name=FTARGET
-Start=28
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTARGET_VS1
-Value=1;Target not met
-
-[Item]
-Label=Households
-Name=FHHMEAN
-Start=29
-Len=1
-
-[ValueSet]
-Label=Households
-Name=FHHMEAN_VS1
-Value=0;Number of completed households
-Value=1;Number of de facto eligible women in those HHs
-Value=2;Mean number of de facto eligible women per HH
-Value=3;Target not met
-
-[Item]
-Label=Households
-Name=FHHMEANM
-Start=30
-Len=1
-
-[ValueSet]
-Label=Households
-Name=FHHMEANM_VS1
-Value=0;Number completed households
-Value=1;Number of de facto eligible men in those HHs
-Value=2;Mean number of de facto eligible men per HH
-Value=3;Target not met
-
-[Item]
-Label=Women's age (12 - 18 years)
-Name=FAGE
-Start=31
-Len=2
-
-[ValueSet]
-Label=Women's age (12 - 18 years)
-Name=FAGE_VS1
-Value=12:18
-
-[Item]
-Label=Men's age (12 - 18 years)
-Name=FAGEM
-Start=33
-Len=2
-
-[ValueSet]
-Label=Men's age (12 - 18 years)
-Name=FAGEM_VS1
-Value=12:18
-
-[Item]
-Label=Age at death (in months)
-Name=FAGED
-Start=35
-Len=1
-
-[ValueSet]
-Label=Age at death (in months)
-Name=FAGED_VS1
-Value=0;8 m.
-Value=1;9 m.
-Value=2;10 m.
-Value=3;11 m.
-Value=4;12 m.
-Value=5;Reported as "1 year"
-Value=6;13 m.
-Value=7;14 m.
-Value=8;15 m.
-Value=9;16 m.
-
-[Item]
-Label=Age at death in months for children who died
-Name=FAGED9
-Start=36
-Len=1
-
-[ValueSet]
-Label=Age at death in months for children who died
-Name=FAGED9_VS1
-Value=1;< 1 month
-Value=2;1-11 months
-Value=3;12+ months
-Value=4;Missing
-Value=5;Total dead
-
-[Item]
-Label=.
-Name=FRATIO
-Start=37
-Len=1
-
-[ValueSet]
-Label=.
-Name=FRATIO_VS1
-Value=1;Age ratio (women 15/ women 14)
-
-[Item]
-Label=.
-Name=FRATIOB
-Start=38
-Len=1
-
-[ValueSet]
-Label=.
-Name=FRATIOB_VS1
-Value=1;!!!! Birth year ratio (2010/2009)
-
-[Item]
-Label=.
-Name=FRATIOM
-Start=39
-Len=1
-
-[ValueSet]
-Label=.
-Name=FRATIOM_VS1
-Value=0;Age ratio (men 15/ men 14)
-
-[Item]
-Label=.
-Name=FRATIO9
-Start=40
-Len=1
-
-[ValueSet]
-Label=.
-Name=FRATIO9_VS1
-Value=1;Ratio of neonatal to infant
-Value=2;Infant deaths to total births (per thousand)
-
-[Item]
-Label=.
-Name=FRATIOD
-Start=41
-Len=1
-
-[ValueSet]
-Label=.
-Name=FRATIOD_VS1
-Value=1;12 months ratio (including "1 year")
-
-[Item]
-Label=Completeness of reporting
-Name=FCOMPL
-Start=42
-Len=1
-
-[ValueSet]
-Label=Completeness of reporting
-Name=FCOMPL_VS1
-Value=1;Year and month of birth
-Value=2;Year of birth and age
-Value=3;Year of birth only
-Value=4;Age only
-Value=5;Other/ No data
-
-[Item]
-Label=Completeness of reporting
-Name=FCOMPD
-Start=43
-Len=1
-
-[ValueSet]
-Label=Completeness of reporting
-Name=FCOMPD_VS1
-Value=1;Year and month of birth
-Value=2;Year of birth only
-Value=3;Month of birth only
-Value=4;No data
-
-[Item]
-Label=Year of birth
-Name=FYEARB
-Start=44
-Len=4
-
-[ValueSet]
-Label=Year of birth
-Name=FYEARB_VS1
-Value=2006:2020
-Value=9999;Missing
-
-[Item]
-Label=.
-Name=FCEB
-Start=48
-Len=1
-
-[ValueSet]
-Label=.
-Name=FCEB_VS1
-Value=1;Number of ALL women with a completed interview
-Value=2;Total number of children ever born
-Value=3;Mean CEB
-
-[Item]
-Label=.
-Name=FALIVE
-Start=49
-Len=1
-
-[ValueSet]
-Label=.
-Name=FALIVE_VS1
-Value=1;Still alive
-
-[Item]
-Label=.
-Name=FCARDR
-Start=50
-Len=1
-
-[ValueSet]
-Label=.
-Name=FCARDR_VS1
-Value=1;Percent of children reported to have a vaccination card or other document
-Value=2;Percent of children whose vaccination card or document was seen by interviewer
-Value=3;Number of children
-
-[Item]
-Label=.
-Name=FCARDP
-Start=51
-Len=1
-
-[ValueSet]
-Label=.
-Name=FCARDP_VS1
-Value=1;Proportion of cards seen
-
-[Item]
-Label=Result of children's weight measurment
-Name=FWC11
-Start=52
-Len=1
-
-[ValueSet]
-Label=Result of children's weight measurment
-Name=FWC11_VS1
-Value=1;Measured
-Value=2;Child not present
-Value=3;Refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=.
-Name=FTARGET2
-Start=53
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTARGET2_VS1
-Value=1;Children with valid data %{\super 1}
-Value=2;Target 1 not met
-Value=3;Weight for Height Z-score out of range
-Value=4;Target 2 not met
-
-[Item]
-Label=Result of children's height measurment
-Name=FHC11
-Start=54
-Len=1
-
-[ValueSet]
-Label=Result of children's height measurment
-Name=FHC11_VS1
-Value=1;Measured
-Value=2;Child not present
-Value=3;Refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=Among children measured
-Name=FHWC
-Start=55
-Len=1
-
-[ValueSet]
-Label=Among children measured
-Name=FHWC_VS1
-Value=1;Out of range (%)
-Value=2;Date of birth incomplete (%)
-
-[Item]
-Label=.
-Name=FTARGET3
-Start=56
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTARGET3_VS1
-Value=1;Children with valid data %{\super 1}
-Value=2;Target 1 not met
-Value=3;Height for age Z-score out of range
-Value=4;Target 2 not met
-
-[Item]
-Label=Percent distribution of 1st decimal
-Name=FDEC1
-Start=57
-Len=1
-
-[ValueSet]
-Label=Percent distribution of 1st decimal
-Name=FDEC1_VS1
-Value=0:9
-
-[Item]
-Label=Percent distribution of 2nd decimal
-Name=FDEC2
-Start=58
-Len=1
-
-[ValueSet]
-Label=Percent distribution of 2nd decimal
-Name=FDEC2_VS1
-Value=0:9
-
-[Item]
-Label=Result of weight measurement
-Name=FWW11
-Start=59
-Len=1
-
-[ValueSet]
-Label=Result of weight measurement
-Name=FWW11_VS1
-Value=1;Measured
-Value=2;Woman not present
-Value=3;Woman refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=Result of height measurement
-Name=FHW11
-Start=60
-Len=1
-
-[ValueSet]
-Label=Result of height measurement
-Name=FHW11_VS1
-Value=1;Measured
-Value=2;Woman not present
-Value=3;Woman refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=.
-Name=FHWW
-Start=61
-Len=1
-
-[ValueSet]
-Label=.
-Name=FHWW_VS1
-Value=1;Among women measured, out of range
-
-[Item]
-Label=.
-Name=FTARGET4
-Start=62
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTARGET4_VS1
-Value=1;Women with valid data (%){\super 1}
-Value=2;Target not met
-
-[Item]
-Label=Result of weight measurement
-Name=FWM11
-Start=63
-Len=1
-
-[ValueSet]
-Label=Result of weight measurement
-Name=FWM11_VS1
-Value=1;Measured
-Value=2;Man not present
-Value=3;Man refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=Result of height measurement
-Name=FHM11
-Start=64
-Len=1
-
-[ValueSet]
-Label=Result of height measurement
-Name=FHM11_VS1
-Value=1;Measured
-Value=2;Man not present
-Value=3;Man refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=.
-Name=FTARGET5
-Start=65
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTARGET5_VS1
-Value=1;Men with valid data (%){\super 1}
-Value=2;Target not met
-
-[Item]
-Label=.
-Name=FHWM
-Start=66
-Len=1
-
-[ValueSet]
-Label=.
-Name=FHWM_VS1
-Value=1;Among men measured, out of range
-
-[Item]
-Label=Result of anemia testing
-Name=FAC12
-Start=67
-Len=1
-
-[ValueSet]
-Label=Result of anemia testing
-Name=FAC12_VS1
-Value=1;Measured
-Value=2;Child not present
-Value=3;Refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=.
-Name=FANC
-Start=68
-Len=1
-
-[ValueSet]
-Label=.
-Name=FANC_VS1
-Value=1;Among children measured, hemo- globin level out of range (%)
-
-[Item]
-Label=.
-Name=FTARGET6
-Start=69
-Len=1
-
-[ValueSet]
-Label=.
-Name=FTARGET6_VS1
-Value=1;Children with valid hemoglobin data %{\super 1}
-Value=2;Target not met
-
-[Item]
-Label=Result of anemia testing
-Name=FAW12
-Start=70
-Len=1
-
-[ValueSet]
-Label=Result of anemia testing
-Name=FAW12_VS1
-Value=1;Measured
-Value=2;Woman not present
-Value=3;Refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=.
-Name=FANW
-Start=71
-Len=1
-
-[ValueSet]
-Label=.
-Name=FANW_VS1
-Value=1;Among women measured, hemo- globin level out of range
-
-[Item]
-Label=Result of anemia testing
-Name=FAM12
-Start=72
-Len=1
-
-[ValueSet]
-Label=Result of anemia testing
-Name=FAM12_VS1
-Value=1;Measured
-Value=2;Man not present
-Value=3;Refused
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=.
-Name=FANM
-Start=73
-Len=1
-
-[ValueSet]
-Label=.
-Name=FANM_VS1
-Value=1;Among men measured, hemo- globin level out of range
-
-[Item]
-Label=Result of HIV testing
-Name=FDBS
-Start=74
-Len=1
-
-[ValueSet]
-Label=Result of HIV testing
-Name=FDBS_VS1
-Value=1;BDS collected
-Value=2;Refuse to provide blood
-Value=3;Absent at time of blodd collection
-Value=6;Other
-Value=9;Missing
-
-[Item]
-Label=Interviewed/not interviewed
-Name=FINDINT
-Start=75
-Len=1
-
-[ValueSet]
-Label=Interviewed/not interviewed
-Name=FINDINT_VS1
-Value=1;Interviewed
-Value=2;Not interviewed
-
-[Item]
-Label=All decesaed sisters
-Name=FCOL14A
-Start=76
-Len=1
-
-[ValueSet]
-Label=All decesaed sisters
-Name=FCOL14A_VS1
-Value=1;Number
-Value=2;Missing age at death
-Value=3;Percen- tage
-
-[Item]
-Label=Sisters who died at age 12+
-Name=FCOL14B
-Start=77
-Len=1
-
-[ValueSet]
-Label=Sisters who died at age 12+
-Name=FCOL14B_VS1
-Value=1;Number
-Value=2;Missing infor- mation on death during pregnancy & during delivery & after delivery
-Value=3;Percen- tage
-
-[Item]
-Label=Sisters who died at age 12+
-Name=FCOL14C
-Start=78
-Len=1
-
-[ValueSet]
-Label=Sisters who died at age 12+
-Name=FCOL14C_VS1
-Value=1;Number
-Value=2;Missing infor- mation on "years ago" of death
-Value=3;Percen- tage
-
-[Item]
-Label=.
-Name=RESDV
-Start=79
-Len=1
-
-[ValueSet]
-Label=.
-Name=RESDV_VS1
-Value=1;Total number of women eligible for domestic violence module and interviewed
-Value=2;Percentage of eligible women not interviewed because privacy not obtained
-
-[Item]
-Label=.
-Name=FSUMM1
-Start=80
-Len=2
-
-[ValueSet]
-Label=.
-Name=FSUMM1_VS1
-Value=0;FC-1U
-Value=1;FC-1R
-Value=2;FC-2W
-Value=3;FC-2M
-Value=4;FC-3WU
-Value=5;FC-3WR
-Value=6;FC-3MU
-Value=7;FC-3MR
-Value=8;FC-4W
-Value=9;FC-4M
-Value=10;FC-5
-Value=11;FC-6
-Value=12;FC-7L
-Value=13;FC-7D
-Value=14;FC-8
-Value=15;FC-10
-Value=16;FC-14 target 1
-Value=17;FC-14 target 2
-Value=18;FC-14 target 3
-Value=19;FC-15
-Value=98;Total target not met
-Value=99;% target not met
-
-[Item]
-Label=.
-Name=FSUMM2
-Start=82
-Len=2
-
-[ValueSet]
-Label=.
-Name=FSUMM2_VS1
-Value=0;FC-11C wt target 1
-Value=1;FC-11C wt target 2
-Value=2;FC-11C wt 1dec or 2 dec
-Value=3;FC-11C ht target 1
-Value=4;FC-11C ht target 2
-Value=5;FC-11W wt
-Value=6;FC-11W wt 1dec or 2 dec
-Value=7;FC-11W ht
-Value=8;FC-11M wt
-Value=9;FC-11M wt 1dec or 2 dec
-Value=10;FC-11M ht
-Value=11;FC-12C hb
-Value=12;FC-12C hb 1dec
-Value=13;FC-12W hb
-Value=14;FC-12W hb 1dec
-Value=15;FC-12M hb
-Value=16;FC-12M hb 1dec
-Value=17;FC-13W
-Value=18;FC-13M
-Value=98;Total target not met
-Value=99;% target not met
-
-[Item]
-Label=.
-Name=FSUMM3
-Start=84
-Len=2
-
-[ValueSet]
-Label=.
-Name=FSUMM3_VS1
-Value=98;Total target not met
-Value=99;% target not met
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "FIELDCK", 
+  "labels": [ { "text": "FieldCk" } ], 
+  "security": {
+    "allowDataViewerModifications": false, 
+    "allowExport": false, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "f6a9a44ed91030a9c421e75fee1cb7f385da3a68ebf27f7cece4174b2241aa81"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 2, 
+    "length": 2
+  }, 
+  "defaults": {
+    "decimalMark": false, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "LEVEL_1", 
+      "labels": [ { "text": "LEVEL1" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "LEVEL1ID", 
+            "labels": [ { "text": "Level1 Identification" } ], 
+            "contentType": "alpha", 
+            "start": 1, 
+            "length": 1
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "FIELDCKW", 
+          "labels": [ { "text": "Working variables" } ], 
+          "recordType": "AA", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "FTEAMS", 
+              "labels": [ { "text": "Equipe" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTEAMS_VS1", 
+                  "labels": [ { "text": "Team" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Equipe 1" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 2" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 3" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 4" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 5" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 6" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 7" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 8" } ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 9" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Equipe 10" } ], 
+                      "pairs": [ { "value": "10" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FFEDITS", 
+              "labels": [ { "text": "Equipe" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FFEDITS_VS1", 
+                  "labels": [ { "text": "Equipe" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Bio Soubo Boni Soubo" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Djaboutouboutou Djamal Dine" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Essessinou Salifou" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Sodegadji Djibodi Rose" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Semevo Amlan Odette" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Kouchoro Chabi Olaoumi Georges" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Attere Aurel Cephas Ogoudjobi" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FINTNUM", 
+              "labels": [ { "text": "Code Enquêteur" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FINTNUM_VS1", 
+                  "labels": [ { "text": "Code Enquêteur" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "BAGRI ISSA MOHAMED AMINOU" } ], 
+                      "pairs": [ { "value": "100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OROU SEKO RAIMATOU" } ], 
+                      "pairs": [ { "value": "101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GADO CHAMSIA" } ], 
+                      "pairs": [ { "value": "102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AYA ASSANA" } ], 
+                      "pairs": [ { "value": "103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SANNI A. KANKOU WARISSOU" } ], 
+                      "pairs": [ { "value": "104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOHOUENOU ANANI BENOIT" } ], 
+                      "pairs": [ { "value": "105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SALIFOU SOURADJOU" } ], 
+                      "pairs": [ { "value": "200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAIROU MOUMOUNI SALMATA" } ], 
+                      "pairs": [ { "value": "201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ADAM ROUKIATOU" } ], 
+                      "pairs": [ { "value": "202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AMEDOWOKPO RACHIDATOU" } ], 
+                      "pairs": [ { "value": "203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MAMA YACOUBOU SOURADJOU" } ], 
+                      "pairs": [ { "value": "204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MORA NABILATH ADENIKE ABIKE" } ], 
+                      "pairs": [ { "value": "205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ISSIFOU ABDOU FATAOU" } ], 
+                      "pairs": [ { "value": "300" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OWA M PO AUGUSTINE" } ], 
+                      "pairs": [ { "value": "301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUAGOU KROUPE K. JUSTINE" } ], 
+                      "pairs": [ { "value": "302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUAGOU YEPOUDOUA PATRICIA" } ], 
+                      "pairs": [ { "value": "303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FENONKPERIFE N'KOUEL ANDRE" } ], 
+                      "pairs": [ { "value": "304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OROU GADO ILIASSOU" } ], 
+                      "pairs": [ { "value": "305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ODO ADEKOUN ANDRE PIERRE" } ], 
+                      "pairs": [ { "value": "400" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAROUKOUA CLEMENCE" } ], 
+                      "pairs": [ { "value": "401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TABLIENI DIAWEYIAH PRUDENCIA" } ], 
+                      "pairs": [ { "value": "402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ATCHADO ATTA GOMINA RAIMATOU" } ], 
+                      "pairs": [ { "value": "403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ABDOULAYE RAISSANOU" } ], 
+                      "pairs": [ { "value": "404" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ADAMBI BOUHARY NAIMATOU" } ], 
+                      "pairs": [ { "value": "405" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ASSIGNITOU OUOROU PHALES" } ], 
+                      "pairs": [ { "value": "500" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ISSIFOU MOUINA" } ], 
+                      "pairs": [ { "value": "501" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ISSOUMAN KADIDJATOU" } ], 
+                      "pairs": [ { "value": "502" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ISSADOU TAIDATOU" } ], 
+                      "pairs": [ { "value": "503" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZAKARI ABDOULAYE MOUZAMINOU" } ], 
+                      "pairs": [ { "value": "504" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ALIOU BANKA AKIMOU" } ], 
+                      "pairs": [ { "value": "505" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIAO O. EULALIE" } ], 
+                      "pairs": [ { "value": "600" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TONY DJAMILATH" } ], 
+                      "pairs": [ { "value": "601" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZAKARI RAHIMATOU" } ], 
+                      "pairs": [ { "value": "602" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIO TAHIROU ZOUBERATH" } ], 
+                      "pairs": [ { "value": "603" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ABOUBAKARI KABIROU" } ], 
+                      "pairs": [ { "value": "604" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ALASSANE IBRAHIM ABDOU SABOUR" } ], 
+                      "pairs": [ { "value": "605" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIO COMADA TRAORE KABIROU" } ], 
+                      "pairs": [ { "value": "700" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NANHINDE GERODE FIFAME" } ], 
+                      "pairs": [ { "value": "701" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BONI SYLBINE BONA" } ], 
+                      "pairs": [ { "value": "702" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "NANSOUNON EUNICE LANDRA" } ], 
+                      "pairs": [ { "value": "703" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SERIKI AYODELE ROMUALD" } ], 
+                      "pairs": [ { "value": "704" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BABIO IRADATH" } ], 
+                      "pairs": [ { "value": "705" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AIDONOUGBO SEWEDO CHRISTINE" } ], 
+                      "pairs": [ { "value": "800" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ABAYA KADJOGBE HORTENCE" } ], 
+                      "pairs": [ { "value": "801" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AMAGNIDE TATIANA" } ], 
+                      "pairs": [ { "value": "802" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TCHAKPA SENAN ANASTHASIE" } ], 
+                      "pairs": [ { "value": "803" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUEFONDE DOSSA FLORENT" } ], 
+                      "pairs": [ { "value": "804" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AGOSSADOU N. ANGELIQUE" } ], 
+                      "pairs": [ { "value": "805" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AWO DALE SYLVAIN" } ], 
+                      "pairs": [ { "value": "900" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOLLEGBE GENEVIEVE" } ], 
+                      "pairs": [ { "value": "901" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUNSA VIDEHOUN SOLANGE" } ], 
+                      "pairs": [ { "value": "902" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AKINOCHO ROUCHIDATH A." } ], 
+                      "pairs": [ { "value": "903" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIAO MOUFID" } ], 
+                      "pairs": [ { "value": "904" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "EDIKOU FREDDY EUDOXE" } ], 
+                      "pairs": [ { "value": "905" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAHOETO ABLA" } ], 
+                      "pairs": [ { "value": "1000" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AHOUANGANNON F. I. VERONIQUE" } ], 
+                      "pairs": [ { "value": "1001" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SOGADJI ARMANDINE FELICITE" } ], 
+                      "pairs": [ { "value": "1002" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DONOU THERESE" } ], 
+                      "pairs": [ { "value": "1003" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AHO TCHEGNON CHARLMELO" } ], 
+                      "pairs": [ { "value": "1004" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUNTONDJI ADONIS" } ], 
+                      "pairs": [ { "value": "1005" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "PEDANOU CHARBEL L. EDGARD" } ], 
+                      "pairs": [ { "value": "1100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FAGNON FLORA" } ], 
+                      "pairs": [ { "value": "1101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DEGBE SONIA" } ], 
+                      "pairs": [ { "value": "1102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUETOGNON AGATHE" } ], 
+                      "pairs": [ { "value": "1103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AMOUSSOU ADEBLE SAMUEL" } ], 
+                      "pairs": [ { "value": "1104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DICKINSON AXELLE" } ], 
+                      "pairs": [ { "value": "1105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MENSAH EMILE LAURENT" } ], 
+                      "pairs": [ { "value": "1200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ALLASSANE CALILATOU" } ], 
+                      "pairs": [ { "value": "1201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOCO EUPHRASIE" } ], 
+                      "pairs": [ { "value": "1202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GAKPETOR THYWILL" } ], 
+                      "pairs": [ { "value": "1203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CODJOVI GILLES CONSTANTIN" } ], 
+                      "pairs": [ { "value": "1204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HESSAVI HODONOU ADRIEN" } ], 
+                      "pairs": [ { "value": "1205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AKADJI GILDAS" } ], 
+                      "pairs": [ { "value": "1300" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AGOSSOU WANYINTO SIDONIE" } ], 
+                      "pairs": [ { "value": "1301" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DOSSOU CHRISTELLE" } ], 
+                      "pairs": [ { "value": "1302" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SOUROU MARLENE DANIELLE" } ], 
+                      "pairs": [ { "value": "1303" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FAYOMI BORIS" } ], 
+                      "pairs": [ { "value": "1304" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FLENON MIREILLE" } ], 
+                      "pairs": [ { "value": "1305" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOTIN BIGNON MARIANO" } ], 
+                      "pairs": [ { "value": "1400" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MOIDE BENEDICTA" } ], 
+                      "pairs": [ { "value": "1401" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SENOUGBE ELVIRE" } ], 
+                      "pairs": [ { "value": "1402" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOVIESSI HERMIONE" } ], 
+                      "pairs": [ { "value": "1403" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SOUMANOU MOUKAILA" } ], 
+                      "pairs": [ { "value": "1404" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SESSOU ACHILE" } ], 
+                      "pairs": [ { "value": "1405" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DOSSOU ODETTE" } ], 
+                      "pairs": [ { "value": "1500" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DEGBEKO BLANDINE" } ], 
+                      "pairs": [ { "value": "1501" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GNANCADJA NELLY" } ], 
+                      "pairs": [ { "value": "1502" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUNKPE CHARLOTTE" } ], 
+                      "pairs": [ { "value": "1503" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUSSOU EMILE" } ], 
+                      "pairs": [ { "value": "1504" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OUIDOH O. H. LAUREL" } ], 
+                      "pairs": [ { "value": "1505" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GBETIE JONAS" } ], 
+                      "pairs": [ { "value": "1600" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AREMOU KAFILATOU" } ], 
+                      "pairs": [ { "value": "1601" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUNDONOUGBO FRANCINE" } ], 
+                      "pairs": [ { "value": "1602" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZINSOU GLORIA" } ], 
+                      "pairs": [ { "value": "1603" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAGBA FERDINAND" } ], 
+                      "pairs": [ { "value": "1604" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GUEGNI ADEBA ODILE" } ], 
+                      "pairs": [ { "value": "1605" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "GOUKODADJA HERMIONE" } ], 
+                      "pairs": [ { "value": "1700" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUKPESSO YASMINE" } ], 
+                      "pairs": [ { "value": "1701" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZOHOUN ESPERANCE" } ], 
+                      "pairs": [ { "value": "1702" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TOSSOU JOSETHE" } ], 
+                      "pairs": [ { "value": "1703" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "MIGAN GANDONOU ULRICH" } ], 
+                      "pairs": [ { "value": "1704" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJIDONOU DIANE" } ], 
+                      "pairs": [ { "value": "1705" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HLIHE ALBERTINE" } ], 
+                      "pairs": [ { "value": "1800" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUKOUI ROLANDE" } ], 
+                      "pairs": [ { "value": "1801" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAGA CLOTILDE" } ], 
+                      "pairs": [ { "value": "1802" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KPOTON ESTELLE" } ], 
+                      "pairs": [ { "value": "1803" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SOTOMEY YANNICK" } ], 
+                      "pairs": [ { "value": "1804" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AVALIGBE SALMATH" } ], 
+                      "pairs": [ { "value": "1805" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "HOUNSOU ALEXIS" } ], 
+                      "pairs": [ { "value": "1900" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "WINSAVI CHRISTIANE" } ], 
+                      "pairs": [ { "value": "1901" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TAWEMA ELLA" } ], 
+                      "pairs": [ { "value": "1902" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ZOUNON PAULINE" } ], 
+                      "pairs": [ { "value": "1903" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "CHABI ELIE" } ], 
+                      "pairs": [ { "value": "1904" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BOSSOU CHRISTINE" } ], 
+                      "pairs": [ { "value": "1905" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BALOGOUN FELIX" } ], 
+                      "pairs": [ { "value": "2000" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ADJIBOYE REANATOU" } ], 
+                      "pairs": [ { "value": "2001" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TCHARI KASSA DELPHINE" } ], 
+                      "pairs": [ { "value": "2002" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "OLOUYOMI GEORGETTE" } ], 
+                      "pairs": [ { "value": "2003" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AYODELE KABIROU" } ], 
+                      "pairs": [ { "value": "2004" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ADECHOUBOU FARIDATH" } ], 
+                      "pairs": [ { "value": "2005" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "LOKOSSOU JOSUE" } ], 
+                      "pairs": [ { "value": "2100" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AHOTONDJI ANGELE" } ], 
+                      "pairs": [ { "value": "2101" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KAKPO HUGUETTE" } ], 
+                      "pairs": [ { "value": "2102" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KANLINSOU GISELE" } ], 
+                      "pairs": [ { "value": "2103" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AHOUANGBO VENCESLAS" } ], 
+                      "pairs": [ { "value": "2104" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AHODO-OUNSOU YOLANDE" } ], 
+                      "pairs": [ { "value": "2105" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DAKO BRIGITTE" } ], 
+                      "pairs": [ { "value": "2200" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SITHON LIDWINE" } ], 
+                      "pairs": [ { "value": "2201" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ATCHADE CHRISTELLE" } ], 
+                      "pairs": [ { "value": "2202" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DATONDJI GENEVIEVE" } ], 
+                      "pairs": [ { "value": "2203" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "AHOVEY NICOLAS" } ], 
+                      "pairs": [ { "value": "2204" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "TECKA ERIC" } ], 
+                      "pairs": [ { "value": "2205" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "BIO SOURO BONI SOULO" } ], 
+                      "pairs": [ { "value": "8001" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "DJABOUTOUBOUTOU DJAMAL DINE" } ], 
+                      "pairs": [ { "value": "8002" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ESSESSINOU SALIFOU" } ], 
+                      "pairs": [ { "value": "8003" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SODEGADJI DJIGBODI ROSE" } ], 
+                      "pairs": [ { "value": "8004" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "SEMEVO AMLAN ODETTE" } ], 
+                      "pairs": [ { "value": "8005" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "KOUCHORO CHABI O. GEORGES" } ], 
+                      "pairs": [ { "value": "8006" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "ATTERE AUREL C. O." } ], 
+                      "pairs": [ { "value": "8007" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "URBRUR", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "URBRUR_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Urbain" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Rural" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTAL", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTAL_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Ensemble" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALB", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALB_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total naissances" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALD", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALD_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total 8-16 mois (y compris '1 an')" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALM", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALM_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total homme" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALN", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALN_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Effectif" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALW", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALW_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total femme" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALB9", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALB9_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total naissances" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALC2", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALC2_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Effectif enfants < de 5 ans" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALC3", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALC3_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif d'enfants de moins de 5 ans  avec mesure du poids valide" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALC4", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALC4_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": " Effectif d'enfants de 6-59 mois avec mesure d'hémoglobine valide" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALC5", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALC5_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Effectif enfants de 6-59 mois" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTPC1", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTPC1_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pourcentage avec 1ère décimale '0' ou '5'" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTPC2", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTPC2_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pourcentage avec 2ème décimale '0' ou '5'" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALW2", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALW2_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Effectif de femmes" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALW3", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALW3_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif de femmes avec mesure valide" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALW4", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALW4_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif de femmes avec mesure d'hémoglobine valide" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALM2", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALM2_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Number  of men" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTOTALM3", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTOTALM3_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Number of men with valid data" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTARGET", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTARGET_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Cible non atteinte" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHHMEAN", 
+              "labels": [ { "text": "Ménages" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHHMEAN_VS1", 
+                  "labels": [ { "text": "Ménages" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Nombre de ménages remplis" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Nombre de femmes (population de fait) éligibles dans ces ménages" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Nombre moyen de femmes éligibles (population de fait) par ménage" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible non atteinte" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHHMEANM", 
+              "labels": [ { "text": "Ménages" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHHMEANM_VS1", 
+                  "labels": [ { "text": "Ménages" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Nombre de ménages remplis" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Nombre d'hommes (population de fait) dans ces ménages" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Nombre moyen d'hommes (population de fait) éligibles par ménage" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible non atteinte" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHRESULT", 
+              "labels": [ { "text": "Résultat de l'interview de ménage" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHRESULT_VS1", 
+                  "labels": [ { "text": "Résultat de l'interview de ménage" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Rempli" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Ménage présent mais pas d'enquêté présent" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Ménage absent" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Différé" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refusé" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Logement vide" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Logement détruit" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "logement non trouvé" } ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAGE", 
+              "labels": [ { "text": "Age femme (12 - 18 ans)" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAGE_VS1", 
+                  "labels": [ { "text": "Age femme (12 - 18 ans)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "12", "18" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAGEM", 
+              "labels": [ { "text": "Age homme (12 - 18 ans)" } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAGEM_VS1", 
+                  "labels": [ { "text": "Age homme (12 - 18 ans)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "12", "18" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAGED", 
+              "labels": [ { "text": "Age au décès (en mois)" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAGED_VS1", 
+                  "labels": [ { "text": "Age au décès (en mois)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "8 m." } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "9 m." } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "10 m." } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "11 m." } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "12 m." } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Reported as \"1 year\"" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "13 m." } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "14 m." } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "15 m." } ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "16 m." } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAGED9", 
+              "labels": [ { "text": "Age au décès en mois pour les enfants décédés*" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAGED9_VS1", 
+                  "labels": [ { "text": "Age au décès en mois pour les enfants décédés*" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "< 1 mois" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "1-11 mois" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "12+ mois" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Total des Décès" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FRATIO", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FRATIO_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Age ratio (femmes 15/ femmes 14)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FRATIOB", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FRATIOB_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Naissance ratio année (2020/2019)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FRATIOM", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FRATIOM_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Age ratio (hommes 15/ hommes 14)" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FRATIO9", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FRATIO9_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Ratio des décès néonatals aux décès infantiles" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Décès infantiles / toutes les naissances (pour mille)" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FRATIOD", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FRATIOD_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Ratio 12 mois (y compris \"1 an\")*" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCOMPL", 
+              "labels": [ { "text": "Complétude de l'information" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCOMPL_VS1", 
+                  "labels": [ { "text": "Complétude de l'information" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Année et mois de naissance" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Année de naissance et  âge" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Année de naissance seulement" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Age seulement" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre/Pas renseigné" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCOMPD", 
+              "labels": [ { "text": "Complétude de l'information" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCOMPD_VS1", 
+                  "labels": [ { "text": "Complétude de l'information" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Année et mois de naissance" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Année de naissance seulement" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Mois de naissance seulement" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pas de renseignement" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FYEARB", 
+              "labels": [ { "text": "Année de naissance" } ], 
+              "contentType": "numeric", 
+              "length": 4, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FYEARB_VS1", 
+                  "labels": [ { "text": "Année de naissance" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "2015", "2025" ] } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9999" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCEB", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCEB_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif de TOUTES les femmes avec interview complète" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Total d'enfants déjà nés" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Nombre moyen d'enfants déjà nés" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FALIVE", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FALIVE_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Encore en vie" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCARDR", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCARDR_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Pourcentage d'enfants qui ont une carte de vaccination" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pourcentage d'enfants dont la carte a été vue par l'enquêtrice" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Effectif d'enfants" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCARDP", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCARDP_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Proportion de cartes vues (%)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FWC11", 
+              "labels": [ { "text": "Résultat des mesures du poids  des enfants" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FWC11_VS1", 
+                  "labels": [ { "text": "Résultat des mesures du poids  des enfants" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesuré" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Enfant pas présent" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refus" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTARGET2", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTARGET2_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Enfants avec données valides (%){\\super 1}" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible 1 non atteinte" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Poids-Taille Z-score hors fourchettes" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible 2 non atteinte" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHC11", 
+              "labels": [ { "text": "Résultat de la mesure de la taille  des enfants" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHC11_VS1", 
+                  "labels": [ { "text": "Résultat de la mesure de la taille  des enfants" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesuré" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Enfant pas présent" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refus" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHWC", 
+              "labels": [ { "text": "Parmi les enfants mesurés" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHWC_VS1", 
+                  "labels": [ { "text": "Parmi les enfants mesurés" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesures hors fourchettes  (%)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Date de naissance incomplète  (%)" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHWC1", 
+              "labels": [ { "text": "Parmi les enfants mesurés" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHWC1_VS1", 
+                  "labels": [ { "text": "Parmi les enfants mesurés" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesures hors fourchettes  (%)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Date de naissance incomplète  (%)" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Date de naissance historique naissance  (%)" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTARGET3", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTARGET3_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Enfants avec données valides (%){\\super 1}" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible 1 non atteinte" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Taille-age Z-score hors fourchettes" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible 2 non atteinte" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FDEC1", 
+              "labels": [ { "text": "Distribution (en %) de la première décimale" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FDEC1_VS1", 
+                  "labels": [ { "text": "Distribution (en %) de la première décimale" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "0", "9" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FDEC2", 
+              "labels": [ { "text": "Distribution (en %) de la deuxième décimale" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FDEC2_VS1", 
+                  "labels": [ { "text": "Distribution (en %) de la deuxième décimale" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "" } ], 
+                      "pairs": [ { "range": [ "0", "9" ] } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FWW11", 
+              "labels": [ { "text": "Résultat des mesures du poids" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FWW11_VS1", 
+                  "labels": [ { "text": "Résultat des mesures du poids" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesurée" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Femme pas présente" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Femme refusé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHW11", 
+              "labels": [ { "text": "Résultat des mesures de la taille" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHW11_VS1", 
+                  "labels": [ { "text": "Résultat des mesures de la taille" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesurée" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Femme pas présente" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Femme refusé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHWW", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHWW_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Parmi les femmes mesurées, mesures hors fourchettes (%)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTARGET4", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTARGET4_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Femmes avec données valides (%){\\super 1}" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible non atteinte" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FWM11", 
+              "labels": [ { "text": "Résultat des mesures du poids" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FWM11_VS1", 
+                  "labels": [ { "text": "Résultat des mesures du poids" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesuré" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Homme pas présente" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Homme refusé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHM11", 
+              "labels": [ { "text": "Résultat de la mesure de la taille" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHM11_VS1", 
+                  "labels": [ { "text": "Résultat de la mesure de la taille" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesuré" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Homme pas présente" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Homme refusé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTARGET5", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTARGET5_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Men with valid data (%){\\super 1}" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Target not met" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FHWM", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FHWM_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Among men measured, out of range" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAC12", 
+              "labels": [ { "text": "Résultat du test d'anémie" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAC12_VS1", 
+                  "labels": [ { "text": "Résultat du test d'anémie" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesuré" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Enfant pas présent" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refus" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FANC", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FANC_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Parmi les enfants mesurés, niveau d'hémoglobine hors fourchettes (%)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FTARGET6", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FTARGET6_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Enfants avec données d'hémoglobine valides (%){\\super 1}" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible non atteinte" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAW12", 
+              "labels": [ { "text": "Résultat du test d'anémie" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAW12_VS1", 
+                  "labels": [ { "text": "Résultat du test d'anémie" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Mesuré" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Femme pas présent" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refus" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Manquant" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FANW", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FANW_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Parmi les femmes mesurés, niveau d'hémoglobine hors fourchettes (%)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FAM12", 
+              "labels": [ { "text": "Résultat du test d'anémie" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FAM12_VS1", 
+                  "labels": [ { "text": "Résultat du test d'anémie" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Measured" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Man not present" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refused" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Other" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Missing" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FANM", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FANM_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Among men measured, hemo- globin level out of range" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FDBS", 
+              "labels": [ { "text": "Result of HIV testing" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FDBS_VS1", 
+                  "labels": [ { "text": "Result of HIV testing" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "BDS collected" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refuse to provide blood" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Absent at time of blodd collection" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Other" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Missing" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FINDINT", 
+              "labels": [ { "text": "Interviewed/not interviewed" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FINDINT_VS1", 
+                  "labels": [ { "text": "Interviewed/not interviewed" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Interviewed" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Not interviewed" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCOL14A", 
+              "labels": [ { "text": "TOUTES les soeurs décédées" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCOL14A_VS1", 
+                  "labels": [ { "text": "TOUTES les soeurs décédées" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Age au décès manquant" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "%" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCOL14B", 
+              "labels": [ { "text": "Soeurs décédées à 12 ans+" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCOL14B_VS1", 
+                  "labels": [ { "text": "Soeurs décédées à 12 ans+" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Information sur le décès au cours de la grossesse, de l'accouchement et après l'accouchement manquante" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "%" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FCOL14C", 
+              "labels": [ { "text": "Soeurs décédées à 12 ans+" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FCOL14C_VS1", 
+                  "labels": [ { "text": "Soeurs décédées à 12 ans+" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Information sur le nombre d' \"années passées\" depuis le décès manquante" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "%" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FRESULT", 
+              "labels": [ { "text": "Résultat de l'enquête individuelle (femmes population de fait)" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FRESULT_VS1", 
+                  "labels": [ { "text": "Résultat de l'enquête individuelle (femmes population de fait)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Rempli" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pas à la maison" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Différé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refusé" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Partiellement complété" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Incapacité" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FMRESULT", 
+              "labels": [ { "text": "Résultat de l'enquête individuelle (Hommes population de fait)" } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FMRESULT_VS1", 
+                  "labels": [ { "text": "Résultat de l'enquête individuelle (Hommes population de fait)" } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Rempli" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pas à la maison" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Différé" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Refusé" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Partiellement complété" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Incapacité" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Autre" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "RESDV", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 1, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "RESDV_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Effectif de femmes éligibles au module violence domestique et enquêtées (Code résultat = 1)" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Pourcentage de femmes éligibles  mais pas enquêtées car on ne pouvait pas être en privé" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FSUMM1", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FSUMM1_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "FC-1U" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-1R" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-2W" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-2M" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-3WU" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-3WR" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-3MU" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-3MR" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-4W" } ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-4M" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-5" } ], 
+                      "pairs": [ { "value": "10" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-6" } ], 
+                      "pairs": [ { "value": "11" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-7L" } ], 
+                      "pairs": [ { "value": "12" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-7D" } ], 
+                      "pairs": [ { "value": "13" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-8" } ], 
+                      "pairs": [ { "value": "14" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-10" } ], 
+                      "pairs": [ { "value": "15" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-14 Cible 1" } ], 
+                      "pairs": [ { "value": "16" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-14 Cible 2" } ], 
+                      "pairs": [ { "value": "17" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-14 Cible 3" } ], 
+                      "pairs": [ { "value": "18" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-15" } ], 
+                      "pairs": [ { "value": "19" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Total Cible non atteinte" } ], 
+                      "pairs": [ { "value": "98" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "% Cible non atteinte" } ], 
+                      "pairs": [ { "value": "99" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FSUMM2", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FSUMM2_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "FC-11C wt Cible 1" } ], 
+                      "pairs": [ { "value": "0" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11C wt Cible 2" } ], 
+                      "pairs": [ { "value": "1" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11C wt 1dec or 2 dec" } ], 
+                      "pairs": [ { "value": "2" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11C ht Cible 1" } ], 
+                      "pairs": [ { "value": "3" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11C ht Cible 2" } ], 
+                      "pairs": [ { "value": "4" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11W wt" } ], 
+                      "pairs": [ { "value": "5" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11W wt 1dec or 2 dec" } ], 
+                      "pairs": [ { "value": "6" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11W ht" } ], 
+                      "pairs": [ { "value": "7" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11M wt" } ], 
+                      "pairs": [ { "value": "8" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11M wt 1dec or 2 dec" } ], 
+                      "pairs": [ { "value": "9" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-11M ht" } ], 
+                      "pairs": [ { "value": "10" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-12C hb" } ], 
+                      "pairs": [ { "value": "11" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-12C hb 1dec" } ], 
+                      "pairs": [ { "value": "12" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-12W hb" } ], 
+                      "pairs": [ { "value": "13" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-12W hb 1dec" } ], 
+                      "pairs": [ { "value": "14" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-12M hb" } ], 
+                      "pairs": [ { "value": "15" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-12M hb 1dec" } ], 
+                      "pairs": [ { "value": "16" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-13W" } ], 
+                      "pairs": [ { "value": "17" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "FC-13M" } ], 
+                      "pairs": [ { "value": "18" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "Cible non atteinte" } ], 
+                      "pairs": [ { "value": "98" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "% Cible non atteinte" } ], 
+                      "pairs": [ { "value": "99" } ]
+                    }
+                  ]
+                }
+              ]
+            }, 
+            {
+              "name": "FSUMM3", 
+              "labels": [ { "text": "." } ], 
+              "contentType": "numeric", 
+              "length": 2, 
+              "zeroFill": false, 
+              "valueSets": [
+                {
+                  "name": "FSUMM3_VS1", 
+                  "labels": [ { "text": "." } ], 
+                  "values": [
+                    {
+                      "labels": [ { "text": "Total Cible non atteinte" } ], 
+                      "pairs": [ { "value": "98" } ]
+                    }, 
+                    {
+                      "labels": [ { "text": "% Cible non atteinte" } ], 
+                      "pairs": [ { "value": "99" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

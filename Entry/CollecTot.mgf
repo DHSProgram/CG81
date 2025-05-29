@@ -72,7 +72,7 @@
   FR ( "%s (line %02d) selected for the child labor module" ) %s (ligne %02d) sélectionné pour le module travail des enfants
   FR ( "Child (%02d-%s) selected for child discipline module" ) Enfant (%02d-% s) sélectionné pour le module discipline des enfants
   FR ( "%s (line %02d) selected for child discipline module" ) %s (ligne %02d) sélectionné pour le module discipline des enfants
-  FR ( "GPS device acquiring GPS satellites, Please wait to complete its capture" ) Appareil GPS entrain de capturer les données de satellites GPS, veuillez patienter pour terminer la capture 
+  FR ( "GPS device acquiring GPS satellites..., Please wait for up to 60 seconds to complete the capture" ) Appareil GPS en train de capturer des satellites GPS...Veuillez patienter jusqu'à 60 secondes pour terminer la capture
   FR ( "Nobody else slept under mosquito net" ) "Personne d'autre n'a dormi sous la moustiquaire"
   FR ( "Woman (%02d) selected for domestic violence" ) Femme (%02d) sélectionnée pour violence domestique
   FR ( "%s (%02d) selected for domestic violence module" ) %s (%02d) sélectionnée pour violence domestique
@@ -333,6 +333,8 @@
   FR ( "Foods not included in the options above" ) Aliments non inclus dans les options ci-dessus
   FR ( "this wife or partner" ) cette épouse ou partenaire
   FR ( "Responses" ) Réponses
+  FR ( "Is list of siblings complete and in the correct order?" ) La liste des frères et sœurs est-elle complète et dans le bon ordre?
+  FR ( "Yes, continue to the Adult and Maternal Mortality table" ) Oui, continuez vers le tableau de mortalité adulte et maternelle
   
   
 { !! French !! }

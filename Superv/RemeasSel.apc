@@ -102,7 +102,7 @@ preproc
   hhe      = 0;           { to control if there are outstanding issues in the household data files }
   xch      = 0;           { number of children eligible for remeasurement }
   xsel     = 2;           { !!! number of children to be selected for remeasurement in a cluster }
-  hwsub    = 0;           { !!! if there is subsampling for height and weight "0-All households, 1-Subsample" }
+  hwsub    = 1;           { !!! if there is subsampling for height and weight "0-All households, 1-Subsample" }
   subhh    = 0;           { number of subsample households according to sample file }
   cnthh    = 0;           { number of subsample households according households collected }
 
@@ -198,6 +198,9 @@ preproc
   while loadcase( CGHH80 ) do
     casepart = partialcs( 1, QHCLUST, QHNUMBER, 0, FileHH );
     xht      = xht + 1;   { total households }
+    if QHELIGM <> 1 then
+      next;
+    endif;
 
     if QHRESULT = 1 & casepart then
       { no structure checked for partial cases }
@@ -250,10 +253,10 @@ preproc
   enddo;
   close( CGHH80 );
   if !hwsub & XTOTAL <> xht then
-    getmessage( 50161 );
+    // getmessage( 50161 );
     // hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
   elseif hwsub & subhh <> cnthh then
-    getmessage( 50161 );
+    // getmessage( 50161 );
     // hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
   endif;
   
@@ -261,12 +264,12 @@ preproc
   if xch = 0 then
     getmessage( 50163 );
     ListErrMsg.add( alphaMSG );
-    if !hhe & !bioe then                        // if no structural errors but 0 children eligible, declare cluster as selected
+  if !hhe {&  !bioe  } & xch >= 2 then
 	  SFLGMEAS = 1;
 	  WriteCase( CONTSUP );
 	endif;
   endif;
-  if !hhe & !bioe & xch then
+  if !hhe {&  !bioe  } & xch >= 2 then
     HTML_BeginTable( CellValues, zstring2, 8 );  // generates the HTML table script with the column headers
     SFLGMEAS = 1;                            // no structural errors and at leat one child eligible, declare cluster as selected
     { select ramdom kids for remeasurement }
@@ -407,7 +410,7 @@ preproc
       enddo;
     enddo;
   endif;
-  if !hhe & !bioe & !xch then
+  if !hhe & {!bioe &} !xch then
     HTML_EndTable();
   endif;  
   CloseApp();

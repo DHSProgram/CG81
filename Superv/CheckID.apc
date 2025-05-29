@@ -259,7 +259,7 @@ preproc
   xwi      = 0;
   xmi      = 0;
   e        = 0;           { control for errors in all households }
-  calbeg = cmcode(1, 2017);   { !!! modify according to year the calendar begins in survey  }
+  calbeg = cmcode(1, 2020);   { !!! modify according to year the calendar begins in survey  }
 
   zcluster = sysparm()[1:4];                { cluster number }
   chktot   = tonumber( sysparm()[5:1] );    { if checking totals }
@@ -882,7 +882,7 @@ preproc
               wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C), Q307N) )
             elseif Q307N <> notappl & methuse > calbeg & !soccurs(QWSEC3C) then
               getmessage( 50202 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C) ) )
+              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, getlabel(Q307N, Q307N), soccurs(QWSEC3C) ) )
             endif;
 
             { pregnancy and postnatal care }

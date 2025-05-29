@@ -48,6 +48,12 @@
       "path": "..\\Entry\\LstQuest.ent"
     }, 
     {
+      "path": "..\\Entry\\ResetData.ent"
+    }, 
+    {
+      "path": "..\\Entry\\ResetData.pff"
+    }, 
+    {
       "path": "..\\Library\\checkid.js"
     }, 
     {

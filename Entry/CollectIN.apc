@@ -2359,22 +2359,22 @@ preproc
   renum_pregs();
 
 postproc
-  { Check counts of boys }
-  numeric boys = NAToZero(Q203A) + NAToZero(Q205A) + NAToZero(Q207A);
-  ch = count( $ where Q216 = 1 & Q219 = 1 );
-  if lessthan( ch, boys ) then
-    errmsg( 02240, tr("Boys"), "Q203A+Q205A+Q207A", boys, ch )
-      select( tr("Begin reproduction"), Q201, 
-	          tr("Begin pregnancy history"), Q215L(1) );
-  endif;
-  { Check counts of girls }
-  numeric girls = NAToZero(Q203B) + NAToZero(Q205B) + NAToZero(Q207B);
-  ch = count( $ where Q216 = 1 & Q219 = 2 );
-  if lessthan( ch, girls ) then
-    errmsg( 02240, tr("Girls"), "Q203B+Q205B+Q207B", girls, ch )
-      select( tr("Begin reproduction"), Q201, 
-	          tr("Begin pregnancy history"), Q215L(1) );
-  endif;
+  // { Check counts of boys }
+  // numeric boys = NAToZero(Q203A) + NAToZero(Q205A) + NAToZero(Q207A);
+  // ch = count( $ where Q216 = 1 & Q219 = 1 );
+  // if lessthan( ch, boys ) then
+  //   errmsg( 02240, tr("Boys"), "Q203A+Q205A+Q207A", boys, ch )
+  //     select( tr("Begin reproduction"), Q201, 
+	//           tr("Begin pregnancy history"), Q215L(1) );
+  // endif;
+  // { Check counts of girls }
+  // numeric girls = NAToZero(Q203B) + NAToZero(Q205B) + NAToZero(Q207B);
+  // ch = count( $ where Q216 = 1 & Q219 = 2 );
+  // if lessthan( ch, girls ) then
+  //   errmsg( 02240, tr("Girls"), "Q203B+Q205B+Q207B", girls, ch )
+  //     select( tr("Begin reproduction"), Q201, 
+	//           tr("Begin pregnancy history"), Q215L(1) );
+  // endif;
   { checks that the number of pregnancy losses consistent with reproduction }
   numeric losses = count( $ where Q216 in 2,3,4 );
   if lessthan( losses, Q211) then
@@ -2737,6 +2737,7 @@ preproc
 
 PROC QPLINE
 preproc
+  SaveData();
   { Check for list of children }
   if curocc() > Q212W then
     endgroup
@@ -7575,7 +7576,7 @@ preproc
     if !totocc(QWSECMM_ROSTER) then
      SiblingsShowWoman();  
 	  
-      warning("Is list of siblings complete and in the correct order?") select("No", QMM01N(QMM07), "Yes, continue to the Adult and Maternal Mortality table", continue)
+      warning(tr( "Is list of siblings complete and in the correct order?" )) select("No", QMM01N(QMM07),tr(  "Yes, continue to the Adult and Maternal Mortality table" ), continue)
     endif;
     endgroup;
   endif;
@@ -7973,10 +7974,6 @@ onfocus
     setvalueset(QM115, maketext("QM115_VS%1d", QM114));
   
 postproc
-  if !LevelYears( QM114, $ ) then
-    errmsg( 21091 ) 
-	  select( tr("Level of education"), QM114, tr("Grade/year/form"), $ );
-  endif;
 
   { Check education in individual questionnaire agrees with education in hh }
   if $ <> QH17B(QLINE) & demode() = add & !inAdvance() then
@@ -9198,8 +9195,8 @@ preproc
   string gpstitle;
   capturecoor = ( visualvalue(GILATITUDE) = notappl );
   if GIINTRO = 1 & GIAUX <> 2 & !xmodcent then 
-    gpstitle = tr("GPS device acquiring GPS satellites..., Please wait for 10 seconds to complete the capture");
-    if gps(read, 25, gpstitle ) then
+    gpstitle = tr("GPS device acquiring GPS satellites..., Please wait for up to 60 seconds to complete the capture");
+    if gps(read, 60, gpstitle ) then
       GILATITUDE  = gps(latitude);
       GILATPOLE   = "N";
       if gps(latitude) < 0 then	{ negative = south }

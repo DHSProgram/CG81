@@ -1,0 +1,14 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=FINIMP8
+Name=FINIMP8
+AppType=Batch
+[AppCode]
+File=.\FinImp8.apc
+Include=..\Library\DPCollect.apc
+[Message]
+File=.\ccIQ81.mgf
+[Order]
+File=.\ccIQ81.ord
+[Dictionary Types]
+Dict-Type=..\dicts\ccIQ81.dcf,Input,.\ccIQ81.ord

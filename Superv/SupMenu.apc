@@ -1983,6 +1983,7 @@ postproc
         CheckID( option + 1 ); // close cluster/full report
         close( fromckid );
         if option = 2 then
+          alldata();
           SaveSetting( "SupSession", edit("9", 3) ); // closing cluster !!
         endif;
         RunPFFS();

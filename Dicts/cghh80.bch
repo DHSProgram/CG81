@@ -1,0 +1,41 @@
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "batch", 
+  "name": "CGHH80", 
+  "label": "cghh80", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "CGHH80.dcf", 
+      "parent": "cghh80.ord"
+    }
+  ], 
+  "order": [
+    "cghh80.ord"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "cghh80.bch.apc"
+    }
+  ], 
+  "messages": [
+    "cghh80.bch.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "htmlDialogs": true, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

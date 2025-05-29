@@ -1636,7 +1636,7 @@ DataType=Numeric
 [ValueSet]
 Label=Year of birth/end of pregnancy|Année de naissance/fin de grossesse
 Name=Q220Y_VS1
-Value=1980:2030
+Value=1960:2030
 
 [Item]
 Label=Duration of pregnancy
@@ -1723,8 +1723,7 @@ DataType=Numeric
 [ValueSet]
 Label=Current age of child|Âge actuel de l'enfant
 Name=Q225_VS1
-Value=0:40
-Value=98;Ne connait pas âge
+Value=0:60
 
 [Item]
 Label=Child living with respondent|Enfant vivant avec l’enquêtée
@@ -14382,7 +14381,7 @@ DataType=Numeric
 [ValueSet]
 Label=Age at traditional circumcision|Age à la circonsision
 Name=QM803_VS1
-Value=5:49
+Value=0:49
 Value=95;Pendant l'enfance (<5 ans)
 Value=98;Ne sait pas
 

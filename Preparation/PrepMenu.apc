@@ -6,8 +6,12 @@
   string CSPro;                                { CSPro executables directory }
   string AppName;                              { application name }
   string opid;                                 { operator ID }
-  string wrkprj, wrkref, wrkpii, prepare;      { directories }
+  string wrkprj, wrkref, prepref, wrkpii, prepare;      { directories }
   string dicts;
+  config CG81WebU, CG81User, CG81PIN;
+  string CSWebSurvey = "/CG81/";
+  string clustfname, sampselFname, intervFname, contsupFname;                    { keeps clusters filename after dictionary closed }
+  string final, receive;
 
   numeric    i, j, x, action;
 
@@ -223,6 +227,54 @@
     close( piffile );
   end;
 
+  { function to send data to central office using CSWeb FTP }
+  function GetData_CSW()
+    string Server =  "/CG81/";
+    clustfname   = PrepRef + "\Clusters.csdb";
+    Sampselfname = PrepRef + "\SampSel.csdb";
+    IntervFname  = PrepRef + "\Interv.csdb";
+    ContSupFname = PrepRef + "\Superv.csdb";
+    numeric DataOK = 0;
+    if !connection() { | debug } then
+      // errmsg( 200 );
+      GetData_CSW = DataOK;
+      exit;
+    endif;
+    if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
+      // CLUSTERS
+      setFile(CLUSTERS, clustfname, update);
+      SyncData(GET, CLUSTERS);
+      close(CLUSTERS);
+      // SAMPSEL
+      setFile(SAMPSEL, SampSelFname, update);
+      SyncData(GET, SAMPSEL);
+      close(SAMPSEL);
+      // INTERV
+      setFile(INTERV, IntervFname, update);
+      SyncData(GET, INTERV);
+      close(INTERV);
+      // get CONTSUP data for troubleshooting
+      setfile(CONTSUP, ContSupFname, update);
+      SyncData(GET, CONTSUP);
+      close(CONTSUP);
+      SyncFile(GET, Server + "Receive/*.*", wrkPii + "/Receive");
+      SyncFile(GET, Server + "Final/*.*", wrkPii + "/Final");
+      syncdisconnect();
+    endif;
+    GetData_CSW = DataOK;
+  end;
+
+  function concatIN()
+    fdel( final + "\ALLIND.csdb" );
+    FileConcat( CGIN80, final + "\ALLIND.csdb",                           { result file }
+              receive + "\I*.DAT" );         { individuals from all interviewers }
+  end;
+  function concatHH()
+    fdel( final + "\ALLHH.csdb" );
+    FileConcat( CGHH80, final + "\ALLHH.csdb",                           { result file }
+              receive + "\H*.DAT" );         { individuals from all interviewers }
+  end;
+
 PROC FL_MENU
 PreProc
 
@@ -235,6 +287,9 @@ PreProc
   { work project }
   wrkprj = "..\";                 { !!! adjusted to survey }
   wrkpii = wrkprj + "\Pii";                    { subdirecory to store data with PII }
+  wrkref = wrkpii + "\Ref";
+  receive = wrkpii + "\Receive";
+  final   = wrkpii + "\Final";
   { set up minimal user bar }
   userbase();
   userbar( show );
@@ -243,8 +298,8 @@ PreProc
   SetLanguage( getlanguage() );
 
   dicts    = wrkprj + "\Dicts";        { survey's dictionaries }
-  wrkref   = wrkpii + "\Ref";          { reference directory for CAPI auxiliary files  }
   prepare  = wrkprj + "\Preparation";  { directory for applications for preparation }
+  prepref  = prepare + "\PII\Ref";
 
 PROC MENU_LEVEL
 PreProc
@@ -256,7 +311,11 @@ PostProc
   stop(1);
 
 PROC WFINAL
+onfocus
+ $ = 1;
+ noinput;
 postproc
+
     action = accept( "Menu for Preparation of Auxiliary Data Files for CAPI Surveys",
                { 1} "1 Enter Clusters Included in the Sample",
                { 2} "2 Modify Clusters Included in the Sample",
@@ -273,7 +332,7 @@ postproc
                {13} "C Create/Reset Control File for Central Office",
                {14} "S Create/Reset Control File for Supervisors",
                {15} "-------------------------------------",
-               {16} "R Generate reports for Survey supporting files",
+               {16} "R Receive files from field",
                {17} "Q Exit system" );
   if !action | action = 17 then
     { clean files not needed }
@@ -318,16 +377,10 @@ postproc
     runPFF();
     reenter;
   elseif action in 16  then      { generate reports for clusters, fieldwork personnel or households selected }
-    AppName = "PrepReports";
-    x = accept( tr("Do you want to generate reports for:"), 
-	            tr("1-Clusters in the sample"), tr("2-Fieldwork personnel CAPI"), 
-	            tr("3-Households selected for cluster"), tr("4-Fieldwork personnel Questionnaire"),
-                tr("9-Return to Main Menu") );
-    if x in 1:4 then
-      PrepReports( x );
-      runPFF();
-      DispFile( prepare + "\reports.wrt" );
-    endif;
+    GetData_CSW();
+
+    ConcatHH();
+    ConcatIN();
     reenter;
   endif;
 

@@ -1,0 +1,19 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=KIRDHS-8
+Name=KIRDHS-8
+AppType=Batch
+[External Dictionaries]
+File=.\wprelim8.dcf
+File=..\MalariaLab\dicts\testlog.dcf
+[AppCode]
+File=.\KIRDHS-8.apc
+Include=..\Library\TableFunctions.apc
+[Message]
+File=.\ccIQ81.mgf
+[Order]
+File=.\ccIQ81.ord
+[Dictionary Types]
+Dict-Type=.\wprelim8.dcf,Working
+Dict-Type=..\dicts\ccIQ81.dcf,Input,.\ccIQ81.ord
+Dict-Type=..\MalariaLab\dicts\testlog.dcf,External

@@ -14,6 +14,7 @@
   string   fnameHH, fnameIN;              { to extract file name from household and individual dictionaries }
   alpha(4) xcluster, xintnum;                     { parameter from main menu }
   string hwstatus;
+  string yesno;
 
   array arrayhh(100);                      { to check that all individuals are linked to households }
   array arraywm(100);
@@ -26,8 +27,9 @@
     CellValues(3) = tr("Name");
     CellValues(4) = tr("Result");
     CellValues(5) = tr("Visits");
-    CellValues(6) = tr("Biomarkers");
-    CellValues(7) = tr("Delegated to");
+    CellValues(6) = tr("Male.Sel");
+    CellValues(7) = tr("Biomarkers");
+    CellValues(8) = tr("Delegated to");
   end;
   function fillhh ();
     string name;
@@ -43,18 +45,19 @@
     endif;
     CellValues(4) = xresult;
     CellValues(5) = edit("9", QHVISITS);
+    CellValues(6) = yesno[(QHELIGM=1)+1:1];
     if QHRESULT = 1 then
-      CellValues(6) = edit("99", wmhw+mnhw+chhw) + "-" + edit("99", x);
+      CellValues(7) = edit("99", wmhw+mnhw+chhw) + "-" + edit("99", x);
       if x = wmhw+mnhw+chhw then
-        hwstatus = "✔";
+        hwstatus = utf_tick_icon;
       else
         hwstatus = "!";
       endif;
-      CellValues(6) = CellValues(6) + hwstatus;
+      CellValues(7) = CellValues(7) + hwstatus;
     else
-      CellValues(6) = "BLANK";
+      CellValues(7) = "BLANK";
     endif;
-    CellValues(7) = "BLANK";
+    CellValues(8) = "BLANK";
   end;
 
   function fillind (string wvisits);
@@ -62,12 +65,13 @@
     CellValues(2) = edit("  99", QLINE);
     CellValues(3) = zstring1;
     CellValues(4) = xresult;
-    CellValues(6) = wvisits;
+    CellValues(5) = wvisits;
     CellValues(6) = "BLANK";
+    CellValues(7) = "BLANK";
     if seek(QLINE = QH01) & QHDELEG(QLINE) then
-      CellValues(7) = edit("9999", QHDELEG(QLINE));
+      CellValues(8) = edit("9999", QHDELEG(QLINE));
     else
-      CellValues(7) = "-";
+      CellValues(8) = "-";
     endif;
   end;
 
@@ -77,6 +81,7 @@ preproc
   xcluster = sysparm()[1:4];        { cluster number from DCMenu}
   xintnum  = sysparm("Interviewer");
   SetLanguage( GetLanguage() );
+  yesno = tr("NY");
 
   { initialize arrays to check that all women are linked to a household }
   do i = 1 while i <= 100
@@ -106,7 +111,7 @@ preproc
   { go over each household }
   open( CGHH80 );
   if !FileEmpty( fnameHH ) then    { it is important because some interviewers may not have household questionnaires }
-    HTML_BeginTable( CellValues, zstring2, 7 );  // generates the HTML table script with the column headers
+    HTML_BeginTable( CellValues, zstring2, 8 );  // generates the HTML table script with the column headers
     while loadcase( CGHH80 ) do
       if QHRESULT = 1 & partialcs( 1, QHCLUST, QHNUMBER, 0, fnameHH  ) then
         xresult = edit("9",QHRESULT) + tr("-Partial")
@@ -146,7 +151,7 @@ preproc
       endif;                    
           { populates the elements of a row based on household information }
       fillhh();
-      HTML_OneRow( CellValues, 7 );   // generates the HTML script for a row with relevant household data
+      HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
 
       if QHRESULT = 1 then  { check individuals only if they are part of completed households }
 
@@ -181,13 +186,13 @@ preproc
               endif;
                   { populates the elements of a row based on individual information }
               FillInd(edit("9", QVISITS));
-              HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
+              HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data
 
             else
                   { populates the elements of a row for an individual that hasn't been visited }
               xresult = tr("Not visited");
               FillInd("BLANK");
-              HTML_OneRow( CellValues, 7 );  // generates the HTML script for a row with relevant individual data
+              HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data
             endif;
           endif;
         enddo;

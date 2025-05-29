@@ -1,0 +1,18 @@
+﻿[CSPro Application]
+Version=CSPro 7.4
+Label=FieldWKcheck
+Name=FIELDWKCHECK
+AppType=Batch
+[External Dictionaries]
+File=..\Dicts\Interv.dcf
+File=..\Dicts\FieldWKQuest.dcf
+[AppCode]
+File=.\FieldWKcheck.apc
+[Message]
+File=.\ccIQ81.mgf
+[Order]
+File=.\ccIQ81.ord
+[Dictionary Types]
+Dict-Type=..\Dicts\Interv.dcf,External
+Dict-Type=..\Dicts\FieldWKQuest.dcf,External
+Dict-Type=..\Dicts\ccIQ81.dcf,Input,.\ccIQ81.ord

@@ -1,0 +1,18 @@
+
+decimals period;
+thousands comma;
+style dhs3;
+
+F1R noprint;
+F3WR noprint;
+F3MR noprint;
+F6 stubsize = 1500 cellsize = 700;
+F8 noprint;
+F11WW2 stubsize = 1800 cellsize = 750;
+F11MW2 stubsize = 1500 cellsize = 750;
+F11MH noprint;
+F13M noprint;
+F20 noprint;
+F21 noprint;
+F22 noprint;
+ 
