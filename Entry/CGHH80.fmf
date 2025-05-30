@@ -7228,7 +7228,7 @@ Max=1
   
 [Grid]
 Name=QBSEC03_ROSTER
-Label=Eaten?
+Label=Height, Weight, Hemoglobin (men)
 Form=15
 Required=No
 Type=Record

@@ -620,7 +620,7 @@ postproc
   { a partial saved is forced for incomplete interviews to allow }
   { to revist the household in add mode                          }
   if !xmodcent & QHRESULT <> 1 then
-    SavePartial( clear );
+    SavePartial( );
     { update file with households assigned to interviewers }
     updthhassgn();
     stop(1);

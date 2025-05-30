@@ -165,11 +165,13 @@ Language = FR
   FR ( "No, cancel" ) Non, Annuler
   FR ( "Status for cluster: %s" ) Status de la Grappe: %s
   FR ( "Interviews collected in cluster" ) Entretiens collectés dans cette Grappe
-  FR ( "HH/Line" ) MG/Ligne
+  FR ( "HH" ) MG
+  FR ( "Remeasure" ) Rém.
   FR ( "Interviewer" ) Enq.
   FR ( "Name" ) Nom
   FR ( "Result" ) Résultat
   FR ( "Visits" ) Visites
+  FR ( "Totals" ) Totaux
   FR ( "Biomarkers" ) Biomarqueurs
   FR ( "Summary: (HH=%02d Complete=%02d Incomplete=%02d) (Indiv.=%d Complete:%02d Incomplete:%02d)") Sommaire: (Ménages=%02d Complets=%02d Incomplets=%02d) (Indiv=%d Complets:%02d Incomplets:%02d)
   FR ( "Households added not originally part of the sample design %d" ) Ménages ajoutés ne faisant pas originellement partie de l'échantillon %d

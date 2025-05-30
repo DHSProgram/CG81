@@ -1910,7 +1910,7 @@ postproc
   { a partial save is forced for incomplete interviews to allow }
   { revisiting the woman in add mode                            }
   if !xmodcent & QRESULT <> 1 then
-    savepartial( clear );
+    savepartial( );
     stop(1);
   endif;
 

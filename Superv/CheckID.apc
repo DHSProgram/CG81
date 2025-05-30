@@ -3,7 +3,7 @@
 
   FILE   fname;                        { write file with or without errors }
   FILE   ReadMSG;                      { file used to read the error messages }
-  numeric debug =    0;// sets debugging on
+  numeric debug =    1;// sets debugging on
 
 
   string blanks;
@@ -407,7 +407,8 @@ preproc
 
     xind.clear();
     if QHRESULT <> 1 then
-      yresult = tr("Incomplete") + " " +  edit("(9)",QHRESULT);
+      yresult = GetLabel(QHRESULT, QHRESULT) + " " +  edit("(9)",QHRESULT);
+      status = 1;
     elseif casepart then
       yresult = tr("Partial")+ " " +  edit("(9)",QHRESULT);
     else
@@ -576,7 +577,7 @@ preproc
     CellValues(5) = yresult;
     CellValues(6) = edit("9", QHVISITS);
     CellValues(7) = "BLANK";
-    CellValues(8) = HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon) + " " + ShowStatus(status);
+    CellValues(8) = ShowStatus(status) + " " + HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon);
     HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
     
     sumreport(sumidx, 7) = edit("99", bioexist) + "/" + edit("99", x);
@@ -678,7 +679,7 @@ preproc
                 found = 1;
                 if QB104(j) = notappl | QB104(j) in 0:4 & (QB106(j) = notappl | QB108(j) = notappl) then      { height & weight }
                   bioe = getmessage( 50057 );
-                  // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH11) );
+                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH11) );
                 else
                   yresult = tr("Complete");
                   status = 1;
@@ -687,7 +688,7 @@ preproc
             enddo;
             if !found then             { biomarker record missing for individual }
               bioe = getmessage( 50056 );
-              // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH11) );
+              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH11) );
               bioe = 1;
               measure = "N";
             endif;
@@ -720,7 +721,7 @@ preproc
                 found = 1;
                 if QB205(j) = notappl | QB207(j) = notappl then  { height & weight }
                   bioe = getmessage( 50057 );
-                  // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH09) );
+                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH09) );
                 else
                   yresult = tr("Complete");
                   status = 1;
@@ -729,7 +730,7 @@ preproc
             enddo;
             if !found then             { biomarker record missing for individual }
               bioe = getmessage( 50056 );
-              // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH09) );
+              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH09) );
               measure = "N";
             endif;
             // output to report
@@ -752,7 +753,7 @@ preproc
                 found = 1;
                 if QB305(j) = notappl | QB307(j) = notappl then  { height & weight }
                   bioe = getmessage( 50057 );
-                  // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH10) );
+                  bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xhw, xbiom, QH10) );
                 else
                   yresult = tr("Complete");
                   status = 1;
@@ -761,7 +762,7 @@ preproc
             enddo;
             if !found then             { biomarker record missing for individual }
               bioe = getmessage( 50056 );
-              // bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH10) );
+              bioe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, xbiom, QH10) );
               measure = "N";
             endif;
             // output to report
@@ -813,7 +814,8 @@ preproc
             casepart = 1;
           endif;
           if QRESULT <> 1 then
-            yresult = tr("Incomplete") + " " +  edit("(9)",QRESULT) 
+            yresult = GetLabel(QRESULT, QRESULT) + " " +  edit("(9)",QRESULT);
+            status = 1;
           elseif casepart then
             yresult = tr("Partial")+ " " +  edit("(9)",QRESULT)
           else
@@ -829,7 +831,7 @@ preproc
           CellValues(5) = yresult;
           CellValues(6) = edit("9", QVISITS);
           CellValues(7) = "BLANK";
-          CellValues(8) = HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) + " " + ShowStatus(status);
+          CellValues(8) = ShowStatus(status) + " " + HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) ;
           HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data 
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
@@ -973,16 +975,16 @@ preproc
                            soccurs(QWSECM1) | soccurs(QWSECM2)  | soccurs(QWSECM3)  | 
                            soccurs(QWSECECD) | 
                            soccurs(QWSECFIS) then
-              getmessage( 50231 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
+              // getmessage( 50231 );
+              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE) );
             endif;
 
             { no men records should exist in an incomplete questionnaire }
             if soccurs(QMSEC01) | soccurs(QMSEC02) | soccurs(QMSEC3A) | soccurs(QMSEC3B) | 
                            soccurs(QMSEC04) | soccurs(QMSEC05) | soccurs(QMSEC06) | soccurs(QMSEC07) | 
                            soccurs(QMSEC08) then
-              getmessage( 50232 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QRESULT, textsex) );
+              // getmessage( 50232 );
+              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QRESULT, textsex) );
             endif;
           endif;
         else
@@ -1177,7 +1179,7 @@ preproc
         enddo;
     
   endif;            { endif to check totals }
-  // if closing then
+  if closing then
     if ListErrMsg.length() then
       { heading for report with FileWrite command }
       HTML_Paragraph( " " );
@@ -1186,7 +1188,7 @@ preproc
       HTML_Paragraph( ListErrMsg(i) );
       enddo;
     endif;
-  // endif;
+  endif;
 
   HTML_Paragraph( HTML_Button("Return_Case_ID('')", tr("OK")));
 

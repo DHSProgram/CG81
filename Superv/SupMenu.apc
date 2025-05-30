@@ -873,7 +873,7 @@ PROC GLOBAL
       exit;
     endif;
     if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
-      SmartPut( final, "?" + strcluster + "*.*", CSWebSurvey + "Final" );
+      SmartPut( final, "?" + strcluster + "*.DAT", CSWebSurvey + "Final" );
       SmartPut(final , "?" + strcluster + "*.cslog", CSWebSurvey + "Final" );  { paradata requested from Trevor 8.5.2020-he doesn't want it concatenated so we have to send it seperately }
       SmartPut(wrkref , "TRANSMITM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
       SmartPut(wrkref , "TransmitM" + xsuperv + "*.DAT", CSWebSurvey + "Final" );
@@ -881,6 +881,7 @@ PROC GLOBAL
       SmartPut(wrkref , "TRANSMITM" + xsuperv + "*.dat", CSWebSurvey + "Final" );
       SmartPut(Receive , "?" + strcluster + "????.DAT", CSWebSurvey + "Receive" );
       SmartPut(Receive , "?" + strcluster + "????.DAT.sts", CSWebSurvey + "Receive" );
+      SmartPut(Receive , "/R" + strcluster + ".csdb", CSWebSurvey + "Receive" );
       // get the latest versions of the application files from the server 
        syncapp();
        DataOK = 1;

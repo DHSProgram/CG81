@@ -68,8 +68,8 @@
     "autoAdvanceOnSelection": false, 
     "caseTree": "mobileOnly", 
     "centerForms": true, 
-    "createListing": true, 
-    "createLog": true, 
+    "createListing": false, 
+    "createLog": false, 
     "decimalMark": "dot", 
     "displayCodesAlongsideLabels": true, 
     "notes": {
@@ -77,7 +77,8 @@
       "edit": "all"
     }, 
     "partialSave": {
-      "operatorEnabled": true
+      "operatorEnabled": true, 
+      "autoSaveMinutes": 2
     }, 
     "showEndCaseMessage": false, 
     "showOnlyDiscreteValuesInComboBoxes": false, 
