@@ -2,7 +2,7 @@
 PROC GLOBAL
 numeric c,i;
 
-numeric maxhh = 15;
+numeric maxhh = 10;
 numeric maxcluster = 130;
 numeric preassign = 0;
 numeric firsttime = 0;
@@ -17,7 +17,7 @@ else
 endif;
 forcase CLUSTERS do
 
-  if !YCLUSTER in 9971:9975, 9981:9985 then
+  if !YCLUSTER in 9981:9985 then
     next;
   endif;
   if preassign then

@@ -2722,9 +2722,10 @@ PROC Q222A
 
 PROC Q222B
 onfocus
-  if android then
-	showroster( 1 );
-  endif;
+  textstr1 = "";
+  do numeric ctr = 1 until ctr > totocc(QWSEC2B_ROSTER1)
+    textstr1 = textstr1 + maketext("%02d: %s,", ctr, strip( Q218(ctr) ));
+  enddo;
 
 postproc
   if $ <> 1 then

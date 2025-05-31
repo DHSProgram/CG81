@@ -1,43 +1,118 @@
-﻿[CSPro Application]
-Version=CSPro 7.7
-Label=DCMENU
-Name=DCMENU
-AppType=DataEntry
-OperatorID=No
-ShowEndCaseDialog=No
-CAPI=Yes
-CaseTree=Never
-CenterForms=Yes
-AutoAdvanceOnSelection=Yes
-DisplayCodesAlongsideLabels=Yes
-ComboBoxShowOnlyDiscreteValues=Yes
-[External Dictionaries]
-File=..\Dicts\Clusters.dcf
-File=..\Dicts\Interv.dcf
-File=..\Dicts\HHForInt.dcf
-File=..\Dicts\EligIndv.dcf
-File=..\Dicts\md5.dcf
-File=..\Dicts\CGHH80.dcf
-File=..\Dicts\CGIN80.dcf
-[AppCode]
-File=.\DCMenu.apc
-Include=..\Library\HTMLFunctions.apc
-Include=..\Library\DPCollect.apc
-Include=..\Library\MenuFunctions.apc
-[Message]
-File=..\Superv\SupMenu.mgf
-Include=.\DCMenu.mgf
-Include=..\Superv\CheckId.mgf
-[Help]
-File=.\DCMenu.qsf
-[Forms]
-File=.\Menu.fmf
-[Dictionary Types]
-Dict-Type=..\Dicts\Menu.dcf,Input,.\Menu.fmf
-Dict-Type=..\Dicts\Clusters.dcf,External
-Dict-Type=..\Dicts\Interv.dcf,External
-Dict-Type=..\Dicts\HHForInt.dcf,External
-Dict-Type=..\Dicts\EligIndv.dcf,External
-Dict-Type=..\Dicts\md5.dcf,External
-Dict-Type=..\Dicts\CGHH80.dcf,External
-Dict-Type=..\Dicts\CGIN80.dcf,External
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "DCMENU", 
+  "label": "DCMENU", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "../Dicts/Menu.dcf", 
+      "parent": "Menu.fmf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Clusters.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/Interv.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/HHForInt.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/EligIndv.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/md5.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGHH80.dcf"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Dicts/CGIN80.dcf"
+    }
+  ], 
+  "forms": [
+    "Menu.fmf"
+  ], 
+  "questionText": [
+    "DCMenu.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "DCMenu.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/HTMLFunctions.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/DPCollect.apc"
+    }, 
+    {
+      "type": "external", 
+      "path": "../Library/MenuFunctions.apc"
+    }
+  ], 
+  "messages": [
+    "../Superv/SupMenu.mgf", 
+    "DCMenu.mgf", 
+    "../Superv/CheckId.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "alwaysAllow", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": false, 
+    "autoAdvanceOnSelection": true, 
+    "caseTree": "off", 
+    "centerForms": true, 
+    "createListing": true, 
+    "createLog": true, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": true, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": false
+    }, 
+    "showEndCaseMessage": false, 
+    "showOnlyDiscreteValuesInComboBoxes": true, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": true, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "none", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

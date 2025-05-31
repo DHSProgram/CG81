@@ -534,7 +534,7 @@ questions:
             <p><span class="instruction">Does the respondent agree?</span></p>
             <p><span class="instruction">If not, probe for the correct information and revise the pregnancy history accordingly.</span></p>
           FR: |
-            <p><font color="#0000ff">Lisez la liste des resultats de grossesse de la repondante et demandez-lui si elles sont toutes celles qu’elle a jamais eues, et si elles sont énumérées dans l’ordre à partir de la première.</font></p><p><font color="#0000ff">La repondante&nbsp;est-elle d’accord ?<br></font></p><p><font color="#0000ff">Si ce n’est pas le cas, recherchez les informations correctes et révisez l’historique de la grossesse en conséquence.</font></p><p></p>
+            <p><font color="#0000ff">Lisez la liste des resultats de grossesse de la repondante et demandez-lui si elles sont toutes celles qu’elle a jamais eues, et si elles sont énumérées dans l’ordre à partir de la première.&nbsp;Les grossesses sont listées ci-dessous, avec l'ordre de naissance suivi du nom ou de la description de la grossesse</font></p><p>~~textstr1~~&nbsp;</p><p><font color="#0000ff">La repondante&nbsp;est-elle d’accord ?<br></font></p><p><font color="#0000ff">Si ce n’est pas le cas, recherchez les informations correctes et révisez l’historique de la grossesse en conséquence.</font></p><p></p>
   - name: CGIN80.Q224
     conditions:
       - questionText:

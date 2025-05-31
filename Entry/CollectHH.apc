@@ -2321,6 +2321,16 @@ PROC QB220
   endif;
   skip to QB239;
 
+PROC QB221
+onfocus
+  individuals.clear();
+  do i = 1 while i <= QHMEMBER
+    if QH01(i) <> QB202 & QH07(i) in 15:98 then
+      individuals.add(QH02(i), i);
+    endif;
+  enddo;
+  individuals.add( tr("Not a household member"), 0 );
+  SetValueSet( $, individuals );
 
 PROC QB223
   { Verify that fieldworker is registered }
@@ -2338,7 +2348,6 @@ PROC QB227
   if !loadcase(INTERV, ICODE) then
     errmsg( 0025, tr("Fieldworker"), $ ) select( tr("Fieldworker"), $ );
   endif;
-  skip to QB239
 
 PROC QB229
   { Verify that fieldworker is registered }
@@ -2357,10 +2366,12 @@ PROC QB232
   if !loadcase(INTERV, ICODE) then
     errmsg( 0025, tr("Fieldworker"), $ ) select( tr("Fieldworker"), $ );
   endif;
+
+PROC QB234
+preproc
   if QB226 <> 1 then 
     skip to QB239;
   endif;
-
 
 PROC QB235
   { Verify that fieldworker is registered }
@@ -2426,13 +2437,11 @@ PROC QB239
 PROC QB240
   { Either parent or respondent refused then QB240 = "99995" }
   if (QB226 in 2,3,missing | QB222 in 2,3,missing | QB214 in 2,3,missing) & !$ in "99991":"99998","?" then
+    // todo !!
     if QB226 <> notappl then
-      errmsg( 0487, QB226, QB240 )
+      errmsg( 0487, QB214, QB222, QB226, QB240 )
         select( tr("Consent"), QB226, tr("Barcode"), $ );
-    else
-      errmsg( 0488, QB222, QB214, QB240 )
-        select( tr("Consent adult"), QB222, tr("Consent minor"), QB214, tr("Barcode"), $ );
-	endif;
+    endif;
   endif;
 
   { check for duplicates }
@@ -2660,6 +2669,16 @@ PROC QB320
   endif;
   skip to QB339;
 
+PROC QB321
+onfocus
+  individuals.clear();
+  do i = 1 while i <= QHMEMBER
+    if QH01(i) <> QB302 & QH07(i) in 15:98 then
+      individuals.add(QH02(i), i);
+    endif;
+  enddo;
+  individuals.add( tr("Not a household member"), 0 );
+  SetValueSet( $, individuals );
 
 PROC QB323
   { Verify that fieldworker is registered }
@@ -2696,10 +2715,12 @@ PROC QB332
   if !loadcase(INTERV, ICODE) then
     errmsg( 0025, tr("Fieldworker"), $ ) select( tr("Fieldworker"), $ );
   endif;
+
+PROC QB334
+preproc
   if QB326 <> 1 then 
     skip to QB339;
   endif;
-
 
 PROC QB335
   { Verify that fieldworker is registered }
@@ -2763,15 +2784,12 @@ PROC QB339
   endif;
 
 PROC QB340
-  { Either parent or respondent refused then QB340 = "99995" }
   if (QB326 in 2,3,missing | QB322 in 2,3,missing | QB314 in 2,3,missing) & !$ in "99991":"99998","?" then
+    // !!todo
     if QB326 <> notappl then
-      errmsg( 0487, QB326, QB340 )
+      errmsg( 0487, QB314, QB322, QB326, QB340 )
         select( tr("Consent"), QB326, tr("Barcode"), $ );
-    else
-      errmsg( 0488, QB322, QB314, QB340 )
-        select( tr("Consent adult"), QB322, tr("Consent minor"), QB314, tr("Barcode"), $ );
-	endif;
+    endif;
   endif;
 
   { check for duplicates }

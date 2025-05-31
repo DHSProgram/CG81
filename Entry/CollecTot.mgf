@@ -335,6 +335,9 @@
   FR ( "Responses" ) Réponses
   FR ( "Is list of siblings complete and in the correct order?" ) La liste des frères et sœurs est-elle complète et dans le bon ordre?
   FR ( "Yes, continue to the Adult and Maternal Mortality table" ) Oui, continuez vers le tableau de mortalité adulte et maternelle
+  FR ( "Consent" ) Consentement 
+  FR ( "Barcode" ) Code-barre
+  FR ( "Individual Interviews collected from shared households" ) Interviews individuels collectés auprès de ménages partagés
   
   
 { !! French !! }
@@ -424,8 +427,7 @@ language = FR
  0484 E Dubliquer le Code barres actuel avec le numéro de ligne %d
  0485 E Ce Code barres était déjà utilisé dans le ménage %d par %s numéro de ligne %d
  0486 E Dubliquer le Code barres actuel avec le Code barres pour la femme numéro %d
- 0487 E consentement pour le test VIH refusé par la femme (zQBWHIV1=%01d) ou par le parent / responsable (zQBWHIV4=%01d) ou par la femme mineure (zQBWHIV6=%d), ainsi le Code-barres zQBWHIV9=%s ne devrait pas avoir un Code-barres valide
- 0488 E Le consentement pour le test VIH est refusé par l'homme (zQBMHIV1=%01d) ou le parent / responsable (zQBMHIV4=%01d) ou l'homme mineur (zQBMHIV6=%d), ainsi le code-barres zQBMHIV9=%s ne devrait pas avoir un Code-barres valide
+ 0487 E consentement pour le test VIH refusé par le répondant (QB214/QB314=%01d) ou par le parent / responsable (QB222/QB322=%01d) ou par le répondent mineure (QB226/QB326=%d), ainsi le Code-barres =%s ne devrait pas avoir un Code-barres valide
  0489 E Le code-barres actuel est en double avec le code-barres pour de l’enfant numéro %d
  0490 E Le résultat du test ( %1d) et le résultat du consentement ( %d) sont incohérents
  0494 E Pour le manquant saisir un "?" en première position seulement ( %5s)

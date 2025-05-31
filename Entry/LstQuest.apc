@@ -121,28 +121,22 @@ preproc
         xresult = edit("9",QHRESULT) + tr("-Complete")
       endif;
 
-      mnhw    = 0;
-      wmhw    = 0;
-      chhw    = 0;
       x       = 0;
       if QHRESULT = 1 then
 
         { height/weight and hemoglobin for women }
-        if QHELIGM then
-          wmhw = 0;
-        else
+        if QHELIGM = 1 then
           wmhw = count( CGHH80.QHSEC01 where QH09 );
+          mnhw = count( CGHH80.QHSEC01 where QH10 );
+          chhw = count( CGHH80.QHSEC01 where QH11 );
+        else
+          mnhw    = 0;
+          wmhw    = 0;
+          chhw    = 0;
         endif;
 
-        { height/weight and hemoglobin for men }
-        if QHELIGM then
-          mnhw = 0;
-        else
-          mnhw = count( CGHH80.QHSEC01 where QH10 );
-        endif;
 
         { height/weight and hemoglobin for children }
-        chhw = count( CGHH80.QHSEC01 where QH11 );
 
         { children/women/men measured }
         x = count(CGHH80.QBSEC01 where QB104 <> notappl) + 
