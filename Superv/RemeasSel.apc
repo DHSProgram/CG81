@@ -253,10 +253,10 @@ preproc
   enddo;
   close( CGHH80 );
   if !hwsub & XTOTAL <> xht then
-    // getmessage( 50161 );
+    getmessage( 50161 );
     // hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
   elseif hwsub & subhh <> cnthh then
-    // getmessage( 50161 );
+    getmessage( 50161 );
     // hhe = ListErrMsg.add( maketext(alphaMSG, xht, XTOTAL) )
   endif;
   
@@ -264,12 +264,12 @@ preproc
   if xch = 0 then
     getmessage( 50163 );
     ListErrMsg.add( alphaMSG );
-  if !hhe {&  !bioe  } & xch >= 2 then
+    if !hhe & !bioe then                        // if no structural errors but 0 children eligible, declare cluster as selected
 	  SFLGMEAS = 1;
 	  WriteCase( CONTSUP );
 	endif;
   endif;
-  if !hhe {&  !bioe  } & xch >= 2 then
+  if !hhe & !bioe & xch then
     HTML_BeginTable( CellValues, zstring2, 8 );  // generates the HTML table script with the column headers
     SFLGMEAS = 1;                            // no structural errors and at leat one child eligible, declare cluster as selected
     { select ramdom kids for remeasurement }
@@ -410,7 +410,7 @@ preproc
       enddo;
     enddo;
   endif;
-  if !hhe & {!bioe &} !xch then
+  if !hhe & !bioe & !xch then
     HTML_EndTable();
   endif;  
   CloseApp();

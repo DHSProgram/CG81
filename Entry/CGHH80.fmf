@@ -6507,15 +6507,15 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 [EndColumn]
   
 [Column]
-Width=54
+Width=28
   
 [HeaderText]
-Position=65,0,113,54
+Position=65,4,113,28
 Text=QB207
  
 [Field]
 Name=QB207
-Position=14,0,85,20
+Position=15,0,86,20
 Item=QB207,CGHH80
 UseEnterKey=Yes
 Verify=No
@@ -6526,9 +6526,18 @@ DataCaptureType=ComboBox
 Text=QB207
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
+[EndColumn]
+  
+[Column]
+Width=72
+  
+[HeaderText]
+Position=1,0,113,72
+Text=Height in centimeters - working field for re-entering
+ 
 [Field]
 Name=QB207W
-Position=14,24,85,44
+Position=15,0,86,20
 Item=QB207W,CGHH80
 UseEnterKey=Yes
 Verify=No
@@ -6539,52 +6548,6 @@ DataCaptureType=ComboBox
 [Text]
 Position=0,0,327,16
 Text=Height in centimeters - working field for re-entering
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[EndColumn]
-  
-[Column]
-Width=76
-  
-[HeaderText]
-Position=66,26,113,50
-Text=QB211
-VerticalAlignment=Middle
- 
-[Field]
-Name=QB211D
-Position=57,0,86,20
-Item=QB211D,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-  
-[Text]
-Text=QB211D
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=QB211M
-Position=57,24,86,44
-Item=QB211M,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=QB211M
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=QB211Y
-Position=29,48,86,68
-Item=QB211Y,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=QB211Y
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -6649,6 +6612,52 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB210
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[EndColumn]
+  
+[Column]
+Width=76
+  
+[HeaderText]
+Position=66,26,113,50
+Text=QB211
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB211D
+Position=57,0,86,20
+Item=QB211D,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+  
+[Text]
+Text=QB211D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[Field]
+Name=QB211M
+Position=57,24,86,44
+Item=QB211M,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB211M
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[Field]
+Name=QB211Y
+Position=29,48,86,68
+Item=QB211Y,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB211Y
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -7212,7 +7221,7 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Name=QB211_BLOCK
 Label=Date of measurement
 DisplayTogether=Yes
-Position=10
+Position=13
 Length=3
   
 [EndGrid]
@@ -7581,52 +7590,6 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 [EndColumn]
   
 [Column]
-Width=76
-  
-[HeaderText]
-Position=22,26,69,50
-Text=QB311
-VerticalAlignment=Middle
- 
-[Field]
-Name=QB311D
-Position=56,0,85,20
-Item=QB311D,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-  
-[Text]
-Text=QB311D
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=QB311M
-Position=56,24,85,44
-Item=QB311M,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=QB311M
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[Field]
-Name=QB311Y
-Position=28,48,85,68
-Item=QB311Y,CGHH80
-UseEnterKey=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=QB311Y
-Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
- 
-[EndColumn]
-  
-[Column]
 Width=28
   
 [HeaderText]
@@ -7686,6 +7649,52 @@ DataCaptureType=TextBox
   
 [Text]
 Text=QB310
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[EndColumn]
+  
+[Column]
+Width=76
+  
+[HeaderText]
+Position=22,26,69,50
+Text=QB311
+VerticalAlignment=Middle
+ 
+[Field]
+Name=QB311D
+Position=56,0,85,20
+Item=QB311D,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=ComboBox
+  
+[Text]
+Text=QB311D
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[Field]
+Name=QB311M
+Position=56,24,85,44
+Item=QB311M,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB311M
+Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+ 
+[Field]
+Name=QB311Y
+Position=28,48,85,68
+Item=QB311Y,CGHH80
+UseEnterKey=Yes
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+  
+[Text]
+Text=QB311Y
 Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
  
 [EndColumn]
@@ -8255,7 +8264,7 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 Name=QB311_BLOCK
 Label=Date of measurement
 DisplayTogether=Yes
-Position=10
+Position=13
 Length=3
   
 [EndGrid]

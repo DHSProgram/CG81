@@ -30,6 +30,31 @@
     enddo;
   end;
 
+  function styles ();
+    // inline style sheet
+    FileWrite(HTMLFile,'      h1 {');
+    FileWrite(HTMLFile,'       font-family: Georgia, "Times New Roman", Times, serif;');
+    FileWrite(HTMLFile,'       font-size: 18px;');
+    FileWrite(HTMLFile,'       font-weight: bold;');
+    FileWrite(HTMLFile,'       color: #000000;');
+    FileWrite(HTMLFile,'      }');
+    FileWrite(HTMLFile,'       ');
+    FileWrite(HTMLFile,'      h2 {');
+    FileWrite(HTMLFile,'       font-family: Georgia, "Times New Roman", Times, serif;');
+    FileWrite(HTMLFile,'       font-size: 16px;');
+    FileWrite(HTMLFile,'       font-weight: bold;');
+    FileWrite(HTMLFile,'       color: #000000;');
+    FileWrite(HTMLFile,'       border-bottom: 1px solid ;');
+    FileWrite(HTMLFile,'      }');
+    FileWrite(HTMLFile,'      h1, h5, th { text-align: left; }');
+    FileWrite(HTMLFile,'      table { font-family: Segoe UI; box-shadow: 08px 08px 5px #888; border: thin ridge grey; }');
+    FileWrite(HTMLFile,'      th { background: #0046c3; color: #fff; max-width: 200px; padding: 1px 1px; }');
+    FileWrite(HTMLFile,'      td { font-size: 16px; padding: 3px 10px; color: #000; }');
+    FileWrite(HTMLFile,'      tr { background: #b8d1f3; }');
+    FileWrite(HTMLFile,'      tr:nth-child(even) { background: #dae5f4; }');
+    FileWrite(HTMLFile,'      tr:nth-child(odd) { background: #b8d1f3; }');
+  end;
+
   { function to write the the header of an HTML file }
   function HTML_Header( array align(), string caption, optional list string ext_scripts )
     numeric z;
@@ -47,12 +72,15 @@
       FileWrite( HTMLFile, '<script src="' + ext_scripts(ctr) + '"></script>');
     enddo;
     FileWrite( HTMLFile, "    <title> DHS Report </title>" );
-	if getos() = 10 then
-      FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
-	else
-      FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
-	endif;
+	// if getos() = 10 then
+      // FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
+	// else
+      // FileWrite( HTMLFile, '    <link href="../Library/TablesStyle.css" rel="stylesheet" type="text/css">' );  // Windows
+	// endif;
     FileWrite( HTMLFile, "    <style>" );
+    // put stylesheet inline to avoid issue of Android not finding an external
+    // css file
+    styles();
     do z = 1 while align(z)
       ztemp = MakeText( "      td:nth-child(%d) { text-align: left; }", align(z) );
       FileWrite( HTMLFile, ztemp );

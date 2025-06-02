@@ -2142,6 +2142,12 @@ PROC Q131
     enter FL_OTHERS
   endif;
   
+PROC QWSEC2A_FORM
+preproc
+// skip for women > 49 years
+  if agew > 49 then
+    skip to QWSEC07_FORM; 
+  endif;
 PROC Q201
   SaveData();
   if $ = 2 then
@@ -4822,10 +4828,6 @@ PROC Q480
     skip to next QCOL41  
   endif;
 
-PROC Q482U
-  { check special answers }
-  badspecial( $, Q482N, getsymbol() );
-
 PROC Q482_BLOCK
 preproc
   { filter for A481 }
@@ -4835,6 +4837,10 @@ preproc
     skip to next QCOL41
   endif;	
 	
+PROC Q482U
+  { check special answers }
+  badspecial( $, Q482N, getsymbol() );
+
 PROC Q485
 preproc
   if Q224(Q404) <> 1 then                 { Child is dead }
@@ -5358,27 +5364,6 @@ PROC Y509IPV2
  vcheck  ( D509IPV2, M509IPV2, $ );
   vckbirth( D509IPV2, M509IPV2, $, Q503 );
 
-PROC D509FJ
-onfocus
-  if visualvalue(Q512) = notappl then
-    vs = D509B_VS1;
-	vs.remove(66);
-    setvalueset( $, vs );
-  else  
-    setvalueset( $, D509B_VS1 );
-  endif;
-
-postproc
-  if $ in 0,44,66 then
-    M509FJ = $;
-    Y509FJ = $*100+$;
-    advance to D509M2
-  endif;
-
-PROC Y509FJ
- vcheck  ( D509FJ, M509FJ, $ );
- vckbirth( D509FJ, M509FJ, $, Q503 );
-
 PROC D509M1
 onfocus
   if visualvalue(Q512) = notappl then
@@ -5399,6 +5384,27 @@ postproc
 PROC Y509M1
   vcheck  ( D509M1, M509M1, $ );
   vckbirth( D509M1, M509M1, $, Q503 );
+
+PROC D509FJ
+onfocus
+  if visualvalue(Q512) = notappl then
+    vs = D509B_VS1;
+	vs.remove(66);
+    setvalueset( $, vs );
+  else  
+    setvalueset( $, D509B_VS1 );
+  endif;
+
+postproc
+  if $ in 0,44,66 then
+    M509FJ = $;
+    Y509FJ = $*100+$;
+    advance to D509M2
+  endif;
+
+PROC Y509FJ
+ vcheck  ( D509FJ, M509FJ, $ );
+ vckbirth( D509FJ, M509FJ, $, Q503 );
 
 PROC D509M2
 onfocus
@@ -6606,7 +6612,7 @@ PROC Q722
   evermarr = ( Q701 in 1,2 | Q702 in 1,2 );
 
   if $ = 0 then
-    if Q212W > 0 | Q232 <> 2 then
+    if agew in 15:49 & ( Q212W > 0 | Q232 <> 2 ) then
       errmsg( 5150 ) select( tr("Age at first intercourse"), $ );
     elseif evermarr then
       if demode() = add & !inAdvance() then
@@ -6694,19 +6700,20 @@ PROC Q726
     getother( GetSymbol(), 0 );
     enter FL_OTHERS
   endif;
-
-  { Check all methods are known  }
-  {!!! assumes a one to one correspondence between current method and contraceptive table }
-  y = length( strip(Q726) );
-  do x = 1 while x <= y 
-    meth = pos( $[x:1], Q307str );
-    if Q301(meth) <> 1 then
-      warning( 3143, GetLabel(Q726, $[x:1]) )
-	    select( tr("Method used during last sex"), $,
-		        tr("Knowledge of method"), Q301(meth),
-		        tr("Continue"), continue );
-    endif;
-  enddo;
+  if agew in 15:49 then
+    { Check all methods are known  }
+    {!!! assumes a one to one correspondence between current method and contraceptive table }
+    y = length( strip(Q726) );
+    do x = 1 while x <= y 
+      meth = pos( $[x:1], Q307str );
+      if Q301(meth) <> 1 then
+        warning( 3143, GetLabel(Q726, $[x:1]) )
+              select( tr("Method used during last sex"), $,
+                          tr("Knowledge of method"), Q301(meth),
+                          tr("Continue"), continue );
+      endif;
+    enddo;
+  endif;
   
   if poschar("GH",$) then
     skip to Q728
@@ -6801,6 +6808,12 @@ PROC Q737
 PROC Q738C
   SaveData();
 
+PROC QWSEC08_FORM
+preproc
+// skip for women > 49 years
+  if agew > 49 then
+    skip to QWSEC09_FORM; 
+  endif;
 PROC Q803
 preproc
   { skip if respondent or partner sterilized }
@@ -7395,6 +7408,12 @@ preproc
 onfocus
   relterms();  
 
+PROC QWSEC11_FORM
+preproc
+// skip for women > 49 years
+  if agew > 49 then
+    skip to QLANG_FORM; 
+  endif;
 PROC Q1102
   majorgrp( $ );
   if $ = 96 then

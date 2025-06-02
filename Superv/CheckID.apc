@@ -165,20 +165,23 @@
   function women_recs ();
     // generates error message with label of each missing record for women
     list string MisRec;
-
+    
     if soccurs(QWSEC01) <> 1  then MisRec.add(getlabel(QWSEC01)) ;endif;
-    if soccurs(QWSEC2A) <> 1  then MisRec.add(getlabel(QWSEC2A)) ;endif;
-    if soccurs(QWSEC2Y) <> 1  then MisRec.add(getlabel(QWSEC2Y)) ;endif;
-    if soccurs(QWSEC2D) <> 1  then MisRec.add(getlabel(QWSEC2D)) ;endif;
-    if soccurs(QWSEC3A) <> 1  then MisRec.add(getlabel(QWSEC3A)) ;endif;
-    if soccurs(QWSEC3B) <> 1  then MisRec.add(getlabel(QWSEC3B)) ;endif;
-    if soccurs(QWSEC6B) <> 1  then MisRec.add(getlabel(QWSEC6B)) ;endif;
     if soccurs(QWSEC07) <> 1  then MisRec.add(getlabel(QWSEC07)) ;endif;
-    if soccurs(QWSEC08) <> 1  then MisRec.add(getlabel(QWSEC08)) ;endif;
-    if soccurs(QWSEC09) <> 1  then MisRec.add(getlabel(QWSEC09)) ;endif;
     if soccurs(QWSEC10) <> 1  then MisRec.add(getlabel(QWSEC10)) ;endif;
-    if soccurs(QWSEC11) <> 1  then MisRec.add(getlabel(QWSEC11)) ;endif;
-    if soccurs(QWSECM2) <> 1  then MisRec.add(getlabel(QWSECM2)) ;endif;
+    if soccurs(QWSEC09) <> 1  then MisRec.add(getlabel(QWSEC09)) ;endif;
+    
+    if Q111 in 15:49 then
+      if soccurs(QWSEC2A) <> 1  then MisRec.add(getlabel(QWSEC2A)) ;endif;
+      if soccurs(QWSEC2Y) <> 1  then MisRec.add(getlabel(QWSEC2Y)) ;endif;
+      if soccurs(QWSEC2D) <> 1  then MisRec.add(getlabel(QWSEC2D)) ;endif;
+      if soccurs(QWSEC3A) <> 1  then MisRec.add(getlabel(QWSEC3A)) ;endif;
+      if soccurs(QWSEC3B) <> 1  then MisRec.add(getlabel(QWSEC3B)) ;endif;
+      if soccurs(QWSEC6B) <> 1  then MisRec.add(getlabel(QWSEC6B)) ;endif;
+      if soccurs(QWSEC08) <> 1  then MisRec.add(getlabel(QWSEC08)) ;endif;
+      if soccurs(QWSEC11) <> 1  then MisRec.add(getlabel(QWSEC11)) ;endif;
+      if soccurs(QWSECM2) <> 1  then MisRec.add(getlabel(QWSECM2)) ;endif;
+    endif;
     do numeric r = 1 until r > MisRec.Length()
       getmessage( 50203);
       wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, strip(textsex), QLINE, MisRec(r)) );
@@ -854,74 +857,75 @@ preproc
 
             { mandatory single records for complete women }
             women_recs();
+            if Q111 in 15:49 then
+              { pregnancy history }
+              if soccurs(QWSEC2B) <> Q212W then
+                // getmessage( 50206 );
+                // todo 
+                // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2B), Q212W) )
+              endif;
 
-            { pregnancy history }
-            if soccurs(QWSEC2B) <> Q212W then
-              // getmessage( 50206 );
-              // todo 
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2B), Q212W) )
-            endif;
+              { calendar  !!! only for long version}
+              if !soccurs(QWSEC2C) in 1:2 then      { !! adjust according to columns used in the calendar }
+                getmessage( 50205 );
+                // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2C), 2) )
+              endif;
 
-            { calendar  !!! only for long version}
-            if !soccurs(QWSEC2C) in 1:2 then      { !! adjust according to columns used in the calendar }
-              getmessage( 50205 );
-              // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2C), 2) )
-            endif;
+              { calendar }
+              if !soccurs(QWSEC2C) in 1:2 then      { !! adjust according to columns used in the calendar }
+                getmessage( 50205 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2C), 2) )
+              endif;
 
-            { calendar }
-            if !soccurs(QWSEC2C) in 1:2 then      { !! adjust according to columns used in the calendar }
-              getmessage( 50205 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC2C), 2) )
-            endif;
+              { contraceptive use history }
+              methuse = cmcode( Q313M, Q313Y );
+              if Q314Y <> notappl then
+                methuse = cmcode( Q314M, Q314Y );
+              endif;
+              if Q307N <> notappl & methuse <= calbeg & soccurs(QWSEC3C) then
+                getmessage( 50204 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C), Q307N) )
+              elseif Q307N <> notappl & methuse > calbeg & !soccurs(QWSEC3C) then
+                getmessage( 50202 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, getlabel(Q307N, Q307N), soccurs(QWSEC3C) ) )
+              endif;
 
-            { contraceptive use history }
-            methuse = cmcode( Q313M, Q313Y );
-            if Q314Y <> notappl then
-              methuse = cmcode( Q314M, Q314Y );
-            endif;
-            if Q307N <> notappl & methuse <= calbeg & soccurs(QWSEC3C) then
-              getmessage( 50204 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC3C), Q307N) )
-            elseif Q307N <> notappl & methuse > calbeg & !soccurs(QWSEC3C) then
-              getmessage( 50202 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, getlabel(Q307N, Q307N), soccurs(QWSEC3C) ) )
-            endif;
+              { pregnancy and postnatal care }
+              if NAToZero(QESEC4) <> soccurs(QWSEC04) then
+                getmessage( 50207 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC04), QESEC4) )
+              endif;
 
-            { pregnancy and postnatal care }
-            if NAToZero(QESEC4) <> soccurs(QWSEC04) then
-              getmessage( 50207 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC04), QESEC4) )
-            endif;
+              { immunization }
+              if NAToZero(QESEC5) <> soccurs(QWSEC05) then
+                getmessage( 50208 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC05), QESEC5) )
+              endif;
 
-            { immunization }
-            if NAToZero(QESEC5) <> soccurs(QWSEC05) then
-              getmessage( 50208 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC05), QESEC5) )
-            endif;
+              { child health }
+              if NAtoZero(QESEC6) <> soccurs(QWSEC6A) then
+                getmessage( 50209 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC6A), QESEC6) )
+              endif;
 
-            { child health }
-            if NAtoZero(QESEC6) <> soccurs(QWSEC6A) then
-              getmessage( 50209 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSEC6A), QESEC6) )
-            endif;
+              { maternal mortality }
+              siblings = NAToZero(QMM07);
+              if siblings <> soccurs(QWSECM1) | siblings <> soccurs(QWSECM3) then
+                getmessage( 50216 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, siblings, soccurs(QWSECM1), soccurs(QWSECM3)) )
+              endif;
 
-            { maternal mortality }
-            siblings = NAToZero(QMM07);
-            if siblings <> soccurs(QWSECM1) | siblings <> soccurs(QWSECM3) then
-              getmessage( 50216 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, siblings, soccurs(QWSECM1), soccurs(QWSECM3)) )
-            endif;
+             { early child development }
+              if QESECECD <> soccurs(QWSECECD) then
+                getmessage( 50310 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QESECECD, soccurs(QWSECECD)) )
+              endif;
 
-           { early child development }
-            if QESECECD <> soccurs(QWSECECD) then
-              getmessage( 50310 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, QESECECD, soccurs(QWSECECD)) )
-            endif;
-
-            { fistula }
-            if soccurs(QWSECFIS) <> 1 then
-              getmessage( 50320 );
-              wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSECFIS)) )
+              { fistula }
+              if soccurs(QWSECFIS) <> 1 then
+                getmessage( 50320 );
+                wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QLINE, soccurs(QWSECFIS)) )
+              endif;
             endif;
 
             { no men's records should exist in woman's questionnaire }
@@ -1106,7 +1110,9 @@ preproc
   // endif;
 
   if chktot then   { totals checked when collapsing all data or when closing a cluster }
-
+    if SSAMPLE in 9981:9985 then // !! todo remove this after pretest 
+      SHTOTAL = 10;
+    endif;
     { check totals with supervisor control file }
     do i = 1 while i <= 40 & SINTNUM(i) by 1
     enddo;

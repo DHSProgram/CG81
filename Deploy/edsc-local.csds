@@ -74,6 +74,12 @@
       "path": "..\\PII\\Ref\\version.txt"
     }, 
     {
+      "path": "..\\Preparation\\PrepMenu.ent"
+    }, 
+    {
+      "path": "..\\Preparation\\PrepMenu.pff"
+    }, 
+    {
       "path": "..\\Superv\\assignhh.ent"
     }, 
     {
