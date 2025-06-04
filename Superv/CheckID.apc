@@ -16,6 +16,7 @@
   string xbiom, xhw, xanem, xhiv;
   string pictures, final;
   string FnameIN;
+  string YesNo;
 
   array transHIV(200);                 { array to know barcodes in the transmittal that are not in questionnaires for HIV }
   array transMAL(200);                 { array to know barcodes in the transmittal that are not in questionnaires for MALARIA }
@@ -44,6 +45,7 @@
   numeric tbcodeshiv, tbcodesmal, ors, ipos, calbeg, methuse;
   numeric status;
   numeric closing;
+  numeric ForInt; // flag to show if run for interviewer or supervisor
   numeric biomselect;
 
   { create a file to know if cluster has structural errors }
@@ -221,19 +223,20 @@
   end;
   function PrintBio (pline, string pstring, string presult, pstatus, remeas = notappl);
     CellValues(1) = "BLANK";
-    CellValues(2) = edit("99", pline);
-    CellValues(3) = "BLANK";
-    CellValues(4) = pstring[1:30];
-    CellValues(5) = presult;
-    CellValues(6) = "BLANK";
+    CellValues(2) = "BLANK";
+    CellValues(3) = edit("99", pline);
+    CellValues(4) = "BLANK";
+    CellValues(5) = pstring[1:30];
+    CellValues(6) = presult;
+    CellValues(7) = "BLANK";
     when remeas;
-      notappl -> CellValues(7) = "BLANK";
-            0 -> CellValues(7) = utf_x_icon;
-            1 -> CellValues(7) = utf_tick_icon;
-            9 -> CellValues(7) = "!";
+      notappl -> CellValues(8) = "BLANK";
+            0 -> CellValues(8) = utf_x_icon;
+            1 -> CellValues(8) = utf_tick_icon;
+            9 -> CellValues(8) = "!";
     endwhen;
-    CellValues(8) = ShowStatus(pstatus);
-    HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
+    CellValues(9) = ShowStatus(pstatus);
+    HTML_OneRow (CellValues, 9 );   // generates the HTML script for a row with relevant household data
   end;
 
 PROC FL_CNULL
@@ -263,12 +266,15 @@ preproc
   xmi      = 0;
   e        = 0;           { control for errors in all households }
   calbeg = cmcode(1, 2020);   { !!! modify according to year the calendar begins in survey  }
+  yesno = tr("NY");
 
   zcluster = sysparm()[1:4];                { cluster number }
   chktot   = tonumber( sysparm()[5:1] );    { if checking totals }
   pictures = sysparm("Pictures");
   final    = sysparm("Final");
   closing  = ( sysparm("Closing") = "Y" );
+  ForInt  = tonumber( sysparm("ForInt"));
+  
 
   FnameIN = FileName(CGIN80);
 
@@ -291,7 +297,7 @@ preproc
   SetLanguage( GetLanguage() );
 
   { set files to read error messages (MGF) and to report errors (ERR) }
-  setfile( ReadMsg,  ".\CheckID.mgf" );
+  setfile( ReadMsg,  "..\Superv\CheckID.mgf" );
   MessageAvail.clear();                     { clear list of messages available for the run }
   if !LoadMSG() then
     errmsg( 50000 );
@@ -320,13 +326,14 @@ preproc
   { initialize the report headings }
   zstring1 = MakeText( tr("Status for cluster: %s"), zcluster );
   CellValues(1) = tr("HH");
-  CellValues(2) = tr("Line");
-  CellValues(3) = tr("Interviewer");
-  CellValues(4) = tr("Name");
-  CellValues(5) = tr("Result");
-  CellValues(6) = tr("Visits");
-  CellValues(7) = tr("Remeasure");
-  CellValues(8) = tr("Status");
+  CellValues(2) = tr("Male.Sel");
+  CellValues(3) = tr("Line");
+  CellValues(4) = tr("Interviewer");
+  CellValues(5) = tr("Name");
+  CellValues(6) = tr("Result");
+  CellValues(7) = tr("Visits");
+  CellValues(8) = tr("Remeasure");
+  CellValues(9) = tr("Status");
 
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 4;  // column 3 is household address/name 
@@ -348,53 +355,55 @@ preproc
     trace("hh=%d", QHNUMBER);
     { load files based on first case }
     if ycluster = 0 then
-      HTML_BeginTable( CellValues, zstring2, 8, "Main" );  // generates the HTML table script with the column headers
+      HTML_BeginTable( CellValues, zstring2, 9, "Main" );  // generates the HTML table script with the column headers
      { load supervisor control to make sure that total number of cases to be collected in cluster is assigned }
           { it also checks that cluster was already selected for remeasurement and data were colleted }
-      SSAMPLE = QHCLUST;
-      if !loadcase( CONTSUP, SSAMPLE ) then
-        getmessage( 50041 );
-        e = ListErrMsg.add( maketext(AlphaMSG, SSAMPLE) );
-        FileReturn( e );
-        stop(1);
-      elseif !SHTOTAL then
-        getmessage( 50040 );
-        e = ListErrMsg.add( maketext(AlphaMSG, QHCLUST) );
-          { check on remeasurement and if data collected for remeasurement }
-      elseif SFLGMEAS <> 1 then
-        getmessage( 50164 );
-        e = ListErrMsg.add( AlphaMSG );
-      else
-        // check results of remeasurement and update CONTSUP file
-        rmlines.clear();
-        rmres.clear();
-        found = 0;
-            do i = 1 while i <= maxocc(SREMEAS) & SREMHH(i) <> 0
-              rmlines.add(SREMLINE(i));
-              RCLUSTER = SSAMPLE;
-              RNUMBER  = SREMHH(i);
-              R102L    = SREMLINE(i);
-              if !loadcase( RMEASURE, RCLUSTER, RNUMBER, R102L ) then
-                getmessage( 50165 );
-                e = ListErrMsg.add( MakeText(AlphaMSG, RNUMBER, R102L) );
-                rmres.add(9);
-              elseif R104 in 0:4 & ( R106 = notappl | R108 = notappl ) | 
-                     R104 = notappl then
-                getmessage( 50166 );
-                e = ListErrMsg.add( maketext(AlphaMSG, RNUMBER, R102L)  );
-                rmres.add(0);
-              else
-                rmres.add(1);
-              endif;
-            enddo;
-      endif;
-      { load HH assigned to interviewers to check interviewer assigned to collect household }
-      XCLUSTER = QHCLUST;
-      if !loadcase( SAMPSEL, XCLUSTER )  then
-        getmessage( 50042 );
-        e = ListErrMsg.add( maketext(AlphaMSG, XCLUSTER) );
-        FileReturn( e );
-        stop(1);
+      if !ForInt then
+        SSAMPLE = QHCLUST;
+        if !loadcase( CONTSUP, SSAMPLE ) then
+          getmessage( 50041 );
+          e = ListErrMsg.add( maketext(AlphaMSG, SSAMPLE) );
+          FileReturn( e );
+          stop(1);
+        elseif !SHTOTAL then
+          getmessage( 50040 );
+          e = ListErrMsg.add( maketext(AlphaMSG, QHCLUST) );
+            { check on remeasurement and if data collected for remeasurement }
+        elseif SFLGMEAS <> 1 then
+          getmessage( 50164 );
+          e = ListErrMsg.add( AlphaMSG );
+        else
+          // check results of remeasurement and update CONTSUP file
+          rmlines.clear();
+          rmres.clear();
+          found = 0;
+              do i = 1 while i <= maxocc(SREMEAS) & SREMHH(i) <> 0
+                rmlines.add(SREMLINE(i));
+                RCLUSTER = SSAMPLE;
+                RNUMBER  = SREMHH(i);
+                R102L    = SREMLINE(i);
+                if !loadcase( RMEASURE, RCLUSTER, RNUMBER, R102L ) then
+                  getmessage( 50165 );
+                  e = ListErrMsg.add( MakeText(AlphaMSG, RNUMBER, R102L) );
+                  rmres.add(9);
+                elseif R104 in 0:4 & ( R106 = notappl | R108 = notappl ) | 
+                       R104 = notappl then
+                  getmessage( 50166 );
+                  e = ListErrMsg.add( maketext(AlphaMSG, RNUMBER, R102L)  );
+                  rmres.add(0);
+                else
+                  rmres.add(1);
+                endif;
+              enddo;
+        endif;
+        { load HH assigned to interviewers to check interviewer assigned to collect household }
+        XCLUSTER = QHCLUST;
+        if !loadcase( SAMPSEL, XCLUSTER )  then
+          getmessage( 50042 );
+          e = ListErrMsg.add( maketext(AlphaMSG, XCLUSTER) );
+          FileReturn( e );
+          stop(1);
+        endif;
       endif;
       ycluster  = QHCLUST;
     endif;
@@ -498,63 +507,65 @@ preproc
     endif;
 
     { check if household was collected by the interviewer assigned to it and synchronize file }
-    found = 0;
-    do i = 1 while i <= XTOTAL
-      if QHNUMBER = XNUMBER(i) then
-        found = 1;
-        { display error just to let the supervisor know about the change }
-        if QHINTNUM <> XINTCODE(i) then
-          { !!! only display msg if was originally assigned already }
-          if XINTCODE(i) then
-            getmessage( 50225 );
-            ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, XINTCODE(i), QHINTNUM) );
+    if !ForInt then
+      found = 0;
+      do i = 1 while i <= XTOTAL
+        if QHNUMBER = XNUMBER(i) then
+          found = 1;
+          { display error just to let the supervisor know about the change }
+          if QHINTNUM <> XINTCODE(i) then
+            { !!! only display msg if was originally assigned already }
+            if XINTCODE(i) then
+              getmessage( 50225 );
+              ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, XINTCODE(i), QHINTNUM) );
+            endif;
+            XINTCODE(i) = NaToZero( QHINTNUM );
+            rwrthha     = 1;
           endif;
-          XINTCODE(i) = NaToZero( QHINTNUM );
-          rwrthha     = 1;
+          { synchronize household status in HH assignment file }
+          if XRESULT(i) <> QHRESULT then
+            XRESULT(i) = NaToZero(QHRESULT);
+            rwrthha    = 1;
+          endif;
+          { synchronize household address }
+          if QHADDRESS <> XADDRESS(i) then
+            XADDRESS(i) = QHADDRESS;
+            rwrthha     = 1;
+          endif;
+          { synchronize name of household head in HH assignment file }
+          if QHRESULT = 1 & length( strip(QHFIRSTN(1)) ) &
+             !pos( strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1)), XNAME(i) ) then
+            XNAME(i) = strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1));
+            rwrthha  = 1;
+          endif;
+          break;
         endif;
-        { synchronize household status in HH assignment file }
-        if XRESULT(i) <> QHRESULT then
-          XRESULT(i) = NaToZero(QHRESULT);
-          rwrthha    = 1;
-        endif;
-        { synchronize household address }
-        if QHADDRESS <> XADDRESS(i) then
+      enddo;
+      // { if household was not found it means that it was added by an interviewer }
+      // { supervisor then needs to accept it as part of the sample                }
+      hhOK = 1;
+      if !found then // !! check is a number generate by splitting a hh and not by changing hh id !!!
+        errmsg( 50400, QHNUMBER, strip( QH02(1)) ,strip( QHADDRESS ));
+        getmessage( 50400 );
+        ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
+        hhOK = errmsg( maketext( tr("Confirm you wish to accept split household %d %s-%s"), QHNUMBER, strip( QH02(1) ), strip( QHADDRESS ) )) select(tr("Yes"), continue, tr("No, cancel"), continue );
+        if hhOK  = 1 then
+          XTOTAL = XTOTAL + 1;
+          i = XTOTAL;
+          XNUMBER(i)  = QHNUMBER;
+          XSTRUCT(i)  = QHNUMBER;
           XADDRESS(i) = QHADDRESS;
+          XNAME(i)    = QH02(1);
+          XMALE(i)    = QHELIGM;
+          XINTCODE(i) = QHINTNUM;
+          XINTDATE(i) = QHINTM*1000000 + QHINTD*10000 + QHINTY;
+          XRESULT(i)  = NaToZero( QHRESULT );
           rwrthha     = 1;
+          newhh = newhh + 1;
+        else
+          getmessage( 50401 );
+          hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QHINTNUM) );
         endif;
-        { synchronize name of household head in HH assignment file }
-        if QHRESULT = 1 & length( strip(QHFIRSTN(1)) ) &
-           !pos( strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1)), XNAME(i) ) then
-          XNAME(i) = strip(QHFIRSTN(1)) + " " + strip(QHLASTN(1));
-          rwrthha  = 1;
-        endif;
-        break;
-      endif;
-    enddo;
-    // { if household was not found it means that it was added by an interviewer }
-    // { supervisor then needs to accept it as part of the sample                }
-    hhOK = 1;
-    if !found then // !! check is a number generate by splitting a hh and not by changing hh id !!!
-      errmsg( 50400, QHNUMBER, strip( QH02(1)) ,strip( QHADDRESS ));
-      getmessage( 50400 );
-      ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
-      hhOK = errmsg( maketext( tr("Confirm you wish to accept split household %d %s-%s"), QHNUMBER, strip( QH02(1) ), strip( QHADDRESS ) )) select(tr("Yes"), continue, tr("No, cancel"), continue );
-      if hhOK  = 1 then
-        XTOTAL = XTOTAL + 1;
-        i = XTOTAL;
-        XNUMBER(i)  = QHNUMBER;
-        XSTRUCT(i)  = QHNUMBER;
-        XADDRESS(i) = QHADDRESS;
-        XNAME(i)    = QH02(1);
-        XMALE(i)    = QHELIGM;
-        XINTCODE(i) = QHINTNUM;
-        XINTDATE(i) = QHINTM*1000000 + QHINTD*10000 + QHINTY;
-        XRESULT(i)  = NaToZero( QHRESULT );
-        rwrthha     = 1;
-        newhh = newhh + 1;
-      else
-        getmessage( 50401 );
-        hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER, QHINTNUM) );
       endif;
     endif;
 
@@ -574,14 +585,15 @@ preproc
     // bioexist = bioexist - count(CGHH80.QBSEC01 where QB106 <> notappl); // not all eligible children are measured
         { populates the elements of a row based on household information }
     CellValues(1) = edit("9999", QHNUMBER);
-    CellValues(2) = "BLANK";
-    CellValues(3) = edit("9999", QHINTNUM);
-    CellValues(4) = xstring[1:60];
-    CellValues(5) = yresult;
-    CellValues(6) = edit("9", QHVISITS);
-    CellValues(7) = "BLANK";
-    CellValues(8) = ShowStatus(status) + " " + HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon);
-    HTML_OneRow( CellValues, 8 );   // generates the HTML script for a row with relevant household data
+    CellValues(2) = yesno[(QHELIGM=1)+1:1];
+    CellValues(3) = "BLANK";
+    CellValues(4) = edit("9999", QHINTNUM);
+    CellValues(5) = xstring[1:60];
+    CellValues(6) = yresult;
+    CellValues(7) = edit("9", QHVISITS);
+    CellValues(8) = "BLANK";
+    CellValues(9) = ShowStatus(status) + " " + HTML_Button(maketext("Return_Case_ID('%04d%04d')", QHCLUST, QHNUMBER), utf_view_icon);
+    HTML_OneRow( CellValues, 9 );   // generates the HTML script for a row with relevant household data
     
     sumreport(sumidx, 7) = edit("99", bioexist) + "/" + edit("99", x);
     if bioexist > x then
@@ -589,72 +601,74 @@ preproc
     endif;
 
     { find a place in array of cases in the supervisor control file }
-    casefound = 0;
-    do i = 1 while i <= 40
-      if SNUMBER(i) = 0 | SNUMBER(i) = QHNUMBER then
-        casefound = i;
-        break;
-      endif;
-    enddo;
-    j = casefound;
-    if casefound & hhOK then   { Only use if there is a slot and if the household is accepted }
-      if SNUMBER(j) = 0 then
-        SNUMBER(j) = QHNUMBER;
-        SINTNUM(j) = QHINTNUM;
-        fwrt = 1;
-      endif;
+    if !ForInt then
+      casefound = 0;
+      do i = 1 while i <= 40
+        if SNUMBER(i) = 0 | SNUMBER(i) = QHNUMBER then
+          casefound = i;
+          break;
+        endif;
+      enddo;
+      j = casefound;
+      if casefound & hhOK then   { Only use if there is a slot and if the household is accepted }
+        if SNUMBER(j) = 0 then
+          SNUMBER(j) = QHNUMBER;
+          SINTNUM(j) = QHINTNUM;
+          fwrt = 1;
+        endif;
 
-      { accept incomplete HH and flag all of them as true }
-      if QHRESULT <> 1 & SACCEPTH(j) = 0 then
-        SACCEPTH(j)  = QHRESULT;
-        SACCEPTI(j)  = 1;
-        SACCEPTF(j)  = sysdate("YYYYMMDD");
-        SACCEPTHW(j) = 1;
-        fwrt = 1;
-      { incomplete interviews are saved as partial to come back to them in add mode }
-      elseif QHRESULT = 1 & casepart then         { partial cases need to be reset, if already accepted }
-        if SACCEPTH(j) | SACCEPTI(j) | SACCEPTF(j) | SACCEPTHW(j) then
-          SACCEPTH(j)  = 0;
-          SACCEPTI(j)  = 0;
-          SACCEPTF(j)  = 0;
-          SACCEPTHW(j) = 0;
+        { accept incomplete HH and flag all of them as true }
+        if QHRESULT <> 1 & SACCEPTH(j) = 0 then
+          SACCEPTH(j)  = QHRESULT;
+          SACCEPTI(j)  = 1;
+          SACCEPTF(j)  = sysdate("YYYYMMDD");
+          SACCEPTHW(j) = 1;
           fwrt = 1;
-        endif;
-      else
-        if !hhe & ( SACCEPTH(j) <> QHRESULT | SACCEPTH(j) = 0 ) then   { household with no errors }
-          SACCEPTH(j) = QHRESULT;
-          fwrt = 1;
-        elseif SACCEPTH(j) & hhe then                     { an error in the household was introduced }
-          getmessage( 50210 );
-          hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
-          SACCEPTH(j)  = 0;
-          SACCEPTI(j)  = 0;
-          SACCEPTF(j)  = 0;
-          SACCEPTHW(j) = 0;
-          fwrt = 1;
-        endif;
-        { check errors on biomarkers }
-        if chbio+wmbio+mnbio then
-          if !bioe & !SACCEPTHW(j) then       { h/w completed & accepted for household }
-            SACCEPTHW(j) = 1;
-            fwrt = 1;
-          elseif bioe & SACCEPTHW(j) then     { reset h/w if errors were introduced }
+        { incomplete interviews are saved as partial to come back to them in add mode }
+        elseif QHRESULT = 1 & casepart then         { partial cases need to be reset, if already accepted }
+          if SACCEPTH(j) | SACCEPTI(j) | SACCEPTF(j) | SACCEPTHW(j) then
+            SACCEPTH(j)  = 0;
+            SACCEPTI(j)  = 0;
+            SACCEPTF(j)  = 0;
             SACCEPTHW(j) = 0;
             fwrt = 1;
           endif;
-        elseif !SACCEPTHW(j) then             { no members eligible for h/w }
-          SACCEPTHW(j) = 1;
-          fwrt = 1;
+        else
+          if !hhe & ( SACCEPTH(j) <> QHRESULT | SACCEPTH(j) = 0 ) then   { household with no errors }
+            SACCEPTH(j) = QHRESULT;
+            fwrt = 1;
+          elseif SACCEPTH(j) & hhe then                     { an error in the household was introduced }
+            getmessage( 50210 );
+            hhe = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
+            SACCEPTH(j)  = 0;
+            SACCEPTI(j)  = 0;
+            SACCEPTF(j)  = 0;
+            SACCEPTHW(j) = 0;
+            fwrt = 1;
+          endif;
+          { check errors on biomarkers }
+          if chbio+wmbio+mnbio then
+            if !bioe & !SACCEPTHW(j) then       { h/w completed & accepted for household }
+              SACCEPTHW(j) = 1;
+              fwrt = 1;
+            elseif bioe & SACCEPTHW(j) then     { reset h/w if errors were introduced }
+              SACCEPTHW(j) = 0;
+              fwrt = 1;
+            endif;
+          elseif !SACCEPTHW(j) then             { no members eligible for h/w }
+            SACCEPTHW(j) = 1;
+            fwrt = 1;
+          endif;
+          if !hhe & !bioe & QHRESULT <> 1 & !SACCEPTF(j) then { no structural errors in an incomplete household }
+            SACCEPTF(j) = sysdate("YYYYMMDD");
+            fwrt = 1;
+          elseif (hhe | bioe) & SACCEPTF(j) then             { structural errors introduced after being accepted }
+            SACCEPTF(j) = 0;
+            fwrt = 1;
+          endif;
         endif;
-        if !hhe & !bioe & QHRESULT <> 1 & !SACCEPTF(j) then { no structural errors in an incomplete household }
-          SACCEPTF(j) = sysdate("YYYYMMDD");
-          fwrt = 1;
-        elseif (hhe | bioe) & SACCEPTF(j) then             { structural errors introduced after being accepted }
-          SACCEPTF(j) = 0;
-          fwrt = 1;
-        endif;
-      endif;
-    endif;                   { endif if slot found and HH accepted }
+      endif;                   { endif if slot found and HH accepted }
+    endif; // !ForInt
     
       { check biomarkers }
       trace("%d,%d, %d", casepart, QHRESULT, biomselect);
@@ -828,14 +842,15 @@ preproc
           { print individual line for report }
           { populates the elements of a row based on individual information }
           CellValues(1) = "BLANK";
-          CellValues(2) = edit("  99", QLINE);
-          CellValues(3) = edit("9999", QINTNUM);
-          CellValues(4) = xstring;
-          CellValues(5) = yresult;
-          CellValues(6) = edit("9", QVISITS);
-          CellValues(7) = "BLANK";
-          CellValues(8) = ShowStatus(status) + " " + HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) ;
-          HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data 
+          CellValues(2) = "BLANK";
+          CellValues(3) = edit("  99", QLINE);
+          CellValues(4) = edit("9999", QINTNUM);
+          CellValues(5) = xstring;
+          CellValues(6) = yresult;
+          CellValues(7) = edit("9", QVISITS);
+          CellValues(8) = "BLANK";
+          CellValues(9) = ShowStatus(status) + " " + HTML_Button(maketext("Return_Case_ID('%04d%04d%02d')", QHCLUST, QHNUMBER, QLINE), utf_view_icon) ;
+          HTML_OneRow( CellValues, 9 );  // generates the HTML script for a row with relevant individual data 
 
           if casepart & QRESULT = 1 then     { partial case, no structure checked }
             // getmessage( 50200 );
@@ -1006,34 +1021,37 @@ preproc
           yresult = tr("Not visited");
           { populates the elements of a row for an individual that hasn't been visited }
           CellValues(1) = "BLANK";
-          CellValues(2) = edit("  99", QLINE);
-          CellValues(3) = "BLANK";
-          CellValues(4) = xstring;
-          CellValues(5) = yresult;
-          CellValues(6) = "BLANK";
+          CellValues(2) = "BLANK";
+          CellValues(3) = edit("  99", QLINE);
+          CellValues(4) = "BLANK";
+          CellValues(5) = xstring;
+          CellValues(6) = yresult;
           CellValues(7) = "BLANK";
-          CellValues(8) = ShowStatus(status);
-          HTML_OneRow( CellValues, 8 );  // generates the HTML script for a row with relevant individual data
+          CellValues(8) = "BLANK";
+          CellValues(9) = ShowStatus(status);
+          HTML_OneRow( CellValues, 9 );  // generates the HTML script for a row with relevant individual data
        endif;
       endif;
     enddo;
 
     { check individual status for household }
-    j = casefound;
-    if casefound & hhOK then              { a slot was found for household and it was accepted }
-      if !SACCEPTI(j) & !wme then        { all individuals in household with no errors }
-        SACCEPTI(j) = 1;
-        fwrt = 1;
-      elseif SACCEPTI(j) & wme then      { an error in any of the individuals was introduced }
-        // getmessage( 50211 );
-        // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
-        SACCEPTI(j) = 0;
-        SACCEPTF(j) = 0;
-        fwrt = 1;
-      endif;
-      if !hhe & !wme & !bioe & !SACCEPTF(j) then   { no structural errors in all individuals belonging to household }
-        SACCEPTF(j) = sysdate("YYYYMMDD");
-        fwrt = 1;
+    if !ForInt then
+      j = casefound;
+      if casefound & hhOK then              { a slot was found for household and it was accepted }
+        if !SACCEPTI(j) & !wme then        { all individuals in household with no errors }
+          SACCEPTI(j) = 1;
+          fwrt = 1;
+        elseif SACCEPTI(j) & wme then      { an error in any of the individuals was introduced }
+          // getmessage( 50211 );
+          // wme = ListErrMsg.add( maketext(AlphaMSG, QHNUMBER) );
+          SACCEPTI(j) = 0;
+          SACCEPTF(j) = 0;
+          fwrt = 1;
+        endif;
+        if !hhe & !wme & !bioe & !SACCEPTF(j) then   { no structural errors in all individuals belonging to household }
+          SACCEPTF(j) = sysdate("YYYYMMDD");
+          fwrt = 1;
+        endif;
       endif;
     endif;
 
@@ -1200,14 +1218,16 @@ preproc
 
   HTML_End();
 
-  { rewrite supervisor control file if necessary }
-  if fwrt then writecase( CONTSUP ) endif;
-  close( CONTSUP );
-  { rewrite household sample file if necessary }
-  if rwrthha then writecase( SAMPSEL ) endif;
-  close( SAMPSEL );
-  { instructions to create a file to decide if cluster is completed }
-  FileReturn( e );
+  if !ForInt then
+    { rewrite supervisor control file if necessary }
+    if fwrt then writecase( CONTSUP ) endif;
+    close( CONTSUP );
+    { rewrite household sample file if necessary }
+    if rwrthha then writecase( SAMPSEL ) endif;
+    close( SAMPSEL );
+    { instructions to create a file to decide if cluster is completed }
+    FileReturn( e );
+  endif;
 
 
   // !! display form and handle requests to view questionnaires
@@ -1230,9 +1250,11 @@ preproc
        loadcase(CGHH80, caseid);
        ViewQre("CGHH80", "../Entry/CGHH80.fmf", "../Entry/CollectHH.qsf");
      elseif length(caseid) = 10 then
+       close(CGIN80);
        setfile(CGIN80, fnameIN, update);
-       loadcase(CGIN80, caseid);
-       ViewQre("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
+       if loadcase(CGIN80, caseid) then
+         viewQRE("CGIN80", "../Entry/CGIN80.fmf", "../Entry/CollectIN.qsf");
+       endif;
      else
        break;
      endif;

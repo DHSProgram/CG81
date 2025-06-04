@@ -86,7 +86,7 @@ preproc
       freq include( QWSEC04 numeric alpha )
            breakdown(1)
            title( "Country - Women's Data" )
-           select( (QINTCD - Q220CD(Q404)) / DaysMonth < 36 )
+           // select( (QINTCD - Q220CD(Q404)) / DaysMonth < 36 )
            weighted rweight;
     enddo;
 
@@ -94,7 +94,7 @@ preproc
       freq include( QWSEC05 numeric alpha)
            breakdown(1)
            title( "Country - Women's Data" )
-           select( (QINTCD - Q220CD(Q503)) / DaysMonth < 36 )    { !!! make sure vaccinations only for last three years }
+           // select( (QINTCD - Q220CD(Q503)) / DaysMonth < 36 )    { !!! make sure vaccinations only for last three years }
            weighted rweight;
     enddo;
 

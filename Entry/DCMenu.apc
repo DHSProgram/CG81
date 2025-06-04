@@ -1349,6 +1349,38 @@
      justone.close();
      FileDelete(fname);
   end;
+  { construct the PFF file for check-id }
+  function CheckID()
+    string NoneFile = "|type=None";
+    { whatdata 1-files for interviewers - data      }
+    InitPFF();
+    FileWrite( piffile, "StartMode=ADD" );
+    FileWrite( piffile, "ShowInApplicationListing=Never" );
+    FileWrite( piffile, "Fullscreen=Yes" );
+    FileWrite( piffile, "NoFileOpen=Yes" );
+
+    FileWrite( piffile, "[Files]" );
+    FileWrite( piffile, "Application=" + superv + "\" + AppName + ".ent" );
+    FileWrite( piffile, "Listing="     + superv + "\" + AppName +  ".lst" );
+    FileWrite( piffile, "WriteData="   + superv + "\" + AppName +  ".wrt" );
+
+    FileWrite( piffile, "[ExternalFiles]" );
+    FileWrite( piffile, "CONTSUP=" + NoneFile);
+    FileWrite( piffile, "SAMPSEL="  + NoneFile);
+    FileWrite( piffile, "TRANSMIT=" + NoneFile);
+    FileWrite( piffile, "RMEASURE=" + NoneFile);
+    { data by interviewers }
+    FileWrite( piffile, "CGHH80=" + data + "\H" + xfilenum + ".DAT" );
+    FileWrite( piffile, "CGIN80=" + data + "\I" + xfilenum + ".DAT" );
+    FileWrite( piffile, "[Parameters]" );
+    FileWrite( piffile, "Language=" + GetLanguage() );
+    FileWrite( piffile, "Parameter=" + xcluster );
+    FileWrite( piffile, "ForInt=1");
+    FileWrite( piffile, "ViewListing=OnError" );
+    FileWrite( piffile, "ViewResults=No" );
+    FileWrite( piffile, "OnExit=.\DCMenu.pff" );
+    close( piffile );
+  end;
 PROC FL_MENU
   
 PreProc
@@ -1796,8 +1828,8 @@ postproc
 
     { lists questionnaires collected by interviewer }
     elseif action = 6 then
-      AppName = "LSTQUEST";
-      lstquest();
+      AppName = "CHECKID";
+      checkid();
       runpffS();
 
     { menu to transfer/share and fix data and to obtain updates }
