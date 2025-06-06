@@ -1370,8 +1370,8 @@
     FileWrite( piffile, "TRANSMIT=" + NoneFile);
     FileWrite( piffile, "RMEASURE=" + NoneFile);
     { data by interviewers }
-    FileWrite( piffile, "CGHH80=" + data + "\H" + xfilenum + ".DAT" );
-    FileWrite( piffile, "CGIN80=" + data + "\I" + xfilenum + ".DAT" );
+    FileWrite( piffile, "CGHH80=" + work + "/ALLHH.DAT";
+    FileWrite( piffile, "CGIN80=" + data + "/I" + xfilenum + ".DAT" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
     FileWrite( piffile, "Parameter=" + xcluster );
@@ -1828,6 +1828,7 @@ postproc
 
     { lists questionnaires collected by interviewer }
     elseif action = 6 then
+      concathh();
       AppName = "CHECKID";
       checkid();
       runpffS();

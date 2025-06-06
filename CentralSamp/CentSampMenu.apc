@@ -687,7 +687,7 @@ onfocus
   WNUMBER  = notappl;
   WADDRESS = " ";
   WCORRECT = notappl;
-  $ = " ";
+  $ = 0;
   noinput;
 
 postproc
