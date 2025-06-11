@@ -23,18 +23,19 @@ preproc
   zstring2 = MakeText( tr("Report Date: %s (dd/mm/yyyy)"), edit("99/99/9999",sysdate("DDMMYYYY")) );
   CellValues(1)  = tr("Cluster");
   CellValues(2)  = tr("Date Arrived");
-  CellValues(3)  = tr("Enumerator");
-  CellValues(4)  = tr("HH List");
-  CellValues(5)  = tr("HH Expect");
-  CellValues(6)  = tr("% Diff.");
-  CellValues(7)  = tr("GPS");
-  CellValues(8)  = tr("Segments");
-  CellValues(9)  = tr("C-Field");
-  CellValues(10) = tr("C-Office");
+  CellValues(3)  = tr("Team");
+  CellValues(4)  = tr("Enumerator");
+  CellValues(5)  = tr("HH List");
+  CellValues(6)  = tr("HH Expect");
+  CellValues(7)  = tr("% Diff.");
+  CellValues(8)  = tr("GPS");
+  CellValues(9)  = tr("Segments");
+  CellValues(10)  = tr("C-Field");
+  CellValues(11) = tr("C-Office");
   { specify columns that are left aligned, strings are left aligned }
   CellAlign(1) = 3;  // column 3 Enumerator 
   HTML_Header( CellAlign, zstring1 );  // generates a general HTML header
-  HTML_BeginTable( CellValues, zstring2, 10 );  // generates the HTML table script with the column headers
+  HTML_BeginTable( CellValues, zstring2, 11 );  // generates the HTML table script with the column headers
   
   xreceiv  = 0;
   xfinal   = 0;
@@ -50,14 +51,15 @@ postproc
   CellValues(1)  = edit("ZZZ9",xcluster);
   CellValues(2)  = edit("ZZZ9",xreceiv);
   CellValues(3)  = "BLANK";
-  CellValues(4)  = edit("ZZZZ9",xhtotal);
-  CellValues(5)  = edit("ZZZZ9",xhcensus);
-  CellValues(6)  = "BLANK";
-  CellValues(7)  = edit("ZZZZ9",xgps);
-  CellValues(8)  = "BLANK";
+  CellValues(4)  = "BLANK";
+  CellValues(5)  = edit("ZZZZ9",xhtotal);
+  CellValues(6)  = edit("ZZZZ9",xhcensus);
+  CellValues(7)  = "BLANK";
+  CellValues(8)  = edit("ZZZZ9",xgps);
   CellValues(9)  = "BLANK";
-  CellValues(10) = edit("ZZZ9",xfinal);
-  HTML_OneRow( CellValues, 10 );   // generates the HTML script for a row with relevant household data
+  CellValues(10)  = "BLANK";
+  CellValues(11) = edit("ZZZ9",xfinal);
+  HTML_OneRow( CellValues, 11 );   // generates the HTML script for a row with relevant household data
   { percentages }
   xreceiv   = 100 * xreceiv  / xcluster;
   variation = (xhcensus-xhtotal) * 100 / xhcensus;
@@ -68,12 +70,13 @@ postproc
   CellValues(3)  = "BLANK";
   CellValues(4)  = "BLANK";
   CellValues(5)  = "BLANK";
-  CellValues(6)  = edit("Z9.9",variation);
-  CellValues(7)  = edit("Z9.9",xgps);
-  CellValues(8)  = "BLANK";
+  CellValues(6)  = "BLANK";
+  CellValues(7)  = edit("Z9.9",variation);
+  CellValues(8)  = edit("Z9.9",xgps);
   CellValues(9)  = "BLANK";
-  CellValues(10) = edit("Z9.9",xfinal);
-  HTML_OneRow( CellValues, 10 );   // generates the HTML script for a row with relevant household data
+  CellValues(10)  = "BLANK";
+  CellValues(11) = edit("Z9.9",xfinal);
+  HTML_OneRow( CellValues, 11 );   // generates the HTML script for a row with relevant household data
   HTML_EndTable();
   HTML_End();
   view( "file://" + pathname(application) +  HTMLName );
@@ -97,21 +100,22 @@ preproc
     { populates the elements of a row based on household information }
     CellValues(1) = edit("9999", CSAMPLE);
     CellValues(2) = edit("9999/99/99", CDATEBEG);
-    CellValues(3) = strip(INAME);
-    CellValues(4) = edit("ZZZ9", CHTOTAL);
-    CellValues(5) = edit("ZZZ9", CHEXPECT);
-    CellValues(6) = edit("Z9.9",variation);
-    CellValues(7) = gpscollect;
+    CellValues(3) = edit("99", ITEAM);
+    CellValues(4) = maketext("%s (%04d)", strip(INAME), ICODE);
+    CellValues(5) = edit("ZZZ9", CHTOTAL);
+    CellValues(6) = edit("ZZZ9", CHEXPECT);
+    CellValues(7) = edit("Z9.9",variation);
+    CellValues(8) = gpscollect;
 	if CSEGMENT then
-      CellValues(8) = edit("ZZ9", CSEGMENT);
+      CellValues(9) = edit("ZZ9", CSEGMENT);
 	else
-      CellValues(8) = "BLANK";
+      CellValues(9) = "BLANK";
 	endif;
-    CellValues(9) = fieldclosed;
+    CellValues(10) = fieldclosed;
 	if CFINDATE then
-      CellValues(10) = edit("9999/99/99", CFINDATE);
+      CellValues(11) = edit("9999/99/99", CFINDATE);
 	else
-      CellValues(10) = "BLANK";
+      CellValues(11) = "BLANK";
 	endif;
-    HTML_OneRow( CellValues, 10 );   // generates the HTML script for a row with relevant household data
+    HTML_OneRow( CellValues, 11 );   // generates the HTML script for a row with relevant household data
   endif;

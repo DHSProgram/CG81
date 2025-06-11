@@ -21,7 +21,6 @@ PROC GLOBAL
   numeric wocc;
   string weipc;
   alpha(1)   type;
-  numeric qccheck; // flag to control whether qc listing (qccheck=1) or original listing (qccheck=0)
   numeric listidx; // index for qc comparison file !!!
   numeric waccuracy;
 
@@ -326,7 +325,6 @@ preproc
   android = ( getos() = 20 ); 
   xcluster = tonumber( sysparm()[1:4] );
   xintnum  = tonumber( sysparm()[5:4] );
-  qccheck  = tonumber( sysparm()[9:1] );
 
 
   setfont( ValueSets, "Arial", 18, bold );
@@ -342,7 +340,7 @@ preproc
   { set up minimal user bar }
   userbase();
   userbar( show );
-
+  
 postproc
   stop(1);
 
@@ -766,10 +764,6 @@ postproc
 	
 
 PROC LNOTES
-preproc
-  if qccheck then
-//+    skip to LQV14;
-  endif;
 postproc
   if android then
     // setocclabel(RECORD2_ROSTER(curocc()),maketext("%s %s %d/%d", strip( LADDRESS ), strip( LNAME ), LNUMBER, LSTRUCT));

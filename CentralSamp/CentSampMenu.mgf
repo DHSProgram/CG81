@@ -6,7 +6,7 @@ Language = FR
   FR ( "Cluster:" ) Grappe:
   FR ( "Arrived on:" ) Arrivée le :
   FR ( "LIST OF CLUSTERS THAT ARRIVED PREVIOUSLY BUT WERE MODIFIED OR ENUMERATOR CHANGED" ) LISTE DES GRAPPES PRÉCÉDEMMENT ARRIVÉES MAIS MODIFIÉES OU CHANGEMENT D'ÉNUMÉRATEUR 
-  FR ( "Duplicated files are displayed and only one of them must be left" ) Les fichiers en boublons sont affichés et seul l'un d'eux doit être gardé
+  FR ( "Duplicated files are displayed and only one of them must be left" ) Les fichiers en doublons sont affichés et seul l'un d'eux doit être gardé
   FR ( "and arrived previously on:" ) et arrivées précédement le :
   FR ( "Previous Enumerator:" ) Ancien énumérateur :
   FR ( "New Enumerator:" ) Nouveau énumérateur :

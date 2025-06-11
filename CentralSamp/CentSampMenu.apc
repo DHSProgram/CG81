@@ -1,6 +1,6 @@
 ﻿{Application 'CentSampMenu' }
 PROC GLOBAL
-
+  numeric debug = 0;
   FILE      piffile;                       { data entry PFF file for the AppNamelication }
 
   string   CSPro;                          { CSPro executables directory }
@@ -29,6 +29,7 @@ PROC GLOBAL
   array string EnumDupForClust(20);
   numeric i, l, w, m, t, numdup, action, temp, Enumerator, ncluster;
   numeric datestr, timestr;                 { to get dates and time coming from files coming from the field by utility GetFiles }
+  numeric checkdups = 0;
 
   function ReadIfssLog( string logFileName )
     FILE logfile;
@@ -143,25 +144,36 @@ PROC GLOBAL
   end;
 
   { generates the PFF file needed to run AppNamelication LSTCLSUT }
-  function ListClust()
+  function ListClust(numeric manyfiles = 0)
   { whatdir - 1 to list and check clusters from arrived directory }
   {           2 to check clusters from CLOSED directory           }
     InitPFF(1);
     FileWrite( piffile, "[Files]" );
     FileWrite( piffile, "Application=" + central  + "\"  + AppName  + ".bch" );
-    FileWrite( piffile, "InputData="   + SampData + "\L" + xfilenum + ".dat" );
+    if manyfiles then
+      FileWrite( piffile, "InputData=" + work + "\ALLHOUSEHOLDS.DAT") ;
+    else
+      FileWrite( piffile, "InputData="   + SampData + "\L" + xfilenum + ".DAT" );
+    endif;
     FileWrite( piffile, "Listing="     + central  + "\"  + AppName  + ".lst" );
     FileWrite( piffile, "WriteData="   + central  + "\"  + AppName  + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "CONTROL="     + wrkref  + "\LCONTROL.csdb" );
-{{GPS}	
-    FileWrite( piffile, "GPS_DCT="     + SampData + "\G" + xfilenum + ".dat" );
-{GPS}}	
-    FileWrite( piffile, "SEGMENT_DCT=" + SampData + "\S" + xfilenum + ".dat" );
+    FileWrite( piffile, "CONTROL="     + wrkref + "\LCONTROL.csdb");
+    if manyfiles then
+      FileWrite( piffile, "SEGMENT_DCT=" + work + "\ALLSEGMENTS.DAT");
+    else
+      FileWrite( piffile, "SEGMENT_DCT=" + SampData + "\S" + xfilenum + ".DAT" );
+    endif;
+    FileWrite( piffile, "CLUSTERS="    + wrkref   + "\LCLUSTERS.csdb" );
     FileWrite( piffile, "[Parameters]" );    
     FileWrite( piffile, "Language="  + GetLanguage() );
-	FileWrite( piffile, "Parameter=" + xfilenum );
+    if manyfiles then
+      FileWrite( piffile, "Parameter=" + "0000" );
+    else // set cluster number to zero to operate on concatenated file of all received clusters
+      FileWrite( piffile, "Parameter=" + xfilenum );
+    endif;
+    FileWrite( piffile, "Interviewer=" + edit("9999", WINTNUM ) );
     FileWrite( piffile, "ViewListing=OnError" );
     FileWrite( piffile, "ViewResults=No" );
     FileWrite( piffile, "ListingWidth=120" );
@@ -178,7 +190,7 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="   + central + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "INTERV=" + wrkref + "\Interv.dat" );
+    FileWrite( piffile, "INTERV=" + wrkref + "\LInterv.csdb" );
     FileWrite( piffile, "[Parameters]" );
     FileWrite( piffile, "Language=" + GetLanguage() );
     FileWrite( piffile, "ViewListing=OnError" );
@@ -202,7 +214,7 @@ PROC GLOBAL
     FileWrite( piffile, "Listing="     + SampData + "\L" + xfilenum + ".lst" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "CLUSTERS="    + wrkref   + "\Clusters.dat" );
+    FileWrite( piffile, "CLUSTERS="    + wrkref   + "\LClusters.csdb" );
 {+GPS}	
     FileWrite( piffile, "GPS_DCT="     + sampData + "\H" + xfilenum + ".dat" );
 {GPS+}	
@@ -245,7 +257,7 @@ PROC GLOBAL
     FileWrite( piffile, "WriteData="   + central + "\" + AppName + ".wrt" );
 
     FileWrite( piffile, "[ExternalFiles]" );
-    FileWrite( piffile, "CLUSTERS="    + wrkref + "\Clusters.dat" );
+    FileWrite( piffile, "CLUSTERS="    + wrkref + "\LClusters.csdb" );
     FileWrite( piffile, "SAMPSEL="     + wrkref + "\SampSel.dat" );
     FileWrite( piffile, "GPS_DCT="     + work   + "\AllGPS.dat" );
     FileWrite( piffile, "SEGMENT_DCT=" + work   + "\AllSegments.dat" );
@@ -540,8 +552,69 @@ function export_GPS(clusterNumber);
   savePointsGeojson(clusterNumber);
   savePointsKML    (clusterNumber);
 end;
+function CheckFiles ();
+  set trace(on);
+  { check/list files that arrived empty }
+  numeric delempty = DeleteEmptyArrived();
+  
+  { list newly arrived files }
+  numeric newClust = NewClustersArrived();
+  do i = 1 while i <= 5000
+    ClustDuplicated(i) = 0
+  enddo;
+  
+  { list clusters that arrived as a result of modifications }
+  numeric modclust = ModifiedClustersArrived();
+  numeric clsclust = ClosedClustersArrived();
+  
+  { list clusters that arrived and were already closed }
+  HTML_End();
+  if delempty | newclust | modclust | clsclust then
+    view( "file://" + pathname(application) +  HTMLName );
+  endif;
+  
+  open( CONTROL );
+  { list duplicated clusters and update control file with correct enumerator }
+  
+  do i = 1 while checkdups & i <= 5000 & ClustDuplicated(i) <> 0
+    DuplicateFiles( ClustDuplicated(i) );
+	w = showarray( heading, EnumDupForClust );               // decide who is the correct enumerator for the cluster
+	{ update control file with correct enumerator code }
+	do m = 1 while m <= 20 & length(EnumDupForClust(m))
+	enddo;
+	numdup = m - 2;
+        l = numdup;
+	if w & w <= numdup then
+	  do l = 1 while l <= numdup
+            if l = w then
+              CSAMPLE = ClustDuplicated(i);
+              if loadcase( CONTROL, CSAMPLE ) then
+                m = length(EnumDupForClust(l)) - 7; 
+                CSUPERV = tonumber( EnumDupForClust(l)[m:4] );
+                writecase( CONTROL );
+              endif;
+            else
+                  FileDelete( EnumDupForClust(l) );
+                      errmsg( 110, EnumDupForClust(l) );
+            endif;
+         enddo;
+      endif;
+  enddo;
+  close( CONTROL );
+  CollapseFiles();
+  AppName = "ListClust";
+  ListClust(1);
+  runpff();
+end;
+
 PROC FL_MENU
 PreProc
+    if debug then
+      errmsg(  "WARNING: DEBUG MODE ENABLED!" );
+      trace(on, ".\debug.apc", clear);
+  //  trace(on);
+      set trace;
+    endif;
 
   CSPro  = PathName( CSPro );
 
@@ -600,51 +673,7 @@ PreProc
     endif;
   endif;
   
-  { check/list files that arrived empty }
-  numeric delempty = DeleteEmptyArrived();
-  
-  { list newly arrived files }
-  numeric newClust = NewClustersArrived();
-  do i = 1 while i <= 5000
-    ClustDuplicated(i) = 0
-  enddo;
-  
-  { list clusters that arrived as a result of modifications }
-  numeric modclust = ModifiedClustersArrived();
-  numeric clsclust = ClosedClustersArrived();
-  
-  { list clusters that arrived and were already closed }
-  HTML_End();
-  if delempty | newclust | modclust | clsclust then
-    view( "file://" + pathname(application) +  HTMLName );
-  endif;
-  
-  open( CONTROL );
-  { list duplicated clusters and update control file with correct enumerator }
-  do i = 1 while i <= 5000 & ClustDuplicated(i) <> 0
-    DuplicateFiles( ClustDuplicated(i) );
-	w = showarray( heading, EnumDupForClust );               // decide who is the correct enumerator for the cluster
-	{ update control file with correct enumerator code }
-	do m = 1 while m <= 20 & length(EnumDupForClust(m))
-	enddo;
-	numdup = m - 2;
-	if w & w <= numdup then
-	  do l = 1 while l <= numdup
-        if l = w then
-          CSAMPLE = ClustDuplicated(i);
-          if loadcase( CONTROL, CSAMPLE ) then
-            m = length(EnumDupForClust(l)) - 7; 
-            CSUPERV = tonumber( EnumDupForClust(l)[m:4] );
-            writecase( CONTROL );
-          endif;
-        else
-	      FileDelete( EnumDupForClust(l) );
-		  errmsg( 110, EnumDupForClust(l) );
-        endif;
-      enddo;
-	endif;
-  enddo;
-  close( CONTROL );
+  CheckFiles();
 
 PROC WINTRO
 onfocus
@@ -781,6 +810,7 @@ postproc
 
   elseif action = 9 then                  { connect to server }
     GetData_CSW();
+    CheckFiles();
     reenter WFINAL;
   elseif action = 10 then                 { sample selection of households for the survey }
     CollapseFiles();

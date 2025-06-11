@@ -42,8 +42,13 @@ Language = FR
   FR ( "Cummulative" ) Cummulative
   FR ( "Percent" ) Pourcentage
   FR ( "Segment selected %d, Number of households in selected segment %d" ) Segment tiré %d, nombre de ménages dans le segment tiré %d  
-  FR ( "Cluster Coordinates" ) Coordonnées de la Grappe
+  FR ( "Households expected in cluster %d, total entries in roster %d households listed %d" ) Ménages attendus dans la grappe %d, nombre total d'entrées dans la liste %d ménages dénombrés %d
+  FR ( "GPS co-ordinates" ) Coordonnées GPS
+  FR ( "Entries in roster %d, GPS taken %d, GPS not taken %d: %03d% missing" ) Enregistrements dans la liste %d, GPS pris %d, GPS non pris %d : %03d% manquant
+  FR ( "List of records with missing GPS: " ) Liste des enregistrements avec GPS manquant :
   FR ( "Reading" ) Lecture
+  FR ( "Not read" ) Non pris
+  FR ( "Sequential line number" ) Numéro de ligne séquentiel
   FR ( "Latitude" ) Latitude
   FR ( "Longitude" ) Longitude
   FR ( "Altitude" ) Altitude

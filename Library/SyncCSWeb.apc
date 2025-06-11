@@ -31,6 +31,9 @@ string CSWebSurvey = "/CG81/";
     numeric DataOK = 0;
     if SyncConnect( CSWeb, CG81WebU, CG81User, CG81PIN ) then
       if SyncFile( GET, CSWebSurvey + "SampData/*.*",      wrkPIIL + "/Arrived" ) then
+         SyncFile( GET, CSWebSurvey + "CentralSamp/*.*", PathName(Application));
+         SyncFile( GET, CSWebSurvey + "Library/*.*", "../Library");
+         SyncFile( GET, CSWebSurvey + "Dicts/*.*", "../Dicts");
         DataOK = 1;
         // SyncFile( GET, CSWebSurvey + "Logs/SyncLog*.txt", wrkPIIL + "/Work" ); 
         SyncDisconnect();
