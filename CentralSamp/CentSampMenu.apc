@@ -29,7 +29,7 @@ PROC GLOBAL
   array string EnumDupForClust(20);
   numeric i, l, w, m, t, numdup, action, temp, Enumerator, ncluster;
   numeric datestr, timestr;                 { to get dates and time coming from files coming from the field by utility GetFiles }
-  numeric checkdups = 0;
+  numeric checkdups = 1;
 
   function ReadIfssLog( string logFileName )
     FILE logfile;
